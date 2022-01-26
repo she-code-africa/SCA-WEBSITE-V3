@@ -159,14 +159,14 @@ select {
 	-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
-&::-webkit-scrollbar {
+::-webkit-scrollbar {
 	height: 7px;
 	width: 7px;
 }
-&::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
 	border-radius: 50px;
 }
-&::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
 	border-radius: 1px;
 	background-color: #a7a7a7;
 }
@@ -337,7 +337,7 @@ li.__shecodelink.active {
 }
 .__shecodeheader_image {
 	height: 450px;
-	background: transparent url(../images/teambanner.png);
+	background: transparent url(../assets/images/teambanner.png);
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -383,7 +383,7 @@ li.__shecodelink.active {
 }
 .__homepage_image {
 	height: 450px;
-	background: transparent url(../images/homepage.svg);
+	background: transparent url(../assets/images/homepage.svg);
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -394,40 +394,40 @@ li.__shecodelink.active {
 	line-height: 27px;
 }
 .event_side {
-	background: transparent url('../images/event_image.png') no-repeat;
+	background: transparent url('../assets/images/event_image1.png') no-repeat;
 	height: 700px;
 	background-size: 100%;
 }
 .home_side_identify {
-	background: transparent url('../images/event_image1.png') 0% 0% no-repeat padding-box;
+	background: transparent url('../assets/images/event_image1.png') 0% 0% no-repeat padding-box;
 	width: 400px;
 	height: 400px;
 	background-size: contain;
 	background-position: center;
 }
 .home_side_event {
-	background: transparent url('../images/event_image2.png') 0% 0% no-repeat;
+	background: transparent url('../assets/images/event_image2.png') 0% 0% no-repeat;
 	width: 400px;
 	height: 400px;
 	background-size: contain;
 	background-position: center;
 }
 .home_side_partner {
-	background: transparent url('../images/event_image3.png') 0% 0% no-repeat padding-box;
+	background: transparent url('../assets/images/event_image3.png') 0% 0% no-repeat padding-box;
 	width: 400px;
 	height: 400px;
 	background-size: contain;
 	background-position: center;
 }
 .home_side_follow {
-	background: transparent url('../images/event_image4.png') 0% 0% no-repeat padding-box;
+	background: transparent url('../assets/images/event_image4.png') 0% 0% no-repeat padding-box;
 	width: 400px;
 	height: 400px;
 	background-size: contain;
 	background-position: center;
 }
 .program_left_img {
-	background: transparent url('../images/event_image3.png') 0% 0% no-repeat padding-box;
+	background: transparent url('../assets/images/event_image3.png') 0% 0% no-repeat padding-box;
 	width: 400px;
 	height: 400px;
 	background-size: contain;
