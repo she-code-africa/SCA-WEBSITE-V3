@@ -1,26 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
 import './styles/app.scss';
+import {
+  Route,
+  Routes as Switch
+} from 'react-router-dom';
+
+import { paths } from './utils'
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Chapters from './pages/Chapters';
+import Donate from './pages/Donate';
+import Events from './pages/Events';
+import Jobs from './pages/Jobs';
+import Programs from './pages/Programs';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes />
+    </>
   );
+}
+
+
+
+function Routes (params) {
+  return (
+    <Switch>
+      <Route path={paths.home} element={<Home />} />
+      <Route path={paths.about} element={<About />} />
+      <Route path={paths.chapters} element={<Chapters />} />
+      <Route path={paths.donate} element={<Donate />} />
+      <Route path={paths.events} element={<Events />} />
+      <Route path={paths.jobs} element={<Jobs />} />
+      <Route path={paths.programs} element={<Programs />} />
+    </Switch>
+  )
 }
 
 export default App;
