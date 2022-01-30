@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 const Donate = () => {
   return (
     <>
-      <Header />
+      <Header page={'donate'} />
       <main>
         Donate page
       </main>

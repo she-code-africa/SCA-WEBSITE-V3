@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 const Programs = () => {
   return (
     <>
-      <Header />
+      <Header page={'programs'} />
       <main>
         Programs page
       </main>

@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 const Chapters = () => {
   return (
     <>
-      <Header />
+      <Header page={'chapters'} />
       <main>
         Chapters page
       </main>
