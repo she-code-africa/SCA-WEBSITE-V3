@@ -13,11 +13,13 @@ import Donate from './pages/Donate';
 import Events from './pages/Events';
 import Jobs from './pages/Jobs';
 import Programs from './pages/Programs';
+import Footer from './components/Footer'
 
 function App() {
   return (
     <>
       <Routes />
+      <Footer/>
     </>
   );
 }

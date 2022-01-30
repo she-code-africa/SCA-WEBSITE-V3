@@ -363,15 +363,20 @@ li.__shecodelink.active {
 	margin-top: 10px;
 	font-size: 12px;
 	letter-spacing: 1px;
-	color: #ffffff !important;
 	transition: all 0.4s ease-in;
 	text-transform: capitalize;
-	img {
+	color: white;
+	a img {
 		height: 18px;
 		margin-right: 5px;
+		color: #ffffff !important;
 	}
 	&:hover {
 		color: #ff85d2 !important;
+	}
+	a{
+		color: #ffffff !important;
+		text-decoration: none;
 	}
 }
 .__footerdownbg {
@@ -846,6 +851,11 @@ li.__shecodelink.active {
 	}
 	.section-whitespace-bottom {
 		margin-bottom: 5rem;
+	}
+	footer{
+		.__shecodelogo{
+			display: none;
+		}
 	}
 }
 @media screen and (max-width: 375px) {
