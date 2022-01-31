@@ -6,7 +6,7 @@ const Section = ({title, content, imgClass, className}) => {
         <div className={`${imgClass} col-span-2`}>
 
         </div>
-        <div className={`${className} col-span-3`}>
+        <div className={`${className} col-span-3 md:ml-20 w-max-lg`}>
           <h4 className="__shecode_title">{title}</h4>
           <p className="__shecode_subtitle">{content}</p>
         </div>
