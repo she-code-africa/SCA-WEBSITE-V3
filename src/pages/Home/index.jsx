@@ -6,7 +6,7 @@ const Home = () => {
     <>
     <Header />
     <main>
-      <div className="container">
+      <div className="container mx-auto px-12">
         homepage
         <Section 
           title="Growing Slack Community"
