@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 const Events = () => {
   return (
     <>
-      <Header />
+      <Header page={'events'} />
       <main>
         Events page
       </main>

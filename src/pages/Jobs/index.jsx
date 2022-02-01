@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 const Jobs = () => {
   return (
     <>
-      <Header />
+      <Header page={'jobs'} />
       <main>
         Jobs page
       </main>

@@ -30,7 +30,7 @@ html {
 	font-size: 100%;
 	min-height: 100%;
 	height: 100%;
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	color: #222222;
 	font-weight: normal;
@@ -39,7 +39,7 @@ html {
 }
 body {
 	height: 100%;
-	font-family: Montserrat;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	color: #222222;
 	font-weight: normal;
@@ -320,7 +320,7 @@ li.__shecodelink.active {
 .__shecodeheader_title {
 	h1 {
 		text-align: left;
-		font-family: Montserrat;
+		font-family: 'Montserrat', sans-serif;
 		font-size: 50px;
 		font-weight: bold;
 		color: var(--primary-dark-pink);
@@ -439,7 +439,7 @@ li.__shecodelink.active {
 	background-position: center;
 }
 .cohort {
-	font: normal normal bold 24px/29px Montserrat;
+	font: normal normal bold 24px/29px 'Montserrat', sans-serif;
 }
 .__shecode_block {
 	margin: 8rem 0;

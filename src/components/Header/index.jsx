@@ -3,20 +3,26 @@ import { Link } from 'react-router-dom'
 import logo from '../../images/she-code-africa-logo.svg'
 
 import { paths } from '../../utils'
-const Header = () => {
+
+const menus = [
+  { name: 'home', to: paths.home, text: 'Home' },
+  { name: 'about', to: paths.about, text: 'About' },
+  { name: 'donate', to: paths.donate, text: 'Donate/Partner' },
+  { name: 'chapters', to: paths.chapters, text: 'Chapters' },
+  { name: 'programs', to: paths.programs, text: 'Programs', submenu: [] },
+  { name: 'jobs', to: paths.jobs, text: 'Job Opportunities' },
+]
+const Header = ({ page }) => {
   
   return (
-    <header className="flex justify-between md:p-4 py-2 px-3 items-center">
-      <Link to={paths.home}>
+    <header className="flex justify-between items-center py-5 px-8">
+      <Link to={paths.home} className="block">
         <img src={logo} alt="SCA Logo" className="object-contain w-14" />
       </Link>
-      <ul className="md:flex justify-between hidden">
-        <li><Link to={paths.home}>Home</Link></li>
-        <li><Link to={paths.about}>About</Link></li>
-        <li><Link to={paths.donate}>Donate/Partner</Link></li>
-        <li><Link to={paths.chapters}>Chapters</Link></li>
-        <li><Link to={paths.programs}>Programs</Link></li>
-        <li><Link to={paths.jobs}>Job Opportunities</Link></li>
+      <ul className="md:flex justify-between hidden text-[15px] text-primary-dark-pink py-[10px] px-[20px]">
+        {menus.map((menu) => (
+          <li key={menu.name} className={`pr-12 __shecodelink ${page === menu.name ? 'active' : ''}`}><Link className={`no-underline font-bold block transition-all duration-[400s] tracking-[0.36px] ${page === menu.name?'text-primary-main-pink border-b-[3px] border-primary-main-pink transform scale-105':''}`} to={menu.to}>{menu.text}</Link></li>
+        ))}
       </ul>
       <div className="md:hidden">
         <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
