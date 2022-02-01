@@ -4,7 +4,7 @@ import Section from "../../components/Section";
 const Home = () => {
   return (
     <>
-    <Header />
+    <Header page={'home'} />
     <main>
       <div className="container mx-auto px-12">
         homepage
