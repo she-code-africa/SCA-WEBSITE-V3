@@ -296,7 +296,7 @@ li.__shecodelink.active {
 	font-weight: bold;
 	text-transform: uppercase;
 	margin-top: 5%;
-	background: var(--primary-main-pink);
+	background: var(--primary-main-pink) !important;
 	transition: all 0.2s;
 	&:hover {
 		box-shadow: 1px 4px 8px #ac1d6db3;
@@ -568,7 +568,7 @@ li.__shecodelink.active {
 .contact_section {
 	background: #F7E6F04D 0% 0% no-repeat padding-box;
 	width: 85%;
-	float: right;
+	// float: right;
 	padding: 20px;
 	margin: 8rem 0;
 	h4 {
