@@ -7,7 +7,7 @@ const ContactForm = () => {
                   <h4 className="__shecode_title">Contact Us</h4>
                 </div>
                <div className="__shecode_contactform">
-                    <form>
+                    <form method="post">
                         <div className="mb-4">
                             <input placeholder="Full Name" required className="form-control contact-form-input"/>
                         </div>
