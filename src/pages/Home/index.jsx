@@ -48,7 +48,7 @@ const Home = () => {
           <a href="https://bit.ly/joinshecodeafrica" className="shecode_button">Learn More</a>
         </Section>
       </div>
-      <div>
+      <div className="">
         <ContactForm/>
       </div>
     </main>
