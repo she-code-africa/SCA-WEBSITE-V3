@@ -12,11 +12,23 @@ export const ImgCard = ({src, name, role}) => {
   </div>;
 };
 
-export const DonateCard = ({title, children, description}) => {
-    return <div className="__partner-donate_partner-cta">
+export const DonateCard = ({title, children, first_desc, second_desc}) => {
+    return <div className="__partner-donate_donate-cta">
         <h4 className="title">{title}</h4>
-        <div className="desc"></div>
-        <div className="cta"></div>
+        <div className="desc">
+            <p>{first_desc}</p>
+            <p>{second_desc}</p>
+        </div>
+        <div className="cta">{children}</div>
+    </div>
+}
+
+export const CardBox = ({url, chapter, location}) => {
+    return <div className="box">
+        <a href={url}>
+            <h5>{chapter}</h5>
+            <p>{location}</p>
+        </a>
     </div>
 }
 
