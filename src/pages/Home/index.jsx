@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
+import ContactForm from "../../components/Contact";
 const Home = () => {
   return (
     <>
@@ -46,7 +47,9 @@ const Home = () => {
           >
           <a href="https://bit.ly/joinshecodeafrica" className="shecode_button">Learn More</a>
         </Section>
-
+      </div>
+      <div className="">
+        <ContactForm/>
       </div>
     </main>
     </>
