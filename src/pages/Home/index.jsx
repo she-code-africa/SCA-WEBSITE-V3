@@ -13,7 +13,10 @@ const Home = () => {
       <Hero/>       
       <AboutSection/>
       <div className="container mx-auto px-4 lg:px-10">
-        <Text/>
+        <Text
+          topic="Identify With Us"
+          sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."
+        />
         <Section 
           title="Growing Slack Community"
           content="Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career."
