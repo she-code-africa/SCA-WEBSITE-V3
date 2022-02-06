@@ -2,13 +2,15 @@ import React from "react";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import ContactForm from "../../components/Contact";
+import AboutSection from "../../components/AboutSection";
 const Home = () => {
   return (
     <>
     <Header page={'home'} />
     <main>
+      homepage             
+      <AboutSection/>
       <div className="container mx-auto lg:px-16">
-        homepage
         <Section 
           title="Growing Slack Community"
           content="Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career."
