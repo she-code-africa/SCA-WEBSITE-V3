@@ -8,7 +8,6 @@ const Home = () => {
     <Header page={'home'} />
     <main>
       <div className="container mx-auto lg:px-16">
-        homepage
         <Section 
           title="Growing Slack Community"
           content="Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career."
