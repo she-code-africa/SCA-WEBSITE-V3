@@ -33,7 +33,6 @@ const Chapters = () => {
     <>
       <Header page={'chapters'} />
       <main>
-        Chapters page
         <div className="tab-content">
             <div className="grid sm:grid-cols-12 rows-12">
               {
