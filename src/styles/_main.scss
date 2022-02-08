@@ -109,6 +109,22 @@ select {
 		outline-offset: 0;
 	}
 }
+p{
+	margin: 0 0 10px;
+}
+h4{
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+}
+img{
+	vertical-align: middle;
+	display: inline !important;
+}
+h1, h2, h3, h4{
+	margin-top: 20px;
+    margin-bottom: 10px;
+	line-height: initial;
+}
 // @-webkit-viewport {
 // 	width: device-width;
 // }

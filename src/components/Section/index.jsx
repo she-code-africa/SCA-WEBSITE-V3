@@ -23,10 +23,10 @@ const Section = ({title, content, imgClass, className, children}) => {
         <div className={`${imgClass} m-0`}>
 
         </div>
-        <div className={`${className} sm:w-7/12 sm:px-2`}>
+        <div className={`${className} sm:w-5/12 xl:w-6/12 sm:px-2`}>
           <h4 className="__shecode_title">{title}</h4>
           <p className="__shecode_subtitle mt-4">{content}</p>
-          <div className="mt-4 lg:mt-16">
+          <div className="mt-6 lg:mt-16">
               {children}
           </div>
         </div>
