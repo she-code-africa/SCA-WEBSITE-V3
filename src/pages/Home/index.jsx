@@ -2,12 +2,21 @@ import React from "react";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import ContactForm from "../../components/Contact";
+import AboutSection from "../../components/AboutSection";
+import Hero from "../../components/Hero";
+import Text from "../../components/Text";
 const Home = () => {
   return (
     <>
     <Header page={'home'} />
     <main>
-      <div className="container mx-auto lg:px-16">
+      <Hero/>       
+      <AboutSection/>
+      <div className="container mx-auto px-4 lg:px-10">
+        <Text
+          topic="Identify With Us"
+          sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."
+        />
         <Section 
           title="Growing Slack Community"
           content="Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career."
@@ -23,7 +32,7 @@ const Home = () => {
           imgClass="home_side_event justify-self-end mt-12"
           className="sm:-order-1 justify-self-center"
         >
-          <a href="https://bit.ly/joinshecodeafrica" className="shecode_button">View Upcoming Events</a>
+          <a href="https://bit.ly/joinshecodeafrica" className="shecode_button sm:p-3 md:p-5">View Upcoming Events</a>
         </Section>
 
         <Section 
@@ -33,8 +42,8 @@ const Home = () => {
           className="order-last"
           >
           <div className="flex flex-col lg:flex-row">
-            <a href="https://bit.ly/joinshecodeafrica" className="shecode_button w-9/12 lg:w-5/12">Be A Partner</a>
-            <a href="https://bit.ly/joinshecodeafrica" className="shecode_button2 lg:ml-2 w-9/12 lg:w-5/12">Be a Donor</a>
+            <a href="https://bit.ly/joinshecodeafrica" className="shecode_button">Be A Partner</a>
+            <a href="https://bit.ly/joinshecodeafrica" className="shecode_button2 lg:ml-2 ">Be a Donor</a>
           </div>
         </Section>
 

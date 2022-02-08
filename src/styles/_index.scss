@@ -68,8 +68,24 @@
 	}
 	.about_section {
 		.sub-text {
-			font-size: 11px;
+			font-size: 11px !important;
 		}
+	}
+	.home_side_identify {
+		width: 300px !important;
+		height: 400px !important;
+	}
+	.home_side_event {
+		width: 300px !important;
+		height: 400px !important;
+	}
+	.home_side_partner {
+		width: 300px !important;
+		height: 400px !important;
+	}
+	.home_side_follow {
+		width: 300px !important;
+		height: 400px !important;
 	}
 }
 @media screen and (min-width: 768px) {
@@ -166,10 +182,10 @@
 		.sub-text {
 			font-size: 12px;
 		}
-		width: 95%;
+		width: 95% !important;
 		.about_values {
 			p {
-				font-size: 12px;
+				font-size: 12px !important;
 			}
 		}
 	}
@@ -267,11 +283,11 @@
 		margin-top: 50px;
 	}
 	.about_section {
-		width: 100%;
+		width: 100% !important;
 		.about_values {
-			display: block;
+			display: block !important;
 			div {
-				width: 100%;
+				width: 100% !important;
 				margin-bottom: 30px;
 				text-align: center;
 			}
@@ -321,10 +337,10 @@
 		margin-top: 0;
 	}
 	.__shecode_topic {
-		font-size: 30px;
+		font-size: 30px !important;
 	}
 	.__shecode_subtopic {
-		font-size: 15px;
+		font-size: 15px !important;
 	}
 	.__shecode_title {
 		font-size: 25px !important;
