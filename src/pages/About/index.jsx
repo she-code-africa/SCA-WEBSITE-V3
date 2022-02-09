@@ -38,7 +38,6 @@ const About = () => {
     <>
       <Header page={'about'} />
       <main>
-        about page
         <div className="container mx-auto px-8">
             <div>
                 <h2>Our Awesome Team</h2>
