@@ -5,6 +5,7 @@ import ContactForm from "../../components/Contact";
 import AboutSection from "../../components/AboutSection";
 import Hero from "../../components/Hero";
 import Text from "../../components/Text";
+import Carousel from "../../components/Carousel"
 const Home = () => {
   return (
     <>
@@ -12,7 +13,8 @@ const Home = () => {
     <main>
       <Hero/>       
       <AboutSection/>
-      <div className="container mx-auto px-4 lg:px-10">
+      <Carousel title="Our Reach So Far"/>
+      <div className="container mx-auto px-4 lg:px-10 clear-both">
         <Text
           topic="Identify With Us"
           sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."

@@ -491,7 +491,7 @@ li.__shecodelink.active {
 .about_section {
 	background: #F7E6F04D 0% 0% no-repeat padding-box;
 	width: 85%;
-	float: right;
+	// float: right;
 	padding: 20px;
 	margin: 30px 0;
 	.__shecode_title {
@@ -534,25 +534,33 @@ li.__shecodelink.active {
 		font-size: 35px;
 	}
 	.counter_items {
-		.slick-slide {
-			display: flex;
-			margin-right: 30px;
-			margin-top: 20px;
-			h4 {
-				text-align: left;
-				font-weight: bolder;
-				font-size: 40px;
-				color: #B70569;
-				opacity: 1;
-			}
-			p {
-				color: #273029;
-				margin: 32px 0;
-				font-weight: bold;
+		.slick-track{
+			.slick-slide{
+				div{
+					.slick-item{
+						display: flex !important;
+						margin-right: 30px;
+						margin-top: 20px;		
+						h4 {
+							text-align: left;
+							font-weight: bolder;
+							font-size: 40px;
+							color: #B70569;
+							opacity: 1;
+						}
+						p {
+							color: #273029;
+							margin: 32px 0;
+							font-weight: bold;
+						}
+					}
+				}
 			}
 		}
+		
 	}
 }
+
 #testimonials {
 	margin: 50px auto;
 	text-align: center;

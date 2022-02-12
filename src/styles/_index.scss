@@ -40,13 +40,14 @@
 
 @media screen and (max-width: 1024px) and (min-width:768px) {
 	.counter {
+		height: 200px !important;
 		.__shecode_title {
-			margin-top: 10%;
-			font-size: 30px;
+			margin-top: 10% !important;
+			font-size: 28px !important;
 		}
 	}
 	.__shecode_title {
-		font-size: 40px;
+		font-size: 40px !important;
 	}
 	.__shecodeformp {
 		left: 37%;
@@ -98,6 +99,9 @@
 		flex-direction: column;
 		justify-content: center;
 	}
+	.counter{
+		float: right;
+	}
 }
 @media screen and (min-width: 992px) {
 	.sca-tagline-row {
@@ -107,8 +111,8 @@
 @media screen and (max-width: 768px) and (min-width: 375px) {
 	.counter {
 		.__shecode_title {
-			margin-top: 10%;
-			font-size: 25px;
+			margin-top: 10% !important;
+			font-size: 25px !important;
 		}
 	}
 	.__shecode_block {
@@ -237,6 +241,7 @@
 				}
 			}
 		}
+		height: 250px !important;
 	}
 }
 @media screen and (max-width: 480px) {
@@ -307,12 +312,12 @@
 		}
 	}
 	.counter {
-		height: 280px;
+		height: 280px !important;
 	}
 }
 @media screen and (max-width: 375px) {
 	.counter {
-		height: 255px;
+		height: 255px !important;
 	}
 }
 @media screen and (max-width: 320px) {
