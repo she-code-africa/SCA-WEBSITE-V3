@@ -1,7 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 
-const index = ({title}) => {
+export const Carousel = ({title, content}) => {
     const settings = {
       dots: true,
       infinite: true,
@@ -36,18 +36,15 @@ const index = ({title}) => {
       <div className="sm:w-9/12 sm:inline-block px-2 lg:px-8">
         <div className="counter_items">
           <Slider {...settings}>
-                <div className="slick-item">
-                  <h4>10000+</h4>
-                  <p>Community Members</p>
-                </div>
-                <div className="slick-item">
-                  <h4>15+</h4>
-                  <p>African Countries with Members</p>
-                </div>     
-                <div className="slick-item">
-                  <h4>32+</h4>
-                  <p>Chapter Locations</p>
-                </div>
+            {
+              content.map(({header, content, src}) =>{
+                return <div className="slick-item">
+                    <h4>{header}</h4>
+                    <p>{content}</p>
+                    {src ? <img src={src} alt="logo"/> : ""}
+                  </div>
+              })
+            }
             </Slider>
         </div>
       </div>
@@ -57,4 +54,36 @@ const index = ({title}) => {
 </section>;
 };
 
-export default index;
+export const TestimonialCarousel = ({testimonials, title}) =>{
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
+    arrows: false
+  };
+return <div className="" id="testimonials">
+    <div className="lg:px-8 mx-0">
+      <h4 className="__shecode_topic">{title}</h4>
+    </div>
+    <div className="">
+      <Slider {...settings}>
+        {
+          testimonials.map(({img, testimonial, name})=>{
+            return <div className="testimonial_box">
+                <img src={img} alt="name"/>
+                <div>
+                  <p className="testimonial_text">{testimonial}</p>
+                  <p className="testimonial_name mt-4">{name}</p>
+                </div>
+            </div>
+          })
+        } 
+      </Slider>
+    </div>    
+  </div>;
+}

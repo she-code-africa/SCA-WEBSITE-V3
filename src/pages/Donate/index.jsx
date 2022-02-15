@@ -1,15 +1,11 @@
 import React from "react";
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
-import Carousel from "../../components/Carousel"
 const Donate = () => {
   return (
     <>
       <Header page={'donate'} />
       <main>
-        <Carousel
-          title="Current Partners & Sponsor Organisations"
-        />
         <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top clear-both">
               <DonateCard
                   title="PARTNER WITH US"

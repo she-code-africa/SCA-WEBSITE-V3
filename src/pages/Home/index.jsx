@@ -5,15 +5,31 @@ import ContactForm from "../../components/Contact";
 import AboutSection from "../../components/AboutSection";
 import Hero from "../../components/Hero";
 import Text from "../../components/Text";
-import Carousel from "../../components/Carousel"
+import {Carousel, TestimonialCarousel} from "../../components/Carousel";
+import { testimonials } from "../../utils"
+
 const Home = () => {
+  const aboutus = [
+    {
+      header: "10000+",
+      content: "Community Members"
+    },
+    {
+      header: "15+",
+      content: "African Countries with Members"
+    },
+    {
+      header: "32+",
+      content: "Chapter Locations"
+    }
+  ]
   return (
     <>
     <Header page={'home'} />
     <main>
       <Hero/>       
       <AboutSection/>
-      <Carousel title="Our Reach So Far"/>
+      <Carousel title="Our Reach So Far" content={aboutus}/>
       <div className="container mx-auto px-4 lg:px-10 clear-both">
         <Text
           topic="Identify With Us"
@@ -58,9 +74,15 @@ const Home = () => {
           <a href="https://bit.ly/joinshecodeafrica" className="shecode_button">Learn More</a>
         </Section>
       </div>
-      <div className="">
-        <ContactForm/>
+      <div className="container mx-auto px-4 clear-both">
+          <div className="container">
+            <TestimonialCarousel title="What People Say" testimonials={testimonials}/>
+          </div>
+          <div className="clear-both">
+            <ContactForm/>
+        </div>
       </div>
+      
     </main>
     </>
   )
