@@ -6,23 +6,9 @@ import AboutSection from "../../components/AboutSection";
 import Hero from "../../components/Hero";
 import Text from "../../components/Text";
 import {Carousel, TestimonialCarousel} from "../../components/Carousel";
-import { testimonials } from "../../utils"
+import { testimonials, aboutus } from "../../utils"
 
 const Home = () => {
-  const aboutus = [
-    {
-      header: "10000+",
-      content: "Community Members"
-    },
-    {
-      header: "15+",
-      content: "African Countries with Members"
-    },
-    {
-      header: "32+",
-      content: "Chapter Locations"
-    }
-  ]
   return (
     <>
     <Header page={'home'} />
@@ -81,8 +67,7 @@ const Home = () => {
           <div className="clear-both">
             <ContactForm/>
         </div>
-      </div>
-      
+      </div>  
     </main>
     </>
   )

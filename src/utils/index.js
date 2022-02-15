@@ -27,6 +27,21 @@ export const jobs = [
   }
 ]
 
+export const aboutus = [
+  {
+    header: "10000+",
+    content: "Community Members"
+  },
+  {
+    header: "15+",
+    content: "African Countries with Members"
+  },
+  {
+    header: "32+",
+    content: "Chapter Locations"
+  }
+]
+
 export const testimonials = [
   {
     img: "https://shecodeafrica.org/images/people.png",
