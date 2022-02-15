@@ -3,8 +3,8 @@ import vision from '../../images/vision.svg';
 import mission from '../../images/mission.svg';
 import value from '../../images/value.svg'
 const AboutSection = () => {
-  return <div className="float-right">
-      <div className="flex flex-col sm:flex-row about_section px-6">
+  return <section className="flex sm:justify-end clear-both">
+   <div className="flex flex-col sm:flex-row about_section px-6 md:justify-end">
               <div className=" md:w-8/12">
                   <h4 className="__shecode_title">About Us</h4>
               </div>
@@ -28,8 +28,8 @@ const AboutSection = () => {
                       </div>
                   </div>
               </div>
-      </div>
-  </div>;
+        </div>
+    </section>;
 };
 
 export default AboutSection;

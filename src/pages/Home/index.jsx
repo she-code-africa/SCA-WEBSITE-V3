@@ -5,6 +5,9 @@ import ContactForm from "../../components/Contact";
 import AboutSection from "../../components/AboutSection";
 import Hero from "../../components/Hero";
 import Text from "../../components/Text";
+import {Carousel, TestimonialCarousel} from "../../components/Carousel";
+import { testimonials, aboutus } from "../../utils"
+
 const Home = () => {
   return (
     <>
@@ -12,7 +15,8 @@ const Home = () => {
     <main>
       <Hero/>       
       <AboutSection/>
-      <div className="container mx-auto px-4 lg:px-10">
+      <Carousel title="Our Reach So Far" content={aboutus}/>
+      <div className="container mx-auto px-4 lg:px-10 clear-both">
         <Text
           topic="Identify With Us"
           sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."
@@ -56,9 +60,14 @@ const Home = () => {
           <a href="https://bit.ly/joinshecodeafrica" className="shecode_button">Learn More</a>
         </Section>
       </div>
-      <div className="">
-        <ContactForm/>
-      </div>
+      <div className="container mx-auto px-4 clear-both">
+          <div className="container">
+            <TestimonialCarousel title="What People Say" testimonials={testimonials}/>
+          </div>
+          <div className="clear-both">
+            <ContactForm/>
+        </div>
+      </div>  
     </main>
     </>
   )

@@ -26,3 +26,41 @@ export const jobs = [
     published_date: 'January 17th, 2022',
   }
 ]
+
+export const aboutus = [
+  {
+    header: "10000+",
+    content: "Community Members"
+  },
+  {
+    header: "15+",
+    content: "African Countries with Members"
+  },
+  {
+    header: "32+",
+    content: "Chapter Locations"
+  }
+]
+
+export const testimonials = [
+  {
+    img: "https://shecodeafrica.org/images/people.png",
+    testimonial: "She Code Africa Mentor-ship Program was a huge part of my growth as a woman in tech. I am grateful to my mentor who stressed on understanding the basics of programming explaining the concepts in beginner friendly terms, my fellow mentees who I learnt so much from, to the founder fr this great initiative and to the team members making this possible. Thanks",
+    name: "Ruth Ikegah"
+  },
+  {
+    img: "https://shecodeafrica.org/images/people.png",
+    testimonial: "She Code Africa Mentor-ship Program was a huge part of my growth as a woman in tech. I am grateful to my mentor who stressed on understanding the basics of programming explaining the concepts in beginner friendly terms, my fellow mentees who I learnt so much from, to the founder fr this great initiative and to the team members making this possible. Thanks",
+    name: "Ruth Ikegah"
+  },
+  {
+    img: "https://shecodeafrica.org/images/people.png",
+    testimonial: "She Code Africa Mentor-ship Program was a huge part of my growth as a woman in tech. I am grateful to my mentor who stressed on understanding the basics of programming explaining the concepts in beginner friendly terms, my fellow mentees who I learnt so much from, to the founder fr this great initiative and to the team members making this possible. Thanks",
+    name: "Ruth Ikegah"
+  },
+  {
+    img: "https://shecodeafrica.org/images/people.png",
+    testimonial: "She Code Africa Mentor-ship Program was a huge part of my growth as a woman in tech. I am grateful to my mentor who stressed on understanding the basics of programming explaining the concepts in beginner friendly terms, my fellow mentees who I learnt so much from, to the founder fr this great initiative and to the team members making this possible. Thanks",
+    name: "Ruth Ikegah"
+  }
+]

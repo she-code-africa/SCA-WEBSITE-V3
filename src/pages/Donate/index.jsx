@@ -6,7 +6,7 @@ const Donate = () => {
     <>
       <Header page={'donate'} />
       <main>
-        <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top">
+        <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top clear-both">
               <DonateCard
                   title="PARTNER WITH US"
                   first_desc="Work hand-in-hand with us to achieve our goal of reaching more women in technology across Africa!"
