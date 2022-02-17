@@ -37,14 +37,14 @@ const Programs = () => {
           </ul>
         </section>
         {activeTab === 'openSP' && (
-        <section>
+        <section className="animate__animated animate__zoomIn animate__faster">
           <div className="md:w-7/12 w-11/12 mx-auto my-20">
             <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Open Source Programs</h4>
             <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>
               Our Open Source Programs are specifically created to help introduce and get more women actively building and contributing to Open source, within Africa and across the globe, helping promote gender diversity within the Open Source Ecosystem.
             </p>
           </div>
-          <div className="bg-[#EEEEF0] min-h-[150px] my-14 p-5 flex items-center">
+            <div className="bg-[#EEEEF0] min-h-[150px] my-14 p-5 flex items-center">
             <div className="container md:grid grid-cols-4 gap-x-10">
               <h4 className="tracking-[1.44px] font-bold lg:text-4xl text-2xl my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Program Impact</h4>
               <div className="col-span-3">
@@ -118,7 +118,7 @@ const Programs = () => {
         )}
 
         {activeTab === 'cloudP' && (
-          <section>
+          <section className="animate__animated animate__fadeIn animate__slow">
             <div className="md:w-7/12 w-11/12 mx-auto my-20">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Cloud Programs</h4>
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>
@@ -164,7 +164,7 @@ const Programs = () => {
         )}
 
         {activeTab === 'schoolP' && (
-          <section>
+          <section className="animate__animated animate__zoomIn animate__faster">
             <div className="md:w-7/12 w-11/12 mx-auto my-20">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Junior &amp; High School Programs</h4>
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>Our program initiative specially created for young girls across junior and high schools to stimulate and nurture their interests in STEM early in their learning journey.</p>
@@ -199,7 +199,7 @@ const Programs = () => {
         )}
 
         {activeTab === 'mentoringP' && (
-          <section>
+          <section className="animate__animated animate__fadeIn animate__slow">
             <div className="md:w-7/12 w-11/12 mx-auto my-20">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Mentoring Programs</h4>
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>Our Mentoring Programs is a 3 months, cohort style, bootcamp, designed to pair expert Technical mentors in the industry with girls/women who identify as beginners or intermediate learners in need of a technical guide and learning path to excel in their specific fields of choice including Software Engineering, Product Design, Data Science/Machine Learning and much more</p>
