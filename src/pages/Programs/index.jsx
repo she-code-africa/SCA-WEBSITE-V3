@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
+import { Carousel } from "../../components/Carousel";
 import event2 from '../../images/event_image2.png'
+import { openSource, cloudP, highSchoolP } from "../../utils"
+
 const Programs = () => {
 
   const [tabList] = useState([
@@ -15,8 +18,8 @@ const Programs = () => {
   return (
     <>
       <Header page={'programs'} />
-      <main className="container mx-auto">
-        <section className="grid md:grid-cols-2 gap-10 justify-items-stretch items-center md:w-11/12 mx-auto py-20">
+      <main>
+        <section className="grid md:grid-cols-2 gap-10 justify-items-stretch items-center md:w-11/12 mx-auto py-20 container">
           <div>
             <h4 className="tracking-[1.44px] font-bold lg:text-[45px] md:text-4xl text-2xl my-4 text-primary-dark-pink" style={{ lineHeight: 1.1 }}>Technical Programs &amp; Bootcamps</h4>
             <p className="text-xl tracking-[0.76px]" style={{ lineHeight: '28px' }}>
@@ -36,6 +39,7 @@ const Programs = () => {
             ))}
           </ul>
         </section>
+
         {activeTab === 'openSP' && (
         <section className="animate__animated animate__zoomIn animate__faster">
           <div className="md:w-7/12 w-11/12 mx-auto my-20">
@@ -44,15 +48,7 @@ const Programs = () => {
               Our Open Source Programs are specifically created to help introduce and get more women actively building and contributing to Open source, within Africa and across the globe, helping promote gender diversity within the Open Source Ecosystem.
             </p>
           </div>
-            <div className="bg-[#EEEEF0] min-h-[150px] my-14 p-5 flex items-center">
-            <div className="container md:grid grid-cols-4 gap-x-10">
-              <h4 className="tracking-[1.44px] font-bold lg:text-4xl text-2xl my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Program Impact</h4>
-              <div className="col-span-3">
-                hello there
-              </div>
-            </div>
-          </div>
-
+          <Carousel title="Program Impact" content={openSource} />
           <div className="md:w-7/12 w-11/12 mx-auto my-20">
             <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Upcoming Cohort</h4>
             <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>View our upcoming programs and discover events curated to match your technical passion and skills.</p>
@@ -101,16 +97,16 @@ const Programs = () => {
             </div>
 
             <section className="flex flex-wrap w-10/12 mx-auto">
-              <div className="w-2/12 mr-8">
+              <div className="md:w-2/12 mr-8 my-8 md:my-0">
                 <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633274610/ymwkk2vq92nhwxshypgw.png" alt="CD. Foundation" className="h-[80px]" />
               </div>
-              <div className="w-2/12 mr-8">
+              <div className="md:w-2/12 mr-8 my-8 md:my-0">
                 <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633274622/rmysc0ajo8misf7f1kok.png" alt="Cloud bees" className="h-[80px]" />
               </div>
-              <div className="w-2/12 mr-8">
+              <div className="md:w-2/12 mr-8 my-8 md:my-0">
                 <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633274635/szewuyksdhlcegwul2wm.png" alt="Deploy hub" className="h-[100px]" />
               </div>
-              <div className="w-2/12 mr-8">
+              <div className="md:w-2/12 mr-8 my-8 md:my-0">
                 <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633274868/radwqspkrehwjs3ovnf1.png" alt="The @ company" className="h-[100px]" />
               </div>
             </section>
@@ -124,14 +120,7 @@ const Programs = () => {
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>
                 Our Cloud Programs offer a variety of learning initiatives targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months cloud School bootcamp</p>
             </div>
-            <div className="bg-[#EEEEF0] min-h-[150px] my-14 p-5 flex items-center">
-              <div className="container md:grid grid-cols-4 gap-x-10">
-                <h4 className="tracking-[1.44px] font-bold lg:text-4xl text-2xl my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Program Impact</h4>
-                <div className="col-span-3">
-                  hello there
-                </div>
-              </div>
-            </div>
+            <Carousel title="Program Impact" content={cloudP} />
 
             <div className="md:w-7/12 w-11/12 mx-auto my-20">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Past Cohort</h4>
@@ -156,7 +145,7 @@ const Programs = () => {
             </div>
 
             <section className="flex flex-wrap w-10/12 mx-auto">
-              <div className="w-2/12 mr-8">
+              <div className="md:w-2/12 mr-8 my-8 md:my-0">
                 <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633173482/vooku3a3fswyd1j8m2vq.jpg" alt="N/A" className="h-[80px]" />
               </div>
             </section>
@@ -169,14 +158,7 @@ const Programs = () => {
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Junior &amp; High School Programs</h4>
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>Our program initiative specially created for young girls across junior and high schools to stimulate and nurture their interests in STEM early in their learning journey.</p>
             </div>
-            <div className="bg-[#EEEEF0] min-h-[150px] my-14 p-5 flex items-center">
-              <div className="container md:grid grid-cols-4 gap-x-10">
-                <h4 className="tracking-[1.44px] font-bold lg:text-4xl text-2xl my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Program Impact</h4>
-                <div className="col-span-3">
-                  hello there
-                </div>
-              </div>
-            </div>
+            <Carousel title="Program Impact" content={highSchoolP} />
 
             <div className="md:w-7/12 w-11/12 mx-auto my-20">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Past Cohort</h4>
@@ -208,7 +190,7 @@ const Programs = () => {
               <div className="container md:grid grid-cols-4 gap-x-10">
                 <h4 className="tracking-[1.44px] font-bold lg:text-4xl text-2xl my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Program Impact</h4>
                 <div className="col-span-3">
-                  hello there
+                 
                 </div>
               </div>
             </div>
