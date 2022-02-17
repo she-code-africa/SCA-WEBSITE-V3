@@ -36,6 +36,10 @@ html {
 	font-weight: normal;
 	overflow-x: hidden;
 	line-height: 20px;
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
 }
 body {
 	height: 100%;
