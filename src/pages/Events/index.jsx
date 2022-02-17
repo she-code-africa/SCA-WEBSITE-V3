@@ -6,7 +6,7 @@ const Events = () => {
   return (
     <>
       <Header page={'events'} />
-      <main className="px-10">
+      <main className="container mx-auto">
         <section className="grid md:grid-cols-2 gap-5 justify-items-stretch">
           <div className="__shecodeheader_text self-center place-self-center lg:px-10">
             <div className="__shecodeheader_title">
