@@ -1,7 +1,6 @@
 import React from "react";
 
 import Header from "../../components/Header"
-import Section from '../../components/Section'
 import event1 from '../../images/event_image.png'
 const Events = () => {
   return (
