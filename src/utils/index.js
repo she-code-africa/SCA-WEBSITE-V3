@@ -41,6 +41,54 @@ export const aboutus = [
     content: "Chapter Locations"
   }
 ]
+export const openSource = [
+  {
+    header: "3",
+    content: "Countries"
+  },
+  {
+    header: "4",
+    content: "Sponsors"
+  },
+  {
+    header: "24",
+    content: "Open Source organization"
+  },
+  {
+    header: "333",
+    content: "Ladies"
+  },
+]
+
+export const cloudP = [
+  {
+    header: "60",
+    content: "Ladies"
+  },
+  {
+    header: "7",
+    content: "Countries"
+  },
+  {
+    header: "1",
+    content: "Sponsors"
+  },
+  {
+    header: "1",
+    content: "Partners"
+  },
+]
+
+export const highSchoolP = [
+  {
+    header: "300",
+    content: "Ladies"
+  },
+  {
+    header: "26",
+    content: "Countries"
+  },
+]
 
 export const testimonials = [
   {
