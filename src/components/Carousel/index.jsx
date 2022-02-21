@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
+import {SuccessBox} from '../Cards'
 
 export const Carousel = ({title, content}) => {
     const settings = {
@@ -37,8 +38,8 @@ export const Carousel = ({title, content}) => {
         <div className="counter_items">
           <Slider {...settings}>
             {
-              content.map(({header, content, src}) =>{
-                return <div className="slick-item">
+              content.map(({header, content, src}, index) =>{
+                return <div className="slick-item" key={index}>
                     <h4>{header}</h4>
                     <p>{content}</p>
                     {src ? <img src={src} alt="logo"/> : ""}
@@ -73,8 +74,8 @@ return <div className="" id="testimonials">
     <div className="">
       <Slider {...settings}>
         {
-          testimonials.map(({img, testimonial, name})=>{
-            return <div className="testimonial_box">
+          testimonials.map(({img, testimonial, name, index})=>{
+            return <div className="testimonial_box" key={index}>
                 <img src={img} alt="name"/>
                 <div>
                   <p className="testimonial_text">{testimonial}</p>
@@ -87,3 +88,47 @@ return <div className="" id="testimonials">
     </div>    
   </div>;
 }
+
+export const SuccessCarousel = ({successStories}) => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 3500,
+    cssEase: "linear",
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings:{
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings:{
+          slidesToShow: 1
+        }
+      }
+
+    ]
+  };
+  return<div>
+    <Slider {...settings}>
+      {successStories.map((successStory, index)=>{
+        let {name, role, story, img} = successStory
+        return <SuccessBox key={index} name={name} role={role} story={story} img={img}/>
+      })}
+    </Slider>
+    
+  </div>
+} 

@@ -112,3 +112,30 @@ export const testimonials = [
     name: "Ruth Ikegah"
   }
 ]
+
+export const successStories = [
+  {
+    img: "https://shecodeafrica.org/images/people.png",
+    name: "Ruth Ikegah",
+    role: "WOSCA OS Challenge Participant",
+    story: " Ruth Ikegah submitted her first open-source contribution during WOSCA’s practical session in June when we launched the initiative. She recorded a total of 10 pull request during WOSCA's OS Challenge in the subsequent month and is now a GitHub star due to her contributions so far."
+  },
+  {
+    img: "https://shecodeafrica.org/images/people.png",
+    name: "Ruth Ikegah",
+    role: "WOSCA OS Challenge Participant",
+    story: " Ruth Ikegah submitted her first open-source contribution during WOSCA’s practical session in June when we launched the initiative. She recorded a total of 10 pull request during WOSCA's OS Challenge in the subsequent month and is now a GitHub star due to her contributions so far."
+  },
+  {
+    img: "https://shecodeafrica.org/images/people.png",
+    name: "Ruth Ikegah",
+    role: "WOSCA OS Challenge Participant",
+    story: " Ruth Ikegah submitted her first open-source contribution during WOSCA’s practical session in June when we launched the initiative. She recorded a total of 10 pull request during WOSCA's OS Challenge in the subsequent month and is now a GitHub star due to her contributions so far."
+  },
+  {
+    img: "https://res.cloudinary.com/she-code-africa/image/upload/v1633277235/enrqu4bacqho1xlhgfey.jpg",
+    name: "Mark Waite",
+    role: "Contributhon Mentor - Jenkins",
+    story: "I enjoyed working with people on a different continent with different experiences than mine.  It was invigorating to see others learning and growing in their technical skills and experiences.  The participants were patient and understanding during this first session of those times when we didn’t know an answer.  They asked good questions and joined our sessions willingly."
+  }
+]
