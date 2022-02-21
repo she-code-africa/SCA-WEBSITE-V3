@@ -13,7 +13,8 @@ import Donate from './pages/Donate';
 import Events from './pages/Events';
 import Jobs from './pages/Jobs';
 import Programs from './pages/Programs';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import Team from './pages/Team'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function Routes (params) {
     <Switch>
       <Route path={paths.home} element={<Home />} />
       <Route path={paths.about} element={<About />} />
+      <Route path={paths.team} element={<Team/>} />
       <Route path={paths.chapters} element={<Chapters />} />
       <Route path={paths.donate} element={<Donate />} />
       <Route path={paths.events} element={<Events />} />
