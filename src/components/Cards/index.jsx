@@ -32,3 +32,18 @@ export const CardBox = ({url, chapter, location}) => {
     </div>
 }
 
+export const SuccessBox = ({img, name, role, story}) => {
+    return <div className="success_box">
+        <div className="flex justify-between">
+            <img src={img} className="success_img" alt={name}/>
+            <div className="name_box">
+                <p className="success_name">{name}</p>
+                <span className="success_role">{role}</span>
+            </div>
+        </div>
+        <div>
+            <p className="success_text">{story}</p>
+        </div>
+    </div>
+}
+

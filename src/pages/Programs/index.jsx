@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
-import { Carousel } from "../../components/Carousel";
+import { Carousel, SuccessCarousel } from "../../components/Carousel";
 import event2 from '../../images/event_image2.png'
-import { openSource, cloudP, highSchoolP } from "../../utils"
+import { openSource, cloudP, highSchoolP, successStories } from "../../utils"
 
 const Programs = () => {
-
   const [tabList] = useState([
     { name: 'Open Source Programs', key: 'openSP' },
     { name: 'Cloud Programs', key: 'cloudP' },
@@ -84,13 +83,15 @@ const Programs = () => {
               </div>
             </div>
           </section>
-          <div className="md:w-7/12 w-11/12 mx-auto my-20 py-10">
-            <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Success Stories</h4>
-          </div>
+          <div className="container mx-auto px-4 xl:px-16">
+            <div className="md:w-7/12 w-11/12 mx-auto py-10">
+              <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Success Stories</h4>
+            </div>
 
-          <section>
-            Slider space
-          </section>
+            <section id="success" className="w-full lg:px-6">
+              <SuccessCarousel successStories={successStories}/>
+            </section>
+          </div>
 
             <div className="md:w-7/12 w-11/12 mx-auto mt-20 mb-12 pt-10">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Program Sponsors &amp; Partners</h4>
