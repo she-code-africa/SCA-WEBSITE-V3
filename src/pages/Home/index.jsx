@@ -16,7 +16,7 @@ const Home = () => {
       <Hero/>       
       <AboutSection/>
       <Carousel title="Our Reach So Far" content={aboutus}/>
-      <div className="container mx-auto px-4 lg:px-10 clear-both">
+      <div className="container mx-auto px-4 lg:px-12 clear-both">
         <Text
           topic="Identify With Us"
           sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."
@@ -33,7 +33,7 @@ const Home = () => {
         <Section 
           title="Attend an Event"
           content="Participate in any of our online or offline events and initiatives inluding bootcamps, Fireside chats, webinars, Mentorship programs and several more!"
-          imgClass="home_side_event justify-self-end mt-12"
+          imgClass="home_side_event justify-self-end mt-12 md:mt-0"
           className="sm:-order-1 justify-self-center"
         >
           <a href="https://bit.ly/joinshecodeafrica" className="shecode_button sm:p-3 md:p-5">View Upcoming Events</a>
@@ -54,11 +54,12 @@ const Home = () => {
         <Section 
           title="Follow Us on Social Media"
           content="Stay updated with us and be the first to know about all our activities and events, by following our social media pages"
-          imgClass="home_side_follow justify-self-end mt-12"
-          className="-order-1"
-          >
-          <a href="https://bit.ly/joinshecodeafrica" className="shecode_button">Learn More</a>
+          imgClass="home_side_follow justify-self-end mt-12 sm:mt-0"
+          className="sm:-order-1 justify-self-center"
+        >
+          <a href="https://bit.ly/joinshecodeafrica" className="shecode_button sm:p-3 md:p-5">View Upcoming Events</a>
         </Section>
+        
       </div>
       <div className="container mx-auto px-4 clear-both">
           <div className="container">

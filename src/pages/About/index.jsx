@@ -1,26 +1,97 @@
 import React from "react";
 import Header from "../../components/Header";
 import { ImgCard } from "../../components/Cards";
-import {team} from "../../utils"
+import {team} from "../../utils";
+import Values from '../../images/our-values.svg';
+import Section from "../../components/Section";
 const About = () => {
   return (
     <>
       <Header page={'about'} />
       <main>
-        <div className="container mx-auto px-8">
-            <div>
-                <h2>Our Awesome Team</h2>
-            </div>
-            <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
-              {
-                team.map(({name, src, role}, index)=>{
-                return <ImgCard name={name} src={src} role={role} key={index}/>
-                })
-              }
-              <div className="text-center col-start-1 col-span-3">
-                <a className="btn shecode_button push2" href="/team"> VIEW ALL </a>
+        <div>
+          <div className="container mx-auto pl-10 lg:px-20">
+              <div className="-mx-4 w-full">
+                  <div className="md:w-6/12 md:inline-block">
+                    <p className="event_title">About Us</p>
+                    <p class="about_subtitle">We are a non-profit organization <br/> focused on celebrating and <br/><span class="__shecodegirls">empowering
+                        young Girls and Women</span><br/> in Technology across Africa.
+                    </p>
+                  </div>
+                  <div className="event_side md:inline-block"></div>
               </div>
-            </div>
+          </div>
+        </div>
+        <div className="container mx-auto lg:px-12 clear-both">
+            <section>
+              <div className="-mx-4 lg:grid grid-cols-12">
+                  <div className="col-span-1"><br/><br/></div>
+                  <div className="lg:w-11/12 valueDiv col-start-3 col-end-13">
+                    <div className="-mx-4"><br/><br/></div>
+                    <div className="-mx-4 lg:grid lg:grid-cols-3 px-12 lg:px-10 ">
+                      <div className="">
+                          <h4 className="about_topic">Our <br/> Values </h4>
+                      </div>
+                      <div className="lg:col-start-2 lg:col-end-4 lg:float-left">
+                          <img src={Values} alt="our values" width="100%"/>
+                          <br/><br/>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+            </section>
+            <section className="members_benefit">
+                <div>
+                  <h4 class="event_topic1 row_padding">Members Benefits</h4>
+                </div>
+                <div>
+                  <Section 
+                    title="Community Support"
+                    content="Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career."
+                    imgClass="home_side_identify"
+                    className="order-last"
+                  />
+                  
+                  <Section 
+                    title="Monitored Growth"
+                    content="We provide resources and monitor your growth every step of the way through regular check-ins to ensure you are hitting your personal and career goals."
+                    imgClass="home_side_event justify-self-end mt-12 md:mt-0"
+                    className="sm:-order-1 justify-self-center"
+                  />
+                   
+                  <Section 
+                    title="Professional Guidance"
+                    content="Through our intensive dedicated Mentorship program and various mentors available on our community platform, you are able to get help and guidance in your learning journey or career field whenever you need it."
+                    imgClass="home_side_partner"
+                    className="order-last"
+                  />
+                  
+                  <Section 
+                    title="Pair support"
+                    content="Network and meet with other women in tech in Africa who have walked or are walking in the same path as you are and can relate with your experience while helping you on your journey."
+                    imgClass="home_side_follow justify-self-end mt-12 md:mt-0"
+                    className="sm:-order-1 justify-self-center"
+                  />
+                  
+                </div>
+            </section>
+            <section>
+              <div className="mx-auto max-w-4xl">
+                <h4 class="about_team">Our Awesome Team</h4>
+                <p class="about_topic2 text-center">Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working.
+                </p>
+              </div>
+              <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+                {
+                  team.map(({name, src, role}, index)=>{
+                  return <ImgCard name={name} src={src} role={role} key={index}/>
+                  })
+                }
+                <div className="text-center sm:col-span-2 lg:col-start-1 lg:col-span-3">
+                  <a className="btn shecode_button push2" href="/team"> VIEW ALL </a>
+                </div>
+              </div>
+            </section>
         </div>
       </main>
     </>
