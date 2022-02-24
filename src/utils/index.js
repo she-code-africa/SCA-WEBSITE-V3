@@ -1,6 +1,7 @@
 export const paths = {
   home: '/',
   about: '/about',
+  team: '/team',
   chapters: '/chapters',
   donate: '/donate',
   events: '/events',
@@ -137,5 +138,38 @@ export const successStories = [
     name: "Mark Waite",
     role: "Contributhon Mentor - Jenkins",
     story: "I enjoyed working with people on a different continent with different experiences than mine.  It was invigorating to see others learning and growing in their technical skills and experiences.  The participants were patient and understanding during this first session of those times when we didn’t know an answer.  They asked good questions and joined our sessions willingly."
+  }
+]
+
+export const team = [
+  {
+    name: "Ada Nduka Oyom",
+    src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600811315/vqnzyumcxrqqyidh5fb1.jpg",
+    role: "Founder"
+  },
+  {
+    name: "Omotola Eunice Omotayo",
+    src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600961093/qfcunfgns8fuzobm0hve.png",
+    role: "Lead, Community Manager"
+  },
+  {
+    name: "Zainab Daodu",
+    src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600964119/mamibxraminn366jsn13.jpg",
+    role: "Open Source Programs Manager"
+  },
+  {
+    name: "Temilola Kutelu",
+    src: "https://res.cloudinary.com/she-code-africa/image/upload/v1612533512/ljkesmjtj6cx9v9up3vk.jpg",
+    role: "Engineering Team Lead"
+  },
+  {
+    name: "Eniola Ipoola",
+    src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600969327/klnvcwc5dgg8n7oarymh.png",
+    role: "Lead, Technical Facilitator"
+  },
+  {
+    name: "Goziem Onugha",
+    src: "https://res.cloudinary.com/she-code-africa/image/upload/v1612444028/r1sawki0hhxqz8wzhsom.jpg",
+    role: "General Counsel"
   }
 ]

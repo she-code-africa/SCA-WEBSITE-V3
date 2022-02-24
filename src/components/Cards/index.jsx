@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const ImgCard = ({src, name, role}) => {
-  return <div className="__shecodeteammember_box">
+export const ImgCard = ({src, name, role}, index) => {
+  return <div className="__shecodeteammember_box" key={index}>
       <div className="__shecodeteammember_img">
-      <img src={src} alt={name} class="img-responsive"/>
+      <img src={src} alt={name} className="img-responsive"/>
       <div className="__shecodeteammember_text">
           <h5 className="name">{name}</h5>
           <p className="role">{role}</p>
@@ -12,8 +12,8 @@ export const ImgCard = ({src, name, role}) => {
   </div>;
 };
 
-export const DonateCard = ({title, children, first_desc, second_desc}) => {
-    return <div className="__partner-donate_donate-cta">
+export const DonateCard = ({title, children, first_desc, second_desc}, index) => {
+    return <div className="__partner-donate_donate-cta" key={index}>
         <h4 className="title">{title}</h4>
         <div className="desc">
             <p>{first_desc}</p>

@@ -114,7 +114,7 @@ select {
 	}
 }
 p{
-	margin: 0 0 10px;
+	margin: 0 0 10px !important;
 }
 h4{
 	margin-top: 10px !important;
@@ -428,7 +428,7 @@ li.__shecodelink.active {
 	width: 400px;
 	height: 400px;
 	background-size: contain;
-	background-position: center;
+	// background-position: center;
 }
 .home_side_event {
 	background: transparent url('../images/event_image2.png') 0% 0% no-repeat;
@@ -442,7 +442,7 @@ li.__shecodelink.active {
 	width: 400px;
 	height: 400px;
 	background-size: contain;
-	background-position: center;
+	// background-position: center;
 }
 .home_side_follow {
 	background: transparent url('../images/event_image4.png') 0% 0% no-repeat padding-box;
@@ -476,6 +476,14 @@ li.__shecodelink.active {
 	font-size: 18px;
 	line-height: 27px;
 }
+
+.text-box{
+	float: right;
+	.__shecode_title{
+		color: var(--secondary-main-black) !important
+	}
+}
+
 .__shecode_title {
 	text-align: left;
 	font-weight: bold;
