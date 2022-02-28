@@ -118,7 +118,7 @@ export const SuccessCarousel = ({successStories}) => {
         settings:{
           slidesToShow: 1
         }
-      }
+       }
 
     ]
   };
@@ -131,4 +131,49 @@ export const SuccessCarousel = ({successStories}) => {
     </Slider>
     
   </div>
-} 
+}
+
+export const GalleryCarousel = ({gallery}) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 3500,
+    cssEase: "linear",
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1440,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings:{
+          slidesToShow: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings:{
+          slidesToShow: 1
+        }
+       }
+
+    ]
+  };
+  return<div className="container mx-auto px-4">
+    <Slider {...settings}>
+      {gallery.map(({url}, index)=>{
+        return <div className="mx-auto" key={index}>
+          <img className="max-h-[250px] text-center mr-2" src={url} alt="Gallery"/>
+        </div>
+      })}
+    </Slider>
+    
+  </div>
+}
