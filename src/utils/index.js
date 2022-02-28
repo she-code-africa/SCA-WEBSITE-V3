@@ -10,7 +10,11 @@ export const paths = {
   register_org: '/jobs/register/org-details',
   login_org: '/jobs/org/login',
   forgot_password_org: '/jobs/forgot-password',
-  view_job: '/view/jobs:id'
+  view_job: '/view/jobs:id',
+  contribution1: '/programs/contributhon-1',
+  contribution: '/programs/contributhon',
+  bootcamp: '/programs/sca-cloud-school-bootcamp',
+  codecamp: '/summer-code-camp-class-of-2020'
 }
 
 export const jobs = [

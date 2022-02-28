@@ -15,6 +15,10 @@ import Jobs from './pages/Jobs';
 import Programs from './pages/Programs';
 import Footer from './components/Footer';
 import Team from './pages/Team'
+import Contribution1 from './pages/Programs/Contributhon1';
+import Contribution from './pages/Programs/Contributhon';
+import CloudBootcamp from './pages/Programs/CloudBootcamp';
+import CodeCamp from './pages/Programs/CodeCamp';
 
 function App() {
   return (
@@ -38,6 +42,10 @@ function Routes (params) {
       <Route path={paths.events} element={<Events />} />
       <Route path={paths.jobs} element={<Jobs />} />
       <Route path={paths.programs} element={<Programs />} />
+      <Route path={paths.contribution1} element={<Contribution1 />} />
+      <Route path={paths.contribution} element={<Contribution />} />
+      <Route path={paths.bootcamp} element={<CloudBootcamp />} />
+      <Route path={paths.codecamp} element={<CodeCamp />} />
     </Switch>
   )
 }

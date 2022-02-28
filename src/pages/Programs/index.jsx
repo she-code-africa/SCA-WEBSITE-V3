@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
 import { Carousel, SuccessCarousel } from "../../components/Carousel";
 import event2 from '../../images/event_image2.png'
-import { openSource, cloudP, highSchoolP, successStories } from "../../utils"
+import { openSource, cloudP, highSchoolP, successStories, paths } from "../../utils"
 
 const Programs = () => {
   const [tabList] = useState([
@@ -61,7 +61,7 @@ const Programs = () => {
               <h4 className="tracking-[1.44px] font-bold lg:text-5xl md:text-3xl text-xl text-primary-dark-pink my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Contributhon <span className="lg:text-2xl md:text-xl text-lg">(Cohort 2)</span></h4>
               <p className="text-[#222222] leading-6 md:text-lg">Contributhon is a virtual open-source boot camp where ladies get the opportunity to work with open source organizations on selected projects with dedi...</p>
               <div className="my-8 text-white">
-                <Link to="/programs/contributhon-1" className="btn shecode_button">See More </Link>
+                <Link to={paths.contribution1} className="btn shecode_button">See More </Link>
               </div>
             </div>
           </section>
@@ -79,7 +79,7 @@ const Programs = () => {
               <h4 className="tracking-[1.44px] font-bold lg:text-5xl md:text-3xl text-xl text-primary-dark-pink my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Contributhon <span className="lg:text-2xl md:text-xl text-lg">(Cohort 1)</span></h4>
               <p className="text-[#222222] leading-6 md:text-lg">An open source Boot Camp focused on building more women OSS contributors & pairing selected participants with global open source organizations to work...</p>
               <div className="my-8 text-white">
-                <Link to="/programs/contributhon" className="btn shecode_button">See More </Link>
+                <Link to={paths.contribution} className="btn shecode_button">See More </Link>
               </div>
             </div>
           </section>
@@ -136,7 +136,7 @@ const Programs = () => {
                 <h4 className="tracking-[1.44px] font-bold lg:text-5xl md:text-3xl text-xl text-primary-dark-pink my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>SCA Cloud School Bootcamp <span className="lg:text-2xl md:text-xl text-lg">(2)</span></h4>
                 <p className="text-[#222222] leading-6 md:text-lg">Cloud school bootcamp is a 3 month intensive program for ladies who are interested in starting out careers in the cloud engineering field.The program...</p>
                 <div className="my-8 text-white">
-                  <Link to="/programs/sca-cloud-school-bootcamp" className="btn shecode_button">See More </Link>
+                  <Link to={paths.bootcamp} className="btn shecode_button">See More </Link>
                 </div>
               </div>
             </section>
@@ -168,13 +168,13 @@ const Programs = () => {
 
             <section className="grid md:grid-cols-2 gap-10 justify-items-stretch items-center md:w-11/12 mx-auto my-10">
               <div className="justify-self-center">
-                <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633172406/bw0jnfe6u9gbe5r0ksmx.png" alt="SCA Cloud School Bootcamp" className="md:h-[300px] object-center float-left" />
+                <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633705920/v8w8op4x2k1qdjctk9bz.jpg" alt="Junior &amp; High School Programs" className="md:h-[300px] object-center float-left" />
               </div>
               <div>
                 <h4 className="tracking-[1.44px] font-bold lg:text-5xl md:text-3xl text-xl text-primary-dark-pink my-4 before:my-2 before:block before:w-2/12 before:border-b-[3px] before:border-primary-main-pink" style={{ lineHeight: 1.1 }}>Summer Code Camp - Class of 2020 <span className="lg:text-2xl md:text-xl text-lg">(Class of 2020)</span></h4>
                 <p className="text-[#222222] leading-6 md:text-lg">A 4-week intensive bootcamp targeted at junior &amp; high school girls to educate them on tech and take them through intensive learning in different track...</p>
                 <div className="my-8 text-white">
-                  <Link to="/programs/summer-code-camp-class-of-2020" className="btn shecode_button">See More </Link>
+                  <Link to={paths.codecamp} className="btn shecode_button">See More </Link>
                 </div>
               </div>
             </section>
