@@ -177,3 +177,18 @@ export const team = [
     role: "General Counsel"
   }
 ]
+
+export const summerGallery = [
+  {
+    url: "https://res.cloudinary.com/she-code-africa/image/upload/v1633706128/yitmdxqq74gi2nzemeoc.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/she-code-africa/image/upload/v1633706128/yitmdxqq74gi2nzemeoc.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/she-code-africa/image/upload/v1633706128/yitmdxqq74gi2nzemeoc.jpg",
+  },
+  {
+    url: "https://res.cloudinary.com/she-code-africa/image/upload/v1633706128/yitmdxqq74gi2nzemeoc.jpg",
+  }
+]

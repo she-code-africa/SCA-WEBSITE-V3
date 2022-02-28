@@ -1,7 +1,9 @@
 import React from "react";
 import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
-import { paths } from "../../utils"
+import { paths } from "../../utils";
+import {GalleryCarousel} from "../../components/Carousel";
+import { summerGallery } from "../../utils";
 
 const CodeCamp = () => {
   return (
@@ -23,6 +25,16 @@ const CodeCamp = () => {
             <span class="text-primary-dark-pink text-xl font-semibold block my-10">Sun, 06 Sep, 2020 - Thu, 01 Oct, 2020</span>
           </div>
           <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633705920/v8w8op4x2k1qdjctk9bz.jpg" alt="Junior &amp; High School Programs" className="md:h-[400px] object-center" />
+        </section>
+
+        <section className="contaier mx-auto px-4">
+            <div class="row event_topic row_padding">
+                <div class="mx-auto max-w-4xl mb-8">
+                    <h4 class="program_topic1">Gallery</h4>
+                </div>
+            </div>
+            <div></div>
+            <GalleryCarousel gallery={summerGallery}/>
         </section>
         <div className="text-center my-20">
           <a target="_blank" href="https://medium.com/shecodeafrica/she-code-africa-summer-code-camp-2020-recap-bb653d268b63" class="btn shecode_button" rel="noreferrer">Read full Program Recap </a>
