@@ -149,31 +149,37 @@ export const team = [
   {
     name: "Ada Nduka Oyom",
     src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600811315/vqnzyumcxrqqyidh5fb1.jpg",
-    role: "Founder"
+    role: "Founder",
+    details: "As the founder, Ada oversees the teams in creating several technical learning & career opportunities for members as well as growing the community’s presence to chapters across Africa. She has been recognised as one of Ytech 100 honourees by the Future awards Africa 2019, Top 50 TechWomen of Lagos by TechCabal & most recently awarded as the role model award winner in the Booking.com Tech Playmaker awards 2020"
   },
   {
     name: "Omotola Eunice Omotayo",
     src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600961093/qfcunfgns8fuzobm0hve.png",
-    role: "Lead, Community Manager"
+    role: "Lead, Community Manager",
+    details: "As the lead for the Community Management team, Omotola brings in her expertise in overseeing the growth of community members through SCA programs and intiatives using educative contents and communication. She helps manages several operations alongside with the cross functional SCA Core team and builds a sense of community. She ensures her team continually serves as the tone, voice and human element behind the SCA brand."
   },
   {
     name: "Zainab Daodu",
     src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600964119/mamibxraminn366jsn13.jpg",
-    role: "Open Source Programs Manager"
+    role: "Open Source Programs Manager",
+    details: "Zainab's role at She Code Africa involves championing and initiating Open Source focused community engagements, programs, initiatives and projects in partnership with Open Source Community Africa (OSCA). Her goal is to drive the movement of women in Africa who are actively involved in Open Source, thereby promoting a more diverse, inclusive and innovative culture within the African open source ecosystem."
   },
   {
     name: "Temilola Kutelu",
     src: "https://res.cloudinary.com/she-code-africa/image/upload/v1612533512/ljkesmjtj6cx9v9up3vk.jpg",
-    role: "Engineering Team Lead"
+    role: "Engineering Team Lead",
+    details: "Temilola is a Software Engineer, Software Solutions Specialist & Business workflow process automation specialist. She leads the Engineering team at She Code Africa in building out the several internal and community facing technical projects for SCA including the organisation's website which has exposed her to building with new and diverse tools including Keystone JS, a node CMS framework-very interesting addition to her skill set."
   },
   {
     name: "Eniola Ipoola",
     src: "https://res.cloudinary.com/she-code-africa/image/upload/v1600969327/klnvcwc5dgg8n7oarymh.png",
-    role: "Lead, Technical Facilitator"
+    role: "Lead, Technical Facilitator",
+    details: "Eniola leads the team of technical facilitators at She Code Africa, Asides her volunteer role at She Code Africa, She also works as an Android Developer at Law pavilion in Lagos, Nigeria."
   },
   {
     name: "Goziem Onugha",
     src: "https://res.cloudinary.com/she-code-africa/image/upload/v1612444028/r1sawki0hhxqz8wzhsom.jpg",
-    role: "General Counsel"
+    role: "General Counsel",
+    details: "Goziem is a Nigerian trained lawyer with interests in community development, especially as it relates to women. She earned her LL.B from Imo State University and B.L from the Nigerian Law School, Lagos. She is an executive at the Abuja Chapter of the Nigerian Bar Association. Her passion for African development motivates her to partake in programmes driven towards inspiring positive changes in Africa, hence, her involvement in a lot of development"
   }
 ]

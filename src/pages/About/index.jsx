@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import { ImgCard } from "../../components/Cards";
 import {team} from "../../utils";
@@ -88,7 +89,7 @@ const About = () => {
                   })
                 }
                 <div className="text-center sm:col-span-2 lg:col-start-1 lg:col-span-3">
-                  <a className="btn shecode_button push2" href="/team"> VIEW ALL </a>
+                  <Link className="btn shecode_button push2" to="/team"> VIEW ALL </Link>
                 </div>
               </div>
             </section>
