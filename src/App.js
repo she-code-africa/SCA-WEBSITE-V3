@@ -20,6 +20,7 @@ import Contribution from './pages/Programs/Contributhon';
 import CloudBootcamp from './pages/Programs/CloudBootcamp';
 import CodeCamp from './pages/Programs/CodeCamp';
 import Terms from './pages/Terms'
+import Privacy from './pages/Privacy';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function Routes (params) {
       <Route path={paths.bootcamp} element={<CloudBootcamp />} />
       <Route path={paths.codecamp} element={<CodeCamp />} />
       <Route path={paths.terms} element={<Terms />} />
+      <Route path={paths.privacy} element={<Privacy />} />
     </Switch>
   )
 }
