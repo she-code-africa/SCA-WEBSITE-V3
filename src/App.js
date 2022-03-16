@@ -14,13 +14,14 @@ import Events from './pages/Events';
 import Jobs from './pages/Jobs';
 import Programs from './pages/Programs';
 import Footer from './components/Footer';
-import Team from './pages/Team'
+import Team from './pages/Team';
 import Contribution1 from './pages/Programs/Contributhon1';
 import Contribution from './pages/Programs/Contributhon';
 import CloudBootcamp from './pages/Programs/CloudBootcamp';
 import CodeCamp from './pages/Programs/CodeCamp';
-import Terms from './pages/Terms'
+import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import CodeOfConduct from './pages/CoC';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function Routes (params) {
       <Route path={paths.codecamp} element={<CodeCamp />} />
       <Route path={paths.terms} element={<Terms />} />
       <Route path={paths.privacy} element={<Privacy />} />
+      <Route path={paths.codeOfConduct} element={<CodeOfConduct />} />
     </Switch>
   )
 }
