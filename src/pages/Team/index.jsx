@@ -9,7 +9,6 @@ const Team = () => {
   const [role, setRole] = useState("");
   const [details, setDetails] = useState("")
   const modalDialog = (name, src, role, details) => {
-    console.log("hi")
     setOpenModal(true);
     setRole(role);
     setSrc(src);

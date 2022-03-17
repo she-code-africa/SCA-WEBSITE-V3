@@ -14,7 +14,11 @@ export const paths = {
   contribution1: '/programs/contributhon-1',
   contribution: '/programs/contributhon',
   bootcamp: '/programs/sca-cloud-school-bootcamp',
-  codecamp: '/summer-code-camp-class-of-2020'
+  codecamp: '/summer-code-camp-class-of-2020',
+  terms: '/terms',
+  faq: '/faq',
+  codeOfConduct: '/code-of-conduct',
+  privacy: '/privacy'
 }
 
 export const jobs = [

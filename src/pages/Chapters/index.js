@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Header from "../../components/Header";
-import { CardBox } from "../../components/Cards";
+// import { CardBox } from "../../components/Cards";
 import chaptersBanner from "../../images/chapters.png"
 import searchIcon from "../../images/search.svg"
+
 const city_chapters = [
   {
     url: "https://linktr.ee/SCAbenin",
@@ -30,6 +31,7 @@ const city_chapters = [
     location: "Benin, Nigeria"
   }
 ]
+
 const Chapters = () => {
 
   const [activeTab, setActiveTab] = useState("city")
