@@ -22,6 +22,7 @@ import CodeCamp from './pages/Programs/CodeCamp';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import CodeOfConduct from './pages/CoC';
+import FAQ from './pages/FAQ';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function Routes (params) {
       <Route path={paths.terms} element={<Terms />} />
       <Route path={paths.privacy} element={<Privacy />} />
       <Route path={paths.codeOfConduct} element={<CodeOfConduct />} />
+      <Route path={paths.faq} element={<FAQ />} />
     </Switch>
   )
 }

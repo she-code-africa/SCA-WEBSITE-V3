@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const paths = {
   home: '/',
   about: '/about',
@@ -201,4 +203,43 @@ export const summerGallery = [
   {
     url: "https://res.cloudinary.com/she-code-africa/image/upload/v1633706128/yitmdxqq74gi2nzemeoc.jpg",
   }
+]
+
+
+export const communityFaq = [
+  {
+    heading: 'What is She Code Africa?',
+    content: 'She Code Africa is a community that is focused on celebrating and technically empowering young girls and women in technology across Africa. Our community consists of over 10000 members with active members across Nigeria, Ghana, Kenya, Zimbabwe, Uganda, South Africa, Cameroon, Cote D\'Ivoire, Rwanda, Liberia and counting'
+  },
+  {
+    heading: 'Is She Code Africa a not-for-profit organisation?',
+    content: 'Yes, She Code Africa is a not-for-profit organisation. We do not earn profits for ourselves. All of the money earned by or donated to the community is used in pursuing the organization\'s objectives and keeping it running.'
+  },
+  {
+    heading: 'What is She Code Africa Mission?',
+    content: 'Our mission is to build a community that embodies Technical growth, networking, mentoring and visibility among all levels and career roles in Technology.'
+  },
+  {
+    heading: 'Does She Code Africa have a city chapter or campus chapter near me?',
+    content: 'She Code Africa currently has several chapters across several African countries, visit here to find a chapter in your locality.'
+  },
+  {
+    heading: 'Where can I find out more about your organization?',
+    content: <>
+      Check out our <Link to="/about" style={{ color: '#6D033F' }}>About Us</Link> page.
+    </>
+  },
+  {
+    heading: 'Is SheCodeAfrica present on all social media platforms?',
+    content: <>
+      
+        Yes we are. You can find us on 
+        <a href="https://www.instagram.com/shecodeafrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Instagram,</a>
+        <a href="https://twitter.com/SheCodeAfrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Twitter,</a>
+        <a href="https://www.linkedin.com/company/she-code-africa" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> LinkedIn,</a>
+        <a href="https://facebook.com/SheCodeAfrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Facebook,</a>
+        <a href="https://medium.com/shecodeafrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Medium</a>.
+     
+    </>
+  },
 ]
