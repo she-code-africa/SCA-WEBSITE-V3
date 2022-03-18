@@ -45,7 +45,7 @@ const Chapters = () => {
             <h2 id="chapterHeadings" className="text-3xl font-bold my-4">She Code Africa <br /> Chapters</h2>
             <p className="mt-5 tracking-[0.76px] leading-[25px] text-lg">You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem</p>
 
-            <div class="my-7 flex flex-col md:block">
+            <div className="my-7 flex flex-col md:block">
               <a href="#chapter-tab" className="btn sca-btn pink-btn mr-6"> JOIN A CHAPTER</a>
                 {/* <a href="https://docs.google.com/forms/d/e/1FAIpQLSduv_lZHaqaBIbmQrN4heqk99uJbZAikiE4DTmOePXM0v8oWQ/viewform" className="btn sca-btn trans-btn" target="_blank" rel="noreferrer">LEAD A CHAPTER</a> */}
                 <a className="btn sca-btn trans-btn" href="/chapters/form">LEAD A CHAPTER</a>
@@ -64,7 +64,7 @@ const Chapters = () => {
 
         <section aria-labelledby="chapterTabs" className="my-4 md:w-9/12 w-11/12 mx-auto" role="tab">
           <header>
-            <h3 id="chapterTabs" class="__shecode_topic text-black text-3xl my-5">Explore by Type</h3>
+            <h3 id="chapterTabs" className="__shecode_topic text-black text-3xl my-5">Explore by Type</h3>
           </header>
           <div className="border-b-2 border-[#f3f3f3]">
             <ul className="grid gap-10 grid-cols-2 text-center text-[#1A1A1A] text-[13px] font-bold lg:w-3/12 mx-auto">

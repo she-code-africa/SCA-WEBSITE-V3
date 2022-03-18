@@ -12,10 +12,10 @@ const CodeOfConduct = () => {
           <small>She Code Africa as a community is made up of both professionals and volunteers from all over the world, working on every aspect of the mission - including mentorship, technical, and networking.</small>
         </div>
         <div className="w-11/12 mx-auto my-10">
-          <h3 class="text-primary-color font-weight-bolder text-2xl">About SCA</h3>
-          <div class="code-of-conduct">
+          <h3 className="text-primary-color font-weight-bolder text-2xl">About SCA</h3>
+          <div className="code-of-conduct">
             <p>
-              <span class="font-weight-bolder">She Code Africa (SCA)</span> is dedicated to providing a harassment-free
+              <span className="font-weight-bolder">She Code Africa (SCA)</span> is dedicated to providing a harassment-free
               experience
               for
               everyone, regardless of gender, gender identity and expression, sexual orientation, disability,
@@ -33,7 +33,7 @@ const CodeOfConduct = () => {
             </p>
             
             If you believe someone is violating the code of conduct, we ask that you report it by emailing
-            <strong class="font-weight-bolder">info@shecodeafrica.org</strong>. For more details please see our Reporting
+            <strong className="font-weight-bolder">info@shecodeafrica.org</strong>. For more details please see our Reporting
             Guidelines .
             <br />
 
@@ -43,7 +43,7 @@ const CodeOfConduct = () => {
                 <br />
                   3. Be careful in the words that you choose. We are a community of professionals, and we conduct ourselves
                   professionally. Be kind to others. Do not insult or put down other community members.
-                  <h3 class="text-primary-color font-weight-bolder text-2xl my-2">Harassment includes:</h3>
+                  <h3 className="text-primary-color font-weight-bolder text-2xl my-2">Harassment includes:</h3>
                   <ul className="pl-10">
                     <li>Offensive comments related to gender, gender identity and expression, sexual orientation, disability,
                       mental illness, neuro(a)typicality, physical appearance, body size, age, race, or religion.</li>
@@ -99,7 +99,7 @@ const CodeOfConduct = () => {
                     <li>Keeping an open and curious mind without making assumptions about others</li>
                     <li>Attempting collaboration before conflict . Gracefully accepting constructive criticism</li>
                   </ul>
-                  <h3 class="text-primary-color font-weight-bolder text-2xl my-2">Enforcement:</h3>
+                  <h3 className="text-primary-color font-weight-bolder text-2xl my-2">Enforcement:</h3>
                   <ul  className="pl-10">
                     <li>Members and participating guests asked to stop any harassing behavior are
                       expected to comply immediately.</li>
@@ -114,7 +114,7 @@ const CodeOfConduct = () => {
                     <li>We expect participants to respect the Code of Conduct in all She Code Africa communities and at all
                       She Code Africa or She Code Africa-related events</li>
                   </ul>
-                  <h3 class="text-primary-color font-weight-bolder text-2xl my-2">Reporting Guidelines</h3>
+                  <h3 className="text-primary-color font-weight-bolder text-2xl my-2">Reporting Guidelines</h3>
                   <p>If you believe someone is violating the code of conduct we ask that you report it to She Code Africa by
                     emailing
                     info@shecodeafrica.org, Contacting a Core Team member privately on via email, by text or phone call, or in
@@ -126,7 +126,7 @@ const CodeOfConduct = () => {
                     of all
                     victims and reporters will remain confidential unless those individuals instruct us otherwise
                   </p>
-                  <h3 class="text-primary-color font-weight-bolder text-2xl my-2">What happens after you file a report?</h3>
+                  <h3 className="text-primary-color font-weight-bolder text-2xl my-2">What happens after you file a report?</h3>
                   <p>
                     You will receive an email from the She Code Africa acknowledging receipt immediately. We promise to
                     acknowledge
