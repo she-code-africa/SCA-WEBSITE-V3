@@ -15,7 +15,7 @@ const Hero = () => {
                             across Africa
                             </h4>
                         </div>
-                        <a href="https://bit.ly/joinshecodeafrica" class="shecode_button inline-block">JOIN US</a>
+                        <a href="https://bit.ly/joinshecodeafrica" className="shecode_button inline-block">JOIN US</a>
                     </div>
                 </div>
                 <div className="sm:w-1/2 sm:float-left">
