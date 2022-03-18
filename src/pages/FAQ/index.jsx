@@ -4,11 +4,15 @@ import Header from "../../components/Header";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-import { communityFaq } from '../../utils'
+import { communityFaq, partnershipFaq, membershipFaq, programsFaq, jobsFaq } from '../../utils'
 
 const FAQ = () => {
 
-  const [activeFaq, setActiveFaq] = useState(null)
+  const [communityFaqS, setCommunityFaq] = useState(0)
+  const [partnershipFaqS, setPartnershipFaq] = useState(0)
+  const [membershipFaqS, setMembershipFaqS] = useState(0)
+  const [programsFaqS, setProgramsFaq] = useState(0)
+  const [jobFaqS, setJobFaq] = useState(0)
 
   return (
     <>
@@ -20,12 +24,51 @@ const FAQ = () => {
         </div>
         <div className="w-11/12 mx-auto my-10">
           <h4 className="text-primary-color font-weight-bolder text-2xl">Community FAQs</h4>
-
           <div>
             {communityFaq.map(({heading, content}, index) => (
-              <AccordionComponent key={heading} heading={heading} id={index} active={activeFaq} setIsActive={setActiveFaq}>
+              <AccordionComponent key={heading} heading={heading} id={index} active={communityFaqS} setIsActive={setCommunityFaq}>
                 {content}
             </AccordionComponent>
+            ))}
+          </div>
+        </div>
+        <div className="w-11/12 mx-auto my-10">
+          <h4 className="text-primary-color font-weight-bolder text-2xl">Partnership / Sponsorship FAQs</h4>
+          <div>
+            {partnershipFaq.map(({ heading, content }, index) => (
+              <AccordionComponent key={heading} heading={heading} id={index} active={partnershipFaqS} setIsActive={setPartnershipFaq}>
+                {content}
+              </AccordionComponent>
+            ))}
+          </div>
+        </div>
+        <div className="w-11/12 mx-auto my-10">
+          <h4 className="text-primary-color font-weight-bolder text-2xl">Membership FAQs</h4>
+          <div>
+            {membershipFaq.map(({ heading, content }, index) => (
+              <AccordionComponent key={heading} heading={heading} id={index} active={membershipFaqS} setIsActive={setMembershipFaqS}>
+                {content}
+              </AccordionComponent>
+            ))}
+          </div>
+        </div>
+        <div className="w-11/12 mx-auto my-10">
+          <h4 className="text-primary-color font-weight-bolder text-2xl">Programs and Events FAQs</h4>
+          <div>
+            {programsFaq.map(({ heading, content }, index) => (
+              <AccordionComponent key={heading} heading={heading} id={index} active={programsFaqS} setIsActive={setProgramsFaq}>
+                {content}
+              </AccordionComponent>
+            ))}
+          </div>
+        </div>
+        <div className="w-11/12 mx-auto my-10">
+          <h4 className="text-primary-color font-weight-bolder text-2xl">Jobs FAQs</h4>
+          <div>
+            {jobsFaq.map(({ heading, content }, index) => (
+              <AccordionComponent key={heading} heading={heading} id={index} active={jobFaqS} setIsActive={setJobFaq}>
+                {content}
+              </AccordionComponent>
             ))}
           </div>
         </div>
