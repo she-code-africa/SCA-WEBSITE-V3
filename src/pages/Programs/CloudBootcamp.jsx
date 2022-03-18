@@ -16,11 +16,11 @@ const CloudBootcamp = () => {
         </div>
         <section className="md:flex">
           <div className="mr-32">
-            <p class="page_title">SCA Cloud School Bootcamp</p>
-            <p class="page_subtitle">
+            <p className="page_title">SCA Cloud School Bootcamp</p>
+            <p className="page_subtitle">
               Cloud school bootcamp is a 3 month intensive program for ladies who are interested in starting out careers in the cloud engineering field. The program adopts a cohort-style mentor to Mentee pairing method.
             </p>
-            <span class="text-primary-dark-pink text-xl font-semibold block my-10">Sun, 08 Aug, 2021 - Sun, 07 Nov, 2021</span>
+            <span className="text-primary-dark-pink text-xl font-semibold block my-10">Sun, 08 Aug, 2021 - Sun, 07 Nov, 2021</span>
           </div>
           <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633705920/v8w8op4x2k1qdjctk9bz.jpg" alt="SCA Cloud School Bootcamp" className="md:h-[400px] object-center" />
         </section>
