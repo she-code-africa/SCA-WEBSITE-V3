@@ -21,8 +21,8 @@ const Events = () => {
           </div>
         </section>
         <section className="py-10 text-center lg:w-6/12 md:w-8/12 mx-auto mb-16">
-          <h4 class="text-primary-dark-pink text-5xl font-bold py-5">Upcoming Events</h4>
-          <p class=" text-xl leading-8">View our upcoming programs and discover events curated to match your technical passion and skills.</p>
+          <h4 className="text-primary-dark-pink text-5xl font-bold py-5">Upcoming Events</h4>
+          <p className=" text-xl leading-8">View our upcoming programs and discover events curated to match your technical passion and skills.</p>
         </section>
         <section className="grid md:grid-cols-2 gap-10 justify-items-stretch items-center md:w-10/12 mx-auto">
           <div>
@@ -44,8 +44,8 @@ const Events = () => {
         </section>
 
         <section className="py-10 text-center lg:w-6/12 md:w-8/12 mx-auto mb-16">
-          <h4 class="text-primary-dark-pink text-5xl font-bold py-5">Past Events</h4>
-          <p class=" text-xl leading-8">View some of our past programs and the amazing moments.</p>
+          <h4 className="text-primary-dark-pink text-5xl font-bold py-5">Past Events</h4>
+          <p className=" text-xl leading-8">View some of our past programs and the amazing moments.</p>
         </section>
 
         <section className="grid md:grid-cols-2 gap-10 justify-items-stretch items-center md:w-10/12 mx-auto my-10">
