@@ -74,7 +74,7 @@ return <div className="" id="testimonials">
     <div className="">
       <Slider {...settings}>
         {
-          testimonials.map(({img, testimonial, name, index})=>{
+          testimonials.map(({img, testimonial, name}, index)=>{
             return <div className="testimonial_box" key={index}>
                 <img src={img} alt="name"/>
                 <div>

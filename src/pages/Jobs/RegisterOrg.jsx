@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
-import logo from '../../images/she-code-africa-logo.svg'
-import close from '../../images/cancel.svg'
+// import logo from '../../images/she-code-africa-logo.svg'
+// import close from '../../images/cancel.svg'
 
 const RegisterOrg = () => {
   return (

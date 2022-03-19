@@ -25,8 +25,8 @@ const Privacy = () => {
             </p>
           </div>
 
-          <div class="donation-faq">
-            <h3 class="text-primary-color font-weight-bolder text-2xl"><span class="sub_ol">1.</span> INFORMATION WE MAY COLLECT FROM YOU:</h3>
+          <div className="donation-faq">
+            <h3 className="text-primary-color font-weight-bolder text-2xl"><span className="sub_ol">1.</span> INFORMATION WE MAY COLLECT FROM YOU:</h3>
             <p>We may collect and process the following data about you:</p>
             <ol className="list-decimal pl-10">
               <li>
@@ -62,15 +62,15 @@ const Privacy = () => {
             </ol>
           </div>
 
-          <div class="donation-faq">
-            <h3 class="text-primary-color font-weight-bolder text-2xl"><span class="sub_ol">2.</span> IP ADDRESSES:</h3>
+          <div className="donation-faq">
+            <h3 className="text-primary-color font-weight-bolder text-2xl"><span className="sub_ol">2.</span> IP ADDRESSES:</h3>
             <p>We may collect information about your computer, including your IP address, operating system and browser type, for system administration and to report aggregate information to our advertisers. This is statistical data about our users' browsing
               actions and patterns, and does not identify any individual.
             </p>
           </div>
 
-          <div class="donation-faq">
-            <h3 class="text-primary-color font-weight-bolder text-2xl"><span class="sub_ol">3.</span>WHERE WE STORE YOUR PERSONAL DATA:
+          <div className="donation-faq">
+            <h3 className="text-primary-color font-weight-bolder text-2xl"><span className="sub_ol">3.</span>WHERE WE STORE YOUR PERSONAL DATA:
 
             </h3>
             <p>In view of our coverage, the data that we collect from you may not be stored in just a country. It could be stored in more than one country of Africa. It may not be processed by staff of She Code Africa operating only in Africa. By submitting
@@ -85,8 +85,8 @@ const Privacy = () => {
             </p>
           </div>
 
-          <div class="donation-faq">
-            <h3 class="text-primary-color font-weight-bolder text-2xl"><span class="sub_ol">4.</span>USES MADE OF THE INFORMATION:
+          <div className="donation-faq">
+            <h3 className="text-primary-color font-weight-bolder text-2xl"><span className="sub_ol">4.</span>USES MADE OF THE INFORMATION:
             </h3>
             <p>We use information held about you in the following ways:</p>
             <ol className="list-decimal pl-10">
@@ -137,9 +137,9 @@ const Privacy = () => {
             </ol>
           </div>
 
-          <div class="donation-faq">
-            <h3 class="text-primary-color font-weight-bolder text-2xl">
-              <span class="sub_ol">5.</span>DISCLOSURE OF YOUR INFORMATION:
+          <div className="donation-faq">
+            <h3 className="text-primary-color font-weight-bolder text-2xl">
+              <span className="sub_ol">5.</span>DISCLOSURE OF YOUR INFORMATION:
             </h3>
             <p>We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed.</p>
             <p>We may disclose your personal information to any member of our community.
@@ -157,9 +157,9 @@ const Privacy = () => {
             </ol>
           </div>
 
-          <div class="donation-faq">
-            <h3 class="text-primary-color font-weight-bolder text-2xl">
-              <span class="sub_ol">6.</span>ACCESS TO INFORMATION:
+          <div className="donation-faq">
+            <h3 className="text-primary-color font-weight-bolder text-2xl">
+              <span className="sub_ol">6.</span>ACCESS TO INFORMATION:
             </h3>
 
             <p>You have the right to:</p>
@@ -192,9 +192,9 @@ const Privacy = () => {
             </p>
           </div>
 
-          <div class="donation-faq">
-            <h3 class="text-primary-color font-weight-bolder text-2xl">
-              <span class="sub_ol">6.</span>CHANGES TO OUR PRIVACY POLICY:
+          <div className="donation-faq">
+            <h3 className="text-primary-color font-weight-bolder text-2xl">
+              <span className="sub_ol">6.</span>CHANGES TO OUR PRIVACY POLICY:
             </h3>
             <p>
               Any changes we may make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by e-mail.

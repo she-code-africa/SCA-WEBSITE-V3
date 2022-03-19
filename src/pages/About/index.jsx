@@ -15,7 +15,7 @@ const About = () => {
               <div className="-mx-4 w-full">
                   <div className="md:w-6/12 md:inline-block">
                     <p className="event_title">About Us</p>
-                    <p class="about_subtitle">We are a non-profit organization <br/> focused on celebrating and <br/><span class="__shecodegirls">empowering
+                    <p className="about_subtitle">We are a non-profit organization <br/> focused on celebrating and <br/><span className="__shecodegirls">empowering
                         young Girls and Women</span><br/> in Technology across Africa.
                     </p>
                   </div>
@@ -43,7 +43,7 @@ const About = () => {
             </section>
             <section className="members_benefit">
                 <div>
-                  <h4 class="event_topic1 row_padding">Members Benefits</h4>
+                  <h4 className="event_topic1 row_padding">Members Benefits</h4>
                 </div>
                 <div>
                   <Section 
@@ -78,8 +78,8 @@ const About = () => {
             </section>
             <section>
               <div className="mx-auto max-w-4xl">
-                <h4 class="about_team">Our Awesome Team</h4>
-                <p class="about_topic2 text-center">Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working.
+                <h4 className="about_team">Our Awesome Team</h4>
+                <p className="about_topic2 text-center">Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working.
                 </p>
               </div>
               <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
