@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const paths = {
   home: '/',
   about: '/about',
@@ -201,4 +203,143 @@ export const summerGallery = [
   {
     url: "https://res.cloudinary.com/she-code-africa/image/upload/v1633706128/yitmdxqq74gi2nzemeoc.jpg",
   }
+]
+
+
+export const communityFaq = [
+  {
+    heading: 'What is She Code Africa?',
+    content: 'She Code Africa is a community that is focused on celebrating and technically empowering young girls and women in technology across Africa. Our community consists of over 10000 members with active members across Nigeria, Ghana, Kenya, Zimbabwe, Uganda, South Africa, Cameroon, Cote D\'Ivoire, Rwanda, Liberia and counting'
+  },
+  {
+    heading: 'Is She Code Africa a not-for-profit organisation?',
+    content: 'Yes, She Code Africa is a not-for-profit organisation. We do not earn profits for ourselves. All of the money earned by or donated to the community is used in pursuing the organization\'s objectives and keeping it running.'
+  },
+  {
+    heading: 'What is She Code Africa Mission?',
+    content: 'Our mission is to build a community that embodies Technical growth, networking, mentoring and visibility among all levels and career roles in Technology.'
+  },
+  {
+    heading: 'Does She Code Africa have a city chapter or campus chapter near me?',
+    content: 'She Code Africa currently has several chapters across several African countries, visit here to find a chapter in your locality.'
+  },
+  {
+    heading: 'Where can I find out more about your organization?',
+    content: <>
+      Check out our <Link to={paths.about} style={{ color: '#6D033F' }}>About Us</Link> page.
+    </>
+  },
+  {
+    heading: 'Is SheCodeAfrica present on all social media platforms?',
+    content: <>
+      
+        Yes we are. You can find us on 
+        <a href="https://www.instagram.com/shecodeafrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Instagram,</a>
+        <a href="https://twitter.com/SheCodeAfrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Twitter,</a>
+        <a href="https://www.linkedin.com/company/she-code-africa" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> LinkedIn,</a>
+        <a href="https://facebook.com/SheCodeAfrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Facebook,</a>
+        <a href="https://medium.com/shecodeafrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Medium</a>.
+     
+    </>
+  },
+]
+
+export const partnershipFaq = [
+  {
+    heading: 'I love what your organization does. How can I partner with SCA?',
+    content: <>
+      Visit our <Link to={paths.donate} style={{ color: '#6D033F' }}>partnership page</Link> to find out more about this
+    </>
+  },
+  {
+    heading: 'Why should I partner with She Code Africa?',
+    content: 'Your organization would have the opportunity to reach more African women in tech through our large pool of 10,000+ and growing community members spread across 15+ African countries by any of the following: • Reach more African users virtually through our blog, email newsletter and social media channels.'
+  },
+  {
+    heading: 'How do I contact She Code Africa on sponsoring/partnering?',
+    content: <>
+      You can reach us via <a href="mailto:info@shecodeafrica.org" style={{ color: '#6D033F' }}>info@shecodeafrica.org</a>
+    </>
+  }
+]
+
+export const membershipFaq = [
+  {
+    heading: 'Who is an SCA member?',
+    content: 'Members of She Code Africa are part of a global community of over 10,000+ young girls and women professionals in tech dedicated to supporting one another in their career goals.'
+  },
+  {
+    heading: 'Who are our members?',
+    content: <>
+    <ul className="list-disc">
+        <li>Developers</li>
+        <li>Designers</li>
+        <li>Data Scientists.</li>
+        <li>Founders</li>
+        <li>Product Managers/Program Managers</li>
+         <li>Technical Writers and several Others</li>
+    </ul>
+    </>
+  },
+  {
+    heading: 'Why become a member of She Code Africa?',
+    content: 'Members of She Code Africa get access to all of our initiatives and programs that we offer to help achieve their respective career goals in each industry.'
+  },
+  {
+    heading: 'How do I become a member of She Code Africa?',
+    content: 'To be a member of She Code Africa, simply sign up to join our platform here . You can also become a member by attending a local SCA chapter event close to you.'
+  },
+  {
+    heading: 'What are the benefits of membership of She Code Africa?',
+    content: <>
+      <ul className="list-disc">
+        <li>Full access to coding &amp; tech resources -Tutorials, articles, and videos.</li>
+        <li>Access to job opportunities and promotions to global conferences and tech events.</li>
+        <li>The opportunity to network and connect with like minds in the same career field.</li>
+      </ul>
+    </>
+  },
+  {
+    heading: 'How can I get involved in She Code Africa?',
+    content: <>
+      You can join any She Code Africa city chapter or campus chapter nearest you. Each local community has regular events for women-in-tech to further enhance their technical skills and leadership skills. You can also follow us on
+      <a href="https://www.instagram.com/shecodeafrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Instagram,</a>
+      <a href="https://twitter.com/SheCodeAfrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Twitter,</a>
+      <a href="https://www.linkedin.com/company/she-code-africa" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> LinkedIn,</a>
+      <a href="https://facebook.com/SheCodeAfrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Facebook,</a>
+      <a href="https://medium.com/shecodeafrica" target="_blank" style={{ color: '#6D033F' }} rel="noreferrer"> Medium</a>.
+    </>
+  },
+]
+
+export const programsFaq = [
+  {
+    heading: 'Can I attend an She Code Africa conference or event for free?',
+    content: <>
+      Visit our events page to find out more about this Yes, our offline and online events are free. Check our past and present  <Link to={paths.events} style={{ color: '#6D033F' }}>events page</Link> .
+    </>
+  },
+  {
+    heading: 'How can I volunteer to be a mentor on your Mentorship Program?',
+    content: <>
+      You can sign up to be a Mentor /mentee when applications for the next cohort roll out. Visit <Link to={paths.events} style={{ color: '#6D033F' }}> here </Link>to learn more about this program and when applications for a new cohort kicks off.
+    </>
+  },
+]
+
+export const jobsFaq = [
+  {
+    heading: 'Can I post a job to your community?',
+    content: <>
+      Yes you can, kindly visit our <Link to={paths.jobs} style={{ color: '#6D033F' }}> jobs page </Link>to register as an organization and post job opportunities.
+    </>
+  },
+  {
+    heading: 'How can I apply for a job on the Jobs page?',
+    content: 'Click on view more of the particular job you are interested in and you will be redirected to the job’s main page.'
+  },
+  {
+    heading: 'How can I know if a job is still available?',
+    content: 'On the job’s main page you will see active which shows that particular role is still available.'
+  },
 ]
