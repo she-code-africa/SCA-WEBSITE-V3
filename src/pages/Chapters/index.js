@@ -35,6 +35,9 @@ const city_chapters = [
 const Chapters = () => {
 
   const [activeTab, setActiveTab] = useState("city")
+  const [searchValue, setSearchValue] = useState('')
+
+  console.log({ searchValue });
 
   return (
     <>
@@ -55,7 +58,7 @@ const Chapters = () => {
 
         <section className="flex justify-center items-center my-4">
           <div className="lg:w-4/12 md:w-5/12 w-8/12  py-3 px-2 bg-[#F7F7F7] text-xs rounded-md flex items-center">
-            <input className=" bg-transparent block w-11/12 focus:outline-none" type="search" placeholder="Search for a Country e.g Nigeria, Kenya, Ghana" />
+            <input className=" bg-transparent block w-11/12 focus:outline-none" type="search" placeholder="Search for a Country e.g Nigeria, Kenya, Ghana" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
             <img src={searchIcon} alt="search" className="w-3" />
           </div>
         </section>
@@ -75,8 +78,8 @@ const Chapters = () => {
           <div className="animate__animated animate__faster animate__slideInRight">
             {activeTab === "city" && (
               <div className="flex flex-wrap">
-                {city_chapters.map(({url, chapter, location }) =>{
-                  return <div className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
+                {city_chapters.map(({url, chapter, location }, index) =>{
+                  return <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
                     <a href={url} target="_blank" rel="noreferrer">
                       <h6 className="text-black uppercase font-bold">{chapter}</h6>
                       <p className="text-xs py-2">{location}</p>
