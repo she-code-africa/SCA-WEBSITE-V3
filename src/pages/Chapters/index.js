@@ -37,7 +37,6 @@ const Chapters = () => {
   const [activeTab, setActiveTab] = useState("city")
   const [searchValue, setSearchValue] = useState('')
 
-  console.log({ searchValue });
 
   return (
     <>
