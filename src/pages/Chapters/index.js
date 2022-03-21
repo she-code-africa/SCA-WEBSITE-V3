@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 // import { CardBox } from "../../components/Cards";
 import chaptersBanner from "../../images/chapters.png"
@@ -12,30 +12,52 @@ const city_chapters = [
   },
   {
     url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Benin",
-    location: "Benin, Nigeria"
+    chapter: "SCA Lagos",
+    location: "Lagos, Nigeria"
   },
   {
     url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Benin",
-    location: "Benin, Nigeria"
+    chapter: "SCA Abuja",
+    location: "Abuja, Nigeria"
   },
   {
     url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Benin",
-    location: "Benin, Nigeria"
+    chapter: "SCA Kano",
+    location: "Kano, Nigeria"
   },
   {
     url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Benin",
-    location: "Benin, Nigeria"
+    chapter: "SCA Nairobi",
+    location: "Nairobi, Kenya"
   }
 ]
 
 const Chapters = () => {
 
+  const [chapters, setChapters] = useState(city_chapters)
   const [activeTab, setActiveTab] = useState("city")
   const [searchValue, setSearchValue] = useState('')
+  const [searchNotFound, setSearchNotFound] = useState(false)
+
+  useEffect(() => {
+    searchChapters(searchValue)
+  }, [searchValue])
+
+
+  const searchChapters = (value) => {
+    const _value = value.toLowerCase()
+    if (_value) {
+      const getChapters = city_chapters.filter((chapter) => chapter.chapter.toLowerCase().includes(_value) || chapter.location.toLowerCase().includes(_value))
+      if (getChapters.length) {
+        setSearchNotFound(false)
+      } else {
+        setSearchNotFound(true)
+      }
+      setChapters(getChapters)
+    } else {
+      setChapters(city_chapters)
+    }
+  }
 
 
   return (
@@ -77,7 +99,7 @@ const Chapters = () => {
           <div className="animate__animated animate__faster animate__slideInRight">
             {activeTab === "city" && (
               <div className="flex flex-wrap">
-                {city_chapters.map(({url, chapter, location }, index) =>{
+                {chapters.map(({url, chapter, location }, index) =>{
                   return <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
                     <a href={url} target="_blank" rel="noreferrer">
                       <h6 className="text-black uppercase font-bold">{chapter}</h6>
@@ -91,8 +113,8 @@ const Chapters = () => {
           <div className="animate__animated animate__faster animate__slideInLeft">
             {activeTab === "campus" && (
               <div className="flex flex-wrap">
-                {city_chapters.map(({url, chapter, location }) =>{
-                  return <div className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
+                {chapters.map(({url, chapter, location }, index) =>{
+                  return <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
                     <a href={url} target="_blank" rel="noreferrer">
                       <h6 className="text-black uppercase font-bold">{chapter} campus</h6>
                       <p className="text-xs py-2">{location}</p>
@@ -102,6 +124,9 @@ const Chapters = () => {
               </div>
             )}
           </div>
+          {searchNotFound ? 
+            <p className="text-center py-5">City or campus not found</p>
+          : ''}
         </section>
 
 
