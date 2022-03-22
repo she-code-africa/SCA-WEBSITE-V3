@@ -98,7 +98,7 @@ const Chapters = () => {
           </div>
           <div className="animate__animated animate__faster animate__slideInRight">
             {activeTab === "city" && (
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap justify-center items-center">
                 {chapters.map(({url, chapter, location }, index) =>{
                   return <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
                     <a href={url} target="_blank" rel="noreferrer">
@@ -112,7 +112,7 @@ const Chapters = () => {
           </div>
           <div className="animate__animated animate__faster animate__slideInLeft">
             {activeTab === "campus" && (
-              <div className="flex flex-wrap">
+              <div className="flex flex-wrap justify-center items-center">
                 {chapters.map(({url, chapter, location }, index) =>{
                   return <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
                     <a href={url} target="_blank" rel="noreferrer">
