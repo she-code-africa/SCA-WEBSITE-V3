@@ -883,6 +883,9 @@ li.__shecodelink.active {
 	.prompt-body {
 		margin-top: 52px;
 	}
+	.modal-content {
+		box-shadow: 0 5px 15px rgb(0 0 0 / 50%);
+	}
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.section-whitespace-top {

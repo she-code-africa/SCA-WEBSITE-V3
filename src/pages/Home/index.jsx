@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from 'react'
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import ContactForm from "../../components/Contact";
@@ -6,11 +6,17 @@ import AboutSection from "../../components/AboutSection";
 import Hero from "../../components/Hero";
 import Text from "../../components/Text";
 import {Carousel, TestimonialCarousel} from "../../components/Carousel";
+import PopUpModal from "../../components/PopUpModal"
 import { testimonials, aboutus } from "../../utils"
 
 const Home = () => {
+  const [modal, setModal] = useState(true);
+  const closeModal = () =>{
+    setModal(false)
+  }
   return (
     <>
+    <PopUpModal display={modal} closeModal={closeModal}/>
     <Header page={'home'} />
     <main>
       <Hero/>       
