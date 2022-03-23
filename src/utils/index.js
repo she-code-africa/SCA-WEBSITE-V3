@@ -5,7 +5,7 @@ export const paths = {
   about: '/about',
   team: '/team',
   chapters: '/chapters',
-  donate: '/donate',
+  donate: '/donate-partner',
   events: '/events',
   jobs: '/jobs',
   programs: '/programs',
