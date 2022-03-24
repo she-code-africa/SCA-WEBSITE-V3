@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 // import { CardBox } from "../../components/Cards";
 import chaptersBanner from "../../images/chapters.png"
-import searchIcon from "../../images/search.svg"
+import searchIcon from "../../images/search.svg";
+import Footer from "../../components/Footer";
 
 const city_chapters = [
   {
@@ -128,9 +129,8 @@ const Chapters = () => {
             <p className="text-center py-5">City or campus not found</p>
           : ''}
         </section>
-
-
       </main>
+      <Footer/>
     </>
   )
 }

@@ -13,7 +13,6 @@ import Donate from './pages/Donate';
 import Events from './pages/Events';
 import Jobs from './pages/Jobs';
 import Programs from './pages/Programs';
-import Footer from './components/Footer';
 import Team from './pages/Team';
 import Contribution1 from './pages/Programs/Contributhon1';
 import Contribution from './pages/Programs/Contributhon';
@@ -23,12 +22,12 @@ import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import CodeOfConduct from './pages/CoC';
 import FAQ from './pages/FAQ';
+import PageNotFound from './pages/NotFound';
 
 function App() {
   return (
     <>
       <Routes />
-      <Footer/>
     </>
   );
 }
@@ -54,6 +53,7 @@ function Routes (params) {
       <Route path={paths.privacy} element={<Privacy />} />
       <Route path={paths.codeOfConduct} element={<CodeOfConduct />} />
       <Route path={paths.faq} element={<FAQ />} />
+      <Route path="*" element={<PageNotFound />} />
     </Switch>
   )
 }

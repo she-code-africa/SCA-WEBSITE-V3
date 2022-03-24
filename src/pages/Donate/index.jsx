@@ -1,6 +1,7 @@
 import React from "react";
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 const Donate = () => {
   return (
     <>
@@ -25,6 +26,7 @@ const Donate = () => {
               </DonateCard>
         </section>
       </main>
+      <Footer/>
     </>
   )
 }

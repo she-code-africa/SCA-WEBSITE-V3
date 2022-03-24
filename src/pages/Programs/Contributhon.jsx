@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
 import { paths } from "../../utils"
+import Footer from "../../components/Footer";
 
 const Contribution = () => {
   return (
@@ -28,6 +29,7 @@ const Contribution = () => {
           <a target="_blank" href="https://bit.ly/contributhonbysca" className="btn shecode_button" rel="noreferrer">Learn More </a>
        </div>
       </main>
+      <Footer/>
     </>
   )
 }

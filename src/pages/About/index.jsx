@@ -5,6 +5,7 @@ import { ImgCard } from "../../components/Cards";
 import {team} from "../../utils";
 import Values from '../../images/our-values.svg';
 import Section from "../../components/Section";
+import Footer from "../../components/Footer";
 const About = () => {
   return (
     <>
@@ -95,6 +96,7 @@ const About = () => {
             </section>
         </div>
       </main>
+      <Footer/>
     </>
   )
 }

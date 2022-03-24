@@ -1,7 +1,9 @@
 import React from "react";
 
 import Header from "../../components/Header"
-import event1 from '../../images/event_image.png'
+import event1 from '../../images/event_image.png';
+
+import Footer from "../../components/Footer";
 const Events = () => {
   return (
     <>
@@ -125,6 +127,7 @@ const Events = () => {
         </section>
 
       </main>
+      <Footer/>
     </>
   )
 }

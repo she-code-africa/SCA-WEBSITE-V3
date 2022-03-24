@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { paths } from "../../utils";
 import {GalleryCarousel} from "../../components/Carousel";
 import { summerGallery } from "../../utils";
-
+import Footer from "../../components/Footer";
 const CodeCamp = () => {
   return (
     <>
@@ -40,6 +40,7 @@ const CodeCamp = () => {
           <a target="_blank" href="https://medium.com/shecodeafrica/she-code-africa-summer-code-camp-2020-recap-bb653d268b63" className="btn shecode_button" rel="noreferrer">Read full Program Recap </a>
         </div>
       </main>
+      <Footer/>
     </>
   )
 }

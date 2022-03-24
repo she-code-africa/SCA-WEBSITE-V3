@@ -4,7 +4,9 @@ import Header from "../../components/Header";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-import { communityFaq, partnershipFaq, membershipFaq, programsFaq, jobsFaq } from '../../utils'
+import { communityFaq, partnershipFaq, membershipFaq, programsFaq, jobsFaq } from '../../utils';
+
+import Footer from '../../components/Footer';
 
 const FAQ = () => {
 
@@ -73,6 +75,7 @@ const FAQ = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

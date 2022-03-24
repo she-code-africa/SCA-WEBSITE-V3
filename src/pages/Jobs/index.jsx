@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
-import { jobs } from "../../utils"
+import { jobs } from "../../utils";
+import Footer from "../../components/Footer";
 const Jobs = () => {
   return (
     <>
@@ -44,6 +45,7 @@ const Jobs = () => {
           </div>
         </section>
       </main>
+      <Footer/>
     </>
   )
 }
