@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import Header from "../../components/Header";
 import { ImgCard } from "../../components/Cards";
-import {team} from "../../utils"
+import {team} from "../../utils";
+import Footer from "../../components/Footer";
 const Team = () => {
   const [openModal, setOpenModal] = useState(false);
   const [name, setName] = useState("");
@@ -79,6 +80,7 @@ const Team = () => {
           </div>
           </div> : null
         }
+      <Footer/>
     </div>
   )
 }

@@ -4,6 +4,8 @@ import Header from "../../components/Header";
 // import logo from '../../images/she-code-africa-logo.svg'
 // import close from '../../images/cancel.svg'
 
+import Footer from "../../components/Footer";
+
 const RegisterOrg = () => {
   return (
     <>
@@ -25,6 +27,7 @@ const RegisterOrg = () => {
           
         </section>
       </main>
+      <Footer/>
     </>
   )
 }

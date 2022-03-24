@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const CodeOfConduct = () => {
 
@@ -174,6 +175,7 @@ const CodeOfConduct = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

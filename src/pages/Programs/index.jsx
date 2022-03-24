@@ -3,7 +3,8 @@ import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
 import { Carousel, SuccessCarousel } from "../../components/Carousel";
 import event2 from '../../images/event_image2.png'
-import { openSource, cloudP, highSchoolP, successStories, paths } from "../../utils"
+import { openSource, cloudP, highSchoolP, successStories, paths } from "../../utils";
+import Footer from "../../components/Footer";
 
 const Programs = () => {
   const [tabList] = useState([
@@ -198,6 +199,7 @@ const Programs = () => {
           </section>
         )}
       </main>
+      <Footer/>
     </>
   )
 }

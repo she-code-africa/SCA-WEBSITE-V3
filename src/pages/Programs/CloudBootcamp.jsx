@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
 import { paths } from "../../utils"
-
+import Footer from "../../components/Footer";
 const CloudBootcamp = () => {
   return (
     <>
@@ -25,6 +25,7 @@ const CloudBootcamp = () => {
           <img src="https://res.cloudinary.com/she-code-africa/image/upload/v1633705920/v8w8op4x2k1qdjctk9bz.jpg" alt="SCA Cloud School Bootcamp" className="md:h-[400px] object-center" />
         </section>
       </main>
+      <Footer/>
     </>
   )
 }

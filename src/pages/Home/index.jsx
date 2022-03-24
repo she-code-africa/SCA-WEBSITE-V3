@@ -7,7 +7,8 @@ import Hero from "../../components/Hero";
 import Text from "../../components/Text";
 import {Carousel, TestimonialCarousel} from "../../components/Carousel";
 import PopUpModal from "../../components/PopUpModal"
-import { testimonials, aboutus } from "../../utils"
+import { testimonials, aboutus } from "../../utils";
+import Footer from '../../components/Footer';
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -76,6 +77,7 @@ const Home = () => {
         </div>
       </div>  
     </main>
+    <Footer/>
     </>
   )
 }
