@@ -2,12 +2,12 @@ import React from 'react';
 import Slider from "react-slick";
 import {SuccessBox} from '../Cards'
 
-export const Carousel = ({title, content}) => {
+export const Carousel = ({title, content, slidesToShow, slidesToScroll}) => {
     const settings = {
       dots: true,
       infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 2,
+      slidesToShow: slidesToShow || 2,
+      slidesToScroll: slidesToScroll || 2,
       autoplay: true,
       speed: 2000,
       autoplaySpeed: 3500,
@@ -42,7 +42,7 @@ export const Carousel = ({title, content}) => {
                 return <div className="slick-item" key={index}>
                     <h4>{header}</h4>
                     <p>{content}</p>
-                    {src ? <img src={src} alt="logo"/> : ""}
+                    {src ? <img className="block h-[80px] object-contain" src={src} alt="logo"/> : ""}
                   </div>
               })
             }

@@ -98,20 +98,26 @@
 	bottom: 3rem;
 	left: 2rem;
 	right: 2rem;
+	flex-wrap: wrap;
 }
 .__partner-donate_donate-cta {
 	a {
 		font-size: 11px;
+		width: 48%;
 	}
 	.sca-btn {
 		padding: 15px 16px;
+	}
+
+	#laptop-fund {
+		width: 100%;
 	}
 }
 @media screen and (max-width:1440px) and (min-width:1024px) {
 	.__partner-donate {
 		>div {
 			height: 510px !important;
-			width: 32% !important;
+			width: 32%;
 		}
 	}
 }

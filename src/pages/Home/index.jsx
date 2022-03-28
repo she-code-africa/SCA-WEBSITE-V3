@@ -74,7 +74,7 @@ const Home = () => {
           </div>
           <div className="clear-both">
             <ContactForm/>
-        </div>
+          </div>
       </div>  
     </main>
     <Footer/>

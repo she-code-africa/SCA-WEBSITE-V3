@@ -19,7 +19,7 @@ export const DonateCard = ({title, children, first_desc, second_desc}, index) =>
             <p>{first_desc}</p>
             <p>{second_desc}</p>
         </div>
-        <div className="cta">{children}</div>
+        <div className="">{children}</div>
     </div>
 }
 
