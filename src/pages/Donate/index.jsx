@@ -1,19 +1,64 @@
-import React from "react";
+import React, {useState} from "react";
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import {Carousel} from "../../components/Carousel";
+import {partners} from "../../utils";
+import DonateModal from "../../components/DonateModal";
+
 const Donate = () => {
+  const [modal, setModal] = useState(false);
+  const [type, setType] = useState("");
+  const toggleModal = (type) =>{
+    setType(type)
+    setModal(!modal)
+  }
   return (
     <>
       <Header page={'donate'} />
+      <DonateModal display={modal} type={type} toggleModal={toggleModal}/>
       <main>
+        <section className="__shecodeheader">
+          <div className="container mx-auto px-4 lg:px-20">
+            <div className="flex justify-center items-center -mx-4">
+              <div className="sm:w-7/12 px-4">
+                <div className="__shecodeheader_text">
+                  <div className="__shecodeheader_title">
+                    <h1>
+                      <span className="text-left">Donation</span>
+                      <br/>
+                      <span className="text-center ml-[15%]">&</span>
+                      <br/>
+                      <span className="text-left">Partnership</span>
+                    </h1>
+                  </div>
+                  <div className="__shecodeheader_subtitle">
+                        <h4>
+                            Our partners and donors go a long way in creating an impact and helping us reach thousands of <span className="highlight">women in technology</span> across Africa!
+                        </h4>
+                    </div>
+                </div>
+              </div>
+              <div className="w-full hidden sm:block sm:w-5/12">
+                <div className="__shecodeheader_image"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="section-whitespace-top">
+              <Carousel title="Current Partners & Sponsor Organisations" content={partners} slidesToShow={3} slidesToScroll={1}/>
+          </div>
+        </section>
         <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top clear-both">
               <DonateCard
                   title="PARTNER WITH US"
                   first_desc="Work hand-in-hand with us to achieve our goal of reaching more women in technology across Africa!"
                   second_desc=""
                   >
-                    <button className="sca-btn pink-btn">Get Started</button>
+                    <div className="cta">
+                      <a href="mailto:info@shecodeafrica.org" className="sca-btn pink-btn">Get Started</a>
+                    </div>
               </DonateCard>
               
               <DonateCard 
@@ -21,8 +66,11 @@ const Donate = () => {
                 first_desc="Help sponsor our events and initiatives to empower more African women in technology via a donation or more."
                 second_desc="Being a sponsor gives more awareness to you or your organization's commitment to advocating for more women in technology while helping secure and cover costs for our numerous initiatives, provide learning resources and tools to facilitate our events and programs across our several chapters."
               >   
-                <a href="/#" className="sca-btn white-btn">As an Individual</a>
-                <a href="/#" className="sca-btn pink-btn">As an Organisation</a>   
+                <div className="cta">
+                  <a className="sca-btn white-btn" role="button" onClick={()=> toggleModal("individual")}>As an Individual</a>
+                  <a className="sca-btn pink-btn" role="button"  onClick={()=> toggleModal("organisation")}>As an Organisation</a> 
+                  <a id="laptop-fund" className="btn sca-btn white-btn " role="button" target="_blank"  onClick={()=> toggleModal("scholarship")}>LAPTOP SCHOLARSHIP FUND</a>  
+                </div>
               </DonateCard>
         </section>
       </main>

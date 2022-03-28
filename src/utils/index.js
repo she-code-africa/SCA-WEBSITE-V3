@@ -23,6 +23,29 @@ export const paths = {
   privacy: '/privacy'
 }
 
+export const partners = [
+  {
+    src: "	https://shecodeafrica.org/images/lag.edu.png",
+    alt: "Lagos State Ministry"
+  },
+  {
+    src: "https://shecodeafrica.org/images/Layer-5.png",
+    alt: "Layer 5"
+  },
+  {
+    src: "https://shecodeafrica.org/images/deimos.png",
+    alt: "Deimos"
+  },
+  {
+    src: "https://shecodeafrica.org/images/cloudbees.png",
+    alt: "Cloud Bees"
+  },
+  {
+    src: "https://shecodeafrica.org/images/chimoney.png",
+    alt: "Lagos State Ministry"
+  }
+]
+
 export const jobs = [
   {
     title: 'Senior Site Reliability Engineer, Wikimedia Cloud Services',
@@ -342,4 +365,37 @@ export const jobsFaq = [
     heading: 'How can I know if a job is still available?',
     content: 'On the job’s main page you will see active which shows that particular role is still available.'
   },
+]
+
+export const accountInfo = [
+  {
+      heading: "DOM ACCOUNT WIRE TRANSFER (USD) ",
+      sub: "(for USD TXNs)",
+      acct_details:{
+        bank_name: "UNITED BANK FOR AFRICA PLC, NIGERIA",
+        account_name: "SHE-CODE AFRICA WOMEN TECH INITIATIVE",
+        account_number: "3003292380",
+        routing_code: "UNAFNGLA"
+      }
+  },
+  {
+      heading: "DOM ACCOUNT WIRE TRANSFER (EUR) ",
+      sub: "(for USD TXNs)",
+      acct_details:{
+        bank_name: "UNITED BANK FOR AFRICA PLC, NIGERIA",
+        account_name: "SHE-CODE AFRICA WOMEN TECH INITIATIVE",
+        account_number: "3003570329",
+        routing_code: "UNAFNGLA"
+      }
+  },
+  {
+    heading: "NAIRA ACCOUNT WIRE TRANSFER",
+    sub: "for other naira and or other currencies TXN",
+    acct_details:{
+      bank_name: "UNITED BANK FOR AFRICA PLC, NIGERIA",
+      account_name: "SHE-CODE AFRICA WOMEN TECH INITIATIVE", 
+      account_number: "1023945387",
+      routing_code: "UNAFNGLA"
+    }
+  }
 ]

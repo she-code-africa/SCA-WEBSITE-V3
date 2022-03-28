@@ -268,7 +268,7 @@
 		}
 	}
 	.__shecodeheader_image {
-		height: 0;
+		height: 0 !important;
 	}
 	.team_modal {
 		.modal-content {
@@ -317,7 +317,7 @@
 }
 @media screen and (max-width: 375px) {
 	.counter {
-		height: 255px !important;
+		height: 320px !important;
 	}
 }
 @media screen and (max-width: 320px) {
