@@ -12,6 +12,7 @@ import Chapters from './pages/Chapters';
 import Donate from './pages/Donate';
 import Events from './pages/Events';
 import Jobs from './pages/Jobs';
+import RegisterOrg from './pages/Jobs/RegisterOrg';
 import Programs from './pages/Programs';
 import Team from './pages/Team';
 import Contribution1 from './pages/Programs/Contributhon1';
@@ -44,6 +45,7 @@ function Routes (params) {
       <Route path={paths.donate} element={<Donate />} />
       <Route path={paths.events} element={<Events />} />
       <Route path={paths.jobs} element={<Jobs />} />
+      <Route path={paths.register_org} element={<RegisterOrg />} />
       <Route path={paths.programs} element={<Programs />} />
       <Route path={paths.contribution1} element={<Contribution1 />} />
       <Route path={paths.contribution} element={<Contribution />} />
