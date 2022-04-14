@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
-import { jobs } from "../../utils";
+import { jobs, paths } from "../../utils";
 import Footer from "../../components/Footer";
+
 const Jobs = () => {
   return (
     <>
@@ -15,7 +16,7 @@ const Jobs = () => {
           <div className="__shecodeheader_subtitle">
             <p className="text-center">We are a non-profit organization focused on celebrating and empowering young girls and women in technology across Africa.</p>
           </div>
-          <Link to="/" className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">Post a job</Link>
+          <Link to={paths.register_org} className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">Post a job</Link>
         </section>
         <section className="md:w-7/12 w-11/12 mx-auto __jobs_preview my-10 text-[#707070]">
           <h3 className="text-center job-type-header text-2xl font-medium text-gray-800">
