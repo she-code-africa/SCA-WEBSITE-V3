@@ -23,7 +23,7 @@ const Jobs = () => {
           </h3>
           <div className="my-6 flex flex-wrap items-stretch">
             {jobs.map((job) => (
-              <article key={job.title} className="lg:w-5/12 mx-9 border border-[#dcdcdc] px-8 py-10 rounded-t-none rounded-br-[70px] rounded-bl-none flex flex-col items-stretch">
+              <article key={job.title} className="lg:w-5/12 mx-9 border border-[#dcdcdc] px-10 py-10 rounded-t-none rounded-br-[50px] rounded-bl-none flex flex-col items-stretch">
                 <h4 className="text-2xl font-medium my-5">
                   {job.title}
                 </h4>
@@ -34,7 +34,7 @@ const Jobs = () => {
                   {job.summary}
                 </p>
 
-                <p className="my-14 text-xs">
+                <p className="py-5 text-xs">
                   Published {job.published_date}
                 </p>
                 <div className="text-right">
