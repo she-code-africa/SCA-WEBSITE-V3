@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
-import { jobs, paths } from "../../utils";
 import Footer from "../../components/Footer";
+import Dropdown from "../../components/Dropdown";
+import { jobs, paths } from "../../utils";
 
 const Jobs = () => {
   return (
     <>
       <Header page={'jobs'} />
       <main>
+        <Dropdown userName={'Maggie Anthony'} />
         <section className="md:w-6/12 w-11/12 mx-auto flex flex-col items-center __shecodeheader_text my-10">
           <div className=" text-center my-5">
             <h1 className="text-primary-dark-pink text-center font-bold md:text-[50px] sm:text-[35px] text-2xl leading-[1.1]">JOB OPPORTUNITIES</h1>
