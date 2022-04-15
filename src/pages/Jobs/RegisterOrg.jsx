@@ -23,7 +23,7 @@ const RegisterOrg = () => {
 
 
   const navigate = useNavigate();
-  const [currentView, setCurrentView] = useState('contact_details')
+  const [currentView, setCurrentView] = useState('org_details')
   const [formData, setFormData] = useState(initialData)
   const [phone, setPhone] = useState('')
   const [code, setCode] = useState('+234')
