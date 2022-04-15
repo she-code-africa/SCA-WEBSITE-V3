@@ -15,6 +15,7 @@ import Jobs from './pages/Jobs';
 import RegisterOrg from './pages/Jobs/RegisterOrg';
 import Login from './pages/Jobs/Login';
 import ForgotPassword from './pages/Jobs/ForgotPassword';
+import Profile from './pages/Jobs/Profile';
 import Programs from './pages/Programs';
 import Team from './pages/Team';
 import Contribution1 from './pages/Programs/Contributhon1';
@@ -50,6 +51,7 @@ function Routes (params) {
       <Route path={paths.register_org} element={<RegisterOrg />} />
       <Route path={paths.login_org} element={<Login />} />
       <Route path={paths.forgot_password_org} element={<ForgotPassword />} />
+      <Route path={paths.profile} element={<Profile />} />
       <Route path={paths.programs} element={<Programs />} />
       <Route path={paths.contribution1} element={<Contribution1 />} />
       <Route path={paths.contribution} element={<Contribution />} />
