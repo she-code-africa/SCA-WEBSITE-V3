@@ -12,6 +12,7 @@ export const paths = {
   register_org: '/jobs/register/org-details',
   login_org: '/jobs/org/login',
   forgot_password_org: '/jobs/forgot-password',
+  post_job: '/jobs/post/new',
   view_job: '/view/jobs:id',
   profile: '/jobs/:username',
   contribution1: '/programs/contributhon-1',
