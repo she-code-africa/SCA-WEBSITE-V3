@@ -13,6 +13,7 @@ export const paths = {
   login_org: '/jobs/org/login',
   forgot_password_org: '/jobs/forgot-password',
   view_job: '/view/jobs:id',
+  profile: '/jobs/:username',
   contribution1: '/programs/contributhon-1',
   contribution: '/programs/contributhon',
   bootcamp: '/programs/sca-cloud-school-bootcamp',

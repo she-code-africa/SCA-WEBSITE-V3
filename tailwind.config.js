@@ -11,7 +11,10 @@ module.exports = {
         'secondary-main-black': '#1A1A1A',
         'primary-lighter-pink': '#F0CDE14D',
         'primary-very-light-pink': '#F7E6F04D',
-        'primary-gray': '#707070'
+        'primary-gray': '#707070',
+        'gainsboro': '#E5E5E5',
+        'white-smoke': '#F0F0F0',
+        'mortar': '#555'
       },
       fontSize: {
         '15': '15px'
