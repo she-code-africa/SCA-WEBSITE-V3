@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 
-const Input = ({ value, onChange, placeholder, required, className, id, type="text", inpType='normal', labelValue, hasInfo }) => {
+const Input = ({ value, onChange, placeholder, required, className, id, type="text", inpType='normal', labelValue, hasInfo, min }) => {
 
   const [passwordVisible, setPasswordVisible] = useState(false)
   return (
@@ -11,7 +11,7 @@ const Input = ({ value, onChange, placeholder, required, className, id, type="te
         <label className="text-red-600 py-2 block" htmlFor={id}>{labelValue}</label>
       : ''}
       {inpType !== 'password'  ? 
-        <input id={id} type={type} className={`w-full h-11 bg-white-smoke rounded-[4px] py-[6px] px-3 text-mortar focus:outline-none focus:border-sky-500 focus:ring-sky-500 block sm:text-sm focus:ring-1 ${className}`} placeholder={placeholder} required={required} value={value} onChange={onChange} />
+        <input id={id} type={type} className={`w-full h-11 bg-white-smoke rounded-[4px] py-[6px] px-3 text-mortar focus:outline-none focus:border-sky-500 focus:ring-sky-500 block sm:text-sm focus:ring-1 ${className}`} placeholder={placeholder} required={required} value={value} onChange={onChange} min={min} />
       :
       <div className="flex items-center">
           <input id="password" type={passwordVisible ? 'text' : 'password'} className={`${hasInfo ? 'w-10/12' : 'w-11/12'} h-11 bg-white-smoke rounded-[4px] rounded-r-none py-[6px] px-3 text-mortar focus:outline-none focus:border-sky-500 focus:ring-sky-500 block sm:text-sm focus:ring-1`} placeholder="Password *" required value={value} onChange={onChange} />
