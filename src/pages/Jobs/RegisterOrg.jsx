@@ -107,8 +107,8 @@ const RegisterOrg = () => {
             </InputSelect>
             <Input id="email" type="email" placeholder="Email Address *" required value={formData.email} onChange={(e) => updateFormData('email', e.target.value)} />
 
-            <Input id="password" type="password" placeholder="Password *" required value={formData.password} onChange={(e) => updateFormData('password', e.target.value)} inpType="password" />
-            <Input id="confirm_password" type="password" placeholder="Confirm Password *" required value={confirmPassword} onChange={(e) => comparePassword(e)} inpType="password" />
+            <Input id="password" type="password" placeholder="Password *" required value={formData.password} hasInfo={true} onChange={(e) => updateFormData('password', e.target.value)} inpType="password" />
+            <Input id="confirm_password" type="password" placeholder="Confirm Password *" hasInfo={true} required value={confirmPassword} onChange={(e) => comparePassword(e)} inpType="password" />
 
             <div className="flex justify-between">
               <div className="w-5/12">
