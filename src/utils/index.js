@@ -13,7 +13,7 @@ export const paths = {
   login_org: '/jobs/org/login',
   forgot_password_org: '/jobs/forgot-password',
   post_job: '/jobs/post/new',
-  view_job: '/view/jobs:id',
+  view_job: '/view/jobs/:id',
   profile: '/jobs/:username',
   contribution1: '/programs/contributhon-1',
   contribution: '/programs/contributhon',
@@ -54,12 +54,14 @@ export const jobs = [
     location: 'Wikimedia Foundation, San Francisco, CA, USA',
     summary: 'Summary The Wikimedia Foundation is looking for a Senior Site Reliability Engineer to join our team, reporting to the...',
     published_date: 'January 17th, 2022',
+    id: '6242ec23f661290004e178e4'
   },
   {
     title: 'Engineering Manager, Site Reliability Engineering (Service Operations)',
     location: 'Remote',
     summary: 'Engineering Manager, Site Reliability Engineering (Service Operations) Summary The Wikimedia Foundation is looking f...',
     published_date: 'January 17th, 2022',
+    id: '6242ec23f6612178jdwd4'
   }
 ]
 

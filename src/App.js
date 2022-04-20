@@ -15,6 +15,7 @@ import Jobs from './pages/Jobs';
 import RegisterOrg from './pages/Jobs/RegisterOrg';
 import Login from './pages/Jobs/Login';
 import ForgotPassword from './pages/Jobs/ForgotPassword';
+import ViewJob from './pages/Jobs/ViewJob';
 import PostJob from './pages/Jobs/PostJob/Index';
 import Profile from './pages/Jobs/Profile';
 import Programs from './pages/Programs';
@@ -52,6 +53,7 @@ function Routes (params) {
       <Route path={paths.register_org} element={<RegisterOrg />} />
       <Route path={paths.login_org} element={<Login />} />
       <Route path={paths.forgot_password_org} element={<ForgotPassword />} />
+      <Route path={paths.view_job} element={<ViewJob/>}/>
       <Route path={paths.post_job} element={<PostJob />} />
       <Route path={paths.profile} element={<Profile />} />
       <Route path={paths.programs} element={<Programs />} />
