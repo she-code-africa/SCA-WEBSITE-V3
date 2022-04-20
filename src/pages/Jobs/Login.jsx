@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from '../../images/she-code-africa-logo.svg'
 import close from '../../images/cancel.svg'
 import { paths } from '../../utils'
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 const initialData = {
   email: '',
@@ -37,14 +39,13 @@ const Login = () => {
       <section className="py-3">
         <form className="mt-10 mb-2 flex flex-col justify-center" onSubmit={submitLogin}>
           <div>
-            <input type="email" id="email" class="w-full h-11 bg-white-smoke rounded-[4px] py-[6px] px-3 text-mortar focus:outline-none focus:border-sky-500 focus:ring-sky-500 block sm:text-sm focus:ring-1" placeholder="Email *" required value={formData.email} onChange={(e) => updateFormData('email', e.target.value)} />
+            <Input type="email" id="email" placeholder="Email *" required value={formData.email} onChange={(e) => updateFormData('email', e.target.value)} />
           </div>
           
           <div className="my-8">
-            <input type="password" id="password" class="w-full h-11 bg-white-smoke rounded-[4px] py-[6px] px-3 text-mortar focus:outline-none focus:border-sky-500 focus:ring-sky-500 block sm:text-sm focus:ring-1" placeholder="Password *" required onChange={(e) => updateFormData('password', e.target.value)} />
+            <Input type="password" id="password" placeholder="Password *" required onChange={(e) => updateFormData('password', e.target.value)} inpType="password" />
           </div>
-
-          <input type="submit" value="LOGIN" className="bg-[#F0CDE1] text-primary-main-pink hover:bg-primary-main-pink hover:text-white px-6 py-[15px] my-8 rounded-lg rounded-bl-none transition-colors duration-700" />
+          <Button type="submit" value="LOGIN" />
         </form>
 
         <p class="text-center post-a-job-cta">
