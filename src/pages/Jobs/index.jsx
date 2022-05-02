@@ -41,7 +41,7 @@ const Jobs = () => {
                   Published {job.published_date}
                 </p>
                 <div className="text-right">
-                  <a href={"/view/jobs/"+ job.id} className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">View More</a>
+                  <Link to={"/view/jobs/"+ job.id} className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">View More</Link>
                 </div>
               </article>
             ))}
