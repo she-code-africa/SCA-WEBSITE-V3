@@ -13,7 +13,7 @@ export const paths = {
   login_org: '/jobs/org/login',
   forgot_password_org: '/jobs/forgot-password',
   post_job: '/jobs/post/new',
-  view_job: '/view/jobs:id',
+  view_job: '/view/jobs/:id',
   profile: '/jobs/:username',
   contribution1: '/programs/contributhon-1',
   contribution: '/programs/contributhon',
@@ -51,15 +51,27 @@ export const partners = [
 export const jobs = [
   {
     title: 'Senior Site Reliability Engineer, Wikimedia Cloud Services',
-    location: 'Wikimedia Foundation, San Francisco, CA, USA',
-    summary: 'Summary The Wikimedia Foundation is looking for a Senior Site Reliability Engineer to join our team, reporting to the...',
+    company: 'Wikimedia Foundation',
+    job_type: "Full Time",
+    location: 'San Francisco, CA, USA',
+    summary: 'Summary The Wikimedia Foundation is looking for a Senior Site Reliability Engineer to join our team, reporting to the Our small team is passionate about enabling the creation of new and exciting data products. As part of the larger Platform Engineering team, we are responsible for the Data Platform that enables teams across the foundation to build data pipelines. We are looking for a software engineer to help us bring the Platform Engineering team to the next level. We use open-source tools as much as possible, and always open source our own work. Java, Go, Python and Scala make up most of our code, but we value using the right tool for the job. Our world is vast and can be complicated, so we value communication, enthusiasm, and an eagerness to learn. You are responsible for: ',
     published_date: 'January 17th, 2022',
+    id: '6242ec23f661290004e178e4',
+    status: 'Active',
+    link: "https://grnh.se/c00eac431us",
+    deadline: "April 29th, 2022",
+    currency: "USD",
+    field: "Software Engineering",
+    salary_range: "1500 - 2000",
+    minimum_experience : "8 Years"
   },
   {
     title: 'Engineering Manager, Site Reliability Engineering (Service Operations)',
     location: 'Remote',
     summary: 'Engineering Manager, Site Reliability Engineering (Service Operations) Summary The Wikimedia Foundation is looking f...',
     published_date: 'January 17th, 2022',
+    id: '6242ec23f6612178jdwd4',
+    status: 'Inactive'
   }
 ]
 
