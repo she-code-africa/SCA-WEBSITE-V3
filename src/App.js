@@ -18,6 +18,7 @@ import ForgotPassword from './pages/Jobs/ForgotPassword';
 import ViewJob from './pages/Jobs/ViewJob';
 import PostJob from './pages/Jobs/PostJob/Index';
 import Profile from './pages/Jobs/Profile';
+import EditProfile from './pages/Jobs/Profile/EditProfile';
 import Programs from './pages/Programs';
 import Team from './pages/Team';
 import Contribution1 from './pages/Programs/Contributhon1';
@@ -56,6 +57,7 @@ function Routes (params) {
       <Route path={paths.view_job} element={<ViewJob/>}/>
       <Route path={paths.post_job} element={<PostJob />} />
       <Route path={paths.profile} element={<Profile />} />
+      <Route path={paths.editProfile} element={<EditProfile />} />
       <Route path={paths.programs} element={<Programs />} />
       <Route path={paths.contribution1} element={<Contribution1 />} />
       <Route path={paths.contribution} element={<Contribution />} />
