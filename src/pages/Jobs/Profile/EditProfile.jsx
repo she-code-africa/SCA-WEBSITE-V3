@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Input from '../../../components/Input'
 import Button from "../../../components/Button";
 import InputSelect from "../../../components/InputSelect";
-import logo from '../../../images/she-code-africa-logo.svg'
 import close from '../../../images/cancel.svg'
 import { paths } from '../../../utils'
 import codes from '../../../documents/CountryCodes.json'

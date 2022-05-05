@@ -47,7 +47,7 @@ const Donate = () => {
         </section>
         <section>
           <div className="section-whitespace-top">
-              <Carousel title="Current Partners & Sponsor Organisations" content={partners} slidesToShow={3} slidesToScroll={1}/>
+              <Carousel title="Current Partners &amp; Sponsor Organisations" content={partners} slidesToShow={3} slidesToScroll={1}/>
           </div>
         </section>
         <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top clear-both">
@@ -67,9 +67,9 @@ const Donate = () => {
                 second_desc="Being a sponsor gives more awareness to you or your organization's commitment to advocating for more women in technology while helping secure and cover costs for our numerous initiatives, provide learning resources and tools to facilitate our events and programs across our several chapters."
               >   
                 <div className="cta">
-                  <a className="sca-btn white-btn" role="button" onClick={()=> toggleModal("individual")}>As an Individual</a>
-                  <a className="sca-btn pink-btn" role="button"  onClick={()=> toggleModal("organisation")}>As an Organisation</a> 
-                  <a id="laptop-fund" className="btn sca-btn white-btn " role="button" target="_blank"  onClick={()=> toggleModal("scholarship")}>LAPTOP SCHOLARSHIP FUND</a>  
+                  <button className="sca-btn white-btn" onClick={()=> toggleModal("individual")}>As an Individual</button>
+                  <button className="sca-btn pink-btn"  onClick={()=> toggleModal("organisation")}>As an Organisation</button> 
+                  <button id="laptop-fund" className="btn sca-btn white-btn" target="_blank"  onClick={()=> toggleModal("scholarship")}>LAPTOP SCHOLARSHIP FUND</button>  
                 </div>
               </DonateCard>
         </section>
