@@ -15,6 +15,7 @@ export const paths = {
   post_job: '/jobs/post/new',
   view_job: '/view/jobs/:id',
   profile: '/jobs/:username',
+  editProfile: '/edit/jobs/:username',
   contribution1: '/programs/contributhon-1',
   contribution: '/programs/contributhon',
   bootcamp: '/programs/sca-cloud-school-bootcamp',
@@ -23,6 +24,7 @@ export const paths = {
   faq: '/faq',
   codeOfConduct: '/code-of-conduct',
   privacy: '/privacy'
+  
 }
 
 export const partners = [
