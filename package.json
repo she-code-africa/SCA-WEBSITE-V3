@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.2.1",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.4.2",
+    "axios": "^0.27.2",
     "postcss": "^8.4.5",
     "react": "^17.0.2",
     "react-bootstrap": "^2.1.1",
