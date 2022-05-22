@@ -13,7 +13,7 @@ const Donate = () => {
     setType(type)
     setModal(!modal)
   }
-  return (
+  return (  
     <>
       <Header page={'donate'} />
       <DonateModal display={modal} type={type} toggleModal={toggleModal}/>
