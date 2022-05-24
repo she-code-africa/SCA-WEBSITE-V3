@@ -3,7 +3,8 @@ import {
   Route,
   Routes as Switch
 } from 'react-router-dom';
-
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { paths } from './utils'
 
 import Home from './pages/Home';
@@ -31,11 +32,16 @@ import CodeOfConduct from './pages/CoC';
 import FAQ from './pages/FAQ';
 import PageNotFound from './pages/NotFound';
 
+const queryClient = new QueryClient()
+
 function App() {
+
+
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Routes />
-    </>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 
