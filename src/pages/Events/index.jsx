@@ -1,31 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useQuery } from 'react-query'
 
 import Header from "../../components/Header"
 import Footer from "../../components/Footer";
 
+import { getEvents } from "../../services"
+import { apiConstants } from "../../utils"
+
 import event1 from '../../images/event_image.png';
-
-
-import useService from "../../hooks/useService"
-import { getEvents } from "../../services/eventsService"
 
 const Events = () => {
 
-  const [events, setEvents] = useState([])
-  const getEventsCall = useService(getEvents)
+  const events = useQuery(apiConstants.events, getEvents)
+  console.log({ events });
 
-  useEffect(() => {
-    getEventsCall.call().onError((e) => console.log({error: e.message}))
-
-    // getEvents().then((response) => {
-    //   console.log({ response });
-    // }).catch((error) => {
-    //   console.log(error);
-    // })
-
-    console.log({ getEventsCall });
-   
-  }, [])
 
   return (
     <>

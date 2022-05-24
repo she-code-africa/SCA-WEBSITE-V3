@@ -1,14 +1,23 @@
 import React, {useState} from 'react'
+import { useQuery } from 'react-query'
+
 import Header from "../../components/Header";
 import { ImgCard } from "../../components/Cards";
-import {team} from "../../utils";
 import Footer from "../../components/Footer";
+
+import { team, apiConstants } from "../../utils";
+import { getTeams } from "../../services"
+
 const Team = () => {
   const [openModal, setOpenModal] = useState(false);
   const [name, setName] = useState("");
   const [src, setSrc] = useState("");
   const [role, setRole] = useState("");
   const [details, setDetails] = useState("")
+
+  const teams = useQuery(apiConstants.teams, getTeams)
+  console.log({ teams });
+
   const modalDialog = (name, src, role, details) => {
     setOpenModal(true);
     setRole(role);

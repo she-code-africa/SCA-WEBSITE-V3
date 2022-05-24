@@ -1,14 +1,24 @@
 import React, {useState} from "react";
+import { useQuery } from 'react-query'
+
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import {Carousel} from "../../components/Carousel";
-import {partners} from "../../utils";
 import DonateModal from "../../components/DonateModal";
+
+
+import { partners, apiConstants } from "../../utils";
+import { getPartners } from "../../services"
 
 const Donate = () => {
   const [modal, setModal] = useState(false);
   const [type, setType] = useState("");
+
+
+  const partnersList = useQuery(apiConstants.partners, getPartners)
+  console.log({ partnersList });
+
   const toggleModal = (type) =>{
     setType(type)
     setModal(!modal)
