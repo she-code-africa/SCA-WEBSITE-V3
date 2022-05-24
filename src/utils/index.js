@@ -27,6 +27,13 @@ export const paths = {
   
 }
 
+export const apiConstants = {
+  events: 'events',
+  reach: 'reach',
+  partners: 'partners',
+  teams: 'teams',
+}
+
 export const partners = [
   {
     src: "	https://shecodeafrica.org/images/lag.edu.png",
