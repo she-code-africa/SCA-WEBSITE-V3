@@ -131,7 +131,7 @@ const Home = () => {
               <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
                 <a
                   href="https://bit.ly/joinshecodeafrica"
-                  className="py-2 px-[50px] border-4 border-primary-main-pink text-primary-main-pink text-xl mt-3 bg-white transition-all"
+                  className="shecode_button2"
                 >
                   Partner with Us
                 </a>

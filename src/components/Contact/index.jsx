@@ -33,7 +33,7 @@ const ContactForm = () => {
               Enter Message
             </label>
             <textarea
-              className="contact-form-textarea border rounded-lg w-full sm:w-[300px] lg:w-[450px] xl:w-[550px] p-4 placeholder:text-lg placeholder:text-[#828282]"
+              className="contact-form-textarea border rounded-lg w-full sm:w-[300px] lg:w-[450px] xl:w-[550px] p-4 placeholder:text-lg placeholder:text-[#828282] resize-none"
               type="message"
               rows="11"
               placeholder="Write your Message."
