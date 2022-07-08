@@ -2,6 +2,32 @@ import React from "react";
 import Slider from "react-slick";
 import { SuccessBox } from "../Cards";
 
+export const carouselSettings = {
+  dots: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: false,
+  speed: 2000,
+  autoplaySpeed: 3500,
+  cssEase: "linear",
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+};
+
 export const Carousel = ({ title, content, slidesToShow, slidesToScroll }) => {
   const settings = {
     dots: true,
