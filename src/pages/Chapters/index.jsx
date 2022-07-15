@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 // import { CardBox } from "../../components/Cards";
 import chaptersBanner from "../../images/chapters.png"
@@ -63,6 +64,19 @@ const Chapters = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>She Code Africa Chapters</title>
+        <meta
+          name="description"
+          content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="She Code Africa Chapters" />
+        <meta property="og:description" content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem" />
+        <meta name="twitter:title" content="She Code Africa Chapters" />
+        <meta name="twitter:description" content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem" />
+      </Helmet>
       <Header page={'chapters'} />
       <main>
         <section aria-labelledby="chapterHeadings" className="h-[450px] bg-no-repeat bg-center bg-cover flex justify-center items-center" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${chaptersBanner})` }}>

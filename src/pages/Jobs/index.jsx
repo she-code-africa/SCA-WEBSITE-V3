@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -8,6 +9,19 @@ import { jobs, paths } from "../../utils";
 const Jobs = () => {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>JOB OPPORTUNITIES</title>
+        <meta
+          name="description"
+          content="View and Apply for job opportunities and Reach top talent and find the right candidate today"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="JOB OPPORTUNITIES" />
+        <meta property="og:description" content="View and Apply for job opportunities and Reach top talent and find the right candidate today" />
+        <meta name="twitter:title" content="JOB OPPORTUNITIES" />
+        <meta name="twitter:description" content="View and Apply for job opportunities and Reach top talent and find the right candidate today" />
+      </Helmet>
       <Header page={'jobs'} />
       <main>
         <Dropdown userName={'Maggie Anthony'} />

@@ -1,6 +1,6 @@
  import React, { useState } from 'react'
+ import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,6 +18,19 @@ const FAQ = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>FAQ</title>
+        <meta
+          name="description"
+          content="We are a non-profit organization focused on celebrating and empowering young girls and women in technology across Africa."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="FAQ" />
+        <meta property="og:description" content="We are a non-profit organization focused on celebrating and empowering young girls and women in technology across Africa." />
+        <meta name="twitter:title" content="FAQ" />
+        <meta name="twitter:description" content="We are a non-profit organization focused on celebrating and empowering young girls and women in technology across Africa." />
+      </Helmet>
       <Header />
       <section className="container mx-auto px-4" aria-labelledby="terms-heading">
         <div className="container mx-auto text-center">
