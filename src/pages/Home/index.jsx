@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import ContactForm from "../../components/Contact";
@@ -19,6 +20,19 @@ const Home = () => {
   };
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>She Code Africa</title>
+        <meta
+          name="description"
+          content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="She Code Africa" />
+        <meta property="og:description" content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa." />
+        <meta name="twitter:title" content="She Code Africa" />
+        <meta name="twitter:description" content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa." />
+      </Helmet>
       <PopUpModal display={modal} closeModal={closeModal} />
       <Header page={"home"} />
       <main>
@@ -175,6 +189,7 @@ const Home = () => {
                 <img
                   className="rounded-[50%] h-[200px] w-[200px] md:h-[250px] md:w-[250px]"
                   src="https://imageio.forbes.com/specials-images/imageserve/5f6a779460548326baf6d730/960x0.jpg?format=jpg&width=960"
+                  alt=""
                 />
               </div>
               <div className="text-left md:w-2/3 border-r-8 md:m-4 border-r-[#B70569]">

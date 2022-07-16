@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-
+import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -18,6 +18,19 @@ const Events = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Events</title>
+        <meta
+          name="description"
+          content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Events" />
+        <meta property="og:description" content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa." />
+        <meta name="twitter:title" content="Events" />
+        <meta name="twitter:description" content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa." />
+      </Helmet>
       <Header page={"events"} />
       <div className="bg-[#FFF7FC]">
         <main className="container mx-auto bg-[#FFF7FC]">

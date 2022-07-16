@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import { ImgCard } from "../../components/Cards";
@@ -9,6 +10,19 @@ import Footer from "../../components/Footer";
 const About = () => {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>About Us</title>
+        <meta
+          name="description"
+          content="We are a non-profit organization focused on celebrating and empowering young Girls and Women in Technology across Africa."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="About Us" />
+        <meta property="og:description" content="We are a non-profit organization focused on celebrating and empowering young Girls and Women in Technology across Africa." />
+        <meta name="twitter:title" content="About Us" />
+        <meta name="twitter:description" content="We are a non-profit organization focused on celebrating and empowering young Girls and Women in Technology across Africa." />
+      </Helmet>
       <Header page={'about'} />
       <main>
         <div>

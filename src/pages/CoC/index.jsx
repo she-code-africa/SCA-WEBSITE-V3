@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -6,6 +7,19 @@ const CodeOfConduct = () => {
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Code of conduct</title>
+        <meta
+          name="description"
+          content="We are a non-profit organization focused on celebrating and empowering young girls and women in technology across Africa."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Code of conduct" />
+        <meta property="og:description" content="We are a non-profit organization focused on celebrating and empowering young girls and women in technology across Africa." />
+        <meta name="twitter:title" content="Code of conduct" />
+        <meta name="twitter:description" content="We are a non-profit organization focused on celebrating and empowering young girls and women in technology across Africa." />
+      </Helmet>
       <Header />
       <section className="container mx-auto px-4" aria-labelledby="terms-heading">
         <div className="container mx-auto text-center">
