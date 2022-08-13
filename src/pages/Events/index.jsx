@@ -28,16 +28,22 @@ const Events = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Events" />
-        <meta property="og:description" content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa." />
+        <meta
+          property="og:description"
+          content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa."
+        />
         <meta name="twitter:title" content="Events" />
-        <meta name="twitter:description" content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa." />
+        <meta
+          name="twitter:description"
+          content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa."
+        />
       </Helmet>
       <Header page={"events"} />
       <div className="bg-[#FFF7FC]">
         <main className="container mx-auto bg-[#FFF7FC]">
           <div className="container mx-auto w-11/12 mb-12 p-3 md:px-8 lg:py-44">
             <Slider {...carouselSettings}>
-              {upcoming_events.map(({ name, details }, index) => {
+              {upcoming_events.map(({ name, details, id }, index) => {
                 return (
                   <div key={index} className="py-2">
                     <p className="font-medium">Upcoming!</p>
@@ -48,9 +54,12 @@ const Events = () => {
                       {details}
                     </p>
                     <div className="mt-16 mb-5">
-                      <a className="border bg-primary-main-pink px-12 font-semibold rounded border-primary-main-pink py-4 text-white">
+                      <Link
+                        to={"/view/events/" + id}
+                        className="border bg-primary-main-pink px-12 font-semibold rounded border-primary-main-pink py-4 text-white"
+                      >
                         Learn More
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 );
@@ -94,9 +103,12 @@ const Events = () => {
                       </div>
                       <div className="bg-white text-center border-primary-main-pink border-[5px] py-8">
                         <p className="text-xl font-semibold">{event.name}</p>
-                        <button className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold">
+                        <Link
+                          to={"/view/events/" + event.id}
+                          className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold"
+                        >
                           Learn More
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   );
