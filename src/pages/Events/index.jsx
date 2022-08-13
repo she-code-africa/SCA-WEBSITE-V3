@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 import { getEvents } from "../../services";
 import { apiConstants, upcoming_events, past_events } from "../../utils";
@@ -71,7 +72,7 @@ const Events = () => {
                       key={index}
                       className="h-auto min-w-[250px] min-h-[250px] sm:min-w-[300px] lg:min-h-[526px] lg:min-w-[526px] place-self-center w-10/12"
                     >
-                      <div className="border-primary-main-pink border-[5px]">
+                      <div className="border-primary-main-pink border-2">
                         <img
                           className="lg:min-h-[526px] lg:w-[550px]"
                           src={event.image}
@@ -108,7 +109,7 @@ const Events = () => {
                       key={index}
                       className="h-auto min-w-[250px] min-h-[250px] sm:min-w-[300px] lg:min-h-[526px] lg:min-w-[526px] place-self-center w-10/12"
                     >
-                      <div className="border-primary-main-pink border-[5px]">
+                      <div className="border-primary-main-pink border-2">
                         <img
                           className="lg:min-h-[526px] lg:w-[550px]"
                           src={event.image}
@@ -117,9 +118,12 @@ const Events = () => {
                       </div>
                       <div className="bg-white text-center border-primary-main-pink border-[5px] py-8">
                         <p className="text-xl font-semibold">{event.name}</p>
-                        <button className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold">
+                        <Link
+                          to={"/view/events/" + event.id}
+                          className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold visited:text-primary-dark-pink"
+                        >
                           Learn More
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   );

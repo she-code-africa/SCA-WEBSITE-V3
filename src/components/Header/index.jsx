@@ -23,7 +23,7 @@ const Header = ({ page }) => {
   };
 
   return (
-    <header className="sticky top-0 w-full bg-white">
+    <header className="sticky top-0 w-full bg-white/80 z-[1]">
       <div className="flex justify-between md:justify-start gap-8 lg:gap-24 items-center py-3 xl:px-10">
         <Link to={paths.home} className="lg:px-5">
           <img
