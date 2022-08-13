@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Helmet } from "react-helmet";
 import { useQuery } from 'react-query'
 
 import Header from "../../components/Header";
@@ -27,6 +28,19 @@ const Team = () => {
   }
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Our Awesome Team</title>
+        <meta
+          name="description"
+          content="Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Our Awesome Team" />
+        <meta property="og:description" content="Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working." />
+        <meta name="twitter:title" content="Our Awesome Team" />
+        <meta name="twitter:description" content="Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working." />
+      </Helmet>
         <Header />
         <section className="container mx-auto px-4">
           <div className="grid grid-cols-12">

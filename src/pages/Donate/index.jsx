@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useQuery } from 'react-query'
-
+import { Helmet } from "react-helmet";
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -23,8 +23,23 @@ const Donate = () => {
     setType(type)
     setModal(!modal)
   }
+
+  
   return (  
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Donation & Partnership</title>
+        <meta
+          name="description"
+          content="Our partners and donors go a long way in creating an impact and helping us reach thousands of women in technology across Africa!"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Donation & Partnership" />
+        <meta property="og:description" content="Our partners and donors go a long way in creating an impact and helping us reach thousands of women in technology across Africa!" />
+        <meta name="twitter:title" content="Donation & Partnership" />
+        <meta name="twitter:description" content="Our partners and donors go a long way in creating an impact and helping us reach thousands of women in technology across Africa!" />
+      </Helmet>
       <Header page={'donate'} />
       <DonateModal display={modal} type={type} toggleModal={toggleModal}/>
       <main>

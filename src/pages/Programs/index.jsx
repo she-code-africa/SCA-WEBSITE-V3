@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
 import { Carousel, SuccessCarousel } from "../../components/Carousel";
@@ -15,8 +16,24 @@ const Programs = () => {
   ])
   const [activeTab, setActiveTab] = useState('openSP')
 
+  
+  
+
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Technical Programs & Bootcamps</title>
+        <meta
+          name="description"
+          content="All our programs are specifically designed to empower young African girls and women in tech with the technical and career skills needed to scale in their fields” We are a non-profit organization"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Technical Programs & Bootcamps" />
+        <meta property="og:description" content="All our programs are specifically designed to empower young African girls and women in tech with the technical and career skills needed to scale in their fields” We are a non-profit organization" />
+        <meta name="twitter:title" content="Technical Programs & Bootcamps" />
+        <meta name="twitter:description" content="All our programs are specifically designed to empower young African girls and women in tech with the technical and career skills needed to scale in their fields” We are a non-profit organization" />
+      </Helmet>
       <Header page={'programs'} />
       <main>
         <section className="grid md:grid-cols-2 gap-10 justify-items-stretch items-center md:w-11/12 mx-auto py-20 container">
