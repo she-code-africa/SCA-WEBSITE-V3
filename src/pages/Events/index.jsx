@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 import { getEvents } from "../../services";
 import { apiConstants, upcoming_events, past_events } from "../../utils";
@@ -27,16 +28,22 @@ const Events = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="Events" />
-        <meta property="og:description" content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa." />
+        <meta
+          property="og:description"
+          content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa."
+        />
         <meta name="twitter:title" content="Events" />
-        <meta name="twitter:description" content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa." />
+        <meta
+          name="twitter:description"
+          content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa."
+        />
       </Helmet>
       <Header page={"events"} />
       <div className="bg-[#FFF7FC]">
         <main className="container mx-auto bg-[#FFF7FC]">
           <div className="container mx-auto w-11/12 mb-12 p-3 md:px-8 lg:py-44">
             <Slider {...carouselSettings}>
-              {upcoming_events.map(({ name, details }, index) => {
+              {upcoming_events.map(({ name, details, id }, index) => {
                 return (
                   <div key={index} className="py-2">
                     <p className="font-medium">Upcoming!</p>
@@ -47,9 +54,12 @@ const Events = () => {
                       {details}
                     </p>
                     <div className="mt-16 mb-5">
-                      <a className="border bg-primary-main-pink px-12 font-semibold rounded border-primary-main-pink py-4 text-white">
+                      <Link
+                        to={"/view/events/" + id}
+                        className="border bg-primary-main-pink px-12 font-semibold rounded border-primary-main-pink py-4 text-white"
+                      >
                         Learn More
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 );
@@ -84,7 +94,7 @@ const Events = () => {
                       key={index}
                       className="h-auto min-w-[250px] min-h-[250px] sm:min-w-[300px] lg:min-h-[526px] lg:min-w-[526px] place-self-center w-10/12"
                     >
-                      <div className="border-primary-main-pink border-[5px]">
+                      <div className="border-primary-main-pink border-2">
                         <img
                           className="lg:min-h-[526px] lg:w-[550px]"
                           src={event.image}
@@ -93,9 +103,12 @@ const Events = () => {
                       </div>
                       <div className="bg-white text-center border-primary-main-pink border-[5px] py-8">
                         <p className="text-xl font-semibold">{event.name}</p>
-                        <button className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold">
+                        <Link
+                          to={"/view/events/" + event.id}
+                          className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold"
+                        >
                           Learn More
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   );
@@ -121,7 +134,7 @@ const Events = () => {
                       key={index}
                       className="h-auto min-w-[250px] min-h-[250px] sm:min-w-[300px] lg:min-h-[526px] lg:min-w-[526px] place-self-center w-10/12"
                     >
-                      <div className="border-primary-main-pink border-[5px]">
+                      <div className="border-primary-main-pink border-2">
                         <img
                           className="lg:min-h-[526px] lg:w-[550px]"
                           src={event.image}
@@ -130,9 +143,12 @@ const Events = () => {
                       </div>
                       <div className="bg-white text-center border-primary-main-pink border-[5px] py-8">
                         <p className="text-xl font-semibold">{event.name}</p>
-                        <button className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold">
+                        <Link
+                          to={"/view/events/" + event.id}
+                          className="bg-primary-main-pink text-white py-2 px-10 rounded-md font-semibold visited:text-primary-dark-pink"
+                        >
                           Learn More
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   );
