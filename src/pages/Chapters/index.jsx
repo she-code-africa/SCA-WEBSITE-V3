@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useQuery } from "react-query";
+
 import Header from "../../components/Header";
 // import { CardBox } from "../../components/Cards";
 import chaptersBanner from "../../images/chapters.png"
 import searchIcon from "../../images/search.svg";
 import Footer from "../../components/Footer";
+
+import { getChapters } from "../../services";
+import { apiConstants } from "../../utils";
+
 
 const city_chapters = [
   {
@@ -36,15 +42,20 @@ const city_chapters = [
 
 const Chapters = () => {
 
+  const chaptersCall = useQuery(apiConstants.chapters, getChapters);
+
   const [chapters, setChapters] = useState(city_chapters)
   const [activeTab, setActiveTab] = useState("city")
   const [searchValue, setSearchValue] = useState('')
   const [searchNotFound, setSearchNotFound] = useState(false)
 
+  console.log({ chaptersCall });
+
+
+
   useEffect(() => {
     searchChapters(searchValue)
   }, [searchValue])
-
 
   const searchChapters = (value) => {
     const _value = value.toLowerCase()

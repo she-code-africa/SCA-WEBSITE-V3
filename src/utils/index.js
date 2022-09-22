@@ -33,6 +33,7 @@ export const apiConstants = {
   reach: 'reach',
   partners: 'partners',
   teams: 'teams',
+  chapters: 'chapters'
 }
 
 export const partners = [

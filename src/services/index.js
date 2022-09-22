@@ -7,6 +7,12 @@ export function getEvents () {
   });
 }
 
+export function getChapters () {
+  return api.get(`${baseUrl}/chapters`).then((chapters) => {
+    return chapters;
+  });
+}
+
 export function getReach () {
   return api.get(`${baseUrl}/reach`).then((reach) => {
     return reach;
