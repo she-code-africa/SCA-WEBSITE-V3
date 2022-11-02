@@ -187,7 +187,7 @@ const Home = () => {
             <div className="bg-[#FFF7FC] flex flex-col md:flex-row gap-5 max-w-7xl my-0 mx-auto justify-between p-6 min-h-[450px] items-center">
               <div>
                 <img
-                  className="rounded-[50%] h-[200px] w-[200px] md:h-[250px] md:w-[250px]"
+                  className="rounded-[50%] h-[200px] w-[200px] md:h-[250px] md:w-[250px] object-cover"
                   src="https://imageio.forbes.com/specials-images/imageserve/5f6a779460548326baf6d730/960x0.jpg?format=jpg&width=960"
                   alt=""
                 />
