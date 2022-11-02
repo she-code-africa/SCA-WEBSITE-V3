@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
+import { useQuery } from "react-query";
 import Header from "../../components/Header";
 import { Link } from 'react-router-dom'
 import { Carousel, SuccessCarousel } from "../../components/Carousel";
@@ -7,7 +8,13 @@ import event2 from '../../images/event_image2.png'
 import { openSource, cloudP, highSchoolP, successStories, paths } from "../../utils";
 import Footer from "../../components/Footer";
 
+import { getPrograms } from "../../services";
+import { apiConstants } from "../../utils";
+
 const Programs = () => {
+
+  const programssCall = useQuery(apiConstants.programs, getPrograms);
+  
   const [tabList] = useState([
     { name: 'Open Source Programs', key: 'openSP' },
     { name: 'Cloud Programs', key: 'cloudP' },
@@ -16,7 +23,7 @@ const Programs = () => {
   ])
   const [activeTab, setActiveTab] = useState('openSP')
 
-  
+  console.log({ programssCall });
   
 
   return (
@@ -58,7 +65,7 @@ const Programs = () => {
         </section>
 
         {activeTab === 'openSP' && (
-        <section className="animate__animated animate__zoomIn animate__faster">
+        <section className="animate__animated animate__fadeIn animate__slow">
           <div className="md:w-7/12 w-11/12 mx-auto my-20">
             <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Open Source Programs</h4>
             <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>
@@ -172,7 +179,7 @@ const Programs = () => {
         )}
 
         {activeTab === 'schoolP' && (
-          <section className="animate__animated animate__zoomIn animate__faster">
+          <section className="animate__animated animate__fadeIn animate__slow">
             <div className="md:w-7/12 w-11/12 mx-auto my-20">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Junior &amp; High School Programs</h4>
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>Our program initiative specially created for young girls across junior and high schools to stimulate and nurture their interests in STEM early in their learning journey.</p>
