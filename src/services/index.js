@@ -8,7 +8,7 @@ export function getEvents () {
 }
 
 export function getChapters () {
-  return api.get(`${baseUrl}/chapters`).then((chapters) => {
+  return api.get(`${baseUrl}/chapters/member-chapters`).then((chapters) => {
     return chapters;
   });
 }

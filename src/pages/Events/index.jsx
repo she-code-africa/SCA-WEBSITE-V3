@@ -118,7 +118,7 @@ const Events = () => {
                       >
                         <div className="border-primary-main-pink border-2">
                           <img
-                            className="lg:min-h-[526px] lg:w-[550px]"
+                            className="lg:min-h-[526px] lg:w-[550px] object-cover"
                             src={event.image}
                             alt={`${event.title}`}
                           />
@@ -162,7 +162,7 @@ const Events = () => {
                       >
                         <div className="border-primary-main-pink border-2">
                           <img
-                            className="lg:min-h-[526px] lg:w-[550px]"
+                            className="lg:min-h-[526px] lg:w-[550px] object-cover"
                             src={event.image}
                             alt={`${event.title}`}
                           />

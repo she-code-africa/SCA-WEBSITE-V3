@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 
 import Header from "../../components/Header";
-// import { CardBox } from "../../components/Cards";
 import chaptersBanner from "../../images/chapters.png"
 import searchIcon from "../../images/search.svg";
 import Footer from "../../components/Footer";
@@ -12,65 +12,43 @@ import { getChapters } from "../../services";
 import { apiConstants } from "../../utils";
 
 
-const city_chapters = [
-  {
-    url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Benin",
-    location: "Benin, Nigeria"
-  },
-  {
-    url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Lagos",
-    location: "Lagos, Nigeria"
-  },
-  {
-    url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Abuja",
-    location: "Abuja, Nigeria"
-  },
-  {
-    url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Kano",
-    location: "Kano, Nigeria"
-  },
-  {
-    url: "https://linktr.ee/SCAbenin",
-    chapter: "SCA Nairobi",
-    location: "Nairobi, Kenya"
-  }
-]
-
 const Chapters = () => {
 
   const chaptersCall = useQuery(apiConstants.chapters, getChapters);
 
-  const [chapters, setChapters] = useState(city_chapters)
+  const [chapters, setChapters] = useState([])
   const [activeTab, setActiveTab] = useState("city")
   const [searchValue, setSearchValue] = useState('')
   const [searchNotFound, setSearchNotFound] = useState(false)
 
-  console.log({ chaptersCall });
 
+   const searchChapters = (value) => {
+    const _value = value.toLowerCase()
+    if (_value) {
+      const getChapters = chaptersCall?.data?.filter((chapter) => chapter?.name?.toLowerCase()?.includes(_value) || chapter?.city?.toLowerCase()?.includes(_value) || chapter?.country?.toLowerCase()?.includes(_value))
+      if (getChapters.length) {
+        setSearchNotFound(false)
+        setChapters(getChapters)
+      } else {
+        setSearchNotFound(true)
+      }
+    } else {
+      setChapters(chaptersCall.data || [])
+    }
+  }
 
+  
+  useEffect(() => {
+    if(chaptersCall.isFetched && chaptersCall.isSuccess) {
+      setChapters(chaptersCall.data)
+    }
+  }, [chaptersCall.isFetched])
+  
 
   useEffect(() => {
     searchChapters(searchValue)
   }, [searchValue])
 
-  const searchChapters = (value) => {
-    const _value = value.toLowerCase()
-    if (_value) {
-      const getChapters = city_chapters.filter((chapter) => chapter.chapter.toLowerCase().includes(_value) || chapter.location.toLowerCase().includes(_value))
-      if (getChapters.length) {
-        setSearchNotFound(false)
-      } else {
-        setSearchNotFound(true)
-      }
-      setChapters(getChapters)
-    } else {
-      setChapters(city_chapters)
-    }
-  }
 
 
   return (
@@ -110,7 +88,6 @@ const Chapters = () => {
           </div>
         </section>
 
-        
 
         <section aria-labelledby="chapterTabs" className="my-4 md:w-9/12 w-11/12 mx-auto" role="tab">
           <header>
@@ -125,28 +102,28 @@ const Chapters = () => {
           <div className="animate__animated animate__faster animate__slideInRight">
             {activeTab === "city" && (
               <div className="flex flex-wrap justify-center items-center">
-                {chapters.map(({url, chapter, location }, index) =>{
-                  return <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
-                    <a href={url} target="_blank" rel="noreferrer">
-                      <h6 className="text-black uppercase font-bold">{chapter}</h6>
-                      <p className="text-xs py-2">{location}</p>
+                {chapters.filter((chapter) => chapter.category.name.toLowerCase() === 'city').map((chapter, index) => (
+                  <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
+                    <a href="/" target="_blank" rel="noreferrer">
+                      <h6 className="text-black uppercase font-bold">{chapter?.name}</h6>
+                      <p className="text-xs py-2 capitalize">{chapter?.city}, {chapter?.country}</p>
                     </a>
                   </div>
-                })}            
+                ))}
               </div>
             )}
           </div>
           <div className="animate__animated animate__faster animate__slideInLeft">
             {activeTab === "campus" && (
               <div className="flex flex-wrap justify-center items-center">
-                {chapters.map(({url, chapter, location }, index) =>{
-                  return <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
-                    <a href={url} target="_blank" rel="noreferrer">
-                      <h6 className="text-black uppercase font-bold">{chapter} campus</h6>
-                      <p className="text-xs py-2">{location}</p>
+                {chapters.filter((chapter) => chapter.category.name.toLowerCase() === 'campus').map((chapter, index) => (
+                  <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
+                    <a href="/" target="_blank" rel="noreferrer">
+                      <h6 className="text-black uppercase font-bold">{chapter?.name} campus</h6>
+                      <p className="text-xs py-2">{chapter?.city}, {chapter?.country}</p>
                     </a>
                   </div>
-                })}            
+                ))}
               </div>
             )}
           </div>
