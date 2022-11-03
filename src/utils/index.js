@@ -35,6 +35,7 @@ export const apiConstants = {
   teams: 'teams',
   chapters: 'chapters',
   programs: 'programs',
+  programsCategories: 'programsCategories',
 }
 
 export const partners = [

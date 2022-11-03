@@ -31,3 +31,8 @@ export async function getPrograms () {
   return programs;
 }
 
+export async function getProgramsCategories () {
+  const programsCategories = await api.get(`${baseUrl}/programs/categories`);
+  return programsCategories;
+}
+
