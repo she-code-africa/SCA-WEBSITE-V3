@@ -4,7 +4,8 @@ import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
-
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 import { getEvents } from "../../services";
 import { apiConstants } from "../../utils";
 import { sortUpcomingEventByDate, sortPastEventsByDate } from "../../utils/helpers";
@@ -30,10 +31,6 @@ const Events = () => {
         setUpcomingEvents(_upcomingEvents)
       }
     }
-    
-    return () => {
-     
-    };
   }, [eventCall.data, eventCall.isFetched, eventCall.isSuccess])
 
   return (
@@ -60,6 +57,7 @@ const Events = () => {
       <Header page={"events"} />
       <div className="bg-[#FFF7FC]">
         <main className="container mx-auto bg-[#FFF7FC]">
+
           {upcomingEvents.length ? 
             <div className="container mx-auto w-11/12 mb-12 p-3 md:px-8 lg:py-44">
               <Slider {...carouselSettings}>
@@ -97,6 +95,13 @@ const Events = () => {
               institutions in Africa.
             </p>
           </section>
+
+          {eventCall.isError ?
+            <div>
+              <Error />
+            </div>
+            : null}
+
           <div className="md:my-28 my-12">
             <section className="py-3 md:py-5 text-center lg:w-6/12 md:w-8/12 mx-auto">
               <h4 className="text-primary-main-pink text-3xl md:text-4xl font-bold">
@@ -108,6 +113,13 @@ const Events = () => {
               </p>
             </section>
             <section className="container mx-auto md:p-8">
+              {eventCall.isLoading ?
+                <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 my-10">
+                  {[1, 2, 3].map((_, index) => (
+                    <Loading key={index} />
+                  ))}
+                </div>
+                : null}
               <div className="grid md:grid-cols-2 gap-x-5 gap-y-10 md:gap-y-20 mx-auto p-6">
                 {upcomingEvents.length ?
                   upcomingEvents.map((event, index) => {
