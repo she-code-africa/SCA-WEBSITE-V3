@@ -36,3 +36,7 @@ export async function getProgramsCategories () {
   return programsCategories;
 }
 
+export async function mutateEnquires (enquiryData) {
+  const enquiresResonse = await api.post(`${baseUrl}/enquiry`, enquiryData)
+  return enquiresResonse
+}
