@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useQuery } from 'react-query'
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
+import Loading from "../../components/Loading"; 
+import Error from "../../components/Error";
 import { ImgCard } from "../../components/Cards";
-import {team} from "../../utils";
 import Values from '../../images/our-values.svg';
 import Section from "../../components/Section";
 import Footer from "../../components/Footer";
+import { getTeams } from "../../services";
+import { apiConstants } from "../../utils";
+
 const About = () => {
+  const teamCall = useQuery(apiConstants.teams, getTeams)
+  const [teamMembers, setTeamMembers] = useState([])
+
+  useEffect(() => {
+    if (teamCall.isFetched && teamCall.isSuccess) {
+      setTeamMembers(teamCall?.data)
+    }
+
+  }, [teamCall.isFetched, teamCall.isSuccess, teamCall?.data])
+
+  useEffect(() => {
+    if (teamMembers.length > 6) {
+      teamMembers.length = 6
+    }
+  }, [teamMembers])
+
+
   return (
     <>
       <Helmet>
@@ -98,11 +120,24 @@ const About = () => {
                 </p>
               </div>
               <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
-                {
-                  team.map(({name, src, role}, index)=>{
-                  return <ImgCard name={name} src={src} role={role} key={index}/>
-                  })
-                }
+
+              {teamCall.isLoading ?
+                <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+                  {[1, 2, 3].map((_, index) => (
+                    <Loading key={index} />
+                  ))}
+                </div>
+                : null}
+
+              {teamCall.isError ?
+                <div>
+                  <Error />
+                </div>
+                : null}
+
+                {teamMembers?.map((member, index)=>{
+                    return <ImgCard name={member.name} src={''} role={`${member.isLeader ? 'Lead, ' : ''} ${member.team.name}`} key={index}/>
+                  })}
                 <div className="text-center sm:col-span-2 lg:col-start-1 lg:col-span-3">
                   <Link className="btn shecode_button push2" to="/team"> VIEW ALL </Link>
                 </div>

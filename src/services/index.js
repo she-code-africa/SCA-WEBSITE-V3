@@ -22,7 +22,7 @@ export async function getPartners () {
 }
 
 export async function getTeams () {
-  const teams = await api.get(`${baseUrl}/teams`);
+  const teams = await api.get(`${baseUrl}/teams/members`);
   return teams;
 }
 
