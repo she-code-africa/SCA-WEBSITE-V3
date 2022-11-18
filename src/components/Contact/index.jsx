@@ -20,7 +20,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     if (mutation.isSuccess) {
-      setShowMessage(defaultValue)
+      setEnquiryForm(defaultValue)
     }
   }, [mutation.isSuccess])
   
