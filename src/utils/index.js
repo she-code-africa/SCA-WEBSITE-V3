@@ -33,6 +33,9 @@ export const apiConstants = {
   reach: 'reach',
   partners: 'partners',
   teams: 'teams',
+  chapters: 'chapters',
+  programs: 'programs',
+  programsCategories: 'programsCategories',
 }
 
 export const partners = [
@@ -58,22 +61,6 @@ export const partners = [
   }
 ]
 
-export const upcoming_events = [
-  {
-    id: 'g1jyu129',
-    name: 'SCA Mentoring Program (Cohort 6) - Mentee Application',
-    image: 'https://res.cloudinary.com/dgrj9yagf/image/upload/v1656600385/iwihjs3uzbq60z2wzw4q.png',
-    details: 'Get to work with dedicated mentors and a detailed learning curriculum for 3 months virtually on any of these tracks; Software Engineering , Product or Data. Sign up below',
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLSchPy0bAK62PYaxJRLV3H5Lo8v725ik-qNTtw3RtkZ20MB5FQ/closedform'
-  },
-  {
-    id: 'jkhai00',
-    name: 'She Code Africa: Chapter Fest',
-    image: 'https://res.cloudinary.com/dgrj9yagf/image/upload/v1656713776/tpv0i98w1eomn1xjxxb4.jpg',
-    details: 'The Chapters Program of She Code Africa is organizing this event to highlight the different areas in tech and we help women and girls through the chapters program.',
-    url: 'https://www.youtube.com/watch?v=goMZWDd9nuE'
-  }
-]
 
 export const past_events = [
   {

@@ -1,13 +1,15 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Helmet } from "react-helmet";
 import { useQuery } from 'react-query'
 
 import Header from "../../components/Header";
 import { ImgCard } from "../../components/Cards";
 import Footer from "../../components/Footer";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
+import { apiConstants } from "../../utils";
+import { getTeams } from "../../services";
 
-import { team, apiConstants } from "../../utils";
-import { getTeams } from "../../services"
 
 const Team = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -15,9 +17,9 @@ const Team = () => {
   const [src, setSrc] = useState("");
   const [role, setRole] = useState("");
   const [details, setDetails] = useState("")
+  const [teamMembers, setTeamMembers] = useState([])
 
-  const teams = useQuery(apiConstants.teams, getTeams)
-  console.log({ teams });
+  const teamCall = useQuery(apiConstants.teams, getTeams)
 
   const modalDialog = (name, src, role, details) => {
     setOpenModal(true);
@@ -26,6 +28,17 @@ const Team = () => {
     setName(name);
     setDetails(details)
   }
+
+
+  useEffect(() => {
+   if (teamCall.isFetched && teamCall.isSuccess) {
+     setTeamMembers(teamCall?.data)
+   } 
+
+  //  teamCall.isError
+
+  }, [teamCall.isFetched, teamCall.isSuccess,  teamCall?.data])
+
   return (
     <div>
       <Helmet>
@@ -60,21 +73,33 @@ const Team = () => {
               <div className="__shecodeheader_image"></div>
             </div>
           </div>
-
         </section>
         <div className="container mx-auto px-8 __shecodecontent">
+
+        {teamCall.isLoading ?
+          <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+            {[1,2,3].map((_, index) => (
+              <Loading key={index} />
+            ))}
+          </div>
+          : null}
+
+          {teamCall.isError ?
+            <div>
+              <Error />
+            </div>
+          : null}
+
             <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
-              {
-                team.map(({name, src, role, details}, index)=>{
-                return <div onClick={()=> modalDialog(name, src, role, details)} key={index}>
-                    <ImgCard name={name} src={src} role={role}/>
+              {teamMembers?.map((member, index)=>{
+                return <div onClick={()=> modalDialog(member.name, '/', `${member.isLeader ? 'Lead, ': ''} ${member.team.name}`, member.bio)} key={index}>
+                    <ImgCard name={member.name} src={'/'} role={`${member.isLeader ? 'Lead, ': ''} ${member.team.name}`}/>
                 </div>
                 })
               }
             </div>
         </div>
-        {
-          openModal ? 
+        {openModal ? 
             <div id="defaultModal" aria-hidden="true" className="modal team_modal overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal h-full md:inset-0 bg-[#333] bg-opacity-70">
               <div className="relative px-4 w-full max-w-2xl h-full modal-dialog-centered mx-auto my-auto grid content-center">
               <div className="modal-content relative">
@@ -101,8 +126,7 @@ const Team = () => {
                 </div>
               </div>
           </div>
-          </div> : null
-        }
+          </div> : null}
       <Footer/>
     </div>
   )
