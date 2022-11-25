@@ -1,10 +1,15 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 export const ImgCard = ({ src, name, role }, index) => {
   return (
     <div className="__shecodeteammember_box" key={index}>
       <div className="__shecodeteammember_img">
-        <img src={src} alt={name} className="img-responsive" />
+        {src ? <img src={src} alt={name} className="img-responsive" />
+          : <div className="w-full h-full flex justify-center items-center">
+              <FontAwesomeIcon icon={faUser} size="10x" className="scale-150 text-gray-500" />
+            </div> }
         <div className="__shecodeteammember_text">
           <h5 className="name">{name}</h5>
           <p className="role">{role}</p>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Helmet } from "react-helmet";
 import { useQuery } from 'react-query'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Header from "../../components/Header";
 import { ImgCard } from "../../components/Cards";
 import Footer from "../../components/Footer";
@@ -9,6 +11,7 @@ import Loading from "../../components/Loading";
 import Error from "../../components/Error";
 import { apiConstants } from "../../utils";
 import { getTeams } from "../../services";
+
 
 
 const Team = () => {
@@ -92,8 +95,8 @@ const Team = () => {
 
             <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
               {teamMembers?.map((member, index)=>{
-                return <div onClick={()=> modalDialog(member.name, '/', `${member.isLeader ? 'Lead, ': ''} ${member.team.name}`, member.bio)} key={index}>
-                    <ImgCard name={member.name} src={'/'} role={`${member.isLeader ? 'Lead, ': ''} ${member.team.name}`}/>
+                return <div onClick={()=> modalDialog(member.name, member?.image || '', `${member.isLeader ? 'Lead, ': ''} ${member.team.name}`, member.bio)} key={index}>
+                  <ImgCard name={member.name} src={member?.image || ''} role={`${member.isLeader ? 'Lead, ': ''} ${member.team.name}`}/>
                 </div>
                 })
               }
@@ -107,7 +110,10 @@ const Team = () => {
                           <div className="col-span-12 sm:col-span-6">
                             <div className="__shecodeteammember_box">
                                 <div className="__shecodeteammember_img">                                 
-                                    <img src={src} alt={name} className="img-responsive"/> 
+                                  {src ? <img src={src} alt={name} className="img-responsive"/>
+                                    : <div className="w-full h-full flex justify-center items-center">
+                                      <FontAwesomeIcon icon={faUser} size="10x" className="scale-150 text-gray-500" />
+                                    </div>}
                                 </div>
                                 <div className="__shecodeteammember_text">
                                     <h5 className="name">{name}</h5>

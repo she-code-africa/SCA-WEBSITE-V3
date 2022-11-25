@@ -136,7 +136,7 @@ const About = () => {
                 : null}
 
                 {teamMembers?.map((member, index)=>{
-                    return <ImgCard name={member.name} src={''} role={`${member.isLeader ? 'Lead, ' : ''} ${member.team.name}`} key={index}/>
+                    return <ImgCard name={member.name} src={member?.image || ''} role={`${member.isLeader ? 'Lead, ' : ''} ${member.team.name}`} key={index}/>
                   })}
                 <div className="text-center sm:col-span-2 lg:col-start-1 lg:col-span-3">
                   <Link className="btn shecode_button push2" to="/team"> VIEW ALL </Link>
