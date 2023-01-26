@@ -8,29 +8,20 @@ import event2 from '../../images/event_image2.png'
 import { openSource, successStories, paths } from "../../utils";
 import Footer from "../../components/Footer";
 
-import { getPrograms, getProgramsCategories } from "../../services";
+import { getPrograms, getProgramsCategories, getSuccessStories } from "../../services";
 import { apiConstants } from "../../utils";
 
 const Programs = () => {
 
   const programsCall = useQuery(apiConstants.programs, getPrograms);
   const programsCategoriesCall = useQuery(apiConstants.programsCategories, getProgramsCategories);
+  // const successStories = useQuery(apiConstants.programSuccess, getSuccessStories);
 
   const [programs, setPrograms] = useState([])
   const [programsCategories, setProgramsCategories] = useState([])
   const [activeTab, setActiveTab] = useState('')
 
-  useEffect(() => {
-   if (programsCall.isFetched && programsCall.isSuccess) {
-     setPrograms(programsCall?.data)
-   }
-   
-   if (programsCategoriesCall.isFetched && programsCategoriesCall.isSuccess) {
-     setProgramsCategories(programsCategoriesCall?.data)
-     setActiveTab(programsCategoriesCall?.data[0]?._id)
-   }
 
-  }, [programsCall.isFetched, programsCall.isSuccess, programsCategoriesCall.isSuccess, programsCategoriesCall.isFetched, programsCall?.data, programsCategoriesCall?.data])
 
   return (
     <>
@@ -76,7 +67,7 @@ const Programs = () => {
               <h4 className="tracking-[1.44px] font-bold capitalize lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>{category.name}</h4>
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>{category.description}</p>
             </div>
-            <Carousel title="Program Impact" content={openSource} />
+            <Carousel title="Program Impact" content={openSource} /> 
             <div className="md:w-7/12 w-11/12 mx-auto my-20">
               <h4 className="tracking-[1.44px] font-bold lg:text-3xl text-2xl my-4 text-primary-dark-pink text-center" style={{ lineHeight: 1.1 }}>Upcoming Cohort</h4>
               <p className="text-xl tracking-[0.50px] text-center" style={{ lineHeight: '25px' }}>View our upcoming programs and discover events curated to match your technical passion and skills.</p>

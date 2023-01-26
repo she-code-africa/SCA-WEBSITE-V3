@@ -36,6 +36,7 @@ export const apiConstants = {
   chapters: 'chapters',
   programs: 'programs',
   programsCategories: 'programsCategories',
+  programSuccess: '/program-success',
 }
 
 export const partners = [

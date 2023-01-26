@@ -80,7 +80,7 @@ const Team = () => {
         <div className="container mx-auto px-8 __shecodecontent">
 
         {teamCall.isLoading ?
-          <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-wrap gap-6 mx-10 md:mx-5 my-20">
             {[1,2,3].map((_, index) => (
               <Loading key={index} />
             ))}
@@ -88,12 +88,12 @@ const Team = () => {
           : null}
 
           {teamCall.isError ?
-            <div>
+            <div className="flex justify-center  mx-10 md:mx-5 my-20">
               <Error />
             </div>
           : null}
 
-            <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 my-20">
               {teamMembers?.map((member, index)=>{
                 return <div onClick={()=> modalDialog(member.name, member?.image || '', `${member.isLeader ? 'Lead, ': ''} ${member.team.name}`, member.bio)} key={index}>
                   <ImgCard name={member.name} src={member?.image || ''} role={`${member.isLeader ? 'Lead, ': ''} ${member.team.name}`}/>

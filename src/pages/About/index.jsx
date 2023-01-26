@@ -119,28 +119,28 @@ const About = () => {
                 <p className="about_topic2 text-center">Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working.
                 </p>
               </div>
-              <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
-
               {teamCall.isLoading ?
-                <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="flex flex-wrap gap-6 mx-10 md:mx-5 my-20">
                   {[1, 2, 3].map((_, index) => (
                     <Loading key={index} />
                   ))}
                 </div>
                 : null}
-
               {teamCall.isError ?
-                <div>
+              <div className="flex justify-center mx-10 md:mx-5 my-20">
                   <Error />
                 </div>
                 : null}
-
-                {teamMembers?.map((member, index)=>{
-                    return <ImgCard name={member.name} src={member?.image || ''} role={`${member.isLeader ? 'Lead, ' : ''} ${member.team.name}`} key={index}/>
-                  })}
-                <div className="text-center sm:col-span-2 lg:col-start-1 lg:col-span-3">
-                  <Link className="btn shecode_button push2" to="/team"> VIEW ALL </Link>
-                </div>
+              <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3">
+                {teamMembers.length ? <>
+                  {teamMembers?.map((member, index)=>{
+                      return <ImgCard name={member.name} src={member?.image || ''} role={`${member.isLeader ? 'Lead, ' : ''} ${member.team.name}`} key={index}/>
+                    })}
+                  <div className="text-center sm:col-span-2 lg:col-start-1 lg:col-span-3">
+                    <Link className="btn shecode_button push2" to="/team"> VIEW ALL </Link>
+                  </div>
+                </>
+                : null}
               </div>
             </section>
         </div>

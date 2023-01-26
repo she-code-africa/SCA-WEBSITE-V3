@@ -22,8 +22,8 @@ const Loading = () => {
 
   return (
     <div class="w-full flex flex-col justify-center items-center">
-      <div className="h-[350px] w-full" ref={error} />
-      <div className="text-xl">
+      <div className="h-[150px] w-full" ref={error} />
+      <div className="text-xl text-center">
         Unfortunately an error occured! We're working on it
       </div>
     </div>

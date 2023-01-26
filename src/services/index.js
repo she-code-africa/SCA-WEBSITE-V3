@@ -21,6 +21,11 @@ export async function getPartners () {
   return partners;
 }
 
+export async function getSuccessStories () {
+  const partners = await api.get(`${baseUrl}/program-success`);
+  return partners;
+}
+
 export async function getTeams () {
   const teams = await api.get(`${baseUrl}/teams/members`);
   return teams;
