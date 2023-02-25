@@ -25,7 +25,7 @@ If you're ready to contribute and create your PR, it will help to set up a local
 
    - install your favorite text editor/I
    - install [Nodejs](nodejs.org)
-     <b
+     <b>
 
 2. Clone your fork
 
@@ -71,11 +71,9 @@ $ npm install
 
 ```
 
-<br>
+```
 
 ### Make awesome changes!
-
-<br>
 
 1. Create new branch for your changes
 
@@ -101,11 +99,7 @@ yarn start
 
 ```
 
-<br>
-
 ### Start developing!
-
-<br>
 
 - Open this directory in your favorite text editor / IDE, and see your changes live by visiting `localhost:3000` from your browser
 - Pro Tip: Explore scripts within `package.json` for more build options
@@ -131,4 +125,11 @@ $ git push
 - After your changes are commited to your GitHub fork, submit a pull request (PR) to the `develop` branch of the `https://github.com/she-code-africa/SCA-WEBSITE-V3` repo
 - In your PR description, reference the issue it resolves (see [linking a pull request to an issue using a keyword](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword))
   - ex. `Updates out of date content [Fixes #1234]`
+
+```
+
+```
+
+```
+
 ```
