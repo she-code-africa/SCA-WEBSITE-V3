@@ -30,7 +30,7 @@ html {
   font-size: 100%;
   min-height: 100%;
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-size: 14px;
   color: #222222;
   font-weight: normal;
@@ -43,7 +43,7 @@ html {
 }
 body {
   height: 100%;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-size: 14px;
   color: #222222;
   font-weight: normal;
@@ -52,6 +52,15 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-libre {
+  font-family: "Libre Franklin", sans-serif;
+}
+
 .float-right {
   float: right !important;
 }
@@ -61,28 +70,25 @@ body {
 a {
   text-decoration: none;
   outline: none;
-  color: inherit;
   &:active {
     text-decoration: none;
     outline: none;
-    color: inherit;
   }
   &:hover {
     text-decoration: none;
     outline: none;
-    color: inherit;
+
     text-decoration: none !important;
   }
   &:focus {
     text-decoration: none;
     outline: none;
-    color: inherit;
+
     text-decoration: none !important;
   }
   &:visited {
     text-decoration: none;
     outline: none;
-    color: inherit;
   }
 }
 button {
