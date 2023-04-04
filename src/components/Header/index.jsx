@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,7 +16,7 @@ const menus = [
   ]},
   { to: paths.chapters, text: "Get Involved", list: [
     { to: paths.about, text: "Volunteer With Us" },
-    { to: paths.about, text: "Become A Member" },
+    { to: 'https://bit.ly/joinshecodeafrica', text: "Become A Member", external: true },
     { to: paths.events, text: "Events" },
     { to: paths.innitiatives, text: "Innitiatives" },
   ]},
@@ -30,10 +30,12 @@ const menus = [
   ]},
 ];
 const Header = ({ page }) => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState(null)
+  const [selectedMenu, setSelectedMenu] = useState(null);
   const body = window.document.body;
   const classList = [`max-h-screen`, `overflow-hidden`];
+  const path = location.pathname
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -47,8 +49,6 @@ const Header = ({ page }) => {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
-
-  console.log({isOpen});
 
   return (
     <header className="sticky top-0 w-full md:bg-white/80 bg-white z-[1] md:py-8 py-4">
@@ -68,20 +68,20 @@ const Header = ({ page }) => {
                   <span to={menu.to} className="m-0">{menu.text}</span>
                   <FontAwesomeIcon icon={faCaretDown} className={`transition-transform duration-300 ${selectedMenu === index ? 'rotate-180': null}`} />
                 </button>
-                : <Link to={menu.to}>{menu.text}</Link>}
-              {menu?.list && selectedMenu === index && (
-                <ul className="absolute bg-white top-12 pt-5 px-5 w-max">
-                  {menu.list.map((list, index) => 
-                    <li key={index} className="font-normal mb-5">
-                      <Link to={list.to}>{list.text}</Link>
-                    </li>
-                  )}
-                </ul>
-              )}
+                : <Link to={menu.to} className={`${path === menu.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>{menu.text}</Link>}
+                {menu?.list && selectedMenu === index && (
+                  <ul className="absolute bg-white top-12 pt-5 px-5 w-max">
+                    {menu.list.map((list, index) => 
+                      <li key={index} className={`font-normal mb-5 ${path === list.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>
+                        {list?.external ? <a href={list.to} target="_blank" rel="noreferrer">{list.text}</a> : <Link to={list.to}>{list.text}</Link>}
+                      </li>
+                    )}
+                  </ul>
+                )}
             </li>
           ))}
         </ul>
-        <Link to={`/donate`} className="bg-primary-main-pink rounded-lg py-5 px-12 text-white hover:text-white">Donate</Link>
+        <Link to={paths.donate} className="bg-primary-main-pink rounded-lg py-5 px-12 text-white hover:text-white">Donate</Link>
       </div>
       <div className="md:hidden flex justify-between place-items-center px-8">
         <Link to={paths.home} className="lg:px-5">

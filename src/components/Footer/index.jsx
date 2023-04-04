@@ -50,9 +50,9 @@ const Footer = () => {
                     <div>
                         <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">Community</p>
                         <Link to="/events" className="block mb-5 hover:text-primary-main-pink mt-8">Upcoming Events</Link>
-                        <a href="https://bit.ly/joinshecodeafrica" className="block mb-5 hover:text-primary-main-pink">Join Our Slack Community</a>
-                        <a href="https://bit.ly/joinshecodeafrica" className="block mb-5 hover:text-primary-main-pink">Sign Up For Our Newsletter</a>
-                        <div href="https://bit.ly/joinshecodeafrica" className="block mb-5">Follow Us On Social Media</div>
+                          <a href="https://bit.ly/joinshecodeafrica" target="_blank" rel="noreferrer" className="block mb-5 hover:text-primary-main-pink">Join Our Slack Community</a>
+                          <Link to="/about" className="block mb-5 hover:text-primary-main-pink">Sign Up For Our Newsletter</Link>
+                        <div className="block mb-5">Follow Us On Social Media</div>
                         <div className="flex gap-x-5 mb-5">
                             <a href="https://www.instagram.com/shecodeafrica/" target="_blank" rel="noreferrer">
                                 <img src={instagram} alt="instagram" />
