@@ -14,6 +14,8 @@ import Footer from "../../components/Footer";
 import homeBanner from "../../images/home-hero.png";
 import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -61,14 +63,16 @@ const Home = () => {
                 to="https://bit.ly/joinshecodeafrica"
                 className="pl-[32px] pr-[40px] py-[15px] bg-primary-main-pink  text-white text-sm font-medium rounded-lg hover:text-primary-main-pink hover:bg-white border border-primary-main-pink transition duration-300"
               >
-                Become a Member&nbsp;<i className="fas fa-angle-right"></i>
+                Become a Member&nbsp;
+                <FontAwesomeIcon icon={faAngleRight} />
               </Link>
 
               <Link
                 to="/donate-partner"
                 className=" bg-white text-sm font-medium rounded-lg border border-primary-main-pink py-[14px] pl-[32px] pr-[38px] transition duration-300 hover:text-white hover:bg-primary-main-pink donate"
               >
-                Donate&nbsp;<i className="fas fa-angle-right"></i>
+                Donate&nbsp;
+                <FontAwesomeIcon icon={faAngleRight} />
               </Link>
             </div>
           </div>
