@@ -3,20 +3,18 @@ import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Section from "../../components/Section";
 import ContactForm from "../../components/Contact";
-import vision from "../../images/vision.png";
-import mission from "../../images/mission.png";
-import value from "../../images/core-values.png";
 import Text from "../../components/Text";
-import { TestimonialCarousel } from "../../components/Carousel";
+
 import PopUpModal from "../../components/PopUpModal";
-import { testimonials } from "../../utils";
+
 import Footer from "../../components/Footer";
-import homeBanner from "../../images/home-hero.png";
 import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
+import whoweareimage from "../../images/who-are-we-img.svg";
+import { whoWeAreTexts } from "../../utils";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -46,17 +44,18 @@ const Home = () => {
       </Helmet>
       <PopUpModal display={modal} closeModal={closeModal} />
       <Header page={"home"} />
-      <main>
-        <section className=" min-h-screen bg-hero-bg-gradient text-secondary-main-black">
-          <div className="w-90 mx-auto py-5 min-h-[600px]  flex flex-col justify-center">
-            <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[60px] text-center leading-[150%] mx-auto">
+      <main className=" text-secondary-main-black">
+        <section className=" min-h-screen bg-hero-bg-gradient">
+          <div className="w-90 mx-auto py-8 min-h-[600px]  flex flex-col justify-center">
+            <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
               empowering women in tech across{" "}
               <span className="h1-hero-sub-text">africa</span>
             </h1>
 
-            <p className="m-0 mt-8 text-center max-w-[560px] text-base md:text-lg mx-auto leading-[1.8]">
-              She Code Africa celebrates and empowers women in Tech across
-              Africa She Code Africa celebrates...
+            <p className="m-0 mt-8 text-center max-w-[900px] text-base md:text-lg mx-auto leading-[1.8]">
+              She Code Africa is a registered non-profit organization dedicated
+              to empowering and celebrating girls and women in technology
+              across  Africa
             </p>
 
             <div className="btns-wrapper mt-8">
@@ -80,39 +79,42 @@ const Home = () => {
           <homecomponents.Carousel />
         </section>
 
-        <section className="mx-auto p-4 py-7 md:mt-20 md:mb-36 about_section">
-          <div className="flex flex-col items-center px-8 mb-4">
-            <h5 className="text-4xl font-semibold mb-5">About Us</h5>
-            <p className="text-2xl text-center md:w-3/4">
-              We are a non-profit organisation focused on celebrating and
-              empowering young girls and women in tech across Africa.
-            </p>
-          </div>
-          <div className="flex justify-center about_values p-5 md:text-left text-center">
-            <div>
-              <img src={vision} alt="Core Values" className="icon" />
-              <h4>Vision</h4>
-              <p>
-                An Africa where women are equally represented across all career
-                roles in Technology.
-              </p>
-            </div>
-            <div>
-              <img src={mission} alt="Core Values" className="icon" />
-              <h4>Mission</h4>
-              <p>
-                To build a community that embodies technical growth, networking,
-                mentorship and visibility amongst all level career roles in
-                Technology.
-              </p>
-            </div>
-            <div>
-              <img src={mission} alt="Core Values" className="icon" />
-              <h4>Core Values</h4>
-              <p>
-                Team work, Community, Technical growth, Leadership, Visibility.
-              </p>
-            </div>
+        <section className="w-full mt-8">
+          <div className="w-90 mx-auto">
+            <homecomponents.PartnersLogoSlider />
+
+            <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[50px] 2md:items-center gap-10">
+              <div className="text-wrapper py-5 w-full 2md:max-w-[400px]">
+                <div className="who-are-we-caption w-full mb-5 text-center 2md:text-left">
+                  <h2 className="capitalize text-3xl 2md:text-[40px] font-bold">
+                    who we are
+                  </h2>
+
+                  <div className="w-[70px] 2md:w-[90px] h-[2px] bg-primary-main-pink mx-auto mt-1 2md:mt-3"></div>
+                </div>
+
+                {whoWeAreTexts.map((content, index) => {
+                  return (
+                    <article className="w-full mt-8 2md:mt-[40px]" key={index}>
+                      <h3 className="font-semibold text-center text-2xl 2md:text-[32px] 2md:text-left capitalize">
+                        {content.heading}
+                      </h3>
+
+                      <p className="text-base leading-[2] mt-2 2md:mt-4 text-center 2md:text-left text-primary-dark-brown w-[90%] mx-auto 2md:mx-0 2md:w-full">
+                        {content.text}
+                      </p>
+                    </article>
+                  );
+                })}
+              </div>
+              <figure className="m-0 p-0 py-5 max-w-[600px] h-[500px] mx-auto 2md:mx-0">
+                <img
+                  src={whoweareimage}
+                  alt="who are we pics"
+                  className="w-full h-full"
+                />
+              </figure>
+            </section>
           </div>
         </section>
 

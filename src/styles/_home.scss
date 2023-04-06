@@ -65,17 +65,16 @@ main {
 @media only screen and (min-width: 768px) {
   .h1-hero-sub-text {
     height: 90px;
-    padding-top: 20px;
+    padding-top: 15px;
     background-position: 0 10px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .h1-hero-sub-text {
-    height: 100px;
+    height: 120px;
     display: inline-block;
-    padding-top: 15px;
-    background-position: 0 14px;
+    background-position: 0 25px;
   }
 }
 
