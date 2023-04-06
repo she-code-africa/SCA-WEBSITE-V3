@@ -29,7 +29,8 @@ export const paths = {
   terms: '/terms',
   faq: '/faq',
   codeOfConduct: '/code-of-conduct',
-  privacy: '/privacy'
+  privacy: '/privacy',
+  academy:'/academy'
   
 }
 

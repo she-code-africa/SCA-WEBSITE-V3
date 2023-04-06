@@ -14,7 +14,9 @@ module.exports = {
         'primary-gray': '#707070',
         'gainsboro': '#E5E5E5',
         'white-smoke': '#F0F0F0',
-        'mortar': '#555'
+        'mortar': '#555',
+        'secondary-dark-brown':'#210D15',
+        'brown':'#260808'
       },
       fontSize: {
         '15': '15px'
