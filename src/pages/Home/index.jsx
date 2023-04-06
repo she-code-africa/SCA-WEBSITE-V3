@@ -12,6 +12,10 @@ import PopUpModal from "../../components/PopUpModal";
 import { testimonials } from "../../utils";
 import Footer from "../../components/Footer";
 import homeBanner from "../../images/home-hero.png";
+import { Link } from "react-router-dom";
+import * as homecomponents from "../../components/Home";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -29,44 +33,53 @@ const Home = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="She Code Africa" />
-        <meta property="og:description" content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa." />
+        <meta
+          property="og:description"
+          content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa."
+        />
         <meta name="twitter:title" content="She Code Africa" />
-        <meta name="twitter:description" content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa." />
+        <meta
+          name="twitter:description"
+          content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa."
+        />
       </Helmet>
       <PopUpModal display={modal} closeModal={closeModal} />
       <Header page={"home"} />
       <main>
-        <section
-          className="h-[550px] bg-no-repeat bg-center bg-cover flex justify-center items-center text-white"
-          style={{
-            backgroundImage: `linear-gradient(0deg, rgba(33, 13, 21, 0.1), rgba(33, 13, 21, 0.1)), url(${homeBanner})`,
-          }}
-        >
-          <div className="container px-4 mx-auto sm:px-6 md:px-10 lg:px-16">
-            <div>
-              <div className="sm:w-2/3 sm:float-left">
-                <div className="__shecodeheader_text">
-                  <div className=" text-[45px] md:text-[65px] font-bold">
-                    <h1>She Code Africa!</h1>
-                  </div>
-                  <div>
-                    <h4 className="text-[14px] md:text-[30px] tracking-[0.0475em] font-normal">
-                      ...celebrating and empowering Women in Tech across Africa
-                    </h4>
-                  </div>
-                  <div className="mt-20 text-xl lg:text-4xl font-medium">
-                    <a
-                      href="https://bit.ly/joinshecodeafrica"
-                      className="bg-primary-main-pink text-white px-10 lg:px-14 py-[15px] w-full rounded-lg transition-colors"
-                    >
-                      Join Our Community
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <section className=" min-h-screen bg-hero-bg-gradient text-secondary-main-black">
+          <div className="w-90 mx-auto py-5 min-h-[600px]  flex flex-col justify-center">
+            <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[60px] text-center leading-[150%] mx-auto">
+              empowering women in tech across{" "}
+              <span className="h1-hero-sub-text">africa</span>
+            </h1>
+
+            <p className="m-0 mt-8 text-center max-w-[560px] text-base md:text-lg mx-auto leading-[1.8]">
+              She Code Africa celebrates and empowers women in Tech across
+              Africa She Code Africa celebrates...
+            </p>
+
+            <div className="btns-wrapper mt-8">
+              <Link
+                to="https://bit.ly/joinshecodeafrica"
+                className="pl-[32px] pr-[40px] py-[15px] bg-primary-main-pink  text-white text-sm font-medium rounded-lg hover:text-primary-main-pink hover:bg-white border border-primary-main-pink transition duration-300"
+              >
+                Become a Member&nbsp;
+                <FontAwesomeIcon icon={faAngleRight} />
+              </Link>
+
+              <Link
+                to="/donate-partner"
+                className=" bg-white text-sm font-medium rounded-lg border border-primary-main-pink py-[14px] pl-[32px] pr-[38px] transition duration-300 hover:text-white hover:bg-primary-main-pink donate"
+              >
+                Donate&nbsp;
+                <FontAwesomeIcon icon={faAngleRight} />
+              </Link>
             </div>
           </div>
+
+          <homecomponents.Carousel />
         </section>
+
         <section className="mx-auto p-4 py-7 md:mt-20 md:mb-36 about_section">
           <div className="flex flex-col items-center px-8 mb-4">
             <h5 className="text-4xl font-semibold mb-5">About Us</h5>
