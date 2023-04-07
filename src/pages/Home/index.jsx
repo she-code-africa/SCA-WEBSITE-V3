@@ -90,7 +90,7 @@ const Home = () => {
                     who we are
                   </h2>
 
-                  <div className="w-[70px] 2md:w-[90px] h-[2px] bg-primary-main-pink mx-auto mt-1 2md:mt-3"></div>
+                  <div className="w-[70px] 2md:w-[110px] h-[2px] bg-primary-main-pink mx-auto mt-1 2md:mt-3"></div>
                 </div>
 
                 {whoWeAreTexts.map((content, index) => {
@@ -100,7 +100,7 @@ const Home = () => {
                         {content.heading}
                       </h3>
 
-                      <p className="text-base leading-[2] mt-2 2md:mt-4 text-center 2md:text-left text-primary-dark-brown w-[90%] mx-auto 2md:mx-0 2md:w-full">
+                      <p className="text-base leading-[2] mt-2 2md:mt-4 text-center 2md:text-left text-primary-dark-brown w-[90%] mx-auto 2md:mx-0">
                         {content.text}
                       </p>
                     </article>
@@ -111,7 +111,7 @@ const Home = () => {
                 <img
                   src={whoweareimage}
                   alt="who are we pics"
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                 />
               </figure>
             </section>
