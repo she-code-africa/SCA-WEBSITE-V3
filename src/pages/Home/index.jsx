@@ -83,7 +83,7 @@ const Home = () => {
           <div className="w-90 mx-auto">
             <homecomponents.PartnersLogoSlider />
 
-            <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[50px] 2md:items-center gap-10">
+            <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[80px] md:mt-[110px] 2md:items-center gap-10">
               <div className="text-wrapper py-5 w-full 2md:max-w-[400px]">
                 <div className="who-are-we-caption w-full mb-5 text-center 2md:text-left">
                   <h2 className="capitalize text-3xl 2md:text-[40px] font-bold">
