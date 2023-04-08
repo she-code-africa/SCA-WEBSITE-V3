@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -43,7 +44,7 @@ const Home = () => {
           content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa."
         />
       </Helmet>
-      <PopUpModal display={modal} closeModal={closeModal} />
+      {/* <PopUpModal display={modal} closeModal={closeModal} /> */}
       <Header page={"home"} />
       <main>
         <section className=" min-h-screen bg-hero-bg-gradient text-secondary-main-black">
@@ -59,14 +60,13 @@ const Home = () => {
             </p>
 
             <div className="btns-wrapper mt-8">
-              <Link
-                to="https://bit.ly/joinshecodeafrica"
-                className="pl-[32px] pr-[40px] py-[15px] bg-primary-main-pink  text-white text-sm font-medium rounded-lg hover:text-primary-main-pink hover:bg-white border border-primary-main-pink transition duration-300"
-              >
-                Become a Member&nbsp;
-                <FontAwesomeIcon icon={faAngleRight} />
-              </Link>
-
+              <BecomeAmemberButton
+                bg="bg-primary-main-pink"
+                bgHover="bg-white"
+                color="text-white"
+                colorHover="text-primary-main-pink"
+                border="border-primary-main-pink"
+              />
               <Link
                 to="/donate-partner"
                 className=" bg-white text-sm font-medium rounded-lg border border-primary-main-pink py-[14px] pl-[32px] pr-[38px] transition duration-300 hover:text-white hover:bg-primary-main-pink donate"

@@ -1,3 +1,7 @@
+main {
+  font-family: "Libre Franklin", sans-serif;
+}
+
 .w-90 {
   width: 90%;
 }
@@ -41,6 +45,11 @@
   background-image: url("../images/carouselImage-1.svg");
 }
 
+.our-reach {
+  // background-image: url("../images/unsplash-our-reach.svg");
+  background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 479px) {
   .btns-wrapper {
     display: flex;
@@ -67,5 +76,11 @@
     display: inline-block;
     padding-top: 15px;
     background-position: 0 14px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .our-reach .right-xl {
+    right: -150px;
   }
 }
