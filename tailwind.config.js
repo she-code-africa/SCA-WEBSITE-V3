@@ -15,6 +15,7 @@ module.exports = {
         mortar: "#555",
         "community-pink-bg": "#FDC0E3",
         "primary-dark-brown": "#260808",
+        "community-pink-bg": "#FDC0E3",
       },
       fontSize: {
         15: "15px",
