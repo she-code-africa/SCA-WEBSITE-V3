@@ -44,7 +44,7 @@ const Home = () => {
           content="We are a non-profit organisation focused on celebrating and empowering young girls and women in tech across Africa."
         />
       </Helmet>
-      {/* <PopUpModal display={modal} closeModal={closeModal} /> */}
+      <PopUpModal display={modal} closeModal={closeModal} />
       <Header page={"home"} />
       <main>
         <section className=" min-h-screen bg-hero-bg-gradient text-secondary-main-black">
