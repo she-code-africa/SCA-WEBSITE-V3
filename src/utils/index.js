@@ -75,22 +75,27 @@ export const partnersList = [
   {
     src: eduLag,
     alt: "Lagos State Ministry",
+    width: 100,
   },
   {
     src: layer5,
     alt: "Layer 5",
+    width: 100,
   },
   {
     src: deimos,
     alt: "Deimos",
+    width: 100,
   },
   {
     src: cloudbees,
     alt: "Cloud Bees",
+    width: 100,
   },
   {
     src: chimoney,
     alt: "Chimoney",
+    width: 175,
   },
 ];
 
