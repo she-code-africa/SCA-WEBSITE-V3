@@ -20,7 +20,6 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 import whoweareimage from "../../images/who-are-we-img.svg";
 import { whoWeAreTexts } from "../../utils";
-import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
