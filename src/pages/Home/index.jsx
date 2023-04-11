@@ -50,7 +50,7 @@ const Home = () => {
       <main>
         <section className=" min-h-screen bg-hero-bg-gradient text-secondary-main-black">
           <div className="w-90 mx-auto py-5 min-h-[600px]  flex flex-col justify-center">
-            <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[60px] text-center leading-[150%] mx-auto">
+            <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
               empowering women in tech across{" "}
               <span className="h1-hero-sub-text">africa</span>
             </h1>
@@ -222,16 +222,34 @@ const Home = () => {
           {/* <ContactForm /> */}
         </div>
         <section className="bg-black text-white grid md:grid-cols-3 my-14 relative">
-          <img src={shape} alt="Shape" className="absolute w-1/12 translate-x-[50%]" />
+          <img
+            src={shape}
+            alt="Shape"
+            className="absolute w-1/12 translate-x-[50%]"
+          />
           <div className="md:col-span-2 md:w-7/12 mx-auto grid place-content-center px-5 md:px-0 py-12 md:py-5 lg:py-0">
-            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">Your next chapter, made possible by mentoring</h5>
-            <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">Build confidence as a leader, grow your network, and define your legacy.</p>
+            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
+              Your next chapter, made possible by mentoring
+            </h5>
+            <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">
+              Build confidence as a leader, grow your network, and define your
+              legacy.
+            </p>
             <div className="md:my-5 my-10">
-              <Link to="/mentors" className="capitalize bg-primary-main-pink text-white py-[14px] px-[32px] rounded-lg">Become a member</Link>
+              <Link
+                to="/mentors"
+                className="capitalize bg-primary-main-pink text-white py-[14px] px-[32px] rounded-lg"
+              >
+                Become a member
+              </Link>
             </div>
           </div>
           <div className=" place-self-end">
-            <img src={adaRect} alt="Ada on stage" className="lg:h-[550px] xl:object-fill lg:object-contain object-contain" />
+            <img
+              src={adaRect}
+              alt="Ada on stage"
+              className="lg:h-[550px] xl:object-fill lg:object-contain object-contain"
+            />
           </div>
         </section>
       </main>
