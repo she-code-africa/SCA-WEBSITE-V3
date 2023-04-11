@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import eduLag from "../images/lag.edu.png";
+import layer5 from "../images/Layer-5.png";
+import chimoney from "../images/chimoney.png";
+import deimos from "../images/deimos.png";
+import cloudbees from "../images/cloudbees.png";
 
 export const paths = {
   home: "/",
@@ -45,7 +50,7 @@ export const apiConstants = {
 
 export const partners = [
   {
-    src: "	https://shecodeafrica.org/images/lag.edu.png",
+    src: "https://shecodeafrica.org/images/lag.edu.png",
     alt: "Lagos State Ministry",
   },
   {
@@ -63,6 +68,34 @@ export const partners = [
   {
     src: "https://shecodeafrica.org/images/chimoney.png",
     alt: "Lagos State Ministry",
+  },
+];
+
+export const partnersList = [
+  {
+    src: eduLag,
+    alt: "Lagos State Ministry",
+    width: 100,
+  },
+  {
+    src: layer5,
+    alt: "Layer 5",
+    width: 100,
+  },
+  {
+    src: deimos,
+    alt: "Deimos",
+    width: 100,
+  },
+  {
+    src: cloudbees,
+    alt: "Cloud Bees",
+    width: 100,
+  },
+  {
+    src: chimoney,
+    alt: "Chimoney",
+    width: 175,
   },
 ];
 
@@ -653,5 +686,22 @@ export const homepageOurCommunityCards = [
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-2",
+  },
+];
+
+export const whoWeAreTexts = [
+  {
+    heading: "our vision",
+    text: "An Africa where women are equally represented across all career roles in Technology",
+  },
+
+  {
+    heading: "our mission",
+    text: "To build a community that embodies technical growth, networking, mentorship and visibility amongst all level career roles in Technology.",
+  },
+
+  {
+    heading: "our core values",
+    text: "Team work, Community, Technical growth, Leadership, Visibility.",
   },
 ];
