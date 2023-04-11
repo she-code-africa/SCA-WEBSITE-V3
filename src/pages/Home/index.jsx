@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { homepageOurCommunityCards } from "../../utils/index";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -117,7 +118,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <div className="container mx-auto clear-both">
+        {/* <div className="container mx-auto clear-both">
           <Text
             topic="Identify With Us"
             sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."
@@ -187,7 +188,33 @@ const Home = () => {
               </a>
             </Section>
           </div>
-        </div>
+        </div> */}
+
+        <section className="w-full py-5 my-5">
+          <div className="w-90 mx-auto">
+            <homecomponents.Text
+              heading="What Our Community is About"
+              subheading="An Africa where women are equally represented across all career roles in
+        Technology."
+            />
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 2md:gap-14 md:max-w-[700px] 2md:max-w-[800px] mx-auto">
+              {homepageOurCommunityCards.map(
+                ({ heading, textContent, bgImage }, index) => {
+                  return (
+                    <homecomponents.Cards
+                      heading={heading}
+                      textContent={textContent}
+                      key={index}
+                      cardBgImg={bgImage}
+                    />
+                  );
+                }
+              )}
+            </div>
+          </div>
+        </section>
+
         <div className="container mx-auto px-2 clear-both text-center">
           {/* <TestimonialCarousel
             title="What People Say"
