@@ -13,6 +13,7 @@ module.exports = {
         gainsboro: "#E5E5E5",
         "white-smoke": "#F0F0F0",
         mortar: "#555",
+        "primary-dark-brown": "#260808",
       },
       fontSize: {
         15: "15px",

@@ -1,3 +1,7 @@
+main {
+  font-family: "Libre Franklin", sans-serif;
+}
+
 .w-90 {
   width: 90%;
 }
@@ -28,17 +32,7 @@
 }
 
 .carousel {
-  background-repeat: no-repeat;
-  background-image: url("../images/ADA.svg");
   border-radius: 52px 52px 0px 0px;
-}
-
-.carousel-img2 {
-  background-image: url("../images/carouselImage-1.svg");
-}
-
-.carousel-img4 {
-  background-image: url("../images/carouselImage-1.svg");
 }
 
 @media only screen and (max-width: 479px) {
@@ -56,16 +50,15 @@
 @media only screen and (min-width: 768px) {
   .h1-hero-sub-text {
     height: 90px;
-    padding-top: 20px;
+    padding-top: 15px;
     background-position: 0 10px;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .h1-hero-sub-text {
-    height: 100px;
+    height: 120px;
     display: inline-block;
-    padding-top: 15px;
-    background-position: 0 14px;
+    background-position: 0 25px;
   }
 }
