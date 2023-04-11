@@ -62,3 +62,9 @@ main {
     background-position: 0 25px;
   }
 }
+
+@media only screen and (min-width: 1280px) {
+  .our-reach .right-xl {
+    right: -150px;
+  }
+}

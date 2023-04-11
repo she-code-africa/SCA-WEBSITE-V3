@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 import whoweareimage from "../../images/who-are-we-img.svg";
 import { whoWeAreTexts } from "../../utils";
 
@@ -63,14 +64,13 @@ const Home = () => {
             </p>
 
             <div className="btns-wrapper mt-8">
-              <Link
-                to="https://bit.ly/joinshecodeafrica"
-                className="pl-[32px] pr-[40px] py-[15px] bg-primary-main-pink  text-white text-sm font-medium rounded-lg hover:text-primary-main-pink hover:bg-white border border-primary-main-pink transition duration-300"
-              >
-                Become a Member&nbsp;
-                <FontAwesomeIcon icon={faAngleRight} />
-              </Link>
-
+              <BecomeAmemberButton
+                bg="bg-primary-main-pink"
+                bgHover="bg-white"
+                color="text-white"
+                colorHover="text-primary-main-pink"
+                border="border-primary-main-pink"
+              />
               <Link
                 to="/donate-partner"
                 className=" bg-white text-sm font-medium rounded-lg border border-primary-main-pink py-[14px] pl-[32px] pr-[38px] transition duration-300 hover:text-white hover:bg-primary-main-pink donate"
@@ -122,77 +122,11 @@ const Home = () => {
             </section>
           </div>
         </section>
-        <div className="container mx-auto clear-both">
-          <Text
-            topic="Identify With Us"
-            sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."
-          />
-          <div className="container mx-auto lg:my-20 py-5 px-4 md:px-6">
-            <Section
-              title="Growing Slack Community"
-              content="Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career."
-              imgClass="home_slack"
-              className="order-last"
-            >
-              <a
-                href="https://bit.ly/joinshecodeafrica"
-                className="bg-primary-main-pink text-white px-10 lg:px-14 py-[15px] w-full rounded-lg transition-colors md:text-[18px]"
-              >
-                Join Us!
-              </a>
-            </Section>
 
-            <Section
-              title="Attend an Event"
-              content="Participate in any of our online or offline events and initiatives inluding bootcamps, Fireside chats, webinars, Mentorship programs and several more!"
-              imgClass="home_partner"
-              className="sm:-order-1 md:text-right"
-            >
-              <a
-                href="https://bit.ly/joinshecodeafrica"
-                className="bg-primary-main-pink text-white px-10 lg:px-14 py-[15px] w-full rounded-lg transition-colors md:text-[18px]"
-              >
-                View Upcoming Events
-              </a>
-            </Section>
+        <section className="w-full bg-primary-main-pink py-9 md:py-20">
+          <homecomponents.OurReach />
+        </section>
 
-            <Section
-              title="Be a Partner or Sponsor"
-              content="Be a sponsor for our next event via a donation or Partner with our organisation to reach more women in tech across Africa"
-              imgClass="home_partner"
-              className="order-last"
-            >
-              <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
-                <a
-                  href="https://bit.ly/joinshecodeafrica"
-                  className="shecode_button2"
-                >
-                  Partner with Us
-                </a>
-                <a
-                  href="https://bit.ly/joinshecodeafrica"
-                  className="shecode_button"
-                >
-                  Sponsor Us
-                </a>
-              </div>
-            </Section>
-
-            <Section
-              title="Follow Us on Social Media"
-              content="Stay updated with us and be the first to know about all our activities and events, by following our social media pages"
-              imgClass="home_social"
-              className="sm:-order-1 md:text-right"
-            >
-              <a
-                href="https://bit.ly/joinshecodeafrica"
-                className="bg-primary-main-pink text-white px-10 lg:px-14 py-[15px] w-full rounded-lg transition-colors md:text-[18px]"
-              >
-                View Upcoming Events
-              </a>
-            </Section>
-          </div>
-        </div>
         <div className="container mx-auto px-2 clear-both text-center">
           {/* <TestimonialCarousel
             title="What People Say"
@@ -227,34 +161,16 @@ const Home = () => {
           {/* <ContactForm /> */}
         </div>
         <section className="bg-black text-white grid md:grid-cols-3 my-14 relative">
-          <img
-            src={shape}
-            alt="Shape"
-            className="absolute w-1/12 translate-x-[50%]"
-          />
+          <img src={shape} alt="Shape" className="absolute w-1/12 translate-x-[50%]" />
           <div className="md:col-span-2 md:w-7/12 mx-auto grid place-content-center px-5 md:px-0 py-12 md:py-5 lg:py-0">
-            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
-              Your next chapter, made possible by mentoring
-            </h5>
-            <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">
-              Build confidence as a leader, grow your network, and define your
-              legacy.
-            </p>
+            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">Your next chapter, made possible by mentoring</h5>
+            <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">Build confidence as a leader, grow your network, and define your legacy.</p>
             <div className="md:my-5 my-10">
-              <Link
-                to="/mentors"
-                className="capitalize bg-primary-main-pink text-white py-[14px] px-[32px] rounded-lg"
-              >
-                Become a member
-              </Link>
+              <Link to="/mentors" className="capitalize bg-primary-main-pink text-white py-[14px] px-[32px] rounded-lg">Become a member</Link>
             </div>
           </div>
           <div className=" place-self-end">
-            <img
-              src={adaRect}
-              alt="Ada on stage"
-              className="lg:h-[550px] xl:object-fill lg:object-contain object-contain"
-            />
+            <img src={adaRect} alt="Ada on stage" className="lg:h-[550px] xl:object-fill lg:object-contain object-contain" />
           </div>
         </section>
       </main>
