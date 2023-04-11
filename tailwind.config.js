@@ -14,7 +14,8 @@ module.exports = {
         'white-smoke': '#F0F0F0',
         'mortar': '#555',
         'secondary-dark-brown':'#210D15',
-        'brown':'#260808'
+        'brown':'#260808',
+        'dark-blue':'#2A254B'
       },
       fontSize: {
         15: "15px",
