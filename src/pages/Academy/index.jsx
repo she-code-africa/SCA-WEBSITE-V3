@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import { programsList, onlineCoursesList, youtubeVideos } from "../../data";
-
+import bglineImage from "../../images/academy/bg-line.svg";
 
 const Academy = () => {
   return (
@@ -56,7 +56,10 @@ const Academy = () => {
           <div className="flex-col md:flex-row flex items-center justify-center gap-5">
             {onlineCoursesList.map((content) => {
               return (
-                <div key={content.id} className="text-center lg:text-left mt-8 mb-0 lg:mb-24 ">
+                <div
+                  key={content.id}
+                  className="text-center lg:text-left mt-8 mb-0 lg:mb-24 "
+                >
                   <img
                     className="text-center md:w-96"
                     src={content.image}
@@ -99,6 +102,26 @@ const Academy = () => {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-[#F9F9F9] my-14 lg:my-28 py-20">
+        <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-brown">
+          <div className="hidden lg:inline-block absolute top-0 left-0">
+            {" "}
+            <img className="w-52" src={bglineImage} alt="bg-line" />
+          </div>
+          <h2 className="text-2xl font-normal text-4xl text-brown">
+            Hire Our Graduates
+          </h2>
+          <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
+            Access a pool of talented engineers from our renowned engineering
+            school and take your business to the next level by building a
+            skilled and diverse team
+          </p>
+          <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
+            Try your luck
+          </button>
         </div>
       </section>
     </>
