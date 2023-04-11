@@ -1,7 +1,5 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx}",
-  ],
+  content: ["./src/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
@@ -19,9 +17,17 @@ module.exports = {
         'brown':'#260808'
       },
       fontSize: {
-        '15': '15px'
-      }
+        15: "15px",
+      },
+      backgroundImage: {
+        "hero-bg-gradient":
+          "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%) ",
+      },
+
+      screens: {
+        "2md": "992px",
+      },
     },
   },
   plugins: [],
-}
+};
