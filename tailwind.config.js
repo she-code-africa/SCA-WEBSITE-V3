@@ -13,12 +13,10 @@ module.exports = {
         'gainsboro': '#E5E5E5',
         'white-smoke': '#F0F0F0',
         'mortar': '#555',
-        'secondary-dark-brown':'#210D15',
-
         'dark-blue':'#2A254B',
-       
         "community-pink-bg": "#FDC0E3",
         "primary-dark-brown": "#260808",
+        'secondary-dark-brown':'#210D15',
       },
       fontSize: {
         15: "15px",

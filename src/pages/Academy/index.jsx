@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { programsList, onlineCoursesList, youtubeVideos } from "../../data";
 import bglineImage from "../../images/academy/bg-line.svg";
 
@@ -7,7 +8,7 @@ const Academy = () => {
   return (
     <>
       <Header />
-      <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-primary-dark-brown">
+      <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-brown">
         <div className="text-center max-w-[60rem]">
           <h1 className="text-4xl leading-relaxed mx-auto font-bold text-white lg:text-[3.2rem] lg:leading-tight mb-8">
             {" "}
@@ -124,6 +125,7 @@ const Academy = () => {
           </button>
         </div>
       </section>
+      <Footer/>
     </>
   );
 };
