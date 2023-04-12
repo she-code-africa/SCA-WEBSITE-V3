@@ -17,7 +17,6 @@ main {
 }
 
 .hero-heading {
-  font-family: "Libre Franklin", sans-serif;
   max-width: 1142px;
 }
 .btns-wrapper {
@@ -33,6 +32,31 @@ main {
 
 .carousel {
   border-radius: 52px 52px 0px 0px;
+}
+
+.card-body {
+  background-repeat: no-repeat;
+  border-radius: 24px 24px 0px 0px;
+
+  article {
+    border-radius: 24px 24px 0px 0px;
+  }
+}
+
+.card-body-img-1 {
+  background-image: url("../images/Rectangle22.svg");
+}
+
+.card-body-img-2 {
+  background-image: url("../images/Rectangle3772.svg");
+}
+
+.card-body-img-3 {
+  background-image: url("../images/Rectangle376.svg");
+}
+
+.card-body-img-4 {
+  background-image: url("../images/Rectangle377.svg");
 }
 
 @media only screen and (max-width: 479px) {

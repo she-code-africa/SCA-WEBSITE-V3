@@ -663,6 +663,33 @@ export const accountInfo = [
   },
 ];
 
+export const homepageOurCommunityCards = [
+  {
+    heading: "Our Community",
+    textContent:
+      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+    bgImage: "card-body-img-3",
+  },
+  {
+    heading: "Our Communities and Chapters",
+    textContent:
+      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+    bgImage: "card-body-img-4",
+  },
+  {
+    heading: "Our Events",
+    textContent:
+      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+    bgImage: "card-body-img-1",
+  },
+  {
+    heading: "Our Initiative",
+    textContent:
+      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+    bgImage: "card-body-img-2",
+  },
+];
+
 export const whoWeAreTexts = [
   {
     heading: "our vision",

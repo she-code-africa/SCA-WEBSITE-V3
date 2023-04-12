@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { homepageOurCommunityCards } from "../../utils/index";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 import whoweareimage from "../../images/who-are-we-img.svg";
 import { whoWeAreTexts } from "../../utils";
@@ -123,8 +124,33 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full bg-primary-main-pink py-9 md:py-20">
+        <section className="w-full bg-primary-main-pink py-9 md:pt-20 md:py-0 md:pb-24 mt-16">
           <homecomponents.OurReach />
+        </section>
+
+        <section className="w-full py-5 my-10">
+          <div className="w-90 mx-auto">
+            <homecomponents.Text
+              heading="What Our Community is About"
+              subheading="An Africa where women are equally represented across all career roles in
+        Technology."
+            />
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 2md:gap-14 md:max-w-[700px] 2md:max-w-[800px] mx-auto">
+              {homepageOurCommunityCards.map(
+                ({ heading, textContent, bgImage }, index) => {
+                  return (
+                    <homecomponents.Cards
+                      heading={heading}
+                      textContent={textContent}
+                      key={index}
+                      cardBgImg={bgImage}
+                    />
+                  );
+                }
+              )}
+            </div>
+          </div>
         </section>
 
         <div className="container mx-auto px-2 clear-both text-center">
@@ -161,16 +187,34 @@ const Home = () => {
           {/* <ContactForm /> */}
         </div>
         <section className="bg-black text-white grid md:grid-cols-3 my-14 relative">
-          <img src={shape} alt="Shape" className="absolute w-1/12 translate-x-[50%]" />
+          <img
+            src={shape}
+            alt="Shape"
+            className="absolute w-1/12 translate-x-[50%]"
+          />
           <div className="md:col-span-2 md:w-7/12 mx-auto grid place-content-center px-5 md:px-0 py-12 md:py-5 lg:py-0">
-            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">Your next chapter, made possible by mentoring</h5>
-            <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">Build confidence as a leader, grow your network, and define your legacy.</p>
+            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
+              Your next chapter, made possible by mentoring
+            </h5>
+            <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">
+              Build confidence as a leader, grow your network, and define your
+              legacy.
+            </p>
             <div className="md:my-5 my-10">
-              <Link to="/mentors" className="capitalize bg-primary-main-pink text-white py-[14px] px-[32px] rounded-lg">Become a member</Link>
+              <Link
+                to="/mentors"
+                className="capitalize bg-primary-main-pink text-white py-[14px] px-[32px] rounded-lg"
+              >
+                Become a member
+              </Link>
             </div>
           </div>
           <div className=" place-self-end">
-            <img src={adaRect} alt="Ada on stage" className="lg:h-[550px] xl:object-fill lg:object-contain object-contain" />
+            <img
+              src={adaRect}
+              alt="Ada on stage"
+              className="lg:h-[550px] xl:object-fill lg:object-contain object-contain"
+            />
           </div>
         </section>
       </main>
