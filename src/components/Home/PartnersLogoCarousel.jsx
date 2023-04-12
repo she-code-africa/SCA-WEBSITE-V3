@@ -13,10 +13,18 @@ const PartnersLogoCarousel = () => {
     cssEase: "linear",
     className: "slider variable-width",
     centerMode: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     variableWidth: true,
     lazyLoad: true,
     initialSlide: 2,
+    responsive: [
+      {
+        breakponint: 721,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
   return (
     <section className="w-90 mx-auto mt-[60px]">
