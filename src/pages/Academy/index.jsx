@@ -7,7 +7,7 @@ const Academy = () => {
   return (
     <>
       <Header />
-      <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-brown">
+      <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-primary-dark-brown">
         <div className="text-center max-w-[60rem]">
           <h1 className="text-4xl leading-relaxed mx-auto font-bold text-white lg:text-[3.2rem] lg:leading-tight mb-8">
             {" "}
@@ -19,7 +19,7 @@ const Academy = () => {
         </div>
       </section>
       <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
-        <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-brown lg:text-4xl text-center">
+        <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
           Currently On
         </h2>
         {programsList.map((content, index) => {
@@ -35,7 +35,7 @@ const Academy = () => {
                 src={content.image}
                 alt={content.title}
               />
-              <div className="text-brown">
+              <div className="text-primary-dark-brown">
                 <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
                   {content.title}
                 </h3>
@@ -50,7 +50,7 @@ const Academy = () => {
       </section>
       <section className="bg-[#F9F9F9] my-14 lg:my-28 ">
         <div className="max-w-[80rem] 2xl:max-w-[90rem] mx-auto py-12 lg:py-20">
-          <h2 className="text-3xl font-semibold pb-2 text-brown lg:text-4xl text-center">
+          <h2 className="text-3xl font-semibold pb-2 text-primary-dark-brown lg:text-4xl text-center">
             Online Course
           </h2>
           <div className="flex-col md:flex-row flex items-center justify-center gap-5">
@@ -106,12 +106,12 @@ const Academy = () => {
       </section>
 
       <section className="bg-[#F9F9F9] my-14 lg:my-28 py-20">
-        <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-brown">
+        <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-primary-dark-brown">
           <div className="hidden lg:inline-block absolute top-0 left-0">
             {" "}
             <img className="w-52" src={bglineImage} alt="bg-line" />
           </div>
-          <h2 className="text-2xl font-normal text-4xl text-brown">
+          <h2 className="text-2xl font-normal text-4xl text-primary-dark-brown">
             Hire Our Graduates
           </h2>
           <p className="text-sm lg:text-base py-6 lg:w-[55ch]">

@@ -9,15 +9,17 @@ import value from "../../images/core-values.png";
 import adaRect from "../../images/ada-rect.jpg";
 import shape from "../../images/shape.png";
 import Text from "../../components/Text";
-import { TestimonialCarousel } from "../../components/Carousel";
+
 import PopUpModal from "../../components/PopUpModal";
-import { testimonials } from "../../utils";
+
 import Footer from "../../components/Footer";
-import homeBanner from "../../images/home-hero.png";
 import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
+import whoweareimage from "../../images/who-are-we-img.svg";
+import { whoWeAreTexts } from "../../utils";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -47,28 +49,28 @@ const Home = () => {
       </Helmet>
       <PopUpModal display={modal} closeModal={closeModal} />
       <Header page={"home"} />
-      <main>
-        <section className=" min-h-screen bg-hero-bg-gradient text-secondary-main-black">
-          <div className="w-90 mx-auto py-5 min-h-[600px]  flex flex-col justify-center">
-            <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[60px] text-center leading-[150%] mx-auto">
+      <main className=" text-secondary-main-black">
+        <section className=" min-h-screen bg-hero-bg-gradient">
+          <div className="w-90 mx-auto py-8 min-h-[600px]  flex flex-col justify-center">
+            <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
               empowering women in tech across{" "}
               <span className="h1-hero-sub-text">africa</span>
             </h1>
 
-            <p className="m-0 mt-8 text-center max-w-[560px] text-base md:text-lg mx-auto leading-[1.8]">
-              She Code Africa celebrates and empowers women in Tech across
-              Africa She Code Africa celebrates...
+            <p className="m-0 mt-8 text-center max-w-[900px] text-base md:text-lg mx-auto leading-[1.8]">
+              She Code Africa is a registered non-profit organization dedicated
+              to empowering and celebrating girls and women in technology
+              across  Africa
             </p>
 
             <div className="btns-wrapper mt-8">
-              <Link
-                to="https://bit.ly/joinshecodeafrica"
-                className="pl-[32px] pr-[40px] py-[15px] bg-primary-main-pink  text-white text-sm font-medium rounded-lg hover:text-primary-main-pink hover:bg-white border border-primary-main-pink transition duration-300"
-              >
-                Become a Member&nbsp;
-                <FontAwesomeIcon icon={faAngleRight} />
-              </Link>
-
+              <BecomeAmemberButton
+                bg="bg-primary-main-pink"
+                bgHover="bg-white"
+                color="text-white"
+                colorHover="text-primary-main-pink"
+                border="border-primary-main-pink"
+              />
               <Link
                 to="/donate-partner"
                 className=" bg-white text-sm font-medium rounded-lg border border-primary-main-pink py-[14px] pl-[32px] pr-[38px] transition duration-300 hover:text-white hover:bg-primary-main-pink donate"
@@ -82,112 +84,49 @@ const Home = () => {
           <homecomponents.Carousel />
         </section>
 
-        <section className="mx-auto p-4 py-7 md:mt-20 md:mb-36 about_section">
-          <div className="flex flex-col items-center px-8 mb-4">
-            <h5 className="text-4xl font-semibold mb-5">About Us</h5>
-            <p className="text-2xl text-center md:w-3/4">
-              We are a non-profit organisation focused on celebrating and
-              empowering young girls and women in tech across Africa.
-            </p>
-          </div>
-          <div className="flex justify-center about_values p-5 md:text-left text-center">
-            <div>
-              <img src={vision} alt="Core Values" className="icon" />
-              <h4>Vision</h4>
-              <p>
-                An Africa where women are equally represented across all career
-                roles in Technology.
-              </p>
-            </div>
-            <div>
-              <img src={mission} alt="Core Values" className="icon" />
-              <h4>Mission</h4>
-              <p>
-                To build a community that embodies technical growth, networking,
-                mentorship and visibility amongst all level career roles in
-                Technology.
-              </p>
-            </div>
-            <div>
-              <img src={mission} alt="Core Values" className="icon" />
-              <h4>Core Values</h4>
-              <p>
-                Team work, Community, Technical growth, Leadership, Visibility.
-              </p>
-            </div>
+        <section className="w-full mt-8">
+          <div className="w-90 mx-auto">
+            <homecomponents.PartnersLogoSlider />
+
+            <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[80px] md:mt-[110px] 2md:items-center gap-10">
+              <div className="text-wrapper py-5 w-full 2md:max-w-[400px]">
+                <div className="who-are-we-caption w-full mb-5 text-center 2md:text-left">
+                  <h2 className="capitalize text-3xl 2md:text-[40px] font-bold">
+                    who we are
+                  </h2>
+
+                  <div className="w-[70px] 2md:w-[110px] h-[2px] bg-primary-main-pink mx-auto mt-1 2md:mt-3"></div>
+                </div>
+
+                {whoWeAreTexts.map((content, index) => {
+                  return (
+                    <article className="w-full mt-8 2md:mt-[40px]" key={index}>
+                      <h3 className="font-semibold text-center text-2xl 2md:text-[32px] 2md:text-left capitalize">
+                        {content.heading}
+                      </h3>
+
+                      <p className="text-base leading-[2] mt-2 2md:mt-4 text-center 2md:text-left text-primary-dark-brown w-[90%] mx-auto 2md:mx-0">
+                        {content.text}
+                      </p>
+                    </article>
+                  );
+                })}
+              </div>
+              <figure className="m-0 p-0 py-5 max-w-[600px] h-[500px] mx-auto 2md:mx-0">
+                <img
+                  src={whoweareimage}
+                  alt="who are we pics"
+                  className="w-full h-full object-cover"
+                />
+              </figure>
+            </section>
           </div>
         </section>
-        <div className="container mx-auto clear-both">
-          <Text
-            topic="Identify With Us"
-            sub_topic="If you love a welcoming community of women in tech like we do, we're more than excited to take you in."
-          />
-          <div className="container mx-auto lg:my-20 py-5 px-4 md:px-6">
-            <Section
-              title="Growing Slack Community"
-              content="Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career."
-              imgClass="home_slack"
-              className="order-last"
-            >
-              <a
-                href="https://bit.ly/joinshecodeafrica"
-                className="bg-primary-main-pink text-white px-10 lg:px-14 py-[15px] w-full rounded-lg transition-colors md:text-[18px]"
-              >
-                Join Us!
-              </a>
-            </Section>
 
-            <Section
-              title="Attend an Event"
-              content="Participate in any of our online or offline events and initiatives inluding bootcamps, Fireside chats, webinars, Mentorship programs and several more!"
-              imgClass="home_partner"
-              className="sm:-order-1 md:text-right"
-            >
-              <a
-                href="https://bit.ly/joinshecodeafrica"
-                className="bg-primary-main-pink text-white px-10 lg:px-14 py-[15px] w-full rounded-lg transition-colors md:text-[18px]"
-              >
-                View Upcoming Events
-              </a>
-            </Section>
+        <section className="w-full bg-primary-main-pink py-9 md:py-20">
+          <homecomponents.OurReach />
+        </section>
 
-            <Section
-              title="Be a Partner or Sponsor"
-              content="Be a sponsor for our next event via a donation or Partner with our organisation to reach more women in tech across Africa"
-              imgClass="home_partner"
-              className="order-last"
-            >
-              <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
-                <a
-                  href="https://bit.ly/joinshecodeafrica"
-                  className="shecode_button2"
-                >
-                  Partner with Us
-                </a>
-                <a
-                  href="https://bit.ly/joinshecodeafrica"
-                  className="shecode_button"
-                >
-                  Sponsor Us
-                </a>
-              </div>
-            </Section>
-
-            <Section
-              title="Follow Us on Social Media"
-              content="Stay updated with us and be the first to know about all our activities and events, by following our social media pages"
-              imgClass="home_social"
-              className="sm:-order-1 md:text-right"
-            >
-              <a
-                href="https://bit.ly/joinshecodeafrica"
-                className="bg-primary-main-pink text-white px-10 lg:px-14 py-[15px] w-full rounded-lg transition-colors md:text-[18px]"
-              >
-                View Upcoming Events
-              </a>
-            </Section>
-          </div>
-        </div>
         <div className="container mx-auto px-2 clear-both text-center">
           {/* <TestimonialCarousel
             title="What People Say"
