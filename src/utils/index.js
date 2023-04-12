@@ -6,7 +6,7 @@ import deimos from "../images/deimos.png";
 import cloudbees from "../images/cloudbees.png";
 
 export const paths = {
-  home: "/",
+home: "/",
   about: "/about",
   team: "/team",
   engineering: "/school-of-engineering",
@@ -35,6 +35,7 @@ export const paths = {
   faq: "/faq",
   codeOfConduct: "/code-of-conduct",
   privacy: "/privacy",
+  academy:'/academy'
 };
 
 export const apiConstants = {
