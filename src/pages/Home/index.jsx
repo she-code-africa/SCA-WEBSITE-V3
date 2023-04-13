@@ -124,11 +124,11 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full bg-primary-main-pink py-9 md:pt-20 md:py-0 md:pb-24 mt-16">
+        <section className="w-full bg-primary-main-pink py-20 md:pt-20 md:py-0 md:pb-[114px] mt-16 md:mt-[130px]">
           <homecomponents.OurReach />
         </section>
 
-        <section className="w-full py-5 my-10">
+        <section className="w-full py-5 mt-[80px] md:mt-[150px]">
           <div className="w-90 mx-auto">
             <homecomponents.Text
               heading="What Our Community is About"
@@ -153,39 +153,10 @@ const Home = () => {
           </div>
         </section>
 
-        <div className="container mx-auto px-2 clear-both text-center">
-          {/* <TestimonialCarousel
-            title="What People Say"
-            testimonials={testimonials}
-          /> */}
-          <div>
-            <div className="my-12 md:my-32">
-              <h4 className="text-3xl md:text-4xl text-center font-semibold">
-                What People are saying
-              </h4>
-            </div>
-            <div className="bg-[#FFF7FC] flex flex-col md:flex-row gap-5 max-w-7xl my-0 mx-auto justify-between p-6 min-h-[450px] items-center">
-              <div>
-                <img
-                  className="rounded-[50%] h-[200px] w-[200px] md:h-[250px] md:w-[250px] object-cover"
-                  src="https://imageio.forbes.com/specials-images/imageserve/5f6a779460548326baf6d730/960x0.jpg?format=jpg&width=960"
-                  alt=""
-                />
-              </div>
-              <div className="text-left md:w-2/3 border-r-8 md:m-4 border-r-[#B70569]">
-                <p className="md:text-2xl md:w-3/4">
-                  She Code Africa Mentor-ship Program was a huge part of my
-                  growth as a woman in tech. I am grateful to my mentor who
-                  stressed on understanding the basics of programming explaining
-                  the concepts in beginner friendly terms, my fellow mentees who
-                  I learnt so much from, to the founder fr this great initiative
-                  and to the team members making this possible. Thanks!
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* <ContactForm /> */}
-        </div>
+        <section className="w-full mt-[67px] md:mt-[125px]">
+          <homecomponents.Testimonials />
+        </section>
+
         <section className="bg-black text-white grid md:grid-cols-3 my-14 relative">
           <img
             src={shape}

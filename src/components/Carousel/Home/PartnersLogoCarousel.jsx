@@ -1,5 +1,5 @@
 import React from "react";
-import { partnersList } from "../../utils";
+import { partnersList } from "../../../utils";
 import Slider from "react-slick";
 
 const PartnersLogoCarousel = () => {
