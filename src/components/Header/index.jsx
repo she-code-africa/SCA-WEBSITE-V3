@@ -101,15 +101,15 @@ const Header = ({ page }) => {
         {isOpen ? <div className="fixed inset-0 z-[4000] overflow-y-auto animate__animated top-20 bg-white w-full py-5">
           <ul className="w-10/12 mx-auto">
             {menus.map((menu, index) => (
-              <li key={index} className="text-[#1A1A1A] text-opacity-[82%] font-medium text-xl">
+              <li key={index} className={`font-medium text-xl  ${path === menu.to ? 'text-primary-main-pink' : 'text-[#1A1A1A] text-opacity-[82%]'}`}>
                 {menu?.list ?
                   <button className="font-medium block">{menu.text}</button>
-                  : <Link to={menu.to} className="block mb-6 font-medium">{menu.text}</Link>}
+                  : <Link to={menu.to} className={`block font-medium mb-6`}>{menu.text}</Link>}
                 {menu?.list && (
                   <ul className="pt-5 px-5">
                     {menu.list.map((list, index) =>
                       <li key={index} className="font-normal mb-6">
-                        <Link to={list.to} className=" visited:text-[#1A1A1A] visited:text-opacity-[82%]">{list.text}</Link>
+                        <Link to={list.to} className={`${path === list.to ? 'text-primary-main-pink' : 'text-[#1A1A1A] visited:text-[#1A1A1A] visited:text-opacity-[82%] text-opacity-[82%]'}`}>{list.text}</Link>
                       </li>
                     )}
                   </ul>
