@@ -59,6 +59,35 @@ main {
   background-image: url("../images/Rectangle377.svg");
 }
 
+.slick-wrapper .slick-slider {
+  position: unset;
+  .slick-next {
+    color: #b70569;
+    top: 300px;
+    left: 50%;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      color: #808080;
+    }
+  }
+  .slick-prev {
+    color: #b70569;
+    left: 45%;
+    top: 300px;
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      color: #808080;
+    }
+  }
+}
+
 @media only screen and (max-width: 479px) {
   .btns-wrapper {
     display: flex;
@@ -71,11 +100,35 @@ main {
   }
 }
 
+@media only screen and (max-width: 639px) {
+  .slick-wrapper .slick-slider {
+    .slick-next {
+      left: 50%;
+      top: 100px;
+    }
+    .slick-prev {
+      left: 45%;
+      top: 100px;
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .h1-hero-sub-text {
     height: 90px;
     padding-top: 15px;
     background-position: 0 10px;
+  }
+
+  .slick-wrapper .slick-slider {
+    .slick-next {
+      left: 12rem;
+      top: 320px;
+    }
+    .slick-prev {
+      left: 10rem;
+      top: 320px;
+    }
   }
 }
 
@@ -85,10 +138,33 @@ main {
     display: inline-block;
     background-position: 0 25px;
   }
+
+  .slick-wrapper .slick-slider {
+    .slick-next {
+      left: 220px;
+      top: 65%;
+    }
+    .slick-prev {
+      left: 200px;
+      top: 65%;
+    }
+  }
 }
 
 @media only screen and (min-width: 1280px) {
   .our-reach .right-xl {
     right: -150px;
+  }
+
+  .slick-wrapper .slick-slider {
+    .slick-next {
+      left: 270px;
+      top: 65%;
+    }
+
+    .slick-prev {
+      left: 250px;
+      top: 65%;
+    }
   }
 }

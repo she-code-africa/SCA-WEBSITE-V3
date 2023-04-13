@@ -1,11 +1,11 @@
 import React from "react";
 import Slider from "react-slick";
-import ADA from "../../images/ADA.svg";
-import childrenImage from "../../images/childrenImage.svg";
-import carouselimage from "../../images/carouselImage-1.svg";
-import Ada from "../../images/ADA-lazy-loader.jpg";
-import kids from "../../images/childrenImage-lazy-loader.jpg";
-import carouselLazyLoaderImg from "../../images/carouselImage-lazyloader.jpg";
+import ADA from "../../../images/ADA.svg";
+import childrenImage from "../../../images/childrenImage.svg";
+import carouselimage from "../../../images/carouselImage-1.svg";
+import Ada from "../../../images/ADA-lazy-loader.jpg";
+import kids from "../../../images/childrenImage-lazy-loader.jpg";
+import carouselLazyLoaderImg from "../../../images/carouselImage-lazyloader.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
