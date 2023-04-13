@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import { programsList, onlineCoursesList, youtubeVideos } from "../../data";
 import bglineImage from "../../images/academy/bg-line.svg";
 
-const Academy = () => {
+const SchoolOfEngineering = () => {
   return (
     <>
       <Header />
@@ -130,4 +130,4 @@ const Academy = () => {
   );
 };
 
-export default Academy;
+export default SchoolOfEngineering;

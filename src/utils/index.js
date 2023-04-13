@@ -35,7 +35,6 @@ home: "/",
   faq: "/faq",
   codeOfConduct: "/code-of-conduct",
   privacy: "/privacy",
-  academy:'/academy'
 };
 
 export const apiConstants = {
