@@ -157,6 +157,15 @@ const Home = () => {
           <homecomponents.Testimonials />
         </section>
 
+        <section className="w-full mt-[70px] md:mt-[150px]">
+          <div className="w-90 mx-auto">
+            <homecomponents.Text
+              heading="Gallery"
+              subheading="Image of some of our events."
+            />
+          </div>
+        </section>
+
         <section className="bg-black text-white grid md:grid-cols-3 my-14 relative">
           <img
             src={shape}
