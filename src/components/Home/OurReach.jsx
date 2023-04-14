@@ -1,7 +1,7 @@
 import React from "react";
 import ourReachIcon from "../../images/Icon-our-reach.svg";
 import BecomeAmemberButton from "../Button/BecomeAmemberButton";
-import ourreachImg from "../../images/unsplash-our-reach.svg";
+import ourreachImg from "../../images/homepage/unsplash-our-reach-1.png";
 
 const OurReach = () => {
   return (

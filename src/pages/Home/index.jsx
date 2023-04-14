@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { homepageOurCommunityCards } from "../../utils/index";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
-import whoweareimage from "../../images/who-are-we-img.svg";
+import whoweareimage from "../../images/homepage/who-are-we.png";
 import { whoWeAreTexts } from "../../utils";
 
 const Home = () => {
