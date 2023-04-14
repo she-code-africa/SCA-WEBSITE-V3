@@ -187,7 +187,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex justify-center md:justify-end w-full mt-7">
+            <div className="flex justify-center md:justify-end w-full mt-7 2md:max-w-[1000px] mx-auto">
               <Link
                 to="#"
                 className="capitalize text-base md:text-lg text-primary-main-pink"
