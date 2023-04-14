@@ -1,5 +1,5 @@
 import React from "react";
-import leftQuote from "../../images/left-quote.svg";
+import leftQuote from "../../images/homepage/left-quote.svg";
 import Text from "./Text";
 import TestimonialCarousel from "../Carousel/Home/TestimonialCarousel";
 
