@@ -32,7 +32,7 @@ import Privacy from './pages/Privacy';
 import CodeOfConduct from './pages/CoC';
 import FAQ from './pages/FAQ';
 import PageNotFound from './pages/NotFound';
-import Academy from './pages/Academy';
+import SchoolOfEngineering from './pages/SchoolOfEngineering';
 
 const queryClient = new QueryClient()
 
@@ -53,6 +53,7 @@ function Routes (params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
+      <Route path={paths.engineering} element={<SchoolOfEngineering />} />
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team/>} />
       <Route path={paths.chapters} element={<Chapters />} />
@@ -75,7 +76,6 @@ function Routes (params) {
       <Route path={paths.terms} element={<Terms />} />
       <Route path={paths.privacy} element={<Privacy />} />
       <Route path={paths.codeOfConduct} element={<CodeOfConduct />} />
-      <Route path={paths.academy} element={<Academy />} />
       <Route path={paths.faq} element={<FAQ />} />
       <Route path="*" element={<PageNotFound />} />
     </Switch>
