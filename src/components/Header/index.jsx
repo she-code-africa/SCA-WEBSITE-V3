@@ -12,7 +12,7 @@ const menus = [
     { to: paths.engineering, text: "School of Engineering" },
     { to: paths.products, text: "School of Products" },
     { to: paths.appliedSkills, text: "School of Applied Skills" },
-    { to: paths.stem, text: "STEM School" },
+    { to: paths.stemSchool, text: "STEM School" },
   ]},
   { to: paths.chapters, text: "Get Involved", list: [
     { to: paths.about, text: "Volunteer With Us" },
