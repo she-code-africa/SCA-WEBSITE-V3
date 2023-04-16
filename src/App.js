@@ -33,6 +33,9 @@ import CodeOfConduct from './pages/CoC';
 import FAQ from './pages/FAQ';
 import PageNotFound from './pages/NotFound';
 import SchoolOfEngineering from './pages/SchoolOfEngineering';
+import SchoolOfProduct from './pages/SchoolOfProducts';
+import SchoolOfAppliedSkills from './pages/SchoolOfAppliedSkills';
+import StemSchool from './pages/StemSchool';
 
 const queryClient = new QueryClient()
 
@@ -54,6 +57,9 @@ function Routes (params) {
     <Switch>
       <Route path={paths.home} element={<Home />} />
       <Route path={paths.engineering} element={<SchoolOfEngineering />} />
+      <Route path={paths.stemSchool} element={<StemSchool />} />
+      <Route path={paths.products} element={<SchoolOfProduct />} />
+      <Route path={paths.appliedSkills} element={<SchoolOfAppliedSkills />} />
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team/>} />
       <Route path={paths.chapters} element={<Chapters />} />
