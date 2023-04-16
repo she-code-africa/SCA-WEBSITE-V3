@@ -1,17 +1,9 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
-import Section from "../../components/Section";
-import ContactForm from "../../components/Contact";
-import vision from "../../images/vision.png";
-import mission from "../../images/mission.png";
-import value from "../../images/core-values.png";
 import adaRect from "../../images/ada-rect.jpg";
 import shape from "../../images/shape.png";
-import Text from "../../components/Text";
-
 import PopUpModal from "../../components/PopUpModal";
-
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
@@ -21,6 +13,9 @@ import { homepageOurCommunityCards } from "../../utils/index";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 import whoweareimage from "../../images/homepage/who-are-we.png";
 import { whoWeAreTexts } from "../../utils";
+import gallery1 from "../../images/homepage/gallery-sca.png";
+import gallery2 from "../../images/homepage/gallery-two.png";
+import gallery3 from "../../images/homepage/gallery-3.png";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -155,6 +150,52 @@ const Home = () => {
 
         <section className="w-full mt-[67px] md:mt-[125px]">
           <homecomponents.Testimonials />
+        </section>
+
+        <section className="w-full mt-[70px] md:mt-[150px]">
+          <div className="w-90 mx-auto">
+            <homecomponents.Text
+              heading="Gallery"
+              subheading="Image of some of our events."
+            />
+
+            <div className="w-full 2md:max-w-[1000px]  mx-auto flex flex-col md:justify-between md:flex-row gap-8 mt-12">
+              <figure className="m-0 p-0 w-full max-w-[400px] md:max-w-full md:w-[500px] h-[450px] md:h-[600px] overflow-hidden rounded-3xl mx-auto md:mx-0">
+                <img
+                  src={gallery1}
+                  alt="gallery-pic-1"
+                  className="w-full h-full"
+                />
+              </figure>
+
+              <div className="flex w-full max-w-[400px] 2md:max-w-[480px] flex-col gap-8 md:gap-4 mx-auto">
+                <figure className="m-0 p-0 w-full h-[400px] md:h-[360px] overflow-hidden rounded-3xl  mx-auto md:mx-0">
+                  <img
+                    src={gallery2}
+                    alt="gallery-pic-1"
+                    className="w-full h-full object-cover"
+                  />
+                </figure>
+
+                <figure className="m-0 p-0 w-full h-[400px] md:h-[220px] overflow-hidden rounded-3xl  mx-auto md:mx-0">
+                  <img
+                    src={gallery3}
+                    alt="gallery-pic-1"
+                    className="w-full h-full object-cover"
+                  />
+                </figure>
+              </div>
+            </div>
+
+            <div className="flex justify-center md:justify-end w-full mt-7 2md:max-w-[1000px] mx-auto">
+              <Link
+                to="#"
+                className="capitalize text-base md:text-lg text-primary-main-pink"
+              >
+                view more pictures <FontAwesomeIcon icon={faAngleRight} />
+              </Link>
+            </div>
+          </div>
         </section>
 
         <section className="bg-black text-white grid md:grid-cols-3 my-14 relative">
