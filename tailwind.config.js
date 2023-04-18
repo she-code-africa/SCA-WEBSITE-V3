@@ -19,6 +19,7 @@ module.exports = {
         "secondary-dark-brown": "#210D15",
         "grey-text": "#808080",
         "neutral-250": "#202020",
+        hireTalent: "#FDC0E33D",
       },
       fontSize: {
         15: "15px",

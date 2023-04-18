@@ -88,6 +88,18 @@ main {
   }
 }
 
+.hire-us::before {
+  position: absolute;
+  content: "";
+  height: 450px;
+  width: 300px;
+  background-color: transparent;
+  border: 16px solid #b70569;
+  z-index: -1;
+  top: -65px;
+  left: -30px;
+}
+
 @media only screen and (max-width: 479px) {
   .btns-wrapper {
     display: flex;
@@ -129,6 +141,13 @@ main {
       left: 10rem;
       top: 320px;
     }
+  }
+
+  .hire-us::before {
+    height: 590px;
+    width: 430px;
+    top: -50px;
+    left: -50px;
   }
 }
 

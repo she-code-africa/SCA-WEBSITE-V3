@@ -16,6 +16,7 @@ import { whoWeAreTexts } from "../../utils";
 import gallery1 from "../../images/homepage/gallery-sca.png";
 import gallery2 from "../../images/homepage/gallery-two.png";
 import gallery3 from "../../images/homepage/gallery-3.png";
+import hireTalent from "../../images/homepage/hire-talent.png";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -198,7 +199,49 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="bg-black text-white grid md:grid-cols-3 my-14 relative">
+        <section className="w-full bg-hireTalent mt-[150px] md:mt-[200px]  py-16">
+          <div className="w-full md:w-[90%] mx-auto xl:w-full xl:px-[200px] py-[120px]">
+            <div className="relative hire-us bg-white w-[90%] md:w-full grid grid-cols-1 md:grid-cols-2 md:max-w-[1000px] mx-auto px-8 md:px-[60px] md:py-[40px] py-9 gap-10">
+              <article className="w-full py-5 flex flex-col justify-center">
+                <h3
+                  className="text-2xl md:text-4xl font-bold"
+                  style={{ lineHeight: "48px" }}
+                >
+                  Ready to fill your vacant position?
+                </h3>
+
+                <p
+                  className="mt-4 w-full max-w-[380px]"
+                  style={{ lineHeight: "22px" }}
+                >
+                  Explore diverse tech talents of your choice with genuine skill
+                  sets and good work place ethics.
+                </p>
+
+                <div className="flex mt-10">
+                  <Link
+                    to="#"
+                    className="pl-[32px] pr-[40px] py-[15px] bg-primary-main-pink text-white text-sm font-medium rounded-lg hover:text-primary-main-pink hover:bg-white border border-primary-main-pink transition duration-300"
+                  >
+                    Hire Our Talent&nbsp;
+                    <FontAwesomeIcon icon={faAngleRight} />
+                  </Link>
+                </div>
+              </article>
+              <div className="w-full py-5 md:justify-end hidden md:flex">
+                <figure className="m-0 p-0 w-full mx-auto md:mx-0 max-w-[348px] h-[370px]">
+                  <img
+                    src={hireTalent}
+                    alt="hire talent"
+                    className="object-cover w-full h-full"
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-black text-white grid md:grid-cols-3 mb-14 relative">
           <img
             src={shape}
             alt="Shape"
