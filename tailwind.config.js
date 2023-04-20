@@ -20,6 +20,7 @@ module.exports = {
         "grey-text": "#808080",
         "neutral-250": "#202020",
         hireTalent: "#FDC0E33D",
+        "event-bg": "#210D15",
       },
       fontSize: {
         15: "15px",
@@ -27,6 +28,8 @@ module.exports = {
       backgroundImage: {
         "hero-bg-gradient":
           "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%) ",
+        "event-hero-bg":
+          "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
       },
 
       screens: {

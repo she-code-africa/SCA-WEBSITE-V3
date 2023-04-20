@@ -1,0 +1,14 @@
+main {
+  font-family: "Mulish", sans-serif;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.event-hero {
+  background-image: url("../../images/events-page/event-hero-bg.png"),
+    url("../../images/events-page/events-page-bg-2.png");
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+}

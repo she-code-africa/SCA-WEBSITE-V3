@@ -27,7 +27,7 @@ const PartnersLogoCarousel = () => {
     ],
   };
   return (
-    <section className="w-90 mx-auto mt-[60px]">
+    <section className="w-full mx-auto mt-[60px]">
       <Slider {...settings}>
         {partnersList.map((logo, index) => {
           return (
