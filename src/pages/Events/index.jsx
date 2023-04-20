@@ -8,31 +8,36 @@ import Loading from "../../components/Loading";
 import Error from "../../components/Error";
 import { getEvents } from "../../services";
 import { apiConstants } from "../../utils";
-import { sortUpcomingEventByDate, sortPastEventsByDate } from "../../utils/helpers";
+import {
+  sortUpcomingEventByDate,
+  sortPastEventsByDate,
+} from "../../utils/helpers";
 
+import * as eventpagecomponents from "../../components/Events";
 
 import Slider from "react-slick";
 import { carouselSettings } from "../../components/Carousel";
+import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 
 const Events = () => {
   const eventCall = useQuery(apiConstants.events, getEvents);
-  const [upcomingEvents, setUpcomingEvents] = useState([])
-  const [pastEvents, setPastEvents] = useState([])
-  
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [pastEvents, setPastEvents] = useState([]);
+
   useEffect(() => {
     if (eventCall.isFetched && eventCall.isSuccess) {
-      const events = eventCall.data
-      const _pastEvents = sortPastEventsByDate(events)
-      const _upcomingEvents = sortUpcomingEventByDate(events)
+      const events = eventCall.data;
+      const _pastEvents = sortPastEventsByDate(events);
+      const _upcomingEvents = sortUpcomingEventByDate(events);
       if (_pastEvents.length) {
-        setPastEvents(_pastEvents)
+        setPastEvents(_pastEvents);
       }
       if (_upcomingEvents) {
-        setUpcomingEvents(_upcomingEvents)
+        setUpcomingEvents(_upcomingEvents);
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -56,7 +61,7 @@ const Events = () => {
         />
       </Helmet>
       <Header page={"events"} />
-      <div className="bg-[#FFF7FC] pb-10">
+      {/* <div className="bg-[#FFF7FC] pb-10">
         <main className="container mx-auto bg-[#FFF7FC]">
 
           {upcomingEvents.length ? 
@@ -204,7 +209,38 @@ const Events = () => {
             </>
           : null}
         </main>
-      </div>
+      </div> */}
+      <main className=" text-secondary-main-black">
+        <section className=" bg-event-hero-bg bg-event-bg">
+          <div className="w-full min-h-[600px] flex flex-col justify-center text-white event-hero">
+            <h1 className="hero-heading capitalize font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
+              events
+            </h1>
+
+            <p className="m-0 mt-4 text-center max-w-[720px] text-lg md:text-2xl mx-auto leading-[30px]">
+              She Code Africa is a registered non-profit organization dedicated
+              to empowering and celebrating girls and women in technology
+              across  Africa
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-[-100px]  2md:mt-[-80px] w-full">
+          <eventpagecomponents.HeroImages />
+
+          <div className="flex justify-center mt-12">
+            <BecomeAmemberButton
+              bg="bg-primary-main-pink"
+              bgHover="bg-white"
+              color="text-white"
+              colorHover="text-primary-main-pink"
+              border="border-primary-main-pink"
+              title="View More"
+            />
+          </div>
+        </section>
+      </main>
+
       <Footer />
     </>
   );

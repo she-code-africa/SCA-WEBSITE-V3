@@ -67,6 +67,7 @@ const Home = () => {
                 color="text-white"
                 colorHover="text-primary-main-pink"
                 border="border-primary-main-pink"
+                url="https://bit.ly/joinshecodeafrica"
               />
               <Link
                 to="/donate-partner"
@@ -82,10 +83,10 @@ const Home = () => {
         </section>
 
         <section className="w-full mt-8">
-          <div className="w-90 mx-auto">
+          <div className="w-[90%] lg:w-10/12  mx-auto">
             <homecomponents.PartnersLogoSlider />
 
-            <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[80px] md:mt-[110px] 2md:items-center gap-10">
+            <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[80px] md:mt-[110px] 2md:items-center gap-10 mx-auto">
               <div className="text-wrapper py-5 w-full 2md:max-w-[400px]">
                 <div className="who-are-we-caption w-full mb-5 text-center 2md:text-left">
                   <h2 className="capitalize text-3xl 2md:text-[40px] font-bold">
@@ -219,13 +220,14 @@ const Home = () => {
                 </p>
 
                 <div className="flex mt-10">
-                  <Link
-                    to="#"
-                    className="pl-[32px] pr-[40px] py-[15px] bg-primary-main-pink text-white text-sm font-medium rounded-lg hover:text-primary-main-pink hover:bg-white border border-primary-main-pink transition duration-300"
-                  >
-                    Hire Our Talent&nbsp;
-                    <FontAwesomeIcon icon={faAngleRight} />
-                  </Link>
+                  <BecomeAmemberButton
+                    bg="bg-primary-main-pink"
+                    bgHover="bg-white"
+                    color="text-white"
+                    colorHover="text-primary-main-pink"
+                    border="border-primary-main-pink"
+                    title="Hire Our Talent"
+                  />
                 </div>
               </article>
               <div className="w-full py-5 md:justify-end hidden md:flex">
