@@ -6,10 +6,11 @@ import deimos from "../images/deimos.png";
 import cloudbees from "../images/cloudbees.png";
 import programImage from "../images/academy/cloud-program.svg";
 import onlineCourseImage from "../images/academy/online-course.svg";
-
+import ghanaImage from "../images/events-page/ghanaevent.png";
+import secondEventImage from "../images/events-page/secondevent.png";
 
 export const paths = {
-home: "/",
+  home: "/",
   about: "/about",
   team: "/team",
   engineering: "/school-of-engineering",
@@ -38,7 +39,6 @@ home: "/",
   faq: "/faq",
   codeOfConduct: "/code-of-conduct",
   privacy: "/privacy",
-  
 };
 
 export const apiConstants = {
@@ -710,8 +710,6 @@ export const whoWeAreTexts = [
   },
 ];
 
-
-
 // Accademy pages
 export const programsList = [
   {
@@ -770,5 +768,25 @@ export const youtubeVideos = [
     id: 2,
     description: "Bami's Story",
     video: "https://www.youtube.com/embed/USWzE09j0M8",
+  },
+];
+
+// events page
+export const upcomingEvents = [
+  {
+    id: 1,
+    heading: "Community Connect",
+    textContent:
+      "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
+    pathname: "register now",
+    eventImage: ghanaImage,
+  },
+  {
+    id: 2,
+    heading: "Cloud Programs",
+    textContent:
+      "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
+    eventImage: secondEventImage,
+    pathname: "try your luck",
   },
 ];

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
 import { getEvents } from "../../services";
-import { apiConstants } from "../../utils";
+import { apiConstants, upcomingEvents } from "../../utils";
 import {
   sortUpcomingEventByDate,
   sortPastEventsByDate,
@@ -15,13 +15,13 @@ import {
 
 import * as eventpagecomponents from "../../components/Events";
 
-import Slider from "react-slick";
-import { carouselSettings } from "../../components/Carousel";
+// import Slider from "react-slick";
+// import { carouselSettings } from "../../components/Carousel";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 
 const Events = () => {
   const eventCall = useQuery(apiConstants.events, getEvents);
-  const [upcomingEvents, setUpcomingEvents] = useState([]);
+  // const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Events = () => {
         setPastEvents(_pastEvents);
       }
       if (_upcomingEvents) {
-        setUpcomingEvents(_upcomingEvents);
+        // setUpcomingEvents(_upcomingEvents);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -237,6 +237,52 @@ const Events = () => {
               border="border-primary-main-pink"
               title="View More"
             />
+          </div>
+        </section>
+
+        <section className="mt-24 w-full text-primary-dark-brown">
+          <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
+            Up Coming
+          </h2>
+          <div className=" w-[90%] mx-auto md:w-[80%] mt-16">
+            {upcomingEvents.map((event, index) => {
+              return (
+                <div
+                  className={`w-full flex flex-col ${
+                    (index + 1) % 2 !== 0
+                      ? "2md:flex-row-reverse"
+                      : "2md:flex-row"
+                  } gap-14 2md:items-center 2md:justify-between mb-10`}
+                  key={event.id}
+                >
+                  <article className="w-full md:max-w-[480px] mx-auto 2md:mx-0">
+                    <h3 className="text-2xl md:text-3xl 2md:text-[40px] capitalize font-semibold text-center md:text-justify">
+                      {event.heading}
+                    </h3>
+
+                    <p className="mt-7 text-base md:text-xl text-center md:text-justify">
+                      {event.textContent}
+                    </p>
+
+                    <div className="flex mt-[28px] justify-center md:justify-start">
+                      <Link
+                        to="#"
+                        className="bg-primary-main-pink text-white py-[14px] px-8 rounded-lg capitalize text-sm transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
+                      >
+                        {event.pathname}
+                      </Link>
+                    </div>
+                  </article>
+                  <figure className="m-0 p-0 w-full h-[482px] max-w-[482px] 2md:max-w-[482px] mx-auto 2md:mx-0">
+                    <img
+                      src={event.eventImage}
+                      alt="event-pic"
+                      className="w-full h-full object-cover"
+                    />
+                  </figure>
+                </div>
+              );
+            })}
           </div>
         </section>
       </main>
