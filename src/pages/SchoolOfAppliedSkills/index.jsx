@@ -1,7 +1,11 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { programsList, onlineCoursesList, youtubeVideos } from "../../utils/index";
+import {
+  programsList,
+  onlineCoursesList,
+  youtubeVideos,
+} from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
 
 const SchoolOfAppliedSkills = () => {
