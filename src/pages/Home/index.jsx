@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import adaRect from "../../images/ada-rect.jpg";
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { homepageOurCommunityCards } from "../../utils/index";
+import { apiConstants, homepageOurCommunityCards } from "../../utils/index";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 import whoweareimage from "../../images/homepage/who-are-we.png";
 import { whoWeAreTexts } from "../../utils";
@@ -17,12 +17,29 @@ import gallery1 from "../../images/homepage/gallery-sca.png";
 import gallery2 from "../../images/homepage/gallery-two.png";
 import gallery3 from "../../images/homepage/gallery-3.png";
 import hireTalent from "../../images/homepage/hire-talent.png";
+import { useQuery } from "react-query";
+import { getAllPartners } from "../../services";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
   const closeModal = () => {
     setModal(false);
   };
+  const { isLoading, error, data, isFetching } = useQuery(
+    "partnersList",
+    getAllPartners
+  );
+
+  if (error) {
+    return (
+      <div className=" w-90 mr-[40px] flex items-center justify-center mt-5">
+        <h1 className="text-primary-main-pink text-4xl">
+          Failed to load images...
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <>
       <Helmet>
@@ -46,6 +63,7 @@ const Home = () => {
       </Helmet>
       <PopUpModal display={modal} closeModal={closeModal} />
       <Header page={"home"} />
+
       <main className=" text-secondary-main-black">
         <section className=" min-h-screen bg-hero-bg-gradient">
           <div className="w-90 mx-auto py-8 min-h-[600px]  flex flex-col justify-center">
@@ -84,7 +102,15 @@ const Home = () => {
 
         <section className="w-full mt-8">
           <div className="w-[90%] lg:w-10/12  mx-auto">
-            <homecomponents.PartnersLogoSlider />
+            {isLoading ? (
+              <div className=" w-90 mr-[40px] flex items-center justify-center mt-5">
+                <h1 className="text-primary-main-pink text-4xl">
+                  Loading images...
+                </h1>
+              </div>
+            ) : (
+              <homecomponents.PartnersLogoSlider partnersData={data} />
+            )}
 
             <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[80px] md:mt-[110px] 2md:items-center gap-10 mx-auto">
               <div className="text-wrapper py-5 w-full 2md:max-w-[400px]">
