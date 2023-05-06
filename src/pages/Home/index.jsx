@@ -18,7 +18,8 @@ import gallery2 from "../../images/homepage/gallery-two.png";
 import gallery3 from "../../images/homepage/gallery-3.png";
 import hireTalent from "../../images/homepage/hire-talent.png";
 import { useQuery } from "react-query";
-import { getAllPartners } from "../../services";
+import { getPartners } from "../../services";
+import * as components from "../../components";
 
 const Home = () => {
   const [modal, setModal] = useState(true);
@@ -26,18 +27,12 @@ const Home = () => {
     setModal(false);
   };
   const { isLoading, error, data, isFetching } = useQuery(
-    "partnersList",
-    getAllPartners
+    apiConstants.partners,
+    getPartners
   );
 
   if (error) {
-    return (
-      <div className=" w-90 mr-[40px] flex items-center justify-center mt-5">
-        <h1 className="text-primary-main-pink text-4xl">
-          Failed to load images...
-        </h1>
-      </div>
-    );
+    return <components.Error />;
   }
 
   return (
@@ -81,7 +76,7 @@ const Home = () => {
             <div className="btns-wrapper mt-8">
               <BecomeAmemberButton
                 bg="bg-primary-main-pink"
-                bgHover="bg-white"
+                bgHover={"bg-white"}
                 color="text-white"
                 colorHover="text-primary-main-pink"
                 border="border-primary-main-pink"
@@ -103,11 +98,7 @@ const Home = () => {
         <section className="w-full mt-8">
           <div className="w-[90%] lg:w-10/12  mx-auto">
             {isLoading ? (
-              <div className=" w-90 mr-[40px] flex items-center justify-center mt-5">
-                <h1 className="text-primary-main-pink text-4xl">
-                  Loading images...
-                </h1>
-              </div>
+              <components.Loading />
             ) : (
               <homecomponents.PartnersLogoSlider partnersData={data} />
             )}

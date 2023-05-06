@@ -15,7 +15,6 @@ const Donate = () => {
   const [type, setType] = useState("");
 
   const partnersList = useQuery(apiConstants.partners, getPartners);
-  console.log({ partnersList });
 
   const toggleModal = (type) => {
     setType(type);

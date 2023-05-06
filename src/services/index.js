@@ -1,7 +1,5 @@
 import api from "../utils/api";
 const baseUrl = process.env.REACT_APP_BASE_URL;
-// v3
-const baseURL = process.env.REACT_APP_BASE_URL_V3;
 
 export async function getEvents() {
   const events = await api.get(`${baseUrl}/events`);
@@ -47,9 +45,3 @@ export async function mutateEnquires(enquiryData) {
   const enquiresResonse = await api.post(`${baseUrl}/enquiry`, enquiryData);
   return enquiresResonse;
 }
-
-// V3 FETCHING
-export const getAllPartners = async () => {
-  const partnersData = await api.get(`${baseURL}/partners`);
-  return partnersData;
-};
