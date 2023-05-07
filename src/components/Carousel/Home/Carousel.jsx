@@ -1,13 +1,13 @@
-import React from "react";
-import Slider from "react-slick";
-import ADA from "../../../images/ADA.svg";
-import childrenImage from "../../../images/childrenImage.svg";
-import carouselimage from "../../../images/carouselImage-1.svg";
-import Ada from "../../../images/ADA-lazy-loader.jpg";
-import kids from "../../../images/childrenImage-lazy-loader.jpg";
-import carouselLazyLoaderImg from "../../../images/carouselImage-lazyloader.jpg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import Slider from 'react-slick';
+import Ada from '../../../images/ADA-lazy-loader.jpg';
+import ADA from '../../../images/ADA.svg';
+import carouselimage from '../../../images/carouselImage-1.svg';
+import carouselLazyLoaderImg from '../../../images/carouselImage-lazyloader.jpg';
+import kids from '../../../images/childrenImage-lazy-loader.jpg';
+import childrenImage from '../../../images/childrenImage.svg';
 
 const Carousel = () => {
   const settings = {
@@ -18,24 +18,24 @@ const Carousel = () => {
     autoplay: true,
     speed: 1000,
     autoplaySpeed: 3000,
-    cssEase: "linear",
+    cssEase: 'linear',
     lazyLoad: true,
     initialSlide: 2,
     responsive: [
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
-        },
+          slidesToShow: 2
+        }
       },
 
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+          slidesToShow: 1
+        }
+      }
+    ]
   };
   return (
     <>
@@ -46,8 +46,8 @@ const Carousel = () => {
               <LazyLoadImage
                 src={childrenImage}
                 alt="children pics"
-                width={"100%"}
-                height={"100%"}
+                width={'100%'}
+                height={'100%'}
                 placeholderSrc={kids}
                 className="w-full h-full object-cover"
               />
@@ -58,8 +58,8 @@ const Carousel = () => {
               <LazyLoadImage
                 src={carouselimage}
                 alt="ada-and-attendees"
-                width={"100%"}
-                height={"100%"}
+                width={'100%'}
+                height={'100%'}
                 placeholderSrc={carouselLazyLoaderImg}
                 className="w-full h-full object-cover"
               />
@@ -70,8 +70,8 @@ const Carousel = () => {
               <LazyLoadImage
                 src={ADA}
                 alt="ada-image"
-                width={"100%"}
-                height={"100%"}
+                width={'100%'}
+                height={'100%'}
                 placeholderSrc={Ada}
                 className="w-full h-full object-cover"
               />
@@ -82,8 +82,8 @@ const Carousel = () => {
               <LazyLoadImage
                 src={carouselimage}
                 alt="ada-and-attendees"
-                width={"100%"}
-                height={"100%"}
+                width={'100%'}
+                height={'100%'}
                 placeholderSrc={carouselLazyLoaderImg}
                 className="w-full h-full object-cover"
               />

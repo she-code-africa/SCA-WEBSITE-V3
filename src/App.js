@@ -1,38 +1,38 @@
-import "./styles/app.scss";
-import { Route, Routes as Switch } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { paths } from "./utils";
+import './styles/app.scss';
+import { Route, Routes as Switch } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { paths } from './utils';
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Chapters from "./pages/Chapters";
-import Donate from "./pages/Donate";
-import Events from "./pages/Events";
-import ViewEvent from "./pages/Events/ViewEvent";
-import Jobs from "./pages/Jobs";
-import RegisterOrg from "./pages/Jobs/RegisterOrg";
-import Login from "./pages/Jobs/Login";
-import ForgotPassword from "./pages/Jobs/ForgotPassword";
-import ViewJob from "./pages/Jobs/ViewJob";
-import PostJob from "./pages/Jobs/PostJob/Index";
-import Profile from "./pages/Jobs/Profile";
-import EditProfile from "./pages/Jobs/Profile/EditProfile";
-import Programs from "./pages/Programs";
-import Team from "./pages/Team";
-import Contribution1 from "./pages/Programs/Contributhon1";
-import Contribution from "./pages/Programs/Contributhon";
-import CloudBootcamp from "./pages/Programs/CloudBootcamp";
-import CodeCamp from "./pages/Programs/CodeCamp";
-import Terms from "./pages/Terms";
-import Privacy from "./pages/Privacy";
-import CodeOfConduct from "./pages/CoC";
-import FAQ from "./pages/FAQ";
-import PageNotFound from "./pages/NotFound";
-import SchoolOfEngineering from "./pages/SchoolOfEngineering";
-import SchoolOfProduct from "./pages/SchoolOfProducts";
-import SchoolOfAppliedSkills from "./pages/SchoolOfAppliedSkills";
-import StemSchool from "./pages/StemSchool";
+import Home from './pages/Home';
+import About from './pages/About';
+import Chapters from './pages/Chapters';
+import Donate from './pages/Donate';
+import Events from './pages/Events';
+import ViewEvent from './pages/Events/ViewEvent';
+import Jobs from './pages/Jobs';
+import RegisterOrg from './pages/Jobs/RegisterOrg';
+import Login from './pages/Jobs/Login';
+import ForgotPassword from './pages/Jobs/ForgotPassword';
+import ViewJob from './pages/Jobs/ViewJob';
+import PostJob from './pages/Jobs/PostJob/Index';
+import Profile from './pages/Jobs/Profile';
+import EditProfile from './pages/Jobs/Profile/EditProfile';
+import Programs from './pages/Programs';
+import Team from './pages/Team';
+import Contribution1 from './pages/Programs/Contributhon1';
+import Contribution from './pages/Programs/Contributhon';
+import CloudBootcamp from './pages/Programs/CloudBootcamp';
+import CodeCamp from './pages/Programs/CodeCamp';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
+import CodeOfConduct from './pages/CoC';
+import FAQ from './pages/FAQ';
+import PageNotFound from './pages/NotFound';
+import SchoolOfEngineering from './pages/SchoolOfEngineering';
+import SchoolOfProduct from './pages/SchoolOfProducts';
+import SchoolOfAppliedSkills from './pages/SchoolOfAppliedSkills';
+import StemSchool from './pages/StemSchool';
 
 const queryClient = new QueryClient();
 
@@ -45,7 +45,7 @@ function App() {
   );
 }
 
-function Routes(params) {
+function Routes() {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />

@@ -1,7 +1,7 @@
-import React from "react";
-import ourReachIcon from "../../images/Icon-our-reach.svg";
-import BecomeAmemberButton from "../Button/BecomeAmemberButton";
-import ourreachImg from "../../images/homepage/unsplash-our-reach-1.png";
+import React from 'react';
+import ourReachIcon from '../../images/Icon-our-reach.svg';
+import ourreachImg from '../../images/homepage/unsplash-our-reach-1.png';
+import BecomeAmemberButton from '../Button/BecomeAmemberButton';
 
 const OurReach = () => {
   return (
@@ -31,33 +31,23 @@ const OurReach = () => {
 
       <div className="w-full sm:max-w-[450px] 2md:max-w-[523px] md:mx-auto relative our-reach">
         <figure className="m-0 p-0 w-full  h-[450px] sm:h-[500px]  2md:h-[590px] our-reach rounded-3xl overflow-hidden ">
-          <img
-            src={ourreachImg}
-            alt="unsplash-our-reach"
-            className="object-cover w-full h-full"
-          />
+          <img src={ourreachImg} alt="unsplash-our-reach" className="object-cover w-full h-full" />
         </figure>
 
         <section className=" w-full py-4 2md:py-8 px-[18px] 2md:px-9 sm:w-[500px] 2md:max-w-[588px] bg-community-pink-bg absolute top-[320px] right-[-20px] sm:right-[-150px] sm:top-[340px] md:right-[-130px] 2md:right-[-40px] 2md:top-[400px] xl:w-[600px] rounded-3xl text-primary-main-pink right-xl">
           <div className="w-full flex items-center 2md:mb-5">
             <h4 className="text-2xl 2md:text-4xl font-bold">10,000+</h4>
-            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">
-              Community Members
-            </p>
+            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">Community Members</p>
           </div>
 
           <div className="w-full flex items-center 2md:mb-5">
             <h4 className="text-2xl 2md:text-4xl font-bold">15+</h4>
-            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">
-              African Countries with Members
-            </p>
+            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">African Countries with Members</p>
           </div>
 
           <div className="w-full flex items-center ">
             <h4 className="text-2xl 2md:text-4xl font-bold">32+</h4>
-            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">
-              Chapters Location
-            </p>
+            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">Chapters Location</p>
           </div>
         </section>
       </div>

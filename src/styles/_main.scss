@@ -30,7 +30,7 @@ html {
   font-size: 100%;
   min-height: 100%;
   height: 100%;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 14px;
   color: #222222;
   font-weight: normal;
@@ -43,7 +43,7 @@ html {
 }
 body {
   height: 100%;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 14px;
   color: #222222;
   font-weight: normal;
@@ -54,11 +54,11 @@ body {
 }
 
 .font-montserrat {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .font-libre {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .float-right {
@@ -351,7 +351,7 @@ li.__shecodelink.active {
 .__shecodeheader_title {
   h1 {
     text-align: left;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 50px;
     font-weight: bold;
     color: var(--primary-dark-pink);
@@ -429,72 +429,65 @@ li.__shecodelink.active {
   line-height: 27px;
 }
 .event_side {
-  background: transparent url("../images/event_image1.png") no-repeat;
+  background: transparent url('../images/event_image1.png') no-repeat;
   height: 700px;
   background-size: 100%;
 }
 .home_hero {
-  background: transparent url("../images/event_image1.png") 0% 0% no-repeat
-    padding-box;
+  background: transparent url('../images/event_image1.png') 0% 0% no-repeat padding-box;
 }
 .home_slack {
-  background: transparent url("../images/slack.png") 0% 0% no-repeat padding-box;
+  background: transparent url('../images/slack.png') 0% 0% no-repeat padding-box;
   background-size: contain;
   // background-position: center
 }
 .home_partner {
-  background: transparent url("../images/partner.png") 0% 0% no-repeat
-    padding-box;
+  background: transparent url('../images/partner.png') 0% 0% no-repeat padding-box;
   background-size: contain;
   // background-position: center
 }
 .home_social {
-  background: transparent url("../images/social.png") 0% 0% no-repeat
-    padding-box;
+  background: transparent url('../images/social.png') 0% 0% no-repeat padding-box;
   background-size: contain;
   // background-position: center
 }
 .home_side_identify {
-  background: transparent url("../images/event_image1.png") 0% 0% no-repeat
-    padding-box;
+  background: transparent url('../images/event_image1.png') 0% 0% no-repeat padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
   // background-position: center;
 }
 .home_side_event {
-  background: transparent url("../images/event_image2.png") 0% 0% no-repeat;
+  background: transparent url('../images/event_image2.png') 0% 0% no-repeat;
   width: 400px;
   height: 400px;
   background-size: contain;
   background-position: center;
 }
 .home_side_partner {
-  background: transparent url("../images/event_image3.png") 0% 0% no-repeat
-    padding-box;
+  background: transparent url('../images/event_image3.png') 0% 0% no-repeat padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
   // background-position: center;
 }
 .home_side_follow {
-  background: transparent url("../images/event_image4.png") 0% 0% no-repeat
-    padding-box;
+  background: transparent url('../images/event_image4.png') 0% 0% no-repeat padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
   background-position: center;
 }
 .program_left_img {
-  background: transparent url("../images/event_image3.png") 0% 0% no-repeat
-    padding-box;
+  background: transparent url('../images/event_image3.png') 0% 0% no-repeat padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
   background-position: center;
 }
 .cohort {
-  font: normal normal bold 24px/29px "Montserrat", sans-serif;
+  font: normal normal bold 24px/29px 'Montserrat', sans-serif;
 }
 .__shecode_block {
   margin: 8rem 0;
@@ -530,7 +523,7 @@ li.__shecodelink.active {
   color: var(--primary-dark-pink);
   line-height: 40px;
   &:before {
-    content: "";
+    content: '';
     display: block;
     width: 15%;
     border-bottom: 3px solid var(--primary-main-pink);
@@ -761,7 +754,7 @@ li.__shecodelink.active {
     list-style: none;
     li {
       &::before {
-        content: "\2022";
+        content: '\2022';
         color: var(--primary-dark-pink);
         font-weight: bold;
         display: inline-block;
@@ -798,7 +791,7 @@ li.__shecodelink.active {
     &:before {
       float: right !important;
       font-family: FontAwesome;
-      content: "\f068";
+      content: '\f068';
       padding-right: 5px;
     }
     &:hover {
@@ -814,7 +807,7 @@ li.__shecodelink.active {
   > a.collapsed {
     &:before {
       float: right !important;
-      content: "\f067";
+      content: '\f067';
     }
   }
 }

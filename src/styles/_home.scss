@@ -1,5 +1,5 @@
 main {
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .w-90 {
@@ -8,7 +8,7 @@ main {
 
 .h1-hero-sub-text {
   transform: matrix(1, 0.01, 0, 1, 0, 0);
-  background-image: url("../images/Shape.svg");
+  background-image: url('../images/Shape.svg');
   background-repeat: no-repeat;
   width: 204.12px;
   height: 80px;
@@ -44,19 +44,19 @@ main {
 }
 
 .card-body-img-1 {
-  background-image: url("../images/homepage/tinypng4.png");
+  background-image: url('../images/homepage/tinypng4.png');
 }
 
 .card-body-img-2 {
-  background-image: url("../images/homepage/tinypng3.png");
+  background-image: url('../images/homepage/tinypng3.png');
 }
 
 .card-body-img-3 {
-  background-image: url("../images/homepage/tinypng1.png");
+  background-image: url('../images/homepage/tinypng1.png');
 }
 
 .card-body-img-4 {
-  background-image: url("../images/homepage/tinypng5.png");
+  background-image: url('../images/homepage/tinypng5.png');
 }
 
 .slick-wrapper .slick-slider {
@@ -90,7 +90,7 @@ main {
 
 .hire-us::before {
   position: absolute;
-  content: "";
+  content: '';
   height: 450px;
   width: 300px;
   background-color: transparent;

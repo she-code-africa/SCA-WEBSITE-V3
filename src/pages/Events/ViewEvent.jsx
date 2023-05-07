@@ -1,8 +1,8 @@
-import React from "react";
-import { useParams } from "react-router";
-import Header from "../../components/Header";
-import { past_events } from "../../utils";
-import Footer from "../../components/Footer";
+import React from 'react';
+import { useParams } from 'react-router';
+import Header from '../../components/Header';
+import { past_events } from '../../utils';
+import Footer from '../../components/Footer';
 
 const ViewEvent = () => {
   const { id } = useParams();

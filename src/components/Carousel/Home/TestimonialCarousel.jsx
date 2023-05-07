@@ -1,10 +1,10 @@
-import React from "react";
-import Slider from "react-slick";
-import avatar from "../../../images/avatar.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import Slider from 'react-slick';
+import avatar from '../../../images/avatar.svg';
 
-function SampleNextArrow(props) {
+function SampleNextArrow (props) {
   const { className, style, onClick } = props;
   return (
     <div
@@ -12,29 +12,27 @@ function SampleNextArrow(props) {
       onClick={onClick}
       style={{
         ...style,
-        display: "block",
-        fontSize: "20px",
-        textAlign: "center",
-      }}
-    >
+        display: 'block',
+        fontSize: '20px',
+        textAlign: 'center'
+      }}>
       <FontAwesomeIcon icon={faAngleRight} />
     </div>
   );
 }
 
-function SamplePrevArrow(props) {
+function SamplePrevArrow (props) {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
       style={{
         ...style,
-        display: "block",
-        fontSize: "20px",
-        textAlign: "center",
+        display: 'block',
+        fontSize: '20px',
+        textAlign: 'center'
       }}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       <FontAwesomeIcon icon={faAngleLeft} />
     </div>
   );
@@ -52,17 +50,17 @@ const TestimonialCarousel = () => {
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 2,
-        },
+          slidesToShow: 2
+        }
       },
 
       {
         breakpoint: 570,
         settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+          slidesToShow: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -89,10 +87,9 @@ const TestimonialCarousel = () => {
                 </div>
 
                 <p className="mt-6 text-neutral-250 leading-6 lg:w-[90%]">
-                  Joining SCA is one of the best decisions i have made so far. I
-                  don’t regret taking that bold step. My Growth was so glaring
-                  that everyone could see it. I’m grateful for my journey at SCA
-                  and I am grateful for Ada ❤️
+                  Joining SCA is one of the best decisions i have made so far. I don’t regret taking
+                  that bold step. My Growth was so glaring that everyone could see it. I’m grateful
+                  for my journey at SCA and I am grateful for Ada ❤️
                 </p>
               </div>
             </div>

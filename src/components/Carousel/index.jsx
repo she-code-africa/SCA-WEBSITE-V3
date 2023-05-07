@@ -1,6 +1,6 @@
-import React from "react";
-import Slider from "react-slick";
-import { SuccessBox } from "../Cards";
+import React from 'react';
+import Slider from 'react-slick';
+import { SuccessBox } from '../Cards';
 
 export const carouselSettings = {
   dots: true,
@@ -10,22 +10,22 @@ export const carouselSettings = {
   autoplay: false,
   speed: 2000,
   autoplaySpeed: 3500,
-  cssEase: "linear",
+  cssEase: 'linear',
   arrows: false,
   responsive: [
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-      },
+        slidesToShow: 2
+      }
     },
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1,
-      },
-    },
-  ],
+        slidesToShow: 1
+      }
+    }
+  ]
 };
 
 export const Carousel = ({ title, content, slidesToShow, slidesToScroll }) => {
@@ -37,22 +37,22 @@ export const Carousel = ({ title, content, slidesToShow, slidesToScroll }) => {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 3500,
-    cssEase: "linear",
+    cssEase: 'linear',
     arrows: false,
     responsive: [
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-        },
+          slidesToShow: 2
+        }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+          slidesToShow: 1
+        }
+      }
+    ]
   };
   return (
     <section className="about_section counter">
@@ -69,13 +69,9 @@ export const Carousel = ({ title, content, slidesToShow, slidesToScroll }) => {
                     <h4>{header}</h4>
                     <p>{content}</p>
                     {src ? (
-                      <img
-                        className="block h-[80px] object-contain"
-                        src={src}
-                        alt="logo"
-                      />
+                      <img className="block h-[80px] object-contain" src={src} alt="logo" />
                     ) : (
-                      ""
+                      ''
                     )}
                   </div>
                 );
@@ -97,15 +93,13 @@ export const TestimonialCarousel = ({ testimonials, title }) => {
     autoplay: true,
     speed: 5000,
     autoplaySpeed: 5000,
-    cssEase: "linear",
-    arrows: false,
+    cssEase: 'linear',
+    arrows: false
   };
   return (
     <div className="" id="">
       <div className="my-12 md:my-32">
-        <h4 className="text-3xl md:text-4xl text-center font-semibold">
-          What People are saying
-        </h4>
+        <h4 className="text-3xl md:text-4xl text-center font-semibold">What People are saying</h4>
       </div>
       <div className="bg-[#FFF7FC] flex flex-col md:flex-row gap-5 max-w-7xl my-0 mx-auto justify-between p-6 h-[450px] items-center">
         <Slider {...settings}>
@@ -142,43 +136,35 @@ export const SuccessCarousel = ({ successStories }) => {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 3500,
-    cssEase: "linear",
+    cssEase: 'linear',
     arrows: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-        },
+          slidesToShow: 2
+        }
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-        },
+          slidesToShow: 2
+        }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+          slidesToShow: 1
+        }
+      }
+    ]
   };
   return (
     <div>
       <Slider {...settings}>
         {successStories.map((successStory, index) => {
           let { name, role, story, img } = successStory;
-          return (
-            <SuccessBox
-              key={index}
-              name={name}
-              role={role}
-              story={story}
-              img={img}
-            />
-          );
+          return <SuccessBox key={index} name={name} role={role} story={story} img={img} />;
         })}
       </Slider>
     </div>
@@ -194,28 +180,28 @@ export const GalleryCarousel = ({ gallery }) => {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 3500,
-    cssEase: "linear",
+    cssEase: 'linear',
     arrows: false,
     responsive: [
       {
         breakpoint: 1440,
         settings: {
-          slidesToShow: 1,
-        },
+          slidesToShow: 1
+        }
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-        },
+          slidesToShow: 1
+        }
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
+          slidesToShow: 1
+        }
+      }
+    ]
   };
   return (
     <div className="container mx-auto px-4">
@@ -223,11 +209,7 @@ export const GalleryCarousel = ({ gallery }) => {
         {gallery.map(({ url }, index) => {
           return (
             <div className="mx-auto" key={index}>
-              <img
-                className="max-h-[250px] text-center mr-2"
-                src={url}
-                alt="Gallery"
-              />
+              <img className="max-h-[250px] text-center mr-2" src={url} alt="Gallery" />
             </div>
           );
         })}

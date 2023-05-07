@@ -1,15 +1,18 @@
-import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
 
 export const ImgCard = ({ src, name, role }, index) => {
   return (
     <div className="__shecodeteammember_box" key={index}>
       <div className="__shecodeteammember_img">
-        {src ? <img src={src} alt={name} className="img-responsive" />
-          : <div className="w-full h-full flex justify-center items-center">
-              <FontAwesomeIcon icon={faUser} size="10x" className="scale-150 text-gray-500" />
-            </div> }
+        {src ? (
+          <img src={src} alt={name} className="img-responsive" />
+        ) : (
+          <div className="w-full h-full flex justify-center items-center">
+            <FontAwesomeIcon icon={faUser} size="10x" className="scale-150 text-gray-500" />
+          </div>
+        )}
         <div className="__shecodeteammember_text">
           <h5 className="name">{name}</h5>
           <p className="role">{role}</p>
@@ -19,10 +22,7 @@ export const ImgCard = ({ src, name, role }, index) => {
   );
 };
 
-export const DonateCard = (
-  { title, children, first_desc, second_desc },
-  index
-) => {
+export const DonateCard = ({ title, children, first_desc, second_desc }, index) => {
   return (
     <div className="__partner-donate_donate-cta" key={index}>
       <h4 className="title">{title}</h4>

@@ -1,7 +1,7 @@
-import React from "react";
-import leftQuote from "../../images/homepage/left-quote.svg";
-import Text from "./Text";
-import TestimonialCarousel from "../Carousel/Home/TestimonialCarousel";
+import React from 'react';
+import leftQuote from '../../images/homepage/left-quote.svg';
+import TestimonialCarousel from '../Carousel/Home/TestimonialCarousel';
+import Text from './Text';
 
 const Testimonials = () => {
   return (
@@ -11,10 +11,7 @@ const Testimonials = () => {
           <img src={leftQuote} alt="left quote" className="w-full h-full" />
         </figure>
 
-        <Text
-          heading="Testimonials"
-          subheading="Read from some of our beneficiaries."
-        />
+        <Text heading="Testimonials" subheading="Read from some of our beneficiaries." />
       </article>
       <section className="w-full md:w-1/2 bg-primary-main-pink pt-[87px] md:pt-[174px] pb-[69px] md:pb-[138px]">
         <TestimonialCarousel />

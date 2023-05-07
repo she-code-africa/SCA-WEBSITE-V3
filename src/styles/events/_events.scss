@@ -1,5 +1,5 @@
 main {
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 
 .w-90 {
@@ -7,14 +7,14 @@ main {
 }
 
 .event-hero {
-  background-image: url("../../images/events-page/event-hero-bg.png"),
-    url("../../images/events-page/events-page-bg-2.png");
+  background-image: url('../../images/events-page/event-hero-bg.png'),
+    url('../../images/events-page/events-page-bg-2.png');
   background-repeat: no-repeat;
   background-position: top left, bottom right;
 }
 
 .wavy-line {
-  background: url("../../images/events-page/wavy-line.png");
+  background: url('../../images/events-page/wavy-line.png');
   background-repeat: no-repeat;
   background-position: center center;
 }

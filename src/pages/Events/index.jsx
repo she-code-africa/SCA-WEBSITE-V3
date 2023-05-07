@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { useQuery } from "react-query";
-import { Helmet } from "react-helmet";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
-import Loading from "../../components/Loading";
-import Error from "../../components/Error";
-import { getEvents } from "../../services";
-import { apiConstants, upcomingEvents } from "../../utils";
+import React, { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
+import { Helmet } from 'react-helmet';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import { Link } from 'react-router-dom';
+import Loading from '../../components/Loading';
+import Error from '../../components/Error';
+import { getEvents } from '../../services';
+import { apiConstants, upcomingEvents } from '../../utils';
 import {
   sortUpcomingEventByDate,
   sortPastEventsByDate,
-} from "../../utils/helpers";
+} from '../../utils/helpers';
 
-import * as eventpagecomponents from "../../components/Events";
+import * as eventpagecomponents from '../../components/Events';
 
 // import Slider from "react-slick";
 // import { carouselSettings } from "../../components/Carousel";
-import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
+import BecomeAmemberButton from '../../components/Button/BecomeAmemberButton';
 
 const Events = () => {
   const eventCall = useQuery(apiConstants.events, getEvents);
@@ -60,7 +60,7 @@ const Events = () => {
           content="Get free access to events focused on empowering and getting more young girls and women into technology across cities and tertiary institutions in Africa."
         />
       </Helmet>
-      <Header page={"events"} />
+      <Header page={'events'} />
       {/* <div className="bg-[#FFF7FC] pb-10">
         <main className="container mx-auto bg-[#FFF7FC]">
 
@@ -250,8 +250,8 @@ const Events = () => {
                 <div
                   className={`w-full flex flex-col ${
                     (index + 1) % 2 !== 0
-                      ? "2md:flex-row-reverse"
-                      : "2md:flex-row"
+                      ? '2md:flex-row-reverse'
+                      : '2md:flex-row'
                   } gap-14 2md:items-center 2md:justify-between mb-10`}
                   key={event.id}
                 >
@@ -297,8 +297,8 @@ const Events = () => {
                 <div
                   className={`w-full flex flex-col ${
                     (index + 1) % 2 !== 0
-                      ? "2md:flex-row-reverse"
-                      : "2md:flex-row"
+                      ? '2md:flex-row-reverse'
+                      : '2md:flex-row'
                   } gap-14 2md:items-center 2md:justify-between mb-10`}
                   key={event.id}
                 >

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Text = ({ topic, sub_topic }) => {
   return (
