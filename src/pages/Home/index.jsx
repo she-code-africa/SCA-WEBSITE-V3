@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import adaRect from "../../images/ada-rect.jpg";
@@ -26,7 +26,7 @@ const Home = () => {
   const closeModal = () => {
     setModal(false);
   };
-  const { isLoading, error, data, isFetching } = useQuery(
+  const { isLoading, error, data } = useQuery(
     apiConstants.partners,
     getPartners
   );
