@@ -213,13 +213,13 @@ const Events = () => {
       </div> */}
       <main className=" text-secondary-main-black">
         <section className=" bg-hero-bg-gradient">
-          <div className="w-90 mx-auto min-h-[600px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8">
-            <div className="w-full max-w-[606px]">
-              <h1 className="hero-heading capitalize font-black text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto md:text-left">
+          <div className="w-90 mx-auto min-h-[600px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
+            <div className="w-full max-w-[606px] ">
+              <h1 className="hero-heading capitalize font-black text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto 2md:text-left">
                 events
               </h1>
 
-              <p className="m-0 mt-2 text-center md:w-[90%] text-lg md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-secondary-dark-brown md:text-left">
+              <p className="m-0 mt-2 text-center md:w-[90%] text-lg md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-secondary-dark-brown 2md:text-left">
                 Get free access to events focused on empowering and getting more
                 young girls and women into technology across Africa.
               </p>
