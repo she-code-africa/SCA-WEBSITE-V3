@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React, { useState, useEffect } from "react";
 import { useQuery } from "react-query";
 import { Helmet } from "react-helmet";
@@ -7,13 +8,13 @@ import { Link } from "react-router-dom";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
 import { getEvents } from "../../services";
-import { apiConstants, upcomingEvents } from "../../utils";
+import { apiConstants, upcomingEvents, pastEventsList } from "../../utils";
 import {
   sortUpcomingEventByDate,
   sortPastEventsByDate,
 } from "../../utils/helpers";
-
 import * as eventpagecomponents from "../../components/Events";
+import rectangleImg from "../../images/events-page/Rectangle-10171.png";
 
 // import Slider from "react-slick";
 // import { carouselSettings } from "../../components/Carousel";
@@ -61,7 +62,86 @@ const Events = () => {
         />
       </Helmet>
       <Header page={"events"} />
-      {/* <div className="bg-[#FFF7FC] pb-10">
+
+      <main className=" text-secondary-main-black">
+        <section className=" bg-event-hero-bg bg-event-bg">
+          <div className="w-full min-h-[600px] flex flex-col justify-center text-white event-hero">
+            <h1 className="hero-heading capitalize font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
+              events
+            </h1>
+
+            <p className="m-0 mt-4 text-center max-w-[720px] text-lg md:text-2xl mx-auto leading-[30px]">
+              She Code Africa is a registered non-profit organization dedicated
+              to empowering and celebrating girls and women in technology
+              across  Africa
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-[-100px]  2md:mt-[-80px] w-full">
+          <eventpagecomponents.HeroImages />
+
+          <div className="flex justify-center mt-12">
+            <BecomeAmemberButton
+              bg="bg-primary-main-pink"
+              bgHover="bg-white"
+              color="text-white"
+              colorHover="text-primary-main-pink"
+              border="border-primary-main-pink"
+              title="View More"
+            />
+          </div>
+        </section>
+
+        <section className="mt-24 w-full text-primary-dark-brown">
+          <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
+            Up Coming
+          </h2>
+          <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
+            {upcomingEvents.map((event, index) => {
+              return (
+                <eventpagecomponents.UpcomingEvents
+                  key={event.id}
+                  event={event}
+                />
+              );
+            })}
+          </section>
+        </section>
+
+        <section className="w-full text-primary-dark-brown mt-[135px]">
+          <h2 className="text-3xl font-bold mb-0 lg:my-18 md:text-[40px] text-center">
+            Past Events
+          </h2>
+          <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
+            {pastEventsList.map((event, index) => {
+              return (
+                <eventpagecomponents.UpcomingEvents
+                  key={event.id}
+                  event={event}
+                />
+              );
+            })}
+          </section>
+
+          <figure className="m-0 p-0 w-90 max-w-[1240px] mx-auto h-[520px] overflow-hidden rounded-[50px] border-[18px] border-primary-main-pink mt-36 mb-32">
+            <img
+              src={rectangleImg}
+              alt="rectangle img"
+              className="w-full h-full object-cover"
+            />
+          </figure>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+};
+
+export default Events;
+{
+  /* <div className="bg-[#FFF7FC] pb-10">
         <main className="container mx-auto bg-[#FFF7FC]">
 
           {upcomingEvents.length ? 
@@ -209,104 +289,5 @@ const Events = () => {
             </>
           : null}
         </main>
-      </div> */}
-      <main className=" text-secondary-main-black">
-        <section className=" bg-event-hero-bg bg-event-bg">
-          <div className="w-full min-h-[600px] flex flex-col justify-center text-white event-hero">
-            <h1 className="hero-heading capitalize font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
-              events
-            </h1>
-
-            <p className="m-0 mt-4 text-center max-w-[720px] text-lg md:text-2xl mx-auto leading-[30px]">
-              She Code Africa is a registered non-profit organization dedicated
-              to empowering and celebrating girls and women in technology
-              across  Africa
-            </p>
-          </div>
-        </section>
-
-        <section className="mt-[-100px]  2md:mt-[-80px] w-full">
-          <eventpagecomponents.HeroImages />
-
-          <div className="flex justify-center mt-12">
-            <BecomeAmemberButton
-              bg="bg-primary-main-pink"
-              bgHover="bg-white"
-              color="text-white"
-              colorHover="text-primary-main-pink"
-              border="border-primary-main-pink"
-              title="View More"
-            />
-          </div>
-        </section>
-
-        <section className="mt-24 w-full text-primary-dark-brown">
-          <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
-            Up Coming
-          </h2>
-          <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-            {upcomingEvents.map((event, index) => {
-              return (
-                <eventpagecomponents.UpcomingEvents
-                  key={event.id}
-                  event={event}
-                />
-              );
-            })}
-          </section>
-        </section>
-
-        <section className="w-full text-primary-dark-brown">
-          <figure className="m-0 p-0 w-full h-[300px] wavy-line"></figure>
-          <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
-            Up Coming
-          </h2>
-          <div className=" w-[90%] mx-auto md:w-[80%] mt-16">
-            {upcomingEvents.map((event, index) => {
-              return (
-                <div
-                  className={`w-full flex flex-col ${
-                    (index + 1) % 2 !== 0
-                      ? "2md:flex-row-reverse"
-                      : "2md:flex-row"
-                  } gap-14 2md:items-center 2md:justify-between mb-10`}
-                  key={event.id}
-                >
-                  <article className="w-full md:max-w-[480px] mx-auto 2md:mx-0">
-                    <h3 className="text-2xl md:text-3xl 2md:text-[40px] capitalize font-semibold text-center md:text-justify">
-                      {event.heading}
-                    </h3>
-
-                    <p className="mt-7 text-base md:text-xl text-center md:text-justify">
-                      {event.textContent}
-                    </p>
-
-                    <div className="flex mt-[28px] justify-center md:justify-start">
-                      <Link
-                        to="#"
-                        className="bg-primary-main-pink text-white py-[14px] px-8 rounded-lg capitalize text-sm transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
-                      >
-                        {event.pathname}
-                      </Link>
-                    </div>
-                  </article>
-                  <figure className="m-0 p-0 w-full h-[482px] max-w-[482px] 2md:max-w-[482px] mx-auto 2md:mx-0">
-                    <img
-                      src={event.eventImage}
-                      alt="event-pic"
-                      className="w-full h-full object-cover"
-                    />
-                  </figure>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </>
-  );
-};
-
-export default Events;
+      </div> */
+}
