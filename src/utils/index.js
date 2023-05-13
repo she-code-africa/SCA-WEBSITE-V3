@@ -783,10 +783,27 @@ export const upcomingEvents = [
   },
   {
     id: 2,
-    heading: "Cloud Programs",
+    heading: "Community Connect",
     textContent:
       "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
     eventImage: secondEventImage,
-    pathname: "try your luck",
+    pathname: "register now",
+  },
+  {
+    id: 3,
+    heading: "Community Connect",
+    textContent:
+      "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
+    pathname: "register now",
+    eventImage: ghanaImage,
+  },
+
+  {
+    id: 4,
+    heading: "Community Connect",
+    textContent:
+      "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
+    eventImage: secondEventImage,
+    pathname: "register now",
   },
 ];

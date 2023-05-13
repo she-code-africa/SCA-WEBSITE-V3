@@ -244,46 +244,16 @@ const Events = () => {
           <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
             Up Coming
           </h2>
-          <div className=" w-[90%] mx-auto md:w-[80%] mt-16">
+          <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
             {upcomingEvents.map((event, index) => {
               return (
-                <div
-                  className={`w-full flex flex-col ${
-                    (index + 1) % 2 !== 0
-                      ? "2md:flex-row-reverse"
-                      : "2md:flex-row"
-                  } gap-14 2md:items-center 2md:justify-between mb-10`}
+                <eventpagecomponents.UpcomingEvents
                   key={event.id}
-                >
-                  <article className="w-full md:max-w-[480px] mx-auto 2md:mx-0">
-                    <h3 className="text-2xl md:text-3xl 2md:text-[40px] capitalize font-semibold text-center md:text-justify">
-                      {event.heading}
-                    </h3>
-
-                    <p className="mt-7 text-base md:text-xl text-center md:text-justify">
-                      {event.textContent}
-                    </p>
-
-                    <div className="flex mt-[28px] justify-center md:justify-start">
-                      <Link
-                        to="#"
-                        className="bg-primary-main-pink text-white py-[14px] px-8 rounded-lg capitalize text-sm transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
-                      >
-                        {event.pathname}
-                      </Link>
-                    </div>
-                  </article>
-                  <figure className="m-0 p-0 w-full h-[482px] max-w-[482px] 2md:max-w-[482px] mx-auto 2md:mx-0">
-                    <img
-                      src={event.eventImage}
-                      alt="event-pic"
-                      className="w-full h-full object-cover"
-                    />
-                  </figure>
-                </div>
+                  event={event}
+                />
               );
             })}
-          </div>
+          </section>
         </section>
 
         <section className="w-full text-primary-dark-brown">
