@@ -12,6 +12,7 @@ import {
   sortUpcomingEventByDate,
   sortPastEventsByDate,
 } from "../../utils/helpers";
+import ghanaEvent from "../../images/events-page/ghanaevent.png";
 
 import * as eventpagecomponents from "../../components/Events";
 
@@ -211,38 +212,35 @@ const Events = () => {
         </main>
       </div> */}
       <main className=" text-secondary-main-black">
-        <section className=" bg-event-hero-bg bg-event-bg">
-          <div className="w-full min-h-[600px] flex flex-col justify-center text-white event-hero">
-            <h1 className="hero-heading capitalize font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
-              events
-            </h1>
+        <section className=" bg-hero-bg-gradient">
+          <div className="w-90 mx-auto min-h-[600px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
+            <div className="w-full max-w-[606px] ">
+              <h1 className="hero-heading capitalize font-black text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto 2md:text-left">
+                events
+              </h1>
 
-            <p className="m-0 mt-4 text-center max-w-[720px] text-lg md:text-2xl mx-auto leading-[30px]">
-              She Code Africa is a registered non-profit organization dedicated
-              to empowering and celebrating girls and women in technology
-              across  Africa
-            </p>
+              <p className="m-0 mt-2 text-center md:w-[90%] text-lg md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-secondary-dark-brown 2md:text-left">
+                Get free access to events focused on empowering and getting more
+                young girls and women into technology across Africa.
+              </p>
+            </div>
+
+            <div className="w-full 2md:w-1/2">
+              <figure className="m-0 p-0 w-full max-w-[404px] h-[404px] border-[7px] border-primary-main-pink mx-auto relative">
+                <img
+                  src={ghanaEvent}
+                  alt="ghana event"
+                  className="w-full h-full object-cover"
+                />
+                <div className="w-[90px] h-[90px] absolute top-[-45px] left-[-45px] trending-star"></div>
+              </figure>
+            </div>
           </div>
         </section>
 
-        <section className="mt-[-100px]  2md:mt-[-80px] w-full">
-          <eventpagecomponents.HeroImages />
-
-          <div className="flex justify-center mt-12">
-            <BecomeAmemberButton
-              bg="bg-primary-main-pink"
-              bgHover="bg-white"
-              color="text-white"
-              colorHover="text-primary-main-pink"
-              border="border-primary-main-pink"
-              title="View More"
-            />
-          </div>
-        </section>
-
-        <section className="mt-24 w-full text-primary-dark-brown">
-          <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
-            Up Coming
+        <section className="mt-24 w-full text-secondary-dark-brown">
+          <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-5xl text-center">
+            Up coming events
           </h2>
           <div className=" w-[90%] mx-auto md:w-[80%] mt-16">
             {upcomingEvents.map((event, index) => {

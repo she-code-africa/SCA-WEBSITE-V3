@@ -6,15 +6,9 @@ main {
   width: 90%;
 }
 
-.event-hero {
-  background-image: url("../../images/events-page/event-hero-bg.png"),
-    url("../../images/events-page/events-page-bg-2.png");
+.trending-star {
+  background-image: url("../../images/events-page/trending-star.png");
   background-repeat: no-repeat;
-  background-position: top left, bottom right;
-}
-
-.wavy-line {
-  background: url("../../images/events-page/wavy-line.png");
-  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center center;
 }
