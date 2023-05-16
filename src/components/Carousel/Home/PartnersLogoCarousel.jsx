@@ -1,8 +1,7 @@
 import React from "react";
-import { partnersList } from "../../../utils";
 import Slider from "react-slick";
 
-const PartnersLogoCarousel = () => {
+const PartnersLogoCarousel = ({ partnersData }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -28,17 +27,18 @@ const PartnersLogoCarousel = () => {
   };
   return (
     <section className="w-full mx-auto mt-[60px]">
-      <Slider {...settings}>
-        {partnersList.map((logo, index) => {
+      <Slider {...settings} className=" custom-slick">
+        {partnersData.map((logo, index) => {
+          let { image, name } = logo;
           return (
             <div
-              className=" w-90 mr-[40px] flex items-center justify-center"
+              className=" w-90 mr-[40px] custom-slick-img h-[110px]"
               key={index}
             >
-              <figure className="m-0 p-0 mx-auto" style={{ width: logo.width }}>
+              <figure className="m-0 p-0 mx-auto h-auto" style={{ width: 100 }}>
                 <img
-                  src={logo.src}
-                  alt={logo.alt}
+                  src={image}
+                  alt={name}
                   className="w-full h-full"
                   style={{ objectFit: "contain" }}
                   loading="lazy"

@@ -100,6 +100,11 @@ main {
   left: -30px;
 }
 
+.custom-slick-img {
+  display: flex !important;
+  align-items: center;
+}
+
 @media only screen and (max-width: 479px) {
   .btns-wrapper {
     display: flex;
