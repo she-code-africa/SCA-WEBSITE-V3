@@ -5,7 +5,7 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const BecomeAmemberButton = ({
   bg,
-  bgHover,
+  bgHover = "bg-white",
   color,
   colorHover,
   border,
