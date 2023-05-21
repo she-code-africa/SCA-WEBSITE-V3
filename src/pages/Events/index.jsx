@@ -4,16 +4,12 @@ import { useQuery } from "react-query";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
-import Loading from "../../components/Loading";
-import Error from "../../components/Error";
 import { getEvents } from "../../services";
-import { apiConstants, upcomingEvents, pastEventsList } from "../../utils";
+import { apiConstants } from "../../utils";
 import {
   sortUpcomingEventByDate,
   sortPastEventsByDate,
 } from "../../utils/helpers";
-import ghanaEvent from "../../images/events-page/ghanaevent.png";
 import * as eventpagecomponents from "../../components/Events";
 import rectangleImg from "../../images/events-page/Rectangle-10171.png";
 import * as components from "../../components";
@@ -42,7 +38,7 @@ const Events = () => {
         setUpcomingEvents(_upcomingEvents);
       }
     }
-  }, [isFetched, isSuccess, data]);
+  }, [isFetched, isSuccess, data, isError]);
 
   return (
     <>
