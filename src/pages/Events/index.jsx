@@ -16,27 +16,33 @@ import {
 import ghanaEvent from "../../images/events-page/ghanaevent.png";
 import * as eventpagecomponents from "../../components/Events";
 import rectangleImg from "../../images/events-page/Rectangle-10171.png";
-import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
+import * as components from "../../components";
 
 const Events = () => {
-  const eventCall = useQuery(apiConstants.events, getEvents);
-  // const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
+    apiConstants.events,
+    getEvents
+  );
+  const [upcoming_Events, setUpcomingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
 
   useEffect(() => {
-    if (eventCall.isFetched && eventCall.isSuccess) {
-      const events = eventCall.data;
+    if (isError) {
+      return <components.Error />;
+    }
+
+    if (isFetched && isSuccess) {
+      const events = data;
       const _pastEvents = sortPastEventsByDate(events);
       const _upcomingEvents = sortUpcomingEventByDate(events);
       if (_pastEvents.length) {
         setPastEvents(_pastEvents);
       }
       if (_upcomingEvents) {
-        // setUpcomingEvents(_upcomingEvents);
+        setUpcomingEvents(_upcomingEvents);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isFetched, isSuccess, data]);
 
   return (
     <>
@@ -80,32 +86,57 @@ const Events = () => {
           <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
             Up Coming
           </h2>
-          <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-            {upcomingEvents.map((event, index) => {
-              return (
-                <eventpagecomponents.UpcomingEvents
-                  key={event.id}
-                  event={event}
-                />
-              );
-            })}
-          </section>
-        </section>
 
+          {!isLoading ? (
+            <>
+              {upcoming_Events.length ? (
+                <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
+                  {upcoming_Events.map((event, index) => {
+                    return (
+                      <eventpagecomponents.UpcomingEvents
+                        key={event._id}
+                        event={event}
+                      />
+                    );
+                  })}
+                </section>
+              ) : (
+                <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
+                  There is no upcoming event at the moment.
+                </h1>
+              )}
+            </>
+          ) : (
+            <components.Loading />
+          )}
+        </section>
         <section className="w-full text-primary-dark-brown mt-[135px]">
           <h2 className="text-3xl font-bold mb-0 lg:my-18 md:text-[40px] text-center">
             Past Events
           </h2>
-          <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-            {pastEventsList.map((event, index) => {
-              return (
-                <eventpagecomponents.UpcomingEvents
-                  key={event.id}
-                  event={event}
-                />
-              );
-            })}
-          </section>
+
+          {!isLoading ? (
+            <>
+              {pastEvents.length ? (
+                <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
+                  {pastEvents.map((event, index) => {
+                    return (
+                      <eventpagecomponents.UpcomingEvents
+                        key={event._id}
+                        event={event}
+                      />
+                    );
+                  })}
+                </section>
+              ) : (
+                <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
+                  There is no past event at the moment.
+                </h1>
+              )}
+            </>
+          ) : (
+            <components.Loading />
+          )}
 
           <figure className="m-0 p-0 w-90 max-w-[1240px] mx-auto h-[520px] overflow-hidden rounded-[50px] border-[18px] border-primary-main-pink mt-36 mb-32">
             <img
