@@ -10,7 +10,7 @@ import {
   sortUpcomingEventByDate,
   sortPastEventsByDate,
 } from "../../utils/helpers";
-import * as eventpagecomponents from "../../components/Events";
+import Event from "../../components/Events";
 import rectangleImg from "../../images/events-page/Rectangle-10171.png";
 import * as components from "../../components";
 
@@ -19,14 +19,10 @@ const Events = () => {
     apiConstants.events,
     getEvents
   );
-  const [upcoming_Events, setUpcomingEvents] = useState([]);
+  const [upcoming_events, setUpcomingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
 
   useEffect(() => {
-    if (isError) {
-      return <components.Error />;
-    }
-
     if (isFetched && isSuccess) {
       const events = data;
       const _pastEvents = sortPastEventsByDate(events);
@@ -38,7 +34,15 @@ const Events = () => {
         setUpcomingEvents(_upcomingEvents);
       }
     }
-  }, [isFetched, isSuccess, data, isError]);
+  }, [isFetched, isSuccess, data]);
+
+  if (isLoading) {
+    return <components.Loading />;
+  }
+
+  if (isError) {
+    return <components.Error />;
+  }
 
   return (
     <>
@@ -80,30 +84,23 @@ const Events = () => {
 
         <section className="mt-24 w-full text-primary-dark-brown">
           <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
-            Up Coming
+            Upcoming
           </h2>
 
-          {!isLoading ? (
+          {!isLoading && (
             <>
-              {upcoming_Events.length ? (
+              {upcoming_events.length ? (
                 <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                  {upcoming_Events.map((event, index) => {
-                    return (
-                      <eventpagecomponents.UpcomingEvents
-                        key={event._id}
-                        event={event}
-                      />
-                    );
+                  {upcoming_events.map((event, index) => {
+                    return <Event key={event._id} event={event} />;
                   })}
                 </section>
               ) : (
                 <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
-                  There is no upcoming event at the moment.
+                  There are no upcoming events at the moment.
                 </h1>
               )}
             </>
-          ) : (
-            <components.Loading />
           )}
         </section>
         <section className="w-full text-primary-dark-brown mt-[135px]">
@@ -111,34 +108,27 @@ const Events = () => {
             Past Events
           </h2>
 
-          {!isLoading ? (
+          {!isLoading && (
             <>
               {pastEvents.length ? (
                 <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
                   {pastEvents.map((event, index) => {
-                    return (
-                      <eventpagecomponents.UpcomingEvents
-                        key={event._id}
-                        event={event}
-                      />
-                    );
+                    return <Event key={event._id} event={event} />;
                   })}
                 </section>
               ) : (
                 <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
-                  There is no past event at the moment.
+                  There is currently no past event.
                 </h1>
               )}
             </>
-          ) : (
-            <components.Loading />
           )}
 
-          <figure className="m-0 p-0 w-90 max-w-[1240px] mx-auto h-[520px] overflow-hidden rounded-[50px] border-[18px] border-primary-main-pink mt-36 mb-32">
+          <figure className="m-0 p-0 w-90 max-w-[1240px] mx-auto  mt-36 mb-32">
             <img
               src={rectangleImg}
               alt="rectangle img"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </figure>
         </section>
