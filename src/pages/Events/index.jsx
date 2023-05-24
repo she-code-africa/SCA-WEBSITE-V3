@@ -124,18 +124,3 @@ const Events = () => {
 };
 
 export default Events;
-// useEffect(() => {
-//   if (isFetched && isSuccess) {
-//     const events = data;
-//     const _pastEvents = sortPastEventsByDate(events);
-//     const _upcomingEvents = sortUpcomingEventByDate(events);
-//     if (_pastEvents.length) {
-//       setPastEvents(_pastEvents);
-//     }
-//     if (_upcomingEvents) {
-//       setUpcomingEvents(_upcomingEvents);
-//     }
-//   }
-// }, [isFetched, isSuccess, data]);
-//   const [upcoming_events, setUpcomingEvents] = useState([]);
-// const [pastEvents, setPastEvents] = useState([]);
