@@ -19,22 +19,6 @@ const Events = () => {
     apiConstants.events,
     getEvents
   );
-  const [upcoming_events, setUpcomingEvents] = useState([]);
-  const [pastEvents, setPastEvents] = useState([]);
-
-  useEffect(() => {
-    if (isFetched && isSuccess) {
-      const events = data;
-      const _pastEvents = sortPastEventsByDate(events);
-      const _upcomingEvents = sortUpcomingEventByDate(events);
-      if (_pastEvents.length) {
-        setPastEvents(_pastEvents);
-      }
-      if (_upcomingEvents) {
-        setUpcomingEvents(_upcomingEvents);
-      }
-    }
-  }, [isFetched, isSuccess, data]);
 
   if (isLoading) {
     return <components.Loading />;
@@ -87,11 +71,11 @@ const Events = () => {
             Upcoming
           </h2>
 
-          {!isLoading && (
+          {!isLoading && isSuccess && isFetched && (
             <>
-              {upcoming_events.length ? (
+              {sortUpcomingEventByDate(data).length ? (
                 <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                  {upcoming_events.map((event, index) => {
+                  {sortUpcomingEventByDate(data).map((event, index) => {
                     return <Event key={event._id} event={event} />;
                   })}
                 </section>
@@ -108,11 +92,11 @@ const Events = () => {
             Past Events
           </h2>
 
-          {!isLoading && (
+          {!isLoading && isSuccess && isFetched && (
             <>
-              {pastEvents.length ? (
+              {sortPastEventsByDate(data).length ? (
                 <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                  {pastEvents.map((event, index) => {
+                  {sortPastEventsByDate(data).map((event, index) => {
                     return <Event key={event._id} event={event} />;
                   })}
                 </section>
@@ -140,3 +124,18 @@ const Events = () => {
 };
 
 export default Events;
+// useEffect(() => {
+//   if (isFetched && isSuccess) {
+//     const events = data;
+//     const _pastEvents = sortPastEventsByDate(events);
+//     const _upcomingEvents = sortUpcomingEventByDate(events);
+//     if (_pastEvents.length) {
+//       setPastEvents(_pastEvents);
+//     }
+//     if (_upcomingEvents) {
+//       setUpcomingEvents(_upcomingEvents);
+//     }
+//   }
+// }, [isFetched, isSuccess, data]);
+//   const [upcoming_events, setUpcomingEvents] = useState([]);
+// const [pastEvents, setPastEvents] = useState([]);
