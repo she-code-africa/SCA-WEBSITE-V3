@@ -15,11 +15,10 @@ const SchoolOfAppliedSkills = () => {
       <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-brown">
         <div className="text-center max-w-[60rem]">
           <h1 className="text-4xl leading-relaxed mx-auto font-bold text-white lg:text-[3.2rem] lg:leading-tight mb-8">
-            {" "}
-            Grow your engineering career with our programs
+            Transform your career with practical tech skills
           </h1>
           <button className="rounded-lg text-base bg-white px-6 py-4">
-            Join Our Cloud School Program
+            Join Our School of Applied Science Program
           </button>
         </div>
       </section>
@@ -31,9 +30,8 @@ const SchoolOfAppliedSkills = () => {
           return (
             <div
               key={content.id}
-              className={`${
-                index % 2 ? "flex-row-reverse" : "flex-row"
-              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+              className={`${index % 2 ? "flex-row-reverse" : "flex-row"
+                } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
             >
               <img
                 className="text-center md:w-96"
