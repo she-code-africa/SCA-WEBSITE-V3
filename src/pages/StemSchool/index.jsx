@@ -27,9 +27,8 @@ const StemSchool = () => {
           return (
             <div
               key={content.id}
-              className={`${
-                index % 2 ? "flex-row-reverse" : "flex-row"
-              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+              className={`${index % 2 ? "flex-row-reverse" : "flex-row"
+                } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
             >
               <img
                 className="text-center md:w-96"
@@ -111,7 +110,7 @@ const StemSchool = () => {
             {" "}
             <img className="w-52" src={bglineImage} alt="bg-line" />
           </div>
-          <h2 className="text-2xl font-normal text-4xl text-primary-dark-brown">
+          <h2 className="text-2xl font-normal text-primary-dark-brown">
             Hire Our Graduates
           </h2>
           <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
