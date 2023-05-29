@@ -76,7 +76,7 @@ const Home = () => {
             <div className="btns-wrapper mt-8">
               <BecomeAmemberButton
                 bg="bg-primary-main-pink"
-                bgHover={"bg-white"}
+                bgHover="hover:bg-white"
                 color="text-white"
                 colorHover="text-primary-main-pink"
                 border="border-primary-main-pink"
@@ -84,7 +84,7 @@ const Home = () => {
               />
               <Link
                 to="/donate-partner"
-                className=" bg-white text-sm font-medium rounded-lg border border-primary-main-pink py-[14px] pl-[32px] pr-[38px] transition duration-300 hover:text-white hover:bg-primary-main-pink donate"
+                className="bg-white text-sm font-medium rounded-lg border border-primary-main-pink py-[14px] pl-[32px] pr-[38px] transition duration-300 hover:text-white hover:bg-primary-main-pink donate focus:outline-none focus:ring-8 focus:ring-tutu"
               >
                 Donate&nbsp;
                 <FontAwesomeIcon icon={faAngleRight} />
@@ -209,7 +209,7 @@ const Home = () => {
             <div className="flex justify-center md:justify-end w-full mt-7 2md:max-w-[1000px] mx-auto">
               <Link
                 to="#"
-                className="capitalize text-base md:text-lg text-primary-main-pink"
+                className="capitalize text-base md:text-lg text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
               >
                 view more pictures <FontAwesomeIcon icon={faAngleRight} />
               </Link>
@@ -239,7 +239,7 @@ const Home = () => {
                 <div className="flex mt-10">
                   <BecomeAmemberButton
                     bg="bg-primary-main-pink"
-                    bgHover="bg-white"
+                    bgHover="hover:bg-white"
                     color="text-white"
                     colorHover="text-primary-main-pink"
                     border="border-primary-main-pink"
@@ -277,7 +277,7 @@ const Home = () => {
             <div className="md:my-5 my-10">
               <Link
                 to="/mentors"
-                className="capitalize bg-primary-main-pink text-white py-[14px] px-[32px] rounded-lg"
+                className="capitalize bg-primary-main-pink text-white hover:bg-transparent border border-primary-main-pink py-[14px] px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu"
               >
                 Become a member
               </Link>
