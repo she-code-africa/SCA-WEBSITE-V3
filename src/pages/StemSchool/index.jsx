@@ -11,12 +11,11 @@ const StemSchool = () => {
       <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-brown">
         <div className="text-center max-w-[60rem]">
           <h1 className="text-4xl leading-relaxed mx-auto font-bold text-white lg:text-[3.2rem] lg:leading-tight mb-8">
-            {" "}
-            Grow your engineering career with our programs
+            Empowering women to engineer a better world with tech
           </h1>
-          <button className="rounded-lg text-base bg-white px-6 py-4">
-            Join Our Cloud School Program
-          </button>
+          {/* <button className="rounded-lg text-base bg-white px-6 py-4">
+            Join Our Stem School Program
+          </button> */}
         </div>
       </section>
       <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
@@ -27,9 +26,8 @@ const StemSchool = () => {
           return (
             <div
               key={content.id}
-              className={`${
-                index % 2 ? "flex-row-reverse" : "flex-row"
-              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+              className={`${index % 2 ? "flex-row-reverse" : "flex-row"
+                } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
             >
               <img
                 className="text-center md:w-96"
@@ -108,10 +106,9 @@ const StemSchool = () => {
       <section className="bg-[#F9F9F9] my-14 lg:my-28 py-20">
         <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-primary-dark-brown">
           <div className="hidden lg:inline-block absolute top-0 left-0">
-            {" "}
             <img className="w-52" src={bglineImage} alt="bg-line" />
           </div>
-          <h2 className="text-2xl font-normal text-4xl text-primary-dark-brown">
+          <h2 className="text-2xl font-normal text-primary-dark-brown">
             Hire Our Graduates
           </h2>
           <p className="text-sm lg:text-base py-6 lg:w-[55ch]">

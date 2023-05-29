@@ -33,10 +33,11 @@ import SchoolOfEngineering from "./pages/SchoolOfEngineering";
 import SchoolOfProduct from "./pages/SchoolOfProducts";
 import SchoolOfAppliedSkills from "./pages/SchoolOfAppliedSkills";
 import StemSchool from "./pages/StemSchool";
+import Volunteer from "./pages/Volunteer";
 
 const queryClient = new QueryClient();
 
-function App() {
+function App () {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes />
@@ -45,7 +46,7 @@ function App() {
   );
 }
 
-function Routes(params) {
+function Routes (params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
@@ -76,6 +77,7 @@ function Routes(params) {
       <Route path={paths.privacy} element={<Privacy />} />
       <Route path={paths.codeOfConduct} element={<CodeOfConduct />} />
       <Route path={paths.faq} element={<FAQ />} />
+      <Route path={paths.volunteer} element={<Volunteer />} />
       <Route path="*" element={<PageNotFound />} />
     </Switch>
   );

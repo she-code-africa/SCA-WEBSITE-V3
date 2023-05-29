@@ -34,6 +34,7 @@ export const paths = {
   faq: "/faq",
   codeOfConduct: "/code-of-conduct",
   privacy: "/privacy",
+  volunteer: "/volunteer"
 };
 
 export const apiConstants = {
