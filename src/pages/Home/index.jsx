@@ -70,7 +70,7 @@ const Home = () => {
             <p className="m-0 mt-8 text-center max-w-[900px] text-base md:text-lg mx-auto leading-[1.8]">
               She Code Africa is a registered non-profit organization dedicated
               to empowering and celebrating girls and women in technology
-              across  Africa
+              across Africa
             </p>
 
             <div className="btns-wrapper mt-8">

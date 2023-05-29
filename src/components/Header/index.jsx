@@ -8,26 +8,34 @@ import { paths } from "../../utils";
 
 const menus = [
   { to: paths.home, text: "Home" },
-  { to: paths.about, text: "Academy", list: [
-    { to: paths.engineering, text: "School of Engineering" },
-    { to: paths.products, text: "School of Products" },
-    { to: paths.appliedSkills, text: "School of Applied Skills" },
-    { to: paths.stemSchool, text: "STEM School" },
-  ]},
-  { to: paths.chapters, text: "Get Involved", list: [
-    { to: paths.about, text: "Volunteer With Us" },
-    { to: 'https://bit.ly/joinshecodeafrica', text: "Become A Member", external: true },
-    { to: paths.events, text: "Events" },
-    { to: paths.innitiatives, text: "Innitiatives" },
-  ]},
-  { to: paths.donate, text: "Community", list: [
-    { to: paths.about, text: "SCA Community" },
-    { to: paths.chapters, text: "SCA Chapters" },
-  ]},
-  { to: paths.donate, text: "About", list: [
-    { to: paths.about, text: "About SCA" },
-    { to: paths.team, text: "Our Team" },
-  ]},
+  {
+    to: paths.about, text: "Academy", list: [
+      { to: paths.engineering, text: "School of Engineering" },
+      { to: paths.products, text: "School of Products" },
+      { to: paths.appliedSkills, text: "School of Applied Skills" },
+      { to: paths.stemSchool, text: "STEM School" },
+    ]
+  },
+  {
+    to: paths.chapters, text: "Get Involved", list: [
+      { to: paths.volunteer, text: "Volunteer With Us" },
+      { to: 'https://bit.ly/joinshecodeafrica', text: "Become A Member", external: true },
+      { to: paths.events, text: "Events" },
+      { to: paths.innitiatives, text: "Innitiatives" },
+    ]
+  },
+  {
+    to: paths.donate, text: "Community", list: [
+      { to: paths.about, text: "SCA Community" },
+      { to: paths.chapters, text: "SCA Chapters" },
+    ]
+  },
+  {
+    to: paths.donate, text: "About", list: [
+      { to: paths.about, text: "About SCA" },
+      { to: paths.team, text: "Our Team" },
+    ]
+  },
 ];
 const Header = ({ page }) => {
   const location = useLocation();
@@ -47,7 +55,7 @@ const Header = ({ page }) => {
     } else {
       body.classList.remove(...classList);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen])
 
   return (
@@ -64,20 +72,20 @@ const Header = ({ page }) => {
           {menus.map((menu, index) => (
             <li key={index} className="text-[#1A1A1A] text-opacity-[82%] font-medium relative">
               {menu?.list ?
-                <button className="flex gap-2 items-center cursor-pointer" onClick={() => setSelectedMenu(selectedMenu === index ? null: index)}>
+                <button className="flex gap-2 items-center cursor-pointer" onClick={() => setSelectedMenu(selectedMenu === index ? null : index)}>
                   <span to={menu.to} className="m-0">{menu.text}</span>
-                  <FontAwesomeIcon icon={faCaretDown} className={`transition-transform duration-300 ${selectedMenu === index ? 'rotate-180': null}`} />
+                  <FontAwesomeIcon icon={faCaretDown} className={`transition-transform duration-300 ${selectedMenu === index ? 'rotate-180' : null}`} />
                 </button>
                 : <Link to={menu.to} className={`${path === menu.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>{menu.text}</Link>}
-                {menu?.list && selectedMenu === index && (
-                  <ul className="absolute bg-white top-12 pt-5 px-5 w-max">
-                    {menu.list.map((list, index) => 
-                      <li key={index} className={`font-normal mb-5 ${path === list.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>
-                        {list?.external ? <a href={list.to} target="_blank" rel="noreferrer">{list.text}</a> : <Link to={list.to}>{list.text}</Link>}
-                      </li>
-                    )}
-                  </ul>
-                )}
+              {menu?.list && selectedMenu === index && (
+                <ul className="absolute bg-white top-12 pt-5 px-5 w-max">
+                  {menu.list.map((list, index) =>
+                    <li key={index} className={`font-normal mb-5 ${path === list.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>
+                      {list?.external ? <a href={list.to} target="_blank" rel="noreferrer">{list.text}</a> : <Link to={list.to}>{list.text}</Link>}
+                    </li>
+                  )}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
@@ -117,7 +125,7 @@ const Header = ({ page }) => {
               </li>
             ))}
           </ul>
-          
+
         </div> : null}
       </div>
     </header>
