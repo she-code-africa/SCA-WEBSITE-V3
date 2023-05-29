@@ -61,38 +61,46 @@ const Header = ({ page }) => {
   return (
     <header className="sticky top-0 w-full md:bg-white/80 bg-white z-[1] md:py-8 py-4">
       <div className="justify-between gap-8 items-center lg:w-10/12 mx-auto hidden md:flex px-5 lg:px-0">
-        <Link to={paths.home} className="lg:px-5">
+        <Link to={paths.home} className="lg:px-5 focus:outline-none focus:ring focus:ring-tutu">
           <img
             src={logo}
             alt="SCA Logo"
             className="object-contain __shecodelogo min-w-[60px] h-[60px]"
           />
         </Link>
+
         <ul className="flex lg:gap-x-10 md:gap-x-5 items-center">
           {menus.map((menu, index) => (
             <li key={index} className="text-[#1A1A1A] text-opacity-[82%] font-medium relative">
               {menu?.list ?
-                <button className="flex gap-2 items-center cursor-pointer" onClick={() => setSelectedMenu(selectedMenu === index ? null : index)}>
+                <button className="flex gap-2 items-center cursor-pointer focus:outline-none focus:ring focus:ring-tutu"
+                  onClick={() => setSelectedMenu(selectedMenu === index ? null : index)}>
                   <span to={menu.to} className="m-0">{menu.text}</span>
                   <FontAwesomeIcon icon={faCaretDown} className={`transition-transform duration-300 ${selectedMenu === index ? 'rotate-180' : null}`} />
                 </button>
-                : <Link to={menu.to} className={`${path === menu.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>{menu.text}</Link>}
+
+                : <Link to={menu.to} className={`focus:outline-none focus:ring focus:ring-tutu ${path === menu.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>{menu.text}</Link>}
+
               {menu?.list && selectedMenu === index && (
-                <ul className="absolute bg-white top-12 pt-5 px-5 w-max">
+                <l className="absolute bg-white top-12 pt-5 px-5 w-max">
                   {menu.list.map((list, index) =>
                     <li key={index} className={`font-normal mb-5 ${path === list.to ? 'text-primary-main-pink border-b border-primary-main-pink font-bold' : null}`}>
-                      {list?.external ? <a href={list.to} target="_blank" rel="noreferrer">{list.text}</a> : <Link to={list.to}>{list.text}</Link>}
+                      {list?.external ?
+                        <a href={list.to} target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">{list.text}</a> :
+                        <Link to={list.to} className="focus:outline-none focus:ring focus:ring-tutu">{list.text}</Link>}
                     </li>
                   )}
-                </ul>
+                </l>
               )}
             </li>
           ))}
         </ul>
-        <Link to={paths.donate} className="bg-primary-main-pink rounded-lg py-5 px-12 text-white hover:text-white">Donate</Link>
+
+        <Link to={paths.donate} className="bg-primary-main-pink rounded-lg py-5 px-12 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu">Donate</Link>
       </div>
+
       <div className="md:hidden flex justify-between place-items-center px-8">
-        <Link to={paths.home} className="lg:px-5">
+        <Link to={paths.home} className="lg:px-5 focus:outline-none focus:ring focus:ring-tutu">
           <img
             src={logo}
             alt="SCA Logo"
@@ -100,10 +108,18 @@ const Header = ({ page }) => {
           />
         </Link>
 
-        <div className="flex flex-col justify-between items-center cursor-pointer w-[30px] h-[8px] transition-transform duration-300 ease-in-out" onClick={handleClick}>
-          <div className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${isOpen ? 'translate-y-[2.5px] rotate-45' : ''}`}></div>
+        <div
+          className="flex flex-col justify-between items-center cursor-pointer w-[30px] h-[8px] transition-transform duration-300 ease-in-out focus:outline-none focus:ring focus:ring-tutu"
+          onClick={handleClick}
+          onKeyUp={(e) => {
+            if (e.key === "Enter") {
+              handleClick()
+            }
+          }}
+          tabIndex={0}>
+          <div className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${isOpen ? 'translate-y-[5px] rotate-45' : ''}`}></div>
           <div className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[6px] ${isOpen ? 'scale-x-0' : ''}`}></div>
-          <div className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[12px] ${isOpen ? 'translate-y-[-2.5px] -rotate-45' : ''}`}></div>
+          <div className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[12px] ${isOpen ? 'translate-y-[-2px] -rotate-45' : ''}`}></div>
         </div>
 
         {isOpen ? <div className="fixed inset-0 z-[4000] overflow-y-auto animate__animated top-20 bg-white w-full py-5">
@@ -111,13 +127,13 @@ const Header = ({ page }) => {
             {menus.map((menu, index) => (
               <li key={index} className={`font-medium text-xl  ${path === menu.to ? 'text-primary-main-pink' : 'text-[#1A1A1A] text-opacity-[82%]'}`}>
                 {menu?.list ?
-                  <button className="font-medium block">{menu.text}</button>
-                  : <Link to={menu.to} className={`block font-medium mb-6`}>{menu.text}</Link>}
+                  <div className="font-medium block">{menu.text}</div>
+                  : <Link to={menu.to} className={`block font-medium mb-6 focus:outline-none focus:ring focus:ring-tutu`}>{menu.text}</Link>}
                 {menu?.list && (
                   <ul className="pt-5 px-5">
                     {menu.list.map((list, index) =>
                       <li key={index} className="font-normal mb-6">
-                        <Link to={list.to} className={`${path === list.to ? 'text-primary-main-pink' : 'text-[#1A1A1A] visited:text-[#1A1A1A] visited:text-opacity-[82%] text-opacity-[82%]'}`}>{list.text}</Link>
+                        <Link to={list.to} className={` focus:outline-none focus:ring focus:ring-tutu ${path === list.to ? 'text-primary-main-pink' : 'text-[#1A1A1A] visited:text-[#1A1A1A] visited:text-opacity-[82%] text-opacity-[82%]'}`}>{list.text}</Link>
                       </li>
                     )}
                   </ul>
