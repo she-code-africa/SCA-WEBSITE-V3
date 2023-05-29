@@ -4,12 +4,18 @@ import avatar from "../../../images/avatar.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-function SampleNextArrow(props) {
+function SampleNextArrow (props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
+      className={`focus:outline-none focus:ring focus:ring-tutu ${className}`}
+      tabIndex={0}
       onClick={onClick}
+      onKeyUp={(e) => {
+        if (e.key === "Enter") {
+          onClick()
+        }
+      }}
       style={{
         ...style,
         display: "block",
@@ -22,11 +28,12 @@ function SampleNextArrow(props) {
   );
 }
 
-function SamplePrevArrow(props) {
+function SamplePrevArrow (props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className={className}
+      className={`focus:outline-none focus:ring focus:ring-tutu ${className}`}
+      tabIndex={0}
       style={{
         ...style,
         display: "block",
@@ -34,6 +41,11 @@ function SamplePrevArrow(props) {
         textAlign: "center",
       }}
       onClick={onClick}
+      onKeyUp={(e) => {
+        if (e.key === "Enter") {
+          onClick()
+        }
+      }}
     >
       <FontAwesomeIcon icon={faAngleLeft} />
     </div>

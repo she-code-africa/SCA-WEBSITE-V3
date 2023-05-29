@@ -19,7 +19,7 @@ const Cards = ({ heading, textContent, cardBgImg }) => {
           </p>
 
           <Link
-            className="w-full flex items-center justify-end mt-2 capitalize text-base md:text-lg text-primary-main-pink cursor-pointer"
+            className="w-full flex items-center justify-end mt-2 capitalize text-base md:text-lg text-primary-main-pink cursor-pointer focus:outline-none focus:ring focus:ring-tutu"
             to="#"
           >
             learn more&nbsp;&nbsp;&nbsp;

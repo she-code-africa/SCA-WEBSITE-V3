@@ -20,7 +20,7 @@ const OurReach = () => {
 
         <div className="flex mt-10 justify-center 2md:justify-start">
           <BecomeAmemberButton
-            bgHover="bg-primary-main-pink"
+            bgHover="hover:bg-primary-main-pink"
             bg="bg-white"
             colorHover="text-white"
             color="text-primary-main-pink"
