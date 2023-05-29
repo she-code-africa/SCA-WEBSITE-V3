@@ -17,7 +17,7 @@ export const paths = {
   products: "/school-of-products",
   appliedSkills: "/school-of-applied-skills",
   stemSchool: "/stem-school",
-  innitiatives: "/innitiatives",
+  initiatives: "/initiatives",
   chapters: "/chapters",
   donate: "/donate-partner",
   events: "/events",
@@ -39,7 +39,7 @@ export const paths = {
   faq: "/faq",
   codeOfConduct: "/code-of-conduct",
   privacy: "/privacy",
-  volunteer: "/volunteer"
+  volunteer: "/volunteer",
 };
 
 export const apiConstants = {
@@ -761,5 +761,34 @@ export const upcomingEvents = [
       "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
     eventImage: secondEventImage,
     pathname: "try your luck",
+  },
+];
+
+// inititiatives page
+
+export const ourInitiatives = [
+  {
+    id: 1,
+    title: "laptop scholarship",
+    description:
+      "At our Laptop Scholarship Initiative, we believe that every girl deserves the chance to succeed and we are committed to providing equal access to technology for all. We want to help alleviate that burden and ensure that every girl has the opportunity to achieve their tech dream.",
+  },
+  {
+    id: 2,
+    title: "data scholarship",
+    description:
+      "Our aim with the Data Scholarship Initiative is to ensure that women have equal access to the internet. We recognize that the cost of internet service can be a significant obstacle for women pursuing careers in the tech industry, and we want to help alleviate this burden. Our goal is to provide every woman with the opportunity to achieve her tech aspirations.",
+  },
+  {
+    id: 3,
+    title: "financial scholarship",
+    description:
+      "An opportunity for students to receive financial assistance to pursue their career in tech. We understand that the cost of paying for courses online and other expenses can be a significant barrier for many ladies, and our Financial Scholarship Initiative aims to break down that barrier and provide support to those who are passionate about learning and achieving success.",
+  },
+  {
+    id: 4,
+    title: "course scholarship",
+    description:
+      "An opportunity for students to receive financial assistance to pursue their career in tech. We understand that the cost of paying for courses online and other expenses can be a significant barrier for many ladies, and our Financial Scholarship Initiative aims to break down that barrier and provide support to those who are passionate about learning and achieving success.",
   },
 ];

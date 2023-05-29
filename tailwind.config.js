@@ -22,6 +22,7 @@ module.exports = {
         hireTalent: "#FDC0E33D",
         "event-bg": "#210D15",
         tutu: "#F9E8F1",
+        "custom-grey-3": "#434343",
       },
       fontSize: {
         15: "15px",
