@@ -25,7 +25,7 @@ const Events = () => {
   }
 
   if (isError) {
-    return <components.Loading />;
+    return <components.Error />;
   }
 
   return (
@@ -66,56 +66,59 @@ const Events = () => {
           </div>
         </section>
 
-        <section className="mt-24 w-full text-primary-dark-brown">
-          <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
-            Upcoming Events
-          </h2>
+        {isLoading ? (
+          <components.Loading />
+        ) : (
+          <>
+            {isSuccess && isFetched && (
+              <section className="mt-24 w-full text-primary-dark-brown">
+                <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
+                  Upcoming Events
+                </h2>
 
-          {isSuccess && isFetched && (
-            <>
-              {sortUpcomingEventByDate(data).length ? (
-                <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                  {sortUpcomingEventByDate(data).map((event, index) => {
-                    return <Event key={event._id} event={event} />;
-                  })}
-                </section>
-              ) : (
-                <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
-                  There are no upcoming events at the moment.
-                </h1>
-              )}
-            </>
-          )}
-        </section>
-        <section className="w-full text-primary-dark-brown mt-[135px]">
-          <h2 className="text-3xl font-bold mb-0 lg:my-18 md:text-[40px] text-center">
-            Past Events
-          </h2>
+                <>
+                  {sortUpcomingEventByDate(data).length ? (
+                    <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
+                      {sortUpcomingEventByDate(data).map((event, index) => {
+                        return <Event key={event._id} event={event} />;
+                      })}
+                    </section>
+                  ) : (
+                    <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
+                      There are no upcoming events at the moment.
+                    </h1>
+                  )}
 
-          {isSuccess && isFetched && (
-            <>
-              {sortPastEventsByDate(data).length ? (
-                <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                  {sortPastEventsByDate(data).map((event, index) => {
-                    return <Event key={event._id} event={event} />;
-                  })}
-                </section>
-              ) : (
-                <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
-                  There is currently no past event.
-                </h1>
-              )}
-            </>
-          )}
+                  <section className="w-full text-primary-dark-brown mt-[135px]">
+                    <h2 className="text-3xl font-bold mb-0 lg:my-18 md:text-[40px] text-center">
+                      Past Events
+                    </h2>
 
-          <figure className="m-0 p-0 w-90 max-w-[1240px] mx-auto  mt-36 mb-32">
-            <img
-              src={rectangleImg}
-              alt="rectangle img"
-              className="w-full h-full object-contain"
-            />
-          </figure>
-        </section>
+                    {sortPastEventsByDate(data).length ? (
+                      <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
+                        {sortPastEventsByDate(data).map((event, index) => {
+                          return <Event key={event._id} event={event} />;
+                        })}
+                      </section>
+                    ) : (
+                      <h1 className="font-bold text-3xl text-primary-main-pink text-center mt-16 w-90 mx-auto">
+                        There is currently no past event.
+                      </h1>
+                    )}
+
+                    <figure className="m-0 p-0 w-90 max-w-[1240px] mx-auto  mt-36 mb-32">
+                      <img
+                        src={rectangleImg}
+                        alt="rectangle img"
+                        className="w-full h-full object-contain"
+                      />
+                    </figure>
+                  </section>
+                </>
+              </section>
+            )}
+          </>
+        )}
       </main>
 
       <Footer />
