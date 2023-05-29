@@ -1,5 +1,5 @@
 /* eslint-disable no-lone-blocks */
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
@@ -25,7 +25,7 @@ const Events = () => {
   }
 
   if (isError) {
-    return <components.Error />;
+    return <components.Loading />;
   }
 
   return (
@@ -68,10 +68,10 @@ const Events = () => {
 
         <section className="mt-24 w-full text-primary-dark-brown">
           <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
-            Upcoming
+            Upcoming Events
           </h2>
 
-          {!isLoading && isSuccess && isFetched && (
+          {isSuccess && isFetched && (
             <>
               {sortUpcomingEventByDate(data).length ? (
                 <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
@@ -92,7 +92,7 @@ const Events = () => {
             Past Events
           </h2>
 
-          {!isLoading && isSuccess && isFetched && (
+          {isSuccess && isFetched && (
             <>
               {sortPastEventsByDate(data).length ? (
                 <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
