@@ -42,10 +42,11 @@ export const apiConstants = {
   reach: "reach",
   partners: "partners",
   teams: "teams",
+  testimonials: "testimonials",
   chapters: "chapters",
   programs: "programs",
   programsCategories: "programsCategories",
-  programSuccess: "/program-success",
+  programSuccess: "program-success",
 };
 
 export const partners = [
