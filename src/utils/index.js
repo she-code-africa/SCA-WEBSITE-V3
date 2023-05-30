@@ -1,9 +1,4 @@
 import { Link } from "react-router-dom";
-import eduLag from "../images/lag.edu.png";
-import layer5 from "../images/Layer-5.png";
-import chimoney from "../images/chimoney.png";
-import deimos from "../images/deimos.png";
-import cloudbees from "../images/cloudbees.png";
 import programImage from "../images/academy/cloud-program.svg";
 import onlineCourseImage from "../images/academy/online-course.svg";
 import ghanaImage from "../images/events-page/ghanaevent.png";
@@ -741,25 +736,5 @@ export const youtubeVideos = [
     id: 2,
     description: "Bami's Story",
     video: "https://www.youtube.com/embed/USWzE09j0M8",
-  },
-];
-
-// events page
-export const upcomingEvents = [
-  {
-    id: 1,
-    heading: "Community Connect",
-    textContent:
-      "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
-    pathname: "register now",
-    eventImage: ghanaImage,
-  },
-  {
-    id: 2,
-    heading: "Cloud Programs",
-    textContent:
-      "Our Cloud Programs offer a variety of learning initiatives And bootcamps targeted at getting more African women into the Cloud Engineering Space, starting with our cohortly 3-months Cloud School bootcamp",
-    eventImage: secondEventImage,
-    pathname: "try your luck",
   },
 ];
