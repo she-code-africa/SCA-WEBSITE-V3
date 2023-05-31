@@ -8,6 +8,7 @@ import mentors from "../../images/volunteerImgs/mentors.png";
 import speakers from "../../images/volunteerImgs/speakers.png";
 
 import JoinUs from "../../components/JoinUs";
+import HeroSlider from "../../components/Volunteers/HeroSlider";
 
 const Volunteer = () => {
   return (
@@ -44,6 +45,10 @@ const Volunteer = () => {
             <h1 className="lg:text-6xl md:text-5xl text-4xl font-black lg:leading-[76px]">
               Interested in joining our <br /> volunteer team?
             </h1>
+          </div>
+
+          <div className="flex items-center mt-10">
+            <HeroSlider />
           </div>
         </section>
 

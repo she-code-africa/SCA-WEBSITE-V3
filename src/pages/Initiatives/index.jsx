@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import InitiativeCard from "../../components/Initiative/InitiativeCard";
+import * as initiativeComponents from "../../components/Initiative";
 import { ourInitiatives } from "../../utils";
 import { Link } from "react-router-dom";
 import stemclubimage from "../../images/initiative/stem-club.png";
@@ -31,7 +32,11 @@ const Initiatives = () => {
       </Helmet>
       <Header page={"initiatives"} />
       <main className=" text-secondary-main-black">
-        <section className=" min-h-screen bg-hero-bg-gradient"></section>
+        <section className=" bg-hero-bg-gradient">
+          <div className=" min-h-screen flex items-center">
+            <initiativeComponents.InitiativeHeroSlider />
+          </div>
+        </section>
 
         <section className="mt-40 py-1">
           <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] text-center capitalize">
@@ -42,7 +47,7 @@ const Initiatives = () => {
             {ourInitiatives.map((initiative) => {
               const { id, title, description } = initiative;
               return (
-                <InitiativeCard
+                <initiativeComponents.InitiativeCard
                   key={id}
                   title={title}
                   description={description}
