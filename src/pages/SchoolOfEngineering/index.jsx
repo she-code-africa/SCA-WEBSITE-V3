@@ -1,17 +1,22 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { programsList, onlineCoursesList, youtubeVideos } from "../../utils/index";
+import {
+  programsList,
+  onlineCoursesList,
+  youtubeVideos,
+} from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
 
 const SchoolOfEngineering = () => {
   return (
     <>
       <Header />
-      <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-brown">
+      <section className="h-[430px] flex-col flex items-center justify-center bg-seal-brown">
         <div className="text-center max-w-[60rem]">
           <h1 className="text-4xl leading-relaxed mx-auto font-bold text-white lg:text-[3.2rem] lg:leading-tight mb-8">
-            Empowering women to innovate the digital world, one engineer at a time.
+            Empowering women to innovate the digital world, one engineer at a
+            time.
           </h1>
           {/* <button className="rounded-lg text-base bg-white px-6 py-4">
             Join Our Cloud School Program
@@ -26,8 +31,9 @@ const SchoolOfEngineering = () => {
           return (
             <div
               key={content.id}
-              className={`${index % 2 ? "flex-row-reverse" : "flex-row"
-                } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+              className={`${
+                index % 2 ? "flex-row-reverse" : "flex-row"
+              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
             >
               <img
                 className="text-center md:w-96"

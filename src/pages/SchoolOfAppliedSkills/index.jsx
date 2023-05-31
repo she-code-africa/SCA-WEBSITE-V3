@@ -12,7 +12,7 @@ const SchoolOfAppliedSkills = () => {
   return (
     <>
       <Header />
-      <section className="h-[430px] flex-col flex items-center justify-center bg-secondary-dark-brown">
+      <section className="h-[430px] flex-col flex items-center justify-center bg-seal-brown">
         <div className="text-center max-w-[60rem]">
           <h1 className="text-4xl leading-relaxed mx-auto font-bold text-white lg:text-[3.2rem] lg:leading-tight mb-8">
             Transform your career with practical tech skills
@@ -30,8 +30,9 @@ const SchoolOfAppliedSkills = () => {
           return (
             <div
               key={content.id}
-              className={`${index % 2 ? "flex-row-reverse" : "flex-row"
-                } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+              className={`${
+                index % 2 ? "flex-row-reverse" : "flex-row"
+              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
             >
               <img
                 className="text-center md:w-96"

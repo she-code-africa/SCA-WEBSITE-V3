@@ -69,8 +69,8 @@ const Home = () => {
 
             <p className="m-0 mt-8 text-center max-w-[900px] text-base md:text-lg mx-auto leading-[1.8]">
               She Code Africa is a registered non-profit organization dedicated
-              to empowering and celebrating girls and women in technology
-              across Africa
+              to empowering and celebrating girls and women in technology across
+              Africa
             </p>
 
             <div className="btns-wrapper mt-8">
@@ -217,7 +217,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="w-full bg-hireTalent mt-[150px] md:mt-[200px]  py-16">
+        <section className="w-full bg-cotton-candy mt-[150px] md:mt-[200px]  py-16">
           <div className="w-full md:w-[90%] mx-auto xl:w-full xl:px-[200px] py-[120px]">
             <div className="relative hire-us bg-white w-[90%] md:w-full grid grid-cols-1 md:grid-cols-2 md:max-w-[1000px] mx-auto px-8 md:px-[60px] md:py-[40px] py-9 gap-10">
               <article className="w-full py-5 flex flex-col justify-center">
