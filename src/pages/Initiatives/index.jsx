@@ -86,7 +86,7 @@ const Initiatives = () => {
               <div className="mt-7 flex">
                 <Link
                   to="#"
-                  className="px-8 py-[14px] bg-community-pink-bg text-sm rounded-[30px] text-custom-grey-3 hover:text-primary-main-pink"
+                  className="px-8 py-[14px] bg-community-pink-bg text-sm rounded-[30px] text-charcoal hover:text-primary-main-pink"
                 >
                   Join the campaign
                 </Link>
