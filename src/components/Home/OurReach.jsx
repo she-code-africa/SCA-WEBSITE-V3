@@ -1,9 +1,15 @@
 import React from "react";
+import { useQuery } from "react-query";
 import ourReachIcon from "../../images/Icon-our-reach.svg";
 import BecomeAmemberButton from "../Button/BecomeAmemberButton";
 import ourreachImg from "../../images/homepage/unsplash-our-reach-1.png";
+import { apiConstants } from "../../utils";
+import { getReach } from "../../services";
 
 const OurReach = () => {
+  const reachCall = useQuery(apiConstants.reach, getReach)
+
+
   return (
     <div className="w-[90%] mx-auto flex flex-col 2md:flex-row 2md:items-center  text-white gap-10 2md:gap-8 xl:max-w-[1114px]">
       <article className="w-full 2md:max-w-[440px] lg:max-w-[500px] lg:w-full">

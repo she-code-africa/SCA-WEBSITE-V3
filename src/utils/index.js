@@ -1,9 +1,4 @@
 import { Link } from "react-router-dom";
-import eduLag from "../images/lag.edu.png";
-import layer5 from "../images/Layer-5.png";
-import chimoney from "../images/chimoney.png";
-import deimos from "../images/deimos.png";
-import cloudbees from "../images/cloudbees.png";
 import programImage from "../images/academy/cloud-program.svg";
 import onlineCourseImage from "../images/academy/online-course.svg";
 import ghanaImage from "../images/events-page/ghanaevent.png";
@@ -47,10 +42,11 @@ export const apiConstants = {
   reach: "reach",
   partners: "partners",
   teams: "teams",
+  testimonials: "testimonials",
   chapters: "chapters",
   programs: "programs",
   programsCategories: "programsCategories",
-  programSuccess: "/program-success",
+  programSuccess: "program-success",
 };
 
 export const partners = [

@@ -24,7 +24,7 @@ export const sortPastEventsByDate = (events) => {
   );
 
   const prevAndCurrentYear = _events.filter((event) => {
-    console.log(Number(getDateBreakdown(event.eventDate).year) >= lastYear);
+    // console.log(Number(getDateBreakdown(event.eventDate).year) >= lastYear);
 
     return (
       isThisYear(new Date(event.eventDate)) ||
