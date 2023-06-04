@@ -7,7 +7,8 @@ import { apiConstants } from "../../utils";
 import { getReach } from "../../services";
 
 const OurReach = () => {
-  const reachCall = useQuery(apiConstants.reach, getReach)
+  const { data: reachData } = useQuery(apiConstants.reach, getReach)
+
 
 
   return (
@@ -45,26 +46,15 @@ const OurReach = () => {
         </figure>
 
         <section className=" w-full py-4 2md:py-8 px-[18px] 2md:px-9 sm:w-[500px] 2md:max-w-[588px] bg-community-pink-bg absolute top-[320px] right-[-20px] sm:right-[-150px] sm:top-[340px] md:right-[-130px] 2md:right-[-40px] 2md:top-[400px] xl:w-[600px] rounded-3xl text-primary-main-pink right-xl">
-          <div className="w-full flex items-center 2md:mb-5">
-            <h4 className="text-2xl 2md:text-4xl font-bold">10,000+</h4>
-            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">
-              Community Members
-            </p>
-          </div>
+          {reachData && reachData.length && reachData.map((reach) => (
+            <div key={reach._id} className="w-full flex items-center 2md:mb-5">
+              <h4 className="text-2xl 2md:text-4xl font-bold">{reach.value}+</h4>
+              <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">
+                {reach.name}
+              </p>
+            </div>
+          ))}
 
-          <div className="w-full flex items-center 2md:mb-5">
-            <h4 className="text-2xl 2md:text-4xl font-bold">15+</h4>
-            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">
-              African Countries with Members
-            </p>
-          </div>
-
-          <div className="w-full flex items-center ">
-            <h4 className="text-2xl 2md:text-4xl font-bold">32+</h4>
-            <p className="m-0 p-0 text-lg 2md:text-2xl ml-3">
-              Chapters Location
-            </p>
-          </div>
         </section>
       </div>
     </div>
