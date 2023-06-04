@@ -9,6 +9,8 @@ import stemclubimage from "../../images/initiative/stem-club.png";
 import facilitators from "../../images/volunteerImgs/facilitators.png";
 import speakers from "../../images/volunteerImgs/speakers.png";
 
+import JoinUs from "../../components/JoinUs";
+
 const Initiatives = () => {
   return (
     <>
@@ -183,27 +185,7 @@ const Initiatives = () => {
           </div>
         </section>
 
-        <section className="w-[90%] mx-auto lg:max-w-[1000px] lg:w-full border-[18px] border-primary-main-pink py-8 px-8 sm:py-[62px] sm:px-[70px] md:py-[90px] md:px-[140px] mt-[152px] rounded-[50px]">
-          <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] text-center capitalize">
-            become a member
-          </h2>
-
-          <p className="text-center text-lg mt-8">
-            Be a part of a community that celebrates diversity and empowers
-            women to thrive in tech. Connect with like-minded individuals, gain
-            access to resources and events, and help shape the future of the
-            industry.
-          </p>
-
-          <div className="mt-7 flex justify-center">
-            <Link
-              to="#"
-              className="px-[62px] py-[18px] bg-primary-main-pink text-base rounded-[30px] text-community-pink-bg transition-all hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
-            >
-              Join us
-            </Link>
-          </div>
-        </section>
+        <JoinUs />
       </main>
       <Footer />
     </>

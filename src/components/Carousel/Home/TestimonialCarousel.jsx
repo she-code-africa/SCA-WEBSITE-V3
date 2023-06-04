@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-import avatar from "../../../images/avatar.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useQuery } from "react-query";
