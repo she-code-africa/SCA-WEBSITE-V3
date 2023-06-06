@@ -46,7 +46,7 @@ const Initiatives = () => {
             our initiatives
           </h2>
 
-          <div className="mt-24 w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+          <div className="mt-24 w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
             {ourInitiatives.map((initiative) => {
               const { id, title, description } = initiative;
               return (
@@ -61,7 +61,7 @@ const Initiatives = () => {
         </section>
 
         <section className="bg-community-pink-bg mt-[120px] py-[100px]">
-          <div className="w-90 mx-auto">
+          <div className="w-9/12 mx-auto">
             <article className="flex flex-wrap md:flex-nowrap flex-col-reverse md:flex-row md:items-center md:justify-between">
               <img
                 src={speakers}
@@ -148,7 +148,7 @@ const Initiatives = () => {
         </section>
 
         <section className=" w-full bg-primary-main-pink py-10 mt-[140px]">
-          <div className="w-[90%] mx-auto flex min-h-[677px] justify-center md:justify-between flex-col md:flex-row md:items-center gap-10 md:gap-16">
+          <div className="w-9/12 mx-auto flex min-h-[677px] justify-center md:justify-between flex-col md:flex-row md:items-center gap-10 md:gap-16">
             <div className="w-full max-w-[610px] mx-auto md:mx-0">
               <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] capitalize text-white">
                 stem club

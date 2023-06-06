@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const Cards = ({ heading, textContent, cardBgImg }) => {
+const Cards = ({ heading, textContent, cardBgImg, link = "#" }) => {
   return (
     <section className="w-full">
       <div
@@ -20,7 +20,7 @@ const Cards = ({ heading, textContent, cardBgImg }) => {
 
           <Link
             className="w-full flex items-center justify-end mt-2 capitalize text-base md:text-lg text-primary-main-pink cursor-pointer focus:outline-none focus:ring focus:ring-tutu"
-            to="#"
+            to={link}
           >
             learn more&nbsp;&nbsp;&nbsp;
             <FontAwesomeIcon icon={faAngleRight} />

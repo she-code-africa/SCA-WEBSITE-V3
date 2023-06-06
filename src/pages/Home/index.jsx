@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { apiConstants, homepageOurCommunityCards } from "../../utils/index";
+import { apiConstants, homepageOurCommunityCards, paths } from "../../utils/index";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 import whoweareimage from "../../images/homepage/who-are-we.png";
 import { whoWeAreTexts } from "../../utils";
@@ -149,16 +149,16 @@ const Home = () => {
               subheading="An Africa where women are equally represented across all career roles in
         Technology."
             />
-
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 2md:gap-14 md:max-w-[700px] 2md:max-w-[800px] mx-auto">
               {homepageOurCommunityCards.map(
-                ({ heading, textContent, bgImage }, index) => {
+                ({ heading, textContent, bgImage, link }, index) => {
                   return (
                     <homecomponents.Cards
                       heading={heading}
                       textContent={textContent}
                       key={index}
                       cardBgImg={bgImage}
+                      link={link}
                     />
                   );
                 }
@@ -276,7 +276,7 @@ const Home = () => {
             </p>
             <div className="md:my-5 my-10">
               <Link
-                to="/mentors"
+                to={paths.initiatives}
                 className="capitalize bg-primary-main-pink text-white hover:bg-transparent border border-primary-main-pink py-[14px] px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu"
               >
                 Become a member

@@ -12,14 +12,13 @@ const SchoolOfProducts = () => {
   return (
     <>
       <Header />
-      <section className="h-[430px] flex-col flex items-center justify-center bg-seal-brown">
-        <div className="text-center max-w-[60rem]">
-          <h1 className="text-4xl leading-relaxed mx-auto font-bold text-white lg:text-[3.2rem] lg:leading-tight mb-8">
+      <section
+        className="h-[430px] flex-col flex justify-center"
+        style={{ background: 'radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)' }}>
+        <div className="lg:w-7/12 md:w-9/12 md:px-20 px-9">
+          <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
             Empowering the next generation of women in product
           </h1>
-          <button className="rounded-lg text-base bg-white px-6 py-4">
-            Join Our Product School Program
-          </button>
         </div>
       </section>
       <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
@@ -30,9 +29,8 @@ const SchoolOfProducts = () => {
           return (
             <div
               key={content.id}
-              className={`${
-                index % 2 ? "flex-row-reverse" : "flex-row"
-              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+              className={`${index % 2 ? "flex-row-reverse" : "flex-row"
+                } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
             >
               <img
                 className="text-center md:w-96"

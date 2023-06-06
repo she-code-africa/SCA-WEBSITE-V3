@@ -641,24 +641,28 @@ export const homepageOurCommunityCards = [
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-3",
+    link: "/community"
   },
   {
     heading: "Our Communities and Chapters",
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-4",
+    link: paths.chapters
   },
   {
     heading: "Our Events",
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-1",
+    link: paths.events
   },
   {
     heading: "Our Initiative",
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-2",
+    link: paths.initiatives
   },
 ];
 
