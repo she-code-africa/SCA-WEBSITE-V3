@@ -36,7 +36,7 @@ const Initiatives = () => {
       <Header page={"initiatives"} />
       <main className=" text-secondary-main-black">
         <section className=" bg-hero-bg-gradient">
-          <div className=" min-h-screen flex items-center">
+          <div className=" min-h-screen flex items-center w-10/12 mx-auto">
             <initiativeComponents.InitiativeHeroSlider />
           </div>
         </section>

@@ -47,7 +47,7 @@ const Volunteer = () => {
             </h1>
           </div>
 
-          <div className="flex items-center mt-10">
+          <div className="flex items-center mt-10 w-10/12 mx-auto px-5">
             <HeroSlider />
           </div>
         </section>
