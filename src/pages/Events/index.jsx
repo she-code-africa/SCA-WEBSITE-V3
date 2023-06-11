@@ -73,7 +73,6 @@ const Events = () => {
 
         {isError ? <components.Error /> : null}
 
-
         {isLoading ? (
           <components.Loading />
         ) : (
@@ -88,7 +87,13 @@ const Events = () => {
                   {sortUpcomingEventByDate(data).length ? (
                     <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
                       {sortUpcomingEventByDate(data).map((event) => {
-                        return <Event key={event._id} event={event} isUpcoming={true} />;
+                        return (
+                          <Event
+                            key={event._id}
+                            event={event}
+                            isUpcoming={true}
+                          />
+                        );
                       })}
                     </section>
                   ) : (

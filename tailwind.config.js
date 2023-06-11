@@ -22,6 +22,10 @@ module.exports = {
         "cotton-candy": "#FDC0E33D",
         tutu: "#F9E8F1",
         charcoal: "#434343",
+        "floral-white": "#FFF8EA",
+        gamboge: "#EEA30A",
+        veryLightGrey: "#CFCFCF",
+        "lavendar-blush": "#FFF7FC",
       },
       fontSize: {
         15: "15px",

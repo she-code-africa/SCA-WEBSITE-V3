@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import logo from "../../images/she-code-africa-logo.svg";
 import { paths } from "../../utils";
@@ -101,7 +101,7 @@ const Header = ({ page }) => {
                     {menu.text}
                   </span>
                   <FontAwesomeIcon
-                    icon={faCaretDown}
+                    icon={faAngleDown}
                     className={`transition-transform duration-300 ${
                       selectedMenu === index ? "rotate-180" : null
                     }`}

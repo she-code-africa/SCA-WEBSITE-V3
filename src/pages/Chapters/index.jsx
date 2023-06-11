@@ -4,52 +4,60 @@ import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 
 import Header from "../../components/Header";
-import chaptersBanner from "../../images/chapters.png"
-import searchIcon from "../../images/search.svg";
+import searchIcon from "../../images/chapters/search-icon.png";
 import Footer from "../../components/Footer";
+import chaptersHero from "../../images/chapters/chapters-hero.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faTriangleExclamation,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 import { getChapters } from "../../services";
 import { apiConstants } from "../../utils";
-
+import chapterImage from "../../images/chapters/chapter-img.png";
+import JoinUs from "../../components/JoinUs";
+import ChaptersCard from "../../components/Chapters";
 
 const Chapters = () => {
-
   const chaptersCall = useQuery(apiConstants.chapters, getChapters);
 
-  const [chapters, setChapters] = useState([])
-  const [activeTab, setActiveTab] = useState("city")
-  const [searchValue, setSearchValue] = useState('')
-  const [searchNotFound, setSearchNotFound] = useState(false)
+  const [chapters, setChapters] = useState([]);
+  const [activeTab, setActiveTab] = useState("city");
+  const [searchValue, setSearchValue] = useState("");
+  const [searchNotFound, setSearchNotFound] = useState(false);
 
-
-   const searchChapters = (value) => {
-    const _value = value.toLowerCase()
+  const searchChapters = (value) => {
+    const _value = value.toLowerCase();
     if (_value) {
-      const getChapters = chaptersCall?.data?.filter((chapter) => chapter?.name?.toLowerCase()?.includes(_value) || chapter?.city?.toLowerCase()?.includes(_value) || chapter?.country?.toLowerCase()?.includes(_value))
+      const getChapters = chaptersCall?.data?.filter(
+        (chapter) =>
+          chapter?.name?.toLowerCase()?.includes(_value) ||
+          chapter?.city?.toLowerCase()?.includes(_value) ||
+          chapter?.country?.toLowerCase()?.includes(_value)
+      );
       if (getChapters.length) {
-        setSearchNotFound(false)
-        setChapters(getChapters)
+        setSearchNotFound(false);
+        setChapters(getChapters);
       } else {
-        setSearchNotFound(true)
+        setSearchNotFound(true);
       }
     } else {
-      setChapters(chaptersCall.data || [])
+      setChapters(chaptersCall.data || []);
     }
-  }
-
-  
-  useEffect(() => {
-    if(chaptersCall.isFetched && chaptersCall.isSuccess) {
-      setChapters(chaptersCall.data)
-    }
-  }, [chaptersCall.isFetched])
-  
+  };
 
   useEffect(() => {
-    searchChapters(searchValue)
-  }, [searchValue])
+    if (chaptersCall.isFetched && chaptersCall.isSuccess) {
+      setChapters(chaptersCall.data);
+    }
+  }, [chaptersCall.isFetched]);
 
-
+  useEffect(() => {
+    searchChapters(searchValue);
+  }, [searchValue]);
 
   return (
     <>
@@ -62,79 +70,127 @@ const Chapters = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="She Code Africa Chapters" />
-        <meta property="og:description" content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem" />
+        <meta
+          property="og:description"
+          content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem"
+        />
         <meta name="twitter:title" content="She Code Africa Chapters" />
-        <meta name="twitter:description" content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem" />
+        <meta
+          name="twitter:description"
+          content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem"
+        />
       </Helmet>
-      <Header page={'chapters'} />
-      <main>
-        <section aria-labelledby="chapterHeadings" className="h-[450px] bg-no-repeat bg-center bg-cover flex justify-center items-center" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${chaptersBanner})` }}>
-          <div className="text-center text-white md:w-7/12 w-11/12 mx-auto">
-            <h2 id="chapterHeadings" className="text-3xl font-bold my-4">She Code Africa <br /> Chapters</h2>
-            <p className="mt-5 tracking-[0.76px] leading-[25px] text-lg">You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem</p>
+      <Header page={"chapters"} />
+      <main className=" text-secondary-main-black">
+        <section className=" bg-hero-bg-gradient">
+          <div className="w-90 mx-auto min-h-[600px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
+            <div className="w-full max-w-[587px] ">
+              <h1 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto 2md:text-left">
+                Chapters in SCA
+              </h1>
 
-            <div className="my-7 flex flex-col md:block">
-              <a href="#chapter-tab" className="btn sca-btn pink-btn mr-6"> JOIN A CHAPTER</a>
-                {/* <a href="https://docs.google.com/forms/d/e/1FAIpQLSduv_lZHaqaBIbmQrN4heqk99uJbZAikiE4DTmOePXM0v8oWQ/viewform" className="btn sca-btn trans-btn" target="_blank" rel="noreferrer">LEAD A CHAPTER</a> */}
-                <a className="btn sca-btn trans-btn" href="/chapters/form">LEAD A CHAPTER</a>
+              <p className="m-0 mt-2 text-center md:w-[90%] text-base md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-seal-brown 2md:text-justify font-normal">
+                We believe in the power of mentorship and are always looking for
+                passionate and dedicated individuals to join our community of
+                mentors. If you're interested in volunteering as a mentor,
+                please reach out to us to learn more about how you can get
+                involved.
+              </p>
+            </div>
+
+            <div className="w-full 2md:w-1/2">
+              <figure className="m-0 p-0 w-full max-w-[550.01px] h-[476.75px] mx-auto ">
+                <img
+                  src={chaptersHero}
+                  alt="ghana event"
+                  className="w-full h-full object-contain"
+                />
+              </figure>
             </div>
           </div>
         </section>
 
-        <section className="flex justify-center items-center my-4">
-          <div className="lg:w-4/12 md:w-5/12 w-8/12  py-3 px-2 bg-[#F7F7F7] text-xs rounded-md flex items-center">
-            <input className=" bg-transparent block w-11/12 focus:outline-none" type="search" placeholder="Search for a Country e.g Nigeria, Kenya, Ghana" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
-            <img src={searchIcon} alt="search" className="w-3" />
+        <section className="border-2 border-gamboge pt-8 pr-8 pb-11 pl-9 mt-40 max-w-[820px] w-[90%] mx-auto rounded-[34.6111px] bg-floral-white flex items-center gap-8">
+          <FontAwesomeIcon
+            icon={faTriangleExclamation}
+            className="text-gamboge w-[52px] h-[45px]"
+          />
+
+          <p className="text-seal-brown font-medium">
+            She Code Africa(SCA) Chapters are independent chapters of the SCA
+            community and engagements do not speak directly on behalf of the
+            organisation except where explicitly stated.
+          </p>
+        </section>
+
+        <section className="mt-36 py-1">
+          <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] text-center capitalize">
+            Start a chapter today
+          </h2>
+
+          <p className="w-full max-w-[832px] mx-auto mt-8 text-center text-lg">
+            Be a part of a community that celebrates diversity and empowers
+            women to thrive in tech. Connect with like-minded individuals, gain
+            access to resources and events, and help shape the future of the
+            industry.
+          </p>
+
+          <div className="flex items-center justify-center gap-8 mt-8">
+            <Link
+              to="/"
+              className="bg-primary-main-pink px-8 py-[18px] mt-3 rounded-[30px] text-white text-base"
+            >
+              Lead a chapter
+            </Link>
           </div>
         </section>
 
+        <section className="bg-primary-main-pink py-[110px] md:px-24 mt-[154px]">
+          <h1 className="hero-heading capitalize font-extrabold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white">
+            Join a chapter
+          </h1>
 
-        <section aria-labelledby="chapterTabs" className="my-4 md:w-9/12 w-11/12 mx-auto" role="tab">
-          <header>
-            <h3 id="chapterTabs" className="__shecode_topic text-black text-3xl my-5">Explore by Type</h3>
-          </header>
-          <div className="border-b-2 border-[#f3f3f3]">
-            <ul className="grid gap-10 grid-cols-2 text-center text-[#1A1A1A] text-[13px] font-bold lg:w-3/12 mx-auto">
-              <li onClick={() => setActiveTab("city")} className={`cursor-pointer capitalize py-4 ${activeTab === "city" ? 'border-b-2 border-primary-main-pink': 'hover:border-b-2 hover:border-primary-main-pink'}`}>City</li>
-              <li onClick={() => setActiveTab("campus")} className={`cursor-pointer capitalize py-4 ${activeTab === "campus" ? 'border-b-2 border-primary-main-pink': 'hover:border-b-2 hover:border-primary-main-pink'}`}>Campus</li>
-            </ul>
+          <div className=" mt-14 flex flex-col sm:flex-row items-center justify-center gap-8 w-[90%] md:w-full mx-auto">
+            <div className="max-w-[310px] h-[54px] w-full py-3 px-2 bg-[#F7F7F7] text-xs rounded-[30px] overflow-hidden flex items-center pl-5">
+              <img src={searchIcon} alt="search" className="w-7" />
+              <input
+                className=" bg-transparent block focus:outline-none placeholder:text-veryLightGrey placeholder:text-base w-full h-full px-3"
+                type="search"
+                placeholder="Search"
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+              />
+            </div>
+
+            <div className="w-[109px] h-[46px] bg-community-pink-bg text-charcoal rounded-[30px]">
+              <button className="w-full h-full">Search</button>
+            </div>
           </div>
-          <div className="animate__animated animate__faster animate__slideInRight">
-            {activeTab === "city" && (
-              <div className="flex flex-wrap justify-center items-center">
-                {chapters.filter((chapter) => chapter.category.name.toLowerCase() === 'city').map((chapter, index) => (
-                  <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
-                    <a href="/" target="_blank" rel="noreferrer">
-                      <h6 className="text-black uppercase font-bold">{chapter?.name}</h6>
-                      <p className="text-xs py-2 capitalize">{chapter?.city}, {chapter?.country}</p>
-                    </a>
-                  </div>
-                ))}
-              </div>
-            )}
+
+          <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">
+            {[...Array(8)].map((item, index) => {
+              return (
+                <div className="" key={index}>
+                  <ChaptersCard chapterImage={chapterImage} />
+                </div>
+              );
+            })}
+          </section>
+          <div className="flex justify-center gap-7 mt-[57px]">
+            <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
+              <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
+            </button>
+            <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
+              <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
+            </button>
           </div>
-          <div className="animate__animated animate__faster animate__slideInLeft">
-            {activeTab === "campus" && (
-              <div className="flex flex-wrap justify-center items-center">
-                {chapters.filter((chapter) => chapter.category.name.toLowerCase() === 'campus').map((chapter, index) => (
-                  <div key={index} className="py-3 px-5 rounded-lg bg-[#F7F7F7] mx-4 my-5 min-w-[180px] min-h-[80px]">
-                    <a href="/" target="_blank" rel="noreferrer">
-                      <h6 className="text-black uppercase font-bold">{chapter?.name} campus</h6>
-                      <p className="text-xs py-2">{chapter?.city}, {chapter?.country}</p>
-                    </a>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-          {searchNotFound ? 
-            <p className="text-center py-5">City or campus not found</p>
-          : ''}
         </section>
+
+        <JoinUs />
       </main>
-      <Footer/>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Chapters
+export default Chapters;
