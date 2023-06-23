@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useQuery } from 'react-query'
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
@@ -17,23 +17,6 @@ import guidance from '../../images/about/guidance.jpg'
 import support from '../../images/about/support.jpg'
 
 const About = () => {
-  const teamCall = useQuery(apiConstants.teams, getTeams)
-  const [teamMembers, setTeamMembers] = useState([])
-
-  useEffect(() => {
-    if (teamCall.isFetched && teamCall.isSuccess) {
-      setTeamMembers(teamCall?.data)
-    }
-
-  }, [teamCall.isFetched, teamCall.isSuccess, teamCall?.data])
-
-  useEffect(() => {
-    if (teamMembers.length > 6) {
-      teamMembers.length = 6
-    }
-  }, [teamMembers])
-
-
   return (
     <>
       <Helmet>
