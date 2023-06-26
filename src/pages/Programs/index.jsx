@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useQuery } from "react-query";
 import Header from "../../components/Header";
 import { Link } from "react-router-dom";
@@ -84,11 +84,10 @@ const Programs = () => {
             <ul className="flex flex-wrap border-b border-[#ddd] overflow-x-auto px-10 justify-center">
               {programsCategories.map((category) => (
                 <li
-                  className={`text-center font-semibold mr-8 text-base py-2 tracking-wider transition-all duration-700 ${
-                    activeTab === category?._id
+                  className={`text-center font-semibold mr-8 text-base py-2 tracking-wider transition-all duration-700 ${activeTab === category?._id
                       ? "text-primary-dark-pink border-b-[3px] border-primary-dark-pink"
                       : "text-[#0D2543]"
-                  }`}
+                    }`}
                   role={"button"}
                   key={category._id}
                   onClick={() => setActiveTab(category?._id)}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
