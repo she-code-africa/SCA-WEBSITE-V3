@@ -102,7 +102,7 @@ const Team = () => {
         <meta name="twitter:description" content="Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working." />
       </Helmet>
       <Header />
-      <main inert={modalOpen ? true : undefined}>
+      <main inert={modalOpen ? "true" : undefined}>
         <section
           className="min-h-[80dvh] flex items-center bg-[#FCF5F8]"
           style={{
