@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -55,14 +55,14 @@ const Jobs = () => {
                   Published {job.published_date}
                 </p>
                 <div className="text-right">
-                  <Link to={"/view/jobs/"+ job.id} className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">View More</Link>
+                  <Link to={"/view/jobs/" + job.id} className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">View More</Link>
                 </div>
               </article>
             ))}
           </div>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   )
 }

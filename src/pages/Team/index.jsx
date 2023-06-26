@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 // import { useQuery } from 'react-query'
 import JoinUs from "../../components/JoinUs";
 import Header from "../../components/Header";

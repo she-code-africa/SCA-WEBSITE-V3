@@ -1,5 +1,5 @@
- import React, { useState } from 'react'
- import { Helmet } from "react-helmet";
+import React, { useState } from 'react'
+import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
@@ -40,10 +40,10 @@ const FAQ = () => {
         <div className="w-11/12 mx-auto my-10">
           <h4 className="text-primary-color font-weight-bolder text-2xl">Community FAQs</h4>
           <div>
-            {communityFaq.map(({heading, content}, index) => (
+            {communityFaq.map(({ heading, content }, index) => (
               <AccordionComponent key={heading} heading={heading} id={index} active={communityFaqS} setIsActive={setCommunityFaq}>
                 {content}
-            </AccordionComponent>
+              </AccordionComponent>
             ))}
           </div>
         </div>
@@ -88,7 +88,7 @@ const FAQ = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   )
 }
@@ -108,5 +108,5 @@ const AccordionComponent = ({ heading, children, active, setIsActive, id }) => {
     </article>
   )
 }
- 
+
 export default FAQ
