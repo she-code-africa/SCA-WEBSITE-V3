@@ -82,7 +82,7 @@ const Header = ({ page }) => {
         >
           <img
             src={logo}
-            alt="SCA Logo"
+            alt="Go to homepage"
             className="object-contain __shecodelogo min-w-[60px] h-[60px]"
           />
         </Link>
@@ -171,7 +171,7 @@ const Header = ({ page }) => {
         >
           <img
             src={logo}
-            alt="SCA Logo"
+            alt="Go to homepage"
             className="object-contain __shecodelogo min-w-[40px] h-[40px]"
           />
         </Link>
