@@ -1,10 +1,7 @@
 import React from "react";
-import { useQuery } from 'react-query'
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { getTeams } from "../../services";
-import { apiConstants } from "../../utils";
 import JoinUs from "../../components/JoinUs";
 
 import bgGradient from '../../images/about/bg-gradient.png'
@@ -41,7 +38,7 @@ const About = () => {
           </div>
         </section>
         <section
-          className="py-20 bg-no-repeat bg-cover"
+          className="py-20 bg-no-repeat bg-cover bg-[#FCF5F8]"
           style={{ backgroundImage: `url(${bgGradient})` }}>
           <div className="lg:w-7/12 w-11/12 mx-auto flex flex-col md:flex-row justify-between gap-14">
             <article className="md:w-6/12">

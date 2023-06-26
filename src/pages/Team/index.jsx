@@ -1,49 +1,93 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Helmet } from "react-helmet";
-import { useQuery } from 'react-query'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+// import { useQuery } from 'react-query'
+import JoinUs from "../../components/JoinUs";
 import Header from "../../components/Header";
-import { ImgCard } from "../../components/Cards";
 import Footer from "../../components/Footer";
-import Loading from "../../components/Loading";
-import Error from "../../components/Error";
-import { apiConstants } from "../../utils";
-import { getTeams } from "../../services";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
+// import Loading from "../../components/Loading";
+// import Error from "../../components/Error";
+// import { apiConstants } from "../../utils";
+// import { getTeams } from "../../services";
+
+import heroBg from "../../images/team/bg-image.png";
+import box from "../../images/team/box.png";
+import facebookIcon from "../../images/team/facebook-icon.svg";
+import instagramIcon from "../../images/team/instagram-icon.svg";
+import twitterIcon from "../../images/team/twitter-icon.svg";
 
 
 
 const Team = () => {
-  const [openModal, setOpenModal] = useState(false);
-  const [name, setName] = useState("");
-  const [src, setSrc] = useState("");
-  const [role, setRole] = useState("");
-  const [details, setDetails] = useState("")
-  const [teamMembers, setTeamMembers] = useState([])
+  const showModal = useRef(null);
+  const hideModal = useRef(null);
+  const modal = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
 
-  const teamCall = useQuery(apiConstants.teams, getTeams)
 
-  const modalDialog = (name, src, role, details) => {
-    setOpenModal(true);
-    setRole(role);
-    setSrc(src);
-    setName(name);
-    setDetails(details)
-  }
+  // const [teamMembers, setTeamMembers] = useState([])
+
+  // const teamCall = useQuery(apiConstants.teams, getTeams)
+
+  const setHideModal = () => {
+    const _modal = modal?.current;
+    setAnimatedClass(`animate__zoomOut`);
+    setTimeout(() => {
+      setModalOpen(false)
+      _modal?.close();
+    }, 500);
+  };
 
 
   useEffect(() => {
-   if (teamCall.isFetched && teamCall.isSuccess) {
-     setTeamMembers(teamCall?.data)
-   } 
+    const _showModal = showModal?.current;
+    const _hideModal = hideModal?.current;
+    const _modal = modal?.current;
 
-  //  teamCall.isError
+    _showModal?.addEventListener(`click`, () => {
+      setAnimatedClass(`animate__zoomIn`);
+      _modal?.showModal();
+      _hideModal?.focus();
+      setModalOpen(true)
+    });
 
-  }, [teamCall.isFetched, teamCall.isSuccess,  teamCall?.data])
+    _showModal?.addEventListener(`keypress`, (e) => {
+      if (e.code === `Enter`) {
+        setAnimatedClass(`animate__zoomIn`);
+        _modal?.showModal();
+        _hideModal?.focus();
+        setModalOpen(true);
+      }
+    });
+
+    _hideModal?.addEventListener(`click`, () => {
+      setHideModal();
+    });
+    _modal?.scroll({
+      top: 0,
+      behavior: `smooth`,
+    });
+
+    return () => {
+      _showModal?.removeEventListener(`click`, () => {
+        setHideModal();
+      })
+      _showModal?.removeEventListener(`keypress`, () => {
+        _showModal.current = null
+      })
+      _hideModal?.removeEventListener(`click`, () => {
+        _hideModal.current = null
+      })
+    };
+
+  }, []);
+
 
   return (
-    <div>
+    <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Our Awesome Team</title>
@@ -57,84 +101,113 @@ const Team = () => {
         <meta name="twitter:title" content="Our Awesome Team" />
         <meta name="twitter:description" content="Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working." />
       </Helmet>
-        <Header />
-        <section className="container mx-auto px-4">
-          <div className="grid grid-cols-12">
-            <div className=" col-span-12 sm:col-span-7 inline sm:px-14"> 
-              <div className="__shecodeheader_text">
-                    <div className="__shecodeheader_title">
-                        <h1>Our Team</h1>
-                    </div>
-                    <div className="__shecodeheader_subtitle">
-                        <h4>
-                            Empowering and celebrating <span className="highlight">women <br/> in technology</span> across Africa guiding <br/> Tech-Girls to their Full Potential
-                        </h4>
-                    </div>
-                </div>
+      <Header />
+      <main inert={modalOpen ? true : undefined}>
+        <section
+          className="min-h-[80dvh] flex items-center bg-[#FCF5F8]"
+          style={{
+            backgroundImage: `url(${heroBg})`
+          }}>
+          <div className="md:w-10/12 w-11/12 mx-auto flex items-center">
+            <div>
+              <p className="uppercase border rounded-full border-[#B70569] text-[#B70569] inline-block py-2 px-7 text-sm font-medium tracking-[0.96px]">Meet the team</p>
+              <h1 className="text-[#282828] md:text-5xl text-4xl font-bold my-5">Meet The SCA Team</h1>
+              <p className="text-xl font-medium leading-10 md:w-8/12">Peep the faces behind the initiatives and impacts here at She Code Africa. These wonderful people work behind the scene, everyday to keep our vision working.</p>
             </div>
-            <div className="hidden sm:col-span-5 sm:inline">
-              <div className="__shecodeheader_image"></div>
+            <div className="hidden md:block">
+              <img src={box} alt="" role="presentation" className="object-contain" />
             </div>
           </div>
         </section>
-        <div className="container mx-auto px-8 __shecodecontent">
-
-        {teamCall.isLoading ?
-          <div className="flex flex-wrap gap-6 mx-10 md:mx-5 my-20">
-            {[1,2,3].map((_, index) => (
-              <Loading key={index} />
-            ))}
+        <section className="my-20">
+          <div className="text-center xl:w-5/12 md:w-6/12 mx-auto">
+            <h2 className="text-4xl font-semibold my-3">Our Amazing Team</h2>
+            <p className="text-lg">Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
           </div>
-          : null}
-
-          {teamCall.isError ?
-            <div className="flex justify-center  mx-10 md:mx-5 my-20">
-              <Error />
-            </div>
-          : null}
-
-            <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 my-20">
-              {teamMembers?.map((member, index)=>{
-                return <div onClick={()=> modalDialog(member.name, member?.image || '', `${member.isLeader ? 'Lead, ': ''} ${member.team.name}`, member.bio)} key={index}>
-                  <ImgCard name={member.name} src={member?.image || ''} role={`${member.isLeader ? 'Lead, ': ''} ${member.team.name}`}/>
-                </div>
-                })
-              }
-            </div>
-        </div>
-        {openModal ? 
-            <div id="defaultModal" aria-hidden="true" className="modal team_modal overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal h-full md:inset-0 bg-[#333] bg-opacity-70">
-              <div className="relative px-4 w-full max-w-2xl h-full modal-dialog-centered mx-auto my-auto grid content-center">
-              <div className="modal-content relative">
-                <div className="-mx-4 grid grid-cols-12 modal-body content-center rounded-[50px] bg-white">
-                          <div className="col-span-12 sm:col-span-6">
-                            <div className="__shecodeteammember_box">
-                                <div className="__shecodeteammember_img">                                 
-                                  {src ? <img src={src} alt={name} className="img-responsive"/>
-                                    : <div className="w-full h-full flex justify-center items-center">
-                                      <FontAwesomeIcon icon={faUser} size="10x" className="scale-150 text-gray-500" />
-                                    </div>}
-                                </div>
-                                <div className="__shecodeteammember_text">
-                                    <h5 className="name">{name}</h5>
-                                    <p className="role">{role}</p>
-                                </div>
-                            </div>
-                          </div>
-                          <div className="col-span-12 sm:col-span-6 justify-self-start bg-white rounded-lg shadow px-4">
-                            <div className="__shecodeteammember_details">
-                            <div className="flex justify-between items-start ">
-                              <span className="close hover:bg-gray-200 hover:text-gray-900 rounded-lg text-xl font-bold p-1.5 ml-auto inline-flex items-center " data-dismiss="modal" aria-hidden="true" title="close" role="button" onClick={()=> setOpenModal(false)}>x</span>
-                            </div>
-                                <p>{details}</p>
-                            </div>
-                          </div>
+          <div></div>
+          <div className="w-10/12 mx-auto my-6 grid md:grid-cols-3 md:gap-36 gap-10">
+            <article
+              role="button"
+              className="border-2 border-[#B70569] rounded-2xl"
+              ref={showModal}>
+              <img
+                src="https://via.placeholder.com/310x230"
+                alt="Team member"
+                className="rounded-t-2xl" />
+              <div className="p-5">
+                <h2 className="text-xl font-bold text-[#282828]">Ada Nduka Oyom</h2>
+                <p className="text-base text-[#3E3E59]">Founder</p>
+                <div className="flex gap-4 items-center mt-7">
+                  <a href="https://" target="_blank" rel="noreferrer">
+                    <img src={facebookIcon} alt="Go to facebook profile" />
+                  </a>
+                  <a href="https://" target="_blank" rel="noreferrer">
+                    <img src={instagramIcon} alt="Go to instagram profile" />
+                  </a>
+                  <a href="https://" target="_blank" rel="noreferrer">
+                    <img src={twitterIcon} alt="Go to twitter profile" />
+                  </a>
                 </div>
               </div>
+            </article>
           </div>
-          </div> : null}
-      <Footer/>
-    </div>
+        </section>
+        <JoinUs />
+      </main>
+      <dialog ref={modal} className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center ${modalOpen ? 'flex' : 'hidden'}`}>
+        <section className="md:w-7/12 w-full bg-[#B70569] text-white min-h-[80dvh] md:min-h-[55vh] rounded-3xl md:p-7 p-4">
+          <div className="text-right">
+            <button
+              ref={hideModal}
+              autoFocus
+              tabIndex={0}
+              onClick={setHideModal}
+              className="focus:ring-1 focus:ring-red-300 focus:outline-none"
+              aria-label="close modal"
+            >
+              <FontAwesomeIcon icon={faXmark} size="2x" />
+            </button>
+          </div>
+          <div className="flex items-center justify-center gap-11 md:flex-nowrap flex-wrap">
+            <div className="md:w-7/12">
+              <h3 className="text-3xl font-semibold">Ada Nduka Oyom</h3>
+              <h4 className="text-2xl font-medium">Founder</h4>
+              <p className="leading-8">As the founder, Ada oversees the teams in creating several technical learning & career opportunities for members as well as growing the community’s presence to chapters across Africa. She has been recognised as one of Ytech 100 honourees by the Future awards Africa 2019, Top 50 TechWomen of Lagos by TechCabal & most recently awarded as the role model award winner in the Booking.com Tech Playmaker awards 2020.</p>
+              <div className="flex gap-4 items-center mt-7">
+                <a
+                  href="https://"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:ring-1 focus:ring-red-300">
+                  <img src={facebookIcon} alt="Go to facebook profile" />
+                </a>
+                <a
+                  href="https://"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:ring-1 focus:ring-red-300">
+                  <img src={instagramIcon} alt="Go to instagram profile" />
+                </a>
+                <a
+                  href="https://"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:ring-1 focus:ring-red-300">
+                  <img src={twitterIcon} alt="Go to twitter profile" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <img
+                src="https://via.placeholder.com/310x230"
+                alt="Team member"
+                className="rounded-t-2xl" />
+            </div>
+          </div>
+        </section>
+      </dialog>
+      <Footer />
+    </>
   )
 }
 

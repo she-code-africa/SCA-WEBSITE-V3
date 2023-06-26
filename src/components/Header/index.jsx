@@ -67,6 +67,9 @@ const Header = ({ page }) => {
     } else {
       body.classList.remove(...classList);
     }
+    return () => {
+      body.classList.remove(...classList);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
