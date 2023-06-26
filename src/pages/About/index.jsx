@@ -59,12 +59,12 @@ const About = () => {
         </section>
         <section className="my-24">
           <h3 className="text-center text-4xl font-bold">Our Values</h3>
-          <div className="flex md:flex-row flex-col gap-8 lg:w-9/12 md:w-11/12 mx-auto md:justify-between">
+          <div className="flex md:flex-row flex-col gap-8 lg:w-9/12 md:w-11/12 mx-auto md:justify-between my-5">
             <article className="flex flex-col items-center">
               <div className="w-[40px] h-[40px] rounded-full bg-[#FDC0E3] flex justify-center items-center my-3">
                 <img src={teamwork} alt="" className="w-[25px]" role="presentation" />
               </div>
-              <p className="text-lg font-medium text-[#210D15]">Team work</p>
+              <p className="text-lg font-medium text-[#210D15]">Teamwork</p>
             </article>
             <article className="flex flex-col items-center">
               <div className="w-[40px] h-[40px] rounded-full bg-[#FDC0E3] flex justify-center items-center my-3">
