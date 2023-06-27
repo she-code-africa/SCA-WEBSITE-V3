@@ -5,7 +5,7 @@ import JoinUs from "../../components/JoinUs";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 // import Loading from "../../components/Loading";
 // import Error from "../../components/Error";
@@ -18,6 +18,13 @@ import facebookIcon from "../../images/team/facebook-icon.svg";
 import instagramIcon from "../../images/team/instagram-icon.svg";
 import twitterIcon from "../../images/team/twitter-icon.svg";
 
+const teamCategories = [
+  { name: 'All', value: 'all' },
+  { name: 'Full Time Employees', value: 'full_time' },
+  { name: 'Support Team', value: 'support_team' },
+  { name: 'Advisors', value: 'advisors' },
+]
+
 
 
 const Team = () => {
@@ -26,6 +33,7 @@ const Team = () => {
   const modal = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
+  const [activeSelection, setActiveSelection] = useState('all')
 
 
   // const [teamMembers, setTeamMembers] = useState([])
@@ -124,32 +132,82 @@ const Team = () => {
             <h2 className="text-4xl font-semibold my-3">Our Amazing Team</h2>
             <p className="text-lg">Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
           </div>
-          <div></div>
-          <div className="w-10/12 mx-auto my-6 grid md:grid-cols-3 md:gap-36 gap-10">
-            <article
-              role="button"
-              className="border-2 border-[#B70569] rounded-2xl"
-              ref={showModal}>
-              <img
-                src="https://via.placeholder.com/310x230"
-                alt="Team member"
-                className="rounded-t-2xl" />
-              <div className="p-5">
-                <h2 className="text-xl font-bold text-[#282828]">Ada Nduka Oyom</h2>
-                <p className="text-base text-[#3E3E59]">Founder</p>
-                <div className="flex gap-4 items-center mt-7">
-                  <a href="https://" target="_blank" rel="noreferrer">
-                    <img src={facebookIcon} alt="Go to facebook profile" />
-                  </a>
-                  <a href="https://" target="_blank" rel="noreferrer">
-                    <img src={instagramIcon} alt="Go to instagram profile" />
-                  </a>
-                  <a href="https://" target="_blank" rel="noreferrer">
-                    <img src={twitterIcon} alt="Go to twitter profile" />
-                  </a>
+          <div className="w-10/12 lg:w-9/12 mx-auto">
+            <div className="my-10 flex justify-between">
+              <div className="flex gap-4">
+                {teamCategories.map((category) => (
+                  <button
+                    key={category.value}
+                    className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${activeSelection === category.value ? 'bg-black text-white' : 'bg-[#F9F9F9] text-black'}`} onClick={() => {
+                      setActiveSelection(category.value)
+                    }}>
+                    {category.name}
+                  </button>
+                ))}
+
+              </div>
+              <div className="lg:w-3/12">
+                <div
+                  className="border border-[#F2F4F3] rounded-full h-10 px-5 flex items-center gap-1 focus-within:ring-4 focus-within:ring-[#B70569] focus:outline-none"
+                  tabIndex={0}
+                  role="searchbox">
+                  <label htmlFor='search'>
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[#020122]" />
+                  </label>
+                  <input type="search" placeholder="Search" id='search' className="block focus:outline-none" />
                 </div>
               </div>
-            </article>
+            </div>
+
+
+            <div className="my-6 grid md:grid-cols-3 md:gap-36 gap-10">
+              <article
+                role="button"
+                className="border-2 border-[#B70569] rounded-2xl focus:ring focus:ring-[#FDC0E3] focus:outline-none"
+                tabIndex={0}
+                ref={showModal}>
+                <img
+                  src="https://via.placeholder.com/310x230"
+                  alt="Team member"
+                  className="rounded-t-2xl" />
+                <div className="p-5">
+                  <h2 className="text-xl font-bold text-[#282828]">Ada Nduka Oyom</h2>
+                  <p className="text-base text-[#3E3E59]">Founder</p>
+                  <div className="flex gap-4 items-center mt-7">
+                    <a
+                      href="https://"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="focus:ring-2 focus:ring-[#FDC0E3]"
+                      onClickCapture={(event) => {
+                        event.stopPropagation();
+                      }}>
+                      <img src={facebookIcon} alt="Go to facebook profile" />
+                    </a>
+                    <a
+                      href="https://"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="focus:ring-2 focus:ring-[#FDC0E3]"
+                      onClickCapture={(event) => {
+                        event.stopPropagation();
+                      }}>
+                      <img src={instagramIcon} alt="Go to instagram profile" />
+                    </a>
+                    <a
+                      href="https://"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="focus:ring-2 focus:ring-[#FDC0E3]"
+                      onClickCapture={(event) => {
+                        event.stopPropagation();
+                      }}>
+                      <img src={twitterIcon} alt="Go to twitter profile" />
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
         <JoinUs />

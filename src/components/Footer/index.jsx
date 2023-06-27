@@ -33,8 +33,8 @@ const Footer = () => {
                                 </button>
                                 {openCaret && (
                                     <ul className="bg-white shadow-[0px_0px_8px_2px_rgba(0,0,0,0.20)] w-40 px-2 py-3 rounded absolute">
-                                        <li className="hover:bg-gray-200 p-2"><a href="https://drive.google.com/file/d/1ec-yUaFUp7VZgo-1DK87ZQBCYpgi6LpC/view?usp=sharing" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">2022</a></li>
-                                        <li className="hover:bg-gray-200 p-2"><a href="https://drive.google.com/file/d/1u7s0cvaCCjOC2C6iIpOJkvB-sjkGrf_y/view?usp=sharing" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">2021</a></li>
+                                        <li className="hover:bg-gray-200 p-2"><a href="https://drive.google.com/file/d/1ec-yUaFUp7VZgo-1DK87ZQBCYpgi6LpC/view?usp=sharing" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu block">2022</a></li>
+                                        <li className="hover:bg-gray-200 p-2"><a href="https://drive.google.com/file/d/1u7s0cvaCCjOC2C6iIpOJkvB-sjkGrf_y/view?usp=sharing" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu block">2021</a></li>
                                     </ul>
                                 )}
                             </div>

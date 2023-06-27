@@ -11,9 +11,13 @@ export default function JoinUs () {
           Be a part of a community that celebrates diversity and empowers women to thrive in tech.
           Connect with like-minded individuals, gain access to resources and events, and help shape the future of the industry.
         </p>
-        <button className="rounded-full text-white text-sm px-8 py-2 bg-primary-main-pink">
+        <a
+          href="https://bit.ly/joinshecodeafrica"
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full text-white text-sm px-10 py-3 bg-primary-main-pink focus:ring-4 focus:ring-[#FDC0E3]">
           Join Us
-        </button>
+        </a>
       </div>
     </section>
   )

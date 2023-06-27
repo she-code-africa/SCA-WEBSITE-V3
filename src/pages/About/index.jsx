@@ -31,7 +31,7 @@ const About = () => {
       </Helmet>
       <Header page={'about'} />
       <main>
-        <section className="h-[60vh]">
+        <section className="h-[50vh]">
           <div className="lg:w-6/12 w-11/12 mx-auto flex flex-col items-center justify-center text-[#210D15] h-full">
             <h1 className="text-[40px] font-bold leading-10 mb-8">About Us</h1>
             <p className="text-lg text-center">We are a non-profit organization focused on celebrating and <span className="text-[#B70569] font-medium">empowering young Girls and Women</span> in Technology across Africa.</p>
