@@ -5,6 +5,8 @@ import BecomeAmemberButton from "../Button/BecomeAmemberButton";
 import ourreachImg from "../../images/homepage/unsplash-our-reach-1.png";
 import { apiConstants } from "../../utils";
 import { getReach } from "../../services";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const OurReach = () => {
   const { data: reachData } = useQuery(apiConstants.reach, getReach)
@@ -26,13 +28,14 @@ const OurReach = () => {
         </p>
 
         <div className="flex mt-10 justify-center 2md:justify-start">
-          <BecomeAmemberButton
-            bgHover="hover:bg-primary-main-pink"
-            bg="bg-white"
-            colorHover="text-white"
-            color="text-primary-main-pink"
-            border="border-white"
-          />
+          <a
+            className="bg-white hover:bg-primary-main-pink hover:text-white text-primary-main-pink border-white border text-sm font-medium transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu pl-[32px] pr-[40px] py-[15px] rounded-lg flex gap-x-2 items-center"
+            href="https://bit.ly/joinshecodeafrica"
+            target="_blank"
+            rel="noreferrer">
+            Become a member
+            <FontAwesomeIcon icon={faAngleRight} />
+          </a>
         </div>
       </article>
 

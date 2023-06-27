@@ -244,6 +244,7 @@ const Home = () => {
                     colorHover="text-primary-main-pink"
                     border="border-primary-main-pink"
                     title="Hire Our Talent"
+                    url={paths.jobs}
                   />
                 </div>
               </article>
@@ -275,12 +276,14 @@ const Home = () => {
               legacy.
             </p>
             <div className="md:my-5 my-10">
-              <Link
-                to={paths.initiatives}
+              <a
+                href="https://bit.ly/joinshecodeafrica"
+                target="_blank"
+                rel="noreferrer"
                 className="capitalize bg-primary-main-pink text-white hover:bg-transparent border border-primary-main-pink py-[14px] px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu"
               >
                 Become a member
-              </Link>
+              </a>
             </div>
           </div>
           <div className=" place-self-end">
