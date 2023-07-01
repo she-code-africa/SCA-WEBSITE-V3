@@ -35,30 +35,30 @@ const Volunteer = () => {
       <Header page={"about"} />
       <main className="m-0">
         <section
-          className="min-h-[80vh]"
+          className="min-h-screen"
           style={{
             background:
               "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
           }}
         >
-          <div className="lg:pt-28 pt-20 w-10/12 px-5 mx-auto">
+          <div className="lg:pt-28 pt-32 mb-12 w-10/12 px-5 mx-auto">
             <h1 className="lg:text-6xl md:text-5xl text-4xl font-black lg:leading-[76px]">
               Interested in joining our <br /> volunteer team?
             </h1>
           </div>
 
-          <div className="flex items-center mt-10">
+          <div className="flex items-center my-20">
             <HeroSlider />
           </div>
         </section>
 
-        <section className="my-32 w-9/12 mx-auto">
-          <article className="md:flex items-center justify-between my-28">
+        <section className="my-32 w-10/12 mx-auto">
+          <article className="md:flex items-center justify-between my-40">
             <div className="md:w-6/12">
-              <h2 className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-3">
+              <h2 className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
                 Become a mentor.
               </h2>
-              <p className="text-lg text-[#210D15]">
+              <p className="text-lg text-[#210D15] mb-3">
                 Our organization values the impact of mentorship and
                 continuously seeks enthusiastic and committed individuals to
                 join our community of mentors. If you're passionate about
@@ -68,7 +68,7 @@ const Volunteer = () => {
               </p>
               <a
                 href="/"
-                className="bg-[#FDC0E3] px-5 py-2 inline-block mt-3 rounded-full text-[#434343] text-sm"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
               >
                 Become a mentor
               </a>
@@ -87,10 +87,10 @@ const Volunteer = () => {
               className="object-contain lg:w-4/12 md:w-5/12 mt-7 md:mt-0"
             />
             <div className="lg:w-7/12 md:w-6/12">
-              <h2 className=" font-bold text-[32px] leading-[44px] text-[#210D15] mb-3">
+              <h2 className=" font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
                 Become a speaker.
               </h2>
-              <p className="text-lg text-[#210D15]">
+              <p className="text-lg text-[#210D15] mb-3">
                 At She Code Africa, we value diversity, and we're always looking
                 for speakers from a variety of backgrounds, experiences, and
                 perspectives. Whether you're a seasoned speaker or just starting
@@ -99,19 +99,19 @@ const Volunteer = () => {
               </p>
               <a
                 href="/"
-                className="bg-[#FDC0E3] px-5 py-2 inline-block mt-3 rounded-full text-[#434343] text-sm"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
               >
                 Become a speaker
               </a>
             </div>
           </article>
 
-          <article className="md:flex items-center justify-between my-28">
+          <article className="md:flex items-center justify-between my-40">
             <div className="md:w-6/12">
-              <h2 className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-3">
+              <h2 className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
                 Become a facilitator
               </h2>
-              <p className="text-lg text-[#210D15]">
+              <p className="text-lg text-[#210D15] mb-3">
                 At She Code Africa, we believe in the power of learning and
                 collaboration, and we're always looking for passionate and
                 experienced facilitators to join our team. Whether you have
@@ -121,7 +121,7 @@ const Volunteer = () => {
               </p>
               <a
                 href="/"
-                className="bg-[#FDC0E3] px-5 py-2 inline-block mt-3 rounded-full text-[#434343] text-sm"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
               >
                 Become a facilitator
               </a>

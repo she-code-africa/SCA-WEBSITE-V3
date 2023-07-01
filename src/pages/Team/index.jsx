@@ -112,7 +112,7 @@ const Team = () => {
       <Header />
       <main inert={modalOpen ? "true" : undefined}>
         <section
-          className="min-h-[80dvh] flex items-center bg-[#FCF5F8]"
+          className="min-h-[90dvh] flex items-center bg-[#FCF5F8]"
           style={{
             backgroundImage: `url(${heroBg})`
           }}>
@@ -127,14 +127,14 @@ const Team = () => {
             </div>
           </div>
         </section>
-        <section className="my-20">
-          <div className="text-center xl:w-5/12 md:w-6/12 mx-auto">
-            <h2 className="text-4xl font-bold my-3">Our Amazing Team</h2>
-            <p className="text-lg">Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
+        <section className="my-40">
+          <div className="text-center md:w-6/12 mx-auto">
+            <h2 className="text-[40px] font-bold my-3">Our Amazing Team</h2>
+            <p className="text-xl">Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
           </div>
-          <div className="w-10/12 lg:w-9/12 mx-auto">
-            <div className="my-10 flex justify-between">
-              <div className="flex gap-4">
+          <div className="w-10/12 lg:w-9/12 mx-auto my-20">
+            <div className="my-10 flex md:flex-row flex-col justify-between gap-y-8">
+              <div className="flex md:flex-row flex-col gap-4 gap-y-8">
                 {teamCategories.map((category) => (
                   <button
                     key={category.value}
@@ -148,7 +148,7 @@ const Team = () => {
               </div>
               <div className="lg:w-3/12">
                 <div
-                  className="border border-[#F2F4F3] rounded-full h-10 px-5 flex items-center gap-1 focus-within:ring-4 focus-within:ring-[#B70569] focus:outline-none"
+                  className="border border-[#F2F4F3] rounded-full h-12 px-5 flex items-center gap-1 focus-within:ring-4 focus-within:ring-[#B70569] focus:outline-none"
                   tabIndex={0}
                   role="searchbox">
                   <label htmlFor='search'>
@@ -160,7 +160,7 @@ const Team = () => {
             </div>
 
 
-            <div className="my-6 grid md:grid-cols-3 md:gap-36 gap-10">
+            <div className="my-16 grid md:grid-cols-3 md:gap-36 gap-12">
               <article
                 role="button"
                 className="border-2 border-[#B70569] rounded-2xl focus:ring focus:ring-[#FDC0E3] focus:outline-none"
@@ -170,10 +170,10 @@ const Team = () => {
                   src="https://via.placeholder.com/310x230"
                   alt="Team member"
                   className="rounded-t-2xl" />
-                <div className="p-5">
+                <div className="px-5 py-10">
                   <h2 className="text-xl font-bold text-[#282828]">Ada Nduka Oyom</h2>
                   <p className="text-base text-[#3E3E59]">Founder</p>
-                  <div className="flex gap-4 items-center mt-7">
+                  <div className="hidden gap-4 items-center mt-7">
                     <a
                       href="https://"
                       target="_blank"
@@ -227,11 +227,11 @@ const Team = () => {
             </button>
           </div>
           <div className="flex items-center justify-center gap-11 md:flex-nowrap flex-wrap">
-            <div className="md:w-7/12">
+            <div className="md:w-7/12 pb-10">
               <h3 className="text-3xl font-semibold">Ada Nduka Oyom</h3>
               <h4 className="text-2xl font-medium">Founder</h4>
               <p className="leading-8">As the founder, Ada oversees the teams in creating several technical learning & career opportunities for members as well as growing the community’s presence to chapters across Africa. She has been recognised as one of Ytech 100 honourees by the Future awards Africa 2019, Top 50 TechWomen of Lagos by TechCabal & most recently awarded as the role model award winner in the Booking.com Tech Playmaker awards 2020.</p>
-              <div className="flex gap-4 items-center mt-7">
+              <div className="gap-4 items-center mt-7 hidden">
                 <a
                   href="https://"
                   target="_blank"

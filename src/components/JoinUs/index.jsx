@@ -3,7 +3,7 @@ import React from 'react'
 export default function JoinUs () {
   return (
     <section className="mt-14 lg:mt-28">
-      <div className="text-center md:w-8/12 w-11/12 mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-[#FFF7FC] text-primary-dark-brown border-[#B70569] md:border-[15px] border-[10px] rounded-lg">
+      <div className="text-center md:w-9/12 w-11/12 mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-[#FFF7FC] text-primary-dark-brown border-[#B70569] md:border-[15px] border-[10px] rounded-xl">
         <h2 className="text-2xl font-normal text-primary-dark-brown">
           Become a member
         </h2>
