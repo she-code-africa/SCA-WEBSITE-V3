@@ -132,7 +132,7 @@ const SchoolOfProducts = () => {
             {" "}
             <img className="w-52" src={bglineImage} alt="bg-line" />
           </div>
-          <h2 className="text-2xl font-normal text-4xl text-primary-dark-brown">
+          <h2 className="font-normal text-4xl text-primary-dark-brown">
             Hire Our Graduates
           </h2>
           <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
