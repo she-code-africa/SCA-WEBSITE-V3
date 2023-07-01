@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import {
@@ -11,6 +12,25 @@ import bglineImage from "../../images/academy/bg-line.svg";
 const SchoolOfEngineering = () => {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>School of Engineering</title>
+        <meta
+          name="description"
+          content="Empowering women to innovate the digital world, one engineer at a time."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="School of Engineering" />
+        <meta
+          property="og:description"
+          content="Empowering women to innovate the digital world, one engineer at a time."
+        />
+        <meta name="twitter:title" content="School of Engineering" />
+        <meta
+          name="twitter:description"
+          content="Empowering women to innovate the digital world, one engineer at a time."
+        />
+      </Helmet>
       <Header />
       <section
         className="h-[430px] flex-col flex justify-center"

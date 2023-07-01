@@ -129,7 +129,7 @@ const Team = () => {
         </section>
         <section className="my-20">
           <div className="text-center xl:w-5/12 md:w-6/12 mx-auto">
-            <h2 className="text-4xl font-semibold my-3">Our Amazing Team</h2>
+            <h2 className="text-4xl font-bold my-3">Our Amazing Team</h2>
             <p className="text-lg">Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
           </div>
           <div className="w-10/12 lg:w-9/12 mx-auto">

@@ -60,7 +60,7 @@ const Home = () => {
       <Header page={"home"} />
 
       <main className=" text-secondary-main-black">
-        <section className=" min-h-screen bg-hero-bg-gradient">
+        <section className="min-h-screen bg-hero-bg-gradient">
           <div className="w-90 mx-auto py-8 min-h-[600px]  flex flex-col justify-center">
             <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
               empowering women in tech across{" "}
@@ -95,7 +95,7 @@ const Home = () => {
           <homecomponents.Carousel />
         </section>
 
-        <section className="w-full mt-8">
+        <section className="w-full my-20">
           <div className="w-[90%] lg:w-10/12  mx-auto">
             {isLoading ? (
               <components.Loading />

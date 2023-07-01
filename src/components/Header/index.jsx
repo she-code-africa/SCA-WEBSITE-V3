@@ -75,7 +75,7 @@ const Header = ({ page }) => {
 
   return (
     <header className="sticky top-0 w-full md:bg-white/80 bg-white z-[1] md:py-8 py-4 shadow-lg">
-      <div className="justify-between gap-8 items-center lg:w-10/12 mx-auto hidden md:flex px-5 lg:px-0">
+      <div className="justify-between gap-8 items-center lg:w-11/12 mx-auto hidden md:flex px-5 lg:px-0">
         <Link
           to={paths.home}
           className="lg:px-5 focus:outline-none focus:ring focus:ring-tutu"

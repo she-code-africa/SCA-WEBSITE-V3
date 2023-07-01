@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import {
@@ -11,6 +12,25 @@ import bglineImage from "../../images/academy/bg-line.svg";
 const StemSchool = () => {
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Stem School</title>
+        <meta
+          name="description"
+          content="Empowering women to engineer a better world with tech"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Stem School" />
+        <meta
+          property="og:description"
+          content="Empowering women to engineer a better world with tech"
+        />
+        <meta name="twitter:title" content="Stem School" />
+        <meta
+          name="twitter:description"
+          content="Empowering women to engineer a better world with tech"
+        />
+      </Helmet>
       <Header />
       <section
         className="h-[430px] flex-col flex justify-center"
