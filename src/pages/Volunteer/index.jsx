@@ -41,13 +41,13 @@ const Volunteer = () => {
               "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
           }}
         >
-          <div className="lg:pt-28 pt-32 mb-12 w-10/12 px-5 mx-auto">
+          <div className="lg:pt-28 pt-40 mb-12 w-10/12 px-5 mx-auto">
             <h1 className="lg:text-6xl md:text-5xl text-4xl font-black lg:leading-[76px]">
               Interested in joining our <br /> volunteer team?
             </h1>
           </div>
 
-          <div className="flex items-center my-20">
+          <div className="flex items-center mt-40">
             <HeroSlider />
           </div>
         </section>
