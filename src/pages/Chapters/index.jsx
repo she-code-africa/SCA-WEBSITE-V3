@@ -20,44 +20,73 @@ import { apiConstants } from "../../utils";
 import chapterImage from "../../images/chapters/chapter-img.png";
 import JoinUs from "../../components/JoinUs";
 import ChaptersCard from "../../components/Chapters";
+import * as components from "../../components";
 
 const Chapters = () => {
-  const chaptersCall = useQuery(apiConstants.chapters, getChapters);
+  const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
+    apiConstants.chapters,
+    getChapters
+  );
 
   const [chapters, setChapters] = useState([]);
-  const [activeTab, setActiveTab] = useState("city");
   const [searchValue, setSearchValue] = useState("");
   const [searchNotFound, setSearchNotFound] = useState(false);
 
-  const searchChapters = (value) => {
-    const _value = value.toLowerCase();
-    if (_value) {
-      const getChapters = chaptersCall?.data?.filter(
-        (chapter) =>
-          chapter?.name?.toLowerCase()?.includes(_value) ||
-          chapter?.city?.toLowerCase()?.includes(_value) ||
-          chapter?.country?.toLowerCase()?.includes(_value)
-      );
-      if (getChapters.length) {
+  const handleChange = (e) => {
+    setSearchValue(e.target.value);
+    if (e.target.value) {
+      const filteredResult = data.filter((chapter, index) => {
+        return (
+          chapter?.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          chapter?.city.toLowerCase().includes(e.target.value.toLowerCase()) ||
+          chapter?.country.toLowerCase().includes(e.target.value.toLowerCase())
+        );
+      });
+
+      if (filteredResult.length > 0) {
         setSearchNotFound(false);
-        setChapters(getChapters);
+        setChapters(filteredResult);
       } else {
         setSearchNotFound(true);
+        setChapters([]);
       }
     } else {
-      setChapters(chaptersCall.data || []);
+      setSearchNotFound(false);
+      setChapters(data);
     }
   };
 
-  useEffect(() => {
-    if (chaptersCall.isFetched && chaptersCall.isSuccess) {
-      setChapters(chaptersCall.data);
+  // onclick of the search button
+  const handleClick = (value) => {
+    if (value) {
+      const filteredResult = data.filter((chapter, index) => {
+        return (
+          chapter?.name.toLowerCase().includes(value.toLowerCase()) ||
+          chapter?.city.toLowerCase().includes(value.toLowerCase()) ||
+          chapter?.country.toLowerCase().includes(value.toLowerCase())
+        );
+      });
+
+      if (filteredResult.length > 0) {
+        setSearchNotFound(false);
+        setChapters(filteredResult);
+      } else {
+        setSearchNotFound(true);
+        setChapters([]);
+      }
+    } else {
+      setSearchNotFound(false);
+      setChapters(data);
     }
-  }, [chaptersCall.isFetched]);
+
+    setSearchValue("");
+  };
 
   useEffect(() => {
-    searchChapters(searchValue);
-  }, [searchValue]);
+    if (isSuccess && isFetched) {
+      setChapters(data);
+    }
+  }, [data, isFetched, isSuccess]);
 
   return (
     <>
@@ -158,32 +187,63 @@ const Chapters = () => {
                 type="search"
                 placeholder="Search"
                 value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
+                // onChange={(e) => setSearchValue(e.target.value)}
+                onChange={handleChange}
               />
             </div>
 
             <div className="w-[109px] h-[46px] bg-community-pink-bg text-charcoal rounded-[30px]">
-              <button className="w-full h-full">Search</button>
+              <button
+                className="w-full h-full"
+                onClick={() => handleClick(searchValue)}
+              >
+                Search
+              </button>
             </div>
           </div>
 
-          <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">
-            {[...Array(8)].map((item, index) => {
-              return (
-                <div className="" key={index}>
-                  <ChaptersCard chapterImage={chapterImage} />
+          {searchNotFound && (
+            <h1 className="text-white capitalize text-center text-xl mt-11">
+              chapter not found.
+            </h1>
+          )}
+
+          {isError ? <components.Error /> : null}
+
+          {isLoading ? (
+            <components.Loading />
+          ) : (
+            <>
+              <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">
+                {chapters.map((chapter, index) => {
+                  return (
+                    <div className="" key={index}>
+                      <ChaptersCard
+                        chapterImage={chapterImage}
+                        name={chapter.name}
+                        city={chapter.city}
+                      />
+                    </div>
+                  );
+                })}
+              </section>
+            </>
+          )}
+
+          {!isLoading && (
+            <>
+              {data.length > 8 || chapters.length > 8 ? (
+                <div className="flex justify-center gap-7 mt-[57px]">
+                  <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
+                    <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
+                  </button>
+                  <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
+                    <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
+                  </button>
                 </div>
-              );
-            })}
-          </section>
-          <div className="flex justify-center gap-7 mt-[57px]">
-            <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
-              <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
-            </button>
-            <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
-              <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
-            </button>
-          </div>
+              ) : null}
+            </>
+          )}
         </section>
 
         <JoinUs />
