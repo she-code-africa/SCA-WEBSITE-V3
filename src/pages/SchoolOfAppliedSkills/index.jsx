@@ -2,11 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 import {
   programsList,
   onlineCoursesList,
   youtubeVideos,
 } from "../../utils/index";
+import { paths } from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
 
 const SchoolOfAppliedSkills = () => {
@@ -140,9 +142,9 @@ const SchoolOfAppliedSkills = () => {
             school and take your business to the next level by building a
             skilled and diverse team
           </p>
-          <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
-            Try your luck
-          </button>
+          <Link to={paths.hire} className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
+            Hire Our Talent
+          </Link>
         </div>
       </section>
       <Footer />

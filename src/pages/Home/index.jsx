@@ -244,7 +244,7 @@ const Home = () => {
                     colorHover="text-primary-main-pink"
                     border="border-primary-main-pink"
                     title="Hire Our Talent"
-                    url={paths.jobs}
+                    url={paths.hire}
                   />
                 </div>
               </article>
