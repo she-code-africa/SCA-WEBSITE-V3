@@ -207,12 +207,14 @@ const Home = () => {
             </div>
 
             <div className="flex justify-center md:justify-end w-full mt-7 2md:max-w-[1000px] mx-auto">
-              <Link
-                to="#"
+              <a
+                href="https://drive.google.com/drive/folders/1VsF4fQvNLXXuwWnLi2ThjD6oZxJYdFkp"
+                target="_blank"
                 className="capitalize text-base md:text-lg text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                rel="noreferrer"
               >
                 view more pictures <FontAwesomeIcon icon={faAngleRight} />
-              </Link>
+              </a>
             </div>
           </div>
         </section>
