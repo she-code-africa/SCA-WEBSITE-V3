@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ChaptersCard = ({ chapterImage }) => {
+const ChaptersCard = ({ chapterImage, name, city }) => {
   return (
     <div
       className="border-[12px] border-community-pink-bg w-full mx-auto md:mx-0 rounded-[50px]"
@@ -18,7 +18,8 @@ const ChaptersCard = ({ chapterImage }) => {
       <div className="my-5 border-2  border-primary-main-pink "></div>
 
       <p className="text-base md:text-lg text-primary-main-pink font-semibold capitalize px-9">
-        She Code Africa Lagos
+        {name},<br />
+        {city}.
       </p>
 
       <div className="flex mb-12 px-9">
