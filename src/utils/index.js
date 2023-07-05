@@ -36,6 +36,7 @@ export const paths = {
   privacy: "/privacy",
   volunteer: "/volunteer",
   hire: "/hire",
+  leadChapter: "/chapters/form"
 };
 
 export const apiConstants = {

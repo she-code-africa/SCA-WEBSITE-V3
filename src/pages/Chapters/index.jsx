@@ -16,7 +16,7 @@ import {
 import { Link } from "react-router-dom";
 
 import { getChapters } from "../../services";
-import { apiConstants } from "../../utils";
+import { apiConstants, paths } from "../../utils";
 import chapterImage from "../../images/chapters/chapter-img.png";
 import JoinUs from "../../components/JoinUs";
 import ChaptersCard from "../../components/Chapters";
@@ -166,7 +166,7 @@ const Chapters = () => {
 
           <div className="flex items-center justify-center gap-8 mt-8">
             <Link
-              to="/"
+              to={paths.leadChapter}
               className="bg-primary-main-pink px-8 py-[18px] mt-3 rounded-[30px] text-white text-base"
             >
               Lead a chapter

@@ -7,6 +7,7 @@ import { paths } from "./utils";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Chapters from "./pages/Chapters";
+import ChaptersForm from "./pages/Chapters/Chapter";
 import Donate from "./pages/Donate";
 import Events from "./pages/Events";
 import ViewEvent from "./pages/Events/ViewEvent";
@@ -37,6 +38,7 @@ import Volunteer from "./pages/Volunteer";
 import Initiatives from "./pages/Initiatives";
 import Hire from "./pages/Hire";
 
+
 const queryClient = new QueryClient();
 
 function App () {
@@ -59,6 +61,7 @@ function Routes (params) {
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />
+      <Route path={paths.leadChapter} element={<ChaptersForm />} />
       <Route path={paths.donate} element={<Donate />} />
       <Route path={paths.events} element={<Events />} />
       <Route path={paths.view_event} element={<ViewEvent />} />
