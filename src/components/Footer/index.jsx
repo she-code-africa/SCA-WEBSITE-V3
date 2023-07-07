@@ -25,7 +25,7 @@ const Footer = () => {
                             <Link to="/partner" className="block mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Partner With Us</Link>
                             <Link to="/donate" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Make A Donation</Link>
                             <Link to="/chapters" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Start An S.C.A Chapter</Link>
-                            <Link to="/chapters" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Summit</Link>
+                            <a href="https://summit.shecodeafrica.org/" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" target="_blank" rel="noreferrer">Summit</a>
                             <div className="relative">
                                 <button className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" onClick={() => { setOpenCaret(!openCaret) }}>
                                     <span>Annual Reports</span>
