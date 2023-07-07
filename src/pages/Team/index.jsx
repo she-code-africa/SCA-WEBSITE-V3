@@ -27,8 +27,6 @@ const teamCategories = [
   { name: 'Advisors', value: 'advisors' },
 ]
 
-
-
 const Team = () => {
   const hideModalRef = useRef(null);
   const modal = useRef(null);

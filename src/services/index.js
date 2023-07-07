@@ -37,13 +37,23 @@ export async function getTeams () {
 }
 
 export async function getInitiatives () {
-  const teams = await api.get(`${baseUrl}/initiatives`);
-  return teams;
+  const initiatives = await api.get(`${baseUrl}/initiatives`);
+  return initiatives;
 }
 
 export async function getPrograms () {
   const programs = await api.get(`${baseUrl}/programs/member-programs`);
   return programs;
+}
+
+export async function getJobs () {
+  const jobs = await api.get(`${baseUrl}/job/postings`);
+  return jobs;
+}
+
+export async function getJob (id) {
+  const jobs = await api.get(`${baseUrl}/job/postings/${id}`);
+  return jobs;
 }
 
 export async function getProgramsCategories () {

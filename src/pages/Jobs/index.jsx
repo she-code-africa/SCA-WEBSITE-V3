@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Dropdown from "../../components/Dropdown";
-import { jobs, paths } from "../../utils";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
+import { paths } from "../../utils";
+import { apiConstants } from "../../utils";
+import { getJobs } from "../../services";
 
 const Jobs = () => {
+  const { data, isError, isLoading, isSuccess } = useQuery(apiConstants.jobs, getJobs)
+
+  const [allJobs, setAllJobs] = useState([])
+
+  useEffect(() => {
+    if (isSuccess) {
+      setAllJobs(data)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading])
+
   return (
     <>
       <Helmet>
@@ -38,28 +54,31 @@ const Jobs = () => {
           <h3 className="text-center job-type-header text-2xl font-medium text-gray-800">
             Jobs
           </h3>
-          <div className="my-6 flex flex-wrap items-stretch">
-            {jobs.map((job) => (
-              <article key={job.title} className="lg:w-5/12 mx-9 border border-[#dcdcdc] px-10 py-10 rounded-t-none rounded-br-[50px] rounded-bl-none flex flex-col items-stretch">
-                <h4 className="text-2xl font-medium my-5">
-                  {job.title}
-                </h4>
-                <p className="text-base mb-4">
-                  {job.location}
-                </p>
-                <p className="text-justify overflow-clip text-ellipsis break-words flex-auto mb-8">
-                  {job.summary}
-                </p>
+          {isError ? <Error /> :
+            isLoading ? <Loading /> :
+              <div className="my-6 md:grid grid-cols-2 flex flex-wrap items-stretch gap-10">
+                {allJobs.map((job) => (
+                  <article key={job._id} className="border border-[#dcdcdc] px-10 py-10 rounded-t-none rounded-br-[50px] rounded-bl-none flex flex-col items-stretch">
+                    <h4 className="text-2xl font-medium my-5">
+                      {job.title}
+                    </h4>
+                    <p className="text-base mb-4">
+                      {job.location}
+                    </p>
+                    <p className="text-justify overflow-clip text-ellipsis break-words flex-auto mb-8">
+                      {job.description}
+                    </p>
 
-                <p className="py-5 text-xs">
-                  Published {job.published_date}
-                </p>
-                <div className="text-right">
-                  <Link to={"/view/jobs/" + job.id} className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">View More</Link>
-                </div>
-              </article>
-            ))}
-          </div>
+                    {/* <p className="py-5 text-xs">
+                      Published {job.published_date}
+                    </p> */}
+                    <div className="text-right">
+                      <Link to={"/view/jobs/" + job.id} className="uppercase w-auto btn sca-btn pink-btn sca-btn-small">View More</Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+          }
         </section>
       </main>
       <Footer />
