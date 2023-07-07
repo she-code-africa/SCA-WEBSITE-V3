@@ -81,8 +81,8 @@ const Initiatives = () => {
                   with our community.
                 </p>
                 <Link
-                  to="/"
-                  className="bg-primary-main-pink px-5 py-2 inline-block mt-3 rounded-full text-white text-sm"
+                  to="/donate-partner"
+                  className="bg-primary-main-pink px-10 py-3 inline-block mt-3 rounded-full text-white text-lg font-semibold"
                 >
                   Donate
                 </Link>
@@ -103,8 +103,8 @@ const Initiatives = () => {
                   others learn and develop their skills.
                 </p>
                 <Link
-                  to="/"
-                  className="bg-primary-main-pink px-5 py-2 inline-block mt-3 rounded-full text-white text-sm"
+                  to="/donate-partner"
+                  className="bg-primary-main-pink px-10 py-3 inline-block mt-3 rounded-full text-white text-lg font-semibold"
                 >
                   Partner
                 </Link>
@@ -132,18 +132,18 @@ const Initiatives = () => {
 
           <div className="flex items-center justify-center gap-8 mt-8">
             <Link
-              to="/"
-              className="bg-primary-main-pink px-8 py-[18px] mt-3 rounded-[30px] text-white text-base"
+              to="/volunteer"
+              className="bg-primary-main-pink px-10 py-4 mt-3 rounded-[30px] text-white text-lg"
             >
               Become a mentor
             </Link>
 
-            <Link
+            {/* <Link
               to="/"
               className="bg-tutu px-8 py-[18px] mt-3 rounded-[30px] text-charcoal text-base border border-primary-main-pink"
             >
               Become a mentee
-            </Link>
+            </Link> */}
           </div>
         </section>
 
@@ -168,7 +168,7 @@ const Initiatives = () => {
               <div className="mt-7 flex">
                 <Link
                   to="#"
-                  className="px-8 py-[14px] bg-community-pink-bg text-sm rounded-[30px] text-charcoal hover:text-primary-main-pink"
+                  className="px-10 py-3 bg-community-pink-bg text-lg font-medium rounded-[30px] text-charcoal hover:text-primary-main-pink"
                 >
                   Join the campaign
                 </Link>

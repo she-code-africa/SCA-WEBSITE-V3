@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const InitiativeCard = ({ title, description }) => {
   return (
@@ -9,14 +9,14 @@ const InitiativeCard = ({ title, description }) => {
       </h3>
       <p className="mt-4 text-justify text-base">{description}</p>
 
-      <div className="flex mt-[28px] justify-center md:justify-start">
+      {/* <div className="flex mt-[28px] justify-center md:justify-start">
         <Link
           to="#"
-          className="bg-primary-main-pink text-white py-[14px] px-8 rounded-[30px] capitalize text-sm transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
+          className="bg-primary-main-pink text-white py-4 px-10 rounded-[30px] capitalize transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
         >
           apply now
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
