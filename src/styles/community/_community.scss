@@ -1,0 +1,18 @@
+main {
+  font-family: "Mulish", sans-serif;
+}
+
+.star-bg {
+  background-image: url("../../images/community/Star-one.png"),
+    url("../../images/community/Star-two.png"),
+    url("../../images/community/Star-three.png");
+  background-repeat: no-repeat;
+  background-position: -5% center, 90% 96px, 85% 430px;
+}
+
+@media (min-width: 400px) {
+  .star-bg {
+    // background-position: left center, 1050px 96px, 950px 430px;
+    background-position: left center, 90% 96px, 85% 430px;
+  }
+}

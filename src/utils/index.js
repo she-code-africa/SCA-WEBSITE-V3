@@ -36,7 +36,8 @@ export const paths = {
   privacy: "/privacy",
   volunteer: "/volunteer",
   hire: "/hire",
-  leadChapter: "/chapters/form"
+  leadChapter: "/chapters/form",
+  community: "/community",
 };
 
 export const apiConstants = {
@@ -643,28 +644,28 @@ export const homepageOurCommunityCards = [
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-3",
-    link: "/community"
+    link: "/community",
   },
   {
     heading: "Our Communities and Chapters",
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-4",
-    link: paths.chapters
+    link: paths.chapters,
   },
   {
     heading: "Our Events",
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-1",
-    link: paths.events
+    link: paths.events,
   },
   {
     heading: "Our Initiative",
     textContent:
       "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
     bgImage: "card-body-img-2",
-    link: paths.initiatives
+    link: paths.initiatives,
   },
 ];
 
@@ -792,5 +793,32 @@ export const ourInitiatives = [
     title: "course scholarship",
     description:
       "An opportunity for students to receive financial assistance to pursue their career in tech. We understand that the cost of paying for courses online and other expenses can be a significant barrier for many ladies, and our Financial Scholarship Initiative aims to break down that barrier and provide support to those who are passionate about learning and achieving success.",
+  },
+];
+
+export const whatsinStoreForYou = [
+  {
+    bg: "bg-community-pink-bg",
+    text: "Access to high-quality training",
+  },
+  {
+    bg: "bg-lavendar-blush",
+    text: "A supportive community",
+  },
+  {
+    bg: "bg-white-smoke",
+    text: "Opportunities for employment and entrepreneurship",
+  },
+  {
+    bg: "bg-lavendar-blush",
+    text: "A sense of purpose",
+  },
+  {
+    bg: "bg-white-smoke",
+    text: "Personal development",
+  },
+  {
+    bg: "bg-community-pink-bg",
+    text: "A chance to make a difference",
   },
 ];
