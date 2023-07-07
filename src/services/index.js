@@ -36,6 +36,11 @@ export async function getTeams () {
   return teams;
 }
 
+export async function getInitiatives () {
+  const teams = await api.get(`${baseUrl}/initiatives`);
+  return teams;
+}
+
 export async function getPrograms () {
   const programs = await api.get(`${baseUrl}/programs/member-programs`);
   return programs;

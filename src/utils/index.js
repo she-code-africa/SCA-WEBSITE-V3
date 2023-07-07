@@ -49,6 +49,7 @@ export const apiConstants = {
   programs: "programs",
   programsCategories: "programsCategories",
   programSuccess: "program-success",
+  initiatives: "getInitiatives",
 };
 
 export const partners = [
