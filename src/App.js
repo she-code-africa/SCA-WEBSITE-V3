@@ -1,5 +1,5 @@
-import "./styles/app.scss";
-import { Route, Routes as Switch } from "react-router-dom";
+import React from "react";
+import { Route, Routes as Switch, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { paths } from "./utils";
@@ -38,10 +38,15 @@ import Volunteer from "./pages/Volunteer";
 import Initiatives from "./pages/Initiatives";
 import Hire from "./pages/Hire";
 
+import "./styles/app.scss";
 
 const queryClient = new QueryClient();
 
 function App () {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <QueryClientProvider client={queryClient}>
       <Routes />
