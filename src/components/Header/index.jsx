@@ -30,6 +30,7 @@ const menus = [
       },
       { to: paths.events, text: "Events" },
       { to: paths.initiatives, text: "Initiatives" },
+      { to: paths.jobs, text: "Jobs" },
     ],
   },
   {
