@@ -10,7 +10,6 @@ import Chapters from "./pages/Chapters";
 import ChaptersForm from "./pages/Chapters/Chapter";
 import Donate from "./pages/Donate";
 import Events from "./pages/Events";
-import ViewEvent from "./pages/Events/ViewEvent";
 import Jobs from "./pages/Jobs";
 import RegisterOrg from "./pages/Jobs/RegisterOrg";
 import Login from "./pages/Jobs/Login";
@@ -19,12 +18,7 @@ import ViewJob from "./pages/Jobs/ViewJob";
 import PostJob from "./pages/Jobs/PostJob/Index";
 import Profile from "./pages/Jobs/Profile";
 import EditProfile from "./pages/Jobs/Profile/EditProfile";
-import Programs from "./pages/Programs";
 import Team from "./pages/Team";
-import Contribution1 from "./pages/Programs/Contributhon1";
-import Contribution from "./pages/Programs/Contributhon";
-import CloudBootcamp from "./pages/Programs/CloudBootcamp";
-import CodeCamp from "./pages/Programs/CodeCamp";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import CodeOfConduct from "./pages/CoC";
@@ -69,7 +63,6 @@ function Routes (params) {
       <Route path={paths.leadChapter} element={<ChaptersForm />} />
       <Route path={paths.donate} element={<Donate />} />
       <Route path={paths.events} element={<Events />} />
-      <Route path={paths.view_event} element={<ViewEvent />} />
       <Route path={paths.jobs} element={<Jobs />} />
       <Route path={paths.register_org} element={<RegisterOrg />} />
       <Route path={paths.login_org} element={<Login />} />
@@ -78,11 +71,6 @@ function Routes (params) {
       <Route path={paths.post_job} element={<PostJob />} />
       <Route path={paths.profile} element={<Profile />} />
       <Route path={paths.editProfile} element={<EditProfile />} />
-      <Route path={paths.programs} element={<Programs />} />
-      <Route path={paths.contribution1} element={<Contribution1 />} />
-      <Route path={paths.contribution} element={<Contribution />} />
-      <Route path={paths.bootcamp} element={<CloudBootcamp />} />
-      <Route path={paths.codecamp} element={<CodeCamp />} />
       <Route path={paths.terms} element={<Terms />} />
       <Route path={paths.privacy} element={<Privacy />} />
       <Route path={paths.codeOfConduct} element={<CodeOfConduct />} />
