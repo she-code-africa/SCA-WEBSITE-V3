@@ -67,3 +67,31 @@ export const getDateBreakdown = (_date) => {
     hoursAndMinutes,
   };
 };
+
+
+export function IsImageOk (img) {
+  if (!img.complete) {
+    return false;
+  }
+  if (img.naturalWidth === 0) {
+    return false;
+  }
+  return true;
+}
+
+function checkUrl (url, callback) {
+  fetch(url, { method: 'head' })
+    .then(function (status) {
+      callback(status.ok)
+    });
+}
+
+export function urlExists (url) {
+  checkUrl(url, function (exists) {
+    if (exists) {
+      return true
+    } else {
+      return false
+    }
+  });
+}

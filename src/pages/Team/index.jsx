@@ -1,22 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Helmet } from "react-helmet-async";
-// import { useQuery } from 'react-query'
+import { useQuery } from 'react-query'
 import JoinUs from "../../components/JoinUs";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-// import Loading from "../../components/Loading";
-// import Error from "../../components/Error";
-// import { apiConstants } from "../../utils";
-// import { getTeams } from "../../services";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
+import TeamCard from '../../components/TeamCard';
+import { apiConstants } from "../../utils";
+import { getTeams } from "../../services";
 
 import heroBg from "../../images/team/bg-image.png";
 import box from "../../images/team/box.png";
-import facebookIcon from "../../images/team/facebook-icon.svg";
-import instagramIcon from "../../images/team/instagram-icon.svg";
-import twitterIcon from "../../images/team/twitter-icon.svg";
+import avatar from "../../images/avatar-300x300.jpeg"
+// import facebookIcon from "../../images/team/facebook-icon.svg";
+// import instagramIcon from "../../images/team/instagram-icon.svg";
+// import twitterIcon from "../../images/team/twitter-icon.svg";
 
 const teamCategories = [
   { name: 'All', value: 'all' },
@@ -28,51 +30,41 @@ const teamCategories = [
 
 
 const Team = () => {
-  const showModal = useRef(null);
-  const hideModal = useRef(null);
+  const hideModalRef = useRef(null);
   const modal = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
   const [activeSelection, setActiveSelection] = useState('all')
+  const [activeTeam, setActiveTeam] = useState(null)
+  const [teamMembers, setTeamMembers] = useState([])
 
+  const { data, isError, isLoading } = useQuery(apiConstants.teams, getTeams)
 
-  // const [teamMembers, setTeamMembers] = useState([])
-
-  // const teamCall = useQuery(apiConstants.teams, getTeams)
-
-  const setHideModal = () => {
+  const hideModal = () => {
     const _modal = modal?.current;
     setAnimatedClass(`animate__zoomOut`);
     setTimeout(() => {
       setModalOpen(false)
+      setActiveTeam(null)
       _modal?.close();
     }, 500);
   };
 
+  const showModal = () => {
+    const _hideModal = hideModalRef?.current;
+    const _modal = modal?.current;
+    setAnimatedClass(`animate__zoomIn`);
+    _modal?.showModal();
+    _hideModal?.focus();
+    setModalOpen(true)
+  }
 
   useEffect(() => {
-    const _showModal = showModal?.current;
-    const _hideModal = hideModal?.current;
+    const _hideModal = hideModalRef?.current;
     const _modal = modal?.current;
 
-    _showModal?.addEventListener(`click`, () => {
-      setAnimatedClass(`animate__zoomIn`);
-      _modal?.showModal();
-      _hideModal?.focus();
-      setModalOpen(true)
-    });
-
-    _showModal?.addEventListener(`keypress`, (e) => {
-      if (e.code === `Enter`) {
-        setAnimatedClass(`animate__zoomIn`);
-        _modal?.showModal();
-        _hideModal?.focus();
-        setModalOpen(true);
-      }
-    });
-
     _hideModal?.addEventListener(`click`, () => {
-      setHideModal();
+      hideModal();
     });
     _modal?.scroll({
       top: 0,
@@ -80,12 +72,6 @@ const Team = () => {
     });
 
     return () => {
-      _showModal?.removeEventListener(`click`, () => {
-        setHideModal();
-      })
-      _showModal?.removeEventListener(`keypress`, () => {
-        _showModal.current = null
-      })
       _hideModal?.removeEventListener(`click`, () => {
         _hideModal.current = null
       })
@@ -93,6 +79,17 @@ const Team = () => {
 
   }, []);
 
+  useEffect(() => {
+    setTeamMembers(data)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading])
+
+
+  const searchUser = (value) => {
+    const searchResult = data.filter((team) => team.name.toLowerCase().includes(value.toLowerCase()))
+    setTeamMembers(searchResult)
+  }
 
   return (
     <>
@@ -132,83 +129,63 @@ const Team = () => {
             <h2 className="text-[40px] font-bold my-3">Our Amazing Team</h2>
             <p className="text-xl">Empowering and celebrating women in technology across Africa guiding Tech-Girls to their Full Potential</p>
           </div>
-          <div className="w-10/12 lg:w-9/12 mx-auto my-20">
-            <div className="my-10 flex md:flex-row flex-col justify-between gap-y-8">
-              <div className="flex md:flex-row flex-col gap-4 gap-y-8">
-                {teamCategories.map((category) => (
-                  <button
-                    key={category.value}
-                    className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${activeSelection === category.value ? 'bg-black text-white' : 'bg-[#F9F9F9] text-black'}`} onClick={() => {
-                      setActiveSelection(category.value)
-                    }}>
-                    {category.name}
-                  </button>
-                ))}
 
-              </div>
-              <div className="lg:w-3/12">
-                <div
-                  className="border border-[#F2F4F3] rounded-full h-12 px-5 flex items-center gap-1 focus-within:ring-4 focus-within:ring-[#B70569] focus:outline-none"
-                  tabIndex={0}
-                  role="searchbox">
-                  <label htmlFor='search'>
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[#020122]" />
-                  </label>
-                  <input type="search" placeholder="Search" id='search' className="block focus:outline-none" />
-                </div>
-              </div>
-            </div>
-
-
-            <div className="my-16 grid md:grid-cols-3 md:gap-36 gap-12">
-              <article
-                role="button"
-                className="border-2 border-[#B70569] rounded-2xl focus:ring focus:ring-[#FDC0E3] focus:outline-none"
-                tabIndex={0}
-                ref={showModal}>
-                <img
-                  src="https://via.placeholder.com/310x230"
-                  alt="Team member"
-                  className="rounded-t-2xl" />
-                <div className="px-5 py-10">
-                  <h2 className="text-xl font-bold text-[#282828]">Ada Nduka Oyom</h2>
-                  <p className="text-base text-[#3E3E59]">Founder</p>
-                  <div className="hidden gap-4 items-center mt-7">
-                    <a
-                      href="https://"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="focus:ring-2 focus:ring-[#FDC0E3]"
-                      onClickCapture={(event) => {
-                        event.stopPropagation();
-                      }}>
-                      <img src={facebookIcon} alt="Go to facebook profile" />
-                    </a>
-                    <a
-                      href="https://"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="focus:ring-2 focus:ring-[#FDC0E3]"
-                      onClickCapture={(event) => {
-                        event.stopPropagation();
-                      }}>
-                      <img src={instagramIcon} alt="Go to instagram profile" />
-                    </a>
-                    <a
-                      href="https://"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="focus:ring-2 focus:ring-[#FDC0E3]"
-                      onClickCapture={(event) => {
-                        event.stopPropagation();
-                      }}>
-                      <img src={twitterIcon} alt="Go to twitter profile" />
-                    </a>
+          {isError ? <Error /> :
+            isLoading ? <Loading /> :
+              <div className="w-10/12 lg:w-9/12 mx-auto my-20">
+                <div className="my-10 flex md:flex-row flex-col justify-between gap-y-8">
+                  <div className="flex md:flex-row flex-col gap-4 gap-y-8">
+                    {teamCategories.map((category) => (
+                      <button
+                        key={category.value}
+                        className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${activeSelection === category.value ? 'bg-black text-white' : 'bg-[#F9F9F9] text-black'}`} onClick={() => {
+                          setActiveSelection(category.value)
+                        }}>
+                        {category.name}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="lg:w-3/12">
+                    <div
+                      className="border border-[#F2F4F3] rounded-full h-12 px-5 flex items-center gap-1 focus-within:ring-4 focus-within:ring-[#B70569] focus:outline-none"
+                      tabIndex={0}
+                      role="searchbox">
+                      <label htmlFor='search'>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} className="text-[#020122]" />
+                      </label>
+                      <input
+                        type="search"
+                        placeholder="Search"
+                        id='search'
+                        className="block focus:outline-none"
+                        onChange={(e) => {
+                          searchUser(e.target.value)
+                        }} />
+                    </div>
                   </div>
                 </div>
-              </article>
-            </div>
-          </div>
+                <div className="my-16 grid md:grid-cols-3 md:gap-32 gap-12">
+                  {teamMembers?.length ? teamMembers.map((member, index) =>
+                    <TeamCard
+                      key={index}
+                      image={member.image}
+                      name={member.name}
+                      teamRole={member.role || `${member.team.name} member`}
+                      onKeyDown={(e) => {
+                        if (e.code === `Enter`) {
+                          setActiveTeam(member)
+                          showModal()
+                        }
+                      }}
+                      onClick={() => {
+                        setActiveTeam(member)
+                        showModal()
+                      }} />
+                  )
+                    : <div className="text-xl text-center md:col-span-3">Team member not found</div>}
+                </div>
+              </div>
+          }
         </section>
         <JoinUs />
       </main>
@@ -216,10 +193,10 @@ const Team = () => {
         <section className="md:w-7/12 w-full bg-[#B70569] text-white min-h-[80dvh] md:min-h-[55vh] rounded-3xl md:p-7 p-4">
           <div className="text-right">
             <button
-              ref={hideModal}
+              ref={hideModalRef}
               autoFocus
               tabIndex={0}
-              onClick={setHideModal}
+              onClick={hideModal}
               className="focus:ring-1 focus:ring-red-300 focus:outline-none"
               aria-label="close modal"
             >
@@ -228,10 +205,10 @@ const Team = () => {
           </div>
           <div className="flex items-center justify-center gap-11 md:flex-nowrap flex-wrap">
             <div className="md:w-7/12 pb-10">
-              <h3 className="text-3xl font-semibold">Ada Nduka Oyom</h3>
-              <h4 className="text-2xl font-medium">Founder</h4>
-              <p className="leading-8">As the founder, Ada oversees the teams in creating several technical learning & career opportunities for members as well as growing the community’s presence to chapters across Africa. She has been recognised as one of Ytech 100 honourees by the Future awards Africa 2019, Top 50 TechWomen of Lagos by TechCabal & most recently awarded as the role model award winner in the Booking.com Tech Playmaker awards 2020.</p>
-              <div className="gap-4 items-center mt-7 hidden">
+              <h3 className="text-3xl font-semibold">{activeTeam?.name}</h3>
+              <h4 className="text-2xl font-medium">{activeTeam?.role || `${activeTeam?.team?.name} member`}</h4>
+              <p className="leading-8">{activeTeam?.bio}</p>
+              {/* <div className="gap-4 items-center mt-7 hidden">
                 <a
                   href="https://"
                   target="_blank"
@@ -253,12 +230,12 @@ const Team = () => {
                   className="focus:ring-1 focus:ring-red-300">
                   <img src={twitterIcon} alt="Go to twitter profile" />
                 </a>
-              </div>
+              </div> */}
             </div>
             <div>
               <img
-                src="https://via.placeholder.com/310x230"
-                alt="Team member"
+                src={activeTeam?.image || avatar}
+                alt={activeTeam?.name || 'SCA Team member'}
                 className="rounded-t-2xl" />
             </div>
           </div>

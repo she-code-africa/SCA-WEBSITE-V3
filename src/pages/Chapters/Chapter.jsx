@@ -31,12 +31,7 @@ export default function ChaptersForm () {
         <iframe
           title="Lead a Chapter"
           src="https://docs.google.com/forms/d/e/1FAIpQLSfAIiQz4eaHq3ZnPcN5Byxdw8J5E2dTlUQE2uHIpfark45D7A/viewform?embedded=true"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          // height={400}
-          // width="100%"
-          style={{ width: '100%', height: '400px' }}
+          style={{ width: '100%', height: '400px', border: 'none', margin: '0' }}
         >
           Loading…
         </iframe>
