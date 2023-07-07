@@ -4,17 +4,17 @@ import { Helmet } from "react-helmet-async";
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Carousel } from "../../components/Carousel";
+import * as components from "../../components";
 import DonateModal from "../../components/DonateModal";
-
-import { partners, apiConstants } from "../../utils";
+import * as homecomponents from "../../components/Home";
+import { apiConstants } from "../../utils";
 import { getPartners } from "../../services";
 
 const Donate = () => {
   const [modal, setModal] = useState(false);
   const [type, setType] = useState("");
 
-  const partnersList = useQuery(apiConstants.partners, getPartners);
+  const { isLoading, isError, data } = useQuery(apiConstants.partners, getPartners);
 
   const toggleModal = (type) => {
     setType(type);
@@ -77,12 +77,12 @@ const Donate = () => {
         </section>
         <section>
           <div className="section-whitespace-top">
-            <Carousel
-              title="Current Partners &amp; Sponsor Organisations"
-              content={partners}
-              slidesToShow={3}
-              slidesToScroll={1}
-            />
+            {isError ? <components.Error /> :
+              isLoading ? (
+                <components.Loading />
+              ) : (
+                <homecomponents.PartnersLogoSlider partnersData={data} />
+              )}
           </div>
         </section>
         <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top clear-both">

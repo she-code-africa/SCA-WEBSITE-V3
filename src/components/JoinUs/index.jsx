@@ -15,7 +15,7 @@ export default function JoinUs () {
           href="https://bit.ly/joinshecodeafrica"
           target="_blank"
           rel="noreferrer"
-          className="rounded-full text-white px-12 py-3 bg-primary-main-pink focus:ring-4 focus:ring-[#FDC0E3]">
+          className="rounded-full text-white px-12 py-3 text-lg font-medium bg-primary-main-pink focus:ring-4 focus:ring-[#FDC0E3]">
           Join Us
         </a>
       </div>

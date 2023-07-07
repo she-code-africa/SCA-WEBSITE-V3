@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
+
 import * as initiativeComponents from "../../components/Initiative";
-import { ourInitiatives } from "../../utils";
-import { Link } from "react-router-dom";
+
+import { apiConstants } from "../../utils";
+import { getInitiatives } from "../../services";
+
 import stemclubimage from "../../images/initiative/stem-club.png";
 import facilitators from "../../images/volunteerImgs/facilitators.png";
 import speakers from "../../images/volunteerImgs/speakers.png";
@@ -12,6 +20,17 @@ import speakers from "../../images/volunteerImgs/speakers.png";
 import JoinUs from "../../components/JoinUs";
 
 const Initiatives = () => {
+  const { data, isError, isLoading, isSuccess } = useQuery(apiConstants.initiatives, getInitiatives)
+  const [initiatives, setInitiatives] = useState([])
+
+  useEffect(() => {
+    if (isSuccess) {
+      setInitiatives(data)
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading])
+
   return (
     <>
       <Helmet>
@@ -46,18 +65,22 @@ const Initiatives = () => {
             our initiatives
           </h2>
 
-          <div className="mt-24 w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-            {ourInitiatives.map((initiative) => {
-              const { id, title, description } = initiative;
-              return (
-                <initiativeComponents.InitiativeCard
-                  key={id}
-                  title={title}
-                  description={description}
-                />
-              );
-            })}
-          </div>
+          {isError ? <Error /> :
+            isLoading ? <Loading /> :
+              <div className="mt-24 w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+                {initiatives?.map((initiative) => {
+                  return (
+                    <initiativeComponents.InitiativeCard
+                      key={initiative._id}
+                      name={initiative.name}
+                      description={initiative.description}
+                      isAvailable={initiative.isAvailable}
+                      link={initiative.link}
+                    />
+                  );
+                })}
+              </div>
+          }
         </section>
 
         <section className="bg-community-pink-bg mt-[120px] py-[100px]">
@@ -81,8 +104,8 @@ const Initiatives = () => {
                   with our community.
                 </p>
                 <Link
-                  to="/"
-                  className="bg-primary-main-pink px-5 py-2 inline-block mt-3 rounded-full text-white text-sm"
+                  to="/donate-partner"
+                  className="bg-primary-main-pink px-10 py-3 inline-block mt-3 rounded-full text-white text-lg font-semibold"
                 >
                   Donate
                 </Link>
@@ -103,8 +126,8 @@ const Initiatives = () => {
                   others learn and develop their skills.
                 </p>
                 <Link
-                  to="/"
-                  className="bg-primary-main-pink px-5 py-2 inline-block mt-3 rounded-full text-white text-sm"
+                  to="/donate-partner"
+                  className="bg-primary-main-pink px-10 py-3 inline-block mt-3 rounded-full text-white text-lg font-semibold"
                 >
                   Partner
                 </Link>
@@ -132,18 +155,18 @@ const Initiatives = () => {
 
           <div className="flex items-center justify-center gap-8 mt-8">
             <Link
-              to="/"
-              className="bg-primary-main-pink px-8 py-[18px] mt-3 rounded-[30px] text-white text-base"
+              to="/volunteer"
+              className="bg-primary-main-pink px-10 py-4 mt-3 rounded-[30px] text-white text-lg"
             >
               Become a mentor
             </Link>
 
-            <Link
+            {/* <Link
               to="/"
               className="bg-tutu px-8 py-[18px] mt-3 rounded-[30px] text-charcoal text-base border border-primary-main-pink"
             >
               Become a mentee
-            </Link>
+            </Link> */}
           </div>
         </section>
 
@@ -168,7 +191,7 @@ const Initiatives = () => {
               <div className="mt-7 flex">
                 <Link
                   to="#"
-                  className="px-8 py-[14px] bg-community-pink-bg text-sm rounded-[30px] text-charcoal hover:text-primary-main-pink"
+                  className="px-10 py-3 bg-community-pink-bg text-lg font-medium rounded-[30px] text-charcoal hover:text-primary-main-pink"
                 >
                   Join the campaign
                 </Link>

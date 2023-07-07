@@ -25,7 +25,7 @@ const Hire = () => {
           content="Explore diverse tech talents of your choice with genuine skill sets and good work place ethics."
         />
       </Helmet>
-      <Header page={"home"} />
+      <Header page={"hire"} />
       <main>
         <section
           className="h-[430px] flex-col flex justify-center"
