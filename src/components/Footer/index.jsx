@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-
+import { paths } from "../../utils";
 import logo from '../../images/logo-inverted.svg'
 import instagram from '../../images/instagram.svg'
 import facebook from '../../images/facebook.svg'
@@ -22,9 +22,9 @@ const Footer = () => {
                     <div className="col-span-3 grid md:grid-cols-3 items-start">
                         <div className="">
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">Get Involved</p>
-                            <Link to="/partner" className="block mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Partner With Us</Link>
-                            <Link to="/donate" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Make A Donation</Link>
-                            <Link to="/chapters" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Start An S.C.A Chapter</Link>
+                            <Link to={paths.donate} className="block mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Partner With Us</Link>
+                            <Link to={paths.donate} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Make A Donation</Link>
+                            <Link to={paths.chapters} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Start An S.C.A Chapter</Link>
                             <a href="https://summit.shecodeafrica.org/" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" target="_blank" rel="noreferrer">Summit</a>
                             <div className="relative">
                                 <button className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" onClick={() => { setOpenCaret(!openCaret) }}>
@@ -41,7 +41,7 @@ const Footer = () => {
                         </div>
                         <div className="">
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">About Us</p>
-                            <Link to="/team" className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"> Meet The Team</Link>
+                            <Link to={paths.team} className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"> Meet The Team</Link>
                             <Link to="/faq" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">FAQ</Link>
                             <Link to="/code-of-conduct" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Code of Conduct</Link>
                             <Link to="/privacy" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Privacy Policy</Link>
@@ -49,9 +49,9 @@ const Footer = () => {
                         </div>
                         <div>
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">Community</p>
-                            <Link to="/events" className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu">Upcoming Events</Link>
+                            <Link to={paths.events} className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu">Upcoming Events</Link>
                             <a href="https://bit.ly/joinshecodeafrica" target="_blank" rel="noreferrer" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Join Our Slack Community</a>
-                            <Link to="/about" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link>
+                            <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link>
                             <div className="block mb-5">Follow Us On Social Media</div>
                             <div className="flex gap-x-5 mb-5">
                                 <a href="https://www.instagram.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
