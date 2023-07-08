@@ -211,7 +211,9 @@ const Chapters = () => {
           {isError ? <components.Error /> : null}
 
           {isLoading ? (
-            <components.Loading />
+            <div className="mt-[77px]">
+              <components.Loading />
+            </div>
           ) : (
             <>
               <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">

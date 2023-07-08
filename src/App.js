@@ -31,12 +31,12 @@ import StemSchool from "./pages/StemSchool";
 import Volunteer from "./pages/Volunteer";
 import Initiatives from "./pages/Initiatives";
 import Hire from "./pages/Hire";
-
+import Community from "./pages/Community";
 import "./styles/app.scss";
 
 const queryClient = new QueryClient();
 
-function App () {
+function App() {
   const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,7 +49,7 @@ function App () {
   );
 }
 
-function Routes (params) {
+function Routes(params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
@@ -78,6 +78,7 @@ function Routes (params) {
       <Route path={paths.volunteer} element={<Volunteer />} />
       <Route path={paths.initiatives} element={<Initiatives />} />
       <Route path={paths.hire} element={<Hire />} />
+      <Route path={paths.community} element={<Community />} />
       <Route path="*" element={<PageNotFound />} />
     </Switch>
   );
