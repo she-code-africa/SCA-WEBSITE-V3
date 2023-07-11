@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import newsletterLogo from "../../images/community/rectangle-one.jpeg";
 import communityImg from "../../images/community/community-img.png";
 import { whatsinStoreForYou } from "../../utils";
@@ -148,21 +147,25 @@ const Community = () => {
               </p>
               <div className="w-full flex justify-center items-center gap-8">
                 <div className="flex items-center justify-center gap-8 mt-8">
-                  <Link
-                    to="#"
+                  <a
                     className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base font-normal"
+                    href="https://medium.com/shecodeafrica"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     Check Out Our Blog
-                  </Link>
+                  </a>
                 </div>
 
                 <div className="flex items-center justify-center gap-8 mt-8">
-                  <Link
-                    to="#"
+                  <a
                     className="bg-community-pink-bg px-8 py-[14px] mt-3 rounded-[30px] text-charcoal text-base font-normal"
+                    href="https://sca-editorial.notion.site/SheCodeAfrica-Guest-Writing-Program-b94f2b9d70b347569c2beb3474180301"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     Become a guest writer
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>

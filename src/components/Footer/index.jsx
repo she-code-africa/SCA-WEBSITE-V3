@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import { paths } from "../../utils";
-import logo from '../../images/logo-inverted.svg'
-import instagram from '../../images/instagram.svg'
-import facebook from '../../images/facebook.svg'
-import twitter from '../../images/twitter.svg'
+import { useQuery } from "react-query";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { paths, apiConstants } from "../../utils";
+import { getReports } from "../../services";
+import logo from "../../images/logo-inverted.svg";
+import instagram from "../../images/instagram.svg"
+import facebook from "../../images/facebook.svg"
+import twitter from "../../images/twitter.svg"
 
 const Footer = () => {
 
     const [openCaret, setOpenCaret] = useState(false)
+
+    const { data, isError, isLoading, isSuccess } = useQuery(apiConstants.reports, getReports)
+    const [reports, setReports] = useState([])
+
+    useEffect(() => {
+        if (isSuccess) {
+            setReports(data)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isLoading])
 
     return (
         <footer className="pt-10 mt-20">
@@ -26,18 +38,30 @@ const Footer = () => {
                             <Link to={paths.donate} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Make A Donation</Link>
                             <Link to={paths.chapters} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Start An S.C.A Chapter</Link>
                             <a href="https://summit.shecodeafrica.org/" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" target="_blank" rel="noreferrer">Summit</a>
-                            <div className="relative">
-                                <button className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" onClick={() => { setOpenCaret(!openCaret) }}>
-                                    <span>Annual Reports</span>
-                                    <FontAwesomeIcon icon={faCaretDown} className={`transition-transform duration-300 ${openCaret ? 'rotate-180' : null}`} />
-                                </button>
-                                {openCaret && (
-                                    <ul className="bg-white shadow-[0px_0px_8px_2px_rgba(0,0,0,0.20)] w-40 px-2 py-3 rounded absolute">
-                                        <li className="hover:bg-gray-200 p-2"><a href="https://drive.google.com/file/d/1ec-yUaFUp7VZgo-1DK87ZQBCYpgi6LpC/view?usp=sharing" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu block">2022</a></li>
-                                        <li className="hover:bg-gray-200 p-2"><a href="https://drive.google.com/file/d/1u7s0cvaCCjOC2C6iIpOJkvB-sjkGrf_y/view?usp=sharing" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu block">2021</a></li>
-                                    </ul>
-                                )}
-                            </div>
+                            {isError ? null :
+                                <div className="relative">
+                                    <button className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" onClick={() => { setOpenCaret(!openCaret) }}>
+                                        <span>Annual Reports</span>
+                                        <FontAwesomeIcon icon={faCaretDown} className={`transition-transform duration-300 ${openCaret ? 'rotate-180' : null}`} />
+                                    </button>
+                                    {openCaret && (
+                                        <ul className="bg-white shadow-[0px_0px_8px_2px_rgba(0,0,0,0.20)] w-40 px-2 py-3 rounded absolute">
+                                            {reports.map((report) => (
+                                                <li
+                                                    key={report._id}
+                                                    className="hover:bg-gray-200 p-2">
+                                                    <a href={report?.link}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="focus:outline-none focus:ring focus:ring-tutu block">
+                                                        {report.year}
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                            }
                         </div>
                         <div className="">
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">About Us</p>

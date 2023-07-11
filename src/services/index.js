@@ -46,6 +46,11 @@ export async function getPrograms () {
   return programs;
 }
 
+export async function getReports () {
+  const programs = await api.get(`${baseUrl}/reports`);
+  return programs;
+}
+
 export async function getJobs () {
   const jobs = await api.get(`${baseUrl}/job/postings`);
   return jobs;
