@@ -1,14 +1,35 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import newsletterLogo from "../../images/community/rectangle-one.png";
+import newsletterLogo from "../../images/community/rectangle-one.jpeg";
+import communityImg from "../../images/community/community-img.png";
 import { whatsinStoreForYou } from "../../utils";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Community = () => {
+
+  const [isLoaded, setIsLoaded] = useState(false)
+  const imgRef = useRef();
+
+  useEffect(() => {
+    const _imgRef = imgRef.current;
+
+    _imgRef.addEventListener(`load`, () => {
+      console.log('loading');
+      if (_imgRef.complete) {
+        setIsLoaded(true);
+      }
+    });
+    return () => {
+      _imgRef.removeEventListener('load', () => { })
+    };
+  }, [imgRef])
+
+  console.log({ isLoaded });
+
   return (
     <>
       <Helmet>
@@ -52,20 +73,33 @@ const Community = () => {
               </p>
 
               <div className="mt-6 flex justify-center">
-                <Link
-                  to="/"
+                <a
                   className="py-[18px] px-8 bg-white text-primary-main-pink font-medium rounded-[30px] capitalize"
+                  href="https://forms.gle/aFe2LrkZxZJtKKve7"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   join us now
-                </Link>
+                </a>
               </div>
             </div>
           </div>
         </section>
 
         <section className="w-90 mx-auto flex justify-center mt-[-50px]">
-          <figure className="m-0 p-0">
-            <img src={newsletterLogo} alt="news-letter" />
+          <figure className="m-0 p-0 block">
+
+            <img
+              src={newsletterLogo}
+              alt="loading slack channel"
+              className={`animate__animated ${isLoaded ? 'hidden animate__fadeOut' : 'inline-block'} h-[500px] blur-sm brightness-80`}
+            />
+            <img
+              src={communityImg}
+              ref={imgRef}
+              alt="community slack channel"
+              className={`animate__animated ${isLoaded ? 'animate__fadeIn opacity-100 static' : 'opacity-0 absolute'} h-[500px] blur-0 brightness-100`}
+              loading="lazy" />
           </figure>
         </section>
 
@@ -80,7 +114,7 @@ const Community = () => {
                 className={`border-2 border-primary-main-pink flex justify-center items-center min-h-[120px] px-6 ${item.bg} rounded-[20px]`}
                 key={index}
               >
-                <p className="text-lg text-2xl text-center text-black">
+                <p className="text-lg text-center text-black">
                   {item.text}
                 </p>
               </div>
@@ -105,7 +139,7 @@ const Community = () => {
           <div className="w-90 mx-auto min-h-[534px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
             <div className="w-full max-w-[587px] mx-auto">
               {" "}
-              <h2 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white text-seal-brown text-center">
+              <h2 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] leading-[150%] mx-auto text-seal-brown text-center">
                 Nur: The She Code Africa Blog
               </h2>
               <p className="my-8 font-normal text-lg text-center">
@@ -137,17 +171,19 @@ const Community = () => {
 
         <section className="my-[109px]">
           <div className="w-90 mx-auto">
-            <h2 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white text-seal-brown text-center">
+            <h2 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-seal-brown">
               Ready to join the largest female tech community in Africa?
             </h2>
 
             <div className="flex items-center justify-center mt-10">
-              <Link
-                to="#"
+              <a
                 className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base font-normal"
+                href="https://forms.gle/aFe2LrkZxZJtKKve7"
+                target="_blank"
+                rel="noreferrer"
               >
                 Register to join now
-              </Link>
+              </a>
             </div>
           </div>
         </section>
