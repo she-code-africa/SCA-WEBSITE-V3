@@ -21,10 +21,10 @@ import avatar from "../../images/avatar-300x300.jpeg"
 // import twitterIcon from "../../images/team/twitter-icon.svg";
 
 const teamCategories = [
-  { name: 'All', value: 'all' },
-  { name: 'Full Time Employees', value: 'full_time' },
-  { name: 'Support Team', value: 'support_team' },
-  { name: 'Advisors', value: 'advisors' },
+  { name: 'All', value: '' },
+  { name: 'Full Time Employees', value: 'Full Time' },
+  { name: 'Support Team', value: 'Support' },
+  { name: 'Advisors', value: 'Advisors' },
 ]
 
 const Team = () => {
@@ -32,7 +32,7 @@ const Team = () => {
   const modal = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
-  const [activeSelection, setActiveSelection] = useState('all')
+  const [activeSelection, setActiveSelection] = useState('')
   const [activeTeam, setActiveTeam] = useState(null)
   const [teamMembers, setTeamMembers] = useState([])
 
@@ -157,29 +157,34 @@ const Team = () => {
                         id='search'
                         className="block focus:outline-none"
                         onChange={(e) => {
+                          setActiveSelection('')
                           searchUser(e.target.value)
                         }} />
                     </div>
                   </div>
                 </div>
                 <div className="my-16 grid md:grid-cols-3 md:gap-32 gap-12">
-                  {teamMembers?.length ? teamMembers.map((member, index) =>
-                    <TeamCard
-                      key={index}
-                      image={member.image}
-                      name={member.name}
-                      teamRole={member.role || `${member.team.name} member`}
-                      onKeyDown={(e) => {
-                        if (e.code === `Enter`) {
-                          setActiveTeam(member)
-                          showModal()
-                        }
-                      }}
-                      onClick={() => {
-                        setActiveTeam(member)
-                        showModal()
-                      }} />
-                  )
+                  {teamMembers?.length ? teamMembers.map((member, index) => {
+                    if (member.team.name.includes(activeSelection)) {
+                      return (
+                        <TeamCard
+                          key={index}
+                          image={member.image}
+                          name={member.name}
+                          teamRole={member.role || `${member.team.name} member`}
+                          onKeyDown={(e) => {
+                            if (e.code === `Enter`) {
+                              setActiveTeam(member)
+                              showModal()
+                            }
+                          }}
+                          onClick={() => {
+                            setActiveTeam(member)
+                            showModal()
+                          }} />
+                      )
+                    }
+                  })
                     : <div className="text-xl text-center md:col-span-3">Team member not found</div>}
                 </div>
               </div>
