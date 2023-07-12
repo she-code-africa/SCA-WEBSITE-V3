@@ -40,12 +40,12 @@ const Footer = () => {
                             <a href="https://summit.shecodeafrica.org/" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" target="_blank" rel="noreferrer">Summit</a>
                             {isError ? null :
                                 <div className="relative">
-                                    <button className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" onClick={() => { setOpenCaret(!openCaret) }}>
+                                    <button className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu relative" onClick={() => { setOpenCaret(!openCaret) }}>
                                         <span>Annual Reports</span>
                                         <FontAwesomeIcon icon={faCaretDown} className={`transition-transform duration-300 ${openCaret ? 'rotate-180' : null}`} />
                                     </button>
                                     {openCaret && (
-                                        <ul className="bg-white shadow-[0px_0px_8px_2px_rgba(0,0,0,0.20)] w-40 px-2 py-3 rounded absolute">
+                                        <ul className="bg-white shadow-[0px_0px_8px_2px_rgba(0,0,0,0.20)] w-40 px-2 py-3 rounded absolute max-h-[120px] overflow-y-auto">
                                             {reports.map((report) => (
                                                 <li
                                                     key={report._id}
