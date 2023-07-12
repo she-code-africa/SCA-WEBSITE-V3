@@ -11,20 +11,20 @@ const Dropdown = ({ userName }) => {
   const [showAlt, setshowAlt] = useState(false)
   const [showEditProfile, setShowEditProfile] = useState(false)
   const location = useLocation()
-  
+
   useEffect(() => {
     const encodeUsername = encodeURIComponent(userName)
     if (location.pathname === paths.jobs) {
       setshowAlt(true)
     } else if (location.pathname === `/jobs/${encodeUsername}`) {
       setShowEditProfile(true)
-    } 
+    }
   }, [location, userName])
-  
-  
+
+
 
   return (
-    <section className="w-11/12 mx-auto cursor-pointer relative">
+    <section className="w-11/12 mx-auto my-5 cursor-pointer relative">
       <div className="flex justify-end items-center" onClick={() => setShowDropdown(!showDropdown)}>
         <FontAwesomeIcon icon={faHouseUser} className=" border rounded-full w-30 h-30 border-black p-2" />
         <FontAwesomeIcon icon={faCaretDown} className="pl-2" />
