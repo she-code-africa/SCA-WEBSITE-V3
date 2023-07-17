@@ -95,6 +95,7 @@ const Hire = () => {
               <input
                 type="text"
                 id="name"
+                required
                 value={formValue.fullname}
                 onChange={(e) => updateFormData('fullname', e.target.value)}
                 className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none md:w-10/12 w-full py-8 mt-2" />
@@ -104,6 +105,7 @@ const Hire = () => {
               <input
                 type="email"
                 id="email"
+                required
                 value={formValue.email}
                 onChange={(e) => updateFormData('email', e.target.value)}
                 className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none md:w-10/12 w-full py-8 mt-2" />
@@ -113,6 +115,7 @@ const Hire = () => {
               <input
                 type="text"
                 id="company_name"
+                required
                 value={formValue.company}
                 onChange={(e) => updateFormData('company', e.target.value)}
                 className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none md:w-10/12 w-full py-8 mt-2" />
@@ -122,6 +125,7 @@ const Hire = () => {
               <input
                 type="url"
                 id="company_website"
+                required
                 value={formValue.companyLink}
                 onChange={(e) => updateFormData('companyLink', e.target.value)}
                 className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none md:w-10/12 w-full py-8 mt-2" />
@@ -131,6 +135,7 @@ const Hire = () => {
               <input
                 type="text"
                 id="role"
+                required
                 value={formValue.jobRole}
                 onChange={(e) => updateFormData('jobRole', e.target.value)}
                 className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none md:w-10/12 w-full py-8 mt-2" />
@@ -140,6 +145,7 @@ const Hire = () => {
               <select
                 id="team"
                 name="team"
+                required
                 className="block border border-[#2D2D2D] rounded-2 h-16 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full mt-2  md:w-10/12"
                 value={formValue.experienceLevel}
                 onChange={(e) => updateFormData('experienceLevel', e.target.value)}>
@@ -153,6 +159,7 @@ const Hire = () => {
               <label className="block" htmlFor="job_desc">Job Description</label>
               <textarea
                 id="job_desc"
+                required
                 value={formValue.jobDescription}
                 onChange={(e) => updateFormData('jobDescription', e.target.value)}
                 className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none md:w-11/12 w-full py-8 mt-2 min-h-[150px]"></textarea>
