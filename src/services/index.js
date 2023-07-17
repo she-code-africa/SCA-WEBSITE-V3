@@ -70,3 +70,13 @@ export async function mutateEnquires (enquiryData) {
   const enquiresResonse = await api.post(`${baseUrl}/enquiry`, enquiryData);
   return enquiresResonse;
 }
+export async function mutateVolunteer (payload) {
+  const enquiresResonse = await api.post(`${baseUrl}/volunteer-request`, payload);
+  return enquiresResonse;
+}
+
+
+export async function mutateTalent (payload) {
+  return await api.post(`${baseUrl}/talent-request`, payload);
+}
+

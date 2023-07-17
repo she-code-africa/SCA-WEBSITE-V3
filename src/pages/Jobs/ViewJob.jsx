@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { isAfter } from "date-fns";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header";
@@ -15,7 +15,7 @@ import { getJob } from "../../services";
 const ViewJob = () => {
     const { id } = useParams();
     const date = new Date();
-    const { data, isError, isLoading, isSuccess } = useQuery({ queryKey: apiConstants.job, queryFn: () => getJob(id) });
+    const { data, isError, isLoading, isSuccess } = useQuery({ queryKey: [apiConstants.job], queryFn: () => getJob(id) });
     const [job, setJob] = useState(null)
 
     useEffect(() => {

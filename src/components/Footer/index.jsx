@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 import { paths, apiConstants } from "../../utils";
@@ -14,7 +14,7 @@ const Footer = () => {
 
     const [openCaret, setOpenCaret] = useState(false)
 
-    const { data, isError, isLoading, isSuccess } = useQuery(apiConstants.reports, getReports)
+    const { data, isError, isLoading, isSuccess } = useQuery([apiConstants.reports], getReports)
     const [reports, setReports] = useState([])
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes as Switch, useLocation } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { paths } from "./utils";
 
 import Home from "./pages/Home";
@@ -36,7 +36,7 @@ import "./styles/app.scss";
 
 const queryClient = new QueryClient();
 
-function App() {
+function App () {
   const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -49,7 +49,7 @@ function App() {
   );
 }
 
-function Routes(params) {
+function Routes (params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />

@@ -16,4 +16,5 @@ var CustomHttpError = (function (_super) {
   }
   return CustomHttpError;
 })(Error);
-exports.CustomHttpError = CustomHttpError;
+
+export default CustomHttpError

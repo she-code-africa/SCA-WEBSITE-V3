@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Helmet } from "react-helmet-async";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import JoinUs from "../../components/JoinUs";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -36,7 +36,7 @@ const Team = () => {
   const [activeTeam, setActiveTeam] = useState(null)
   const [teamMembers, setTeamMembers] = useState([])
 
-  const { data, isError, isLoading } = useQuery(apiConstants.teams, getTeams)
+  const { data, isError, isLoading } = useQuery([apiConstants.teams], getTeams)
 
   const hideModal = () => {
     const _modal = modal?.current;

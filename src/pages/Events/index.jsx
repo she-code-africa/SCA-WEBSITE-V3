@@ -1,6 +1,6 @@
 /* eslint-disable no-lone-blocks */
 import React from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -17,7 +17,7 @@ import ghanaEvent from "../../images/events-page/ghanaevent.png";
 
 const Events = () => {
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
-    apiConstants.events,
+    [apiConstants.events],
     getEvents
   );
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
 import Header from "../../components/Header";
@@ -20,7 +20,7 @@ import speakers from "../../images/volunteerImgs/speakers.png";
 import JoinUs from "../../components/JoinUs";
 
 const Initiatives = () => {
-  const { data, isError, isLoading, isSuccess } = useQuery(apiConstants.initiatives, getInitiatives)
+  const { data, isError, isLoading, isSuccess } = useQuery([apiConstants.initiatives], getInitiatives)
   const [initiatives, setInitiatives] = useState([])
 
   useEffect(() => {

@@ -19,6 +19,7 @@ api.interceptors.response.use(function (response) {
   return response.data?.data ?? response.data;
 }, function (err) {
   //  hide loader
+
   if (!err.response) {
     return Promise.reject(new CustomHttpError(
       'Error occured while sending the request, please check your internet settings', {
@@ -33,13 +34,10 @@ api.interceptors.response.use(function (response) {
       statusCode: err.response.status,
       responseText: 'User session has expired!'
     }));
+
   }
-  // if (err.response.status === 403) {
-  //   return Promise.reject(new CustomHttpError(
-  //     'You do not have permission to perform this operation', {
-  //       statusCode: err.response.status,
-  //       responseText: 'You do not have permission to perform this operation'
-  //     }));
+  // if (err.response.status >= 400) {
+  //   return Promise.reject(new Error())
   // }
   if (err.response.data && err.response.data.error) {
     return Promise.reject(new CustomHttpError(err.response.data.error, {
@@ -54,7 +52,7 @@ api.interceptors.response.use(function (response) {
   return Promise.reject(new CustomHttpError(
     'Error occured while sending the request', {
     statusCode: err.response.status,
-    responseText: 'Error occured while sending the request'
+    responseText: err.response.data.message || 'Error occured while sending the request'
   }));
 });
 
