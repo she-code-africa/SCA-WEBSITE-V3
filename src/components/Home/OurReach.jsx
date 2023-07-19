@@ -1,7 +1,6 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import ourReachIcon from "../../images/Icon-our-reach.svg";
-import BecomeAmemberButton from "../Button/BecomeAmemberButton";
 import ourreachImg from "../../images/homepage/unsplash-our-reach-1.png";
 import { apiConstants } from "../../utils";
 import { getReach } from "../../services";
@@ -9,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const OurReach = () => {
-  const { data: reachData } = useQuery(apiConstants.reach, getReach)
+  const { data: reachData } = useQuery([apiConstants.reach], getReach)
 
 
 

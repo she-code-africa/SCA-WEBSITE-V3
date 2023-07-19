@@ -7,7 +7,7 @@ import logo from "../../images/she-code-africa-logo.svg";
 import close from "../../images/cancel.svg";
 import { paths, apiConstants } from "../../utils";
 import codes from "../../documents/CountryCodes.json";
-import { useMutation, useQuery } from "react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { getCompanyCategory, mutateRegisterOrganization } from "../../services";
 import { toast } from "react-toastify";
 
@@ -49,7 +49,7 @@ const RegisterOrg = () => {
     }
   );
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
-    apiConstants.companyCategory,
+    [apiConstants.companyCategory],
     getCompanyCategory
   );
 

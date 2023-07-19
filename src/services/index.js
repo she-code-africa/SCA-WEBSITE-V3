@@ -88,3 +88,15 @@ export async function mutateOrganizationLogin(formData) {
   const loginDetails = await api.post(`${baseUrl}/company/login`, formData);
   return loginDetails;
 }
+
+export async function mutateVolunteer(payload) {
+  const enquiresResonse = await api.post(
+    `${baseUrl}/volunteer-request`,
+    payload
+  );
+  return enquiresResonse;
+}
+
+export async function mutateTalent(payload) {
+  return await api.post(`${baseUrl}/talent-request`, payload);
+}

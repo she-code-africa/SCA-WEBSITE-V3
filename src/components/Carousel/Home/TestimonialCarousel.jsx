@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { apiConstants } from "../../../utils";
 import { getTestimonials } from "../../../services";
 
@@ -56,7 +56,7 @@ function SamplePrevArrow (props) {
   );
 }
 const TestimonialCarousel = () => {
-  const { data: testimonials } = useQuery(apiConstants.testimonials, getTestimonials)
+  const { data: testimonials } = useQuery([apiConstants.testimonials], getTestimonials)
   const settings = {
     dots: false,
     infinite: true,

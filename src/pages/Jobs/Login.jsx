@@ -5,7 +5,7 @@ import close from "../../images/cancel.svg";
 import { paths } from "../../utils";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { mutateOrganizationLogin } from "../../services";
 

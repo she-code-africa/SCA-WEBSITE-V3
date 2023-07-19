@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { DonateCard } from "../../components/Cards";
 import Header from "../../components/Header";
@@ -14,7 +14,7 @@ const Donate = () => {
   const [modal, setModal] = useState(false);
   const [type, setType] = useState("");
 
-  const { isLoading, isError, data } = useQuery(apiConstants.partners, getPartners);
+  const { isLoading, isError, data } = useQuery([apiConstants.partners], getPartners);
 
   const toggleModal = (type) => {
     setType(type);

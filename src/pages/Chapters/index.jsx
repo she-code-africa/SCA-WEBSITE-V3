@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import Header from "../../components/Header";
 import searchIcon from "../../images/chapters/search-icon.png";
@@ -24,7 +24,7 @@ import * as components from "../../components";
 
 const Chapters = () => {
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
-    apiConstants.chapters,
+    [apiConstants.chapters],
     getChapters
   );
 
