@@ -51,7 +51,8 @@ export const apiConstants = {
   initiatives: "getInitiatives",
   jobs: "jobs",
   job: "job",
-  reports: "reports"
+  reports: "reports",
+  companyCategory: "companyCategory",
 };
 
 export const communityFaq = [

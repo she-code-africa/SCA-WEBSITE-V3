@@ -3,6 +3,8 @@ import { Route, Routes as Switch, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { paths } from "./utils";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -44,6 +46,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Routes />
+      <ToastContainer />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
