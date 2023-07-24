@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import InputSelect from "../../components/InputSelect";
@@ -25,6 +25,8 @@ const initialData = {
 
 const RegisterOrg = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from || paths.jobs;
   const [currentView, setCurrentView] = useState("org_details");
   const [formData, setFormData] = useState(initialData);
   const [phone, setPhone] = useState("");
@@ -38,7 +40,7 @@ const RegisterOrg = () => {
         toast.success("Sign up Successful!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        navigate(paths.jobs);
+        navigate(from, { replace: true });
       },
 
       onError: (error, variables) => {
@@ -77,17 +79,13 @@ const RegisterOrg = () => {
     }
   };
 
-  const submitForm = async (e) => {
-    try {
-      e.preventDefault();
-      const payload = {
-        ...formData,
-        companyPhone: `${code}${phone}`,
-      };
-      registerOrganization(payload);
-    } catch (error) {
-      console.log(error);
-    }
+  const submitForm = (e) => {
+    e.preventDefault();
+    const payload = {
+      ...formData,
+      companyPhone: `${code}${phone}`,
+    };
+    registerOrganization(payload);
   };
 
   return (

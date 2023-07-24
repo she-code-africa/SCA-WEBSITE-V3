@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../../images/she-code-africa-logo.svg";
 import close from "../../images/cancel.svg";
 import { paths } from "../../utils";
@@ -16,13 +16,20 @@ const initialData = {
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || paths.jobs;
   const [formData, setFormData] = useState(initialData);
   const { mutate: loginOrganization } = useMutation(mutateOrganizationLogin, {
     onSuccess: (data) => {
+      let userDetails = {
+        email: formData.email,
+        token: data,
+      };
       toast.success("Login Successful!", {
         position: toast.POSITION.TOP_RIGHT,
       });
-      navigate(paths.jobs);
+      localStorage.setItem("userDetails", JSON.stringify(userDetails));
+      navigate(from, { replace: true });
     },
 
     onError: (error, variables) => {
@@ -36,11 +43,9 @@ const Login = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const submitLogin = async (e) => {
-    try {
-      e.preventDefault();
-      loginOrganization(formData);
-    } catch (error) {}
+  const submitLogin = (e) => {
+    e.preventDefault();
+    loginOrganization(formData);
   };
 
   return (
@@ -86,12 +91,24 @@ const Login = () => {
 
         <p className="text-center post-a-job-cta">
           <span>Don't have an account?&nbsp;</span>
-          <Link
+          {/* <Link
             to={paths.register_org}
             className="text-primary-main-pink hover:text-primary-main-pink"
           >
             REGISTER TO POST A JOB
-          </Link>
+          </Link> */}
+          <button
+            className="text-primary-main-pink hover:text-primary-main-pink"
+            onClick={() =>
+              navigate(paths.register_org, {
+                state: {
+                  from: location.state?.from,
+                },
+              })
+            }
+          >
+            REGISTER TO POST A JOB
+          </button>
         </p>
         <Link
           to={paths.forgot_password_org}

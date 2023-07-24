@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes as Switch, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { paths } from "./utils";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,10 +35,11 @@ import Initiatives from "./pages/Initiatives";
 import Hire from "./pages/Hire";
 import Community from "./pages/Community";
 import "./styles/app.scss";
+import PrivateRoutes from "./components/PrivateRoutes";
 
 const queryClient = new QueryClient();
 
-function App () {
+function App() {
   const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,7 +53,7 @@ function App () {
   );
 }
 
-function Routes (params) {
+function Routes(params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
@@ -71,7 +72,7 @@ function Routes (params) {
       <Route path={paths.login_org} element={<Login />} />
       <Route path={paths.forgot_password_org} element={<ForgotPassword />} />
       <Route path={paths.view_job} element={<ViewJob />} />
-      <Route path={paths.post_job} element={<PostJob />} />
+      {/* <Route path={paths.post_job} element={<PostJob />} /> */}
       <Route path={paths.profile} element={<Profile />} />
       <Route path={paths.editProfile} element={<EditProfile />} />
       <Route path={paths.terms} element={<Terms />} />
@@ -83,6 +84,9 @@ function Routes (params) {
       <Route path={paths.hire} element={<Hire />} />
       <Route path={paths.community} element={<Community />} />
       <Route path="*" element={<PageNotFound />} />
+      <Route path="/jobs" element={<PrivateRoutes />}>
+        <Route path={paths.post_job} element={<PostJob />} />
+      </Route>
     </Switch>
   );
 }
