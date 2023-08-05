@@ -76,6 +76,7 @@ const Home = () => {
                 color="text-white"
                 colorHover="text-primary-main-pink"
                 border="border-primary-main-pink"
+                type="external"
                 url="https://bit.ly/joinshecodeafrica"
               />
               <Link
