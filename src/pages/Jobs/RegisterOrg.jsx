@@ -37,12 +37,17 @@ const RegisterOrg = () => {
     mutateRegisterOrganization,
     {
       onSuccess: (data) => {
+        console.log(data);
         toast.success("Sign up Successful!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        navigate(from, { replace: true });
+        navigate(paths.login_org, {
+          replace: true,
+          state: {
+            from,
+          },
+        });
       },
-
       onError: (error, variables) => {
         toast.error("An error occurred.", {
           position: toast.POSITION.TOP_RIGHT,
@@ -86,6 +91,12 @@ const RegisterOrg = () => {
       companyPhone: `${code}${phone}`,
     };
     registerOrganization(payload);
+    localStorage.setItem(
+      "contactName",
+      JSON.stringify({
+        name: payload.contactName,
+      })
+    );
   };
 
   return (

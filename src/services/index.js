@@ -71,6 +71,18 @@ export async function getCompanyCategory() {
   return companyCategory;
 }
 
+export async function getJobTypes() {
+  const jobTypes = await api.get(`${baseUrl}/job/types`);
+  return jobTypes;
+}
+
+export async function getJobCategory() {
+  const jobCategory = await api.get(`${baseUrl}/job/category`);
+  return jobCategory;
+}
+
+// mutations
+
 export async function mutateEnquires(enquiryData) {
   const enquiresResonse = await api.post(`${baseUrl}/enquiry`, enquiryData);
   return enquiresResonse;
@@ -99,4 +111,24 @@ export async function mutateVolunteer(payload) {
 
 export async function mutateTalent(payload) {
   return await api.post(`${baseUrl}/talent-request`, payload);
+}
+
+export async function mutatePostJobs(payload) {
+  const token = JSON.parse(localStorage.getItem("userDetails"))?.token;
+  console.log(token);
+  return await api.post(`${baseUrl}/job/postings`, payload, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
+}
+
+export async function mutateEditCompany(payload) {
+  const token = JSON.parse(localStorage.getItem("userDetails"))?.token;
+  console.log(token);
+  return await api.put(`${baseUrl}/company/:id`, payload, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
 }
