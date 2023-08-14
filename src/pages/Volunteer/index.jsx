@@ -30,6 +30,7 @@ const Volunteer = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
   const [formValue, setFormValue] = useState(defaultFormValue)
+  const [isMessageShown, setIsMessageShown] = useState(false)
 
   const volunteerRequest = useMutation({
     mutationFn: (formData) => mutateVolunteer(formData)
@@ -41,6 +42,7 @@ const Volunteer = () => {
     setTimeout(() => {
       setModalOpen(false)
       _modal?.close();
+      setIsMessageShown(false)
     }, 500);
   };
 
@@ -77,8 +79,10 @@ const Volunteer = () => {
 
   useEffect(() => {
     if (volunteerRequest.isSuccess) {
-      setFormValue(defaultFormValue)
-      setHideModal()
+      window.setTimeout(() => {
+        setFormValue(defaultFormValue)
+        setHideModal()
+      }, 1000)
 
     }
   }, [volunteerRequest.isSuccess])
@@ -98,6 +102,7 @@ const Volunteer = () => {
   const submitVolunteerRequest = (e) => {
     e.preventDefault();
     volunteerRequest.mutate(formValue)
+    setIsMessageShown(true)
   }
 
 
@@ -161,7 +166,7 @@ const Volunteer = () => {
                 onClick={() => {
                   setFormValue({
                     ...formValue,
-                    team: 'mentor',
+                    volunteerRole: 'Mentor',
                   })
                   setShowModal()
                 }}
@@ -226,7 +231,7 @@ const Volunteer = () => {
                 onClick={() => {
                   setFormValue({
                     ...formValue,
-                    team: 'facilitator',
+                    volunteerRole: 'Facilitator',
                   })
                   setShowModal()
                 }}
@@ -293,9 +298,9 @@ const Volunteer = () => {
                   value={formValue.volunteerRole}
                   onChange={(e) => updateFormData('volunteerRole', e.target.value)}>
                   <option value={''} disabled>Select a volunteer role</option>
-                  <option value={'mentor'}>Mentor</option>
+                  <option value={'Mentor'}>Mentor</option>
                   {/* <option value={'speaker'}>Speaker</option> */}
-                  <option value={'facilitator'}>Facilitator</option>
+                  <option value={'Facilitator'}>Facilitator</option>
                 </select>
               </div>
               <div>
@@ -318,18 +323,20 @@ const Volunteer = () => {
                   required
                   onChange={(e) => updateFormData('purpose', e.target.value)}></textarea>
               </div>
-              <div className="flex justify-center col-span-2">
-                {volunteerRequest.isError ? (
-                  <div className=" bg-red-800 text-white py-3 px-6 ">
-                    An error occurred: {volunteerRequest.error.responseText || volunteerRequest.error.message}
-                  </div>
-                ) : null}
+              {isMessageShown ?
+                <div className="flex justify-center col-span-2">
+                  {volunteerRequest.isError ? (
+                    <div className=" bg-red-800 text-white py-3 px-6 ">
+                      An error occurred: {volunteerRequest.error.responseText || volunteerRequest.error.message}
+                    </div>
+                  ) : null}
 
-                {volunteerRequest.isSuccess ?
-                  <div className=" bg-green-700 text-white py-3 px-6">
-                    Request has been sent, we'll get back to you shortly
-                  </div> : null}
-              </div>
+                  {volunteerRequest.isSuccess ?
+                    <div className=" bg-green-700 text-white py-3 px-6">
+                      Request has been sent, we'll get back to you shortly
+                    </div> : null}
+                </div>
+                : null}
               <div className="text-center w-full col-span-2">
                 <button
                   type="submit"
