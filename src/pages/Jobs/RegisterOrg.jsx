@@ -94,7 +94,7 @@ const RegisterOrg = () => {
     localStorage.setItem(
       "contactName",
       JSON.stringify({
-        name: payload.contactName,
+        name: payload.companyName,
       })
     );
   };
@@ -286,6 +286,7 @@ const RegisterOrg = () => {
                   type="submit"
                   value="Register"
                   disabled={disableSubmit}
+                  className="cursor-pointer"
                 />
               </div>
             </div>

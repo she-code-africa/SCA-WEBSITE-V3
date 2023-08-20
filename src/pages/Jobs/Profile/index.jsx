@@ -7,7 +7,6 @@ import Footer from "../../../components/Footer";
 
 const Profile = () => {
   const contactName = JSON.parse(localStorage.getItem("contactName"));
-  const [userName] = useState("Maggie Anthony");
   const [publishedJobs] = useState([]);
   const [unPublishedJobs] = useState([]);
 

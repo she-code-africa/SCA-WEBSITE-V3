@@ -14,6 +14,7 @@ const EditProfile = () => {
     email: "",
     password: "",
   };
+  const contactName = JSON.parse(localStorage.getItem("contactName"));
   const navigate = useNavigate();
   const [formData, setFormData] = useState(initialData);
   const updateFormData = (name, value) => {
@@ -25,7 +26,8 @@ const EditProfile = () => {
       toast.success("Login Successful!", {
         position: toast.POSITION.TOP_RIGHT,
       });
-      navigate(paths.profile);
+
+      navigate(`/jobs/${contactName.name}`);
     },
     onError: () => {
       toast.error("An error occurred.", {

@@ -25,7 +25,6 @@ const Login = () => {
       const userData = jwt_decode(data);
 
       let userDetails = {
-        email: formData.email,
         token: data,
         userId: userData.id,
       };
@@ -90,17 +89,11 @@ const Login = () => {
               inpType="password"
             />
           </div>
-          <Button type="submit" value="LOGIN" />
+          <Button type="submit" value="LOGIN" className="cursor-pointer" />
         </form>
 
         <p className="text-center post-a-job-cta">
           <span>Don't have an account?&nbsp;</span>
-          {/* <Link
-            to={paths.register_org}
-            className="text-primary-main-pink hover:text-primary-main-pink"
-          >
-            REGISTER TO POST A JOB
-          </Link> */}
           <button
             className="text-primary-main-pink hover:text-primary-main-pink"
             onClick={() =>
