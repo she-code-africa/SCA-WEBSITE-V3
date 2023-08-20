@@ -11,13 +11,13 @@ const BecomeAmemberButton = ({
   border,
   title = "Become a Member",
   url = "#",
-  type = "internal"
+  type = "internal",
 }) => {
   return (
     <>
-      {type === 'external'
-        ? <a
-          href={url} t
+      {type === "external" ? (
+        <a
+          href={url}
           target="_blank"
           rel="noreferrer"
           className={`pl-[32px] pr-[40px] py-[15px] ${bg} ${color} text-sm font-medium rounded-lg hover:${colorHover} ${bgHover} border ${border} transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu`}
@@ -25,14 +25,15 @@ const BecomeAmemberButton = ({
           {title}&nbsp;
           <FontAwesomeIcon icon={faAngleRight} />
         </a>
-        : <Link
+      ) : (
+        <Link
           to={url}
           className={`pl-[32px] pr-[40px] py-[15px] ${bg} ${color} text-sm font-medium rounded-lg hover:${colorHover} ${bgHover} border ${border} transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu`}
         >
           {title}&nbsp;
           <FontAwesomeIcon icon={faAngleRight} />
         </Link>
-      }
+      )}
     </>
   );
 };

@@ -1,27 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../../../components/Header";
-import { apiConstants, paths } from "../../../utils";
-import Footer from "../../../components/Footer";
 import Dropdown from "../../../components/Dropdown";
-import Input from "../../../components/Input";
-import Button from "../../../components/Button";
+import { paths } from "../../../utils";
+import Footer from "../../../components/Footer";
 
 const Profile = () => {
   const contactName = JSON.parse(localStorage.getItem("contactName"));
-  const initialData = {
-    email: "",
-    password: "",
-  };
-  const [formData, setFormData] = useState(initialData);
-  const updateFormData = (name, value) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const submitLogin = (e) => {
-    e.preventDefault();
-    // loginOrganization(formData);
-  };
+  const [userName] = useState("Maggie Anthony");
+  const [publishedJobs] = useState([]);
+  const [unPublishedJobs] = useState([]);
 
   return (
     <>
@@ -48,34 +36,33 @@ const Profile = () => {
           </Link>
         </section>
 
-        <section className="w-11/12 mx-auto __jobs_preview my-10 text-[#707070] sm:max-w-[500px] sm:w-[90%]">
-          <form
-            className="mt-10 mb-2 flex flex-col justify-center"
-            onSubmit={submitLogin}
-          >
-            <div>
-              <Input
-                type="email"
-                id="email"
-                placeholder="Email *"
-                required
-                value={formData.email}
-                onChange={(e) => updateFormData("email", e.target.value)}
-              />
-            </div>
-
-            <div className="my-8">
-              <Input
-                type="password"
-                id="password"
-                placeholder="Password *"
-                required
-                onChange={(e) => updateFormData("password", e.target.value)}
-                inpType="password"
-              />
-            </div>
-            <Button type="submit" value="EDIT COMPANY" />
-          </form>
+        <section className="md:w-7/12 w-11/12 mx-auto __jobs_preview my-10 text-[#707070]">
+          <h3 className="text-center job-type-header text-2xl font-medium text-gray-800">
+            Published Jobs
+          </h3>
+          {publishedJobs.length ? (
+            <ul>
+              {publishedJobs.map((job) => (
+                <li key={job.id}>{job.name}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-center py-8">You have no published jobs</p>
+          )}
+        </section>
+        <section className="md:w-7/12 w-11/12 mx-auto __jobs_preview my-10 text-[#707070]">
+          <h3 className="text-center job-type-header text-2xl font-medium text-gray-800">
+            Unpublished Jobs
+          </h3>
+          {publishedJobs.length ? (
+            <ul>
+              {unPublishedJobs.map((job) => (
+                <li key={job.id}>{job.name}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-center py-8">You have no unpublished jobs</p>
+          )}
         </section>
       </main>
       <Footer />

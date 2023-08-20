@@ -124,11 +124,10 @@ export async function mutatePostJobs(payload) {
 }
 
 export async function mutateEditCompany(payload) {
-  const token = JSON.parse(localStorage.getItem("userDetails"))?.token;
-  console.log(token);
-  return await api.put(`${baseUrl}/company/:id`, payload, {
+  const userData = JSON.parse(localStorage.getItem("userDetails"));
+  return await api.put(`${baseUrl}/company/${userData?.userId}`, payload, {
     headers: {
-      authorization: `Bearer ${token}`,
+      authorization: `Bearer ${userData?.token}`,
     },
   });
 }

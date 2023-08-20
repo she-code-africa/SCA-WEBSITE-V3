@@ -8,6 +8,7 @@ import Button from "../../components/Button";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { mutateOrganizationLogin } from "../../services";
+import jwt_decode from "jwt-decode";
 
 const initialData = {
   email: "",
@@ -21,9 +22,12 @@ const Login = () => {
   const [formData, setFormData] = useState(initialData);
   const { mutate: loginOrganization } = useMutation(mutateOrganizationLogin, {
     onSuccess: (data) => {
+      const userData = jwt_decode(data);
+
       let userDetails = {
         email: formData.email,
         token: data,
+        userId: userData.id,
       };
       toast.success("Login Successful!", {
         position: toast.POSITION.TOP_RIGHT,
