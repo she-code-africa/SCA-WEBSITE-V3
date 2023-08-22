@@ -9,7 +9,11 @@ import { Link } from "react-router-dom";
 import * as homecomponents from "../../components/Home";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { apiConstants, homepageOurCommunityCards, paths } from "../../utils/index";
+import {
+  apiConstants,
+  homepageOurCommunityCards,
+  paths,
+} from "../../utils/index";
 import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
 import whoweareimage from "../../images/homepage/who-are-we.png";
 import { whoWeAreTexts } from "../../utils";
@@ -94,12 +98,13 @@ const Home = () => {
 
         <section className="w-full my-20">
           <div className="w-[90%] lg:w-10/12  mx-auto">
-            {isError ? <components.Error /> :
-              isLoading ? (
-                <components.Loading />
-              ) : (
-                <homecomponents.PartnersLogoSlider partnersData={data} />
-              )}
+            {isError ? (
+              <components.Error />
+            ) : isLoading ? (
+              <components.Loading />
+            ) : (
+              <homecomponents.PartnersLogoSlider partnersData={data} />
+            )}
 
             <section className=" w-full flex flex-col-reverse md:flex-col 2md:flex-row 2md:justify-between mt-[80px] md:mt-[110px] 2md:items-center gap-10 mx-auto">
               <div className="text-wrapper py-5 w-full 2md:max-w-[400px]">
