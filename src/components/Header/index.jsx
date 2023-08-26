@@ -2,55 +2,60 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-
 import logo from "../../images/she-code-africa-logo.svg";
-import { paths } from "../../utils";
+import { apiConstants, paths } from "../../utils";
+import { useQuery } from "@tanstack/react-query";
+import { getAllSchools } from "../../services";
 
-const menus = [
-  { to: paths.home, text: "Home" },
-  {
-    to: paths.about,
-    text: "Academy",
-    list: [
-      { to: paths.engineering, text: "School of Engineering" },
-      { to: paths.products, text: "School of Products" },
-      { to: paths.appliedSkills, text: "School of Applied Skills" },
-      { to: paths.stemSchool, text: "STEM School" },
-    ],
-  },
-  {
-    to: paths.chapters,
-    text: "Get Involved",
-    list: [
-      { to: paths.volunteer, text: "Volunteer With Us" },
-      {
-        to: "https://bit.ly/joinshecodeafrica",
-        text: "Become A Member",
-        external: true,
-      },
-      { to: paths.events, text: "Events" },
-      { to: paths.initiatives, text: "Initiatives" },
-      { to: paths.jobs, text: "Jobs" },
-    ],
-  },
-  {
-    to: paths.donate,
-    text: "Community",
-    list: [
-      { to: paths.community, text: "SCA Community" },
-      { to: paths.chapters, text: "SCA Chapters" },
-    ],
-  },
-  {
-    to: paths.donate,
-    text: "About",
-    list: [
-      { to: paths.about, text: "About SCA" },
-      { to: paths.team, text: "Our Team" },
-    ],
-  },
-];
 const Header = ({ page }) => {
+  const { data, isLoading } = useQuery([apiConstants.academy], getAllSchools);
+
+  const menus = [
+    { to: paths.home, text: "Home" },
+    {
+      to: paths.about,
+      text: "Academy",
+      list:
+        !isLoading &&
+        data.map((schools) => {
+          return {
+            to: `/academy/${schools._id}`,
+            text: schools.name,
+          };
+        }),
+    },
+    {
+      to: paths.chapters,
+      text: "Get Involved",
+      list: [
+        { to: paths.volunteer, text: "Volunteer With Us" },
+        {
+          to: "https://bit.ly/joinshecodeafrica",
+          text: "Become A Member",
+          external: true,
+        },
+        { to: paths.events, text: "Events" },
+        { to: paths.initiatives, text: "Initiatives" },
+        { to: paths.jobs, text: "Jobs" },
+      ],
+    },
+    {
+      to: paths.donate,
+      text: "Community",
+      list: [
+        { to: paths.community, text: "SCA Community" },
+        { to: paths.chapters, text: "SCA Chapters" },
+      ],
+    },
+    {
+      to: paths.donate,
+      text: "About",
+      list: [
+        { to: paths.about, text: "About SCA" },
+        { to: paths.team, text: "Our Team" },
+      ],
+    },
+  ];
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedMenu, setSelectedMenu] = useState(null);

@@ -81,6 +81,21 @@ export async function getJobCategory() {
   return jobCategory;
 }
 
+export async function getAllCourses() {
+  const courses = await api.get(`${baseUrl}/courses`);
+  return courses;
+}
+
+export async function getAllSchools() {
+  const schools = await api.get(`${baseUrl}/schools`);
+  return schools;
+}
+
+export async function getASchoolBySlugOrId(id) {
+  const school = await api.get(`${baseUrl}/schools/${id}`);
+  return school;
+}
+
 // mutations
 
 export async function mutateEnquires(enquiryData) {
