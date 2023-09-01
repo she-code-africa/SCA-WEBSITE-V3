@@ -55,6 +55,9 @@ export const apiConstants = {
   companyCategory: "companyCategory",
   jobTypes: "jobTypes",
   jobCategory: "jobCategory",
+  courses: "allCourses",
+  academy: "academy",
+  school: "school",
 };
 
 export const communityFaq = [

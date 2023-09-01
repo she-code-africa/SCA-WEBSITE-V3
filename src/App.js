@@ -26,16 +26,13 @@ import Privacy from "./pages/Privacy";
 import CodeOfConduct from "./pages/CoC";
 import FAQ from "./pages/FAQ";
 import PageNotFound from "./pages/NotFound";
-import SchoolOfEngineering from "./pages/SchoolOfEngineering";
-import SchoolOfProduct from "./pages/SchoolOfProducts";
-import SchoolOfAppliedSkills from "./pages/SchoolOfAppliedSkills";
-import StemSchool from "./pages/StemSchool";
 import Volunteer from "./pages/Volunteer";
 import Initiatives from "./pages/Initiatives";
 import Hire from "./pages/Hire";
 import Community from "./pages/Community";
 import "./styles/app.scss";
 import PrivateRoutes from "./components/PrivateRoutes";
+import AcademyPage from "./pages/Academy";
 
 const queryClient = new QueryClient();
 
@@ -57,10 +54,7 @@ function Routes(params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
-      <Route path={paths.engineering} element={<SchoolOfEngineering />} />
-      <Route path={paths.stemSchool} element={<StemSchool />} />
-      <Route path={paths.products} element={<SchoolOfProduct />} />
-      <Route path={paths.appliedSkills} element={<SchoolOfAppliedSkills />} />
+      <Route path="/academy/:slug" element={<AcademyPage />} />
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />

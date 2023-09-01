@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
-import { paths } from "../../utils/index";
-import {
-  programsList,
-  onlineCoursesList,
-  youtubeVideos,
-} from "../../utils/index";
+import { Link, useParams } from "react-router-dom";
+import { apiConstants, paths } from "../../utils/index";
+import { programsList, youtubeVideos } from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
+import * as components from "../../components";
+import { useQuery } from "@tanstack/react-query";
+import { getASchoolBySlugOrId, getAllSchools } from "../../services";
 
-const SchoolOfEngineering = () => {
+const AcademyPage = () => {
+  const { slug } = useParams();
+
+  const { data, isLoading } = useQuery([apiConstants.school, slug], () =>
+    getASchoolBySlugOrId(slug)
+  );
+
   return (
     <>
       <Helmet>
@@ -36,7 +41,11 @@ const SchoolOfEngineering = () => {
       <Header />
       <section
         className="h-[430px] flex-col flex justify-center"
-        style={{ background: 'radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)' }}>
+        style={{
+          background:
+            "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
+        }}
+      >
         <div className="lg:w-7/12 md:w-9/12 md:px-20 px-9">
           <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
             Empowering women to innovate the digital world, one engineer at a
@@ -44,6 +53,7 @@ const SchoolOfEngineering = () => {
           </h1>
         </div>
       </section>
+
       <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
         <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
           Currently On
@@ -52,8 +62,9 @@ const SchoolOfEngineering = () => {
           return (
             <div
               key={content.id}
-              className={`${index % 2 ? "flex-row-reverse" : "flex-row"
-                } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+              className={`${
+                index % 2 ? "flex-row-reverse" : "flex-row"
+              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
             >
               <img
                 className="text-center md:w-96"
@@ -73,35 +84,8 @@ const SchoolOfEngineering = () => {
           );
         })}
       </section>
-      <section className="bg-[#F9F9F9] my-14 lg:my-28 ">
-        <div className="max-w-[80rem] 2xl:max-w-[90rem] mx-auto py-12 lg:py-20">
-          <h2 className="text-3xl font-semibold pb-2 text-primary-dark-brown lg:text-4xl text-center">
-            Online Course
-          </h2>
-          <div className="flex-col md:flex-row flex items-center justify-center gap-5">
-            {onlineCoursesList.map((content) => {
-              return (
-                <div
-                  key={content.id}
-                  className="text-center lg:text-left mt-8 mb-0 lg:mb-24 "
-                >
-                  <img
-                    className="text-center md:w-96"
-                    src={content.image}
-                    alt="courses"
-                  />
-                  <div className="text-dark-blue text-[13px] font-medium">
-                    <p className="pt-4 pb-1">{content.description}</p>
-                    <a href={"/"} className="underline">
-                      Apply
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <components.OnlineCourses />
+
       <section className="my-14 lg:my-28 mx-auto">
         <h2 className="text-3xl font-semibold pb-14 lg:text-4xl text-center">
           Success Stories
@@ -143,7 +127,10 @@ const SchoolOfEngineering = () => {
             school and take your business to the next level by building a
             skilled and diverse team
           </p>
-          <Link to={paths.hire} className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
+          <Link
+            to={paths.hire}
+            className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink"
+          >
             Hire Our Talent
           </Link>
         </div>
@@ -153,4 +140,4 @@ const SchoolOfEngineering = () => {
   );
 };
 
-export default SchoolOfEngineering;
+export default AcademyPage;
