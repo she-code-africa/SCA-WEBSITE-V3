@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -8,7 +8,7 @@ import { programsList, youtubeVideos } from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
 import * as components from "../../components";
 import { useQuery } from "@tanstack/react-query";
-import { getASchoolBySlugOrId } from "../../services";
+import { getASchoolBySlugOrId, getAllSchools } from "../../services";
 
 const AcademyPage = () => {
   const { slug } = useParams();
@@ -16,12 +16,6 @@ const AcademyPage = () => {
   const { data, isLoading } = useQuery([apiConstants.school, slug], () =>
     getASchoolBySlugOrId(slug)
   );
-
-  if (isLoading) {
-    console.log("loading...");
-  } else {
-    console.log(data);
-  }
 
   return (
     <>
@@ -59,6 +53,7 @@ const AcademyPage = () => {
           </h1>
         </div>
       </section>
+
       <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
         <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
           Currently On

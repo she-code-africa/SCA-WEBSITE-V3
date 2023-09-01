@@ -7,22 +7,32 @@ import { apiConstants, paths } from "../../utils";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
 
-const Header = ({ page }) => {
-  const { data, isLoading } = useQuery([apiConstants.academy], getAllSchools);
+const Header = () => {
+  const { data, isLoading, isFetching } = useQuery(
+    [apiConstants.academy],
+    getAllSchools
+  );
+  const [schoolList, setSchoolList] = useState([]);
+
+  useEffect(() => {
+    if (!isLoading && !isFetching) {
+      const list = data.map((school) => {
+        return {
+          to: `/academy/${school.slug}`,
+          text: school.name,
+        };
+      });
+
+      setSchoolList(list);
+    }
+  }, [data, isFetching, isLoading]);
 
   const menus = [
     { to: paths.home, text: "Home" },
     {
       to: paths.about,
       text: "Academy",
-      list:
-        !isLoading &&
-        data.map((schools) => {
-          return {
-            to: `/academy/${schools._id}`,
-            text: schools.name,
-          };
-        }),
+      list: schoolList,
     },
     {
       to: paths.chapters,
