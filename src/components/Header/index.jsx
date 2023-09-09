@@ -15,7 +15,14 @@ const Header = () => {
   const [schoolList, setSchoolList] = useState([]);
 
   useEffect(() => {
-    if (!isLoading && !isFetching) {
+    if (isLoading && isFetching) {
+      setSchoolList([
+        {
+          to: "#",
+          text: "Loading...",
+        },
+      ]);
+    } else {
       const list = data.map((school) => {
         return {
           to: `/academy/${school.slug}`,

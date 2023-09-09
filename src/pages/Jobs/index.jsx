@@ -7,8 +7,7 @@ import Footer from "../../components/Footer";
 import Dropdown from "../../components/Dropdown";
 import Loading from "../../components/Loading";
 import Error from "../../components/Error";
-import { paths } from "../../utils";
-import { apiConstants } from "../../utils";
+import { paths, apiConstants } from "../../utils";
 import { getJobs } from "../../services";
 
 const Jobs = () => {

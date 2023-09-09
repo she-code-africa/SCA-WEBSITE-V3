@@ -42,7 +42,7 @@ const PostJob = () => {
       toast.success("Job Created Successfully!", {
         position: toast.POSITION.TOP_RIGHT,
       });
-      navigate(paths.jobsnp, {
+      navigate(paths.jobs, {
         replace: true,
       });
     },
