@@ -39,14 +39,14 @@ const Profile = () => {
       <Header page={"jobs"} />
       <main>
         <Dropdown userName={contactName !== null ? contactName.name : null} />
-        <section className="md:w-6/12 w-11/12 mx-auto flex flex-col items-center __shecodeheader_text my-10">
+        <section className="md:w-[80%] w-11/12 mx-auto flex flex-col items-center __shecodeheader_text my-10">
           <div className=" text-center my-5">
-            <h1 className="text-primary-dark-pink text-center font-bold md:text-[50px] sm:text-[35px] text-2xl leading-[1.1]">
+            <h1 className="text-primary-dark-pink text-center font-bold md:text-[50px] sm:text-[35px] text-2xl leading-[1.1] w-full">
               Welcome, {contactName !== null ? contactName.name : null}
             </h1>
           </div>
           <div className="__shecodeheader_subtitle">
-            <p className="text-center">
+            <p className="text-center max-w-[400px] md:max-w-[600px] w-full">
               We are a non-profit organization focused on celebrating and
               empowering young girls and women in technology across Africa.
             </p>
@@ -59,7 +59,7 @@ const Profile = () => {
           </Link>
         </section>
 
-        <section className="md:w-7/12 w-11/12 mx-auto __jobs_preview my-10 text-[#707070]">
+        <section className="md:w-[80%] w-11/12 lg:w-[60%] mx-auto __jobs_preview my-10 text-[#707070]">
           <h3 className="text-center job-type-header text-2xl font-medium text-gray-800">
             Published Jobs
           </h3>
@@ -70,11 +70,11 @@ const Profile = () => {
           ) : (
             <>
               {publishedJobs.length > 0 ? (
-                <div className="my-6 md:grid grid-cols-2 flex flex-wrap items-stretch gap-10">
+                <div className="my-6 grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
                   {publishedJobs.map((job, index) => (
                     <article
                       key={job._id}
-                      className="border border-[#dcdcdc] px-10 py-10 rounded-t-none rounded-br-[50px] rounded-bl-none flex flex-col items-stretch"
+                      className="border border-[#dcdcdc] px-10 py-10 rounded-t-none rounded-br-[50px] rounded-bl-none flex flex-col items-stretch max-w-[300px] w-full md:max-w-none mx-auto"
                     >
                       <h4 className="text-2xl font-medium my-5">{job.title}</h4>
                       <p className="text-base mb-4">{job.location}</p>

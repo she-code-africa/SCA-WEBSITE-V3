@@ -77,7 +77,7 @@ const AcademyPage = () => {
                         </h1>
 
                         <p className="text-2xl  mx-auto font-semibold text-[#1A1A1A] lg:leading-[1.5]">
-                          {school?.description}
+                          {school.description || ""}
                         </p>
                       </div>
                     );
@@ -112,21 +112,27 @@ const AcademyPage = () => {
                         index % 2 ? "flex-row-reverse" : "flex-row"
                       } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
                     >
-                      <img
-                        className="text-center md:w-96"
-                        src={programImage}
-                        alt={content.title}
-                      />
-                      <div className="text-primary-dark-brown">
+                      <figure className="m-0 p-0 max-w-[400px] w-full h-[400px] mx-auto md:mx-0">
+                        <img
+                          className="w-full h-full object-contain"
+                          src={content.image || programImage}
+                          alt={content.title}
+                        />
+                      </figure>
+
+                      <div className="text-primary-dark-brown flex flex-col items-center mt-5 md:block">
                         <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
                           {content.title}
                         </h3>
-                        <p className="py-4 font-medium">
+                        <p className="py-4 font-medium mb-5 text-center md:text-left">
                           {content.briefContent}. {content.extendedContent}
                         </p>
-                        <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
+                        <Link
+                          to={content.link || "#"}
+                          className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink "
+                        >
                           Apply
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   );
@@ -184,10 +190,10 @@ const AcademyPage = () => {
             {" "}
             <img className="w-52" src={bglineImage} alt="bg-line" />
           </div>
-          <h2 className="font-normal text-4xl text-primary-dark-brown">
+          <h2 className="font-normal text-4xl text-primary-dark-brown text-center w-[90%] mx-auto">
             Hire Our Graduates
           </h2>
-          <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
+          <p className="text-sm lg:text-base py-6 text-center w-[90%] mx-auto sm:max-w-[500px] md:max-w-[600px] md:w-full">
             Access a pool of talented engineers from our renowned engineering
             school and take your business to the next level by building a
             skilled and diverse team
