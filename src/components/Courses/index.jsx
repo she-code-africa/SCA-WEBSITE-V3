@@ -22,7 +22,7 @@ const OnlineCourses = ({ data }) => {
                 <div className="text-dark-blue text-[13px] font-medium">
                   <p className="pt-4 pb-1">{content.shortDescription}</p>
                   <a href={content.applicationLink} className="underline">
-                    Apply
+                    View Course
                   </a>
                 </div>
               </div>
