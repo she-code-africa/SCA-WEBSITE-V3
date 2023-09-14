@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Event = ({ event, isUpcoming }) => {
   return (
@@ -22,12 +21,14 @@ const Event = ({ event, isUpcoming }) => {
         {/* text-ellipsis whitespace-nowrap overflow-hidden h-[100px] */}
         {isUpcoming ?
           <div className="flex mt-5 justify-center 2md:justify-start">
-            <Link
-              to={event.link ? event.link : "#"}
+            <a
+              href={event.link ? event.link : "#"}
+              target="_blank"
               className="bg-primary-main-pink text-white py-[14px] px-8 rounded-[30px] capitalize text-sm transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
+              rel="noreferrer"
             >
               register now
-            </Link>
+            </a>
           </div>
           : null}
 
