@@ -77,8 +77,7 @@ const AcademyPage = () => {
                         </h1>
 
                         <p className="text-2xl  mx-auto font-semibold text-[#1A1A1A] lg:leading-[1.5]">
-                          Empowering women to innovate the digital world, one
-                          engineer at a time.
+                          {school?.description}
                         </p>
                       </div>
                     );
@@ -126,7 +125,7 @@ const AcademyPage = () => {
                           {content.briefContent}. {content.extendedContent}
                         </p>
                         <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
-                          Try your luck
+                          Apply
                         </button>
                       </div>
                     </div>

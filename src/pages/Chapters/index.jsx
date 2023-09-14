@@ -191,15 +191,6 @@ const Chapters = () => {
                 onChange={handleChange}
               />
             </div>
-
-            <div className="w-[109px] h-[46px] bg-community-pink-bg text-charcoal rounded-[30px]">
-              <button
-                className="w-full h-full"
-                onClick={() => handleClick(searchValue)}
-              >
-                Search
-              </button>
-            </div>
           </div>
 
           {searchNotFound && (
