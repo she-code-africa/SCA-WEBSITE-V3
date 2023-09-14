@@ -7,15 +7,31 @@ import { apiConstants, paths } from "../../utils/index";
 import { programsList, youtubeVideos } from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
 import * as components from "../../components";
-import { useQuery } from "@tanstack/react-query";
-import { getASchoolBySlugOrId, getAllSchools } from "../../services";
+import { isError, useQuery } from "@tanstack/react-query";
+import { getAllSchools } from "../../services";
+import programImage from "../../images/academy/cloud-program.svg";
 
 const AcademyPage = () => {
   const { slug } = useParams();
-
-  const { data, isLoading } = useQuery([apiConstants.school, slug], () =>
-    getASchoolBySlugOrId(slug)
+  const [school, setSchool] = useState([]);
+  const { data, isLoading, isError } = useQuery(
+    [apiConstants.academy],
+    getAllSchools
   );
+
+  useEffect(() => {
+    if (!isLoading) {
+      const schools = data.filter((school, id) => {
+        return school.slug.toLowerCase() === slug.toLowerCase();
+      });
+
+      setSchool(schools);
+    }
+  }, [data, isLoading, slug]);
+
+  if (isError) {
+    return <components.Error />;
+  }
 
   return (
     <>
@@ -47,44 +63,94 @@ const AcademyPage = () => {
         }}
       >
         <div className="lg:w-7/12 md:w-9/12 md:px-20 px-9">
-          <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
-            Empowering women to innovate the digital world, one engineer at a
-            time.
-          </h1>
+          {isLoading ? (
+            <components.Loading />
+          ) : (
+            <>
+              {school.length > 0 ? (
+                <>
+                  {school.map((school) => {
+                    return (
+                      <div key={school._id}>
+                        <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px] mb-5">
+                          {school.name}
+                        </h1>
+
+                        <p className="text-2xl  mx-auto font-semibold text-[#1A1A1A] lg:leading-[1.5]">
+                          Empowering women to innovate the digital world, one
+                          engineer at a time.
+                        </p>
+                      </div>
+                    );
+                  })}
+                </>
+              ) : (
+                <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
+                  Empowering women to innovate the digital world, one engineer
+                  at a time.
+                </h1>
+              )}
+            </>
+          )}
         </div>
       </section>
 
-      <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
-        <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
-          Currently On
-        </h2>
-        {programsList.map((content, index) => {
-          return (
-            <div
-              key={content.id}
-              className={`${
-                index % 2 ? "flex-row-reverse" : "flex-row"
-              } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
-            >
-              <img
-                className="text-center md:w-96"
-                src={content.image}
-                alt={content.title}
-              />
-              <div className="text-primary-dark-brown">
-                <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
-                  {content.title}
-                </h3>
-                <p className="py-4 font-medium">{content.description}</p>
-                <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
-                  Try your luck
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </section>
-      <components.OnlineCourses />
+      {isLoading ? (
+        <components.Loading />
+      ) : (
+        <>
+          {school.length > 0 && (
+            <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
+              <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
+                Current Programs
+              </h2>
+              {school[0].schoolPrograms.length > 0 ? (
+                school[0].schoolPrograms.map((content, index) => {
+                  return (
+                    <div
+                      key={content._id}
+                      className={`${
+                        index % 2 ? "flex-row-reverse" : "flex-row"
+                      } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+                    >
+                      <img
+                        className="text-center md:w-96"
+                        src={programImage}
+                        alt={content.title}
+                      />
+                      <div className="text-primary-dark-brown">
+                        <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
+                          {content.title}
+                        </h3>
+                        <p className="py-4 font-medium">
+                          {content.briefContent}. {content.extendedContent}
+                        </p>
+                        <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
+                          Try your luck
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <h1 className="text-xl text-center mt-5 mx-auto font-normal text-[#1A1A1A] lg:leading-[72px]">
+                  No ongoing programs.
+                </h1>
+              )}
+            </section>
+          )}
+        </>
+      )}
+
+      {isLoading ? (
+        <components.Loading />
+      ) : (
+        <>
+          {school.length > 0 && school[0].courses.length && (
+            <components.OnlineCourses data={school[0].courses} />
+          )}
+        </>
+      )}
 
       <section className="my-14 lg:my-28 mx-auto">
         <h2 className="text-3xl font-semibold pb-14 lg:text-4xl text-center">
