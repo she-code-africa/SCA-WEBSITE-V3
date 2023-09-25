@@ -4,12 +4,11 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Link, useParams } from "react-router-dom";
 import { apiConstants, paths } from "../../utils/index";
-import { programsList, youtubeVideos } from "../../utils/index";
+import { youtubeVideos } from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
 import * as components from "../../components";
-import { isError, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
-import programImage from "../../images/academy/cloud-program.svg";
 
 const AcademyPage = () => {
   const { slug } = useParams();

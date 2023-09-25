@@ -21,7 +21,7 @@ import gallery1 from "../../images/homepage/gallery-sca.png";
 import gallery2 from "../../images/homepage/gallery-two.png";
 import gallery3 from "../../images/homepage/gallery-3.png";
 import hireTalent from "../../images/homepage/hire-talent.png";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getPartners } from "../../services";
 import * as components from "../../components";
 
