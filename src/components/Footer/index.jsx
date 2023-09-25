@@ -75,7 +75,7 @@ const Footer = () => {
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">Community</p>
                             <Link to={paths.events} className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu">Upcoming Events</Link>
                             <a href="https://bit.ly/joinshecodeafrica" target="_blank" rel="noreferrer" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Join Our Slack Community</a>
-                            <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link>
+                            {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
                             <div className="block mb-5">Follow Us On Social Media</div>
                             <div className="flex gap-x-5 mb-5">
                                 <a href="https://www.instagram.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
