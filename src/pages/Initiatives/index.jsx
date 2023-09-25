@@ -190,7 +190,7 @@ const Initiatives = () => {
 
               <div className="mt-7 flex">
                 <Link
-                  to="#"
+                  to="/donate-partner"
                   className="px-10 py-3 bg-community-pink-bg text-lg font-medium rounded-[30px] text-charcoal hover:text-primary-main-pink"
                 >
                   Join the campaign

@@ -15,7 +15,7 @@ const OnlineCourses = ({ data }) => {
                 className="text-center lg:text-left mt-8 mb-0 lg:mb-24 "
               >
                 <img
-                  className="text-center md:w-96"
+                  className="text-center md:w-96 object-contain h-[300px]"
                   src={content.image}
                   alt="courses"
                 />

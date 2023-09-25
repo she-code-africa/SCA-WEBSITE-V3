@@ -108,13 +108,12 @@ const AcademyPage = () => {
                   return (
                     <div
                       key={content._id}
-                      className={`${
-                        index % 2 ? "flex-row-reverse" : "flex-row"
-                      } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+                      className={`${index % 2 ? "flex-row-reverse" : "flex-row"
+                        } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
                     >
                       <img
-                        className="text-center md:w-96"
-                        src={programImage}
+                        className="text-center md:w-96 object-contain h-[200px]"
+                        src={content.image}
                         alt={content.title}
                       />
                       <div className="text-primary-dark-brown">
