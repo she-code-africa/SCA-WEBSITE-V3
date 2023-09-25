@@ -71,7 +71,7 @@ const AcademyPage = () => {
                   {school.map((school) => {
                     return (
                       <div key={school._id}>
-                        <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px] mb-5">
+                        <h1 className="text-4xl mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px] mb-5">
                           {school.name}
                         </h1>
 
