@@ -40,14 +40,14 @@ const index = ({ display, toggleModal, type }) => {
                                         <h5>Wire Transfer</h5>
                                     </button>
                                 </div>
-                                <div>
+                                {/* <div>
                                     <div className="box ">
                                         <a href="https://donation.lazerpay.finance?title=she-code-africa" target="_blank" rel="noreferrer">
                                             <h5>Crypto Donation</h5>
                                         </a>
 
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             <hr />
                             <div className="tab-content">
