@@ -111,7 +111,7 @@ const Chapters = () => {
       </Helmet>
       <Header page={"chapters"} />
       <main className=" text-secondary-main-black">
-        <section className=" bg-hero-bg-gradient">
+        <section className=" bg-hero-bg-gradient pt-16 md:pt-24 lg:pt-28">
           <div className="w-90 mx-auto min-h-[600px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
             <div className="w-full max-w-[587px] ">
               <h1 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto 2md:text-left">

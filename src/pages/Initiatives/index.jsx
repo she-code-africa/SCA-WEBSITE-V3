@@ -20,16 +20,19 @@ import speakers from "../../images/volunteerImgs/speakers.png";
 import JoinUs from "../../components/JoinUs";
 
 const Initiatives = () => {
-  const { data, isError, isLoading, isSuccess } = useQuery([apiConstants.initiatives], getInitiatives)
-  const [initiatives, setInitiatives] = useState([])
+  const { data, isError, isLoading, isSuccess } = useQuery(
+    [apiConstants.initiatives],
+    getInitiatives
+  );
+  const [initiatives, setInitiatives] = useState([]);
 
   useEffect(() => {
     if (isSuccess) {
-      setInitiatives(data)
+      setInitiatives(data);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading])
+  }, [isLoading]);
 
   return (
     <>
@@ -55,7 +58,7 @@ const Initiatives = () => {
       <Header page={"initiatives"} />
       <main className=" text-secondary-main-black">
         <section className=" bg-hero-bg-gradient">
-          <div className="min-h-screen flex items-center">
+          <div className="min-h-screen flex items-center pt-16 md:pt-36">
             <initiativeComponents.InitiativeHeroSlider />
           </div>
         </section>
@@ -65,22 +68,25 @@ const Initiatives = () => {
             our initiatives
           </h2>
 
-          {isError ? <Error /> :
-            isLoading ? <Loading /> :
-              <div className="mt-24 w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-                {initiatives?.map((initiative) => {
-                  return (
-                    <initiativeComponents.InitiativeCard
-                      key={initiative._id}
-                      name={initiative.name}
-                      description={initiative.description}
-                      isAvailable={initiative.isAvailable}
-                      link={initiative.link}
-                    />
-                  );
-                })}
-              </div>
-          }
+          {isError ? (
+            <Error />
+          ) : isLoading ? (
+            <Loading />
+          ) : (
+            <div className="mt-24 w-9/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+              {initiatives?.map((initiative) => {
+                return (
+                  <initiativeComponents.InitiativeCard
+                    key={initiative._id}
+                    name={initiative.name}
+                    description={initiative.description}
+                    isAvailable={initiative.isAvailable}
+                    link={initiative.link}
+                  />
+                );
+              })}
+            </div>
+          )}
         </section>
 
         <section className="bg-community-pink-bg mt-[120px] py-[100px]">

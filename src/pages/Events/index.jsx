@@ -45,7 +45,7 @@ const Events = () => {
       <Header page={"events"} />
 
       <main className=" text-secondary-main-black">
-        <section className=" bg-hero-bg-gradient">
+        <section className=" bg-hero-bg-gradient pt-16 md:pt-28">
           <div className="w-90 mx-auto min-h-[600px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
             <div className="w-full max-w-[606px] ">
               <h1 className="hero-heading capitalize font-black text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto 2md:text-left">

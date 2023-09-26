@@ -60,7 +60,7 @@ const Home = () => {
       <Header page={"home"} />
 
       <main className=" text-secondary-main-black">
-        <section className="min-h-screen bg-hero-bg-gradient">
+        <section className="min-h-screen bg-hero-bg-gradient pt-16 lg:pt-24">
           <div className="w-90 mx-auto py-8 min-h-[600px]  flex flex-col justify-center">
             <h1 className="hero-heading capitalize  font-bold text-[48px] md:text-[56px] 2md:text-[64px] text-center leading-[150%] mx-auto">
               empowering women in tech across{" "}

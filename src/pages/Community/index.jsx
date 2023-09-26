@@ -9,23 +9,22 @@ import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Community = () => {
-
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
   const imgRef = useRef();
 
   useEffect(() => {
     const _imgRef = imgRef.current;
 
     _imgRef.addEventListener(`load`, () => {
-      console.log('loading');
+      console.log("loading");
       if (_imgRef.complete) {
         setIsLoaded(true);
       }
     });
     return () => {
-      _imgRef.removeEventListener('load', () => { })
+      _imgRef.removeEventListener("load", () => {});
     };
-  }, [imgRef])
+  }, [imgRef]);
 
   console.log({ isLoaded });
 
@@ -52,7 +51,7 @@ const Community = () => {
       </Helmet>
       <Header />
       <main className=" text-secondary-main-black">
-        <section className=" bg-primary-main-pink">
+        <section className=" bg-primary-main-pink pt-16 md:pt-24 lg:pt-28">
           <div className="w-90 mx-auto min-h-[541px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0 star-bg">
             <div className="w-full max-w-[832px] mx-auto">
               <h1 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white">
@@ -87,18 +86,24 @@ const Community = () => {
 
         <section className="w-90 mx-auto flex justify-center mt-[-50px]">
           <figure className="m-0 p-0 block">
-
             <img
               src={newsletterLogo}
               alt="loading slack channel"
-              className={`animate__animated ${isLoaded ? 'hidden animate__fadeOut' : 'inline-block'} h-[500px] blur-sm brightness-80`}
+              className={`animate__animated ${
+                isLoaded ? "hidden animate__fadeOut" : "inline-block"
+              } h-[500px] blur-sm brightness-80`}
             />
             <img
               src={communityImg}
               ref={imgRef}
               alt="community slack channel"
-              className={`animate__animated ${isLoaded ? 'animate__fadeIn opacity-100 static' : 'opacity-0 absolute'} h-[500px] blur-0 brightness-100`}
-              loading="lazy" />
+              className={`animate__animated ${
+                isLoaded
+                  ? "animate__fadeIn opacity-100 static"
+                  : "opacity-0 absolute"
+              } h-[500px] blur-0 brightness-100`}
+              loading="lazy"
+            />
           </figure>
         </section>
 
@@ -113,9 +118,7 @@ const Community = () => {
                 className={`border-2 border-primary-main-pink flex justify-center items-center min-h-[120px] px-6 ${item.bg} rounded-[20px]`}
                 key={index}
               >
-                <p className="text-lg text-center text-black">
-                  {item.text}
-                </p>
+                <p className="text-lg text-center text-black">{item.text}</p>
               </div>
             ))}
           </div>
