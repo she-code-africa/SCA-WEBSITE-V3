@@ -55,7 +55,7 @@ const AcademyPage = () => {
       </Helmet>
       <Header />
       <section
-        className="h-[430px] flex-col flex justify-center"
+        className="h-[430px] flex-col flex justify-center pt-16 lg:pt-24"
         style={{
           background:
             "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
@@ -107,8 +107,9 @@ const AcademyPage = () => {
                   return (
                     <div
                       key={content._id}
-                      className={`${index % 2 ? "flex-row-reverse" : "flex-row"
-                        } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+                      className={`${
+                        index % 2 ? "flex-row-reverse" : "flex-row"
+                      } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
                     >
                       <img
                         className="text-center md:w-96 object-contain h-[200px]"

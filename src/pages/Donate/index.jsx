@@ -14,7 +14,10 @@ const Donate = () => {
   const [modal, setModal] = useState(false);
   const [type, setType] = useState("");
 
-  const { isLoading, isError, data } = useQuery([apiConstants.partners], getPartners);
+  const { isLoading, isError, data } = useQuery(
+    [apiConstants.partners],
+    getPartners
+  );
 
   const toggleModal = (type) => {
     setType(type);
@@ -46,7 +49,7 @@ const Donate = () => {
       <DonateModal display={modal} type={type} toggleModal={toggleModal} />
       <main>
         <section className="__shecodeheader">
-          <div className="container mx-auto px-4 lg:px-20">
+          <div className="container mx-auto px-4 lg:px-20 pt-[100px] md:pt-[150px]">
             <div className="flex justify-center items-center -mx-4">
               <div className="sm:w-7/12 px-4">
                 <div className="__shecodeheader_text">
@@ -77,12 +80,13 @@ const Donate = () => {
         </section>
         <section>
           <div className="section-whitespace-top">
-            {isError ? <components.Error /> :
-              isLoading ? (
-                <components.Loading />
-              ) : (
-                <homecomponents.PartnersLogoSlider partnersData={data} />
-              )}
+            {isError ? (
+              <components.Error />
+            ) : isLoading ? (
+              <components.Loading />
+            ) : (
+              <homecomponents.PartnersLogoSlider partnersData={data} />
+            )}
           </div>
         </section>
         <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top clear-both">

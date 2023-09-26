@@ -49,11 +49,11 @@ const Jobs = () => {
         />
       </Helmet>
       <Header page={"jobs"} />
-      <main>
+      <main className="pt-[100px] md:pt-[150px]">
         {userDetails !== null ? (
           <Dropdown userName={contactName !== null ? contactName.name : null} />
         ) : null}
-        <section className="md:w-6/12 w-11/12 mx-auto flex flex-col items-center __shecodeheader_text my-10">
+        <section className="md:w-6/12 w-11/12 mx-auto flex flex-col items-center __shecodeheader_text my-10 ">
           <div className=" text-center my-5">
             <h1 className="text-primary-dark-pink text-center font-bold md:text-[50px] sm:text-[35px] text-2xl leading-[1.1]">
               JOB OPPORTUNITIES

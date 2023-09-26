@@ -37,7 +37,7 @@ const Profile = () => {
   return (
     <>
       <Header page={"jobs"} />
-      <main>
+      <main className="pt-[100px] md:pt-[150px]">
         <Dropdown userName={contactName !== null ? contactName.name : null} />
         <section className="md:w-6/12 w-11/12 mx-auto flex flex-col items-center __shecodeheader_text my-10">
           <div className=" text-center my-5">
