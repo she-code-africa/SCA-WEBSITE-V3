@@ -13,7 +13,7 @@ import {
 import Event from "../../components/Events";
 import rectangleImg from "../../images/events-page/Rectangle-10171.png";
 import * as components from "../../components";
-import ghanaEvent from "../../images/events-page/ghanaevent.png";
+import eventBanner from "../../images/events-page/events-banner-sca.png";
 
 const Events = () => {
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
@@ -61,8 +61,8 @@ const Events = () => {
             <div className="w-full 2md:w-1/2">
               <figure className="m-0 p-0 w-full max-w-[404px] h-[404px] border-[7px] border-primary-main-pink mx-auto relative">
                 <img
-                  src={ghanaEvent}
-                  alt="ghana event"
+                  src={eventBanner}
+                  alt="event-banner"
                   className="w-full h-full object-cover"
                 />
                 <div className="w-[90px] h-[90px] absolute top-[-45px] left-[-45px] trending-star"></div>
