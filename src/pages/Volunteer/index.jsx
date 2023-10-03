@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { mutateVolunteer } from "../../services";
+import Captcha from "../../components/Captcha";
 
 const defaultFormValue = {
   fullname: "",
@@ -362,6 +363,8 @@ const Volunteer = () => {
                   ) : null}
                 </div>
               ) : null}
+
+              <Captcha />
               <div className="text-center w-full col-span-2">
                 <button
                   type="submit"

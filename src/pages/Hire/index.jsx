@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 import { mutateTalent } from "../../services";
+import Captcha from "../../components/Captcha";
 /**
  *
  * @param {'fullname'|'email'|'company'|'companyLink'|'jobRole| 'experienceLevel'| 'jobDescription'} inputName
@@ -22,6 +23,7 @@ const defaultFormValue = {
 
 const Hire = () => {
   const [formValue, setFormValue] = useState(defaultFormValue);
+
   const hireRequest = useMutation({
     mutationFn: (formData) => mutateTalent(formData),
   });
@@ -192,6 +194,9 @@ const Hire = () => {
                 className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none md:w-11/12 w-full py-8 mt-2 min-h-[150px]"
               ></textarea>
             </div>
+
+            <Captcha />
+
             <div className="flex justify-center col-span-2">
               {hireRequest.isError ? (
                 <div className=" bg-red-800 text-white py-3 px-6 ">
@@ -209,7 +214,7 @@ const Hire = () => {
             <div className="col-span-2 text-center">
               <button
                 type="submit"
-                className="capitalize bg-primary-main-pink text-white hover:bg-opacity-80  border border-primary-main-pink py-4 px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu w-full md:w-3/12 mx-auto font-bold text-lg"
+                className="capitalize bg-primary-main-pink text-white hover:bg-opacity-80  border border-primary-main-pink py-4 px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu w-full md:w-3/12 mx-auto font-bold text-lg disabled:bg-red-700"
                 disabled={hireRequest.isLoading}
               >
                 {hireRequest.isLoading ? (

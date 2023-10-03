@@ -10,6 +10,7 @@ import codes from "../../documents/CountryCodes.json";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { getCompanyCategory, mutateRegisterOrganization } from "../../services";
 import { toast } from "react-toastify";
+import Captcha from "../../components/Captcha";
 
 const initialData = {
   companyName: "",
@@ -55,7 +56,7 @@ const RegisterOrg = () => {
       },
     }
   );
-  const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
+  const { data, isLoading } = useQuery(
     [apiConstants.companyCategory],
     getCompanyCategory
   );
@@ -270,6 +271,8 @@ const RegisterOrg = () => {
               onChange={(e) => comparePassword(e)}
               inpType="password"
             />
+
+            <Captcha />
 
             <div className="flex justify-between">
               <div className="w-5/12">

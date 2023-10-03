@@ -9,6 +9,7 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { mutateOrganizationLogin } from "../../services";
 import jwt_decode from "jwt-decode";
+import Captcha from "../../components/Captcha";
 
 const initialData = {
   email: "",
@@ -89,6 +90,9 @@ const Login = () => {
               inpType="password"
             />
           </div>
+
+          <Captcha />
+
           <Button type="submit" value="LOGIN" className="cursor-pointer" />
         </form>
 
