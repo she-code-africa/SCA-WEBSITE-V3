@@ -7,6 +7,7 @@ import { paths } from "../../../utils";
 import { useMutation } from "@tanstack/react-query";
 import { mutateEditCompany } from "../../../services";
 import { toast } from "react-toastify";
+import Captcha from "../../../components/Captcha";
 // import codes from "../../../documents/CountryCodes.json";
 
 const EditProfile = () => {
@@ -77,6 +78,7 @@ const EditProfile = () => {
                 inpType="password"
               />
             </div>
+            <Captcha />
             <Button
               type="submit"
               value="EDIT COMPANY"

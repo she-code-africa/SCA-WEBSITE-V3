@@ -8,10 +8,10 @@ import Textarea from "../../../components/Textarea";
 import logo from "../../../images/she-code-africa-logo.svg";
 import close from "../../../images/cancel.svg";
 import { apiConstants, paths } from "../../../utils";
-import fields from "../../../documents/Fields.json";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { getJobCategory, getJobTypes, mutatePostJobs } from "../../../services";
 import { toast } from "react-toastify";
+import Captcha from "../../../components/Captcha";
 
 const initialData = {
   title: "",
@@ -35,7 +35,6 @@ const PostJob = () => {
     [apiConstants.jobCategory],
     getJobCategory
   );
-  const contactName = JSON.parse(localStorage.getItem("contactName"));
 
   const { mutate: postJob } = useMutation(mutatePostJobs, {
     onSuccess: (data) => {
@@ -194,6 +193,8 @@ const PostJob = () => {
             inpType="label"
             labelValue='Must Include "http://" or "https://"'
           />
+
+          <Captcha />
 
           <div className="w-full">
             <Button type="submit" value="Submit Job Details" />
