@@ -1,19 +1,17 @@
 /* eslint-disable no-unused-vars */
-import ReCAPTCHA from "react-google-recaptcha";
-import React, { useState } from "react";
+import { GoogleReCaptcha } from "react-google-recaptcha-v3";
+import React, { useCallback, useState } from "react";
 
 const Captcha = () => {
   const [captchaValue, setCaptchaValue] = useState(true);
-  const handleChange = (token) => {
-    if (token) {
-      setCaptchaValue(false);
-    }
-  };
+
+  const handleVerify = useCallback((token) => {
+    setCaptchaValue(token);
+  }, []);
   return (
-    <ReCAPTCHA
-      sitekey={`${process.env.REACT_APP_CAPTCHA_KEY}`}
-      onChange={handleChange}
-    />
+    <>
+      <GoogleReCaptcha onVerify={handleVerify} />
+    </>
   );
 };
 

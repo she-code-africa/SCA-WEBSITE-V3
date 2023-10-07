@@ -35,6 +35,8 @@ const Home = () => {
     getPartners
   );
 
+  console.log("home page");
+
   return (
     <>
       <Helmet>
