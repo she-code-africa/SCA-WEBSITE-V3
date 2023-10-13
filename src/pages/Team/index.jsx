@@ -13,12 +13,9 @@ import TeamCard from "../../components/TeamCard";
 import { apiConstants } from "../../utils";
 import { getTeams } from "../../services";
 
-import heroBg from "../../images/team/bg-image.png";
+import heroBg from "../../images/team/bg-image.jpg";
 import box from "../../images/team/box.png";
 import avatar from "../../images/avatar-300x300.jpeg";
-// import facebookIcon from "../../images/team/facebook-icon.svg";
-// import instagramIcon from "../../images/team/instagram-icon.svg";
-// import twitterIcon from "../../images/team/twitter-icon.svg";
 
 const teamCategories = [
   { name: "All", value: "" },
@@ -162,11 +159,10 @@ const Team = () => {
                   {teamCategories.map((category) => (
                     <button
                       key={category.value}
-                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${
-                        activeSelection === category.value
-                          ? "bg-black text-white"
-                          : "bg-[#F9F9F9] text-black"
-                      }`}
+                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${activeSelection === category.value
+                        ? "bg-black text-white"
+                        : "bg-[#F9F9F9] text-black"
+                        }`}
                       onClick={() => {
                         setActiveSelection(category.value);
                       }}
@@ -223,6 +219,7 @@ const Team = () => {
                         />
                       );
                     }
+                    return <></>
                   })
                 ) : (
                   <div className="text-xl text-center md:col-span-3">
@@ -237,9 +234,8 @@ const Team = () => {
       </main>
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center ${
-          modalOpen ? "flex" : "hidden"
-        }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center ${modalOpen ? "flex" : "hidden"
+          }`}
       >
         <section className="md:w-7/12 w-full bg-[#B70569] text-white min-h-[80dvh] md:min-h-[55vh] rounded-3xl md:p-7 p-4">
           <div className="text-right">
@@ -261,29 +257,7 @@ const Team = () => {
                 {activeTeam?.role || `${activeTeam?.team?.name} member`}
               </h4>
               <p className="leading-8">{activeTeam?.bio}</p>
-              {/* <div className="gap-4 items-center mt-7 hidden">
-                <a
-                  href="https://"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:ring-1 focus:ring-red-300">
-                  <img src={facebookIcon} alt="Go to facebook profile" />
-                </a>
-                <a
-                  href="https://"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:ring-1 focus:ring-red-300">
-                  <img src={instagramIcon} alt="Go to instagram profile" />
-                </a>
-                <a
-                  href="https://"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:ring-1 focus:ring-red-300">
-                  <img src={twitterIcon} alt="Go to twitter profile" />
-                </a>
-              </div> */}
+
             </div>
             <div>
               <img

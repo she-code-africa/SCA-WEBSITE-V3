@@ -1,24 +1,27 @@
 html {
 	scroll-behavior: smooth;
 }
+
 #chapter_banner {
-	background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/chapters.png);
 	height: 450px;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+
 	.banner-text {
 		text-align: center;
 		width: 60%;
 		margin: auto;
 		padding: 10% 0;
+
 		.banner-title {
 			h2 {
 				font-weight: bold;
 				color: #FFFFFF;
 			}
 		}
+
 		.banner-subtitle {
 			p {
 				margin-top: 20px;
@@ -28,9 +31,11 @@ html {
 				line-height: 25px;
 			}
 		}
+
 		.banner-btn {
 			display: flex;
 			justify-content: center;
+
 			button {
 				width: 165px;
 				height: 40px;
@@ -42,37 +47,44 @@ html {
 		}
 	}
 }
+
 .trans-btn {
 	color: #ffffff;
 	border: 2px solid #ffffff;
 	background: transparent;
+
 	&:hover {
 		background: var(--primary-main-pink);
 		color: #fff;
 		border: none;
 	}
+
 	&:focus {
 		background: var(--primary-main-pink);
 		color: #fff;
 		border: none;
 	}
+
 	&:active {
 		background: var(--primary-main-pink);
 		color: #fff;
 		border: none;
 	}
 }
+
 #search {
 	width: 600px;
 	text-align: center;
 	margin: auto;
 	position: relative;
+
 	.search-button {
 		position: absolute;
 		top: 37px;
 		right: 23%;
 		width: 10px;
 	}
+
 	input[type='text'] {
 		width: 350px;
 		height: 40px;
@@ -84,14 +96,17 @@ html {
 		padding: 10px;
 	}
 }
-.__shecode_text{
+
+.__shecode_text {
 	font-size: 30px;
 	color: var(--primary-black);
 }
+
 #chapter-tab {
 	border-bottom: 2px solid #F3F3F3;
 	scroll-behavior: smooth;
 }
+
 .nav {
 	>li {
 		>a {
@@ -99,11 +114,13 @@ html {
 		}
 	}
 }
+
 .nav-tabs {
 	border: 0;
 	text-align: center;
 	width: 315px;
 	margin: auto;
+
 	>li {
 		border: 0;
 		float: left;
@@ -111,14 +128,17 @@ html {
 		text-align: center;
 		padding: 20px 20px 0 12px;
 		width: 50%;
+
 		a {
 			color: #1A1A1A;
 			font-size: 13px;
 			font-weight: bold;
 			cursor: pointer;
 			text-transform: capitalize;
+
 			&:hover {
 				border: 0;
+
 				&:after {
 					content: "";
 					display: block;
@@ -128,8 +148,10 @@ html {
 					border-bottom: 2px solid #B70569;
 				}
 			}
+
 			&:focus {
 				border: 0;
+
 				&:after {
 					content: "";
 					display: block;
@@ -140,8 +162,10 @@ html {
 				}
 			}
 		}
+
 		a.active {
 			border: 0;
+
 			&:after {
 				content: "";
 				display: block;
@@ -153,8 +177,10 @@ html {
 		}
 	}
 }
+
 .tab-content {
 	margin-top: 30px;
+
 	.box {
 		width: 180px;
 		height: 80px;
@@ -162,17 +188,20 @@ html {
 		border-radius: 8px 8px 8px 0px;
 		padding: 6px 20px;
 		margin-bottom: 15px;
+
 		h5 {
 			color: #000000;
 			text-transform: uppercase;
 			font-weight: bold;
 		}
+
 		p {
 			color: #1A1A1ACC;
 			font-size: 12px;
 		}
 	}
 }
+
 @media screen and (min-width:1025px) {
 	.tab-content {
 		.box {
@@ -185,6 +214,7 @@ html {
 		}
 	}
 }
+
 @media screen and (max-width: 768px) and (min-width: 426px) {
 	.nav-tabs {
 		border: 0;
@@ -193,11 +223,13 @@ html {
 		margin: auto;
 	}
 }
+
 @media screen and (max-width: 425px) and (min-width: 376px) {
 	#search {
 		width: auto;
 		text-align: center;
 		margin: auto;
+
 		img {
 			position: absolute;
 			top: 37px;
@@ -205,17 +237,20 @@ html {
 			width: 10px;
 		}
 	}
+
 	.nav-tabs {
 		border: 0;
 		text-align: center;
 		width: 68%;
 		margin: auto;
+
 		>li {
 			a {
 				font-size: 11px;
 			}
 		}
 	}
+
 	#chapter_banner {
 		.banner-text {
 			text-align: center;
@@ -225,14 +260,17 @@ html {
 		}
 	}
 }
+
 @media screen and (max-width: 375px) and (min-width:321px) {
 	#search {
 		width: auto;
 		text-align: center;
 		margin: auto;
+
 		input {
 			width: 280px;
 		}
+
 		img {
 			position: absolute;
 			top: 37px;
@@ -240,17 +278,20 @@ html {
 			width: 10px;
 		}
 	}
+
 	.nav-tabs {
 		border: 0;
 		text-align: center;
 		width: auto;
 		margin: auto;
+
 		>li {
 			a {
 				font-size: 11px;
 			}
 		}
 	}
+
 	#chapter_banner {
 		.banner-text {
 			.banner-btn {
@@ -258,6 +299,7 @@ html {
 					font-size: 11px;
 				}
 			}
+
 			.banner-title {
 				h2 {
 					font-weight: bold;
@@ -265,26 +307,31 @@ html {
 					font-size: 24px;
 				}
 			}
+
 			text-align: center;
 			width: 88%;
 			margin: auto;
 			padding: 10% 0;
 		}
 	}
+
 	.tab-content {
 		.box {
 			width: auto;
 		}
 	}
 }
+
 @media screen and (max-width: 320px) {
 	#search {
 		width: auto;
 		text-align: center;
 		margin: auto;
+
 		input {
 			width: 280px;
 		}
+
 		img {
 			position: absolute;
 			top: 37px;
@@ -292,17 +339,20 @@ html {
 			width: 10px;
 		}
 	}
+
 	.nav-tabs {
 		border: 0;
 		text-align: center;
 		width: auto;
 		margin: auto;
+
 		>li {
 			a {
 				font-size: 11px;
 			}
 		}
 	}
+
 	#chapter_banner {
 		.banner-text {
 			.banner-btn {
@@ -310,6 +360,7 @@ html {
 					font-size: 11px;
 				}
 			}
+
 			.banner-title {
 				h2 {
 					font-weight: bold;
@@ -317,12 +368,14 @@ html {
 					font-size: 24px;
 				}
 			}
+
 			text-align: center;
 			width: 88%;
 			margin: auto;
 			padding: 10% 0;
 		}
 	}
+
 	.tab-content {
 		.box {
 			width: auto;

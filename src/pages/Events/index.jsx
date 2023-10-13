@@ -11,7 +11,7 @@ import {
   sortPastEventsByDate,
 } from "../../utils/helpers";
 import Event from "../../components/Events";
-import rectangleImg from "../../images/events-page/Rectangle-10171.png";
+import rectangleImg from "../../images/events-page/Rectangle-10171.jpg";
 import * as components from "../../components";
 import eventBanner from "../../images/events-page/events-banner-sca.png";
 

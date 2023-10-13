@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import JoinUs from "../../components/JoinUs";
 
-import bgGradient from '../../images/about/bg-gradient.png'
+import bgGradient from '../../images/about/bg-gradient.jpg'
 import mission from '../../images/about/mission-icon.png'
 import vision from '../../images/about/vision-icon.png'
 import teamwork from '../../images/about/teamwork.svg'
