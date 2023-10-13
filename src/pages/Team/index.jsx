@@ -13,7 +13,7 @@ import TeamCard from "../../components/TeamCard";
 import { apiConstants } from "../../utils";
 import { getTeams } from "../../services";
 
-import heroBg from "../../images/team/bg-image.png";
+import heroBg from "../../images/team/bg-image.jpg";
 import box from "../../images/team/box.png";
 import avatar from "../../images/avatar-300x300.jpeg";
 
