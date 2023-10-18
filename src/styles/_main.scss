@@ -187,8 +187,8 @@ h4 {
 }
 
 .nav {
-  >li {
-    >a {
+  > li {
+    > a {
       padding: 0 0 3px;
 
       &:hover {
@@ -229,7 +229,7 @@ h4 {
 ul.nav {
   li.dropdown {
     &:hover {
-      >ul.dropdown-menu {
+      > ul.dropdown-menu {
         display: block;
       }
     }
@@ -485,7 +485,7 @@ li.__shecodelink.active {
 
 .__homepage_image {
   height: 450px;
-  background: transparent url(../images/homepage.svg);
+  _background: transparent url(../images/homepage.svg);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -498,13 +498,14 @@ li.__shecodelink.active {
 }
 
 .event_side {
-  background: transparent url("../images/event_image1.png") no-repeat;
+  _background: transparent url("../images/event_image1.png") no-repeat;
   height: 700px;
   background-size: 100%;
 }
 
 .home_hero {
-  background: transparent url("../images/event_image1.png") 0% 0% no-repeat padding-box;
+  background: transparent url("../images/event_image1.png") 0% 0% no-repeat
+    padding-box;
 }
 
 .home_slack {
@@ -514,19 +515,22 @@ li.__shecodelink.active {
 }
 
 .home_partner {
-  background: transparent url("../images/partner.png") 0% 0% no-repeat padding-box;
+  background: transparent url("../images/partner.png") 0% 0% no-repeat
+    padding-box;
   background-size: contain;
   // background-position: center
 }
 
 .home_social {
-  background: transparent url("../images/social.png") 0% 0% no-repeat padding-box;
+  background: transparent url("../images/social.png") 0% 0% no-repeat
+    padding-box;
   background-size: contain;
   // background-position: center
 }
 
 .home_side_identify {
-  background: transparent url("../images/event_image1.png") 0% 0% no-repeat padding-box;
+  background: transparent url("../images/event_image1.png") 0% 0% no-repeat
+    padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
@@ -542,7 +546,8 @@ li.__shecodelink.active {
 }
 
 .home_side_partner {
-  background: transparent url("../images/event_image3.png") 0% 0% no-repeat padding-box;
+  background: transparent url("../images/event_image3.png") 0% 0% no-repeat
+    padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
@@ -550,7 +555,8 @@ li.__shecodelink.active {
 }
 
 .home_side_follow {
-  background: transparent url("../images/event_image4.png") 0% 0% no-repeat padding-box;
+  background: transparent url("../images/event_image4.png") 0% 0% no-repeat
+    padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
@@ -558,7 +564,8 @@ li.__shecodelink.active {
 }
 
 .program_left_img {
-  background: transparent url("../images/event_image3.png") 0% 0% no-repeat padding-box;
+  background: transparent url("../images/event_image3.png") 0% 0% no-repeat
+    padding-box;
   width: 400px;
   height: 400px;
   background-size: contain;
@@ -786,7 +793,7 @@ li.__shecodelink.active {
   width: 100%;
   height: 100%;
 
-  >img {
+  > img {
     display: block;
     width: 100%;
     height: 100%;
@@ -852,7 +859,6 @@ li.__shecodelink.active {
   }
 
   .__shecodeteammember_details {
-
     // padding: 20px 20px 0 0;
     p {
       margin-top: 20px !important;
@@ -913,7 +919,7 @@ li.__shecodelink.active {
 }
 
 .panel-title {
-  >a {
+  > a {
     &:before {
       float: right !important;
       font-family: FontAwesome;
@@ -934,7 +940,7 @@ li.__shecodelink.active {
     }
   }
 
-  >a.collapsed {
+  > a.collapsed {
     &:before {
       float: right !important;
       content: "\f067";

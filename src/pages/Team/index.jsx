@@ -159,10 +159,11 @@ const Team = () => {
                   {teamCategories.map((category) => (
                     <button
                       key={category.value}
-                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${activeSelection === category.value
-                        ? "bg-black text-white"
-                        : "bg-[#F9F9F9] text-black"
-                        }`}
+                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${
+                        activeSelection === category.value
+                          ? "bg-black text-white"
+                          : "bg-[#F9F9F9] text-black"
+                      }`}
                       onClick={() => {
                         setActiveSelection(category.value);
                       }}
@@ -219,7 +220,7 @@ const Team = () => {
                         />
                       );
                     }
-                    return <></>
+                    // return <></>
                   })
                 ) : (
                   <div className="text-xl text-center md:col-span-3">
@@ -234,8 +235,9 @@ const Team = () => {
       </main>
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center ${modalOpen ? "flex" : "hidden"
-          }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center ${
+          modalOpen ? "flex" : "hidden"
+        }`}
       >
         <section className="md:w-7/12 w-full bg-[#B70569] text-white min-h-[80dvh] md:min-h-[55vh] rounded-3xl md:p-7 p-4">
           <div className="text-right">
@@ -257,7 +259,6 @@ const Team = () => {
                 {activeTeam?.role || `${activeTeam?.team?.name} member`}
               </h4>
               <p className="leading-8">{activeTeam?.bio}</p>
-
             </div>
             <div>
               <img

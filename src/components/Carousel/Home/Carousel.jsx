@@ -1,11 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
-import ADA from "../../../images/ADA.jpg";
-import childrenImage from "../../../images/childrenImage.jpg";
-import carouselimage from "../../../images/carouselImage-1.jpg";
-import Ada from "../../../images/ADA-lazy-loader.jpg";
-import kids from "../../../images/childrenImage-lazy-loader.jpg";
-import carouselLazyLoaderImg from "../../../images/carouselImage-lazyloader.jpg";
+import ADA from "../../../images/ada-rect.jpg";
+import childrenImage from "../../../images/homepage/tinypng1.png";
+import carouselimage from "../../../images/homepage/carouselImage-1.jpg";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -48,7 +45,7 @@ const Carousel = () => {
                 alt="children pics"
                 width={"100%"}
                 height={"100%"}
-                placeholderSrc={kids}
+                placeholderSrc={childrenImage}
                 className="w-full h-full object-cover"
               />
             </figure>
@@ -60,7 +57,7 @@ const Carousel = () => {
                 alt="ada-and-attendees"
                 width={"100%"}
                 height={"100%"}
-                placeholderSrc={carouselLazyLoaderImg}
+                placeholderSrc={carouselimage}
                 className="w-full h-full object-cover"
               />
             </figure>
@@ -72,7 +69,7 @@ const Carousel = () => {
                 alt="ada-image"
                 width={"100%"}
                 height={"100%"}
-                placeholderSrc={Ada}
+                placeholderSrc={ADA}
                 className="w-full h-full object-cover"
               />
             </figure>
@@ -84,7 +81,7 @@ const Carousel = () => {
                 alt="ada-and-attendees"
                 width={"100%"}
                 height={"100%"}
-                placeholderSrc={carouselLazyLoaderImg}
+                placeholderSrc={carouselimage}
                 className="w-full h-full object-cover"
               />
             </figure>

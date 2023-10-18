@@ -16,7 +16,6 @@ const Community = () => {
     const _imgRef = imgRef.current;
 
     _imgRef.addEventListener(`load`, () => {
-      console.log("loading");
       if (_imgRef.complete) {
         setIsLoaded(true);
       }
@@ -25,8 +24,6 @@ const Community = () => {
       _imgRef.removeEventListener("load", () => {});
     };
   }, [imgRef]);
-
-  console.log({ isLoaded });
 
   return (
     <>
