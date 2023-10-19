@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import {
+    faXTwitter,
+    faInstagram,
+    faFacebookF,
+    faMedium,
+    faYoutube,
+    faLinkedinIn,
+    faGithub
+} from "@fortawesome/free-brands-svg-icons";
 import { paths, apiConstants } from "../../utils";
 import { getReports } from "../../services";
 import logo from "../../images/logo-inverted.svg";
-import instagram from "../../images/instagram.svg"
-import facebook from "../../images/facebook.svg"
-import twitter from "../../images/twitter.svg"
+
 
 const Footer = () => {
 
@@ -77,15 +84,27 @@ const Footer = () => {
                             <a href="https://bit.ly/joinshecodeafrica" target="_blank" rel="noreferrer" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Join Our Slack Community</a>
                             {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
                             <div className="block mb-5">Follow Us On Social Media</div>
-                            <div className="flex gap-x-5 mb-5">
+                            <div className="flex gap-x-5 mb-5 text-2xl">
                                 <a href="https://www.instagram.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
-                                    <img src={instagram} alt="instagram" />
+                                    <FontAwesomeIcon icon={faInstagram} />
                                 </a>
                                 <a href="https://www.twitter.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
-                                    <img src={twitter} alt="twitter" />
+                                    <FontAwesomeIcon icon={faXTwitter} />
                                 </a>
                                 <a href="https://www.facebook.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
-                                    <img src={facebook} alt="facebook" />
+                                    <FontAwesomeIcon icon={faFacebookF} />
+                                </a>
+                                <a href="https://medium.com/shecodeafrica" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                    <FontAwesomeIcon icon={faMedium} />
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCNZzVEyJege5-d_ekKw6dFA" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                    <FontAwesomeIcon icon={faYoutube} />
+                                </a>
+                                <a href="https://www.linkedin.com/company/she-code-africa/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                    <FontAwesomeIcon icon={faLinkedinIn} />
+                                </a>
+                                <a href="https://www.linkedin.com/company/she-code-africa/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                    <FontAwesomeIcon icon={faGithub} />
                                 </a>
                             </div>
                         </div>

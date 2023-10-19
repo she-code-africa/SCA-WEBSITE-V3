@@ -8,8 +8,8 @@ export const ImgCard = ({ src, name, role }, index) => {
       <div className="__shecodeteammember_img">
         {src ? <img src={src} alt={name} className="img-responsive" />
           : <div className="w-full h-full flex justify-center items-center">
-              <FontAwesomeIcon icon={faUser} size="10x" className="scale-150 text-gray-500" />
-            </div> }
+            <FontAwesomeIcon icon={faUser} size="10x" className="scale-150 text-gray-500" />
+          </div>}
         <div className="__shecodeteammember_text">
           <h5 className="name">{name}</h5>
           <p className="role">{role}</p>
