@@ -281,14 +281,12 @@ const Home = () => {
               legacy.
             </p>
             <div className="md:my-5 my-10">
-              <a
-                href="https://bit.ly/joinshecodeafrica"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to={`${paths.volunteer}#mentor`}
                 className="capitalize bg-primary-main-pink text-white hover:bg-transparent border border-primary-main-pink py-[14px] px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu"
               >
-                Become a member
-              </a>
+                Become a mentor
+              </Link>
             </div>
           </div>
           <div className=" place-self-end">

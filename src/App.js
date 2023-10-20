@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes as Switch, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { paths } from "./utils";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -36,7 +35,7 @@ import AcademyPage from "./pages/Academy";
 
 const queryClient = new QueryClient();
 
-function App() {
+function App () {
   const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,12 +44,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Routes />
       <ToastContainer />
-      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
 
-function Routes(params) {
+function Routes (params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />

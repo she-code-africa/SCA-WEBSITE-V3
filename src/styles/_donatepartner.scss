@@ -200,6 +200,16 @@
       width: 95%;
       margin-bottom: 20px;
     }
+  }
+
+  @media screen and (max-width: 1150px) and (min-width: 1024px) {
+    .__partner-donate {
+      > div {
+        width: 40% !important;
+        height: 570px !important;
+      }
+    }
+
     .__partner-donate_donate-cta {
       _height: 600px;
     }

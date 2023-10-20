@@ -4,14 +4,14 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import JoinUs from "../../components/JoinUs";
 
-import bgGradient from '../../images/about/bg-gradient.jpg'
-import mission from '../../images/about/mission-icon.png'
-import vision from '../../images/about/vision-icon.png'
-import teamwork from '../../images/about/teamwork.svg'
-import community from '../../images/about/community.jpg'
-import growth from '../../images/about/growth.jpg'
-import guidance from '../../images/about/guidance.jpg'
-import support from '../../images/about/support.jpg'
+import bgGradient from "../../images/about/bg-gradient.jpg";
+import mission from "../../images/about/mission-icon.png";
+import vision from "../../images/about/vision-icon.png";
+import teamwork from "../../images/about/teamwork.svg";
+import community from "../../images/about/community.jpg";
+import growth from "../../images/about/new-about-image.jpg";
+import guidance from "../../images/about/guidance.jpg";
+import support from "../../images/about/support.jpg";
 
 const About = () => {
   return (
@@ -178,7 +178,7 @@ const About = () => {
                 className="object-contain h-[350px]"
               />
             </article>
-            <article className="flex md:flex-row-reverse flex-col gap-y-5 md:gap-y-0 items-center justify-between my-6 md:my-0">
+            <article className="flex md:flex-row-reverse flex-col gap-y-5 md:gap-y-0 md:gap-x-5 items-center justify-between my-6 md:my-0">
               <div className="md:w-6/12">
                 <h4 className="text-[#210D15] text-4xl font-semibold mb-3">
                   Monitored Growth
@@ -189,11 +189,14 @@ const About = () => {
                   personal and career goals.
                 </p>
               </div>
-              <img
-                src={growth}
-                alt="four people smiling"
-                className="object-contain h-[350px]"
-              />
+
+              <div className="max-w-[398px] w-full h-[400px] border-[7px] rounded-[42px] overflow-hidden border-primary-main-pink">
+                <img
+                  src={growth}
+                  alt="four people smiling"
+                  className="object-cover h-full w-full"
+                />
+              </div>
             </article>
             <article className="flex flex-col md:flex-row gap-y-5 md:gap-y-0 items-center justify-between my-6 md:my-0">
               <div className="md:w-6/12">
@@ -238,6 +241,6 @@ const About = () => {
       <Footer />
     </>
   );
-}
+};
 
-export default About
+export default About;
