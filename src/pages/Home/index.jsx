@@ -266,12 +266,12 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="bg-black text-white grid md:grid-cols-3 mb-14 relative">
-          <img
+        <section className="bg-black text-white grid md:grid-cols-3 mb-14 relative shape-bg">
+          {/* <img
             src={shape}
             alt="Shape"
             className="absolute w-1/12 translate-x-[50%]"
-          />
+          /> */}
           <div className="md:col-span-2 md:w-7/12 mx-auto grid place-content-center px-5 md:px-0 py-12 md:py-5 lg:py-0">
             <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
               Your next chapter, made possible by mentoring
