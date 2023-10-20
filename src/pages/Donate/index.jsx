@@ -89,7 +89,7 @@ const Donate = () => {
             )}
           </div>
         </section>
-        <section className="__partner-donate flex flex-col md:flex-row justify-center section-whitespace-top clear-both w-[90%] mx-auto">
+        <section className="__partner-donate flex flex-col sm:flex-row gap-5 justify-center section-whitespace-top clear-both w-[90%] mx-auto">
           <DonateCard
             title="PARTNER WITH US"
             first_desc="Work hand-in-hand with us to achieve our goal of reaching more women in technology across Africa!"
