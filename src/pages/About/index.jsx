@@ -9,7 +9,6 @@ import mission from "../../images/about/mission-icon.png";
 import vision from "../../images/about/vision-icon.png";
 import teamwork from "../../images/about/teamwork.svg";
 import community from "../../images/about/community.jpg";
-// import growth from "../../images/about/growth.jpg";
 import growth from "../../images/about/new-about-image.jpg";
 import guidance from "../../images/about/guidance.jpg";
 import support from "../../images/about/support.jpg";
