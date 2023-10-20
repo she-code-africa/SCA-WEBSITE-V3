@@ -5,8 +5,6 @@ import { Helmet } from "react-helmet-async";
 import newsletterLogo from "../../images/community/rectangle-one.jpeg";
 import communityImg from "../../images/community/community-img.png";
 import { whatsinStoreForYou } from "../../utils";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Community = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -121,18 +119,15 @@ const Community = () => {
           </div>
         </section>
 
-        <section className="border-2 border-gamboge pt-8 pr-8 pb-11 pl-9 mt-40 max-w-[820px] w-[90%] mx-auto rounded-[34.6111px] bg-floral-white flex items-center gap-8">
-          <FontAwesomeIcon
-            icon={faTriangleExclamation}
-            className="text-gamboge w-[52px] h-[45px]"
-          />
-
-          <p className="text-seal-brown font-medium">
-            She Code Africa(SCA) Chapters are independent chapters of the SCA
-            community and engagements do not speak directly on behalf of the
-            organisation except where explicitly stated.
-          </p>
-        </section>
+        <div className="flex items-center justify-center mt-20">
+          <a
+            className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal"
+            href="/chapters"
+            rel="noreferrer"
+          >
+            Join An SCA Chapter Around You
+          </a>
+        </div>
 
         <section className="mt-[99px] bg-hero-bg-gradient">
           <div className="w-90 mx-auto min-h-[534px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
