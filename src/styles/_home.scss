@@ -16,6 +16,14 @@ main {
   padding-top: 5px;
 }
 
+.shape-bg {
+  background-repeat: no-repeat, no-repeat;
+  background-image: url("../images/shape-two.png"),
+    url("../images/shape-one.png");
+  background-position: 80px top, top left;
+  background-size: 280px, 200px;
+}
+
 .hero-heading {
   max-width: 1142px;
 }
