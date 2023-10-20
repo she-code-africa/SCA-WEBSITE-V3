@@ -15,7 +15,7 @@ const TeamCard = ({ image, name, teamRole, onClick, onKeyDown }) => {
           <img
             src={image || avatar}
             alt={name}
-            className="rounded-t-2xl" />
+            className="rounded-t-2xl h-[300px] w-full object-cover" />
           <div className="px-5 py-10">
             <h2 className="text-xl font-bold text-[#282828]">{name}</h2>
             <p className="text-base text-[#3E3E59]">{teamRole}</p>

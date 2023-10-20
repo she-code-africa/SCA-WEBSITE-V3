@@ -382,11 +382,11 @@ export const accountInfo = [
 
 export const homepageOurCommunityCards = [
   {
-    heading: "Our Community",
+    heading: "Academy",
     textContent:
-      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+      "Kick off or scale your Tech career through any of our academy programs, fully tailored to meet you at your learning journey with the help of experts.",
     bgImage: "card-body-img-3",
-    link: "/community",
+    link: "/academy/school-of-engineering",
   },
   {
     heading: "Our Communities and Chapters",

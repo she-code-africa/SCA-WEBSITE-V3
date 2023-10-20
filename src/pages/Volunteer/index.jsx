@@ -143,10 +143,10 @@ const Volunteer = () => {
           </div>
         </section>
 
-        <section className="my-32 w-10/12 mx-auto">
+        <section id="mentor" className="my-32 w-10/12 mx-auto">
           <article className="md:flex items-center justify-between my-40">
             <div className="md:w-6/12">
-              <h2 className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
+              <h2 aria-labelledby="mentor" className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
                 Become a mentor.
               </h2>
               <p className="text-lg text-[#210D15] mb-3">
@@ -249,9 +249,8 @@ const Volunteer = () => {
 
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${
-          modalOpen ? "md:flex block" : "hidden"
-        }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${modalOpen ? "md:flex block" : "hidden"
+          }`}
       >
         <section className="bg-white text-[#2D2D2D] h-auto rounded-3xl md:p-7 p-4">
           <div className="flex justify-between items-center mb-5">

@@ -154,16 +154,15 @@ const Team = () => {
             <Loading />
           ) : (
             <div className="w-10/12 lg:w-9/12 mx-auto my-20">
-              <div className="my-10 flex md:flex-row flex-col justify-between gap-y-8">
-                <div className="flex md:flex-row flex-col gap-4 gap-y-8">
+              <div className="my-10 flex lg:flex-row flex-col justify-between gap-y-8">
+                <div className="flex lg:flex-row flex-col gap-4 gap-y-8">
                   {teamCategories.map((category) => (
                     <button
                       key={category.value}
-                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${
-                        activeSelection === category.value
-                          ? "bg-black text-white"
-                          : "bg-[#F9F9F9] text-black"
-                      }`}
+                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${activeSelection === category.value
+                        ? "bg-black text-white"
+                        : "bg-[#F9F9F9] text-black"
+                        }`}
                       onClick={() => {
                         setActiveSelection(category.value);
                       }}
@@ -197,7 +196,7 @@ const Team = () => {
                   </div>
                 </div>
               </div>
-              <div className="my-16 grid md:grid-cols-3 md:gap-32 gap-12">
+              <div className="my-16 grid lg:grid-cols-3 md:grid-cols-2 lg:gap-32 gap-12">
                 {teamMembers?.length ? (
                   teamMembers.map((member, index) => {
                     if (member.team.name.includes(activeSelection)) {
@@ -220,10 +219,10 @@ const Team = () => {
                         />
                       );
                     }
-                    // return <></>
+                    return <></>
                   })
                 ) : (
-                  <div className="text-xl text-center md:col-span-3">
+                  <div className="text-xl text-center lg:col-span-3 md:col-span-2">
                     Team member not found
                   </div>
                 )}
@@ -235,40 +234,41 @@ const Team = () => {
       </main>
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center ${
-          modalOpen ? "flex" : "hidden"
-        }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-30 bg-transparent animate__animated animate__faster ${animatedClass} justify-center items-center xl:w-6/12 lg:w-7/12 md:w-9/12 w-[95%] h-[98dvh] mx-auto overflow-hidden drop-shadow-md ${modalOpen ? `flex` : `hidden`
+          }`}
       >
-        <section className="md:w-7/12 w-full bg-[#B70569] text-white min-h-[80dvh] md:min-h-[55vh] rounded-3xl md:p-7 p-4">
-          <div className="text-right">
-            <button
-              ref={hideModalRef}
-              autoFocus
-              tabIndex={0}
-              onClick={hideModal}
-              className="focus:ring-1 focus:ring-red-300 focus:outline-none"
-              aria-label="close modal"
-            >
-              <FontAwesomeIcon icon={faXmark} size="2x" />
-            </button>
-          </div>
-          <div className="flex items-center justify-center gap-11 md:flex-nowrap flex-wrap">
-            <div className="md:w-7/12 pb-10">
-              <h3 className="text-3xl font-semibold">{activeTeam?.name}</h3>
-              <h4 className="text-2xl font-medium">
-                {activeTeam?.role || `${activeTeam?.team?.name} member`}
-              </h4>
-              <p className="leading-8">{activeTeam?.bio}</p>
+        <div className="bg-[#B70569] text-white h-full w-full rounded-3xl overflow-y-auto lg:h-[65vh]">
+          <div class="md:p-7 p-4">
+            <div className="text-right">
+              <button
+                ref={hideModalRef}
+                autoFocus
+                tabIndex={0}
+                onClick={hideModal}
+                className="focus:ring-1 focus:ring-red-300 focus:outline-none"
+                aria-label="close modal"
+              >
+                <FontAwesomeIcon icon={faXmark} size="2x" />
+              </button>
             </div>
-            <div>
-              <img
-                src={activeTeam?.image || avatar}
-                alt={activeTeam?.name || "SCA Team member"}
-                className="rounded-t-2xl"
-              />
+            <div className="flex items-center justify-center lg:gap-11 gap-8 lg:flex-nowrap flex-wrap">
+              <div className="lg:w-7/12 pb-10">
+                <h3 className="text-3xl font-semibold">{activeTeam?.name}</h3>
+                <h4 className="text-2xl font-medium">
+                  {activeTeam?.role || `${activeTeam?.team?.name} member`}
+                </h4>
+                <p className="leading-8">{activeTeam?.bio}</p>
+              </div>
+              <div>
+                <img
+                  src={activeTeam?.image || avatar}
+                  alt={activeTeam?.name || "SCA Team member"}
+                  className="rounded-t-2xl lg:h-[400px] h-[300px] object-cover"
+                />
+              </div>
             </div>
           </div>
-        </section>
+        </div>
       </dialog>
       <Footer />
     </>
