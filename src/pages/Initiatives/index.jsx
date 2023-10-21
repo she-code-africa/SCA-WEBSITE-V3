@@ -14,6 +14,7 @@ import { apiConstants } from "../../utils";
 import { getInitiatives } from "../../services";
 
 import stemclubimage from "../../images/initiative/stem-club.png";
+import stemGirl from "../../images/initiative/stem-a-girl.jpg";
 import facilitators from "../../images/volunteerImgs/facilitators.png";
 import speakers from "../../images/volunteerImgs/speakers.png";
 
@@ -177,7 +178,7 @@ const Initiatives = () => {
         </section>
 
         <section className=" w-full bg-primary-main-pink py-10 mt-[140px]">
-          <div className="w-9/12 mx-auto flex min-h-[677px] justify-center md:justify-between flex-col md:flex-row md:items-center gap-10 md:gap-16">
+          <div className="w-9/12 mx-auto flex min-h-[500px] justify-center md:justify-between flex-col md:flex-row md:items-center gap-10 md:gap-16">
             <div className="w-full max-w-[610px] mx-auto md:mx-0">
               <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] capitalize text-white">
                 stem club
@@ -209,6 +210,43 @@ const Initiatives = () => {
                 src={stemclubimage}
                 alt="stem-club"
                 className="w-full h-full object-contain"
+              />
+            </figure>
+          </div>
+
+          <div className="w-9/12 mx-auto flex min-h-[500px] justify-center md:justify-between flex-col md:flex-row-reverse md:items-center gap-10 md:gap-16">
+            <div className="w-full max-w-[610px] mx-auto md:mx-0">
+              <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] capitalize text-white">
+                stem a girl
+              </h2>
+
+              <p className="text-white mt-4 text-justify text-lg">
+                Our STEM A GIRL initiative is an excellent way to prepare young
+                girls and ladies for a tech career in STEM and gain valuable
+                skills and experience that will help start a career in STEM.
+                It’s also an opportunity to make a positive impact in your
+                community by promoting STEM education and inspiring others to
+                pursue their passions. <br />
+                <br />
+                Don’t wait - join our STEM A GIRL initiative today and be part
+                of a vibrant community of learners and innovators!
+              </p>
+
+              <div className="mt-7 flex">
+                <Link
+                  to="/donate-partner"
+                  className="px-10 py-3 bg-community-pink-bg text-lg font-medium rounded-[30px] text-charcoal hover:text-primary-main-pink"
+                >
+                  Join the campaign
+                </Link>
+              </div>
+            </div>
+
+            <figure className="max-w-[279px] w-full h-[433px] border-[7px] rounded-[42px] overflow-hidden border-community-pink-bg md:rotate-[5deg] mt-4 md:mt-0">
+              <img
+                src={stemGirl}
+                alt="stem-club"
+                className="object-cover h-full w-full"
               />
             </figure>
           </div>

@@ -12,6 +12,7 @@ import JoinUs from "../../components/JoinUs";
 import HeroSlider from "../../components/Volunteers/HeroSlider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import support from "../../images/volunteerImgs/support-team.jpg";
 
 import { mutateVolunteer } from "../../services";
 import Captcha from "../../components/Captcha";
@@ -146,7 +147,10 @@ const Volunteer = () => {
         <section id="mentor" className="my-32 w-10/12 mx-auto">
           <article className="md:flex items-center justify-between my-40">
             <div className="md:w-6/12">
-              <h2 aria-labelledby="mentor" className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
+              <h2
+                aria-labelledby="mentor"
+                className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4"
+              >
                 Become a mentor.
               </h2>
               <p className="text-lg text-[#210D15] mb-3">
@@ -241,6 +245,40 @@ const Volunteer = () => {
               className="object-contain lg:w-4/12 md:w-5/12 mt-7 md:mt-0"
             />
           </article>
+
+          <article className="flex flex-wrap md:flex-nowrap flex-col-reverse md:flex-row md:items-center md:justify-between">
+            <figure className="max-w-[279px] w-full h-[433px] border-[7px] rounded-[42px] overflow-hidden border-primary-main-pink md:rotate-[5deg] mt-4 md:mt-0">
+              <img
+                src={support}
+                alt="support"
+                className="object-cover h-full w-full"
+              />
+            </figure>
+            <div className="lg:w-7/12 md:w-6/12">
+              <h2 className=" font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
+                Join our support team.
+              </h2>
+              <p className="text-lg text-[#210D15] mb-3">
+                Come and be a part of our support team and share your expert
+                skills and insights with our organization. As a volunteer on our
+                support team, you’ll have the chance to apply your field
+                knowledge and proficiency to our mission and create a
+                significant difference in the lives of women in tech.
+              </p>
+              {/* <button
+                onClick={() => {
+                  setFormValue({
+                    ...formValue,
+                    team: 'speaker',
+                  })
+                  setShowModal()
+                }}
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
+              >
+                Become a speaker
+              </button> */}
+            </div>
+          </article>
         </section>
 
         <JoinUs />
@@ -249,8 +287,9 @@ const Volunteer = () => {
 
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${modalOpen ? "md:flex block" : "hidden"
-          }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${
+          modalOpen ? "md:flex block" : "hidden"
+        }`}
       >
         <section className="bg-white text-[#2D2D2D] h-auto rounded-3xl md:p-7 p-4">
           <div className="flex justify-between items-center mb-5">

@@ -14,7 +14,7 @@ const Cards = ({ heading, textContent, cardBgImg, link = "#" }) => {
             {heading}
           </h3>
 
-          <p className="leading-[24px] text-center sm:text-justify mt-3">
+          <p className="leading-[24px] text-center sm:text-left mt-3">
             {textContent}
           </p>
 

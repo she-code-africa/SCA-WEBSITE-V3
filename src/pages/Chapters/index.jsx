@@ -119,11 +119,10 @@ const Chapters = () => {
               </h1>
 
               <p className="m-0 mt-2 text-center md:w-[90%] text-base md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-seal-brown 2md:text-justify font-normal">
-                We believe in the power of mentorship and are always looking for
-                passionate and dedicated individuals to join our community of
-                mentors. If you're interested in volunteering as a mentor,
-                please reach out to us to learn more about how you can get
-                involved.
+                Join 25,000+ African tech women on our platform and build your
+                successful career in the African tech industry. Explore our 43+
+                local chapters in 43 cities and campuses across Africa,
+                including Nigeria, Ghana, Kenya, Rwanda, and more.
               </p>
             </div>
 

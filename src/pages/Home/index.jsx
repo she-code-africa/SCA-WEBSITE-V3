@@ -148,9 +148,8 @@ const Home = () => {
         <section className="w-full py-5 mt-[80px] md:mt-[150px]">
           <div className="w-90 mx-auto">
             <homecomponents.Text
-              heading="What Our Community is About"
-              subheading="An Africa where women are equally represented across all career roles in
-        Technology."
+              heading="What We Do"
+              subheading="According to Data from Accenture, the ratio of women to men in tech roles has declined in the past 35 years. Out of 50% individuals in the industry, only 20% are women who are significantly represented,  with only 14% in software engineering and 25% in computer science related roles compared to their male counterparts. "
             />
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 2md:gap-14 md:max-w-[700px] 2md:max-w-[800px] mx-auto">
               {homepageOurCommunityCards.map(

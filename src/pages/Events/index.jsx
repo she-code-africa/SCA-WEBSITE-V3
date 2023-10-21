@@ -53,7 +53,7 @@ const Events = () => {
               </h1>
 
               <p className="m-0 mt-2 text-center md:w-[90%] text-lg md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-seal-brown 2md:text-left">
-                Get free access to events focused on empowering and getting more
+                Get access to events focused on empowering and getting more
                 young girls and women into technology across Africa.
               </p>
             </div>

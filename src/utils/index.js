@@ -391,21 +391,21 @@ export const homepageOurCommunityCards = [
   {
     heading: "Our Communities and Chapters",
     textContent:
-      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+      "Join Our community platform and get to connect with 25,000+ African women in tech from around the continent just like you.",
     bgImage: "card-body-img-4",
     link: paths.chapters,
   },
   {
     heading: "Our Events",
     textContent:
-      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+      "Get access to events and trainings that focus on empowering and increasing the participation of girls and women in technology across Africa.",
     bgImage: "card-body-img-1",
     link: paths.events,
   },
   {
     heading: "Our Initiative",
     textContent:
-      "Join over 10,000 Women in Tech across several African countries on our Slack community to network, stay updated, get help and grow in your career.",
+      " As a non-profit organization in the tech sector, we recognize the challenges and difficulties involved in launching or scaling a career in tech.",
     bgImage: "card-body-img-2",
     link: paths.initiatives,
   },
