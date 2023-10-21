@@ -72,7 +72,7 @@ const Jobs = () => {
             Post a job
           </Link>
         </section>
-        <section className="md:w-7/12 w-11/12 mx-auto __jobs_preview my-10 text-[#707070]">
+        <section className=" w-11/12 mx-auto __jobs_preview my-10 text-[#707070]">
           <h3 className="text-center job-type-header text-2xl font-medium text-gray-800">
             Jobs
           </h3>
@@ -81,7 +81,7 @@ const Jobs = () => {
           ) : isLoading ? (
             <Loading />
           ) : (
-            <div className="my-6 md:grid grid-cols-2 flex flex-wrap items-stretch gap-10">
+            <div className="my-6 flex flex-col md:grid grid-cols-2 gap-10 w-[90%] mx-auto lg:w-[60%]">
               {allJobs.map((job) => (
                 <article
                   key={job._id}

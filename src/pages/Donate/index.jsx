@@ -79,7 +79,7 @@ const Donate = () => {
           </div>
         </section>
         <section>
-          <div className="section-whitespace-top">
+          <div className="">
             {isError ? (
               <components.Error />
             ) : isLoading ? (
@@ -89,16 +89,17 @@ const Donate = () => {
             )}
           </div>
         </section>
-        <section className="__partner-donate flex flex-col sm:flex-row justify-center section-whitespace-top clear-both">
+        <section className="__partner-donate flex flex-col sm:flex-row gap-5 justify-center section-whitespace-top clear-both w-[90%] mx-auto">
           <DonateCard
             title="PARTNER WITH US"
             first_desc="Work hand-in-hand with us to achieve our goal of reaching more women in technology across Africa!"
             second_desc=""
           >
-            <div className="cta">
+            <div className="w-full h-auto">
               <a
                 href="mailto:info@shecodeafrica.org"
-                className="sca-btn pink-btn"
+                className="sca-btn pink-btn block"
+                style={{ width: "100%", fontSize: "15px" }}
               >
                 Get Started
               </a>
@@ -110,7 +111,7 @@ const Donate = () => {
             first_desc="Help sponsor our events and initiatives to empower more African women in technology via a donation or more."
             second_desc="Being a sponsor gives more awareness to you or your organization's commitment to advocating for more women in technology while helping secure and cover costs for our numerous initiatives, provide learning resources and tools to facilitate our events and programs across our several chapters."
           >
-            <div className="cta">
+            <div className="w-fit">
               <button
                 className="sca-btn white-btn"
                 onClick={() => toggleModal("individual")}
