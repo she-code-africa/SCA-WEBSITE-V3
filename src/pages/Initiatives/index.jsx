@@ -14,6 +14,7 @@ import { apiConstants } from "../../utils";
 import { getInitiatives } from "../../services";
 
 import stemclubimage from "../../images/initiative/stem-club.png";
+import stemGirl from "../../images/initiative/stem-a-girl.jpg";
 import facilitators from "../../images/volunteerImgs/facilitators.png";
 import speakers from "../../images/volunteerImgs/speakers.png";
 
@@ -241,11 +242,11 @@ const Initiatives = () => {
               </div>
             </div>
 
-            <figure className="m-0 p-0 w-full max-w-[550.01px] h-[476.75px]">
+            <figure className="max-w-[279px] w-full h-[433px] border-[7px] rounded-[42px] overflow-hidden border-community-pink-bg md:rotate-[5deg] mt-4 md:mt-0">
               <img
-                src={stemclubimage}
+                src={stemGirl}
                 alt="stem-club"
-                className="w-full h-full object-contain"
+                className="object-cover h-full w-full"
               />
             </figure>
           </div>
