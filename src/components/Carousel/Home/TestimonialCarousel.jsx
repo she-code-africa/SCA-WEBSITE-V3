@@ -11,15 +11,10 @@ function SampleNextArrow (props) {
   const { className, style, onClick } = props;
 
   return (
-    <div
-      className={`focus:outline-none focus:ring focus:ring-tutu ${className}`}
+    <button
+      className={`focus:outline-none focus:ring focus:ring-tutu ml-6 md:ml-0 ${className}`}
       tabIndex={0}
       onClick={onClick}
-      onKeyUp={(e) => {
-        if (e.key === "Enter") {
-          onClick()
-        }
-      }}
       style={{
         ...style,
         display: "block",
@@ -28,14 +23,14 @@ function SampleNextArrow (props) {
       }}
     >
       <FontAwesomeIcon icon={faAngleRight} />
-    </div>
+    </button>
   );
 }
 
 function SamplePrevArrow (props) {
   const { className, style, onClick } = props;
   return (
-    <div
+    <button
       className={`focus:outline-none focus:ring focus:ring-tutu ${className}`}
       tabIndex={0}
       style={{
@@ -45,14 +40,9 @@ function SamplePrevArrow (props) {
         textAlign: "center",
       }}
       onClick={onClick}
-      onKeyUp={(e) => {
-        if (e.key === "Enter") {
-          onClick()
-        }
-      }}
     >
       <FontAwesomeIcon icon={faAngleLeft} />
-    </div>
+    </button>
   );
 }
 const TestimonialCarousel = () => {
