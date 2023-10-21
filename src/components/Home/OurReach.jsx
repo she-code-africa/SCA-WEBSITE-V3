@@ -21,7 +21,7 @@ const OurReach = () => {
           our reach so far
         </h2>
         <p className="text-base md:text-2xl font-normal mt-6 leading-8 text-center 2md:text-left">
-          She Code African helps bridge the gap between Women and Men in Tech
+          At She Code Africa, we’re aimed at bridging the gender gap in Tech.
         </p>
 
         <div className="flex mt-10 justify-center 2md:justify-start">
