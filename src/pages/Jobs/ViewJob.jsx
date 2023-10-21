@@ -31,7 +31,7 @@ const ViewJob = () => {
             <div className="container mx-auto px-4 md:px-20 job-details-container">
                 {isError ? <Error /> :
                     isLoading ? <Loading /> :
-                        <section className="jobs">
+                        <section className="jobs md:mt-36 mt-24">
                             <div className="w-full role-apply">
                                 <div className="apply">
                                     {job?.deadline && isAfter(date, new Date(job?.deadline)) ?
