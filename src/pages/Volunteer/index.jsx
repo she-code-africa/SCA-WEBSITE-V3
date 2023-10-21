@@ -261,22 +261,22 @@ const Volunteer = () => {
               <p className="text-lg text-[#210D15] mb-3">
                 Come and be a part of our support team and share your expert
                 skills and insights with our organization. As a volunteer on our
-                support team, you’ll have the chance to apply your field
+                support team, you'll have the chance to apply your field
                 knowledge and proficiency to our mission and create a
                 significant difference in the lives of women in tech.
               </p>
-              {/* <button
+              <button
                 onClick={() => {
                   setFormValue({
                     ...formValue,
-                    team: 'speaker',
-                  })
-                  setShowModal()
+                    volunteerRole: "Support",
+                  });
+                  setShowModal();
                 }}
                 className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
               >
-                Become a speaker
-              </button> */}
+                Join our support team
+              </button>
             </div>
           </article>
         </section>
@@ -287,9 +287,8 @@ const Volunteer = () => {
 
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${
-          modalOpen ? "md:flex block" : "hidden"
-        }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${modalOpen ? "md:flex block" : "hidden"
+          }`}
       >
         <section className="bg-white text-[#2D2D2D] h-auto rounded-3xl md:p-7 p-4">
           <div className="flex justify-between items-center mb-5">
@@ -317,7 +316,7 @@ const Volunteer = () => {
                 <input
                   type="text"
                   id="name"
-                  className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
+                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
                   onChange={(e) => updateFormData("fullname", e.target.value)}
                   value={formValue.fullname}
                   required
@@ -330,7 +329,7 @@ const Volunteer = () => {
                 <input
                   type="email"
                   id="email"
-                  className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
+                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
                   onChange={(e) => updateFormData("email", e.target.value)}
                   value={formValue.email}
                   required
@@ -343,7 +342,7 @@ const Volunteer = () => {
                 <select
                   id="team"
                   name="team"
-                  className="block border border-[#2D2D2D] rounded-2 h-16 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full mt-2"
+                  className="block border border-[#2D2D2D] rounded-md h-16 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full mt-2"
                   value={formValue.volunteerRole}
                   onChange={(e) =>
                     updateFormData("volunteerRole", e.target.value)
@@ -355,6 +354,7 @@ const Volunteer = () => {
                   <option value={"Mentor"}>Mentor</option>
                   {/* <option value={'speaker'}>Speaker</option> */}
                   <option value={"Facilitator"}>Facilitator</option>
+                  <option value={"Support"}>Support</option>
                 </select>
               </div>
               <div>
@@ -364,7 +364,7 @@ const Volunteer = () => {
                 <input
                   type="text"
                   id="experience"
-                  className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
+                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
                   value={formValue.currentRole}
                   required
                   onChange={(e) =>
@@ -378,7 +378,7 @@ const Volunteer = () => {
                 </label>
                 <textarea
                   id="job_desc"
-                  className="block border border-[#2D2D2D] rounded-2 h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2 min-h-[150px]"
+                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2 min-h-[150px]"
                   value={formValue.purpose}
                   required
                   onChange={(e) => updateFormData("purpose", e.target.value)}

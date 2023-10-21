@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import adaRect from "../../images/ada-rect.jpg";
-import shape from "../../images/shape.png";
 import PopUpModal from "../../components/PopUpModal";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
