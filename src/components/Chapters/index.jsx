@@ -23,8 +23,8 @@ const ChaptersCard = ({ chapterImage, name, city }) => {
       </p>
 
       <div className="flex mb-12 px-9">
-        <Link to="#" className="mt-3 text-sm md:text-base">
-          Join community
+        <Link to="#" className="mt-3 text-sm md:text-base hidden">
+          Join chapter
         </Link>
       </div>
     </div>

@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { apiConstants, paths } from "../../utils/index";
 import { youtubeVideos } from "../../utils/index";
 import bglineImage from "../../images/academy/bg-line.svg";
@@ -12,7 +13,8 @@ import { getAllSchools } from "../../services";
 
 const AcademyPage = () => {
   const { slug } = useParams();
-  const [school, setSchool] = useState([]);
+  const navigate = useNavigate();
+  const [school, setSchool] = useState({});
   const { data, isLoading, isError } = useQuery(
     [apiConstants.academy],
     getAllSchools
@@ -20,11 +22,15 @@ const AcademyPage = () => {
 
   useEffect(() => {
     if (!isLoading) {
-      const schools = data.filter((school, id) => {
+      const findSchool = data.find((school, id) => {
         return school.slug.toLowerCase() === slug.toLowerCase();
       });
 
-      setSchool(schools);
+      if (findSchool) {
+        setSchool(findSchool);
+      } else {
+        navigate("/not-found");
+      }
     }
   }, [data, isLoading, slug]);
 
@@ -66,21 +72,15 @@ const AcademyPage = () => {
             <components.Loading />
           ) : (
             <>
-              {school.length > 0 ? (
+              {school ? (
                 <>
-                  {school.map((school) => {
-                    return (
-                      <div key={school._id}>
-                        <h1 className="text-4xl mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px] mb-5">
-                          {school.name}
-                        </h1>
+                  <h1 className="text-4xl mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px] mb-5">
+                    {school.name}
+                  </h1>
 
-                        <p className="text-2xl  mx-auto font-semibold text-[#1A1A1A] lg:leading-[1.5]">
-                          {school?.description}
-                        </p>
-                      </div>
-                    );
-                  })}
+                  <p className="text-2xl  mx-auto font-semibold text-[#1A1A1A] lg:leading-[1.5]">
+                    {school?.description}
+                  </p>
                 </>
               ) : (
                 <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
@@ -97,13 +97,13 @@ const AcademyPage = () => {
         <components.Loading />
       ) : (
         <>
-          {school.length > 0 && (
+          {school && (
             <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
               <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
                 Current Programs
               </h2>
-              {school[0].schoolPrograms.length > 0 ? (
-                school[0].schoolPrograms.map((content, index) => {
+              {school.schoolPrograms && school.schoolPrograms.length > 0 ? (
+                school.schoolPrograms.map((content, index) => {
                   return (
                     <div
                       key={content._id}
@@ -144,8 +144,8 @@ const AcademyPage = () => {
         <components.Loading />
       ) : (
         <>
-          {school.length > 0 && school[0].courses.length && (
-            <components.OnlineCourses data={school[0].courses} />
+          {school && school.courses && (
+            <components.OnlineCourses data={school.courses} />
           )}
         </>
       )}

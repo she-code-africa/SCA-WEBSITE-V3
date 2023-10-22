@@ -56,38 +56,11 @@ const Chapters = () => {
     }
   };
 
-  // onclick of the search button
-  // const handleClick = (value) => {
-  //   if (value) {
-  //     const filteredResult = data.filter((chapter, index) => {
-  //       return (
-  //         chapter?.name.toLowerCase().includes(value.toLowerCase()) ||
-  //         chapter?.city.toLowerCase().includes(value.toLowerCase()) ||
-  //         chapter?.country.toLowerCase().includes(value.toLowerCase())
-  //       );
-  //     });
-
-  //     if (filteredResult.length > 0) {
-  //       setSearchNotFound(false);
-  //       setChapters(filteredResult);
-  //     } else {
-  //       setSearchNotFound(true);
-  //       setChapters([]);
-  //     }
-  //   } else {
-  //     setSearchNotFound(false);
-  //     setChapters(data);
-  //   }
-
-  //   setSearchValue("");
-  // };
-
   useEffect(() => {
     if (isSuccess && isFetched) {
       setChapters(data);
     }
   }, [data, isFetched, isSuccess]);
-
   return (
     <>
       <Helmet>
