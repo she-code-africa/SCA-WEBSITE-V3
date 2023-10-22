@@ -85,25 +85,25 @@ const Footer = () => {
                             {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
                             <div className="block mb-5">Follow Us On Social Media</div>
                             <div className="flex gap-x-5 mb-5 text-2xl">
-                                <a href="https://www.instagram.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                <a href="https://www.instagram.com/shecodeafrica/" title="Follow us on Instagram" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
                                     <FontAwesomeIcon icon={faInstagram} />
                                 </a>
-                                <a href="https://www.twitter.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                <a href="https://www.twitter.com/shecodeafrica/" title="Follow us on Twitter" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
                                     <FontAwesomeIcon icon={faXTwitter} />
                                 </a>
-                                <a href="https://www.facebook.com/shecodeafrica/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                <a href="https://www.facebook.com/shecodeafrica/" title="Follow us on Facebook" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
                                     <FontAwesomeIcon icon={faFacebookF} />
                                 </a>
-                                <a href="https://medium.com/shecodeafrica" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                <a href="https://medium.com/shecodeafrica" target="_blank" title="Find us on Medium" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
                                     <FontAwesomeIcon icon={faMedium} />
                                 </a>
-                                <a href="https://www.youtube.com/channel/UCNZzVEyJege5-d_ekKw6dFA" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                <a href="https://www.youtube.com/channel/UCNZzVEyJege5-d_ekKw6dFA" title="Subscribe to our Youtube channel" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
                                     <FontAwesomeIcon icon={faYoutube} />
                                 </a>
-                                <a href="https://www.linkedin.com/company/she-code-africa/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                <a href="https://www.linkedin.com/company/she-code-africa/" title="Follow us on Linkedin" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
                                     <FontAwesomeIcon icon={faLinkedinIn} />
                                 </a>
-                                <a href="https://www.linkedin.com/company/she-code-africa/" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
+                                <a href="https://github.com/she-code-africa" target="_blank" title="Follow us on Github" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">
                                     <FontAwesomeIcon icon={faGithub} />
                                 </a>
                             </div>
