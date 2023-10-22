@@ -386,7 +386,7 @@ export const homepageOurCommunityCards = [
     textContent:
       "Kick off or scale your Tech career through any of our academy programs, fully tailored to meet you at your learning journey with the help of experts.",
     bgImage: "card-body-img-3",
-    link: "/academy/school-of-engineering",
+    link: "/academy",
   },
   {
     heading: "Our Communities and Chapters",
