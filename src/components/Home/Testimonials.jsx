@@ -4,9 +4,7 @@ import leftQuote from "../../images/homepage/left-quote.svg";
 import Text from "./Text";
 import TestimonialCarousel from "../Carousel/Home/TestimonialCarousel";
 
-
 const Testimonials = () => {
-
   return (
     <div className="w-[90%] xl:max-w-[1200px] mx-auto flex flex-col md:flex-row gap-10 relative">
       <article className="w-full md:w-1/2 pb-10 md:pb-0">
