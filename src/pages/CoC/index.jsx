@@ -72,7 +72,7 @@ const CodeOfConduct = () => {
               If you believe someone is violating the code of conduct, we ask that
               you report it by emailing&nbsp;
               <strong className="font-weight-bolder">
-                <a href="mailto:community@shecodeafrica.org" target="_blank" rel="noreferrer">community@shecodeafrica.org</a>
+                <a href="mailto:community@shecodeafrica.org" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">community@shecodeafrica.org</a>
               </strong>
               . For more details please see our Reporting Guidelines .
               <br />
