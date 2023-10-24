@@ -50,10 +50,10 @@ const CodeOfConduct = () => {
           <div className="code-of-conduct">
             <p>
               <span className="font-weight-bolder">She Code Africa (SCA)</span>{" "}
-              is dedicated to providing a harassment-free experience for
-              everyone, regardless of gender, gender identity and expression,
+              is dedicated to providing a harassment-free experience for African women and girls,
+              regardless of gender, gender identity and expression,
               sexual orientation, disability, physical appearance, body size,
-              age, race, or religion. We do not tolerate harassment of
+              age, or religion. We do not tolerate harassment of
               participants in any form. This code of conduct applies to all She
               Code Africa spaces, including Slack, both online and off. Anyone
               who violates this code of conduct may be sanctioned or expelled
@@ -68,21 +68,23 @@ const CodeOfConduct = () => {
               the member you may have harmed, or as an absolute last resort, a
               ban from the community.
             </p>
-            If you believe someone is violating the code of conduct, we ask that
-            you report it by emailing
-            <strong className="font-weight-bolder">
-              info@shecodeafrica.org
-            </strong>
-            . For more details please see our Reporting Guidelines .
-            <br />
-            1. Be friendly and patient.
-            <br />
-            2. Be welcoming. We strive to be a community that welcomes and
-            supports people of all backgrounds and identities.
-            <br />
-            3. Be careful in the words that you choose. We are a community of
-            professionals, and we conduct ourselves professionally. Be kind to
-            others. Do not insult or put down other community members.
+            <p>
+              If you believe someone is violating the code of conduct, we ask that
+              you report it by emailing&nbsp;
+              <strong className="font-weight-bolder">
+                <a href="mailto:community@shecodeafrica.org" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">community@shecodeafrica.org</a>
+              </strong>
+              . For more details please see our Reporting Guidelines .
+              <br />
+              1. Be friendly and patient.
+              <br />
+              2. Be welcoming. We strive to be a community that welcomes and
+              supports people of all backgrounds and identities.
+              <br />
+              3. Be careful in the words that you choose. We are a community of
+              professionals, and we conduct ourselves professionally. Be kind to
+              others. Do not insult or put down other community members.
+            </p>
             <h3 className="text-primary-color font-weight-bolder text-2xl my-2">
               Harassment includes:
             </h3>
@@ -90,20 +92,20 @@ const CodeOfConduct = () => {
               <li>
                 Offensive comments related to gender, gender identity and
                 expression, sexual orientation, disability, mental illness,
-                neuro(a)typicality, physical appearance, body size, age, race,
+                neuro(a)typicality, physical appearance, body size, age,
                 or religion.
               </li>
               <li>
-                Unwelcome comments regarding a person’s lifestyle choices and
+                Unwelcome comments regarding a person's lifestyle choices and
                 practices, including those related to food, health, parenting,
                 drugs, and employment.
               </li>
               <li>
-                Deliberate misgendering or use of ‘dead’ or rejected names.
+                Deliberate misgendering or use of 'dead' or rejected names.
               </li>
               <li>
                 Gratuitous or off-topic sexual images or behaviour in spaces
-                where they’re not appropriate.
+                where they're not appropriate.
               </li>
               <li>
                 Physical contact and simulated physical contact (eg, textual
@@ -132,36 +134,36 @@ const CodeOfConduct = () => {
                 Continued one-on-one communication after requests to cease.
               </li>
               <li>
-                Deliberate “outing” of any aspect of a person’s identity without
+                Deliberate “outing” of any aspect of a person's identity without
                 their consent except as necessary to protect vulnerable people
                 from intentional abuse.
               </li>
               <li>Publication of non-harassing private communication.</li>
               <li>
                 Blogging, tweeting, or otherwise communicating with intent to
-                harm someone’s reputation, i.e., “making an example” of a member
+                harm someone's reputation, i.e., “making an example” of a member
               </li>
             </ul>
             <strong>
-              She Code Africa prioritizes marginalized people’s safety over
-              privileged people’s comfort. Our moderators will not act on
+              She Code Africa prioritizes marginalized people's safety over
+              privileged people's comfort. Our moderators will not act on
               complaints regarding:
             </strong>
             <ul className="pl-10">
               <li>
-                “Reverse”-isms, including “reverse racism,” “reverse sexism,”
+                “Reverse”-isms, including “reverse sexism,”
                 and “cisphobia.”
               </li>
               <li>
                 Reasonable communication of boundaries, such as “leave me
-                alone,” “go away,” or “I’m not discussing this with you.”
+                alone,” “go away,” or “I'm not discussing this with you.”
               </li>
               <li>
-                Verbal communication in a tone you don’t find pleasant (try
+                Verbal communication in a tone you don't find pleasant (try
                 focusing on responding to the content or disengaging instead)
               </li>
               <li>
-                Criticizing racist, sexist, cissexist, or otherwise oppressive
+                Criticizing sexist, cissexist, or otherwise oppressive
                 behavior or assumptions
               </li>
             </ul>
@@ -194,7 +196,7 @@ const CodeOfConduct = () => {
                 Conduct
               </li>
               <li>
-                Refraining from doing something you wouldn’t do in another
+                Refraining from doing something you wouldn't do in another
                 professional situation
               </li>
               <li>
@@ -251,7 +253,7 @@ const CodeOfConduct = () => {
               that you report it to She Code Africa by emailing
               info@shecodeafrica.org, Contacting a Core Team member privately on
               via email, by text or phone call, or in person communicating with
-              the event organizer (if you’re at an event).{" "}
+              the event organizer (if you're at an event).{" "}
               <strong>All reports will be kept confidential</strong>. In some
               cases we may determine that a public statement will need to be
               made. If that's the case, the identities of all victims and
