@@ -287,8 +287,9 @@ const Volunteer = () => {
 
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${modalOpen ? "md:flex block" : "hidden"
-          }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${
+          modalOpen ? "md:flex block" : "hidden"
+        }`}
       >
         <section className="bg-white text-[#2D2D2D] h-auto rounded-3xl md:p-7 p-4">
           <div className="flex justify-between items-center mb-5">
