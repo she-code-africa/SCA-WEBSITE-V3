@@ -11,6 +11,7 @@ export const paths = {
   initiatives: "/initiatives",
   chapters: "/chapters",
   donate: "/donate-partner",
+  partner: "/partner",
   events: "/events",
   view_event: "/view/events/:id",
   jobs: "/jobs",
@@ -393,7 +394,7 @@ export const homepageOurCommunityCards = [
     textContent:
       "Join Our community platform and get to connect with 25,000+ African women in tech from around the continent just like you.",
     bgImage: "card-body-img-4",
-    link: paths.chapters,
+    link: paths.community,
   },
   {
     heading: "Our Events",

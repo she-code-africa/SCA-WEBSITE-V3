@@ -4,12 +4,10 @@ import Slider from "react-slick";
 const PartnersLogoCarousel = ({ partnersData }) => {
   const settings = {
     dots: false,
-    infinite: true,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
+    autoplaySpeed: 100,
     className: "slider variable-width",
     centerMode: true,
     slidesToShow: 1,
@@ -27,6 +25,11 @@ const PartnersLogoCarousel = ({ partnersData }) => {
   };
   return (
     <section className="w-full mx-auto mt-[60px]">
+      <div className="w-full mb-10 text-center">
+        <h2 className="text-2xl md:text-3xl 2md:text-[40px] font-bold 2md:leading-[82px]">
+          Brands that believe in our vision and goal
+        </h2>
+      </div>
       <Slider {...settings} className=" custom-slick">
         {partnersData.map((logo, index) => {
           let { image, name } = logo;
