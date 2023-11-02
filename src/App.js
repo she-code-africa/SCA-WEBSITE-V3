@@ -31,9 +31,8 @@ import Hire from "./pages/Hire";
 import Community from "./pages/Community";
 import "./styles/app.scss";
 import PrivateRoutes from "./components/PrivateRoutes";
-import AcademyPage from "./pages/Academy";
-import Redirects from "./components/Academy/Redirect";
-import LandingPage from "./pages/Academy/LandingPage";
+import AcademyPage from "./pages/Academy/_slug";
+import LandingPage from "./pages/Academy";
 
 const queryClient = new QueryClient();
 
