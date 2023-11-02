@@ -501,21 +501,3 @@ export const whatsinStoreForYou = [
     text: "A chance to make a difference",
   },
 ];
-
-export const hireOurGraduates = [
-  {
-    bg: "bg-community-pink-bg",
-    heading: "School of Engineering",
-    text: "Elevate your business to new heights by leveraging a pool of highly skilled engineers from our prestigious programs empowering you.",
-  },
-  {
-    bg: "bg-lavendar-blush",
-    heading: "School of Product",
-    text: "Expand and cultivate your business by harnessing the expertise of our pool of accomplished women in the product industry. ",
-  },
-  {
-    bg: "bg-white-smoke",
-    heading: "School of Applied Skills",
-    text: "Propel your enterprise forward with a skilled and diverse team, enabling you to achieve unparalleled growth and success.",
-  },
-];

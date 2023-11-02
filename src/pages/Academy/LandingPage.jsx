@@ -5,7 +5,8 @@ import academyHero from "../../images/academy/academy.png";
 import guidance from "../../images/about/guidance.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
-import { hireOurGraduates } from "../../utils";
+import { paths } from "../../utils";
+import bglineImage from "../../images/academy/bg-line.svg";
 
 const LandingPage = () => {
   return (
@@ -76,6 +77,13 @@ const LandingPage = () => {
                 education is key to success, and our program is tailored to help
                 women thrive in the tech industry.
               </p>
+
+              <Link
+                to="/academy/school-of-engineering"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
+              >
+                View school
+              </Link>
             </div>
             <img
               src={guidance}
@@ -103,6 +111,12 @@ const LandingPage = () => {
                 courses, ensuring that our queens are fully equipped to thrive
                 in the ever-evolving tech industry.
               </p>
+              <Link
+                to="/academy/school-of-product"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
+              >
+                View school
+              </Link>
             </div>
           </article>
 
@@ -119,6 +133,13 @@ const LandingPage = () => {
                 applied tech skills, including community management, technical
                 writing, and our open source contribution program.
               </p>
+
+              <Link
+                to="/academy/stem-school"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
+              >
+                View school
+              </Link>
             </div>
             <img
               src={guidance}
@@ -147,20 +168,25 @@ const LandingPage = () => {
         </section>
 
         <section className="my-[120px]">
-          <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] text-center capitalize">
-            Hire our Graduates
-          </h2>
-
-          <div className="w-90 mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
-            {hireOurGraduates.map((item, index) => (
-              <div
-                className={`border-2 border-primary-main-pink flex flex-col justify-center items-center min-h-[120px] px-6 ${item.bg} rounded-[20px] py-6`}
-                key={index}
-              >
-                <h3 className="text-lg font-semibold">{item.heading}</h3>
-                <p className="text-sm text-center text-black">{item.text}</p>
-              </div>
-            ))}
+          <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-primary-dark-brown">
+            <div className="hidden lg:inline-block absolute top-0 left-0">
+              {" "}
+              <img className="w-52" src={bglineImage} alt="bg-line" />
+            </div>
+            <h2 className="font-normal text-4xl text-primary-dark-brown">
+              Hire Our Graduates
+            </h2>
+            <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
+              Access a pool of talented engineers from our renowned engineering
+              school and take your business to the next level by building a
+              skilled and diverse team
+            </p>
+            <Link
+              to={paths.hire}
+              className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink"
+            >
+              Hire Our Talent
+            </Link>
           </div>
         </section>
       </main>
