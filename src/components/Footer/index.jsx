@@ -41,8 +41,8 @@ const Footer = () => {
                     <div className="col-span-3 grid md:grid-cols-3 items-start">
                         <div className="">
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">Get Involved</p>
-                            <Link to={paths.donate} className="block mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Partner With Us</Link>
-                            <Link to={paths.donate} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Make A Donation</Link>
+                            <Link to={paths.donate_partner} className="block mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Partner With Us</Link>
+                            <Link to={paths.donate_partner} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Make A Donation</Link>
                             <Link to={paths.chapters} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Start An S.C.A Chapter</Link>
                             <a href="https://summit.shecodeafrica.org/" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu" target="_blank" rel="noreferrer">Summit</a>
                             {isError ? null :
