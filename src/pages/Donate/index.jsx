@@ -97,7 +97,7 @@ const Donate = () => {
           >
             <div className="w-full h-auto">
               <a
-                href="mailto:info@shecodeafrica.org"
+                href="mailto:partnerships@shecodeafrica.org"
                 className="sca-btn pink-btn block"
                 style={{ width: "100%", fontSize: "15px" }}
               >

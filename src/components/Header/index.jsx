@@ -59,6 +59,7 @@ const Header = () => {
           text: "Become A Member",
           external: true,
         },
+        { to: paths.partner, text: "Partner with us" },
         { to: paths.events, text: "Events" },
         { to: paths.initiatives, text: "Initiatives" },
       ],
@@ -128,19 +129,17 @@ const Header = () => {
                   </span>
                   <FontAwesomeIcon
                     icon={faAngleDown}
-                    className={`transition-transform duration-300 ${
-                      selectedMenu === index ? "rotate-180" : null
-                    }`}
+                    className={`transition-transform duration-300 ${selectedMenu === index ? "rotate-180" : null
+                      }`}
                   />
                 </button>
               ) : (
                 <Link
                   to={menu.to}
-                  className={`focus:outline-none focus:ring focus:ring-tutu ${
-                    path === menu.to
-                      ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                      : null
-                  }`}
+                  className={`focus:outline-none focus:ring focus:ring-tutu ${path === menu.to
+                    ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
+                    : null
+                    }`}
                 >
                   {menu.text}
                 </Link>
@@ -151,11 +150,10 @@ const Header = () => {
                   {menu.list.map((list, index) => (
                     <li
                       key={index}
-                      className={`font-normal mb-5 ${
-                        path === list.to
-                          ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                          : null
-                      }`}
+                      className={`font-normal mb-5 ${path === list.to
+                        ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
+                        : null
+                        }`}
                     >
                       {list?.external ? (
                         <a
@@ -208,19 +206,16 @@ const Header = () => {
           tabIndex={0}
         >
           <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${
-              isOpen ? "translate-y-[5px] rotate-45" : ""
-            }`}
+            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${isOpen ? "translate-y-[5px] rotate-45" : ""
+              }`}
           ></div>
           <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[6px] ${
-              isOpen ? "scale-x-0" : ""
-            }`}
+            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[6px] ${isOpen ? "scale-x-0" : ""
+              }`}
           ></div>
           <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[12px] ${
-              isOpen ? "translate-y-[0px] -rotate-45" : ""
-            }`}
+            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[12px] ${isOpen ? "translate-y-[0px] -rotate-45" : ""
+              }`}
           ></div>
         </button>
 
@@ -230,11 +225,10 @@ const Header = () => {
               {menus.map((menu, index) => (
                 <li
                   key={index}
-                  className={`font-medium text-xl  ${
-                    path === menu.to
-                      ? "text-primary-main-pink"
-                      : "text-[#1A1A1A] text-opacity-[82%]"
-                  }`}
+                  className={`font-medium text-xl  ${path === menu.to
+                    ? "text-primary-main-pink"
+                    : "text-[#1A1A1A] text-opacity-[82%]"
+                    }`}
                 >
                   {menu?.list ? (
                     <div className="font-medium block">{menu.text}</div>
@@ -251,11 +245,10 @@ const Header = () => {
                       {menu.list.map((list, index) => (
                         <li
                           key={index}
-                          className={`font-normal mb-5 ${
-                            path === list.to
-                              ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                              : null
-                          }`}
+                          className={`font-normal mb-5 ${path === list.to
+                            ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
+                            : null
+                            }`}
                         >
                           {list?.external ? (
                             <a
