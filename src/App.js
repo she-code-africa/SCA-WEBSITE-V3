@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Route,
   Routes as Switch,
@@ -45,6 +45,16 @@ function App () {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  // temporary fix till we're able to fix heroku redirect
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      if (window.location.protocol === "http:") {
+        window.location.href = `https://${window.location.hostname}${window.location.pathname}`;
+      }
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Routes />
