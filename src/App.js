@@ -73,8 +73,9 @@ function Routes (params) {
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />
       <Route path={paths.leadChapter} element={<ChaptersForm />} />
-      <Route path={paths.donate} element={<Donate />} />
+      <Route path={paths.donate_partner} element={<Donate />} />
       <Route path={paths.partner} element={<Donate />} />
+      <Route path={paths.donate} element={<Donate />} />
       <Route path={paths.events} element={<Events />} />
       <Route path={paths.jobs} element={<Jobs />} />
       <Route path={paths.register_org} element={<RegisterOrg />} />

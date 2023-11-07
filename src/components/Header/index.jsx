@@ -37,7 +37,7 @@ const Header = () => {
   const menus = [
     { to: paths.home, text: "Home" },
     {
-      to: paths.donate,
+      to: paths.donate_partner,
       text: "About",
       list: [
         { to: paths.about, text: "About SCA" },
@@ -65,7 +65,7 @@ const Header = () => {
       ],
     },
     {
-      to: paths.donate,
+      to: paths.donate_partner,
       text: "Community",
       list: [
         { to: paths.community, text: "SCA Community" },
@@ -181,7 +181,7 @@ const Header = () => {
         </ul>
 
         <Link
-          to={paths.donate}
+          to={paths.donate_partner}
           className="bg-primary-main-pink rounded-[30px] py-5 px-12 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu"
         >
           Donate

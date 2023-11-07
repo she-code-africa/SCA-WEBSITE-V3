@@ -10,7 +10,8 @@ export const paths = {
   stemSchool: "/stem-school",
   initiatives: "/initiatives",
   chapters: "/chapters",
-  donate: "/donate-partner",
+  donate_partner: "/donate-partner",
+  donate: "/donate",
   partner: "/partner",
   events: "/events",
   view_event: "/view/events/:id",
@@ -155,7 +156,7 @@ export const partnershipFaq = [
     content: (
       <>
         Visit our{" "}
-        <Link to={paths.donate} style={{ color: "#6D033F" }}>
+        <Link to={paths.donate_partner} style={{ color: "#6D033F" }}>
           partnership page
         </Link>{" "}
         to find out more about this

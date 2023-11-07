@@ -79,7 +79,11 @@ const Jobs = () => {
           {isError ? (
             <Error />
           ) : isLoading ? (
-            <Loading />
+            <div className="my-6 flex flex-col md:grid grid-cols-2 gap-10 w-[90%] mx-auto lg:w-[60%]">
+              {[1, 2, 3, 4].map((index) => (
+                <Loading key={index} />
+              ))}
+            </div>
           ) : (
             <div className="my-6 flex flex-col md:grid grid-cols-2 gap-10 w-[90%] mx-auto lg:w-[60%]">
               {allJobs.map((job) => (
