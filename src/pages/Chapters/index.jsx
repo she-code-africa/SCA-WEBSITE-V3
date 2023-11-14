@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 import { getChapters } from "../../services";
 import { apiConstants, paths } from "../../utils";
-import chapterImage from "../../images/chapters/chapter-img.png";
+import chapterImage from "../../images/chapters/sca-chapters-img.png";
 import JoinUs from "../../components/JoinUs";
 import ChaptersCard from "../../components/Chapters";
 import * as components from "../../components";
