@@ -64,6 +64,10 @@ const Chapters = () => {
 
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
+  const [disable, setDisable] = useState({
+    next: false,
+    prev: true,
+  });
   const chaptersPerPage = 8;
   const lastIndex = currentPage * chaptersPerPage;
   const firstIndex = lastIndex - chaptersPerPage;
@@ -73,12 +77,20 @@ const Chapters = () => {
   const nextPage = () => {
     if (currentPage !== totalPages) {
       setCurrentPage(currentPage + 1);
+      setDisable({ ...disable, prev: false });
+    }
+    if (currentPage === totalPages - 1) {
+      setDisable({ next: true, prev: false });
     }
   };
 
   const prevPage = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
+      setDisable({ next: false, prev: false });
+    }
+    if (currentPage === 2) {
+      setDisable({ next: false, prev: true });
     }
   };
   return (
@@ -220,14 +232,16 @@ const Chapters = () => {
               {data.length > 8 || chapters.length > 8 ? (
                 <div className="flex justify-center gap-7 mt-[57px]">
                   <button
-                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-500"
+                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
                     onClick={prevPage}
+                    disabled={disable.prev}
                   >
                     <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
                   </button>
                   <button
-                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-500"
+                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
                     onClick={nextPage}
+                    disabled={disable.next}
                   >
                     <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
                   </button>
