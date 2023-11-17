@@ -63,12 +63,12 @@ const Donate = () => {
                     </h1>
                   </div>
                   <div className="__shecodeheader_subtitle">
-                    <h4>
+                    <h2>
                       Our partners and donors go a long way in creating an
                       impact and helping us reach thousands of{" "}
                       <span className="highlight">women in technology</span>{" "}
                       across Africa!
-                    </h4>
+                    </h2>
                   </div>
                 </div>
               </div>

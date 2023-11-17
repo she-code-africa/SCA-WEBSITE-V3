@@ -36,7 +36,7 @@ export const DonateCard = (
       key={index}
     >
       <div className="desc mb-5">
-        <h4 className="title">{title}</h4>
+        <h3 className="title">{title}</h3>
         <p>{first_desc}</p>
         <p>{second_desc}</p>
       </div>

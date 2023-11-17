@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../images/she-code-africa-logo.svg";
 import { apiConstants, paths } from "../../utils";
 import { useQuery } from "@tanstack/react-query";
@@ -50,7 +50,6 @@ const Header = () => {
       list: schoolList,
     },
     {
-      to: paths.chapters,
       text: "Get Involved",
       list: [
         { to: paths.volunteer, text: "Volunteer With Us" },
@@ -160,9 +159,10 @@ const Header = () => {
                           href={list.to}
                           target="_blank"
                           rel="noreferrer"
-                          className="focus:outline-none focus:ring focus:ring-tutu"
+                          className="focus:outline-none focus:ring focus:ring-tutu flex gap-2 items-center"
                         >
-                          {list.text}
+                          <span>{list.text}</span>
+                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" size="xs" />
                         </a>
                       ) : (
                         <Link
@@ -204,6 +204,7 @@ const Header = () => {
           className="flex flex-col justify-between items-center cursor-pointer w-[30px] h-[10px] transition-transform duration-300 ease-in-out focus:outline-none focus:ring focus:ring-tutu"
           onClick={handleClick}
           tabIndex={0}
+          aria-label={isOpen ? 'close menu' : 'open menu'}
         >
           <div
             className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${isOpen ? "translate-y-[5px] rotate-45" : ""
@@ -255,9 +256,10 @@ const Header = () => {
                               href={list.to}
                               target="_blank"
                               rel="noreferrer"
-                              className="focus:outline-none focus:ring focus:ring-tutu"
+                              className="focus:outline-none focus:ring focus:ring-tutu flex gap-3 items-center"
                             >
-                              {list.text}
+                              <span>{list.text}</span>
+                              <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" size="xs" />
                             </a>
                           ) : (
                             <Link

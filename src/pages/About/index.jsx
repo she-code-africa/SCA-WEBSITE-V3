@@ -63,9 +63,9 @@ const About = () => {
                   role="presentation"
                 />
               </div>
-              <h3 className="mb-3 mt-5 text-[#1A1A1A] text-4xl font-bold">
+              <h2 className="mb-3 mt-5 text-[#1A1A1A] text-4xl font-bold">
                 Our Mission
-              </h3>
+              </h2>
               <p className="text-[#210D15] md:text-lg text-base">
                 To build a community that embodies technical growth, networking,
                 mentorship and visibility amongst all level career roles in

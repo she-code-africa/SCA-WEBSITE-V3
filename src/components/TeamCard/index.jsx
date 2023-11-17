@@ -5,7 +5,6 @@ import avatar from "../../images/avatar-300x300.jpeg"
 const TeamCard = ({ image, name, teamRole, onClick, onKeyDown }) => {
   return (
     <article
-      role="button"
       className="border-2 border-[#B70569] rounded-2xl focus:ring focus:ring-[#FDC0E3] focus:outline-none"
       tabIndex={0}
       onClick={onClick}
