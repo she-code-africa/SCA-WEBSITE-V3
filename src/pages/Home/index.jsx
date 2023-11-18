@@ -271,9 +271,9 @@ const Home = () => {
             className="absolute w-1/12 translate-x-[50%]"
           /> */}
           <div className="md:col-span-2 md:w-7/12 mx-auto grid place-content-center px-5 md:px-0 py-12 md:py-5 lg:py-0">
-            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
+            <h4 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
               Your next chapter, made possible by mentoring
-            </h5>
+            </h4>
             <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">
               Build confidence as a leader, grow your network, and define your
               legacy.

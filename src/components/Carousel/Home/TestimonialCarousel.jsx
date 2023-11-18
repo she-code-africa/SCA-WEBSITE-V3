@@ -6,13 +6,14 @@ import { useQuery } from "@tanstack/react-query";
 import { apiConstants } from "../../../utils";
 import { getTestimonials } from "../../../services";
 
-function SampleNextArrow(props) {
+function SampleNextArrow (props) {
   const { className, style, onClick } = props;
 
   return (
     <button
       className={`focus:outline-none focus:ring focus:ring-tutu ml-6 md:ml-0 ${className}`}
       tabIndex={0}
+      aria-label="Next slide"
       onClick={onClick}
       style={{
         ...style,
@@ -26,12 +27,13 @@ function SampleNextArrow(props) {
   );
 }
 
-function SamplePrevArrow(props) {
+function SamplePrevArrow (props) {
   const { className, style, onClick } = props;
   return (
     <button
       className={`focus:outline-none focus:ring focus:ring-tutu ${className}`}
       tabIndex={0}
+      aria-label="Previous slide"
       style={{
         ...style,
         display: "block",
@@ -88,15 +90,15 @@ const TestimonialCarousel = () => {
                     <figure className="m-0 p-0 w-[50px] h-[50px] md:w-[80px] md:h-[80px] rounded-[50%] overflow-hidden">
                       <img
                         src={testimonial.image}
-                        alt="avatar"
+                        alt=""
                         className="w-full h-full object-cover"
                       />
                     </figure>
 
                     <article className="w-full">
-                      <h5 className="text-primary-main-pink text-base md:text-xl capitalize font-bold">
+                      <h3 className="text-primary-main-pink text-base md:text-xl capitalize font-bold">
                         {`${testimonial.firstName} ${testimonial.lastName}`}
-                      </h5>
+                      </h3>
                     </article>
                   </div>
 

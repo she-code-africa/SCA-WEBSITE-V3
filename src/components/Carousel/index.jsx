@@ -88,50 +88,7 @@ export const Carousel = ({ title, content, slidesToShow, slidesToScroll }) => {
   );
 };
 
-export const TestimonialCarousel = ({ testimonials, title }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 5000,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
-    arrows: false,
-  };
-  return (
-    <div className="" id="">
-      <div className="my-12 md:my-32">
-        <h4 className="text-3xl md:text-4xl text-center font-semibold">
-          What People are saying
-        </h4>
-      </div>
-      <div className="bg-[#FFF7FC] flex flex-col md:flex-row gap-5 max-w-7xl my-0 mx-auto justify-between p-6 h-[450px] items-center">
-        <Slider {...settings}>
-          {testimonials.map(({ img, testimonial, name }, index) => {
-            return (
-              <>
-                <div>hello</div>
-                {/* <div>
-                  <img
-                    className="rounded-[50%] h-[300px] w-[300px]"
-                    src={img}
-                    alt="name"
-                  />
-                </div>
-                <div className="text-left md:w-2/3 border-r-8 md:m-4 border-r-[#B70569]">
-                  <p className="md:text-2xl md:w-3/4">{testimonial}</p>
-                  <p className="testimonial_name mt-4">{name}</p>
-                </div> */}
-              </>
-            );
-          })}
-        </Slider>
-      </div>
-    </div>
-  );
-};
+
 
 export const SuccessCarousel = ({ successStories }) => {
   const settings = {

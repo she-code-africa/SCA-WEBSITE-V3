@@ -181,11 +181,13 @@ const Team = () => {
                     className="border border-[#F2F4F3] rounded-full h-12 px-5 flex items-center gap-1 focus-within:ring-4 focus-within:ring-[#B70569] focus:outline-none"
                     tabIndex={0}
                     role="searchbox"
+                    aria-label="Search box"
                   >
                     <label htmlFor="search">
                       <FontAwesomeIcon
                         icon={faMagnifyingGlass}
                         className="text-[#020122]"
+                        aria-hidden
                       />
                     </label>
                     <input
