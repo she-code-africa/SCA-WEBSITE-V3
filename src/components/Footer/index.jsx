@@ -39,7 +39,7 @@ const Footer = () => {
                         <img src={logo} alt="SCA-Logo" className="__shecodelogo" />
                     </div>
                     <div className="col-span-3 grid md:grid-cols-3 items-start">
-                        <div className="">
+                        <div aria-label="Get Involved">
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">Get Involved</p>
                             <Link to={paths.donate_partner} className="block mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Partner With Us</Link>
                             <Link to={paths.donate_partner} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Make A Donation</Link>
@@ -86,7 +86,7 @@ const Footer = () => {
                                 </div>
                             }
                         </div>
-                        <div className="">
+                        <div aria-label="About Us">
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">About Us</p>
                             <Link to={paths.team} className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"> Meet The Team</Link>
                             <Link to="/faq" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">FAQ</Link>
@@ -94,7 +94,7 @@ const Footer = () => {
                             <Link to="/privacy" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Privacy Policy</Link>
                             <Link to="/terms" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Terms and Condition</Link>
                         </div>
-                        <div>
+                        <div aria-label="Community">
                             <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">Community</p>
                             <Link to={paths.events} className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu">Upcoming Events</Link>
                             <a href="https://bit.ly/joinshecodeafrica" target="_blank" rel="noreferrer" className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Join Our Slack Community</a>
