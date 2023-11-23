@@ -28,6 +28,8 @@ const Chapters = () => {
     getChapters
   );
 
+  console.log(data);
+
   const [chapters, setChapters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [searchNotFound, setSearchNotFound] = useState(false);
@@ -217,8 +219,7 @@ const Chapters = () => {
                     <div className="" key={index}>
                       <ChaptersCard
                         chapterImage={chapterImage}
-                        name={chapter.name}
-                        city={chapter.city}
+                        chapter={chapter}
                       />
                     </div>
                   );
