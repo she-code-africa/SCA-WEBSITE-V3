@@ -247,10 +247,10 @@ const Footer = () => {
                 </a>
               </div>
 
-              <figure className="m-0 p-0 w-[100px] h-[100px] rounded-[50%] overflow-hidden">
+              <figure className="m-0 p-0 w-[80px] h-[80px] rounded-[50%] overflow-hidden">
                 <img
                   src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/85802796"
-                  alt="caf-badge"
+                  alt="CAF-validated-badge"
                   className="w-full h-full"
                 />
               </figure>
