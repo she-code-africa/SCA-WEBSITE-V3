@@ -42,18 +42,18 @@ const AcademyPage = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>School of Engineering</title>
+        <title>SCA Academy</title>
         <meta
           name="description"
           content="Empowering women to innovate the digital world, one engineer at a time."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="School of Engineering" />
+        <meta property="og:title" content="SCA Academy" />
         <meta
           property="og:description"
           content="Empowering women to innovate the digital world, one engineer at a time."
         />
-        <meta name="twitter:title" content="School of Engineering" />
+        <meta name="twitter:title" content="SCA Academy" />
         <meta
           name="twitter:description"
           content="Empowering women to innovate the digital world, one engineer at a time."
@@ -61,7 +61,7 @@ const AcademyPage = () => {
       </Helmet>
       <Header />
       <section
-        className="h-[430px] flex-col flex justify-center pt-16 lg:pt-24"
+        className="lg:h-[600px] h-[450px] flex-col flex justify-center mt-14 lg:mt-0 py-28 lg:pt-32 "
         style={{
           background:
             "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
@@ -74,16 +74,16 @@ const AcademyPage = () => {
             <>
               {school ? (
                 <>
-                  <h1 className="text-4xl mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px] mb-5">
+                  <h1 className="text-4xl mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[74px] mb-6">
                     {school.name}
                   </h1>
 
-                  <p className="text-2xl  mx-auto font-semibold text-[#1A1A1A] lg:leading-[1.5]">
+                  <h2 className="md:text-2xl text-xl mx-auto font-medium text-[#1A1A1A] lg:leading-[1.7]">
                     {school?.description}
-                  </p>
+                  </h2>
                 </>
               ) : (
-                <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
+                <h1 className="text-4xl mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[74px] mb-6">
                   Empowering women to innovate the digital world, one engineer
                   at a time.
                 </h1>
@@ -107,9 +107,8 @@ const AcademyPage = () => {
                   return (
                     <div
                       key={content._id}
-                      className={`${
-                        index % 2 ? "flex-row-reverse" : "flex-row"
-                      } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+                      className={`${index % 2 ? "flex-row-reverse" : "flex-row"
+                        } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
                     >
                       <img
                         className="text-center md:w-96 object-contain h-[200px]"
