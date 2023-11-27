@@ -33,7 +33,7 @@ const Footer = () => {
   }, [isLoading]);
 
   return (
-    <footer className="pt-10 mt-20">
+    <footer className="pt-10 md:mt-20">
       <div className="container mx-auto px-6 py-10 mb-14">
         <div className="grid md:grid-cols-4 text-left xs:grid-row-4 md:grid-row-1">
           <div className="justify-self-center img-box place-self-center">
@@ -81,9 +81,8 @@ const Footer = () => {
                     <span>Annual Reports</span>
                     <FontAwesomeIcon
                       icon={faCaretDown}
-                      className={`transition-transform duration-300 ${
-                        openCaret ? "rotate-180" : null
-                      }`}
+                      className={`transition-transform duration-300 ${openCaret ? "rotate-180" : null
+                        }`}
                     />
                   </button>
                   {openCaret && (
@@ -247,7 +246,7 @@ const Footer = () => {
                 </a>
               </div>
 
-              <figure className="m-0 p-0 w-[80px] h-[80px] rounded-[50%] overflow-hidden">
+              <figure className="m-0 p-0 w-[60px] h-[60px] rounded-full overflow-hidden">
                 <img
                   src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/85802796"
                   alt="CAF-validated-badge"
