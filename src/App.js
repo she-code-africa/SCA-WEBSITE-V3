@@ -1,9 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Route,
-  Routes as Switch,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes as Switch, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { paths } from "./utils";
 import { ToastContainer } from "react-toastify";
@@ -35,12 +31,12 @@ import Hire from "./pages/Hire";
 import Community from "./pages/Community";
 import "./styles/app.scss";
 import PrivateRoutes from "./components/PrivateRoutes";
-import AcademyPage from "./pages/Academy";
-import Redirects from "./components/Academy/Redirect";
+import AcademyPage from "./pages/Academy/_slug";
+import LandingPage from "./pages/Academy";
 
 const queryClient = new QueryClient();
 
-function App () {
+function App() {
   const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -63,12 +59,13 @@ function App () {
   );
 }
 
-function Routes (params) {
+function Routes(params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
       <Route path="/academy/:slug" element={<AcademyPage />} />
-      <Route path="/academy" element={<Redirects />} />
+      <Route path="/academy" element={<LandingPage />} />
+      {/* <Route path="/academy" element={<Redirects />} /> */}
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />
