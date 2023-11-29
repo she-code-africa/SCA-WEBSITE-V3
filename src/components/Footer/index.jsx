@@ -81,8 +81,9 @@ const Footer = () => {
                     <span>Annual Reports</span>
                     <FontAwesomeIcon
                       icon={faCaretDown}
-                      className={`transition-transform duration-300 ${openCaret ? "rotate-180" : null
-                        }`}
+                      className={`transition-transform duration-300 ${
+                        openCaret ? "rotate-180" : null
+                      }`}
                     />
                   </button>
                   {openCaret && (
@@ -246,7 +247,7 @@ const Footer = () => {
                 </a>
               </div>
 
-              <figure className="m-0 p-0 w-[60px] h-[60px] rounded-full overflow-hidden">
+              <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden">
                 <img
                   src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/85802796"
                   alt="CAF-validated-badge"

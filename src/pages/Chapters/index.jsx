@@ -217,10 +217,12 @@ const Chapters = () => {
                 {allChapters.map((chapter, index) => {
                   return (
                     <div className="" key={index}>
-                      <ChaptersCard
-                        chapterImage={chapterImage}
-                        chapter={chapter}
-                      />
+                      <a href={chapter.link || "#"}>
+                        <ChaptersCard
+                          chapterImage={chapterImage}
+                          chapter={chapter}
+                        />
+                      </a>
                     </div>
                   );
                 })}
