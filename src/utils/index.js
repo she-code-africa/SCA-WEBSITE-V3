@@ -10,7 +10,9 @@ export const paths = {
   stemSchool: "/stem-school",
   initiatives: "/initiatives",
   chapters: "/chapters",
-  donate: "/donate-partner",
+  donate_partner: "/donate-partner",
+  donate: "/donate",
+  partner: "/partner",
   events: "/events",
   view_event: "/view/events/:id",
   jobs: "/jobs",
@@ -154,7 +156,7 @@ export const partnershipFaq = [
     content: (
       <>
         Visit our{" "}
-        <Link to={paths.donate} style={{ color: "#6D033F" }}>
+        <Link to={paths.donate_partner} style={{ color: "#6D033F" }}>
           partnership page
         </Link>{" "}
         to find out more about this
@@ -393,7 +395,7 @@ export const homepageOurCommunityCards = [
     textContent:
       "Join Our community platform and get to connect with 25,000+ African women in tech from around the continent just like you.",
     bgImage: "card-body-img-4",
-    link: paths.chapters,
+    link: paths.community,
   },
   {
     heading: "Our Events",

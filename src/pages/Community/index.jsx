@@ -81,11 +81,11 @@ const Community = () => {
         </section>
 
         <section className="w-90 mx-auto flex justify-center mt-[-50px]">
-          <figure className="m-0 p-0 block">
+          <figure className="m-0 p-0 block w-full md:h-[413px]">
             <img
               src={newsletterLogo}
               alt="loading slack channel"
-              className={`animate__animated ${
+              className={`animate__animated w-full h-full ${
                 isLoaded ? "hidden animate__fadeOut" : "inline-block"
               } h-[500px] blur-sm brightness-80`}
             />
@@ -93,11 +93,11 @@ const Community = () => {
               src={communityImg}
               ref={imgRef}
               alt="community slack channel"
-              className={`animate__animated ${
+              className={`animate__animated w-full h-full ${
                 isLoaded
                   ? "animate__fadeIn opacity-100 static"
                   : "opacity-0 absolute"
-              } h-[500px] blur-0 brightness-100`}
+              } blur-0 brightness-100`}
               loading="lazy"
             />
           </figure>
@@ -144,7 +144,7 @@ const Community = () => {
               <div className="w-full flex justify-center items-center gap-8">
                 <div className="flex items-center justify-center gap-8 mt-8">
                   <a
-                    className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base font-normal"
+                    className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base font-normal text-center"
                     href="https://medium.com/shecodeafrica"
                     target="_blank"
                     rel="noreferrer"
@@ -155,7 +155,7 @@ const Community = () => {
 
                 <div className="flex items-center justify-center gap-8 mt-8">
                   <a
-                    className="bg-community-pink-bg px-8 py-[14px] mt-3 rounded-[30px] text-charcoal text-base font-normal"
+                    className="bg-community-pink-bg px-8 py-[14px] mt-3 rounded-[30px] text-charcoal text-base font-normal text-center"
                     href="https://sca-editorial.notion.site/SheCodeAfrica-Guest-Writing-Program-b94f2b9d70b347569c2beb3474180301"
                     target="_blank"
                     rel="noreferrer"

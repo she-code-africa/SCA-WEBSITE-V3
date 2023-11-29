@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const ChaptersCard = ({ chapterImage, name, city }) => {
+const ChaptersCard = ({ chapterImage, chapter }) => {
   return (
     <div
-      className="border-[12px] border-community-pink-bg w-full mx-auto md:mx-0 rounded-[50px]"
+      className="border-[12px] border-community-pink-bg w-full mx-auto md:mx-0 rounded-[50px] "
       style={{ background: "#FFF7FC" }}
     >
       <figure className="m-0 my-6 p-0 mx-auto max-w-[184px] w-full h-[184px] rounded-full overflow-hidden">
@@ -18,14 +17,19 @@ const ChaptersCard = ({ chapterImage, name, city }) => {
       <div className="my-5 border-2  border-primary-main-pink "></div>
 
       <p className="text-base md:text-lg text-primary-main-pink font-semibold capitalize px-9">
-        {name},<br />
-        {city}.
+        {chapter.name},<br />
+        {chapter.city}.
       </p>
 
       <div className="flex mb-12 px-9">
-        <Link to="#" className="mt-3 text-sm md:text-base hidden">
+        <a
+          href={`${chapter.link || "#"}`}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-3 text-sm md:text-base font-medium"
+        >
           Join chapter
-        </Link>
+        </a>
       </div>
     </div>
   );

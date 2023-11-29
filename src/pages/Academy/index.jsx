@@ -18,13 +18,14 @@ const LandingPage = () => {
   useEffect(() => {
     if (!isLoading) {
       setSchools(data);
+      console.log({ data });
     }
   }, [data, isLoading]);
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Academy</title>
+        <title>SCA Academy</title>
         <meta
           name="description"
           content="Our Academy offers a range of tech training programs and boot camps across various tech fields"
@@ -71,16 +72,17 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section id="mentor" className="my-32 w-10/12 mx-auto">
+        <section
+          id="mentor"
+          className="my-32 w-10/12 md:w-[75%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 justify-between"
+        >
           {schools.length > 0 &&
             schools.map((school, index) => (
               <article
-                className={`md:flex items-center justify-between my-40 ${
-                  index % 2 === 0 && "flex-row-reverse"
-                }`}
+                className={`md:flex items-center justify-between my-40 `}
                 key={index}
               >
-                <div className="md:w-6/12">
+                <div className="md:w-[90%]">
                   <h2
                     aria-labelledby="mentor"
                     className="font-bold text-[32px] leading-[44px] text-primary-main-pink mb-4 capitalize"
@@ -98,31 +100,8 @@ const LandingPage = () => {
                     View school
                   </Link>
                 </div>
-                <img
-                  src={school.image || guidance}
-                  alt="four people reviewing code"
-                  className="object-contain h-[350px]"
-                />
               </article>
             ))}
-
-          <div className="flex items-center justify-center gap-8 mt-20">
-            <Link
-              className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal"
-              to="/chapters"
-              rel="noreferrer"
-            >
-              Become a mentor
-            </Link>
-
-            <Link
-              className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal"
-              to="/chapters"
-              rel="noreferrer"
-            >
-              Become a mentee
-            </Link>
-          </div>
         </section>
 
         <section className="my-[120px]">

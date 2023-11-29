@@ -169,7 +169,7 @@ const Volunteer = () => {
                   });
                   setShowModal();
                 }}
-                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
               >
                 Become a mentor
               </button>
@@ -234,7 +234,7 @@ const Volunteer = () => {
                   });
                   setShowModal();
                 }}
-                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
               >
                 Become a facilitator
               </button>
@@ -273,7 +273,7 @@ const Volunteer = () => {
                   });
                   setShowModal();
                 }}
-                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
+                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
               >
                 Join our support team
               </button>

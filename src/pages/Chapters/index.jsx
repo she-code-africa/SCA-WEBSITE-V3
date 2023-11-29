@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 import { getChapters } from "../../services";
 import { apiConstants, paths } from "../../utils";
-import chapterImage from "../../images/chapters/chapter-img.png";
+import chapterImage from "../../images/chapters/sca-chapters-img.png";
 import JoinUs from "../../components/JoinUs";
 import ChaptersCard from "../../components/Chapters";
 import * as components from "../../components";
@@ -27,6 +27,8 @@ const Chapters = () => {
     [apiConstants.chapters],
     getChapters
   );
+
+  console.log(data);
 
   const [chapters, setChapters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -61,6 +63,38 @@ const Chapters = () => {
       setChapters(data);
     }
   }, [data, isFetched, isSuccess]);
+
+  // pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [disable, setDisable] = useState({
+    next: false,
+    prev: true,
+  });
+  const chaptersPerPage = 8;
+  const lastIndex = currentPage * chaptersPerPage;
+  const firstIndex = lastIndex - chaptersPerPage;
+  const totalPages = Math.ceil(chapters.length / chaptersPerPage);
+  const allChapters = chapters.slice(firstIndex, lastIndex);
+
+  const nextPage = () => {
+    if (currentPage !== totalPages) {
+      setCurrentPage(currentPage + 1);
+      setDisable({ ...disable, prev: false });
+    }
+    if (currentPage === totalPages - 1) {
+      setDisable({ next: true, prev: false });
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+      setDisable({ next: false, prev: false });
+    }
+    if (currentPage === 2) {
+      setDisable({ next: false, prev: true });
+    }
+  };
   return (
     <>
       <Helmet>
@@ -180,13 +214,12 @@ const Chapters = () => {
           ) : (
             <>
               <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">
-                {chapters.map((chapter, index) => {
+                {allChapters.map((chapter, index) => {
                   return (
                     <div className="" key={index}>
                       <ChaptersCard
                         chapterImage={chapterImage}
-                        name={chapter.name}
-                        city={chapter.city}
+                        chapter={chapter}
                       />
                     </div>
                   );
@@ -199,10 +232,18 @@ const Chapters = () => {
             <>
               {data.length > 8 || chapters.length > 8 ? (
                 <div className="flex justify-center gap-7 mt-[57px]">
-                  <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
+                  <button
+                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
+                    onClick={prevPage}
+                    disabled={disable.prev}
+                  >
                     <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
                   </button>
-                  <button className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full">
+                  <button
+                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
+                    onClick={nextPage}
+                    disabled={disable.next}
+                  >
                     <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
                   </button>
                 </div>

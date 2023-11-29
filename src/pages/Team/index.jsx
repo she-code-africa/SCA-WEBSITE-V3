@@ -113,6 +113,7 @@ const Team = () => {
           className="min-h-[90dvh] flex items-center bg-[#FCF5F8] pt-16 lg:pt-24"
           style={{
             backgroundImage: `url(${heroBg})`,
+            backgroundSize: `cover`
           }}
         >
           <div className="md:w-10/12 w-11/12 mx-auto flex items-center">
@@ -151,9 +152,13 @@ const Team = () => {
           {isError ? (
             <Error />
           ) : isLoading ? (
-            <Loading />
+            <div className="w-10/12 xl:w-9/12 mx-auto my-16 grid lg:grid-cols-3 md:grid-cols-2 xl:gap-24 gap-12">
+              {[1, 2, 3, 4, 5, 6].map((index) => (
+                <Loading key={index} />
+              ))}
+            </div>
           ) : (
-            <div className="w-10/12 lg:w-9/12 mx-auto my-20">
+            <div className="w-10/12 xl:w-9/12 mx-auto my-20">
               <div className="my-10 flex lg:flex-row flex-col justify-between gap-y-8">
                 <div className="flex lg:flex-row flex-col gap-4 gap-y-8">
                   {teamCategories.map((category) => (
@@ -176,11 +181,13 @@ const Team = () => {
                     className="border border-[#F2F4F3] rounded-full h-12 px-5 flex items-center gap-1 focus-within:ring-4 focus-within:ring-[#B70569] focus:outline-none"
                     tabIndex={0}
                     role="searchbox"
+                    aria-label="Search box"
                   >
                     <label htmlFor="search">
                       <FontAwesomeIcon
                         icon={faMagnifyingGlass}
                         className="text-[#020122]"
+                        aria-hidden
                       />
                     </label>
                     <input
@@ -196,7 +203,7 @@ const Team = () => {
                   </div>
                 </div>
               </div>
-              <div className="my-16 grid lg:grid-cols-3 md:grid-cols-2 lg:gap-32 gap-12">
+              <div className="my-16 grid lg:grid-cols-3 md:grid-cols-2 xl:gap-24 lg:gap-10 gap-12">
                 {teamMembers?.length ? (
                   teamMembers.map((member, index) => {
                     if (member.team.name.includes(activeSelection)) {
@@ -238,7 +245,7 @@ const Team = () => {
           }`}
       >
         <div className="bg-[#B70569] text-white h-full w-full rounded-3xl overflow-y-auto lg:h-[65vh]">
-          <div class="md:p-7 p-4">
+          <div className="md:p-7 p-4">
             <div className="text-right">
               <button
                 ref={hideModalRef}

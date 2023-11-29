@@ -73,13 +73,17 @@ const Jobs = () => {
           </Link>
         </section>
         <section className=" w-11/12 mx-auto __jobs_preview my-10 text-[#707070]">
-          <h3 className="text-center job-type-header text-2xl font-medium text-gray-800">
+          <h2 className="text-center job-type-header text-2xl font-medium text-gray-800">
             Jobs
-          </h3>
+          </h2>
           {isError ? (
             <Error />
           ) : isLoading ? (
-            <Loading />
+            <div className="my-6 flex flex-col md:grid grid-cols-2 gap-10 w-[90%] mx-auto lg:w-[60%]">
+              {[1, 2, 3, 4].map((index) => (
+                <Loading key={index} />
+              ))}
+            </div>
           ) : (
             <div className="my-6 flex flex-col md:grid grid-cols-2 gap-10 w-[90%] mx-auto lg:w-[60%]">
               {allJobs.map((job) => (
@@ -87,7 +91,7 @@ const Jobs = () => {
                   key={job._id}
                   className="border border-[#dcdcdc] px-10 py-10 rounded-t-none rounded-br-[50px] rounded-bl-none flex flex-col items-stretch"
                 >
-                  <h4 className="text-2xl font-medium my-5">{job.title}</h4>
+                  <h3 className="text-2xl font-medium my-5">{job.title}</h3>
                   <p className="text-base mb-4">{job.location}</p>
                   <p className="text-justify overflow-clip text-ellipsis break-words flex-auto mb-8">
                     {job.description}

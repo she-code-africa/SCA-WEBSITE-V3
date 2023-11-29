@@ -6,7 +6,7 @@ const Text = ({ heading, subheading }) => {
       <h2 className="text-2xl md:text-3xl 2md:text-[40px] font-bold 2md:leading-[82px]">
         {heading}
       </h2>
-      <p className="leading-[20px] mt-2 text-base mx-auto max-w-[541px]">
+      <p className="leading-[24px] mt-2 text-base mx-auto max-w-[541px]">
         {subheading}
       </p>
     </div>

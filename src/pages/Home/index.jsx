@@ -117,7 +117,7 @@ const Home = () => {
 
                 {whoWeAreTexts.map((content, index) => {
                   return (
-                    <article className="w-full mt-8 2md:mt-[40px]" key={index}>
+                    <section className="w-full mt-8 2md:mt-[40px]" key={index}>
                       <h3 className="font-semibold text-center text-2xl 2md:text-[32px] 2md:text-left capitalize">
                         {content.heading}
                       </h3>
@@ -125,7 +125,7 @@ const Home = () => {
                       <p className="text-base leading-[2] mt-2 2md:mt-4 text-center 2md:text-left text-primary-dark-brown w-[90%] mx-auto 2md:mx-0">
                         {content.text}
                       </p>
-                    </article>
+                    </section>
                   );
                 })}
               </div>
@@ -148,7 +148,7 @@ const Home = () => {
           <div className="w-90 mx-auto">
             <homecomponents.Text
               heading="What We Do"
-              subheading="According to Data from Accenture, the ratio of women to men in tech roles has declined in the past 35 years. Out of 50% individuals in the industry, only 20% are women who are significantly represented,  with only 14% in software engineering and 25% in computer science related roles compared to their male counterparts. "
+              subheading="According to Data from Accenture, the ratio of women to men in tech roles has declined in the past 35 years. Out of 50% individuals in the industry, only 20% are women who are significantly represented, with only 14% in software engineering and 25% in computer science related roles compared to their male counterparts. Here's how we're tackling that:"
             />
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 2md:gap-14 md:max-w-[700px] 2md:max-w-[800px] mx-auto">
               {homepageOurCommunityCards.map(
@@ -223,7 +223,7 @@ const Home = () => {
         <section className="w-full bg-cotton-candy mt-[150px] md:mt-[200px]  py-16">
           <div className="w-full md:w-[90%] mx-auto xl:w-full xl:px-[200px] py-[120px]">
             <div className="relative hire-us bg-white w-[90%] md:w-full grid grid-cols-1 md:grid-cols-2 md:max-w-[1000px] mx-auto px-8 md:px-[60px] md:py-[40px] py-9 gap-10">
-              <article className="w-full py-5 flex flex-col justify-center">
+              <section className="w-full py-5 flex flex-col justify-center">
                 <h3
                   className="text-2xl md:text-4xl font-bold"
                   style={{ lineHeight: "48px" }}
@@ -250,7 +250,7 @@ const Home = () => {
                     url={paths.hire}
                   />
                 </div>
-              </article>
+              </section>
               <div className="w-full py-5 md:justify-end hidden md:flex">
                 <figure className="m-0 p-0 w-full mx-auto md:mx-0 max-w-[348px] h-[370px]">
                   <img
@@ -271,9 +271,9 @@ const Home = () => {
             className="absolute w-1/12 translate-x-[50%]"
           /> */}
           <div className="md:col-span-2 md:w-7/12 mx-auto grid place-content-center px-5 md:px-0 py-12 md:py-5 lg:py-0">
-            <h5 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
+            <h4 className="lg:text-5xl lg:leading-[58.18px] text-3xl leading-normal font-semibold">
               Your next chapter, made possible by mentoring
-            </h5>
+            </h4>
             <p className="lg:text-2xl lg:leading-[44px] text-lg lg:my-5 md:my-2 my-5">
               Build confidence as a leader, grow your network, and define your
               legacy.

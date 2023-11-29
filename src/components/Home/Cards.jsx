@@ -9,8 +9,8 @@ const Cards = ({ heading, textContent, cardBgImg, link = "#" }) => {
       <div
         className={`max-w-[350px] sm:max-w-[426px] h-[550px] md:h-[580px] card-body ${cardBgImg} flex items-end mx-auto sm:mx-0`}
       >
-        <article className="bg-white p-4 md:py-8 md:px-6 md:p-0 border-2 border-primary-main-pink w-full">
-          <h3 className="text-lg md:text-xl lg:text-2xl w-full text-center sm:text-justify font-semibold leading-[31px]">
+        <section aria-labelledby="title" className="bg-white p-4 md:py-8 md:px-6 md:p-0 border-2 border-primary-main-pink w-full">
+          <h3 id={heading} className="text-lg md:text-xl lg:text-2xl w-full text-center sm:text-justify font-semibold leading-[31px]">
             {heading}
           </h3>
 
@@ -25,7 +25,7 @@ const Cards = ({ heading, textContent, cardBgImg, link = "#" }) => {
             learn more&nbsp;&nbsp;&nbsp;
             <FontAwesomeIcon icon={faAngleRight} />
           </Link>
-        </article>
+        </section>
       </div>
     </section>
   );

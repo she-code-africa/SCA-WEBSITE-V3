@@ -7,10 +7,17 @@ main {
     url("../../images/community/Star-two.png"),
     url("../../images/community/Star-three.png");
   background-repeat: no-repeat;
-  background-position: -5% center, 90% 96px, 85% 430px;
+  background-position: -5% center, right 20px, 85% 430px;
 }
 
 @media (min-width: 400px) {
+  .star-bg {
+    // background-position: left center, 1050px 96px, 950px 430px;
+    background-position: left center, right 50px, 85% 430px;
+  }
+}
+
+@media (min-width: 992px) {
   .star-bg {
     // background-position: left center, 1050px 96px, 950px 430px;
     background-position: left center, 90% 96px, 85% 430px;

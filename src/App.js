@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes as Switch, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { paths } from "./utils";
@@ -41,6 +41,16 @@ function App() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  // temporary fix till we're able to fix heroku redirect
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      if (window.location.protocol === "http:") {
+        window.location.href = `https://${window.location.hostname}${window.location.pathname}`;
+      }
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Routes />
@@ -60,6 +70,8 @@ function Routes(params) {
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />
       <Route path={paths.leadChapter} element={<ChaptersForm />} />
+      <Route path={paths.donate_partner} element={<Donate />} />
+      <Route path={paths.partner} element={<Donate />} />
       <Route path={paths.donate} element={<Donate />} />
       <Route path={paths.events} element={<Events />} />
       <Route path={paths.jobs} element={<Jobs />} />
