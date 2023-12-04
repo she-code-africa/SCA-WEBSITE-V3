@@ -36,7 +36,7 @@ import LandingPage from "./pages/Academy";
 
 const queryClient = new QueryClient();
 
-function App() {
+function App () {
   const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,13 +59,12 @@ function App() {
   );
 }
 
-function Routes(params) {
+function Routes (params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
       <Route path="/academy/:slug" element={<AcademyPage />} />
       <Route path="/academy" element={<LandingPage />} />
-      {/* <Route path="/academy" element={<Redirects />} /> */}
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />
