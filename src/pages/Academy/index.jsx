@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { Helmet } from "react-helmet-async";
 import academyHero from "../../images/academy/academy.png";
-import guidance from "../../images/about/guidance.jpg";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import { apiConstants, paths } from "../../utils";
@@ -74,12 +73,12 @@ const LandingPage = () => {
 
         <section
           id="mentor"
-          className="my-32 w-10/12 md:w-[75%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 justify-between"
+          className="my-32 w-10/12 md:w-[75%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:gap-16 gap-10 justify-between"
         >
           {schools.length > 0 &&
             schools.map((school, index) => (
-              <article
-                className={`md:flex items-center justify-between my-40 `}
+              <div
+                className={`md:flex items-center justify-between`}
                 key={index}
               >
                 <div className="md:w-[90%]">
@@ -100,7 +99,7 @@ const LandingPage = () => {
                     View school
                   </Link>
                 </div>
-              </article>
+              </div>
             ))}
         </section>
 
