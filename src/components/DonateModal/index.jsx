@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from 'react';
-import { accountInfo } from '../../utils'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { accountInfo } from '../../utils';
 
 const cardUrl = {
     organisation: "https://flutterwave.com/pay/shecodeafrica",
@@ -21,17 +23,13 @@ const index = ({ display, toggleModal, type }) => {
                         <div className="p-4 min-h-[16.4px] text-center border-b-[1px]">
                             <h4 className="text-[24px]">Donation Options</h4>
                             <p>Kindly use any of the payment options to make your donation.</p>
-                            {type === "scholarship" ? <div>
-                                <h2 className="fund">₦ 1,900,000</h2>
-                                <small className="text-center text-[10px] text-primary-main-pink"><i>donation so far</i></small>
-                            </div> : null}
                         </div>
                         <div className="modal-body p-4">
                             <div className="flex justify-between">
                                 <div>
                                     <div className="box">
                                         <a className="w-[48%]" href={cardUrl[type]} target="_blank" rel="noreferrer">
-                                            <h5>Card Donation </h5>
+                                            <h5>Card Donation  <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" size="xs" /></h5>
                                         </a>
                                     </div>
                                 </div>
