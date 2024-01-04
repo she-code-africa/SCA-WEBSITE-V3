@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { accountInfo } from "../../utils";
 
 const cardUrl = {
@@ -20,30 +22,22 @@ const index = ({ display, toggleModal, type }) => {
       className="modal overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal h-full md:inset-0 bg-[#333] bg-opacity-70"
       onClick={() => toggleModal()}
     >
-      <div className="relative p-4 h-full md:h-auto mx-auto my-auto modal-dialog max-w-[600px] w-full">
+      <div className="relative p-4 h-full md:h-auto mx-auto my-auto modal-dialog max-w-[600px]">
         <div
           className="modal-content shadow-black"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="relative bg-white rounded-lg shadow modal-body mt-5">
             <div className="p-4 min-h-[16.4px] text-center border-b-[1px]">
-              <h4 className="text-[18px] md:text-[24px]">Donation Options</h4>
+              <h4 className="text-[24px]">Donation Options</h4>
               <p>
                 Kindly use any of the payment options to make your donation.
               </p>
-              {type === "scholarship" ? (
-                <div>
-                  <h2 className="fund">₦ 1,900,000</h2>
-                  <small className="text-center text-[10px] text-primary-main-pink">
-                    <i>donation so far</i>
-                  </small>
-                </div>
-              ) : null}
             </div>
             <div className="modal-body p-4">
               <div className="flex justify-between">
-                <div className="w-fit">
-                  <div className="box w-fit">
+                <div>
+                  <div className="box">
                     <a
                       className="w-[48%]"
                       href={cardUrl[type]}
@@ -52,11 +46,16 @@ const index = ({ display, toggleModal, type }) => {
                     >
                       <h5 className="text-xs sm:text-sm md:text-base">
                         Card Donation{" "}
+                        <FontAwesomeIcon
+                          icon={faArrowUpRightFromSquare}
+                          aria-hidden="true"
+                          size="xs"
+                        />
                       </h5>
                     </a>
                   </div>
                 </div>
-                <div className="w-fit">
+                <div>
                   <button
                     className="box filter-button"
                     data-filter="wire"
@@ -128,7 +127,7 @@ const index = ({ display, toggleModal, type }) => {
                               </p>
                             </div>
                           </div>
-                          <div className="-mx-4 flex justify-between gap-1 sm:gap-0">
+                          <div className="-mx-4 flex justify-between gap-2 sm:gap-0">
                             <div className="w-4/12 px-2">
                               <p className="mini-title animate__animated animate__zoomIn">
                                 International Routing (SWIFT-BIC) Code:

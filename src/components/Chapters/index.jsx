@@ -7,11 +7,13 @@ const ChaptersCard = ({ chapterImage, chapter }) => {
       style={{ background: "#FFF7FC" }}
     >
       <figure className="m-0 my-6 p-0 mx-auto max-w-[184px] w-full h-[184px] rounded-full overflow-hidden">
-        <img
-          src={chapterImage}
-          alt="chapter-logo"
-          className="w-full h-full object-contain"
-        />
+        <a href={chapter.link || "#"} className="block w-full h-full">
+          <img
+            src={chapterImage}
+            alt="chapter-logo"
+            className="w-full h-full object-contain"
+          />
+        </a>
       </figure>
 
       <div className="my-5 border-2  border-primary-main-pink "></div>

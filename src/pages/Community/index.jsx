@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import newsletterLogo from "../../images/community/rectangle-one.jpeg";
 import communityImg from "../../images/community/community-img.png";
 import { whatsinStoreForYou } from "../../utils";
+import { Link } from "react-router-dom";
 
 const Community = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -120,13 +121,13 @@ const Community = () => {
         </section>
 
         <div className="flex items-center justify-center mt-20">
-          <a
+          <Link
             className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-[30px] text-white text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal"
-            href="/chapters"
+            to="/chapters"
             rel="noreferrer"
           >
             Join An SCA Chapter Around You
-          </a>
+          </Link>
         </div>
 
         <section className="mt-[99px] bg-hero-bg-gradient">
