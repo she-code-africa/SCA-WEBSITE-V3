@@ -38,7 +38,6 @@ const RegisterOrg = () => {
     mutateRegisterOrganization,
     {
       onSuccess: (data) => {
-        console.log(data);
         toast.success("Sign up Successful!", {
           position: toast.POSITION.TOP_RIGHT,
         });

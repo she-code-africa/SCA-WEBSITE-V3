@@ -130,7 +130,6 @@ export async function mutateTalent(payload) {
 
 export async function mutatePostJobs(payload) {
   const token = JSON.parse(localStorage.getItem("userDetails"))?.token;
-  console.log(token);
   return await api.post(`${baseUrl}/job/postings`, payload, {
     headers: {
       authorization: `Bearer ${token}`,

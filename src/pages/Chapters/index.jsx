@@ -28,8 +28,6 @@ const Chapters = () => {
     getChapters
   );
 
-  console.log(data);
-
   const [chapters, setChapters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [searchNotFound, setSearchNotFound] = useState(false);
@@ -217,12 +215,10 @@ const Chapters = () => {
                 {allChapters.map((chapter, index) => {
                   return (
                     <div className="" key={index}>
-                      <a href={chapter.link || "#"}>
-                        <ChaptersCard
-                          chapterImage={chapterImage}
-                          chapter={chapter}
-                        />
-                      </a>
+                      <ChaptersCard
+                        chapterImage={chapterImage}
+                        chapter={chapter}
+                      />
                     </div>
                   );
                 })}
