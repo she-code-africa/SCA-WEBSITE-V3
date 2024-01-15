@@ -9,6 +9,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { HelmetProvider } from "react-helmet-async";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize(process.env.REACT_APP_G_TAG_ID);
+
+// Send pageview with a custom path
+ReactGA.send({
+  hitType: "pageview",
+  page: window.location.pathname,
+  title: "App-views",
+});
 
 ReactDOM.render(
   <React.StrictMode>
