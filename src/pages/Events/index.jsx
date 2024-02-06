@@ -1,5 +1,5 @@
 /* eslint-disable no-lone-blocks */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
@@ -16,10 +16,20 @@ import * as components from "../../components";
 import eventBanner from "../../images/events-page/events-banner-sca.png";
 
 const Events = () => {
+  const [events, setEvents] = useState([]);
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
     [apiConstants.events],
     getEvents
   );
+
+  useEffect(() => {
+    if (data) {
+      const publishedEvents = data.filter(
+        (event) => event.state === "published"
+      );
+      setEvents(publishedEvents);
+    }
+  }, [data]);
 
   return (
     <>
@@ -77,16 +87,16 @@ const Events = () => {
           <components.Loading />
         ) : (
           <>
-            {isSuccess && isFetched && (
+            {isSuccess && isFetched && events && (
               <section className="mt-24 w-full text-primary-dark-brown">
                 <h2 className="text-3xl font-semibold mb-0 lg:my-18 lg:text-5xl text-center">
                   Upcoming Events
                 </h2>
 
                 <>
-                  {sortUpcomingEventByDate(data).length ? (
+                  {sortUpcomingEventByDate(events).length ? (
                     <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                      {sortUpcomingEventByDate(data).map((event) => {
+                      {sortUpcomingEventByDate(events).map((event) => {
                         return (
                           <Event
                             key={event._id}
@@ -107,9 +117,9 @@ const Events = () => {
                       Past Events
                     </h2>
 
-                    {sortPastEventsByDate(data).length ? (
+                    {sortPastEventsByDate(events).length ? (
                       <section className=" w-[90%] mx-auto md:w-[80%] md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                        {sortPastEventsByDate(data).map((event) => {
+                        {sortPastEventsByDate(events).map((event) => {
                           return <Event key={event._id} event={event} />;
                         })}
                       </section>
