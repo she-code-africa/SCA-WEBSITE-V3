@@ -74,7 +74,10 @@ const Team = () => {
   }, []);
 
   useEffect(() => {
-    setTeamMembers(data);
+    const publishedTeamMembers = data.filter(
+      (member) => member.state === "published"
+    );
+    setTeamMembers(publishedTeamMembers);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
@@ -113,7 +116,7 @@ const Team = () => {
           className="min-h-[90dvh] flex items-center bg-[#FCF5F8] pt-16 lg:pt-24"
           style={{
             backgroundImage: `url(${heroBg})`,
-            backgroundSize: `cover`
+            backgroundSize: `cover`,
           }}
         >
           <div className="md:w-10/12 w-11/12 mx-auto flex items-center">
@@ -164,10 +167,11 @@ const Team = () => {
                   {teamCategories.map((category) => (
                     <button
                       key={category.value}
-                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${activeSelection === category.value
-                        ? "bg-black text-white"
-                        : "bg-[#F9F9F9] text-black"
-                        }`}
+                      className={`font-semibold text-base py-3 px-8  rounded-full transition-colors duration-700 focus:ring-2 focus:ring-[#FDC0E3] ${
+                        activeSelection === category.value
+                          ? "bg-black text-white"
+                          : "bg-[#F9F9F9] text-black"
+                      }`}
                       onClick={() => {
                         setActiveSelection(category.value);
                       }}
@@ -226,7 +230,7 @@ const Team = () => {
                         />
                       );
                     }
-                    return <></>
+                    return <></>;
                   })
                 ) : (
                   <div className="text-xl text-center lg:col-span-3 md:col-span-2">
@@ -241,8 +245,9 @@ const Team = () => {
       </main>
       <dialog
         ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-30 bg-transparent animate__animated animate__faster ${animatedClass} justify-center items-center xl:w-6/12 lg:w-7/12 md:w-9/12 w-[95%] h-[98dvh] mx-auto overflow-hidden drop-shadow-md ${modalOpen ? `flex` : `hidden`
-          }`}
+        className={`backdrop:bg-black backdrop:bg-opacity-30 bg-transparent animate__animated animate__faster ${animatedClass} justify-center items-center xl:w-6/12 lg:w-7/12 md:w-9/12 w-[95%] h-[98dvh] mx-auto overflow-hidden drop-shadow-md ${
+          modalOpen ? `flex` : `hidden`
+        }`}
       >
         <div className="bg-[#B70569] text-white h-full w-full rounded-3xl overflow-y-auto lg:h-[65vh]">
           <div className="md:p-7 p-4">

@@ -67,8 +67,7 @@ export const getDateBreakdown = (_date) => {
   };
 };
 
-
-export function IsImageOk (img) {
+export function IsImageOk(img) {
   if (!img.complete) {
     return false;
   }
@@ -78,19 +77,18 @@ export function IsImageOk (img) {
   return true;
 }
 
-function checkUrl (url, callback) {
-  fetch(url, { method: 'head' })
-    .then(function (status) {
-      callback(status.ok)
-    });
+function checkUrl(url, callback) {
+  fetch(url, { method: "head" }).then(function (status) {
+    callback(status.ok);
+  });
 }
 
-export function urlExists (url) {
+export function urlExists(url) {
   checkUrl(url, function (exists) {
     if (exists) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
   });
 }

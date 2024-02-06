@@ -103,33 +103,35 @@ const AcademyPage = () => {
                 Current Programs
               </h2>
               {school.schoolPrograms && school.schoolPrograms.length > 0 ? (
-                school.schoolPrograms.map((content, index) => {
-                  return (
-                    <div
-                      key={content._id}
-                      className={`${
-                        index % 2 ? "flex-row-reverse" : "flex-row"
-                      } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
-                    >
-                      <img
-                        className="text-center md:w-96 object-contain h-[200px]"
-                        src={content.image}
-                        alt={content.title}
-                      />
-                      <div className="text-primary-dark-brown">
-                        <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
-                          {content.title}
-                        </h3>
-                        <p className="py-4 font-medium">
-                          {content.briefContent}. {content.extendedContent}
-                        </p>
-                        <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
-                          Apply
-                        </button>
+                school.schoolPrograms
+                  .filter((prog) => prog.state === "published")
+                  .map((content, index) => {
+                    return (
+                      <div
+                        key={content._id}
+                        className={`${
+                          index % 2 ? "flex-row-reverse" : "flex-row"
+                        } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+                      >
+                        <img
+                          className="text-center md:w-96 object-contain h-[200px]"
+                          src={content.image}
+                          alt={content.title}
+                        />
+                        <div className="text-primary-dark-brown">
+                          <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
+                            {content.title}
+                          </h3>
+                          <p className="py-4 font-medium">
+                            {content.briefContent}. {content.extendedContent}
+                          </p>
+                          <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
+                            Apply
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })
+                    );
+                  })
               ) : (
                 <h1 className="text-xl text-center mt-5 mx-auto font-normal text-[#1A1A1A] lg:leading-[72px]">
                   No ongoing programs.
