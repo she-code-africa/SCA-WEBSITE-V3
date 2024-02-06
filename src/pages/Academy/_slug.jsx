@@ -21,12 +21,10 @@ const AcademyPage = () => {
   );
 
   useEffect(() => {
-    console.log(data);
     if (!isLoading) {
       const findSchool = data.find((school, id) => {
         return school.slug.toLowerCase() === slug.toLowerCase();
       });
-      console.log(findSchool);
 
       if (findSchool) {
         setSchool(findSchool);

@@ -17,7 +17,6 @@ const LandingPage = () => {
   useEffect(() => {
     if (!isLoading) {
       setSchools(data);
-      console.log({ data });
     }
   }, [data, isLoading]);
   return (
