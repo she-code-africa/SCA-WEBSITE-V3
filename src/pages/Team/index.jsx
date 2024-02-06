@@ -74,11 +74,12 @@ const Team = () => {
   }, []);
 
   useEffect(() => {
-    const publishedTeamMembers = data.filter(
-      (member) => member.state === "published"
-    );
-    setTeamMembers(publishedTeamMembers);
-
+    if (data) {
+      const publishedTeamMembers = data.filter(
+        (member) => member.state === "published"
+      );
+      setTeamMembers(publishedTeamMembers);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
