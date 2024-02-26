@@ -20,6 +20,10 @@ const AcademyPage = () => {
     getAllSchools
   );
 
+  console.log('====================================');
+  console.log(school);
+  console.log('====================================');
+
   useEffect(() => {
     if (!isLoading) {
       const findSchool = data.find((school, id) => {
@@ -109,12 +113,11 @@ const AcademyPage = () => {
                     return (
                       <div
                         key={content._id}
-                        className={`${
-                          index % 2 ? "flex-row-reverse" : "flex-row"
-                        } md:flex p-6 items-center mt-8 mb-0 gap-28 justify-center`}
+                        className={`${index % 2 ? "flex-row-reverse" : "flex-row"
+                          } md:flex p-6  mt-8 mb-0 gap-28 justify-center`}
                       >
                         <img
-                          className="text-center md:w-96 object-contain h-[200px]"
+                          className="text-center md:w-96 object-contain h-[250px]"
                           src={content.image}
                           alt={content.title}
                         />
@@ -122,12 +125,13 @@ const AcademyPage = () => {
                           <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
                             {content.title}
                           </h3>
-                          <p className="py-4 font-medium">
-                            {content.briefContent}. {content.extendedContent}
+                          <p className="py-4 font-medium leading-relaxed">
+                            {content.briefContent}
                           </p>
-                          <button className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink">
+                          <p className=" pb-4 font-medium leading-relaxed mb-10">{content.extendedContent}</p>
+                          <a href={content.link} target="_blank" className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink" rel="noreferrer">
                             Apply
-                          </button>
+                          </a>
                         </div>
                       </div>
                     );
