@@ -125,10 +125,10 @@ const AcademyPage = () => {
                           <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
                             {content.title}
                           </h3>
-                          <p className="py-4 font-medium leading-relaxed">
-                            {content.briefContent}
-                          </p>
-                          <p className=" pb-4 font-medium leading-relaxed mb-10">{content.extendedContent}</p>
+                          <p dangerouslySetInnerHTML={{ __html: content.briefContent }} className="py-4 font-medium leading-relaxed" />
+
+                          <p dangerouslySetInnerHTML={{ __html: content.extendedContent }} className=" pb-4 font-medium leading-relaxed mb-10" />
+
                           <a href={content.link} target="_blank" className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink" rel="noreferrer">
                             Apply
                           </a>
