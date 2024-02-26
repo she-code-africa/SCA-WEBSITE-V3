@@ -137,9 +137,9 @@ const AcademyPage = () => {
                     );
                   })
               ) : (
-                <h1 className="text-xl text-center mt-5 mx-auto font-normal text-[#1A1A1A] lg:leading-[72px]">
+                <h2 className="text-xl text-center mt-5 mx-auto font-normal text-[#1A1A1A] lg:leading-[72px]">
                   No ongoing programs.
-                </h1>
+                </h2>
               )}
             </section>
           )}
