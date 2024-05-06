@@ -1,6 +1,14 @@
 import React from "react";
 
-const PrimaryInput = ({ label, name, type, placeholder, register, errors }) => {
+const PrimaryInput = ({
+  label,
+  name,
+  type,
+  placeholder,
+  register,
+  errors,
+  isRequired = true,
+}) => {
   return (
     <div className="w-full md:max-w-[455px] mb-6">
       <label
@@ -15,12 +23,20 @@ const PrimaryInput = ({ label, name, type, placeholder, register, errors }) => {
           errors && "border-primary-main-pink"
         }`}
       >
-        <input
-          type={type}
-          placeholder={placeholder}
-          {...register(name)}
-          className="text-base w-full h-full border-0 outline-none px-3 bg-white placeholder:text-[rgba(130,130,130,1)]"
-        />
+        {isRequired ? (
+          <input
+            type={type}
+            placeholder={placeholder}
+            {...register(name)}
+            className="text-base w-full h-full border-0 outline-none px-3 bg-white placeholder:text-[rgba(130,130,130,1)]"
+          />
+        ) : (
+          <input
+            type={type}
+            placeholder={placeholder}
+            className="text-base w-full h-full border-0 outline-none px-3 bg-white placeholder:text-[rgba(130,130,130,1)]"
+          />
+        )}
       </div>
 
       <p className="text-primary-main-pink text-sm">

@@ -6,17 +6,19 @@ import PrimaryInput from "../../components/ContactUs/inputs/PrimaryInput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { toast } from "react-toastify";
+import { useMutation } from "@tanstack/react-query";
+import { mutateEnquires } from "../../services";
 
 const ContactUsPage = () => {
   const schema = yup
     .object({
-      name: yup.string().required("Please enter your name"),
+      fullName: yup.string().required("Please enter your name"),
       email: yup
         .string()
         .email("Please enter a valid email address.")
         .required("Please enter your email address."),
-      subject: yup.string().required("Please enter a message title."),
-      messageBody: yup.string().required("Please enter your message."),
+      description: yup.string().required("Please enter your message."),
     })
     .required();
 
@@ -27,7 +29,19 @@ const ContactUsPage = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onsubmit = (data) => console.log(data);
+  const { mutate: handleContactUs } = useMutation(mutateEnquires, {
+    onSuccess: (data) => {
+      toast.success("Message sent Successfully!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    },
+    onError: (error, variables) => {
+      toast.error("An error occurred.", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+    },
+  });
+  const onsubmit = (data) => handleContactUs(data);
   return (
     <>
       <Helmet>
@@ -80,10 +94,10 @@ const ContactUsPage = () => {
                 <PrimaryInput
                   register={register}
                   label="name"
-                  name="name"
+                  name="fullName"
                   placeholder="Enter your name"
                   type="text"
-                  errors={errors.name}
+                  errors={errors.fullName}
                 />
                 <PrimaryInput
                   register={register}
@@ -94,12 +108,11 @@ const ContactUsPage = () => {
                   errors={errors.email}
                 />
                 <PrimaryInput
-                  register={register}
+                  isRequired={false}
                   label="enter subject"
                   name="subject"
                   placeholder="What is the subject of this message"
                   type="text"
-                  errors={errors.subject}
                 />
               </div>
 
@@ -112,18 +125,18 @@ const ContactUsPage = () => {
                 </label>
                 <div
                   className={`w-full md:max-w-[549px] h-[290px] mt-2 rounded-md border border-gains overflow-hidden ${
-                    errors.messageBody?.message && "border-primary-main-pink"
+                    errors.description?.message && "border-primary-main-pink"
                   }`}
                 >
                   <textarea
-                    {...register("messageBody")}
-                    name="messageBody"
+                    {...register("description")}
+                    name="description"
                     placeholder="Write your message"
                     className="text-base w-full h-full border-0 outline-none p-3 bg-white placeholder:text-[rgba(130,130,130,1)] resize-none"
                   ></textarea>
                 </div>
                 <p className="text-primary-main-pink text-sm">
-                  {errors.messageBody?.message}
+                  {errors.description?.message}
                 </p>
               </div>
             </div>
