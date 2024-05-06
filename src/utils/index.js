@@ -36,6 +36,7 @@ export const paths = {
   hire: "/hire",
   leadChapter: "/chapters/form",
   community: "/community",
+  contactUs: "/contact-us",
 };
 
 export const apiConstants = {

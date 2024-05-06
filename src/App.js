@@ -33,10 +33,11 @@ import "./styles/app.scss";
 import PrivateRoutes from "./components/PrivateRoutes";
 import AcademyPage from "./pages/Academy/_slug";
 import LandingPage from "./pages/Academy";
+import ContactUs from "./pages/ContactUs";
 
 const queryClient = new QueryClient();
 
-function App () {
+function App() {
   const { pathname } = useLocation();
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,7 +60,7 @@ function App () {
   );
 }
 
-function Routes (params) {
+function Routes(params) {
   return (
     <Switch>
       <Route path={paths.home} element={<Home />} />
@@ -89,6 +90,7 @@ function Routes (params) {
       <Route path={paths.initiatives} element={<Initiatives />} />
       <Route path={paths.hire} element={<Hire />} />
       <Route path={paths.community} element={<Community />} />
+      <Route path={paths.contactUs} element={<ContactUs />} />
       <Route path="*" element={<PageNotFound />} />
       <Route path="/jobs" element={<PrivateRoutes />}>
         <Route path={paths.post_job} element={<PostJob />} />
