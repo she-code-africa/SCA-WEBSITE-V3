@@ -26,6 +26,7 @@ module.exports = {
         gamboge: "#EEA30A",
         veryLightGrey: "#CFCFCF",
         "lavendar-blush": "#FFF7FC",
+        gains: "#D8D8D8",
       },
       fontSize: {
         15: "15px",

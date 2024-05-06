@@ -50,10 +50,10 @@ const CodeOfConduct = () => {
           <div className="code-of-conduct">
             <p>
               <span className="font-weight-bolder">She Code Africa (SCA)</span>{" "}
-              is dedicated to providing a harassment-free experience for African women and girls,
-              regardless of gender, gender identity and expression,
-              sexual orientation, disability, physical appearance, body size,
-              age, or religion. We do not tolerate harassment of
+              is dedicated to providing a harassment-free experience for African
+              women and girls, regardless of gender, gender identity and
+              expression, sexual orientation, disability, physical appearance,
+              body size, age, or religion. We do not tolerate harassment of
               participants in any form. This code of conduct applies to all She
               Code Africa spaces, including Slack, both online and off. Anyone
               who violates this code of conduct may be sanctioned or expelled
@@ -69,10 +69,17 @@ const CodeOfConduct = () => {
               ban from the community.
             </p>
             <p>
-              If you believe someone is violating the code of conduct, we ask that
-              you report it by emailing&nbsp;
+              If you believe someone is violating the code of conduct, we ask
+              that you report it by emailing&nbsp;
               <strong className="font-weight-bolder">
-                <a href="mailto:community@shecodeafrica.org" target="_blank" rel="noreferrer" className="focus:outline-none focus:ring focus:ring-tutu">community@shecodeafrica.org</a>
+                <a
+                  href="mailto:community@shecodeafrica.org"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu"
+                >
+                  community@shecodeafrica.org
+                </a>
               </strong>
               . For more details please see our Reporting Guidelines .
               <br />
@@ -92,8 +99,8 @@ const CodeOfConduct = () => {
               <li>
                 Offensive comments related to gender, gender identity and
                 expression, sexual orientation, disability, mental illness,
-                neuro(a)typicality, physical appearance, body size, age,
-                or religion.
+                neuro(a)typicality, physical appearance, body size, age, or
+                religion.
               </li>
               <li>
                 Unwelcome comments regarding a person's lifestyle choices and
@@ -151,8 +158,7 @@ const CodeOfConduct = () => {
             </strong>
             <ul className="pl-10">
               <li>
-                “Reverse”-isms, including “reverse sexism,”
-                and “cisphobia.”
+                “Reverse”-isms, including “reverse sexism,” and “cisphobia.”
               </li>
               <li>
                 Reasonable communication of boundaries, such as “leave me
@@ -163,8 +169,8 @@ const CodeOfConduct = () => {
                 focusing on responding to the content or disengaging instead)
               </li>
               <li>
-                Criticizing sexist, cissexist, or otherwise oppressive
-                behavior or assumptions
+                Criticizing sexist, cissexist, or otherwise oppressive behavior
+                or assumptions
               </li>
             </ul>
             <strong>
