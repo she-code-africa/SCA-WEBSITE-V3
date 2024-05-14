@@ -9,6 +9,7 @@ import * as yup from "yup";
 import { toast } from "react-toastify";
 import { useMutation } from "@tanstack/react-query";
 import { mutateEnquires } from "../../services";
+import Captcha from "../../components/Captcha";
 
 const ContactUsPage = () => {
   const schema = yup
@@ -140,7 +141,7 @@ const ContactUsPage = () => {
                 </p>
               </div>
             </div>
-
+            <Captcha />
             <div className="flex md:justify-end w-full">
               <div className="mt-5 md:mt-8 w-full max-w-[177px] rounded-[30px] h-[56px] overflow-hidden bg-primary-main-pink">
                 <button className="w-full h-full text-white capitalize">
