@@ -17,7 +17,7 @@ const modal = ({ display, closeModal }) => {
               <button
                 onClick={() => closeModal()}
                 type="button"
-                className="close text-gray-500 bg-transparent bg-gray-200 rounded-full text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white focus:outline-none focus:ring focus:ring-tutu"
+                className="close text-gray-900 bg-transparent border-gray-900 border-2 rounded-md text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white focus:outline-none focus:ring focus:ring-tutu"
                 data-modal-toggle="defaultModal"
                 autoFocus
               >
@@ -35,15 +35,20 @@ const modal = ({ display, closeModal }) => {
                 </svg>
               </button>
             </div>
-            <div className="space-y-5">
-              <div className="flex justify-center">
-                <img src={DonateIcon} alt="" />
+            <div className="space-y-16">
+              <h3 className="text-[24px] font-bold  ">Sponsor a Tech Lady</h3>
+              <div className="flex justify-center rounded-full ">
+                <img
+                  src={DonateIcon}
+                  alt=""
+                  className="bg-lavendar-blush  rounded-full px-14"
+                />
               </div>
-              <h3 className="text-[24px] font-medium">Sponsor a Tech Lady</h3>
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                Did you know by donating as little as $5.3(~3,000 NGN), you'd be
-                helping us mentor and provide resources to 1 female in tech in 1
-                day.
+
+              <p className="text-center leading-relaxed text-gray-500 dark:text-gray-400">
+                Did you know by donating as little as $5.3 (~8,532 NGN), you'd
+                be helping us mentor and provide resources to 1 female in tech
+                in 1 day?
               </p>
             </div>
             <div className="flex items-center space-x-2 rounded-b justify-center">
@@ -51,7 +56,7 @@ const modal = ({ display, closeModal }) => {
                 to="/donate-partner"
                 data-modal-toggle="defaultModal"
                 type="button"
-                className="btn shecode_button focus:outline-none focus:ring-8 focus:ring-tutu"
+                className="btn shecode_button text-center focus:outline-none rounded-full focus:ring-8 focus:ring-tutu"
               >
                 Make Donation
               </Link>
