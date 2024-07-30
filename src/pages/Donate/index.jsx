@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
-import { DonateCard } from "../../components/Cards";
+import { Link, useLocation } from "react-router-dom";
+import facilitators from "../../images/volunteerImgs/facilitators.png";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import * as components from "../../components";
@@ -9,6 +10,7 @@ import DonateModal from "../../components/DonateModal";
 import * as homecomponents from "../../components/Home";
 import { apiConstants } from "../../utils";
 import { getPartners } from "../../services";
+import laptopFund from "../../images/initiative/laptop-fund.png";
 
 const Donate = () => {
   const [modal, setModal] = useState(false);
@@ -22,6 +24,16 @@ const Donate = () => {
   const toggleModal = (type) => {
     setType(type);
     setModal(!modal);
+  };
+
+  const location = useLocation();
+  const topRef = useRef(null);
+
+  const handleGetStartedClick = (e) => {
+    if (location.pathname === "/donate-partner") {
+      e.preventDefault();
+      topRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -47,33 +59,45 @@ const Donate = () => {
       </Helmet>
       <Header page={"donate"} />
       <DonateModal display={modal} type={type} toggleModal={toggleModal} />
-      <main>
-        <section className="__shecodeheader">
-          <div className="container mx-auto px-4 lg:px-20 pt-[100px] md:pt-[150px]">
-            <div className="flex justify-center items-center -mx-4">
-              <div className="sm:w-7/12 px-4">
-                <div className="__shecodeheader_text">
-                  <div className="__shecodeheader_title">
-                    <h1>
-                      <span className="text-left">Donation</span>
-                      <br />
-                      <span className="text-center ml-[15%]">&</span>
-                      <br />
-                      <span className="text-left">Partnership</span>
+      <main ref={topRef}>
+        <section className="__shecodeheader pb-10 pt-20 lg:py-20 md:py-16 px-2  lg:px-20 md:px-16 bg-primary-main-pink">
+          <div className="container px-4 mx-auto  py-[100px] bg-lavendar-blush rounded-lg lg:mt-20 md:mt-16">
+            <div className="flex justify-center items-center ">
+              <div className="flex">
+                <div className="w-[90%] mx-auto  flex flex-col justify-center">
+                  <div className="">
+                    <h1 className="hero-heading text-center leading-[150%] font-bold text-[30px] md:text-[56px] 2md:text-[54px] mx-auto">
+                      Donation/Sponsor our Initiatives
                     </h1>
                   </div>
-                  <div className="__shecodeheader_subtitle">
-                    <h2>
-                      Our partners and donors go a long way in creating an
-                      impact and helping us reach thousands of{" "}
-                      <span className="highlight">women in technology</span>{" "}
-                      across Africa!
+                  <div>
+                    <h2 className="text-center mt-7 lg:w-4/5 mx-auto ">
+                      Help sponsor our events and initiatives to empower more{" "}
+                      <span className="highlight">
+                        African women in technology
+                      </span>{" "}
+                      via a donation or more. Being a sponsor gives more
+                      awareness to you or your organization's commitment to
+                      advocating for more women in technology while helping
+                      secure and cover costs for our numerous initiatives across
+                      Africa!
                     </h2>
                   </div>
+                  <div className="  mt-10 gap-5 lg:w-3/5 mx-auto items-center lg:flex">
+                    <button
+                      className="sca-btn white-btn rounded-full"
+                      onClick={() => toggleModal("individual")}
+                    >
+                      As an Individual
+                    </button>
+                    <button
+                      className="sca-btn pink-btn rounded-full"
+                      onClick={() => toggleModal("organisation")}
+                    >
+                      As an Organisation
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div className="w-full hidden sm:block sm:w-5/12">
-                <div className="__shecodeheader_image"></div>
               </div>
             </div>
           </div>
@@ -89,51 +113,79 @@ const Donate = () => {
             )}
           </div>
         </section>
-        <section className="__partner-donate flex flex-col sm:flex-row gap-5 justify-center section-whitespace-top clear-both w-[90%] mx-auto">
-          <DonateCard
-            title="PARTNER WITH US"
-            first_desc="Work hand-in-hand with us to achieve our goal of reaching more women in technology across Africa!"
-            second_desc=""
-          >
-            <div className="w-full h-auto">
-              <a
-                href="mailto:partnerships@shecodeafrica.org"
-                className="sca-btn pink-btn block"
-                style={{ width: "100%", fontSize: "15px" }}
+        <section className="w-full bg-cotton-candy mt-[150px] md:mt-[200px]  py-16">
+          <div className="w-full md:w-[90%] mx-auto xl:w-full xl:px-[200px] py-[120px]">
+            <div className="relative hire-us bg-white w-[90%] md:w-full grid grid-cols-1 md:grid-cols-2 md:max-w-[1000px] mx-auto px-8 md:px-[60px] md:py-[40px] py-9 gap-10">
+              <section className="w-full py-5 flex flex-col   justify-center">
+                <h3
+                  className="text-2xl md:text-4xl font-bold"
+                  style={{ lineHeight: "48px" }}
+                >
+                  Laptop scholarship Fund{" "}
+                </h3>
+
+                <p
+                  className="mt-4 w-full max-w-[380px]"
+                  style={{ lineHeight: "22px" }}
+                >
+                  At our Laptop Scholarship Initiative, we believe that every
+                  girl deserves the chance to succeed and we are committed to
+                  providing equal access to technology for all. We want to help
+                  alleviate that burden and ensure that every girl has the
+                  opportunity to achieve their tech dream.
+                </p>
+
+                <div className="flex mt-10">
+                  <button
+                    id="laptop-fund"
+                    className=" text-white bg-primary-main-pink hover:bg-white hover:border-2 hover:border-primary-main-pink hover:text-primary-main-pink  pl-[32px] pr-[40px] py-[15px] text-sm font-medium rounded-full border transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu"
+                    target="_blank"
+                    onClick={() => toggleModal("scholarship")}
+                  >
+                    LAPTOP SCHOLARSHIP FUND
+                  </button>
+                </div>
+              </section>
+              <div className="w-full py-5 md:justify-end hidden md:flex">
+                <figure className="m-0 p-0 w-full mx-auto md:mx-0 max-w-[450px] ">
+                  <img
+                    src={laptopFund}
+                    alt="laptop scholarship fund"
+                    className="object-cover w-full h-full"
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className=" w-9/12 mx-auto ">
+          <article className="md:flex items-center justify-between mt-28">
+            <div className="md:w-6/12">
+              <h2 className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-3">
+                Partner with us
+              </h2>
+              <p className="text-lg text-[#210D15]">
+                At She Code Africa, we believe in the power of learning and
+                collaboration, and we're always looking for passionate and
+                experienced facilitators to join our team. Whether you have
+                experience facilitating workshops, roundtable discussions, or
+                other types of events, we welcome anyone with a desire to help
+                others learn and develop their skills.
+              </p>
+              <Link
+                to="/donate-partner"
+                className="bg-primary-main-pink px-10 py-3 inline-block mt-3 rounded-full text-white text-lg font-semibold"
+                onClick={handleGetStartedClick}
               >
                 Get Started
-              </a>
+              </Link>
             </div>
-          </DonateCard>
-
-          <DonateCard
-            title="DONATE / SPONSOR OUR INITIATIVES"
-            first_desc="Help sponsor our events and initiatives to empower more African women in technology via a donation or more."
-            second_desc="Being a sponsor gives more awareness to you or your organization's commitment to advocating for more women in technology while helping secure and cover costs for our numerous initiatives, provide learning resources and tools to facilitate our events and programs across our several chapters."
-          >
-            <div className="w-fit">
-              <button
-                className="sca-btn white-btn"
-                onClick={() => toggleModal("individual")}
-              >
-                As an Individual
-              </button>
-              <button
-                className="sca-btn pink-btn"
-                onClick={() => toggleModal("organisation")}
-              >
-                As an Organisation
-              </button>
-              <button
-                id="laptop-fund"
-                className="btn sca-btn white-btn"
-                target="_blank"
-                onClick={() => toggleModal("scholarship")}
-              >
-                LAPTOP SCHOLARSHIP FUND
-              </button>
-            </div>
-          </DonateCard>
+            <img
+              src={facilitators}
+              alt="Facilitators"
+              className="object-contain lg:w-4/12 md:w-5/12 mt-7 md:mt-0"
+            />
+          </article>
         </section>
       </main>
       <Footer />
