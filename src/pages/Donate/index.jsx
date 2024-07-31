@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
-import { Link, useLocation } from "react-router-dom";
 import facilitators from "../../images/volunteerImgs/facilitators.png";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -24,16 +23,6 @@ const Donate = () => {
   const toggleModal = (type) => {
     setType(type);
     setModal(!modal);
-  };
-
-  const location = useLocation();
-  const topRef = useRef(null);
-
-  const handleGetStartedClick = (e) => {
-    if (location.pathname === "/donate-partner") {
-      e.preventDefault();
-      topRef.current.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   return (
@@ -59,7 +48,7 @@ const Donate = () => {
       </Helmet>
       <Header page={"donate"} />
       <DonateModal display={modal} type={type} toggleModal={toggleModal} />
-      <main ref={topRef}>
+      <main>
         <section className="__shecodeheader pb-10 pt-20 lg:py-20 md:py-16 px-2  lg:px-20 md:px-16 bg-primary-main-pink">
           <div className="container px-4 mx-auto  py-[100px] bg-lavendar-blush rounded-lg lg:mt-20 md:mt-16">
             <div className="flex justify-center items-center ">
@@ -67,7 +56,7 @@ const Donate = () => {
                 <div className="w-[90%] mx-auto  flex flex-col justify-center">
                   <div className="">
                     <h1 className="hero-heading text-center leading-[150%] font-bold text-[30px] md:text-[56px] 2md:text-[54px] mx-auto">
-                      Donation/Sponsor our Initiatives
+                      Donate & Partner with our Initiatives{" "}
                     </h1>
                   </div>
                   <div>
@@ -121,7 +110,7 @@ const Donate = () => {
                   className="text-2xl md:text-4xl font-bold"
                   style={{ lineHeight: "48px" }}
                 >
-                  Laptop scholarship Fund{" "}
+                  Laptop Scholarship Fund
                 </h3>
 
                 <p
@@ -172,13 +161,12 @@ const Donate = () => {
                 other types of events, we welcome anyone with a desire to help
                 others learn and develop their skills.
               </p>
-              <Link
-                to="/donate-partner"
+              <a
+                href="mailto:info@shecodeafrica.org"
                 className="bg-primary-main-pink px-10 py-3 inline-block mt-3 rounded-full text-white text-lg font-semibold"
-                onClick={handleGetStartedClick}
               >
                 Get Started
-              </Link>
+              </a>
             </div>
             <img
               src={facilitators}
