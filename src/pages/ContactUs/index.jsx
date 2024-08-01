@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { useMutation } from "@tanstack/react-query";
 import { mutateEnquires } from "../../services";
 import Captcha from "../../components/Captcha";
+import dottedImage from "../../images/Dotted Shape.png";
 
 const ContactUsPage = () => {
   const schema = yup
@@ -65,9 +66,19 @@ const ContactUsPage = () => {
         />
       </Helmet>
       <Header />
-      <main className=" text-secondary-main-black">
-        <section className=" bg-primary-main-pink pt-16 md:pt-24 lg:pt-28">
-          <div className="w-90 mx-auto min-h-[541px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0 star-bg">
+      <main className=" text-secondary-main-black bg-lavendar-blush relative">
+        <img
+          src={dottedImage}
+          alt="dotted image"
+          className=" absolute hidden md:block right-[15px] xl:bottom-[385px] 2xl:right-[800px] z-0 xl:right-[250px] lg:right-[35px] lg:bottom-[390px] "
+        />
+        <img
+          src={dottedImage}
+          alt="dotted image"
+          className=" absolute hidden md:block -bottom-20 lg:left-[45px] left-[20px] xl:left-[245px]   z-0 2xl:left-[800px]  "
+        />
+        <section className=" contact-bg mb-28 pt-16 md:pt-24 lg:pt-28">
+          <div className="w-90  mx-auto min-h-[541px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0  content">
             <div className="w-full max-w-[832px] mx-auto">
               <h1 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white">
                 contact us
@@ -88,8 +99,8 @@ const ContactUsPage = () => {
           </div>
         </section>
 
-        <section className="w-[90%] max-w-[900px] mx-auto mt-10 md:mt-12">
-          <form className="w-full" onSubmit={handleSubmit(onsubmit)}>
+        <section className="w-[90%] max-w-[900px]  mx-auto mt-10 bg-white md:mt-12 pt-10 px-10 pb-5   z-[1] relative">
+          <form className="w-full " onSubmit={handleSubmit(onsubmit)}>
             <div className="flex flex-col md:flex-row gap-5 md:gap-20">
               <div className="w-full md:w-[50%]">
                 <PrimaryInput
@@ -110,7 +121,7 @@ const ContactUsPage = () => {
                 />
                 <PrimaryInput
                   isRequired={false}
-                  label="enter subject"
+                  label="enter your subject"
                   name="subject"
                   placeholder="What is the subject of this message"
                   type="text"

@@ -204,6 +204,31 @@ h4 {
   }
 }
 
+.contact-bg {
+  background-image: url("../images/contact-bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.contact-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(183, 5, 105, 0.6);
+  z-index: 1;
+}
+
+.contact-bg .content {
+  position: relative;
+  z-index: 2; 
+}
+
+
 .__shecodelogo {
   width: 48px;
 }
