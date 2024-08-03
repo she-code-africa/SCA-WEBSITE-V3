@@ -60,7 +60,7 @@ const Donate = () => {
                     </h1>
                   </div>
                   <div>
-                    <h2 className="text-center mt-7 lg:w-4/5 mx-auto ">
+                    <h2 className="text-center mt-7 text-lg  mx-auto ">
                       Help sponsor our events and initiatives to empower more{" "}
                       <span className="highlight">
                         African women in technology
@@ -72,17 +72,17 @@ const Donate = () => {
                       Africa!
                     </h2>
                   </div>
-                  <div className="  mt-10 gap-5 lg:w-3/5 mx-auto items-center lg:flex">
+                  <div className="  mt-10 gap-7 lg:w-[50%] md:w-[70%] mx-auto items-center flex flex-col sm:flex-row sm:justify-center">
                     <button
-                      className="sca-btn white-btn rounded-full"
+                      className=" text-[15px] white-btn py-4 px-7 rounded-full w-full"
                       onClick={() => toggleModal("individual")}
                     >
                       As an Individual
                     </button>
                     <button
-                      className="sca-btn pink-btn rounded-full"
+                      className=" pink-btn py-4 px-7 rounded-full w-full text-[15px] "
                       onClick={() => toggleModal("organisation")}
-                    >
+                    > 
                       As an Organisation
                     </button>
                   </div>
@@ -102,7 +102,7 @@ const Donate = () => {
             )}
           </div>
         </section>
-        <section className="w-full bg-cotton-candy mt-[150px] md:mt-[200px]  py-16">
+        <section className="w-full bg-cotton-candy  mt-10 py-16">
           <div className="w-full md:w-[90%] mx-auto xl:w-full xl:px-[200px] py-[120px]">
             <div className="relative hire-us bg-white w-[90%] md:w-full grid grid-cols-1 md:grid-cols-2 md:max-w-[1000px] mx-auto px-8 md:px-[60px] md:py-[40px] py-9 gap-10">
               <section className="w-full py-5 flex flex-col   justify-center">
@@ -124,10 +124,10 @@ const Donate = () => {
                   opportunity to achieve their tech dream.
                 </p>
 
-                <div className="flex mt-10">
+                <div className="flex-col  sm:flex-row mt-10 w-full sm:w-3/4 ">
                   <button
                     id="laptop-fund"
-                    className=" text-white bg-primary-main-pink hover:bg-white hover:border-2 hover:border-primary-main-pink hover:text-primary-main-pink  pl-[32px] pr-[40px] py-[15px] text-sm font-medium rounded-full border transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu"
+                    className=" text-white bg-primary-main-pink hover:bg-white hover:border-2 hover:border-primary-main-pink hover:text-primary-main-pink   py-[15px] text-sm font-medium rounded-full border transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu"
                     target="_blank"
                     onClick={() => toggleModal("scholarship")}
                   >
