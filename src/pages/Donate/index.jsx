@@ -72,7 +72,22 @@ const Donate = () => {
                       Africa!
                     </h2>
                   </div>
-                  <div className="  mt-10 gap-7 lg:w-[50%] md:w-[70%] mx-auto items-center flex flex-col sm:flex-row sm:justify-center">
+                  <div className="mt-10 gap-7 lg:w-[50%] md:w-[70%] mx-auto items-center flex flex-col sm:flex-row sm:justify-center">
+  <button
+    className="text-[15px] white-btn py-4 px-7 rounded-full w-full sm:w-auto"
+    onClick={() => toggleModal("individual")}
+  >
+    As an Individual
+  </button>
+  <button
+    className="pink-btn py-4 px-7 rounded-full w-full text-[15px] sm:w-auto"
+    onClick={() => toggleModal("organisation")}
+  >
+    As an Organisation
+  </button>
+</div>
+
+                  {/* <div className="  mt-10 gap-7 lg:w-[50%] md:w-[70%] mx-auto items-center flex flex-col sm:flex-row sm:justify-center">
                     <button
                       className=" text-[15px] white-btn py-4 px-7 rounded-full w-full"
                       onClick={() => toggleModal("individual")}
@@ -82,10 +97,10 @@ const Donate = () => {
                     <button
                       className=" pink-btn py-4 px-7 rounded-full w-full text-[15px] "
                       onClick={() => toggleModal("organisation")}
-                    > 
+                    >
                       As an Organisation
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -123,8 +138,18 @@ const Donate = () => {
                   alleviate that burden and ensure that every girl has the
                   opportunity to achieve their tech dream.
                 </p>
+                <div className="flex flex-col sm:flex-row mt-10 w-full sm:w-3/6  ">
+                  <button
+                    id="laptop-fund"
+                    className="text-white bg-primary-main-pink hover:bg-white hover:border-2 hover:border-primary-main-pink hover:text-primary-main-pink py-[15px] text-sm font-medium rounded-full border transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu w-full sm:w-auto"
+                    target="_blank"
+                    onClick={() => toggleModal("scholarship")}
+                  >
+                    LAPTOP SCHOLARSHIP FUND
+                  </button>
+                </div>
 
-                <div className="flex-col  sm:flex-row mt-10 w-full sm:w-3/4 ">
+                {/* <div className="flex-col  sm:flex-row mt-10  sm:w-3/6 ">
                   <button
                     id="laptop-fund"
                     className=" text-white bg-primary-main-pink hover:bg-white hover:border-2 hover:border-primary-main-pink hover:text-primary-main-pink   py-[15px] text-sm font-medium rounded-full border transition duration-300 focus:outline-none focus:ring-8 focus:ring-tutu"
@@ -133,7 +158,7 @@ const Donate = () => {
                   >
                     LAPTOP SCHOLARSHIP FUND
                   </button>
-                </div>
+                </div> */}
               </section>
               <div className="w-full py-5 md:justify-end hidden md:flex">
                 <figure className="m-0 p-0 w-full mx-auto md:mx-0 max-w-[450px] ">
