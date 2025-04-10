@@ -11,6 +11,15 @@ export async function getChapters() {
   return chapters;
 }
 
+export async function getChapter(chapterId) {
+  // `${baseUrl}/chapters/categories/${categoryId}/member-chapters/${chapterId}`;
+  const token = JSON.parse(localStorage.getItem("userDetails"))?.token;
+  const chapters = await api.get(
+    `${baseUrl}/chapters/member-chapters/${chapterId}`
+  );
+  return chapters;
+}
+
 export async function getReach() {
   const reach = await api.get(`${baseUrl}/reach`);
   return reach;
