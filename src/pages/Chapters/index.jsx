@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 import Header from "../../components/Header";
 import searchIcon from "../../images/chapters/search-icon.png";
@@ -23,10 +23,16 @@ import ChaptersCard from "../../components/Chapters";
 import * as components from "../../components";
 
 const Chapters = () => {
-  const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
-    [apiConstants.chapters],
-    getChapters
-  );
+  const queryClient = useQueryClient();
+  const [page, setPage] = useState(1);
+
+  const { data, isError, isFetched, isSuccess, isLoading } = useQuery({
+    queryKey: [apiConstants.chapters, page],
+    queryFn: () => getChapters(page),
+    keepPreviousData: true,
+  });
+
+  console.log({ data });
 
   const [chapters, setChapters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
@@ -35,7 +41,7 @@ const Chapters = () => {
   const handleChange = (e) => {
     setSearchValue(e.target.value);
     if (e.target.value) {
-      const filteredResult = data.filter((chapter, index) => {
+      const filteredResult = data.data.filter((chapter, index) => {
         return (
           chapter?.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
           chapter?.city.toLowerCase().includes(e.target.value.toLowerCase()) ||
@@ -52,13 +58,13 @@ const Chapters = () => {
       }
     } else {
       setSearchNotFound(false);
-      setChapters(data);
+      setChapters(data.data);
     }
   };
 
   useEffect(() => {
     if (isSuccess && isFetched) {
-      setChapters(data);
+      setChapters(data.data);
     }
   }, [data, isFetched, isSuccess]);
 
@@ -68,31 +74,23 @@ const Chapters = () => {
     next: false,
     prev: true,
   });
-  const chaptersPerPage = 8;
-  const lastIndex = currentPage * chaptersPerPage;
-  const firstIndex = lastIndex - chaptersPerPage;
-  const totalPages = Math.ceil(chapters.length / chaptersPerPage);
-  const allChapters = chapters.slice(firstIndex, lastIndex);
 
   const nextPage = () => {
-    if (currentPage !== totalPages) {
-      setCurrentPage(currentPage + 1);
-      setDisable({ ...disable, prev: false });
-    }
-    if (currentPage === totalPages - 1) {
-      setDisable({ next: true, prev: false });
-    }
+    setPage(page + 1);
   };
 
   const prevPage = () => {
-    if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1);
-      setDisable({ next: false, prev: false });
-    }
-    if (currentPage === 2) {
-      setDisable({ next: false, prev: true });
-    }
+    setPage(page - 1);
   };
+
+  useEffect(() => {
+    if (data?.totalPages >= page) {
+      queryClient.prefetchQuery({
+        queryKey: [apiConstants.chapters, page + 1],
+        queryFn: () => getChapters(page + 1),
+      });
+    }
+  }, [data, page, queryClient]);
 
   return (
     <>
@@ -213,35 +211,36 @@ const Chapters = () => {
           ) : (
             <>
               <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">
-                {allChapters.map((chapter, index) => {
-                  return (
-                    <div className="" key={index}>
-                      <ChaptersCard
-                        chapterImage={chapterImage}
-                        chapter={chapter}
-                      />
-                    </div>
-                  );
-                })}
+                {data.data.length > 0 &&
+                  data.data.map((chapter, index) => {
+                    return (
+                      <div className="" key={index}>
+                        <ChaptersCard
+                          chapterImage={chapterImage}
+                          chapter={chapter}
+                        />
+                      </div>
+                    );
+                  })}
               </section>
             </>
           )}
 
           {!isLoading && (
             <>
-              {data.length > 8 || chapters.length > 8 ? (
+              {data.data.length > 0 ? (
                 <div className="flex justify-center gap-7 mt-[57px]">
                   <button
                     className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
                     onClick={prevPage}
-                    disabled={disable.prev}
+                    disabled={page === 1}
                   >
                     <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
                   </button>
                   <button
                     className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
                     onClick={nextPage}
-                    disabled={disable.next}
+                    disabled={data.totalPages === page}
                   >
                     <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
                   </button>

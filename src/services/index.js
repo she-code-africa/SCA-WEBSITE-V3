@@ -1,4 +1,5 @@
 import api from "../utils/api";
+import axios from "axios";
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
 export async function getEvents() {
@@ -6,9 +7,12 @@ export async function getEvents() {
   return events;
 }
 
-export async function getChapters() {
-  const chapters = await api.get(`${baseUrl}/chapters/member-chapters`);
-  return chapters;
+export async function getChapters(page) {
+  const chapters = await axios.get(
+    `${baseUrl}/chapters/member-chapters?page=${page}&limit=12`
+  );
+
+  return chapters.data;
 }
 
 export async function getChapter(chapterId) {
