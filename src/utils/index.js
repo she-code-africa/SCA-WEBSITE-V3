@@ -36,6 +36,8 @@ export const paths = {
   hire: "/hire",
   leadChapter: "/chapters/form",
   community: "/community",
+  contactUs: "/contact-us",
+  chapterDetails: "chapters/:id",
 };
 
 export const apiConstants = {
@@ -351,8 +353,8 @@ export const jobsFaq = [
 
 export const accountInfo = [
   {
-    heading: "DOM ACCOUNT WIRE TRANSFER (USD) ",
-    sub: "(for USD TXNs)",
+    heading: "DOM ACCOUNT WIRE TRANSFER  ",
+    sub: "( USD TRANSACTIONS)",
     acct_details: {
       bank_name: "UNITED BANK FOR AFRICA PLC, NIGERIA",
       account_name: "SHE-CODE AFRICA WOMEN TECH INITIATIVE",
@@ -361,8 +363,8 @@ export const accountInfo = [
     },
   },
   {
-    heading: "DOM ACCOUNT WIRE TRANSFER (EUR) ",
-    sub: "(for USD TXNs)",
+    heading: "DOM ACCOUNT WIRE TRANSFER ",
+    sub: "( EUR TRANSACTIONS)",
     acct_details: {
       bank_name: "UNITED BANK FOR AFRICA PLC, NIGERIA",
       account_name: "SHE-CODE AFRICA WOMEN TECH INITIATIVE",
@@ -371,8 +373,8 @@ export const accountInfo = [
     },
   },
   {
-    heading: "NAIRA ACCOUNT WIRE TRANSFER",
-    sub: "for other naira and or other currencies TXN",
+    heading: "NAIRA ACCOUNT WIRE TRANSFER ",
+    sub: "( FOR NAIRA AND OR OTHER CURRENCY )",
     acct_details: {
       bank_name: "UNITED BANK FOR AFRICA PLC, NIGERIA",
       account_name: "SHE-CODE AFRICA WOMEN TECH INITIATIVE",
