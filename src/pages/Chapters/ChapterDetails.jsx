@@ -62,10 +62,16 @@ const ChapterDetails = () => {
 
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
     [apiConstants.chapters],
-    () => getChapter(id)
+    () => getChapter(id),
+    {
+      onSuccess: (data) => {
+        if (data) {
+          setEvents(data.events || []);
+        }
+      },
+    }
   );
 
-  console.log("chapter data", data);
   return (
     <>
       <Helmet>
@@ -84,10 +90,6 @@ const ChapterDetails = () => {
                 </h1>
 
                 <p className="m-0 mt-2 text-center md:w-[90%] text-base md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-seal-brown 2md:text-justify font-normal">
-                  {/* Join 25,000+ African tech women on our platform and build your
-                successful career in the African tech industry. Explore our 43+
-                local chapters in 43 cities and campuses across Africa,
-                including Nigeria, Ghana, Kenya, Rwanda, and more. */}
                   {data.description}
                 </p>
               </div>
@@ -133,23 +135,37 @@ const ChapterDetails = () => {
           </p>
 
           <ul className="w-full mx-auto flex items-center gap-4 max-w-[230px] mt-5 justify-center">
-            {socialLinks.map((menu, i) => (
-              <li className="w-fit" key={i}>
-                <Link
-                  to={menu.link}
-                  className={`${
-                    !menu.isBgVisible
-                      ? "bg-black w-[32px] h-[32px] rounded-full flex items-center justify-center text-2xl"
-                      : "text-[32px]"
-                  }`}
-                >
-                  <FontAwesomeIcon
-                    icon={menu.icon}
-                    className={`${!menu.isBgVisible && "text-white"}`}
-                  />
-                </Link>
-              </li>
-            ))}
+            {data?.socialMediaLinks &&
+              Object.entries(data.socialMediaLinks).map(([name, link], i) => (
+                <li className="w-fit" key={i}>
+                  <Link
+                    to={link}
+                    className={`${
+                      !data.socialMediaLinks[name] === "facebook"
+                        ? "bg-black w-[32px] h-[32px] rounded-full flex items-center justify-center text-2xl"
+                        : "text-[32px]"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={
+                        name === "facebook"
+                          ? faFacebook
+                          : name === "instagram"
+                          ? faInstagram
+                          : name === "twitter"
+                          ? faXTwitter
+                          : name === "youtube"
+                          ? faYoutube
+                          : faLinkedinIn
+                      }
+                      className={`${
+                        !data.socialMediaLinks[name] === "facebook" &&
+                        "text-white"
+                      }`}
+                    />
+                  </Link>
+                </li>
+              ))}
           </ul>
 
           <div className="flex items-center justify-center gap-8 mt-8">
@@ -170,19 +186,31 @@ const ChapterDetails = () => {
           isLoading={isLoading}
         />
 
-        <section className="bg-primary-main-pink py-[110px] md:px-24 mt-[154px]">
-          <h1 className="hero-heading capitalize font-extrabold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white">
-            Organizers
-          </h1>
+        {!isLoading &&
+          data &&
+          data.chapterLeads &&
+          data.chapterLeads.length > 0 && (
+            <section className="bg-primary-main-pink py-[110px] md:px-24 mt-[154px]">
+              <h1 className="hero-heading capitalize font-extrabold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white">
+                Organizers
+              </h1>
 
-          <div className=" mt-14  w-[90%] mx-auto">
-            <div className="grid w-full sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-[66px]">
-              {[...Array(6)].map((_, i) => (
-                <OrganizersCard key={i} />
-              ))}
-            </div>
-          </div>
-        </section>
+              <div className=" mt-14  w-[90%] mx-auto">
+                <div className="grid w-full sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-[66px]">
+                  {data.chapterLeads?.map((lead, i) => (
+                    <OrganizersCard
+                      key={i}
+                      name={lead.name}
+                      role={lead.role}
+                      socialMediaLinks={lead.socialMediaLinks}
+                      leadImage={lead.image}
+                      chapterLogo={chapterImage}
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
 
         <section className="mt-14 lg:mt-28">
           <div className="text-center md:w-9/12 w-11/12 mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-[#FFF7FC] text-primary-dark-brown border-[#B70569] md:border-[15px] border-[10px] rounded-xl">

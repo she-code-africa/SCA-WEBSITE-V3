@@ -32,8 +32,6 @@ const Chapters = () => {
     keepPreviousData: true,
   });
 
-  console.log({ data });
-
   const [chapters, setChapters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [searchNotFound, setSearchNotFound] = useState(false);
