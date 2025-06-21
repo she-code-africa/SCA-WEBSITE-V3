@@ -14,7 +14,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { paths, apiConstants } from "../../utils";
 import { getReports } from "../../services";
-import logo from "../../images/logo-inverted.svg";
+// import logo from "../../images/logo-inverted.svg";
+import logo from "../../images/new-logo/new-logo-footer.png";
 
 const Footer = () => {
   const [openCaret, setOpenCaret] = useState(false);
@@ -37,7 +38,11 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-10 mb-14">
         <div className="grid md:grid-cols-4 text-left xs:grid-row-4 md:grid-row-1">
           <div className="justify-self-center img-box place-self-center">
-            <img src={logo} alt="SCA-Logo" className="__shecodelogo" />
+            <img
+              src={logo}
+              alt="SCA-Logo"
+              className="__shecodelogo w-full max-w-[150px] h-[100px] object-contain "
+            />
           </div>
           <div className="col-span-3 grid md:grid-cols-3 items-start">
             <div aria-label="Get Involved">

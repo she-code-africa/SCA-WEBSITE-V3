@@ -14,7 +14,8 @@ import { apiConstants } from "../../utils";
 import { getTeams } from "../../services";
 
 import heroBg from "../../images/team/bg-image.jpg";
-import box from "../../images/team/box.png";
+// import box from "../../images/team/box.png";
+import box from "../../images/new-logo/SCA-Avatar-Cirlce-White-BG.png";
 import avatar from "../../images/avatar-300x300.jpeg";
 
 const teamCategories = [
@@ -139,7 +140,7 @@ const Team = () => {
                 src={box}
                 alt=""
                 role="presentation"
-                className="object-contain"
+                className="object-contain w-full max-w-[673px] h-[658px]"
               />
             </div>
           </div>
