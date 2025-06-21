@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import Header from "../../components/Header";
 import searchIcon from "../../images/chapters/search-icon.png";
@@ -23,57 +23,57 @@ import ChaptersCard from "../../components/Chapters";
 import * as components from "../../components";
 
 const Chapters = () => {
-  const queryClient = useQueryClient();
   const [page, setPage] = useState(1);
-
-  const { data, isError, isFetched, isSuccess, isLoading } = useQuery({
-    queryKey: [apiConstants.chapters, page],
-    queryFn: () => getChapters(page),
-    keepPreviousData: true,
-  });
-
-  console.log({ data });
-
+  const [fullChapters, setFullChapters] = useState([]);
   const [chapters, setChapters] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [searchNotFound, setSearchNotFound] = useState(false);
 
-  const handleChange = (e) => {
-    setSearchValue(e.target.value);
-    if (e.target.value) {
-      const filteredResult = data.data.filter((chapter, index) => {
-        return (
-          chapter?.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-          chapter?.city.toLowerCase().includes(e.target.value.toLowerCase()) ||
-          chapter?.country.toLowerCase().includes(e.target.value.toLowerCase())
-        );
-      });
+  useQuery(["chapters-full"], () => getChapters(1, 1000), {
+    onSuccess: (data) => {
+      setFullChapters(data.data);
+    },
+    enabled: true, // always run once on mount
+  });
 
-      if (filteredResult.length > 0) {
-        setSearchNotFound(false);
-        setChapters(filteredResult);
-      } else {
-        setSearchNotFound(true);
-        setChapters([]);
-      }
-    } else {
+  const { data, isError, isLoading } = useQuery({
+    queryKey: [apiConstants.chapters, page],
+    queryFn: () => getChapters(page),
+    keepPreviousData: true,
+    onSuccess: (data) => {
+      setChapters(data.data);
+    },
+  });
+
+  const handleChange = (e) => {
+    if (!e.target.value) {
+      setChapters(data.data);
+    }
+    setSearchValue(e.target.value);
+  };
+
+  const handleSearch = () => {
+    if (!searchValue) {
       setSearchNotFound(false);
       setChapters(data.data);
     }
-  };
 
-  useEffect(() => {
-    if (isSuccess && isFetched) {
-      setChapters(data.data);
+    const filteredResult = fullChapters.filter((chapter, index) => {
+      return (
+        chapter?.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+        chapter?.city.toLowerCase().includes(searchValue.toLowerCase()) ||
+        chapter?.country.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    });
+
+    if (filteredResult.length > 0) {
+      setSearchNotFound(false);
+      setChapters(filteredResult);
+    } else {
+      setSearchNotFound(true);
+      setChapters([]);
     }
-  }, [data, isFetched, isSuccess]);
-
-  // pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const [disable, setDisable] = useState({
-    next: false,
-    prev: true,
-  });
+  };
 
   const nextPage = () => {
     setPage(page + 1);
@@ -82,15 +82,6 @@ const Chapters = () => {
   const prevPage = () => {
     setPage(page - 1);
   };
-
-  useEffect(() => {
-    if (data?.totalPages >= page) {
-      queryClient.prefetchQuery({
-        queryKey: [apiConstants.chapters, page + 1],
-        queryFn: () => getChapters(page + 1),
-      });
-    }
-  }, [data, page, queryClient]);
 
   return (
     <>
@@ -194,6 +185,13 @@ const Chapters = () => {
                 onChange={handleChange}
               />
             </div>
+
+            <button
+              onClick={handleSearch}
+              className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
+            >
+              Search
+            </button>
           </div>
 
           {searchNotFound && (
@@ -211,8 +209,8 @@ const Chapters = () => {
           ) : (
             <>
               <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">
-                {data.data.length > 0 &&
-                  data.data.map((chapter, index) => {
+                {chapters.length > 0 &&
+                  chapters.map((chapter, index) => {
                     return (
                       <div className="" key={index}>
                         <ChaptersCard
