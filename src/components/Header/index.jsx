@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import logo from "../../images/she-code-africa-logo.svg";
+import {
+  faAngleDown,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
+// import logo from "../../images/she-code-africa-logo.svg";
+import logo from "../../images/new-logo/new-logo-header.png";
 import { apiConstants, paths } from "../../utils";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
@@ -106,7 +110,7 @@ const Header = () => {
           <img
             src={logo}
             alt="Go to homepage"
-            className="object-contain __shecodelogo min-w-[60px] h-[60px]"
+            className="object-contain __shecodelogo min-w-[80px] h-[80px]"
           />
         </Link>
 
@@ -128,17 +132,19 @@ const Header = () => {
                   </span>
                   <FontAwesomeIcon
                     icon={faAngleDown}
-                    className={`transition-transform duration-300 ${selectedMenu === index ? "rotate-180" : null
-                      }`}
+                    className={`transition-transform duration-300 ${
+                      selectedMenu === index ? "rotate-180" : null
+                    }`}
                   />
                 </button>
               ) : (
                 <Link
                   to={menu.to}
-                  className={`focus:outline-none focus:ring focus:ring-tutu ${path === menu.to
-                    ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                    : null
-                    }`}
+                  className={`focus:outline-none focus:ring focus:ring-tutu ${
+                    path === menu.to
+                      ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
+                      : null
+                  }`}
                 >
                   {menu.text}
                 </Link>
@@ -149,10 +155,11 @@ const Header = () => {
                   {menu.list.map((list, index) => (
                     <li
                       key={index}
-                      className={`font-normal mb-5 ${path === list.to
-                        ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                        : null
-                        }`}
+                      className={`font-normal mb-5 ${
+                        path === list.to
+                          ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
+                          : null
+                      }`}
                     >
                       {list?.external ? (
                         <a
@@ -162,7 +169,11 @@ const Header = () => {
                           className="focus:outline-none focus:ring focus:ring-tutu flex gap-2 items-center"
                         >
                           <span>{list.text}</span>
-                          <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" size="xs" />
+                          <FontAwesomeIcon
+                            icon={faArrowUpRightFromSquare}
+                            aria-hidden="true"
+                            size="xs"
+                          />
                         </a>
                       ) : (
                         <Link
@@ -204,19 +215,22 @@ const Header = () => {
           className="flex flex-col justify-between items-center cursor-pointer w-[30px] h-[10px] transition-transform duration-300 ease-in-out focus:outline-none focus:ring focus:ring-tutu"
           onClick={handleClick}
           tabIndex={0}
-          aria-label={isOpen ? 'close menu' : 'open menu'}
+          aria-label={isOpen ? "close menu" : "open menu"}
         >
           <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${isOpen ? "translate-y-[5px] rotate-45" : ""
-              }`}
+            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${
+              isOpen ? "translate-y-[5px] rotate-45" : ""
+            }`}
           ></div>
           <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[6px] ${isOpen ? "scale-x-0" : ""
-              }`}
+            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[6px] ${
+              isOpen ? "scale-x-0" : ""
+            }`}
           ></div>
           <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[12px] ${isOpen ? "translate-y-[0px] -rotate-45" : ""
-              }`}
+            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[12px] ${
+              isOpen ? "translate-y-[0px] -rotate-45" : ""
+            }`}
           ></div>
         </button>
 
@@ -226,10 +240,11 @@ const Header = () => {
               {menus.map((menu, index) => (
                 <li
                   key={index}
-                  className={`font-medium text-xl  ${path === menu.to
-                    ? "text-primary-main-pink"
-                    : "text-[#1A1A1A] text-opacity-[82%]"
-                    }`}
+                  className={`font-medium text-xl  ${
+                    path === menu.to
+                      ? "text-primary-main-pink"
+                      : "text-[#1A1A1A] text-opacity-[82%]"
+                  }`}
                 >
                   {menu?.list ? (
                     <div className="font-medium block">{menu.text}</div>
@@ -246,10 +261,11 @@ const Header = () => {
                       {menu.list.map((list, index) => (
                         <li
                           key={index}
-                          className={`font-normal mb-5 ${path === list.to
-                            ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                            : null
-                            }`}
+                          className={`font-normal mb-5 ${
+                            path === list.to
+                              ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
+                              : null
+                          }`}
                         >
                           {list?.external ? (
                             <a
@@ -259,7 +275,11 @@ const Header = () => {
                               className="focus:outline-none focus:ring focus:ring-tutu flex gap-3 items-center"
                             >
                               <span>{list.text}</span>
-                              <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" size="xs" />
+                              <FontAwesomeIcon
+                                icon={faArrowUpRightFromSquare}
+                                aria-hidden="true"
+                                size="xs"
+                              />
                             </a>
                           ) : (
                             <Link
