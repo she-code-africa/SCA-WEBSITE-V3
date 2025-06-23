@@ -7,9 +7,9 @@ export async function getEvents() {
   return events;
 }
 
-export async function getChapters(page) {
+export async function getChapters(page, limit = 12) {
   const chapters = await axios.get(
-    `${baseUrl}/chapters/member-chapters?page=${page}&limit=12`
+    `${baseUrl}/chapters/member-chapters?page=${page}&limit=${limit}`
   );
 
   return chapters.data;

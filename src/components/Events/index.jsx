@@ -5,7 +5,7 @@ const Event = ({ event, isUpcoming }) => {
     <div className="w-full mb-10">
       <figure className="m-0 p-0 w-full h-[370px] max-w-[370px] mx-auto 2md:mx-0 border-[7px] border-primary-main-pink">
         <img
-          src={event.image}
+          src={event.image ? event.image : event.images[0]}
           alt="event-pic"
           className="w-full h-full object-contain"
         />
@@ -19,7 +19,7 @@ const Event = ({ event, isUpcoming }) => {
           {event.description}
         </p>
         {/* text-ellipsis whitespace-nowrap overflow-hidden h-[100px] */}
-        {isUpcoming ?
+        {isUpcoming ? (
           <div className="flex mt-5 justify-center 2md:justify-start">
             <a
               href={event.link ? event.link : "#"}
@@ -30,8 +30,7 @@ const Event = ({ event, isUpcoming }) => {
               register now
             </a>
           </div>
-          : null}
-
+        ) : null}
       </article>
     </div>
   );
