@@ -3,7 +3,7 @@ import { testimonialCards } from "../../../utils/v2";
 
 const OurQueensTestimonials = () => {
   return (
-    <section className="w-full relative">
+    <section className="w-full relative pt-20">
       <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text max-w-[474px] w-full mx-auto">
         Our Queens’ Experiences
       </h3>
