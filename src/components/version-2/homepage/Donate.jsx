@@ -19,7 +19,7 @@ const Donate = () => {
 
           <div className="mt-8 max-w-[152px] w-full rounded-lg bg-primary-main-pink">
             <Link
-              to="#"
+              to="/donate-partner"
               className="flex items-center justify-center rounded-lg max-w-[152px] h-[55px] bg-transparent text-white border-2 border-primary-main-pink hover:bg-white hover:text-primary-main-pink transition-all duration-300 text-base"
             >
               Donate here

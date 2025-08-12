@@ -66,6 +66,7 @@ const OurGallery = () => {
             label="View more impact images"
             customColor="text-white hover:text-primary-main-pink"
             bgHover="hover:bg-white rounded-lg transition-all duration-300"
+            url="https://drive.google.com/drive/folders/1VsF4fQvNLXXuwWnLi2ThjD6oZxJYdFkp"
           />
         </div>
       </div>

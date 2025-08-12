@@ -98,6 +98,7 @@ const Home = () => {
                   label="Join our community"
                   customColor="text-white hover:text-primary-main-pink"
                   bgHover="hover:bg-white rounded-lg transition-all duration-300"
+                  url="https://bit.ly/joinshecodeafrica"
                 />
                 <ButtonComponent
                   btnColor="[#ffffff]"
@@ -107,6 +108,7 @@ const Home = () => {
                   isWithIcon={true}
                   iconPos="right"
                   icon={<FontAwesomeIcon icon={faArrowRight} />}
+                  url="/donate-partner"
                 />
               </div>
             </article>
