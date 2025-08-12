@@ -69,12 +69,12 @@ const ContactUsPage = () => {
       <main className=" text-secondary-main-black bg-lavendar-blush relative">
         <img
           src={dottedImage}
-          alt="dotted image"
+          alt="dotted-pic"
           className=" absolute hidden md:block right-[15px] xl:bottom-[385px] 2xl:right-[800px] z-0 xl:right-[250px] lg:right-[35px] lg:bottom-[390px] "
         />
         <img
           src={dottedImage}
-          alt="dotted image"
+          alt="dotted-pic"
           className=" absolute hidden md:block -bottom-20 lg:left-[45px] left-[20px] xl:left-[245px]   z-0 2xl:left-[800px]  "
         />
         <section className=" contact-bg mb-28 pt-16 md:pt-24 lg:pt-28">

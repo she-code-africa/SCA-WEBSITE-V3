@@ -6,7 +6,7 @@ import {
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 // import logo from "../../images/she-code-africa-logo.svg";
-import logo from "../../images/new-logo/new-logo-header.png";
+import logo from "../../images/new-logo/Logo.png";
 import { apiConstants, paths } from "../../utils";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
@@ -101,7 +101,7 @@ const Header = () => {
   }, [isOpen]);
 
   return (
-    <header className="fixed left-0 right-0 top-0 w-full md:bg-white/80 bg-white z-[2] md:py-8 py-4 shadow-lg">
+    <header className="fixed left-0 right-0 top-0 w-full  bg-white z-[2] py-4 shadow-lg">
       <div className="justify-between gap-8 items-center lg:w-11/12 mx-auto hidden lg:flex px-5 lg:px-0">
         <Link
           to={paths.home}
@@ -110,7 +110,7 @@ const Header = () => {
           <img
             src={logo}
             alt="Go to homepage"
-            className="object-contain __shecodelogo min-w-[80px] h-[80px]"
+            className="object-contain __shecodelogo max-w-[216px] w-full h-[30px]"
           />
         </Link>
 
@@ -202,12 +202,12 @@ const Header = () => {
       <div className="lg:hidden flex justify-between place-items-center px-8">
         <Link
           to={paths.home}
-          className="lg:px-5 focus:outline-none focus:ring focus:ring-tutu"
+          className=" focus:outline-none focus:ring focus:ring-tutu"
         >
           <img
             src={logo}
             alt="Go to homepage"
-            className="object-contain __shecodelogo min-w-[40px] h-[40px]"
+            className="object-contain __shecodelogo max-w-[130px] w-full h-[30px]"
           />
         </Link>
 
