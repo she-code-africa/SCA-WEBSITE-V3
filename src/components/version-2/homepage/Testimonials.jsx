@@ -3,17 +3,17 @@ import { testimonialCards } from "../../../utils/v2";
 
 const OurQueensTestimonials = () => {
   return (
-    <section className="w-full relative pt-20">
+    <section className="w-full relative pt-20 pb-28 lg:pb-40 mt-20 lg:mt-32 testmonialBg">
       <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text max-w-[474px] w-full mx-auto">
         Our Queens’ Experiences
       </h3>
 
-      <div className="w-[90%] mx-auto xl:w-full xl:max-w-[1256px]  mt-10 flex flex-col md:flex-row items-center justify-center gap-8">
+      <div className="w-[90%] mx-auto xl:w-full xl:max-w-[1256px]  mt-10 flex flex-col md:flex-row items-center justify-center gap-10 xl:gap-8">
         {testimonialCards.map((item, i) => (
           <div
             className={`w-full max-w-[400px] rounded-2xl overflow-hidden p-0 m-0 ${
-              i === 0 && "bg-[#FF8FCE] xl:rotate-3"
-            } ${i === 1 && "bg-[#8FAB50] xl:mt-24 xl:-rotate-6"} ${
+              i === 0 && "bg-[#FF8FCE] rotate-3"
+            } ${i === 1 && "bg-[#8FAB50] xl:mt-24 -rotate-6"} ${
               i === 2 && "bg-[#7D355D] rotate-3"
             } `}
             key={i}

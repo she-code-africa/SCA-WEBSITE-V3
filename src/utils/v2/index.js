@@ -7,6 +7,13 @@ import slideImageSix from "../../assets/v2/images/home-hero-slider/slide-six.png
 import testimonial1 from "../../assets/v2/images/testimonial1.png";
 import testimonial2 from "../../assets/v2/images/testimonial2.png";
 import testimonial3 from "../../assets/v2/images/testimonial3.png";
+import galleryImg1 from "../../assets/v2/images/gallery-imgs/gallery1.png";
+import galleryImg2 from "../../assets/v2/images/gallery-imgs/gallery2.png";
+import galleryImg3 from "../../assets/v2/images/gallery-imgs/gallery3.png";
+import galleryImg4 from "../../assets/v2/images/gallery-imgs/gallery4.png";
+import galleryImg5 from "../../assets/v2/images/gallery-imgs/gallery5.png";
+import galleryImg6 from "../../assets/v2/images/gallery-imgs/gallery6.png";
+import galleryImg7 from "../../assets/v2/images/gallery-imgs/gallery7.png";
 
 export const homeHeroSliderImages = [
   slideImageOne,
@@ -72,3 +79,9 @@ export const testimonialCards = [
     img: testimonial3,
   },
 ];
+
+export const ourGallery1 = [galleryImg1, galleryImg2];
+
+export const ourGallery2 = [galleryImg3, galleryImg4, galleryImg5];
+
+export const ourGallery3 = [galleryImg6, galleryImg7];

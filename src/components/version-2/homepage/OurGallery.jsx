@@ -1,4 +1,6 @@
 import React from "react";
+import { ourGallery1, ourGallery2, ourGallery3 } from "../../../utils/v2";
+import ButtonComponent from "../shared-components/buttons/index.";
 
 const OurGallery = () => {
   return (
@@ -10,21 +12,68 @@ const OurGallery = () => {
           Our Gallery
         </h3>
 
-        <div className="masonry mt-10 border-red-500 border-2">
-          {[...Array(7)].map((_, i) => (
-            <div
-              className={`p-10 items border-2 border-green-500 w-full max-w-[412px]  item-${
-                i + 1
-              }`}
-              key={i}
-            >
-              {i + 1}
-            </div>
-          ))}
+        <section className="flex w-full gap-3  flex-col lg:flex-row mt-10">
+          <div className="w-full flex flex-col  gap-3">
+            {ourGallery1.map((item, idx) => (
+              <div className="w-full h-full  flex-1" key={idx}>
+                <figure className="w-full max-w-[412px]">
+                  <img
+                    src={item}
+                    alt={`gallery-pic-${idx}`}
+                    className="w-full h-full object-cover"
+                  />
+                </figure>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full flex flex-col  gap-3">
+            {ourGallery2.map((item, idx) => (
+              <div className="w-full h-full " key={idx}>
+                <figure
+                  className={`${
+                    idx + (1 % 2) !== 0 && ""
+                  } max-w-[412px] w-full `}
+                >
+                  <img
+                    src={item}
+                    alt={`gallery-pic-${idx}`}
+                    className="w-full h-full object-cover"
+                  />
+                </figure>
+              </div>
+            ))}
+          </div>
+
+          <div className="w-full lg:flex flex-col hidden  gap-3">
+            {ourGallery3.map((item, idx) => (
+              <div className="w-full h-full " key={idx}>
+                <figure className="w-full max-w-[412px]">
+                  <img
+                    src={item}
+                    alt={`gallery-pic-${idx}`}
+                    className="w-full h-full object-cover"
+                  />
+                </figure>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="mt-10 w-[90%] max-w-[250px] mx-auto">
+          <ButtonComponent
+            btnColor="[#B70569]"
+            label="View more impact images"
+            customColor="text-white hover:text-primary-main-pink"
+            bgHover="hover:bg-white rounded-lg transition-all duration-300"
+          />
         </div>
       </div>
     </section>
   );
 };
+// item-${
+//                 i + 1
+//               }
 
 export default OurGallery;

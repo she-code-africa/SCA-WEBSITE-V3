@@ -120,7 +120,7 @@ const Home = () => {
         <OurBrands />
         <OurReach />
         <WhatWeDo />
-        {/* <OurGallery /> */}
+        <OurGallery />
         <OurQueensTestimonials />
         <Donate />
       </main>
