@@ -27,6 +27,8 @@ module.exports = {
         veryLightGrey: "#CFCFCF",
         "lavendar-blush": "#FFF7FC",
         gains: "#D8D8D8",
+        "Secondary-Grape": "#7D355D",
+        "Primary-Magenta": "#B70569"
       },
       fontSize: {
         15: "15px",
@@ -39,6 +41,10 @@ module.exports = {
       screens: {
         "2md": "992px",
         "2xl": "1950px",
+      },
+      fontFamily: {
+        BebasNeue: ["Bebas Neue", "sans-serif"],
+        figtree: ["Figtree", "sans-serif"],
       },
     },
   },
