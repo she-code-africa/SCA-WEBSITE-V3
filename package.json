@@ -47,7 +47,6 @@
   },
   "scripts": {
     "start": "serve -s build",
-    "heroku-postbuild": "yarn build",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
