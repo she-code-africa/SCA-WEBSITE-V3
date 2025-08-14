@@ -11,7 +11,7 @@ const OurGallery = () => {
         <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
           Our Gallery
         </h3>
-        {/* masonry grid  */}
+
         <section className="flex w-full gap-3  flex-col lg:flex-row mt-10">
           <div className="w-full flex flex-col  gap-3">
             {ourGallery1.map((item, idx) => (
