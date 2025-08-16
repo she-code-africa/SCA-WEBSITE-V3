@@ -1,6 +1,6 @@
 import React from "react";
 import { ourGallery1, ourGallery2, ourGallery3 } from "../../../utils/v2";
-import ButtonComponent from "../shared-components/buttons/index.";
+import CustomButtonComponent from "../shared-components/buttons/index.";
 
 const OurGallery = () => {
   return (
@@ -32,7 +32,7 @@ const OurGallery = () => {
               <div className="w-full h-full " key={idx}>
                 <figure
                   className={`${
-                    idx + (1 % 2) !== 0 && ""
+                    (idx + 1) % 2 !== 0 && ""
                   } max-w-[412px] w-full `}
                 >
                   <img
@@ -61,11 +61,11 @@ const OurGallery = () => {
         </section>
 
         <div className="mt-10 w-[90%] max-w-[250px] mx-auto">
-          <ButtonComponent
-            btnColor="[#B70569]"
+          <CustomButtonComponent
+            // btnColor="[#B70569]"
             label="View more impact images"
             customColor="text-white hover:text-primary-main-pink"
-            bgHover="hover:bg-white rounded-lg transition-all duration-300"
+            bgHover="bg-[#B70569] border-[#B70569] hover:bg-white rounded-lg transition-all duration-300"
             url="https://drive.google.com/drive/folders/1VsF4fQvNLXXuwWnLi2ThjD6oZxJYdFkp"
           />
         </div>
@@ -73,8 +73,5 @@ const OurGallery = () => {
     </section>
   );
 };
-// item-${
-//                 i + 1
-//               }
 
 export default OurGallery;

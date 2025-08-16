@@ -1,33 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
-import adaRect from "../../images/ada-rect.jpg";
-import PopUpModal from "../../components/PopUpModal";
+
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
-import * as homecomponents from "../../components/Home";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleRight,
-  faArrowRight,
-  faArrowRightArrowLeft,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  apiConstants,
-  homepageOurCommunityCards,
-  paths,
-} from "../../utils/index";
-import BecomeAmemberButton from "../../components/Button/BecomeAmemberButton";
-import whoweareimage from "../../images/homepage/who-are-we.png";
-import { whoWeAreTexts } from "../../utils";
-import gallery1 from "../../images/homepage/gallery-sca.png";
-import gallery2 from "../../images/homepage/gallery-two.png";
-import gallery3 from "../../images/homepage/gallery-3.png";
-import hireTalent from "../../images/homepage/hire-talent.png";
-import { useQuery } from "@tanstack/react-query";
-import { getPartners } from "../../services";
-import * as components from "../../components";
-import ButtonComponent from "../../components/version-2/shared-components/buttons/index.";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
 import HomeHeroCarousel from "../../components/version-2/carousels/HomeHeroCarousel";
 import AboutUs from "../../components/version-2/homepage/AboutUs";
@@ -39,15 +19,6 @@ import OurQueensTestimonials from "../../components/version-2/homepage/Testimoni
 import Donate from "../../components/version-2/homepage/Donate";
 
 const Home = () => {
-  const [modal, setModal] = useState(true);
-  const closeModal = () => {
-    setModal(false);
-  };
-  const { isLoading, isError, data } = useQuery(
-    [apiConstants.partners],
-    getPartners
-  );
-
   return (
     <>
       <Helmet>
@@ -93,18 +64,18 @@ const Home = () => {
               </p>
 
               <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
-                <ButtonComponent
-                  btnColor="[#B70569]"
+                <CustomButtonComponent
+                  // btnColor="[#B70569]"
                   label="Join our community"
                   customColor="text-white hover:text-primary-main-pink"
-                  bgHover="hover:bg-white rounded-lg transition-all duration-300"
+                  bgHover="hover:bg-white bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
                 />
-                <ButtonComponent
-                  btnColor="[#ffffff]"
+                <CustomButtonComponent
+                  // btnColor="[#ffffff]"
                   label="Donate to a cause"
                   customColor="hover:text-white text-primary-main-pink"
-                  bgHover="hover:bg-[#B70569] bg-white rounded-lg transition-all duration-300"
+                  bgHover="hover:bg-[#B70569] bg-white rounded-lg transition-all duration-300 border-white"
                   isWithIcon={true}
                   iconPos="right"
                   icon={<FontAwesomeIcon icon={faArrowRight} />}
