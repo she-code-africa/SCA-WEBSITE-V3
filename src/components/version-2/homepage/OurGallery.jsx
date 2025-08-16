@@ -62,10 +62,10 @@ const OurGallery = () => {
 
         <div className="mt-10 w-[90%] max-w-[250px] mx-auto">
           <CustomButtonComponent
-            btnColor="[#B70569]"
+            // btnColor="[#B70569]"
             label="View more impact images"
             customColor="text-white hover:text-primary-main-pink"
-            bgHover="hover:bg-white rounded-lg transition-all duration-300"
+            bgHover="bg-[#B70569] border-[#B70569] hover:bg-white rounded-lg transition-all duration-300"
             url="https://drive.google.com/drive/folders/1VsF4fQvNLXXuwWnLi2ThjD6oZxJYdFkp"
           />
         </div>
@@ -73,8 +73,5 @@ const OurGallery = () => {
     </section>
   );
 };
-// item-${
-//                 i + 1
-//               }
 
 export default OurGallery;

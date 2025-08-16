@@ -94,17 +94,17 @@ const Home = () => {
 
               <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
                 <CustomButtonComponent
-                  btnColor="[#B70569]"
+                  // btnColor="[#B70569]"
                   label="Join our community"
                   customColor="text-white hover:text-primary-main-pink"
-                  bgHover="hover:bg-white rounded-lg transition-all duration-300"
+                  bgHover="hover:bg-white bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
                 />
                 <CustomButtonComponent
-                  btnColor="[#ffffff]"
+                  // btnColor="[#ffffff]"
                   label="Donate to a cause"
                   customColor="hover:text-white text-primary-main-pink"
-                  bgHover="hover:bg-[#B70569] bg-white rounded-lg transition-all duration-300"
+                  bgHover="hover:bg-[#B70569] bg-white rounded-lg transition-all duration-300 border-white"
                   isWithIcon={true}
                   iconPos="right"
                   icon={<FontAwesomeIcon icon={faArrowRight} />}
