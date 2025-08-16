@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ButtonComponent = ({
+const CustomButtonComponent = ({
   btnColor,
   isWithIcon = false,
   icon,
@@ -39,4 +39,4 @@ const ButtonComponent = ({
   );
 };
 
-export default ButtonComponent;
+export default CustomButtonComponent;

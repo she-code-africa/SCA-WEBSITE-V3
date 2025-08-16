@@ -16,7 +16,7 @@ const PartnersLogoCarousel = ({ partnersData }) => {
     initialSlide: 2,
     responsive: [
       {
-        breakponint: 721,
+        breakpoint: 721,
         settings: {
           slidesToShow: 3,
         },

@@ -27,7 +27,7 @@ import hireTalent from "../../images/homepage/hire-talent.png";
 import { useQuery } from "@tanstack/react-query";
 import { getPartners } from "../../services";
 import * as components from "../../components";
-import ButtonComponent from "../../components/version-2/shared-components/buttons/index.";
+import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
 import HomeHeroCarousel from "../../components/version-2/carousels/HomeHeroCarousel";
 import AboutUs from "../../components/version-2/homepage/AboutUs";
@@ -93,14 +93,14 @@ const Home = () => {
               </p>
 
               <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
-                <ButtonComponent
+                <CustomButtonComponent
                   btnColor="[#B70569]"
                   label="Join our community"
                   customColor="text-white hover:text-primary-main-pink"
                   bgHover="hover:bg-white rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
                 />
-                <ButtonComponent
+                <CustomButtonComponent
                   btnColor="[#ffffff]"
                   label="Donate to a cause"
                   customColor="hover:text-white text-primary-main-pink"
