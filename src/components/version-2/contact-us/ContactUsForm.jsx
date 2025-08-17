@@ -43,7 +43,7 @@ const ContactUsForm = () => {
   const onsubmit = (data) => handleContactUs(data);
   return (
     <section className="w-full">
-      <div className="py-20 w-[90%] max-w-[1256px] mx-auto flex gap-8">
+      <div className="py-20 lg:py-28 w-[90%] max-w-[1256px] mx-auto flex gap-8">
         <figure className="hidden lg:block w-full max-w-[613px] rounded-[30px] overflow-hidden">
           <img
             src={contactImage}
