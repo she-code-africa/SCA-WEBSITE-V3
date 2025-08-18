@@ -85,3 +85,18 @@ export const ourGallery1 = [galleryImg1, galleryImg2];
 export const ourGallery2 = [galleryImg3, galleryImg4, galleryImg5];
 
 export const ourGallery3 = [galleryImg6, galleryImg7];
+
+export const mailingList = [
+  {
+    title: "For partnerships",
+    email: "partnerships@shecodeafrica.org",
+  },
+  {
+    title: "For media",
+    email: "media@shecodeafrica.org",
+  },
+  {
+    title: "For programs",
+    email: "programs@shecodeafrica.org",
+  },
+];
