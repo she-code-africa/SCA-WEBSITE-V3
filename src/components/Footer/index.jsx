@@ -35,16 +35,23 @@ const Footer = () => {
 
   return (
     <footer className="pt-10 md:mt-20">
-      <div className="container mx-auto px-6 py-10 mb-14">
-        <section className="w-full flex items-center gap-32 justify-between">
-          <div className="justify-self-center img-box place-self-center">
+      <div className="container px-6 py-6 lg:py-10 mb-14">
+        <section className="w-full flex flex-col lg:flex-row lg:items-center  lg:gap-10 lg:justify-between">
+          <div className="max-w-[150px] h-[100px] w-full hidden lg:block">
             <img
               src={logo}
               alt="SCA-Logo"
-              className="__shecodelogo w-full max-w-[250px] h-[100px] object-contain"
+              className="w-full h-full  object-contain"
             />
           </div>
-          <div className="w-full grid md:grid-cols-4">
+          <div className="w-full flex flex-col lg:flex-row gap-10 lg:justify-between">
+            <div className="w-full max-w-[150px] h-[100px] block lg:hidden">
+              <img
+                src={logo}
+                alt="SCA-Logo"
+                className="w-full h-full   object-contain"
+              />
+            </div>
             <div aria-label="Get Involved">
               <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">
                 Get Involved
@@ -242,7 +249,7 @@ const Footer = () => {
               <img
                 src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/85802796"
                 alt="CAF-validated-badge"
-                className="w-full h-full"
+                className="w-full h-full object-contain"
               />
             </figure>
           </div>
