@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { apiConstants, paths } from "../../utils";
+import { apiConstants } from "../../utils";
 import { getChapter } from "../../services";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
@@ -15,10 +15,7 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  sortUpcomingEventByDate,
-  sortPastEventsByDate,
-} from "../../utils/helpers";
+
 import * as components from "../../components";
 import OrganizersCard from "./OrganizersCard";
 import chapterImage from "../../images/chapters/sca-chapters-img2.png";
@@ -26,39 +23,6 @@ import chapterImage from "../../images/chapters/sca-chapters-img2.png";
 const ChapterDetails = () => {
   const { id } = useParams();
   const [events, setEvents] = useState([]);
-
-  const socialLinks = [
-    {
-      link: "",
-      name: "linkedin",
-      isBgVisible: false,
-      icon: faLinkedinIn,
-    },
-    {
-      link: "",
-      name: "facebook",
-      isBgVisible: true,
-      icon: faFacebook,
-    },
-    {
-      link: "",
-      name: "youtube",
-      isBgVisible: false,
-      icon: faYoutube,
-    },
-    {
-      link: "",
-      name: "instagram",
-      isBgVisible: false,
-      icon: faInstagram,
-    },
-    {
-      link: "",
-      name: "twitter",
-      isBgVisible: false,
-      icon: faXTwitter,
-    },
-  ];
 
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
     [apiConstants.chapters],

@@ -1,0 +1,50 @@
+import React from "react";
+import ourReach from "../../../assets/v2/images/our-reach.png";
+import { ourReachData } from "../../../utils/v2";
+
+const OurReach = () => {
+  return (
+    <section className="pt-12">
+      <div className="w-full ourReachBg bg-no-repeat bg-cover">
+        <figure className="w-full h-[353px]">
+          <img
+            src={ourReach}
+            alt="Our Reach"
+            className="object-cover w-full h-full"
+          />
+        </figure>
+
+        <div className="w-[90%] mx-auto py-10">
+          <article className="w-full">
+            <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
+              Our Reach So Far
+            </h3>
+
+            <p className="text-lg md:text-2xl mt-3 text-center">
+              Emphasize time-saving and use numbers to maximize credibility.
+            </p>
+          </article>
+
+          <div className="w-full max-w-[1132px] mx-auto my-10 sm:grid sm:grid-cols-2 sm:justify-items-center">
+            {ourReachData.map(({ numbers, description, maxW }, i) => (
+              <div
+                className={`flex items-center gap-4 w-full my-5`}
+                style={{ maxWidth: `${maxW}px` }}
+                key={i}
+              >
+                <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">
+                  {numbers}+
+                </h3>
+                <p className="text-lg md:text-2xl leading-normal md:leading-normal">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default OurReach;

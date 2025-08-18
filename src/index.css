@@ -1,9 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Montserrat' ,sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+@font-face {
+  font-family: Thunder;
+  src: url("./assets/v2/fonts/Thunder-SemiBoldLC.ttf");
+}
+
+.hero-text {
+  font-family: Thunder, sans-serif;
+}
+
+main {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.aboutBg {
+  background-image: url("./assets/v2/images/apricot-pattern.png");
+}
+
+.bgImg {
+  background-image: url("./assets/v2/images/bgImg.png");
+}
+
+.custom-container-clip {
+  clip-path: polygon(0 0, 95% 0, 85% 100%, 0 100%);
+}
+
+.custom-child-clip {
+  clip-path: polygon(0 57%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.ourReachBg {
+  background-image: url("./assets/v2/images/white-blush.jpg");
+}
+
+.what-we-do-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+
+.gallery-clip {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+}
+
+.clip-testimonial {
+  clip-path: polygon(0 0, 95% 0, 80% 100%, 0 100%);
+}
+
+.testmonialBg {
+  background-image: url("./assets/v2/images/Vector.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
 }

@@ -16,7 +16,7 @@ const PartnersLogoCarousel = ({ partnersData }) => {
     initialSlide: 2,
     responsive: [
       {
-        breakponint: 721,
+        breakpoint: 721,
         settings: {
           slidesToShow: 3,
         },
@@ -26,9 +26,9 @@ const PartnersLogoCarousel = ({ partnersData }) => {
   return (
     <section className="w-full mx-auto mt-[60px]">
       <div className="w-full mb-10 text-center">
-        <h2 className="text-2xl md:text-3xl 2md:text-[40px] font-bold 2md:leading-[82px]">
-          Brands that believe in our vision and goal
-        </h2>
+        <h3 className="text-[32px] md:text-3xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
+          Brands that believe in our vision
+        </h3>
       </div>
       <Slider {...settings} className=" custom-slick">
         {partnersData.map((logo, index) => {

@@ -15,7 +15,7 @@ import {
 import { paths, apiConstants } from "../../utils";
 import { getReports } from "../../services";
 // import logo from "../../images/logo-inverted.svg";
-import logo from "../../images/new-logo/new-logo-footer.png";
+import logo from "../../images/new-logo/new-logo-header.png";
 
 const Footer = () => {
   const [openCaret, setOpenCaret] = useState(false);
@@ -172,7 +172,7 @@ const Footer = () => {
               </a>
               {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
               <div className="block mb-5">Follow Us On Social Media</div>
-              <div className="flex gap-x-5 mb-5 text-2xl">
+              <div className="flex gap-x-5 mb-5 text-2xl text-primary-main-pink">
                 <a
                   href="https://www.instagram.com/shecodeafrica/"
                   title="Follow us on Instagram"

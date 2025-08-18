@@ -1,11 +1,8 @@
 import React from "react";
 import * as components from "../../../components";
 import Event from "../../Events";
-import {
-  sortUpcomingEventByDate,
-  sortPastEventsByDate,
-} from "../../../utils/helpers";
-import rectangleImg from "../../../images/events-page/Rectangle-10171.jpg";
+import { sortUpcomingEventByDate } from "../../../utils/helpers";
+
 const ChapterEvents = ({
   isError,
   isFetched,
