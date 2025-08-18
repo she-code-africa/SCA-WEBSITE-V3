@@ -35,7 +35,7 @@ const Footer = () => {
 
   return (
     <footer className="pt-10 md:mt-20">
-      <div className="container px-6 py-6 lg:py-10 mb-14">
+      <div className="container xl:mx-auto px-6 py-6 lg:py-10 mb-14">
         <section className="w-full flex flex-col lg:flex-row lg:items-center  lg:gap-10 lg:justify-between">
           <div className="max-w-[150px] h-[100px] w-full hidden lg:block">
             <img
