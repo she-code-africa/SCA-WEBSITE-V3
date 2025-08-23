@@ -10,7 +10,7 @@ const Milestone = () => {
             Milestones of{" "}
             <span className="text-primary-main-pink">Innovation</span>
           </h3>
-          <p className="mt-4 text-center text-2xl">
+          <p className="mt-4 text-center text-xl md:text-2xl">
             Eight pivotal moments that transformed our vision into a movement,
             empowering women across Africa to lead in technology.
           </p>
@@ -19,7 +19,10 @@ const Milestone = () => {
         <section className="mt-10 w-full flex gap-10 xl:justify-center py-4">
           <div className="hidden xl:block w-full">
             {[...Array(4)].map((_, i) => (
-              <div className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6">
+              <div
+                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
+                key={i}
+              >
                 <div className="w-full">
                   <h4 className="w-full max-w-[42px] bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
                     2018
@@ -62,7 +65,10 @@ const Milestone = () => {
           </div>
           <div className="hidden md:block w-full">
             {[...Array(4)].map((_, i) => (
-              <div className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6">
+              <div
+                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
+                key={i}
+              >
                 <div className="w-full">
                   <h4 className="w-full max-w-[42px] bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
                     2018

@@ -12,11 +12,11 @@ const OurGallery = () => {
           Our Gallery
         </h3>
 
-        <section className="flex w-full gap-3  flex-col lg:flex-row mt-10">
+        <section className="flex w-full gap-3 flex-col lg:flex-row mt-10">
           <div className="w-full flex flex-col  gap-3">
             {ourGallery1.map((item, idx) => (
               <div className="w-full h-full  flex-1" key={idx}>
-                <figure className="w-full max-w-[412px]">
+                <figure className="w-full max-w-[412px] mx-auto lg:mx-0">
                   <img
                     src={item}
                     alt={`gallery-pic-${idx}`}
@@ -33,7 +33,7 @@ const OurGallery = () => {
                 <figure
                   className={`${
                     (idx + 1) % 2 !== 0 && ""
-                  } max-w-[412px] w-full `}
+                  } max-w-[412px] w-full mx-auto lg:mx-0`}
                 >
                   <img
                     src={item}
