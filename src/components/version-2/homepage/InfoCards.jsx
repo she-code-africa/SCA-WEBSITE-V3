@@ -5,11 +5,11 @@ const InfoCards = ({ heading, paragraph, idx }) => {
 
   return (
     <article className={`w-full max-w-${widths[idx] || ""}`}>
-      <h4 className="text-[#FFF88F] text-[32px] leading-[44px] font-semibold">
+      <h4 className="text-[#FFF88F] text-2xl md:text-[32px] leading-[44px] font-semibold">
         {heading}
       </h4>
 
-      <p className="text-white text-2xl leading-[34px] font-medium">
+      <p className="text-white text-lg md:text-2xl leading-[34px] font-medium">
         {paragraph}
       </p>
     </article>
