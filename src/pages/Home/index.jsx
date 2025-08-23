@@ -70,6 +70,7 @@ const Home = () => {
                   customColor="text-white hover:text-primary-main-pink"
                   bgHover="hover:bg-white bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
+                  isGallery={true}
                 />
                 <CustomButtonComponent
                   // btnColor="[#ffffff]"

@@ -53,7 +53,10 @@ const WhatWeDo = () => {
               </article>
 
               <div className="mt-5 w-full text-[#094A32]">
-                <Link to="text-sm w-full flex items-center gap-2">
+                <Link
+                  to="#"
+                  className="text-base w-full flex items-center gap-2"
+                >
                   Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
                 </Link>
               </div>

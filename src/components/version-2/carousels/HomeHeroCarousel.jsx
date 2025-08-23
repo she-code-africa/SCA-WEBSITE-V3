@@ -39,13 +39,23 @@ const HomeHeroCarousel = () => {
   };
   return (
     <div className="w-full sliderContainer">
-      <Slider {...settings}>
+      <div className="w-full sm:hidden">
+        <Slider {...settings}>
+          {homeHeroSliderImages.map((image, index) => (
+            <figure key={index} className="px-1">
+              <img src={image} alt={`Slide ${index + 1}`} />
+            </figure>
+          ))}
+        </Slider>
+      </div>
+
+      <div className="hidden sm:flex items-center justify-center">
         {homeHeroSliderImages.map((image, index) => (
           <figure key={index} className="px-1">
             <img src={image} alt={`Slide ${index + 1}`} />
           </figure>
         ))}
-      </Slider>
+      </div>
     </div>
   );
 };
