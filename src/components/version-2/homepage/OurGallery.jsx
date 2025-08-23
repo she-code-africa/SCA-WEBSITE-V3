@@ -67,6 +67,7 @@ const OurGallery = () => {
             customColor="text-white hover:text-primary-main-pink"
             bgHover="bg-[#B70569] border-[#B70569] hover:bg-white rounded-lg transition-all duration-300"
             url="https://drive.google.com/drive/folders/1VsF4fQvNLXXuwWnLi2ThjD6oZxJYdFkp"
+            isGallery={true}
           />
         </div>
       </div>

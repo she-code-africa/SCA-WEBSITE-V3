@@ -27,8 +27,22 @@ const OurReach = () => {
 
           <div className="w-full max-w-[1132px] mx-auto my-10 sm:grid sm:grid-cols-2 sm:justify-items-center">
             {ourReachData.map(({ numbers, description, maxW }, i) => (
-              <div
-                className={`flex items-center gap-4 w-full my-5`}
+              <article
+                className={`flex flex-col sm:hidden  gap-4 w-full my-5`}
+                key={i}
+              >
+                <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">
+                  {numbers}+
+                </h3>
+                <p className="text-lg md:text-2xl leading-normal md:leading-normal">
+                  {description}
+                </p>
+              </article>
+            ))}
+
+            {ourReachData.map(({ numbers, description, maxW }, i) => (
+              <article
+                className={`hidden sm:flex items-center gap-4 w-full my-5`}
                 style={{ maxWidth: `${maxW}px` }}
                 key={i}
               >
@@ -38,7 +52,7 @@ const OurReach = () => {
                 <p className="text-lg md:text-2xl leading-normal md:leading-normal">
                   {description}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>

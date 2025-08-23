@@ -26,17 +26,17 @@ export const homeHeroSliderImages = [
 
 export const aboutUsInfoCards = [
   {
-    heading: "Where we are headed",
+    heading: "Our Vision",
     paragraph:
       "An Africa where women are equally represented across all career roles in Technology.",
   },
   {
-    heading: "What we will do to get there",
+    heading: "Our Mission",
     paragraph:
       "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.",
   },
   {
-    heading: "How we hope to get there",
+    heading: "Our Values",
     paragraph:
       "Team work, Community, Technical growth, Leadership, Visibility.",
   },
@@ -98,5 +98,56 @@ export const mailingList = [
   {
     title: "For programs",
     email: "programs@shecodeafrica.org",
+  },
+];
+
+export const milestoneData = [
+  {
+    year: 2018,
+    title: "The beginning",
+    subText:
+      "She Code Africa was founded with a vision to celebrate and support African women in tech.",
+  },
+  {
+    year: 2019,
+    title: "First Community",
+    subText:
+      "Launched our first local chapter and hosted inaugural meetups across major African cities.",
+  },
+  {
+    year: 2020,
+    title: "Going Digital",
+    subText:
+      "Pivoted to virtual events during the pandemic, expanding our reach across the continent.",
+  },
+  {
+    year: 2021,
+    title: "Mentorship Program",
+    subText:
+      "Launched structured mentorship programs connecting experienced professionals with emerging talent.",
+  },
+  {
+    year: 2022,
+    title: "Impact & Recognition",
+    subText:
+      "Reached 15K+ members and received recognition for our contribution to tech diversity.",
+  },
+  {
+    year: 2023,
+    title: "Global Expansion",
+    subText:
+      "Reached 15K+ members and received recognition for our contribution to tech diversity.",
+  },
+  {
+    year: 2024,
+    title: "Global Expansion",
+    subText:
+      "Reached 15K+ members and received recognition for our contribution to tech diversity.",
+  },
+  {
+    year: 2025,
+    title: "New Resolution",
+    subText:
+      "She Code Africa was founded with a vision to celebrate and support African women in tech.",
   },
 ];
