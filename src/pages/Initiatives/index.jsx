@@ -54,7 +54,7 @@ const Initiatives = () => {
         {initiatives.map((initiative, idx) => (
           <InitiativeCard
             key={initiative._id}
-            title={initiative.name}
+            title={initiative.title}
             description={initiative.description}
             longDescription={initiative.longDescription}
             image={initiative.image || require('../../images/initiative/initiativeImg.jpg')} 
@@ -71,63 +71,6 @@ const Initiatives = () => {
             reverse={idx % 2 !== 0}
           />
         ))}
-
-        {/* STEM-A-Girl */}
-        {/* <InitiativeCard
-          title="STEM-A-Girl"
-          description="Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt."
-          image={require('../../images/initiative/initiativeImg.jpg')}
-          status="Ongoing"
-          primaryBtn={{ label: "Learn more", href: "#" }}
-          secondaryBtn={{ label: "Make donation", href: "/donate-partner" }}
-          bgPattern="pink"
-        /> */}
-
-        {/* Course Scholarship */}
-        {/* <InitiativeCard
-          title="Course Scholarship"
-          description="Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt."
-          image={require('../../images/initiative/initiativeImg.jpg')}
-          status="Applications Closed"
-          primaryBtn={{ label: "Apply now", href: "#" }}
-          secondaryBtn={{ label: "Make donation", href: "/donate-partner" }}
-          reverse
-          bgPattern="wine"
-        /> */}
-
-        {/* Financial Scholarship */}
-        {/* <InitiativeCard
-          title="Financial Scholarship"
-          description="Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt."
-          image={require('../../images/initiative/initiativeImg.jpg')}
-          status="Ongoing"
-          primaryBtn={{ label: "Apply now", href: "#" }}
-          secondaryBtn={{ label: "Make donation", href: "/donate-partner" }}
-          bgPattern="pink"
-        /> */}
-
-        {/* Laptop Scholarship */}
-        {/* <InitiativeCard
-          title="Laptop Scholarship"
-          description="Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt."
-          image={require('../../images/initiative/initiativeImg.jpg')}
-          status="Upcoming"
-          primaryBtn={{ label: "Apply now", href: "#" }}
-          secondaryBtn={{ label: "Make donation", href: "/donate-partner" }}
-          reverse
-          bgPattern="wine"
-        /> */}
-
-        {/* Data Scholarship */}
-        {/* <InitiativeCard
-          title="Data Scholarship"
-          description="Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt."
-          image={require('../../images/initiative/initiativeImg.jpg')}
-          status="Application Closed"
-          primaryBtn={{ label: "Apply now", href: "#" }}
-          secondaryBtn={{ label: "Make donation", href: "/donate-partner" }}
-          bgPattern="pink"
-        /> */}
 
         <OurBrands />
         <OurQueensTestimonials />

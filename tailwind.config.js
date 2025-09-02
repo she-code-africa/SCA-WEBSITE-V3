@@ -30,6 +30,8 @@ module.exports = {
         gains: "#D8D8D8",
         "Secondary-Grape": "#7D355D",
         "Primary-Magenta": "#B70569",
+        "Secondary-Velvet": "#5C0335",
+        "SCA-Cloud": "#F4EFEC"
       },
       fontSize: {
         15: "15px",
