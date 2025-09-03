@@ -5,11 +5,11 @@ const TeamCard = ({ image, name, teamRole, bgColor }) => {
   return (
     <div className="flex flex-col items-center">
       <div
-        className="rounded-2xl overflow-hidden shadow-lg border border-[#F3F3F3]"
+        className="rounded-3xl overflow-hidden border border-[#F3F3F3]"
         style={{
           background: bgColor || "#FFF7FB",
           width: 223,
-          height: 291,
+          height: 223,
           display: "flex",
           alignItems: "center",
           justifyContent: "center"
@@ -22,7 +22,7 @@ const TeamCard = ({ image, name, teamRole, bgColor }) => {
         />
       </div>
       <h2 className="mt-4 text-xl font-bold text-Primary-Magenta">{name}</h2>
-      <p className="text-sm text-Secondary-Grape">{teamRole}</p>
+      <p className="text-lg text-Secondary-Grape">{teamRole}</p>
     </div>
   )
 }
