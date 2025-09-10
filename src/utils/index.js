@@ -505,3 +505,59 @@ export const whatsinStoreForYou = [
     text: "A chance to make a difference",
   },
 ];
+
+export const impactStats = [
+  {
+    id: 1,
+    number: "5k+",
+    description:
+      "girls and women impacted through our academy programs, community events, and scholarship initiatives.",
+  },
+  {
+    id: 2,
+    number: "2674+",
+    description:
+      "women and girls trained through our training programs",
+  },
+  {
+    id: 3,
+    number: "760k+",
+    description:
+      "women and girls reached through our community activities and events",
+  },
+  {
+    id: 4,
+    number: "4.5M+",
+    description:
+      "women and girls reached through our community activities and events",
+  },
+];
+
+
+export const partnerCards = [
+  {
+    id: 1,
+    title: "Continental Reach",
+    description: "Access to talent and communities across 54 African countries",
+    bgColor: "bg-SCA-Garden",
+  },
+  {
+    id: 2,
+    title: "Strong Community",
+    description: "We bring together a network of passionate individuals working for impact.",
+    bgColor: "bg-SCA-Zesty",
+  },
+  {
+    id: 3,
+    title: "Proven Impact",
+    description: "Years of driving change and creating opportunities across diverse communities.",
+    bgColor: "bg-SCA-Zesty",
+  },
+  {
+    id: 4,
+    title: "Collaborative Growth",
+    description: "Partner with us to unlock new opportunities and sustainable initiatives.",
+    bgColor: "bg-SCA-Garden",
+  },
+];
+

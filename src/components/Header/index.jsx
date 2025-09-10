@@ -75,7 +75,6 @@ const Header = () => {
         { to: paths.chapters, text: "SCA Chapters" },
       ],
     },
-    { to: paths.jobs, text: "Jobs" },
   ];
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);

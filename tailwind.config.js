@@ -29,7 +29,11 @@ module.exports = {
         "lavendar-blush": "#FFF7FC",
         gains: "#D8D8D8",
         "Secondary-Grape": "#7D355D",
-        "Primary-Magenta": "#B70569"
+        "Primary-Magenta": "#B70569",
+        "Secondary-Velvet": "#5C0335",
+        "SCA-Cloud": "#F4EFEC",
+        "SCA-Garden": "#BEE366",
+        "SCA-Zesty": "#DDFF8F",
       },
       fontSize: {
         15: "15px",
@@ -37,8 +41,10 @@ module.exports = {
       backgroundImage: {
         "hero-bg-gradient":
           "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%) ",
-        bgI: "url('./assets/v2/images/bgImg.png')",
+        bgI: "url('./assets/v2/images/bgImg2.png')",
         magentaPattern: "url('./assets/v2/images/magenta-pattern.png')",
+        olivePattern: "url('./assets/v2/images/olive-pattern.jpg')",
+
       },
 
       screens: {

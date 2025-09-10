@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { apiConstants } from "../../../utils";
 import { getTestimonials } from "../../../services";
 
-function SampleNextArrow (props) {
+function SampleNextArrow(props) {
   const { className, style, onClick } = props;
 
   return (
@@ -27,7 +27,7 @@ function SampleNextArrow (props) {
   );
 }
 
-function SamplePrevArrow (props) {
+function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <button
