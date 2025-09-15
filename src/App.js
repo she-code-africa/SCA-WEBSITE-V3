@@ -35,6 +35,7 @@ import AcademyPage from "./pages/Academy/_slug";
 import LandingPage from "./pages/Academy";
 import ContactUs from "./pages/ContactUs";
 import ChapterDetails from "./pages/Chapters/ChapterDetails";
+import Media from "./pages/Media";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +68,7 @@ function Routes(params) {
       <Route path={paths.home} element={<Home />} />
       <Route path="/academy/:slug" element={<AcademyPage />} />
       <Route path="/academy" element={<LandingPage />} />
+      <Route path="/media" element={<Media />} />
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />

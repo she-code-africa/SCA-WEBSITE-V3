@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import Hero from '../../components/Initiative/InitiativeHero'
-import InitiativeCard from '../../components/Initiative/InitiativeCard'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import React, { useEffect, useState } from "react";
+import Hero from "../../components/Initiative/InitiativeHero";
+import InitiativeCard from "../../components/Initiative/InitiativeCard";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import OurBrands from "../../components/version-2/homepage/OurBrands";
 import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 import Donate from "../../components/version-2/homepage/Donate";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 import { getInitiatives } from "../../services/index"; // adjust path
-
-
 
 const Initiatives = () => {
   const [initiatives, setInitiatives] = useState([]);
@@ -18,7 +16,7 @@ const Initiatives = () => {
     async function fetchData() {
       try {
         const res = await getInitiatives();
-        setInitiatives(res); 
+        setInitiatives(res);
       } catch (err) {
         console.error("Failed to fetch initiatives:", err);
       }
@@ -48,7 +46,7 @@ const Initiatives = () => {
         />
       </Helmet>
       <Header page={"initiatives"} />
-      <main className='text-secondary-main-black'>
+      <main className="text-secondary-main-black ">
         <Hero />
         {/* Render initiatives dynamically */}
         {initiatives.map((initiative, idx) => (
@@ -57,7 +55,10 @@ const Initiatives = () => {
             title={initiative.title}
             description={initiative.description}
             longDescription={initiative.longDescription}
-            image={initiative.image || require('../../images/initiative/initiativeImg.jpg')} 
+            image={
+              initiative.image ||
+              require("../../images/initiative/initiativeImg.jpg")
+            }
             status={initiative.isAvailable ? "Ongoing" : "Closed"}
             primaryBtn={{
               label: "Learn more",
@@ -76,10 +77,9 @@ const Initiatives = () => {
         <OurQueensTestimonials />
         <Donate />
       </main>
-      <Footer/>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Initiatives
-
+export default Initiatives;
