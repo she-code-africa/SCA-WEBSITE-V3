@@ -19,6 +19,10 @@ body {
   font-family: Thunder, sans-serif;
 }
 
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+}
+
 .contact-form {
   font-family: Roboto, sans-serif;
 }
@@ -64,4 +68,8 @@ main {
   background-image: url("./assets/v2/images/Vector.png");
   background-repeat: no-repeat;
   background-position: bottom;
+}
+
+.product-program-bg {
+  background-image: url("./assets/v2/images/programsBg.jpg");
 }

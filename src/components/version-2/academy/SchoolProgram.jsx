@@ -1,16 +1,28 @@
 import React from "react";
-import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
 
-const WhatWeDo = () => {
+const SchoolProgram = ({ bgColors, slug }) => {
   return (
-    <section className="w-full product-program-bg bg-no-repeat bg-cover pb-20">
-      <div className="w-full bg-[#DDFF8F] what-we-do-clip relative z-[1]">
+    <section className="w-full  product-program-bg ">
+      <div
+        className={`w-full ${slug.includes("product") && bgColors[0]} ${
+          slug.includes("engineering") && bgColors[2]
+        } ${
+          slug.includes("applied") && bgColors[1]
+        } bg-[#DDFF8F] what-we-do-clip relative z-[1]`}
+      >
         <article className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56">
-          <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#094A32] hero-text">
-            What We Do
+          <h3
+            className={`text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] ${
+              slug.includes("product")
+                ? "text-[#094A32]"
+                : "text-primary-main-pink"
+            } hero-text`}
+          >
+            Current Programs
           </h3>
 
           <p className="text-lg md:text-2xl mt-3 text-center leading-normal md:leading-normal font-medium">
@@ -27,9 +39,9 @@ const WhatWeDo = () => {
         </article>
       </div>
 
-      <div className="w-[90%] mx-auto sm:w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[778px] -mt-40 relative z-[1]">
-        <div className="w-full grid md:grid-cols-2 gap-8 ">
-          {[...Array(4)].map((_, i) => (
+      <div className="w-[90%] mx-auto  lg:max-w-[1182px] -mt-40 relative z-[1]">
+        <div className="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+          {[...Array(3)].map((_, i) => (
             <div
               className="border-2 border-[#094A32] p-5 bg-white rounded-2xl"
               key={i}
@@ -68,4 +80,4 @@ const WhatWeDo = () => {
   );
 };
 
-export default WhatWeDo;
+export default SchoolProgram;

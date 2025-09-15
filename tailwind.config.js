@@ -44,7 +44,8 @@ module.exports = {
         bgI: "url('./assets/v2/images/bgImg2.png')",
         magentaPattern: "url('./assets/v2/images/magenta-pattern.png')",
         olivePattern: "url('./assets/v2/images/olive-pattern.jpg')",
-
+        blushPattern: "url('./assets/v2/images/pink-blush-pattern.png')",
+        bgPinkPattern: "url('./assets/v2/images/bg-blush.png')",
       },
 
       screens: {

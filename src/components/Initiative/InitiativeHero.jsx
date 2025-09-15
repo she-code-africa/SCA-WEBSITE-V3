@@ -5,13 +5,13 @@ import heroImage from "../../images/initiative/hero-image.jpg";
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-cover bg-center h-[100vh] flex items-center justify-center text-center text-white"
+      className="relative bg-cover bg-center h-[100vh] flex items-center justify-center text-center text-white z-[1]"
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundBlendMode: "multiply",
         backgroundColor: "#FF8A3F",
-        backgroundSize: "150%", // Zoom in the image
-        backgroundPosition: "40% center", // Focus image on the left
+        backgroundSize: "150%",
+        backgroundPosition: "40% center",
       }}
     >
       <div
@@ -27,7 +27,8 @@ export default function HeroSection() {
         </h1>
         <p className="mt-4 text-lg md:text-xl font-figtree">
           She Code Africa is a registered non-profit organization dedicated to
-          empowering and celebrating girls and women in technology across Africa.
+          empowering and celebrating girls and women in technology across
+          Africa.
         </p>
       </div>
     </section>
