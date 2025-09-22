@@ -533,31 +533,84 @@ export const impactStats = [
   },
 ];
 
+export const WaysPartnerCards = [
+  {
+    id: 1,
+    title: "Program Support",
+    description: "Fund or co-create training, bootcamps, and scholarships.",
+    bgColor: "bg-SCA-Bloom",
+  },
+  {
+    id: 2,
+    title: "Resource Contribution",
+    description: "Provide laptops, internet access, or tech tools to bridge digital gaps.",
+    bgColor: "bg-SCA-Blush",
+  },
+  {
+    id: 3,
+    title: "Mentorship & Expertise",
+    description: "Share knowledge, industry guidance, and career opportunities.",
+    bgColor: "bg-SCA-Blush",
+  },
+  {
+    id: 4,
+    title: "Campaigns & Events",
+    description: "Collaborate on summits, advocacy drives, or community outreach.",
+    bgColor: "bg-SCA-Bloom",
+  },
+];
 
-export const partnerCards = [
+export const WhyPartnerCards = [
   {
     id: 1,
     title: "Continental Reach",
     description: "Access to talent and communities across 54 African countries",
-    bgColor: "bg-SCA-Garden",
+    bgColor: "bg-SCA-Citrine",
+    Color: "text-Primary-Magenta",
   },
   {
     id: 2,
     title: "Strong Community",
     description: "We bring together a network of passionate individuals working for impact.",
     bgColor: "bg-SCA-Zesty",
+    Color: "text-SCA-Forest",
   },
   {
     id: 3,
     title: "Proven Impact",
     description: "Years of driving change and creating opportunities across diverse communities.",
     bgColor: "bg-SCA-Zesty",
+    Color: "text-SCA-Forest",
   },
   {
     id: 4,
     title: "Collaborative Growth",
     description: "Partner with us to unlock new opportunities and sustainable initiatives.",
-    bgColor: "bg-SCA-Garden",
+    bgColor: "bg-SCA-Citrine",
+    Color: "text-Primary-Magenta",
   },
 ];
+
+export const ReachOutCard = [
+  {
+    id: 1,
+    title: "For media",
+    email: "media@shecodeafrica.org"
+  },
+    {
+    id: 2,
+    title: "For partnerships",
+    email: "partnerships@shecodeafrica.org"
+  },
+    {
+    id: 3,
+    title: "For Community",
+    email: "community@shecodeafrica.org"
+  },
+    {
+    id: 4,
+    title: "For programs",
+    email: "programs@shecodeafrica.org"
+  }
+]
 
