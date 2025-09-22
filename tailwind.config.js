@@ -34,6 +34,12 @@ module.exports = {
         "SCA-Cloud": "#F4EFEC",
         "SCA-Garden": "#BEE366",
         "SCA-Zesty": "#DDFF8F",
+        "SCA-White": "#FEFEFE",
+        "SCA-Bloom": "#FF8FCE",
+        "SCA-Blush": "#FFB8E0",
+        "SCA-Citrine": "#FFF88F",
+        "SCA-Forest": "#094A32",
+        
       },
       fontSize: {
         15: "15px",
