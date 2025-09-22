@@ -14,7 +14,6 @@ const TeamCard = ({ image, name, teamRole, bgColor }) => {
           src={image || avatar}
           alt={name}
           className="w-full h-full object-cover"
-          style={{ transform: "scale(1.3)", objectPosition: "50% 0%" }}
         />
       </div>
       <h2 className="mt-4 text-xl font-bold text-Primary-Magenta">{name}</h2>

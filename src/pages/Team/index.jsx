@@ -45,16 +45,16 @@ const Team = () => {
       data?.filter((team) => team.teamCategory?.name).map((team) => team.teamCategory.name) || [],
     [data]
   );
-  const uniqueTags = useMemo(() => ["All", ...Array.from(new Set(tags))], [tags]);
+  const uniqueTags = useMemo(() => Array.from(new Set(tags)), [tags]);
 
   useEffect(() => {
-    setActiveSelection("All");
+    setActiveSelection(uniqueTags[0] || "");
   }, [uniqueTags]);
 
   // filter members
   const filtered =
     data?.filter((member) =>
-      activeSelection === "All" ? true : member.teamCategory?.name === activeSelection
+      activeSelection === "" ? true : member.teamCategory?.name === activeSelection
     ) || [];
 
   // split into full rows + last row
@@ -86,8 +86,8 @@ const Team = () => {
       </Helmet>
       <Header />
       <main>
-        <section className="bg-white pt-52 pb-32">
-          <div className="w-11/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+        <section className="bg-white mt-44">
+          <div className="w-11/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-24">
             <div className="text-center md:text-left">
               <h1 className="hero-text text-5xl md:text-9xl font-bold text-primary-main-pink">
                 Meet The SCA Team
@@ -107,65 +107,90 @@ const Team = () => {
           <div className="w-11/12 mx-auto">
             {/* Category Buttons */}
             <div className="flex justify-start gap-8 mb-16 flex-wrap">
-              {uniqueTags.map((category) => (
-                <button
-                  key={category}
-                  className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
-                    activeSelection === category
-                      ? "bg-Primary-Magenta text-SCA-Cloud"
-                      : "bg-SCA-Cloud text-Secondary-Velvet"
-                  }`}
-                  onClick={() => setActiveSelection(category)}
-                >
-                  {category === "All" ? "All" : category}
-                </button>
-              ))}
+                    {uniqueTags
+                    .filter((category) => category !== "All")
+                    .map((category) => (
+                      <button
+                      key={category}
+                      className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
+                        activeSelection === category
+                        ? "bg-Primary-Magenta text-SCA-Cloud"
+                        : "bg-SCA-Cloud text-Secondary-Velvet"
+                      }`}
+                      onClick={() => setActiveSelection(category)}
+                      >
+                      {category}
+                      </button>
+                    ))}
             </div>
 
             {/* Team Grid */}
             {isError ? (
               <Error />
             ) : isLoading ? (
-              <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 justify-items-center">
+              <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10">
                 {[...Array(8)].map((_, index) => (
-                  <Loading key={index} />
+                  <Loading  key={index} />
                 ))}
               </div>
             ) : (
               <>
-                <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 gap-x-32 justify-items-center">
-                  {fullMembers.map((member, index) => (
-                    <TeamCard
-                      key={index}
-                      image={member.image || avatar}
-                      name={member.name}
-                      teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
-                      bgColor={[
+                {/* Render full rows */}
+                {Array.from({ length: Math.floor(fullMembers.length / cols) }).map((_, rowIdx) => {
+                  const start = rowIdx * cols;
+                  const rowMembers = fullMembers.slice(start, start + cols);
+                  const colors = [
+                    "#FFF88F4D",
+                    "#FFB8E04D",
+                    "#DDFF8F4D",
+                    "#E7B8FF4D",
+                  ];
+                  const bgColor = colors[rowIdx % colors.length];
+                  return (
+                    <div
+                      key={`row-${rowIdx}`}
+                      className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 gap-x-32 mb-4"
+                    >
+                      {rowMembers.map((member, idx) => (
+                        <TeamCard
+                          key={idx}
+                          image={member.image || avatar}
+                          name={member.name}
+                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          bgColor={bgColor}
+                        />
+                      ))}
+                    </div>
+                  );
+                })}
+
+                {/* Render last row if any */}
+                {lastMembers.length > 0 && (
+                  <div
+                    className={`flex gap-32 flex-wrap pt-10 ${
+                      lastMembers.length < cols ? "justify-center" : ""
+                    }`}
+                  >
+                    {lastMembers.map((member, idx) => {
+                      // The row index for the last row
+                      const rowIdx = Math.floor(fullMembers.length / cols);
+                      const colors = [
                         "#FFB8E04D",
                         "#FFF88F4D",
                         "#E7B8FF4D",
                         "#DDFF8F4D",
-                      ][index % 4]}
-                    />
-                  ))}
-                </div>
-
-                {lastMembers.length > 0 && (
-                  <div className="flex justify-center gap-32 flex-wrap pt-10">
-                    {lastMembers.map((member, idx) => (
-                      <TeamCard
-                        key={`last-${idx}`}
-                        image={member.image || avatar}
-                        name={member.name}
-                        teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
-                        bgColor={[
-                          "#FFB8E04D",
-                          "#FFF88F4D",
-                          "#E7B8FF4D",
-                          "#DDFF8F4D",
-                        ][(fullCount + idx) % 4]}
-                      />
-                    ))}
+                      ];
+                      const bgColor = colors[rowIdx % colors.length];
+                      return (
+                        <TeamCard
+                          key={`last-${idx}`}
+                          image={member.image || avatar}
+                          name={member.name}
+                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          bgColor={bgColor}
+                        />
+                      );
+                    })}
                   </div>
                 )}
               </>
