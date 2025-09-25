@@ -1,13 +1,14 @@
 import React from "react";
 import ResourcesCard from "../shared-components/ResourcesCard";
 import { Link } from "react-router-dom";
+import { videoContent } from "../../../utils/v2/media";
 
 const VideosComponent = () => {
   return (
     <div className="w-full bg-[#FFB8E0] py-[100px] transition-all">
       <div className="w-[90%] mx-auto max-w-[1256px]">
-        {[...Array(2)].map((_, idx) => (
-          <ResourcesCard key={idx} isImage={false} />
+        {videoContent.map((video, idx) => (
+          <ResourcesCard key={idx} isImage={false} videoSrc={video} />
         ))}
       </div>
 

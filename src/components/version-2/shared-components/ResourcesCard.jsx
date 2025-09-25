@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import placeholderImage from "../../../assets/v2/images/donatePng.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FaPlayCircle, FaRegCalendar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ResourcesCard = ({ isImage = true }) => {
+const ResourcesCard = ({ isImage = true, videoSrc }) => {
+  const [playVideo, setPlayVideo] = useState(false);
+
+  const handlePlayVideo = () => {
+    setPlayVideo(true);
+  };
   return (
     <div
       className={`bg-white w-full rounded-[13px]  mb-5 ${
@@ -21,17 +26,37 @@ const ResourcesCard = ({ isImage = true }) => {
           />
         </figure>
       ) : (
-        <figure className="relative w-full h-[342px] overflow-hidden rounded-[14px]">
-          <img
-            src={placeholderImage}
-            alt="resource-pic"
-            className="w-full h-full object-cover"
-          />
+        <>
+          {playVideo ? (
+            <div className="flex justify-center bg-black items-center w-full h-[342px] overflow-hidden rounded-[14px]">
+              <iframe
+                width="560"
+                height="315"
+                src={videoSrc}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ) : (
+            <figure className="relative w-full h-[342px] overflow-hidden rounded-[14px]">
+              <img
+                src={placeholderImage}
+                alt="resource-pic"
+                className="w-full h-full object-cover"
+              />
 
-          <button className="absolute inline-block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
-            <FaPlayCircle className="w-[82px] h-[82px] text-white" />
-          </button>
-        </figure>
+              <button
+                className="absolute inline-block top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+                onClick={handlePlayVideo}
+              >
+                <FaPlayCircle className="w-[82px] h-[82px] text-white" />
+              </button>
+            </figure>
+          )}
+        </>
       )}
 
       <div className="w-full my-5">
