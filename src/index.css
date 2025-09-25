@@ -73,3 +73,8 @@ main {
 .product-program-bg {
   background-image: url("./assets/v2/images/programsBg.jpg");
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}

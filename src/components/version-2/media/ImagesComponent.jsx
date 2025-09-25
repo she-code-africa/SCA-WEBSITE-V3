@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import placeholderImage from "../../../assets/v2/images/donatePng.jpg";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaRegCalendar } from "react-icons/fa";
+import MediaModal from "./MediaModal";
+import { mediaContent } from "../../../utils/v2/media";
 
 const ImagesComponent = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [modalDetail, setModalDetail] = useState(null);
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
+
+  const handleOpenModal = (detail) => {
+    setModalDetail(detail);
+    setOpenModal(true);
+  };
+
   return (
     <div className="w-full bg-[#FFB8E0] py-[100px] transition-all">
       <div className="w-[90%] mx-auto max-w-[1256px] grid md:grid-cols-2 gap-x-5 lg:max-w-[950px]  place-items-center gap-y-5">
-        {[...Array(6)].map((_, idx) => (
+        {mediaContent.map(({ content, id, title }, idx) => (
           <div
             className="bg-white w-full max-w-[452px] rounded-[13px] mb-5 p-5"
             key={idx}
@@ -50,8 +63,8 @@ const ImagesComponent = () => {
             </div>
 
             <div className="w-full my-6">
-              <h4 className="text-[#5C0335] text-base font-semibold">
-                SCA Annual Conference 2024
+              <h4 className="text-[#5C0335] text-base font-semibold capitalize">
+                {title}
               </h4>
 
               <p className="mt-3 w-full text-sm text-[#7d355d] font-medium">
@@ -72,7 +85,10 @@ const ImagesComponent = () => {
               </div>
 
               <div className="w-full max-w-[141px] h-[32px]">
-                <button className="w-full h-full flex justify-center items-center rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium  hover:bg-primary-main-pink hover:text-white transition-all">
+                <button
+                  className="w-full h-full flex justify-center items-center rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium  hover:bg-primary-main-pink hover:text-white transition-all"
+                  onClick={() => handleOpenModal(content)}
+                >
                   View all Images
                 </button>
               </div>
@@ -81,15 +97,21 @@ const ImagesComponent = () => {
         ))}
       </div>
 
-      <div className="my-10 max-w-[122px] w-full mx-auto">
-        <Link
-          to="#"
-          className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink capitalize"
-        >
-          {" "}
-          view all
-        </Link>
-      </div>
+      {mediaContent.length > 6 && (
+        <div className="my-10 max-w-[122px] w-full mx-auto">
+          <Link
+            to="#"
+            className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink capitalize"
+          >
+            {" "}
+            view all
+          </Link>
+        </div>
+      )}
+
+      {openModal && (
+        <MediaModal onClose={handleCloseModal} modalDetail={modalDetail} />
+      )}
     </div>
   );
 };
