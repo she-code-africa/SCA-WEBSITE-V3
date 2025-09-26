@@ -27,7 +27,8 @@ body {
   font-family: Roboto, sans-serif;
 }
 
-main {
+main,
+.font-fig {
   font-family: "Figtree", sans-serif;
   font-optical-sizing: auto;
 }
@@ -77,4 +78,17 @@ main {
 .scrollbar-hidden::-webkit-scrollbar {
   height: 0;
   width: 0;
+}
+
+.animate-opacity {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
