@@ -36,6 +36,7 @@ import LandingPage from "./pages/Academy";
 import ContactUs from "./pages/ContactUs";
 import ChapterDetails from "./pages/Chapters/ChapterDetails";
 import Media from "./pages/Media";
+import Layout from "./pages/Layout";
 
 const queryClient = new QueryClient();
 
@@ -56,7 +57,9 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Routes />
+      <Layout>
+        <Routes />
+      </Layout>
       <ToastContainer />
     </QueryClientProvider>
   );

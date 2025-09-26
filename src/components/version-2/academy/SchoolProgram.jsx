@@ -25,7 +25,11 @@ const SchoolProgram = ({ bgColors, slug }) => {
             Current Programs
           </h3>
 
-          <p className="text-lg md:text-2xl mt-3 text-center leading-normal md:leading-normal font-medium">
+          <p
+            className={`text-lg md:text-2xl mt-3 text-center leading-normal md:leading-normal font-medium ${
+              slug.includes("product") ? "" : "text-[#5C0335]"
+            } `}
+          >
             According to Data from Accenture, the ratio of women to men in tech
             roles has declined in the past 35 years. Out of 50% individuals in
             the industry, only 20% are women who are significantly represented,
@@ -33,7 +37,11 @@ const SchoolProgram = ({ bgColors, slug }) => {
             related roles compared to their male counterparts.
           </p>
 
-          <p className="text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium">
+          <p
+            className={`text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium ${
+              slug.includes("product") ? "" : "text-[#5C0335]"
+            }`}
+          >
             Here's how we're tackling that:
           </p>
         </article>
@@ -43,7 +51,11 @@ const SchoolProgram = ({ bgColors, slug }) => {
         <div className="w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {[...Array(3)].map((_, i) => (
             <div
-              className="border-2 border-[#094A32] p-5 bg-white rounded-2xl"
+              className={`border-2 p-5 bg-white rounded-2xl ${
+                slug.includes("product")
+                  ? "border-[#094A32] text-[#094A32] card-wwd hover:bg-[#094A32] hover:text-white transition-colors duration-300 cursor-pointer"
+                  : "border-primary-main-pink text-primary-main-pink hover:bg-primary-main-pink hover:text-white transition-colors duration-300 cursor-pointer card-wwd-pink"
+              }`}
               key={i}
             >
               <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
@@ -55,16 +67,14 @@ const SchoolProgram = ({ bgColors, slug }) => {
               </figure>
 
               <article className="mt-5 w-full">
-                <h4 className="capitalize text-xl text-[#094A32] font-semibold">
-                  card title
-                </h4>
+                <h4 className="capitalize text-xl font-semibold">card title</h4>
                 <p className="font-medium text-base mt-4">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Sapiente, porro?
                 </p>
               </article>
 
-              <div className="mt-5 w-full text-[#094A32]">
+              <div className="mt-5 w-full ">
                 <Link
                   to="#"
                   className="text-base w-full flex items-center gap-2"
