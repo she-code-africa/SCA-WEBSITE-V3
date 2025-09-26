@@ -8,6 +8,7 @@ import { whatsinStoreForYou } from "../../utils";
 import { Link } from "react-router-dom";
 import hero from "../../assets/v2/images/hero-img-communtiy.jpg";
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
+import { text } from "@fortawesome/fontawesome-svg-core";
 
 const Community = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,12 +27,30 @@ const Community = () => {
     };
   }, [imgRef]);
   const cardColors = [
-    "#5C0335",
-    "#B70569",
-    "#B70569",
-    "#5C0335",
-    "#5C0335",
-    "#B70569",
+    {
+      border: "border-[#5C0335]",
+      text: "text-[#5C0335]",
+    },
+    {
+      border: "border-[#B70569]",
+      text: "text-[#B70569]",
+    },
+    {
+      border: "border-[#B70569]",
+      text: "text-[#B70569]",
+    },
+    {
+      border: "border-[#5C0335]",
+      text: "text-[#5C0335]",
+    },
+    {
+      border: "border-[#5C0335]",
+      text: "text-[#5C0335]",
+    },
+    {
+      border: "border-[#B70569]",
+      text: "text-[#B70569]",
+    },
   ];
 
   return (
@@ -94,12 +113,12 @@ const Community = () => {
 
         <div className="w-full product-program-bg pb-[100px]">
           <section className="w-90 mx-auto flex justify-center mt-[-130px]">
-            <figure className="m-0 p-0 block w-full max-w-[1256px] mx-auto rounded-2xl overflow-hidden">
+            <figure className="m-0 p-0 block w-full max-w-[1256px] mx-auto rounded-2xl overflow-hidden h-[690px]">
               <img
                 src={communityImg}
                 ref={imgRef}
                 alt="community slack channel"
-                className={`animate__animated  w-full h-full ${
+                className={`animate__animated  w-full h-full object-cover ${
                   isLoaded
                     ? "animate__fadeIn opacity-100"
                     : "opacity-0 absolute"
@@ -110,22 +129,24 @@ const Community = () => {
           </section>
 
           <section className="mt-[101px]">
-            <h2 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-primary-main-pink">
+            <h2 className=" text-center text-5xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-primary-main-pink">
               What’s in store for you
             </h2>
 
-            <div className="w-90 mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 max-w-[1256px] gap-7 place-items-center-center">
+            <div className="w-90 mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 max-w-[800px] gap-7 sm:gap-10 place-items-center-center">
               {whatsinStoreForYou.map((item, index) => (
                 <div
-                  className={`border-2 border-[${
-                    cardColors[index] || "#5C0335"
-                  }] flex justify-center items-center min-h-[120px] px-6 ${
+                  className={`border-2 ${
+                    cardColors[index].border || "border-[#5C0335] "
+                  } flex justify-center items-center min-h-[90px] sm:min-h-[120px] px-6 ${
                     item.bg
                   } rounded-[20px] bg-transparent w-full max-w-[445px] mx-auto `}
                   key={index}
                 >
                   <p
-                    className={`text-2xl text-center text-[${cardColors[index]}] `}
+                    className={`text-lg sm:text-2xl text-center ${
+                      cardColors[index].text || "text-[#5C0335]"
+                    } font-medium`}
                   >
                     {item.text}
                   </p>
@@ -135,7 +156,7 @@ const Community = () => {
           </section>
 
           <section className="w-[90%] my-10 max-w-[548px] mx-auto">
-            <h3 className="text-center text-2xl font-medium">
+            <h3 className="text-center text-xl sm:text-2xl font-medium">
               Tell them here that they cannot join a chapter without joining the
               community
             </h3>
@@ -143,7 +164,7 @@ const Community = () => {
             <div className="mt-5 w-full flex flex-col sm:flex-row gap-8 justify-center items-center">
               <div className="flex items-center justify-center w-full sm:max-w-[207px] mx-auto">
                 <a
-                  className="bg-transparent px-8 py-[14px] mt-3 rounded-lg text-primary-main-pink text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal border border-primary-main-pink"
+                  className="bg-transparent px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-primary-main-pink text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal border border-primary-main-pink"
                   href="https://forms.gle/aFe2LrkZxZJtKKve7"
                   rel="noreferrer"
                 >
@@ -153,7 +174,7 @@ const Community = () => {
 
               <div className="flex items-center justify-center w-full sm:max-w-[298px] mx-auto">
                 <Link
-                  className="bg-primary-main-pink px-8 py-[14px] mt-3 rounded-lg text-white text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal"
+                  className="bg-primary-main-pink px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-white text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal"
                   to="/chapters"
                   rel="noreferrer"
                 >
@@ -168,17 +189,17 @@ const Community = () => {
           <div className="w-90 max-w-[686px] mx-auto  ">
             <div className="w-full max-w-[587px] mx-auto">
               {" "}
-              <h2 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-white">
+              <h2 className=" text-center text-5xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-white">
                 The She Code Africa Blog
               </h2>
-              <p className="my-7 font-normal text-2xl text-center text-white ">
+              <p className="my-7 font-normal text-xl sm:text-2xl text-center text-white ">
                 We are out to celebrate and inspire female programmers and tech
                 lovers across Africa by telling their stories.
               </p>
               <div className="w-full flex justify-center items-center flex-col sm:flex-row gap-8">
-                <div className="flex items-center justify-center gap-8 ">
+                <div className="flex items-center justify-center gap-8 w-full sm:max-w-[201px]">
                   <a
-                    className="bg-white px-8 py-[14px]  rounded-lg text-primary-main-pink text-base font-normal text-center sm:max-w-[201px]"
+                    className="bg-white px-8 py-[14px] w-full flex justify-center items-center  rounded-lg text-primary-main-pink text-base font-normal text-center "
                     href="https://medium.com/shecodeafrica"
                     target="_blank"
                     rel="noreferrer"
@@ -187,9 +208,9 @@ const Community = () => {
                   </a>
                 </div>
 
-                <div className="flex items-center justify-center gap-8 ">
+                <div className="flex items-center justify-center gap-8 w-full sm:max-w-[226px]">
                   <a
-                    className="bg-transparent border border-white px-8 py-[14px]  rounded-lg  text-white text-base font-normal text-center sm:max-w-[226px]"
+                    className="bg-transparent border border-white px-8 py-[14px] w-full flex justify-center items-center rounded-lg  text-white text-base font-normal text-center "
                     href="https://sca-editorial.notion.site/SheCodeAfrica-Guest-Writing-Program-b94f2b9d70b347569c2beb3474180301"
                     target="_blank"
                     rel="noreferrer"
@@ -204,12 +225,12 @@ const Community = () => {
 
         <section className="w-full bg-[#FFF88F] py-[100px]">
           <div className="w-90 mx-auto max-w-[686px]">
-            <h2 className=" text-center text-4xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-primary-main-pink">
+            <h2 className=" text-center text-5xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-primary-main-pink">
               Ready to join the <span className="uppercase">largest</span>{" "}
               female tech community in Africa?
             </h2>
 
-            <div className="flex items-center justify-center mt-8 max-w-[208px] mx-auto">
+            <div className="flex items-center justify-center mt-5 sm:mt-8 max-w-[208px] mx-auto">
               <a
                 className="bg-primary-main-pink px-8 py-[14px] h-[55px] flex items-center justify-center w-full mt-3 rounded-lg text-white text-base font-normal"
                 href="https://forms.gle/aFe2LrkZxZJtKKve7"
