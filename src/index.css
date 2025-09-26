@@ -84,6 +84,17 @@ main,
   animation: fadeIn 0.5s ease-in-out;
 }
 
+.card-wwd article p,
+.card-wwd-pink article p {
+  color: #1a1a1a;
+  transition: color 300ms linear;
+}
+
+.card-wwd:hover article p,
+.card-wwd-pink:hover article p {
+  color: white;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
