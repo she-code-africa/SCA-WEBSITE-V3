@@ -4,7 +4,7 @@ import money from "../assets/v2/images/money.png";
 import { Link } from "react-router-dom";
 
 const Layout = ({ children }) => {
-  const [closeModal, seCloseModal] = useState(true);
+  const [closeModal, seCloseModal] = useState(false);
 
   return (
     <>
