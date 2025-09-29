@@ -39,6 +39,7 @@ module.exports = {
         "SCA-Blush": "#FFB8E0",
         "SCA-Citrine": "#FFF88F",
         "SCA-Forest": "#094A32",
+        "SCA-Apricote": "#FF8A3F",
         
       },
       fontSize: {
@@ -62,6 +63,9 @@ module.exports = {
         BebasNeue: ["Bebas Neue", "sans-serif"],
         figtree: ["Figtree", "sans-serif"],
       },
+      gap: {
+        13: "3.125rem"
+      }
     },
   },
   plugins: [],
