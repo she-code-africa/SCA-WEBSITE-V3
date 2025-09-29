@@ -47,66 +47,20 @@ const Donate = () => {
             />
           </figure>
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 flex justify-center items-center ">
-            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
+            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-2xl text-center">
               <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
-                Partner with SHE CODE AFRICA {" "}
+                Partner with <br />SHE CODE AFRICA {" "}
               </h1>
 
               <p className="text-white text-base md:text-2xl font-medium">
-                Join us in empowering the next generation of African women technologists. Together, we can bridge the gender gap in technology across Africa.
+                Real change doesn’t happen alone. It takes people, organizations, and communities pulling in the same direction. That’s why we open our doors to partners who believe in the power of African women and girls in tech. Together, we can make opportunities bigger, reach further, and move faster.
               </p>
 
-              <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
-                <CustomButtonComponent
-                  // btnColor="[#B70569]"
-                  label="As an Individual"
-                  customColor="text-white hover:text-primary-main-pink"
-                  url="#"
-                  bgHover="hover:bg-white bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
-                />
-                <CustomButtonComponent
-                  // btnColor="[#ffffff]"
-                  label="As an Organization"
-                  customColor="hover:text-white text-primary-main-pink"
-                  url="#"
-                  bgHover="hover:bg-[#B70569] bg-white rounded-lg transition-all duration-300 border-white"
-                />
-              </div>
             </article>
           </div>
         </section>
 
         <OurBrands />
-
-        {/* Ways to Partner with Us Section */}
-        <section className="w-full bg-Primary-Magenta py-16 lg:py-24">
-
-          <div className="max-w-7xl mx-auto px-6 lg:px-20 relative z-0">
-            {/* Header */}
-            <div className="text-center mb-10">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-SCA-White mb-6 hero-text">
-                Ways You can Partner with Us
-              </h2>
-            </div>
-
-            {/* Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6 md:gap-y-2 lg:gap-x-6 max-w-5xl mx-auto">
-              {WaysPartnerCards.map((card) => (
-                <div
-                  key={card.id}
-                  className={`${card.bgColor} rounded-2xl p-8 lg:p-10 text-center`}
-                >
-                  <h3 className="text-2xl lg:text-3xl font-bold text-black mb-4">
-                    {card.title}
-                  </h3>
-                  <p className="text-base lg:text-lg text-seal-brown">
-                    {card.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Why Partner with Us Section */}
         <section className="w-full bg-olivePattern bg-cover bg-no-repeat py-16 lg:py-24 relative">
@@ -128,7 +82,37 @@ const Donate = () => {
                   key={card.id}
                   className={`${card.bgColor} rounded-2xl p-8 lg:p-10 text-center`}
                 >
-                  <h3 className={` ${card.Color} text-2xl lg:text-3xl font-bold text-black mb-4`}>
+                  <h3 className={`${card.Color} text-2xl lg:text-3xl font-bold mb-4`}>
+                    {card.title}
+                  </h3>
+                  <p className="text-base lg:text-lg text-seal-brown">
+                    {card.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Ways to Partner with Us Section */}
+        <section className="w-full bg-Primary-Magenta py-16 lg:py-24">
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-20 relative z-0">
+            {/* Header */}
+            <div className="text-center mb-10">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-SCA-White mb-6 hero-text">
+                Ways You can Partner with Us
+              </h2>
+            </div>
+
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6 md:gap-y-2 lg:gap-x-6 max-w-5xl mx-auto">
+              {WaysPartnerCards.map((card) => (
+                <div
+                  key={card.id}
+                  className={`${card.bgColor} rounded-2xl p-8 lg:p-10 text-center`}
+                >
+                  <h3 className="text-2xl lg:text-3xl font-bold text-black mb-4">
                     {card.title}
                   </h3>
                   <p className="text-base lg:text-lg text-seal-brown">
