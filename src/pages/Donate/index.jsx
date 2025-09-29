@@ -76,16 +76,16 @@ const Donate = () => {
             </div>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6 md:gap-y-2 lg:gap-x-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-6 md:gap-y-2 lg:gap-x-6 max-w-5xl mx-auto justify-items-center">
               {WhyPartnerCards.map((card) => (
                 <div
                   key={card.id}
                   className={`${card.bgColor} rounded-2xl p-8 lg:p-10 text-center`}
                 >
-                  <h3 className={`${card.Color} text-2xl lg:text-3xl font-bold mb-4`}>
+                  <h3 className={`${card.Color} text-2xl lg:text-[32px] leading-[44px] font-bold mb-4`}>
                     {card.title}
                   </h3>
-                  <p className="text-base lg:text-lg text-seal-brown">
+                  <p className="text-base lg:text-2xl text-seal-brown">
                     {card.description}
                   </p>
                 </div>
@@ -112,10 +112,10 @@ const Donate = () => {
                   key={card.id}
                   className={`${card.bgColor} rounded-2xl p-8 lg:p-10 text-center`}
                 >
-                  <h3 className="text-2xl lg:text-3xl font-bold text-black mb-4">
+                  <h3 className="text-2xl lg:text-[32px] leading-[44px] font-bold mb-4 text-black">
                     {card.title}
                   </h3>
-                  <p className="text-base lg:text-lg text-seal-brown">
+                  <p className="text-base lg:text-2xl text-seal-brown">
                     {card.description}
                   </p>
                 </div>
@@ -194,7 +194,7 @@ const Donate = () => {
 
                 {/* Statistics Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
-                  {impactStats.map((stat) => (
+                  {impac imptStats.map((stat) => (
                     <div key={stat.id}>
                       <div className="text-5xl lg:text-6xl xl:text-7xl font-bold hero-text">
                         {stat.number}
