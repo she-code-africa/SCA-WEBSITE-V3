@@ -511,25 +511,25 @@ export const impactStats = [
     id: 1,
     number: "5k+",
     description:
-      "girls and women impacted through our academy programs, community events, and scholarship initiatives.",
+      "women and girls trained through our Academy and training programs",
   },
   {
     id: 2,
     number: "2674+",
     description:
-      "women and girls trained through our training programs",
+      "African countries represented & 40+ chapter locations",
   },
   {
     id: 3,
     number: "760k+",
     description:
-      "women and girls reached through our community activities and events",
+      "program beneficiaries and scholarship recipients. ",
   },
   {
     id: 4,
     number: "4.5M+",
     description:
-      "women and girls reached through our community activities and events",
+      "people Inspired by the Stories of African Girls and women in Tech",
   },
 ];
 
@@ -563,29 +563,29 @@ export const WaysPartnerCards = [
 export const WhyPartnerCards = [
   {
     id: 1,
-    title: "Continental Reach",
-    description: "Access to talent and communities across 54 African countries",
+    title: "Shared Impact",
+    description: "Every program is designed with community at its heart. Your support helps multiply that impact.",
     bgColor: "bg-SCA-Citrine",
     Color: "text-Primary-Magenta",
   },
   {
     id: 2,
-    title: "Strong Community",
-    description: "We bring together a network of passionate individuals working for impact.",
+    title: "Reach & Network",
+    description: "A pan-African community of 40,000+ women and girls learning, mentoring, and leading in tech.",
     bgColor: "bg-SCA-Zesty",
     Color: "text-SCA-Forest",
   },
   {
     id: 3,
-    title: "Proven Impact",
-    description: "Years of driving change and creating opportunities across diverse communities.",
+    title: "Sustainable Change",
+    description: "Long-term pathways, skills, mentorship, and access that last a lifetime.",
     bgColor: "bg-SCA-Zesty",
     Color: "text-SCA-Forest",
   },
   {
     id: 4,
-    title: "Collaborative Growth",
-    description: "Partner with us to unlock new opportunities and sustainable initiatives.",
+    title: "Continental Reach",
+    description: "Access to talent and communities across 54 African countries",
     bgColor: "bg-SCA-Citrine",
     Color: "text-Primary-Magenta",
   },
