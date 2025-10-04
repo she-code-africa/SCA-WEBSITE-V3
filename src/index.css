@@ -69,6 +69,7 @@ main,
   background-image: url("./assets/v2/images/Vector.png");
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: 100% auto;
 }
 
 .product-program-bg {
