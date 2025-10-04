@@ -9,12 +9,14 @@ import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
 import OurBrands from "../../components/version-2/homepage/OurBrands";
 import DonateSection from "../../components/version-2/homepage/Donate";
 import donatePng from "../../assets/v2/images/donatePng.jpg";
-import { impactStats, ReachOutCard, WaysPartnerCards, WhyPartnerCards } from "../../utils";
-
-
+import {
+  impactStats,
+  ReachOutCard,
+  WaysPartnerCards,
+  WhyPartnerCards,
+} from "../../utils";
 
 const Donate = () => {
-
   return (
     <>
       <Helmet>
@@ -49,13 +51,17 @@ const Donate = () => {
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 flex justify-center items-center ">
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-2xl text-center">
               <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
-                Partner with <br />SHE CODE AFRICA {" "}
+                Partner with <br />
+                SHE CODE AFRICA{" "}
               </h1>
 
               <p className="text-white text-base md:text-2xl font-medium">
-                Real change doesn’t happen alone. It takes people, organizations, and communities pulling in the same direction. That’s why we open our doors to partners who believe in the power of African women and girls in tech. Together, we can make opportunities bigger, reach further, and move faster.
+                Real change doesn’t happen alone. It takes people,
+                organizations, and communities pulling in the same direction.
+                That’s why we open our doors to partners who believe in the
+                power of African women and girls in tech. Together, we can make
+                opportunities bigger, reach further, and move faster.
               </p>
-
             </article>
           </div>
         </section>
@@ -82,7 +88,9 @@ const Donate = () => {
                   key={card.id}
                   className={`${card.bgColor} rounded-2xl p-8 lg:p-10 text-center`}
                 >
-                  <h3 className={`${card.Color} text-2xl lg:text-[32px] leading-[44px] font-bold mb-4`}>
+                  <h3
+                    className={`${card.Color} text-2xl lg:text-[32px] leading-[44px] font-bold mb-4`}
+                  >
                     {card.title}
                   </h3>
                   <p className="text-base lg:text-2xl text-seal-brown">
@@ -96,7 +104,6 @@ const Donate = () => {
 
         {/* Ways to Partner with Us Section */}
         <section className="w-full bg-Primary-Magenta py-16 lg:py-24">
-
           <div className="max-w-7xl mx-auto px-6 lg:px-20 relative z-0">
             {/* Header */}
             <div className="text-center mb-10">
@@ -129,17 +136,19 @@ const Donate = () => {
           <div className="max-w-7xl mx-auto px-6 lg:px-32 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-shrink-0 mb-8 md:mb-0">
               <h2 className="text-[84px] leading-[1] font-semibold text-Secondary-Velvet hero-text">
-                Reach<br />Out
+                Reach
+                <br />
+                Out
               </h2>
             </div>
             <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
               {ReachOutCard.map((card) => (
-                <div className="flex flex-col"
-                  key={card.id}>
-                  <h3 className="text-4xl font-bold text-Primary-Magenta mb-1">{card.title}</h3>
+                <div className="flex flex-col" key={card.id}>
+                  <h3 className="text-4xl font-bold text-Primary-Magenta mb-1">
+                    {card.title}
+                  </h3>
                   <p className="text-2xl text-Primary-Magenta">{card.email}</p>
                 </div>
-
               ))}
             </div>
           </div>
@@ -194,7 +203,7 @@ const Donate = () => {
 
                 {/* Statistics Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
-                  {impac imptStats.map((stat) => (
+                  {impactStats.map((stat) => (
                     <div key={stat.id}>
                       <div className="text-5xl lg:text-6xl xl:text-7xl font-bold hero-text">
                         {stat.number}
@@ -211,7 +220,6 @@ const Donate = () => {
         </section>
 
         <DonateSection />
-
       </main>
       <Footer />
     </>
@@ -219,4 +227,3 @@ const Donate = () => {
 };
 
 export default Donate;
-
