@@ -9,10 +9,10 @@ const SchoolProgram = ({ bgColors, slug }) => {
     <section className="w-full  product-program-bg ">
       <div
         className={`w-full ${slug.includes("product") && bgColors[0]} ${
-          slug.includes("engineering") && bgColors[2]
+          slug.includes("engineering") && "bg-[#FFB8E0]"
         } ${
-          slug.includes("applied") && bgColors[1]
-        } bg-[#DDFF8F] what-we-do-clip relative z-[1]`}
+          slug.includes("applied") && "bg-[#FFF88F]"
+        } what-we-do-clip relative z-[1]`}
       >
         <article className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56">
           <h3
