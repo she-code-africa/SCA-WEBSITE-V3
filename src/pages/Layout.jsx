@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
       >
         {closeModal ? (
           <button
-            className="w-full h-full flex justify-center items-center transition-all animate-opacity"
+            className="w-full h-full  flex justify-center items-center transition-all animate-opacity"
             onClick={() => seCloseModal(false)}
           >
             <img

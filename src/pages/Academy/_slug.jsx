@@ -44,11 +44,14 @@ const AcademyPage = () => {
 
   const BgColors = ["bg-[#DDFF8F]", "bg-[#FFF88F]", "bg-[#FFB8E0]"];
 
+  console.log("school", school);
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>School of Engineering</title>
+        <title>
+          {school && school?.name ? school?.name : "She Code Africa Academy"}
+        </title>
         <meta
           name="description"
           content="Empowering women to innovate the digital world, one engineer at a time."
@@ -80,7 +83,20 @@ const AcademyPage = () => {
                       {/* {school.name} */}
                       School of{" "}
                       <span className="text-primary-main-pink text-[128px]">
-                        Products
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of engineering" &&
+                          "Engineering"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() === "school of product" &&
+                          "Products"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of applied sciences" &&
+                          "Applied Sciences"}
                       </span>
                     </h1>
 
@@ -122,18 +138,24 @@ const AcademyPage = () => {
           </h3>
 
           <div className="w-full flex-col sm:flex-row flex items-center justify-center lg:justify-center gap-10 lg:gap-20 mt-10 lg:mt-0">
-            {["School of Applied Sciences", "School of Engineering"].map(
-              (school, idx) => (
+            {[
+              "School of Applied Sciences",
+              "School of Engineering",
+              "School of Product",
+            ]
+              .filter(
+                (item) => item.toLowerCase() !== school?.name?.toLowerCase()
+              )
+              .map((school, idx) => (
                 <div className="mb-10 sm:mb-0" key={idx}>
                   <Link
-                    to="#"
+                    to={`/academy/${school.toLowerCase().replaceAll(" ", "-")}`}
                     className="py-[18px] w-full px-8 bg-primary-main-pink border border-primary-main-pink transition-all rounded-lg hover:bg-transparent text-white hover:text-primary-main-pink"
                   >
                     {school}
                   </Link>
                 </div>
-              )
-            )}
+              ))}
           </div>
         </div>
       </section>
