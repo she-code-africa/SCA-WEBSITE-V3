@@ -79,7 +79,27 @@ const AcademyPage = () => {
               {school ? (
                 <div className="flex gap-8 items-center justify-between w-[90%] lg:w-11/12 mx-auto">
                   <article className="max-w-[518px] w-full">
-                    <h1 className="text-8xl hero-text ">
+                    <h1 className="text-[70px] hero-text sm:hidden">
+                      {/* {school.name} */}
+                      School of <br />
+                      <span className="text-primary-main-pink text-[80px]">
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of engineering" &&
+                          "Engineering"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() === "school of product" &&
+                          "Products"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of applied sciences" &&
+                          "Applied Sciences"}
+                      </span>
+                    </h1>
+                    <h1 className="text-8xl hero-text hidden sm:block">
                       {/* {school.name} */}
                       School of{" "}
                       <span className="text-primary-main-pink text-[128px]">
@@ -100,7 +120,7 @@ const AcademyPage = () => {
                       </span>
                     </h1>
 
-                    <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-2xl">
+                    <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl">
                       {/* {school?.description} */}
                       Empowering women to innovate the digital world, one
                       engineer at a time.

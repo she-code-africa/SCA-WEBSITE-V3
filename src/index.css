@@ -82,7 +82,11 @@ main,
 }
 
 .animate-opacity {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.animate-img-opacity {
+  animation: fadeIn 1s linear;
 }
 
 .card-wwd article p,
