@@ -34,6 +34,13 @@ module.exports = {
         "SCA-Cloud": "#F4EFEC",
         "SCA-Garden": "#BEE366",
         "SCA-Zesty": "#DDFF8F",
+        "SCA-White": "#FEFEFE",
+        "SCA-Bloom": "#FF8FCE",
+        "SCA-Blush": "#FFB8E0",
+        "SCA-Citrine": "#FFF88F",
+        "SCA-Forest": "#094A32",
+        "SCA-Apricote": "#FF8A3F",
+        
       },
       fontSize: {
         15: "15px",
@@ -44,7 +51,8 @@ module.exports = {
         bgI: "url('./assets/v2/images/bgImg2.png')",
         magentaPattern: "url('./assets/v2/images/magenta-pattern.png')",
         olivePattern: "url('./assets/v2/images/olive-pattern.jpg')",
-
+        blushPattern: "url('./assets/v2/images/pink-blush-pattern.png')",
+        bgPinkPattern: "url('./assets/v2/images/bg-blush.png')",
       },
 
       screens: {
@@ -55,6 +63,9 @@ module.exports = {
         BebasNeue: ["Bebas Neue", "sans-serif"],
         figtree: ["Figtree", "sans-serif"],
       },
+      gap: {
+        13: "3.125rem"
+      }
     },
   },
   plugins: [],

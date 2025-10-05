@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const WhatWeDo = () => {
   return (
-    <section className="w-full ourReachBg bg-no-repeat bg-cover pb-20">
+    <section className="w-full product-program-bg bg-no-repeat bg-cover pb-20">
       <div className="w-full bg-[#DDFF8F] what-we-do-clip relative z-[1]">
         <article className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56">
           <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#094A32] hero-text">
@@ -31,7 +31,7 @@ const WhatWeDo = () => {
         <div className="w-full grid md:grid-cols-2 gap-8 ">
           {[...Array(4)].map((_, i) => (
             <div
-              className="border-2 border-[#094A32] p-5 bg-white rounded-2xl"
+              className="border-2 border-[#094A32] p-5 bg-white rounded-2xl hover:text-white hover:bg-[#094A32] transition-colors duration-300 cursor-pointer text-[#094A32] card-wwd"
               key={i}
             >
               <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
@@ -43,16 +43,16 @@ const WhatWeDo = () => {
               </figure>
 
               <article className="mt-5 w-full">
-                <h4 className="capitalize text-xl text-[#094A32] font-semibold">
+                <h4 className="capitalize text-xl  font-semibold">
                   card title
                 </h4>
-                <p className="font-medium text-base mt-4">
+                <p className="font-medium text-base mt-4 ">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Sapiente, porro?
                 </p>
               </article>
 
-              <div className="mt-5 w-full text-[#094A32]">
+              <div className="mt-5 w-full ">
                 <Link
                   to="#"
                   className="text-base w-full flex items-center gap-2"

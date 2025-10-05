@@ -10,6 +10,10 @@ import bglineImage from "../../images/academy/bg-line.svg";
 import * as components from "../../components";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
+import heroImg from "../../assets/v2/images/whatWeDoCardImage.jpg";
+import SchoolProgram from "../../components/version-2/academy/SchoolProgram";
+import SuccessStories from "../../components/version-2/academy/SuccessStories";
+import ResourcesCard from "../../components/version-2/shared-components/ResourcesCard";
 
 const AcademyPage = () => {
   const { slug } = useParams();
@@ -19,10 +23,6 @@ const AcademyPage = () => {
     [apiConstants.academy],
     getAllSchools
   );
-
-  console.log('====================================');
-  console.log(school);
-  console.log('====================================');
 
   useEffect(() => {
     if (!isLoading) {
@@ -42,11 +42,16 @@ const AcademyPage = () => {
     return <components.Error />;
   }
 
+  const BgColors = ["bg-[#DDFF8F]", "bg-[#FFF88F]", "bg-[#FFB8E0]"];
+
+  console.log("school", school);
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>School of Engineering</title>
+        <title>
+          {school && school?.name ? school?.name : "She Code Africa Academy"}
+        </title>
         <meta
           name="description"
           content="Empowering women to innovate the digital world, one engineer at a time."
@@ -64,28 +69,72 @@ const AcademyPage = () => {
         />
       </Helmet>
       <Header />
-      <section
-        className="h-[430px] flex-col flex justify-center pt-16 lg:pt-24"
-        style={{
-          background:
-            "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
-        }}
-      >
-        <div className="lg:w-7/12 md:w-9/12 md:px-20 px-9">
+      <section className="min-h-screen relative bg-white flex items-center">
+        <div className="block absolute right-0 w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] h-full bg-[#F4EFEC]"></div>
+        <div className="w-full py-24 lg:pt-36 relative">
           {isLoading ? (
             <components.Loading />
           ) : (
             <>
               {school ? (
-                <>
-                  <h1 className="text-4xl mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px] mb-5">
-                    {school.name}
-                  </h1>
+                <div className="flex gap-8 items-center justify-between w-[90%] lg:w-11/12 mx-auto">
+                  <article className="max-w-[518px] w-full">
+                    <h1 className="text-[70px] hero-text sm:hidden">
+                      {/* {school.name} */}
+                      School of <br />
+                      <span className="text-primary-main-pink text-[80px]">
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of engineering" &&
+                          "Engineering"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() === "school of product" &&
+                          "Products"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of applied sciences" &&
+                          "Applied Sciences"}
+                      </span>
+                    </h1>
+                    <h1 className="text-8xl hero-text hidden sm:block">
+                      {/* {school.name} */}
+                      School of{" "}
+                      <span className="text-primary-main-pink text-[128px]">
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of engineering" &&
+                          "Engineering"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() === "school of product" &&
+                          "Products"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of applied sciences" &&
+                          "Applied Sciences"}
+                      </span>
+                    </h1>
 
-                  <p className="text-2xl  mx-auto font-semibold text-[#1A1A1A] lg:leading-[1.5]">
-                    {school?.description}
-                  </p>
-                </>
+                    <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl">
+                      {/* {school?.description} */}
+                      Empowering women to innovate the digital world, one
+                      engineer at a time.
+                    </p>
+                  </article>
+
+                  <figure className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden">
+                    <img
+                      src={heroImg}
+                      alt="hero-img"
+                      className="w-full h-full object-cover"
+                    />
+                  </figure>
+                </div>
               ) : (
                 <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
                   Empowering women to innovate the digital world, one engineer
@@ -97,114 +146,220 @@ const AcademyPage = () => {
         </div>
       </section>
 
-      {isLoading ? (
-        <components.Loading />
-      ) : (
-        <>
-          {school && (
-            <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto">
-              <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
-                Current Programs
-              </h2>
-              {school.schoolPrograms && school.schoolPrograms.length > 0 ? (
-                school.schoolPrograms
-                  .filter((prog) => prog.state === "published")
-                  .map((content, index) => {
-                    return (
-                      <div
-                        key={content._id}
-                        className={`${index % 2 ? "flex-row-reverse" : "flex-row"
-                          } md:flex p-6  mt-8 mb-0 gap-28 justify-center`}
-                      >
-                        <img
-                          className="text-center md:w-96 object-contain h-[250px]"
-                          src={content.image}
-                          alt={content.title}
-                        />
-                        <div className="text-primary-dark-brown">
-                          <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
-                            {content.title}
-                          </h3>
-                          <p dangerouslySetInnerHTML={{ __html: content.briefContent }} className="py-4 font-medium leading-relaxed" />
+      <SchoolProgram bgColors={BgColors} slug={slug} />
 
-                          <p dangerouslySetInnerHTML={{ __html: content.extendedContent }} className=" pb-4 font-medium leading-relaxed mb-10" />
+      <SuccessStories />
 
-                          <a href={content.link} target="_blank" className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink" rel="noreferrer">
-                            Apply
-                          </a>
-                        </div>
-                      </div>
-                    );
-                  })
-              ) : (
-                <h2 className="text-xl text-center mt-5 mx-auto font-normal text-[#1A1A1A] lg:leading-[72px]">
-                  No ongoing programs.
-                </h2>
-              )}
-            </section>
-          )}
-        </>
-      )}
-
-      {isLoading ? (
-        <components.Loading />
-      ) : (
-        <>
-          {school && school.courses && (
-            <components.OnlineCourses data={school.courses} />
-          )}
-        </>
-      )}
-
-      <section className="my-14 lg:my-28 mx-auto">
-        <h2 className="text-3xl font-semibold pb-14 lg:text-4xl text-center">
-          Success Stories
-        </h2>
-        <div className="flex-wrap flex items-center justify-center gap-5">
-          {youtubeVideos.map((content) => {
-            return (
-              <div key={content.id}>
-                <iframe
-                  className="w-[98%] lg:w-full rounded-xl m-auto"
-                  width="380"
-                  height="315"
-                  src={content.video}
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-
-                <p className="w-96 lg:w-full text-center lg:text-left py-8 text-lg font-medium">
-                  {content.description}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="bg-[#F9F9F9] my-14 lg:my-28 py-20">
-        <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-primary-dark-brown">
-          <div className="hidden lg:inline-block absolute top-0 left-0">
+      <section className="w-full py-24">
+        <div className="flex flex-col lg:flex-row items-center justify-center w-[90%] lg:max-w-[1000px] xl:max-w-[1080px] mx-auto gap-5 sm:gap-10 lg:gap-20">
+          <h3 className="text-[rgba(92,3,53,1)] hero-text text-6xl md:text-7xl lg:text-[84px] lg:max-w-[247px]">
             {" "}
-            <img className="w-52" src={bglineImage} alt="bg-line" />
+            More Programs
+          </h3>
+
+          <div className="w-full flex-col sm:flex-row flex items-center justify-center lg:justify-center gap-10 lg:gap-20 mt-10 lg:mt-0">
+            {[
+              "School of Applied Sciences",
+              "School of Engineering",
+              "School of Product",
+            ]
+              .filter(
+                (item) => item.toLowerCase() !== school?.name?.toLowerCase()
+              )
+              .map((school, idx) => (
+                <div className="mb-10 sm:mb-0" key={idx}>
+                  <Link
+                    to={`/academy/${school.toLowerCase().replaceAll(" ", "-")}`}
+                    className="py-[18px] w-full px-8 bg-primary-main-pink border border-primary-main-pink transition-all rounded-lg hover:bg-transparent text-white hover:text-primary-main-pink"
+                  >
+                    {school}
+                  </Link>
+                </div>
+              ))}
           </div>
-          <h2 className="font-normal text-4xl text-primary-dark-brown">
-            Hire Our Graduates
-          </h2>
-          <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
-            Access a pool of talented engineers from our renowned engineering
-            school and take your business to the next level by building a
-            skilled and diverse team
-          </p>
-          <Link
-            to={paths.hire}
-            className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink"
-          >
-            Hire Our Talent
-          </Link>
         </div>
       </section>
+
+      <section className="bg-magentaPattern w-full">
+        <div className="w-[90%] mx-auto xl:max-w-[1198px] py-[100px] xl:py-[130px]">
+          <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
+            Hire our Graduates
+          </h3>
+
+          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-lg text-center font-normal">
+            Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet
+            pharetra varius proin eleifend leo. Sagittis aliquet urna
+            suspendisse in ut tincidunt.
+          </p>
+
+          <div className="mt-10 text-center">
+            <Link
+              to={paths.hire}
+              className="rounded-lg text-base text-white px-8 py-[18px] bg-primary-main-pink"
+            >
+              Hire Our Talent
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section className="bg-primary-main-pink w-full py-20">
+        <div className="w-[90%] mx-auto xl:max-w-[1256px]">
+          <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
+            Resources
+          </h3>
+
+          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-lg text-center font-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros elementum tristique.
+          </p>
+
+          <div className="mt-[50px] w-full grid md:grid-cols-2 lg:grid-cols-3 gap-3 place-items-center">
+            {[...Array(3)].map((_, idx) => (
+              <ResourcesCard key={idx} />
+            ))}
+          </div>
+
+          <div className="my-10 max-w-[122px] w-full mx-auto">
+            <Link
+              to="#"
+              className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink capitalize"
+            >
+              {" "}
+              view all
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/*  */}
+
+      <div className="hidden">
+        {isLoading ? (
+          <components.Loading />
+        ) : (
+          <>
+            {school && (
+              <section className="max-w-[65rem] 2xl:max-w-[90rem] my-14 lg:my-28 mx-auto ">
+                <h2 className="text-3xl font-semibold mb-0 mt-20 lg:my-18 text-primary-dark-brown lg:text-4xl text-center">
+                  Current Programs
+                </h2>
+                {school.schoolPrograms && school.schoolPrograms.length > 0 ? (
+                  school.schoolPrograms
+                    .filter((prog) => prog.state === "published")
+                    .map((content, index) => {
+                      return (
+                        <div
+                          key={content._id}
+                          className={`${
+                            index % 2 ? "flex-row-reverse" : "flex-row"
+                          } md:flex p-6  mt-8 mb-0 gap-28 justify-center`}
+                        >
+                          <img
+                            className="text-center md:w-96 object-contain h-[250px]"
+                            src={content.image}
+                            alt={content.title}
+                          />
+                          <div className="text-primary-dark-brown">
+                            <h3 className="mt-4 text-2xl font-semibold lg:text-3xl lg:mt-0">
+                              {content.title}
+                            </h3>
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: content.briefContent,
+                              }}
+                              className="py-4 font-medium leading-relaxed"
+                            />
+
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: content.extendedContent,
+                              }}
+                              className=" pb-4 font-medium leading-relaxed mb-10"
+                            />
+
+                            <a
+                              href={content.link}
+                              target="_blank"
+                              className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink"
+                              rel="noreferrer"
+                            >
+                              Apply
+                            </a>
+                          </div>
+                        </div>
+                      );
+                    })
+                ) : (
+                  <h2 className="text-xl text-center mt-5 mx-auto font-normal text-[#1A1A1A] lg:leading-[72px]">
+                    No ongoing programs.
+                  </h2>
+                )}
+              </section>
+            )}
+          </>
+        )}
+
+        {isLoading ? (
+          <components.Loading />
+        ) : (
+          <>
+            {school && school.courses && (
+              <components.OnlineCourses data={school.courses} />
+            )}
+          </>
+        )}
+
+        <section className="my-14 lg:my-28 mx-auto">
+          <h2 className="text-3xl font-semibold pb-14 lg:text-4xl text-center">
+            Success Stories
+          </h2>
+          <div className="flex-wrap flex items-center justify-center gap-5">
+            {youtubeVideos.map((content) => {
+              return (
+                <div key={content.id}>
+                  <iframe
+                    className="w-[98%] lg:w-full rounded-xl m-auto"
+                    width="380"
+                    height="315"
+                    src={content.video}
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
+
+                  <p className="w-96 lg:w-full text-center lg:text-left py-8 text-lg font-medium">
+                    {content.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="bg-[#F9F9F9] my-14 lg:my-28 py-20">
+          <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-primary-dark-brown">
+            <div className="hidden lg:inline-block absolute top-0 left-0">
+              {" "}
+              <img className="w-52" src={bglineImage} alt="bg-line" />
+            </div>
+            <h2 className="font-normal text-4xl text-primary-dark-brown">
+              Hire Our Graduates
+            </h2>
+            <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
+              Access a pool of talented engineers from our renowned engineering
+              school and take your business to the next level by building a
+              skilled and diverse team
+            </p>
+            <Link
+              to={paths.hire}
+              className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink"
+            >
+              Hire Our Talent
+            </Link>
+          </div>
+        </section>
+      </div>
+
       <Footer />
     </>
   );
