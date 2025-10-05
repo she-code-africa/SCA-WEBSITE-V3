@@ -17,10 +17,10 @@ const Donate = () => {
             suspendisse in ut tincidunt.
           </p>
 
-          <div className="mt-8 max-w-[152px] w-full rounded-lg bg-primary-main-pink">
+          <div className="mt-8 max-w-[152px] w-full rounded-lg overflow-hidden">
             <Link
               to="/donate-partner"
-              className="flex items-center justify-center rounded-lg max-w-[152px] h-[55px] bg-transparent text-white border-2 border-primary-main-pink hover:bg-white hover:text-primary-main-pink transition-all duration-300 text-base"
+              className="flex items-center justify-center  max-w-[152px] h-[55px] bg-primary-main-pink text-white  hover:bg-[#5C0335] transition-all duration-300 text-base"
             >
               Donate here
             </Link>

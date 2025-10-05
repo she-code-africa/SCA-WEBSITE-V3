@@ -52,17 +52,23 @@ const About = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 lg:pb-20 flex justify-center items-center ">
-            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[790px] text-center">
+          <div className="bg-[rgba(0,0,0,0.35)] min-h-[120vh] pt-16 lg:pt-[86px]  flex justify-center items-center ">
+            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[900px] text-center">
               <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
                 Equipping women with digital skills, one initiative after
                 another
               </h1>
 
               <p className="text-white text-base md:text-2xl font-medium">
-                She Code Africa is a registered non-profit organization
-                dedicated to empowering and celebrating girls and women in
-                technology across Africa
+                She Code Africa started with one simple belief: talent is
+                everywhere, but opportunity is not. In many African communities,
+                girls and women are shut out of tech because of where they live,
+                what they can access, or what they’ve been told they can or
+                cannot do. We exist to close that gap. From small meetups to a
+                growing movement across the continent, She Code Africa is now a
+                home where women and girls can learn, grow, and thrive in tech,
+                with skills, mentorship, and a supportive community by their
+                side.
               </p>
             </article>
           </div>

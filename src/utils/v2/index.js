@@ -46,24 +46,23 @@ export const ourReachData = [
   {
     numbers: "5k",
     description:
-      "girls and women impacted through our academy programs, community events, and scholarship initiatives.",
+      "women and girls trained through our Academy and training programs",
     maxW: 599,
   },
   {
     numbers: "2674",
-    description: "women and girls trained through our training programs",
+    description:
+      "community members across 20+ African countries and 40+ chapter locations.",
     maxW: 483,
   },
   {
-    numbers: "60k",
-    description:
-      "women and girls reached through our community activities and events.",
+    numbers: "64",
+    description: "program beneficiaries and scholarship recipients. ",
     maxW: 498,
   },
   {
-    numbers: "4.5M",
-    description:
-      "women and girls reached through our community activities and events",
+    numbers: "4.5",
+    description: "people Inspired by the Stories of African Girls in Tech.",
     maxW: 531,
   },
 ];
@@ -109,51 +108,67 @@ export const mailingList = [
 
 export const milestoneData = [
   {
-    year: 2018,
+    year: 2016,
+    yearRange: "",
     title: "The beginning",
+    range: false,
     subText:
       "She Code Africa was founded with a vision to celebrate and support African women in tech.",
   },
   {
-    year: 2019,
-    title: "First Community",
+    year: 2017,
+    range: false,
+    yearRange: "",
+    title: "First Steps in Mentorship and Trainings",
     subText:
       "Launched our first local chapter and hosted inaugural meetups across major African cities.",
   },
   {
-    year: 2020,
-    title: "Going Digital",
+    year: "",
+    yearRange: "2018-2019",
+    range: true,
+    title: "Crossing Borders and Breaking Barriers",
     subText:
-      "Pivoted to virtual events during the pandemic, expanding our reach across the continent.",
+      "Expanded beyond Lagos Nigeria, with members joining from across multiple cities and African countries.",
   },
   {
     year: 2021,
-    title: "Mentorship Program",
+    yearRange: "",
+    range: false,
+    title: "A Community of 8,000+",
     subText:
-      "Launched structured mentorship programs connecting experienced professionals with emerging talent.",
+      "Increase in our community, confidently showing how over 8000 ladies made an active decision to pursue or upskill their career in tech through our community.",
   },
   {
     year: 2022,
-    title: "Impact & Recognition",
+    yearRange: "",
+    range: false,
+    title: "Building Platforms for Change",
     subText:
-      "Reached 15K+ members and received recognition for our contribution to tech diversity.",
+      "Started our Laptop Scholarship to remove access barriers and hosted our first Annual Summit, bringing together women in tech from across Africa.",
   },
   {
     year: 2023,
-    title: "Global Expansion",
+    yearRange: "",
+    range: false,
+    title: "The Road to 100,000",
     subText:
-      "Reached 15K+ members and received recognition for our contribution to tech diversity.",
+      "She Code Africa set out with a bold goal to empower 100,000 African women by 2030, with clear pathways in learning, mentorship, and careers.",
   },
   {
     year: 2024,
-    title: "Global Expansion",
+    yearRange: "",
+    range: false,
+    title: "Inspiring the Next Generation",
     subText:
-      "Reached 15K+ members and received recognition for our contribution to tech diversity.",
+      "Launched the STEM-a-Girl initiative to spark early interest in tech among African girls.",
   },
   {
     year: 2025,
+    yearRange: "",
+    range: false,
     title: "New Resolution",
     subText:
-      "She Code Africa was founded with a vision to celebrate and support African women in tech.",
+      "This year, we set our sights higher. With stronger partnerships and bolder goals, we are moving closer to a future where no African girl or woman is left out of tech. Every step we take now is a step toward that shared future.",
   },
 ];

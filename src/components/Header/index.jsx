@@ -367,7 +367,7 @@ const Header = ({ page }) => {
             })}
             <Link
               to={paths.donate_partner}
-              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20"
+              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20 hover:bg-[#5C0335] transition duration-300"
             >
               Donate
             </Link>

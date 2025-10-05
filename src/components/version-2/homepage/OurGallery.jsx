@@ -64,10 +64,9 @@ const OurGallery = () => {
           <CustomButtonComponent
             // btnColor="[#B70569]"
             label="View more impact images"
-            customColor="text-white hover:text-primary-main-pink"
-            bgHover="bg-[#B70569] border-[#B70569] hover:bg-white rounded-lg transition-all duration-300"
-            url="https://drive.google.com/drive/folders/1VsF4fQvNLXXuwWnLi2ThjD6oZxJYdFkp"
-            isGallery={true}
+            customColor="text-white "
+            bgHover="bg-[#B70569] border-[#B70569] hover:border-[#5C0335] hover:bg-[#5C0335] rounded-lg transition-all duration-300"
+            url="/media"
           />
         </div>
       </div>

@@ -5,6 +5,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const WhatWeDo = () => {
+  const whatWeDoData = [
+    {
+      title: "Academy",
+      description:
+        "Through the She Code Africa Academy, we offer curated training programs across tech fields that equip women and girls with the technical skills needed to start and grow their careers in tech",
+      url: "/academy",
+    },
+    {
+      title: "Communities and Chapters",
+      description:
+        " With a global community of over 40,000 members and over 40 local chapters across cities and campuses, we’ve built safe, active spaces where women can access peer support, mentorship, and learning opportunities in tech.",
+      url: "/community",
+    },
+    {
+      title: "Access & Exposure",
+      description:
+        "Through events, partnerships, and placement support, we connect women with opportunities to build or grow meaningful careers in technology.",
+      url: "/partner",
+    },
+    {
+      title: "Initiatives",
+      description:
+        "We design focused programs that remove the everyday barriers African women face when starting or growing their careers in tech. Whether it’s access to tools and resources, mentorship, or entry into a training program, our initiatives create pathways to learning, visibility, and long-term opportunities in tech.",
+      url: "/initiatives",
+    },
+  ];
   return (
     <section className="w-full product-program-bg bg-no-repeat bg-cover pb-20">
       <div className="w-full bg-[#DDFF8F] what-we-do-clip relative z-[1]">
@@ -14,11 +40,10 @@ const WhatWeDo = () => {
           </h3>
 
           <p className="text-lg md:text-2xl mt-3 text-center leading-normal md:leading-normal font-medium">
-            According to Data from Accenture, the ratio of women to men in tech
-            roles has declined in the past 35 years. Out of 50% individuals in
-            the industry, only 20% are women who are significantly represented,
-            with only 14% in software engineering and 25% in computer science
-            related roles compared to their male counterparts.
+            According to McKinsey, women make up just 47% of STEM graduates in
+            Africa. Of those, only 23–30% enter the tech workforce, and fewer
+            than 1 in 10 reach leadership roles. At every stage of the pipeline,
+            the numbers fall talent is lost, and potential goes untapped.
           </p>
 
           <p className="text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium">
@@ -29,7 +54,7 @@ const WhatWeDo = () => {
 
       <div className="w-[90%] mx-auto sm:w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[778px] -mt-40 relative z-[1]">
         <div className="w-full grid md:grid-cols-2 gap-8 ">
-          {[...Array(4)].map((_, i) => (
+          {whatWeDoData.map(({ title, description, url }, i) => (
             <div
               className="border-2 border-[#094A32] p-5 bg-white rounded-2xl hover:text-white hover:bg-[#094A32] transition-colors duration-300 cursor-pointer text-[#094A32] card-wwd"
               key={i}
@@ -42,23 +67,20 @@ const WhatWeDo = () => {
                 />
               </figure>
 
-              <article className="mt-5 w-full">
-                <h4 className="capitalize text-xl  font-semibold">
-                  card title
-                </h4>
-                <p className="font-medium text-base mt-4 ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Sapiente, porro?
-                </p>
-              </article>
+              <div className="w-full flex flex-col justify-between min-h-[246px]">
+                <article className="mt-5 w-full">
+                  <h4 className="capitalize text-xl  font-semibold">{title}</h4>
+                  <p className="font-medium text-base mt-4 ">{description}</p>
+                </article>
 
-              <div className="mt-5 w-full ">
-                <Link
-                  to="#"
-                  className="text-base w-full flex items-center gap-2"
-                >
-                  Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
-                </Link>
+                <div className="mt-5 w-full ">
+                  <Link
+                    to={url}
+                    className="text-base w-full flex items-center gap-2"
+                  >
+                    Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
