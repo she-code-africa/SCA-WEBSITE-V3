@@ -17,7 +17,7 @@ import navIcon3 from "../../assets/v2/images/icons/navIcon3.png";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { IoClose } from "react-icons/io5";
 
-const Header = () => {
+const Header = ({ page }) => {
   const { data, isLoading, isFetching } = useQuery(
     [apiConstants.academy],
     getAllSchools
@@ -202,43 +202,71 @@ const Header = () => {
           <ul
             className={`w-full flex flex-col lg:items-center lg:justify-end gap-4 lg:gap-10 lg:flex-row mt-12 lg:mt-0`}
           >
-            {menuItems.map((menuItem, idx) => (
-              <li
-                key={idx}
-                className={` pb-4 lg:pb-0 ${
-                  menuItem.list.length > 0
-                    ? "lg:relative flex flex-col lg:flex-row lg:items-center gap-1 "
-                    : ""
-                } `}
-              >
-                <span className="hover:text-primary-main-pink">
-                  {menuItem.to ? (
-                    <Link
-                      to={menuItem.to}
-                      className={`hover:text-primary-main-pink font-medium lg:font-normal ${
-                        path === menuItem.to ||
-                        selectedMenu === idx ||
-                        path.includes(menuItem.text.toLowerCase())
-                          ? "text-primary-main-pink font-semibold"
-                          : ""
-                      }`}
-                    >
-                      {menuItem.text}
-                    </Link>
-                  ) : (
-                    <>
-                      <span
-                        className={`cursor-pointer lg:hidden hover:text-primary-main-pink font-medium lg:font-normal ${
-                          path.includes(menuItem.text.toLowerCase())
+            {menuItems.map((menuItem, idx) => {
+              const isActiveMenu = (menu) => {
+                const active =
+                  menu.list.length > 0 &&
+                  menu.list.some(
+                    (item) =>
+                      path === item.to ||
+                      path.startsWith(item.to) ||
+                      path.includes(item.text.toLowerCase())
+                  );
+                return active;
+              };
+              return (
+                <li
+                  key={idx}
+                  className={` pb-4 lg:pb-0 ${
+                    menuItem.list.length > 0
+                      ? "lg:relative flex flex-col lg:flex-row lg:items-center gap-1 "
+                      : ""
+                  } `}
+                >
+                  <span className="hover:text-primary-main-pink">
+                    {menuItem.to ? (
+                      <Link
+                        to={menuItem.to}
+                        className={`hover:text-primary-main-pink font-medium lg:font-normal ${
+                          path === menuItem.to ||
+                          path.includes(menuItem.text.toLowerCase()) ||
+                          isActiveMenu(menuItem)
                             ? "text-primary-main-pink font-semibold"
                             : ""
                         }`}
                       >
                         {menuItem.text}
-                      </span>
+                      </Link>
+                    ) : (
+                      <>
+                        <span
+                          className={`cursor-pointer lg:hidden hover:text-primary-main-pink font-medium lg:font-normal ${
+                            path.includes(menuItem.text.toLowerCase()) ||
+                            isActiveMenu(menuItem)
+                              ? "text-primary-main-pink font-semibold"
+                              : ""
+                          }`}
+                        >
+                          {menuItem.text}
+                        </span>
 
-                      <span
-                        className={`cursor-pointer hidden lg:inline-block hover:text-primary-main-pink font-medium lg:font-normal ${
+                        <span
+                          className={`cursor-pointer hidden lg:inline-block hover:text-primary-main-pink font-medium lg:font-normal ${
+                            path.includes(menuItem.text.toLowerCase())
+                              ? "text-primary-main-pink font-semibold"
+                              : ""
+                          }`}
+                          onClick={() =>
+                            setSelectedMenu(selectedMenu === idx ? null : idx)
+                          }
+                        >
+                          {menuItem.text}
+                        </span>
+                      </>
+                    )}{" "}
+                    {menuItem.list.length > 0 && (
+                      <button
+                        className={`hidden lg:inline-block ${
                           path.includes(menuItem.text.toLowerCase())
                             ? "text-primary-main-pink font-semibold"
                             : ""
@@ -247,97 +275,96 @@ const Header = () => {
                           setSelectedMenu(selectedMenu === idx ? null : idx)
                         }
                       >
-                        {menuItem.text}
-                      </span>
-                    </>
-                  )}{" "}
-                  {menuItem.list.length > 0 && (
-                    <button
-                      className={`hidden lg:inline-block ${
-                        path.includes(menuItem.text.toLowerCase())
-                          ? "text-primary-main-pink font-semibold"
-                          : ""
-                      }`}
-                      onClick={() =>
-                        setSelectedMenu(selectedMenu === idx ? null : idx)
-                      }
-                    >
-                      <FontAwesomeIcon
-                        icon={faAngleDown}
-                        className={` hover:rotate-180 transition-all duration-300 ease-in-out ${
-                          selectedMenu === idx ? "rotate-180 " : null
-                        }`}
-                      />
-                    </button>
-                  )}
-                </span>
-                {/* mobile nav */}
-                <ul
-                  className={`lg:hidden top-12 lg:pt-5 px-4 lg:px-[18px] w-max ${
-                    idx === menuItems.length - 1 ? "right-0" : "left-0"
-                  }  lg:rounded-lg lg:shadow-2xl`}
-                >
-                  {menuItem.list.map((item, index) => (
-                    <li
-                      key={index}
-                      className={`w-full flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
-                    >
-                      <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
-                        <img src={item.icon || navIcon2} alt={item.text} />
-                      </figure>
-
-                      <Link
-                        to={item.to}
-                        className={`flex flex-col gap-1 ${
-                          path === item.to && "text-primary-main-pink"
-                        }`}
-                      >
-                        <span className="inline-block font-semibold text-base">
-                          {item.text}{" "}
-                        </span>
-                        <span
-                          className={`inline-block  text-sm font-normal ${
-                            path === item.to
-                              ? "text-primary-main-pink"
-                              : "text-[#434343]"
+                        <FontAwesomeIcon
+                          icon={faAngleDown}
+                          className={` hover:rotate-180 transition-all duration-300 ease-in-out ${
+                            selectedMenu === idx ? "rotate-180 " : null
                           }`}
-                        >
-                          {item.subText || "Small sample text here"}{" "}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                {/* desktop */}
-                {menuItem.list.length > 0 && selectedMenu === idx && (
+                        />
+                      </button>
+                    )}
+                  </span>
+                  {/* mobile nav */}
                   <ul
-                    className={`absolute  bg-white top-12 pt-5 px-[18px] w-max ${
+                    className={`lg:hidden top-12 lg:pt-5 px-4 lg:px-[18px] w-max ${
                       idx === menuItems.length - 1 ? "right-0" : "left-0"
-                    }  rounded-lg shadow-2xl`}
+                    }  lg:rounded-lg lg:shadow-2xl`}
                   >
                     {menuItem.list.map((item, index) => (
                       <li
                         key={index}
-                        className={`w-full flex items-center gap-[18px] py-[18px]`}
+                        className={`w-full flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
                       >
                         <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
                           <img src={item.icon || navIcon2} alt={item.text} />
                         </figure>
 
-                        <Link to={item.to} className={`flex flex-col gap-1`}>
+                        <Link
+                          to={item.to}
+                          className={`flex flex-col gap-1 ${
+                            path === item.to && "text-primary-main-pink"
+                          }`}
+                        >
                           <span className="inline-block font-semibold text-base">
                             {item.text}{" "}
                           </span>
-                          <span className="inline-block text-[#434343] text-sm font-normal">
+                          <span
+                            className={`inline-block  text-sm font-normal ${
+                              path === item.to
+                                ? "text-primary-main-pink"
+                                : "text-[#434343]"
+                            }`}
+                          >
                             {item.subText || "Small sample text here"}{" "}
                           </span>
                         </Link>
                       </li>
                     ))}
                   </ul>
-                )}
-              </li>
-            ))}
+                  {/* desktop */}
+                  {menuItem.list.length > 0 && selectedMenu === idx && (
+                    <ul
+                      className={`absolute  bg-white top-12 pt-5 px-[18px] w-max ${
+                        idx === menuItems.length - 1 ? "right-0" : "left-0"
+                      }  rounded-lg shadow-2xl`}
+                    >
+                      {menuItem.list.map((item, index) => (
+                        <li
+                          key={index}
+                          className={`w-full flex items-center gap-[18px] py-[18px]`}
+                        >
+                          <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
+                            <img src={item.icon || navIcon2} alt={item.text} />
+                          </figure>
+
+                          <Link
+                            to={item.to}
+                            className={`flex flex-col gap-1 ${
+                              path === item.to && "text-primary-main-pink"
+                            }`}
+                          >
+                            <span
+                              className={`inline-block font-semibold text-base `}
+                            >
+                              {item.text}{" "}
+                            </span>
+                            <span
+                              className={`inline-block ${
+                                path === item.to
+                                  ? "text-primary-main-pink"
+                                  : "text-[#434343]"
+                              } text-sm font-normal`}
+                            >
+                              {item.subText || "Small sample text here"}{" "}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
             <Link
               to={paths.donate_partner}
               className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20"

@@ -74,7 +74,7 @@ const Community = () => {
           content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem"
         />
       </Helmet>
-      <Header />
+      <Header page="community" />
       <main className="w-full text-secondary-main-black">
         <section className="w-full h-full bg-[#B70569] relative ">
           <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">

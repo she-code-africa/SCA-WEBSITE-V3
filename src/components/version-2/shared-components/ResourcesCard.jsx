@@ -14,7 +14,7 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
   return (
     <div
       className={`bg-white w-full rounded-[13px]  mb-5 ${
-        isImage ? "max-w-[412px] p-4" : "p-10"
+        isImage ? "max-w-[412px] p-4" : "p-5 lg:p-10"
       }`}
     >
       {isImage ? (
