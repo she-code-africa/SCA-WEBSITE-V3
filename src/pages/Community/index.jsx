@@ -101,8 +101,8 @@ const Community = () => {
                 <CustomButtonComponent
                   // btnColor="[#ffffff]"
                   label="I’d love to be a part!"
-                  customColor="text-white hover:text-primary-main-pink"
-                  bgHover="hover:bg-white bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
+                  customColor="text-white "
+                  bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] duration-300 border-[#B70569] rounded-lg transition-all duration-300"
                   url="https://forms.gle/aFe2LrkZxZJtKKve7"
                   isGallery={true}
                 />
@@ -164,7 +164,7 @@ const Community = () => {
             <div className="mt-5 w-full flex flex-col sm:flex-row gap-8 justify-center items-center">
               <div className="flex items-center justify-center w-full sm:max-w-[207px] mx-auto">
                 <a
-                  className="bg-transparent px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-primary-main-pink text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal border border-primary-main-pink"
+                  className="bg-transparent px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-primary-main-pink text-base hover:border-[#FF8FCE] transition-all font-normal border border-primary-main-pink"
                   href="https://forms.gle/aFe2LrkZxZJtKKve7"
                   rel="noreferrer"
                 >
@@ -174,7 +174,7 @@ const Community = () => {
 
               <div className="flex items-center justify-center w-full sm:max-w-[298px] mx-auto">
                 <Link
-                  className="bg-primary-main-pink px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-white text-base hover:bg-community-pink-bg hover:text-charcoal transition-all font-normal"
+                  className="bg-primary-main-pink px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-white text-base hover:bg-[#5C0335] hover:text-white transition-all font-normal"
                   to="/chapters"
                   rel="noreferrer"
                 >
@@ -199,7 +199,7 @@ const Community = () => {
               <div className="w-full flex justify-center items-center flex-col sm:flex-row gap-8">
                 <div className="flex items-center justify-center gap-8 w-full sm:max-w-[201px]">
                   <a
-                    className="bg-white px-8 py-[14px] w-full flex justify-center items-center  rounded-lg text-primary-main-pink text-base font-normal text-center "
+                    className="bg-white hover:bg-[#5C0335] hover:text-white transition-colors duration-300 px-8 py-[14px] w-full flex justify-center items-center  rounded-lg text-primary-main-pink text-base font-normal text-center "
                     href="https://medium.com/shecodeafrica"
                     target="_blank"
                     rel="noreferrer"
@@ -210,7 +210,7 @@ const Community = () => {
 
                 <div className="flex items-center justify-center gap-8 w-full sm:max-w-[226px]">
                   <a
-                    className="bg-transparent border border-white px-8 py-[14px] w-full flex justify-center items-center rounded-lg  text-white text-base font-normal text-center "
+                    className="bg-transparent border border-white bg-primary-main-pink hover:bg-[#5C0335] transition-colors duration-300 px-8 py-[14px] w-full flex justify-center items-center rounded-lg  text-white text-base font-normal text-center "
                     href="https://sca-editorial.notion.site/SheCodeAfrica-Guest-Writing-Program-b94f2b9d70b347569c2beb3474180301"
                     target="_blank"
                     rel="noreferrer"
@@ -232,7 +232,7 @@ const Community = () => {
 
             <div className="flex items-center justify-center mt-5 sm:mt-8 max-w-[208px] mx-auto">
               <a
-                className="bg-primary-main-pink px-8 py-[14px] h-[55px] flex items-center justify-center w-full mt-3 rounded-lg text-white text-base font-normal"
+                className="bg-primary-main-pink hover:bg-[#5C0335] transition-colors duration-300 px-8 py-[14px] h-[55px] flex items-center justify-center w-full mt-3 rounded-lg text-white text-base font-normal"
                 href="https://forms.gle/aFe2LrkZxZJtKKve7"
                 target="_blank"
                 rel="noreferrer"

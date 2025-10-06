@@ -86,7 +86,7 @@ const ImagesComponent = () => {
 
               <div className="w-full max-w-[141px] h-[32px]">
                 <button
-                  className="w-full h-full flex justify-center items-center rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium  hover:bg-primary-main-pink hover:text-white transition-all"
+                  className="w-full h-full flex justify-center items-center rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium duration-300 hover:border-[#FF8FCE] transition-all"
                   onClick={() => handleOpenModal(content)}
                 >
                   View all Images

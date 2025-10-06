@@ -96,7 +96,7 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
         <div className="w-full max-w-[112px]">
           <Link
             to="#"
-            className="w-full flex justify-center py-4 xl:px-6 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:bg-primary-main-pink hover:text-white transition-all"
+            className="w-full flex justify-center py-4 xl:px-6 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
           >
             read more
           </Link>

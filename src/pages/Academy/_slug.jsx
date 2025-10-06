@@ -170,7 +170,7 @@ const AcademyPage = () => {
                 <div className="mb-10 sm:mb-0" key={idx}>
                   <Link
                     to={`/academy/${school.toLowerCase().replaceAll(" ", "-")}`}
-                    className="py-[18px] w-full px-8 bg-primary-main-pink border border-primary-main-pink transition-all rounded-lg hover:bg-transparent text-white hover:text-primary-main-pink"
+                    className="py-[18px] w-full px-8 bg-primary-main-pink border duration-300 transition-colors rounded-lg text-white hover:bg-[#5C0335]"
                   >
                     {school}
                   </Link>
@@ -195,7 +195,7 @@ const AcademyPage = () => {
           <div className="mt-10 text-center">
             <Link
               to={paths.hire}
-              className="rounded-lg text-base text-white px-8 py-[18px] bg-primary-main-pink"
+              className="rounded-lg text-base text-white px-8 py-[18px] bg-primary-main-pink transition-colors duration-300 hover:bg-[#5C0335]"
             >
               Hire Our Talent
             </Link>
@@ -222,7 +222,7 @@ const AcademyPage = () => {
           <div className="my-10 max-w-[122px] w-full mx-auto">
             <Link
               to="#"
-              className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink capitalize"
+              className="w-full px-8 py-[18px] rounded-lg bg-white transition-colors duration-300 hover:bg-[#5C0335] text-primary-main-pink capitalize hover:text-white"
             >
               {" "}
               view all

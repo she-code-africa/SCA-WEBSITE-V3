@@ -109,6 +109,15 @@ main,
   }
 }
 
+.reach-out:hover div div div .customh3,
+.reach-out:hover div div div p {
+  color: #094a32;
+}
+
+.reach-out:hover div div h2 {
+  color: black;
+}
+
 @media screen and (max-width: 1023px) {
   .mobile-nav-menu {
     position: fixed;

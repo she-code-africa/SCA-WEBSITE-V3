@@ -121,9 +121,9 @@ const ContactUsForm = () => {
             <Captcha />
 
             <div className="flex w-full ">
-              <div className="mt-5 md:mt-8 w-full rounded-md h-[56px] overflow-hidden border-2 border-primary-main-pink md:max-w-[200px]">
-                <button className="w-full h-full text-white capitalize hover:bg-transparent bg-primary-main-pink hover:text-primary-main-pink transition-all duration-300">
-                  send message
+              <div className="mt-5 md:mt-8 w-full rounded-md h-[56px] overflow-hidden md:max-w-[120px]">
+                <button className="w-full h-full text-white capitalize hover:bg-[#5C0335] transition-colors duration-300 bg-primary-main-pink ">
+                  submit
                 </button>
               </div>
             </div>

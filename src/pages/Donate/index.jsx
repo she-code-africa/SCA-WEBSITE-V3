@@ -49,13 +49,13 @@ const Donate = () => {
             />
           </figure>
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 flex justify-center items-center ">
-            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-2xl text-center">
+            <article className="relative z-[1] w-[90%] mx-auto lg:max-w-[1040px] text-center">
               <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
                 Partner with <br />
                 SHE CODE AFRICA{" "}
               </h1>
 
-              <p className="text-white text-base md:text-2xl font-medium">
+              <p className="text-white text-base md:text-2xl max-w-[800px] mx-auto font-medium">
                 Real change doesn’t happen alone. It takes people,
                 organizations, and communities pulling in the same direction.
                 That’s why we open our doors to partners who believe in the
@@ -69,7 +69,7 @@ const Donate = () => {
         <OurBrands />
 
         {/* Why Partner with Us Section */}
-        <section className="w-full bg-olivePattern bg-cover bg-no-repeat py-16 lg:py-24 relative">
+        <section className="w-full bg-olivePattern bg-cover bg-no-repeat py-16 lg:py-24 relative mt-20">
           {/* Opacity Overlay */}
           <div className="absolute inset-0 bg-white opacity-50"></div>
 
@@ -132,7 +132,7 @@ const Donate = () => {
         </section>
 
         {/* Reach Out Section */}
-        <section className="w-full bg-SCA-Citrine py-16 lg:py-24">
+        <section className="w-full bg-SCA-Citrine reach-out hover:bg-SCA-Zesty transition duration-300  py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-32 flex flex-col md:flex-row items-center gap-12">
             <div className="flex-shrink-0 mb-8 md:mb-0">
               <h2 className="text-[84px] leading-[1] font-semibold text-Secondary-Velvet hero-text">
@@ -144,7 +144,7 @@ const Donate = () => {
             <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
               {ReachOutCard.map((card) => (
                 <div className="flex flex-col" key={card.id}>
-                  <h3 className="text-4xl font-bold text-Primary-Magenta mb-1">
+                  <h3 className="text-4xl font-bold text-Primary-Magenta mb-1 customh3">
                     {card.title}
                   </h3>
                   <p className="text-2xl text-Primary-Magenta">{card.email}</p>

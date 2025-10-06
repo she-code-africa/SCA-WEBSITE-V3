@@ -40,23 +40,17 @@ const ContactUsPage = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 flex justify-center items-center ">
-            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
+          <div className="bg-[rgba(0,0,0,0.35)] min-h-[90vh] pt-16 lg:pt-32 flex justify-center items-center ">
+            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[1000px] text-center">
               <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
                 Need to talk to us?
               </h1>
 
-              <p className="text-white text-base leading-normal md:leading-normal md:text-2xl font-medium w-full md:max-w-[500px] mx-auto">
-                Thank you for your interest in She Code Africa. We’d like to
-                hear from you, send an email to{" "}
-                <a
-                  href="mailto:info@shecodeafrica.org"
-                  className="border-b border-b-white"
-                >
-                  info@shecodeafrica.org
-                </a>{" "}
-                or use the form below. If this conversation is to support our
-                mission, please see our “Donate to a cause” section. Thank you!
+              <p className="text-white text-base leading-normal md:leading-normal max-w-[600px] md:text-2xl font-medium w-full mx-auto">
+                Have a question, an idea, or a partnership in mind? Our team is
+                always happy to connect. Whether you’re looking to collaborate,
+                support our work, or learn more about our programs, just reach
+                out, we’ll get back to you soon.
               </p>
             </article>
           </div>
