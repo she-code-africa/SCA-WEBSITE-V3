@@ -15,7 +15,7 @@ const VideosComponent = () => {
       <div className="my-10 max-w-[122px] w-full mx-auto">
         <Link
           to="#"
-          className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink capitalize"
+          className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink hover:text-white hover:bg-[#5C0335] transition-colors duration-300 capitalize"
         >
           {" "}
           view all

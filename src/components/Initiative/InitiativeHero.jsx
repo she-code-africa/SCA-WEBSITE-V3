@@ -5,7 +5,7 @@ import heroImage from "../../images/initiative/hero-image.jpg";
 export default function HeroSection() {
   return (
     <section
-      className="relative bg-cover bg-center h-[100vh] flex items-center justify-center text-center text-white z-[1]"
+      className="relative bg-cover bg-center h-[100vh] flex items-center pt-16 lg:pt-[100px] justify-center text-center text-white z-[1]"
       style={{
         backgroundImage: `url(${heroImage})`,
         backgroundBlendMode: "multiply",
@@ -21,16 +21,16 @@ export default function HeroSection() {
           mixBlendMode: "multiply",
         }}
       ></div>
-      <div className="relative z-10 px-4 max-w-4xl">
-        <h1 className="text-5xl md:text-8xl font-medium leading-tight hero-text">
+      <article className="relative z-10 px-4 max-w-[900px] mx-auto">
+        <h1 className="text-5xl md:text-8xl lg:text-9xl font-medium leading-tight hero-text">
           Equipping women with digital skills, one initiative after another
         </h1>
-        <p className="mt-4 text-lg md:text-xl font-figtree">
+        <p className="mt-4 text-lg md:text-xl lg:text-2xl font-figtree max-w-[700px] mx-auto">
           She Code Africa is a registered non-profit organization dedicated to
           empowering and celebrating girls and women in technology across
           Africa.
         </p>
-      </div>
+      </article>
     </section>
   );
 }

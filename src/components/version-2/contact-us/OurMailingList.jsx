@@ -1,25 +1,26 @@
 import React from "react";
-import { mailingList } from "../../../utils/v2";
+
+import { ReachOutCard } from "../../../utils";
 
 const OurMailingList = () => {
   return (
-    <section className="w-full bg-[rgba(255,248,143,1)]">
-      <div className="w-[90%] max-w-[1256px] mx-auto py-20 xl:py-24">
-        <h3 className="text-[32px] md:text-5xl lg:text-[64px] font-bold 2md:leading-[82px] text-[rgba(92,3,53,1)] hero-text lg:text-center">
-          Our Mailing List
-        </h3>
-
-        <div className="mt-6 md:mt-10 w-full flex lg:justify-center lg:items-center gap-6 md:gap-[56px] flex-wrap">
-          {mailingList.map((item, i) => (
-            <article className="w-full max-w-[354px]">
-              <h4 className="text-xl text-primary-main-pink font-semibold md:text-[32px] mb-1 capitalize">
-                {item.title}
-              </h4>
-
-              <p className="mt-1 font-medium text-base md:text-2xl text-primary-main-pink">
-                {item.email}
-              </p>
-            </article>
+    <section className="w-full bg-SCA-Citrine reach-out hover:bg-SCA-Zesty transition duration-300  py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-32 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex-shrink-0 mb-8 md:mb-0">
+          <h2 className="text-[84px] leading-[1] font-semibold text-Secondary-Velvet hero-text">
+            Reach
+            <br />
+            Out
+          </h2>
+        </div>
+        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+          {ReachOutCard.map((card) => (
+            <div className="flex flex-col" key={card.id}>
+              <h3 className="text-4xl font-bold text-Primary-Magenta mb-1 customh3">
+                {card.title}
+              </h3>
+              <p className="text-2xl text-Primary-Magenta">{card.email}</p>
+            </div>
           ))}
         </div>
       </div>

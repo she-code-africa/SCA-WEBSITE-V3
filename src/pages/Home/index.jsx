@@ -51,32 +51,33 @@ const Home = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 flex justify-center items-center ">
+          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center ">
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
               <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
                 Empowering Women In Tech Across Africa
               </h1>
 
               <p className="text-white text-base md:text-2xl font-medium">
-                She Code Africa is a registered non-profit organization
-                dedicated to empowering and celebrating girls and women in
-                technology across Africa
+                She Code Africa is a non-profit organization on a mission to
+                equip African girls and women with digital skills, training,
+                resources, and a thriving community, to help them build careers,
+                gain financial independence, and lead boldly in tech.
               </p>
 
               <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
                 <CustomButtonComponent
                   // btnColor="[#B70569]"
                   label="Join our community"
-                  customColor="text-white hover:text-primary-main-pink"
-                  bgHover="hover:bg-white bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
+                  customColor="text-white "
+                  bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
                   isGallery={true}
                 />
                 <CustomButtonComponent
                   // btnColor="[#ffffff]"
                   label="Donate to a cause"
-                  customColor="hover:text-white text-primary-main-pink"
-                  bgHover="hover:bg-[#B70569] bg-white rounded-lg transition-all duration-300 border-white"
+                  customColor=" text-primary-main-pink"
+                  bgHover="hover:bg-[#FF8FCE] bg-white rounded-lg transition-all duration-300 border-none"
                   isWithIcon={true}
                   iconPos="right"
                   icon={<FontAwesomeIcon icon={faArrowRight} />}

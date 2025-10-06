@@ -83,7 +83,7 @@ export default function InitiativeCard({
               {/* Learn More opens modal */}
               <button
                 onClick={() => setIsOpen(true)}
-                className="bg-Primary-Magenta text-white text-sm md:text-base font-medium px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors"
+                className="bg-Primary-Magenta text-white text-sm md:text-base font-medium px-6 py-3 rounded-lg hover:bg-[#5C0335] transition-colors"
               >
                 Learn more
               </button>
@@ -91,7 +91,7 @@ export default function InitiativeCard({
               {secondaryBtn && (
                 <a
                   href={secondaryBtn.href}
-                  className="border border-Primary-Magenta text-Primary-Magenta text-sm md:text-base font-medium px-6 py-3 rounded-lg hover:bg-pink-50 transition-colors"
+                  className="border border-Primary-Magenta duration-300 hover:border-[#FF8FCE] text-Primary-Magenta text-sm md:text-base font-medium px-6 py-3 rounded-lg transition-colors"
                 >
                   {secondaryBtn.label}
                 </a>

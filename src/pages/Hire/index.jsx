@@ -189,7 +189,7 @@ const Hire = () => {
                 <div className="mt-8">
                   <button
                     type="submit"
-                    className="capitalize bg-primary-main-pink text-white hover:bg-opacity-80  border border-primary-main-pink py-4 px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu w-full max-w-[200px] mx-auto font-bold text-lg disabled:bg-primary-light-pink "
+                    className="capitalize bg-primary-main-pink text-white hover:bg-[#5C0335] transition-colors duration-300  border py-4 px-[32px] rounded-lg focus:outline-none focus:ring focus:ring-tutu w-full max-w-[200px] mx-auto font-bold text-lg disabled:bg-primary-light-pink "
                     disabled={hireRequest.isLoading}
                   >
                     {hireRequest.isLoading ? (

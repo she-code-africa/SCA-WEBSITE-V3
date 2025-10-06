@@ -79,7 +79,27 @@ const AcademyPage = () => {
               {school ? (
                 <div className="flex gap-8 items-center justify-between w-[90%] lg:w-11/12 mx-auto">
                   <article className="max-w-[518px] w-full">
-                    <h1 className="text-8xl hero-text ">
+                    <h1 className="text-[70px] hero-text sm:hidden">
+                      {/* {school.name} */}
+                      School of <br />
+                      <span className="text-primary-main-pink text-[80px]">
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of engineering" &&
+                          "Engineering"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() === "school of product" &&
+                          "Products"}
+                        {school &&
+                          school?.name &&
+                          school?.name.toLowerCase() ===
+                            "school of applied sciences" &&
+                          "Applied Sciences"}
+                      </span>
+                    </h1>
+                    <h1 className="text-8xl hero-text hidden sm:block">
                       {/* {school.name} */}
                       School of{" "}
                       <span className="text-primary-main-pink text-[128px]">
@@ -100,7 +120,7 @@ const AcademyPage = () => {
                       </span>
                     </h1>
 
-                    <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-2xl">
+                    <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl">
                       {/* {school?.description} */}
                       Empowering women to innovate the digital world, one
                       engineer at a time.
@@ -150,7 +170,7 @@ const AcademyPage = () => {
                 <div className="mb-10 sm:mb-0" key={idx}>
                   <Link
                     to={`/academy/${school.toLowerCase().replaceAll(" ", "-")}`}
-                    className="py-[18px] w-full px-8 bg-primary-main-pink border border-primary-main-pink transition-all rounded-lg hover:bg-transparent text-white hover:text-primary-main-pink"
+                    className="py-[18px] w-full px-8 bg-primary-main-pink border duration-300 transition-colors rounded-lg text-white hover:bg-[#5C0335]"
                   >
                     {school}
                   </Link>
@@ -175,7 +195,7 @@ const AcademyPage = () => {
           <div className="mt-10 text-center">
             <Link
               to={paths.hire}
-              className="rounded-lg text-base text-white px-8 py-[18px] bg-primary-main-pink"
+              className="rounded-lg text-base text-white px-8 py-[18px] bg-primary-main-pink transition-colors duration-300 hover:bg-[#5C0335]"
             >
               Hire Our Talent
             </Link>
@@ -202,7 +222,7 @@ const AcademyPage = () => {
           <div className="my-10 max-w-[122px] w-full mx-auto">
             <Link
               to="#"
-              className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink capitalize"
+              className="w-full px-8 py-[18px] rounded-lg bg-white transition-colors duration-300 hover:bg-[#5C0335] text-primary-main-pink capitalize hover:text-white"
             >
               {" "}
               view all

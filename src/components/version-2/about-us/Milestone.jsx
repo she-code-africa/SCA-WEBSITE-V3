@@ -36,32 +36,44 @@ const Milestone = () => {
             ))}
           </div>
           <div className="w-full">
-            {milestoneData.map(({ year, title, subText }, i) => (
-              <div className="flex gap-3 items-start mb-6" key={i}>
-                <h4 className="text-primary-main-pink text-2xl font-medium !my-0">
-                  {year}
-                </h4>
+            {milestoneData.map(
+              ({ year, title, subText, yearRange, range }, i) => (
+                <div className="flex gap-3 items-start mb-6" key={i}>
+                  <h4
+                    className={`text-primary-main-pink text-2xl font-medium !my-0`}
+                  >
+                    {range ? (
+                      <>
+                        <span>{yearRange.slice(0, 4)}</span>
+                        <br />
+                        <span>{yearRange.slice(5)}</span>
+                      </>
+                    ) : (
+                      year
+                    )}
+                  </h4>
 
-                <div className="flex flex-col gap-2 items-center">
-                  <span className="inline-block w-[24px] h-[24px] rounded-full border border-primary-main-pink bg-[rgba(254,254,254,1)]"></span>
-                  <span
-                    className={`inline-block h-[62px] w-0 border border-primary-main-pink ${
-                      i === milestoneData.length - 1 ? "opacity-0" : ""
-                    }`}
-                  ></span>
+                  <div className="flex flex-col gap-2 items-center">
+                    <span className="inline-block w-[24px] h-[24px] rounded-full border border-primary-main-pink bg-[rgba(254,254,254,1)]"></span>
+                    <span
+                      className={`inline-block h-[62px] w-0 border border-primary-main-pink ${
+                        i === milestoneData.length - 1 ? "opacity-0" : ""
+                      }`}
+                    ></span>
+                  </div>
+
+                  <article className="flex flex-col gap-2">
+                    <h3 className="!my-0 !text-2xl text-primary-main-pink capitalize font-medium">
+                      {title}
+                    </h3>
+
+                    <p className="!text-base text-[rgba(51,51,51,1)]  font-normal xl:max-w-[280px]">
+                      {subText}
+                    </p>
+                  </article>
                 </div>
-
-                <article className="flex flex-col gap-2">
-                  <h3 className="!my-0 !text-2xl text-primary-main-pink capitalize font-medium">
-                    {title}
-                  </h3>
-
-                  <p className="!text-base text-[rgba(51,51,51,1)]  font-normal xl:max-w-[280px]">
-                    {subText}
-                  </p>
-                </article>
-              </div>
-            ))}
+              )
+            )}
           </div>
           <div className="hidden md:block w-full">
             {[...Array(4)].map((_, i) => (

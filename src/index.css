@@ -82,7 +82,11 @@ main,
 }
 
 .animate-opacity {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.animate-img-opacity {
+  animation: fadeIn 1s linear;
 }
 
 .card-wwd article p,
@@ -103,6 +107,15 @@ main,
   to {
     opacity: 1;
   }
+}
+
+.reach-out:hover div div div .customh3,
+.reach-out:hover div div div p {
+  color: #094a32;
+}
+
+.reach-out:hover div div h2 {
+  color: black;
 }
 
 @media screen and (max-width: 1023px) {

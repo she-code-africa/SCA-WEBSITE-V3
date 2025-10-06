@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
             <div className="sm:max-w-[105px] w-full flex">
               <Link
                 to="#"
-                className="w-full flex items-center justify-center rounded-md border border-primary-main-pink text-white bg-primary-main-pink py-3 px-5 text-xs"
+                className="w-full flex items-center justify-center rounded-md border hover:bg-[#5C0335] transition-colors duration-300 text-white bg-primary-main-pink py-3 px-5 text-xs "
               >
                 I’ll donate now
               </Link>
