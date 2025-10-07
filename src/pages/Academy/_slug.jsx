@@ -122,9 +122,34 @@ const AcademyPage = () => {
 
                     <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl">
                       {/* {school?.description} */}
-                      Empowering women to innovate the digital world, one
-                      engineer at a time.
+                      {/* Empowering women to innovate the digital world, one
+                      engineer at a time. */}
+
+                      {school &&
+                        school?.name &&
+                        school?.name.toLowerCase() ===
+                          "school of engineering" &&
+                        "Building Africa’s tech future, one engineer at a time."}
+                      {school &&
+                        school?.name &&
+                        school?.name.toLowerCase() === "school of product" &&
+                        "Empowering women to innovate the digital world, one engineer at a time."}
+                      {school &&
+                        school?.name &&
+                        school?.name.toLowerCase() ===
+                          "school of applied sciences" &&
+                        "Building Africa’s next generation of product leaders."}
                     </p>
+
+                    <div className="my-5 w-full max-w-[171px]">
+                      <Link
+                        to="#"
+                        className="w-full flex h-[55px] rounded-lg bg-primary-main-pink
+                        text-white transition-colors duration-300 justify-center items-center py-[18px] px-8 hover:bg-[#5C0335]"
+                      >
+                        Apply Now
+                      </Link>
+                    </div>
                   </article>
 
                   <figure className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden">
