@@ -172,3 +172,25 @@ export const milestoneData = [
       "This year, we set our sights higher. With stronger partnerships and bolder goals, we are moving closer to a future where no African girl or woman is left out of tech. Every step we take now is a step toward that shared future.",
   },
 ];
+
+export const challengeData = [
+  {
+    number: "5k",
+    description:
+      "girls and women impacted through our academy programs, community events, and scholarship initiatives.",
+  },
+  {
+    number: "2674",
+    description: "women and girls trained through our training programs.",
+  },
+  {
+    number: "760k",
+    description:
+      "women and girls reached through our community activities and events.",
+  },
+  {
+    number: "4.5M",
+    description:
+      "women and girls reached through our community activities and events.",
+  },
+];

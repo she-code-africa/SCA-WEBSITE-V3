@@ -7,7 +7,7 @@ const Donate = () => {
     <section className="w-full  bg-magentaPattern bg-cover bg-no-repeat py-24">
       <div className="w-[90%] mx-auto xl:w-full xl:max-w-[1256px] bg-white py-12 px-6 rounded-[30px] lg:flex lg:items-center lg:justify-between">
         <article className="lg:w-full lg:max-w-[528px] w-[90%] mx-auto">
-          <h3 className="text-[32px] md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#7D355D] hero-text max-w-[474px] w-full">
+          <h3 className="text-4xl md:text-5xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#7D355D] hero-text max-w-[474px] w-full">
             Donate to a cause
           </h3>
 
