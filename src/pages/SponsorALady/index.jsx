@@ -43,14 +43,14 @@ const SponsorALady = () => {
               className="object-cover w-full h-full"
             />
           </figure>
-          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex items-center  ">
+          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-36 pb-20 lg:pt-[159px] lg:pb-[100px] flex items-center  ">
             <div className="w-[90%] mx-auto lg:max-w-[1256px] flex flex-col lg:justify-between lg:items-center lg:flex-row ">
               <article className="relative z-[1] w-full lg:max-w-[550px]">
                 <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
                   Sponsor a Tech Lady Today
                 </h1>
 
-                <p className="text-white text-base md:text-2xl font-medium">
+                <p className="text-white text-base md:text-2xl font-medium mt-3">
                   Did you know by donating as little as $5.3 (~8,532 NGN), you'd
                   be helping us mentor and provide resources to 1 female in tech
                   in 1 day?
