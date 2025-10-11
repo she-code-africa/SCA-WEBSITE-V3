@@ -266,7 +266,7 @@ const Header = ({ page }) => {
                     )}{" "}
                     {menuItem.list.length > 0 && (
                       <button
-                        className={`hidden lg:inline-block ${
+                        className={`inline-block ${
                           path.includes(menuItem.text.toLowerCase())
                             ? "text-primary-main-pink font-semibold"
                             : ""
@@ -285,46 +285,46 @@ const Header = ({ page }) => {
                     )}
                   </span>
                   {/* mobile nav */}
-                  <ul
-                    className={`lg:hidden top-12 lg:pt-5 px-4 lg:px-[18px] w-max ${
-                      idx === menuItems.length - 1 ? "right-0" : "left-0"
-                    }  lg:rounded-lg lg:shadow-2xl`}
-                  >
-                    {menuItem.list.map((item, index) => (
-                      <li
-                        key={index}
-                        className={`w-full flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
-                      >
-                        <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
-                          <img src={item.icon || navIcon2} alt={item.text} />
-                        </figure>
 
-                        <Link
-                          to={item.to}
-                          className={`flex flex-col gap-1 ${
-                            path === item.to && "text-primary-main-pink"
-                          }`}
+                  {menuItem.list.length > 0 && selectedMenu === idx && (
+                    <ul className={`  lg:hidden  px-4 lg:px-[18px] w-max `}>
+                      {menuItem.list.map((item, index) => (
+                        <li
+                          key={index}
+                          className={`w-full flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
                         >
-                          <span className="inline-block font-semibold text-base">
-                            {item.text}{" "}
-                          </span>
-                          <span
-                            className={`inline-block  text-sm font-normal ${
-                              path === item.to
-                                ? "text-primary-main-pink"
-                                : "text-[#434343]"
+                          <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
+                            <img src={item.icon || navIcon2} alt={item.text} />
+                          </figure>
+
+                          <Link
+                            to={item.to}
+                            className={`flex flex-col gap-1 ${
+                              path === item.to && "text-primary-main-pink"
                             }`}
                           >
-                            {item.subText || "Small sample text here"}{" "}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                            <span className="inline-block font-semibold text-base">
+                              {item.text}{" "}
+                            </span>
+                            <span
+                              className={`inline-block  text-sm font-normal ${
+                                path === item.to
+                                  ? "text-primary-main-pink"
+                                  : "text-[#434343]"
+                              }`}
+                            >
+                              {item.subText || "Small sample text here"}{" "}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
                   {/* desktop */}
                   {menuItem.list.length > 0 && selectedMenu === idx && (
                     <ul
-                      className={`absolute  bg-white top-12 pt-5 px-[18px] w-max ${
+                      className={` hidden lg:block absolute  bg-white top-12 pt-5 px-[18px] w-max ${
                         idx === menuItems.length - 1 ? "right-0" : "left-0"
                       }  rounded-lg shadow-2xl`}
                     >
