@@ -118,6 +118,12 @@ main,
   color: black;
 }
 
+.donate-impact {
+  background: url("./assets/v2/images/donate/white-garden.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 1023px) {
   .mobile-nav-menu {
     position: fixed;
