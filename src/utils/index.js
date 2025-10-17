@@ -604,7 +604,7 @@ export const ReachOutCard = [
   },
     {
     id: 3,
-    title: "For Community",
+    title: "For community",
     email: "community@shecodeafrica.org"
   },
     {

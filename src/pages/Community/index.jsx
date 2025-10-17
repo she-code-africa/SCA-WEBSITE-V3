@@ -157,8 +157,7 @@ const Community = () => {
 
           <section className="w-[90%] my-10 max-w-[548px] mx-auto">
             <h3 className="text-center text-xl sm:text-2xl font-medium">
-              Tell them here that they cannot join a chapter without joining the
-              community
+              You cannot join a chapter without joining the community first
             </h3>
 
             <div className="mt-5 w-full flex flex-col sm:flex-row gap-8 justify-center items-center">
