@@ -66,9 +66,9 @@ const Footer = () => {
                 to={paths.donate_partner}
                 className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
               >
-                Make A Donation
+                Donation To A Cause
               </Link>
-              <Link
+              <Link 
                 to={paths.chapters}
                 className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
               >
@@ -163,86 +163,87 @@ const Footer = () => {
               >
                 Upcoming Events
               </Link>
-              <Link
-                to={paths.contactUs}
-                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
-              >
-                Contact Us
-              </Link>
               <a
                 href="https://bit.ly/joinshecodeafrica"
                 target="_blank"
                 rel="noreferrer"
                 className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
               >
-                Join Our Slack Community
+                Join Our Community
               </a>
+              <Link
+                to={paths.contactUs}
+                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+              >
+                Sign Up For Our Newsletter
+              </Link>
               {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
               <div className="block mb-5">Follow Us On Social Media</div>
-              <div className="flex gap-x-5 mb-5 text-2xl text-primary-main-pink">
+              <div className="flex gap-x-3 mb-5">
                 <a
-                  href="https://www.instagram.com/shecodeafrica/"
-                  title="Follow us on Instagram"
+                  href="https://www.linkedin.com/company/she-code-africa/"
+                  title="Follow us on Linkedin"
                   target="_blank"
                   rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
                 >
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a
-                  href="https://www.twitter.com/shecodeafrica/"
-                  title="Follow us on Twitter"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
-                >
-                  <FontAwesomeIcon icon={faXTwitter} />
+                  <FontAwesomeIcon icon={faLinkedinIn} className="text-white text-lg" />
                 </a>
                 <a
                   href="https://www.facebook.com/shecodeafrica/"
                   title="Follow us on Facebook"
                   target="_blank"
                   rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
                 >
-                  <FontAwesomeIcon icon={faFacebookF} />
-                </a>
-                <a
-                  href="https://medium.com/shecodeafrica"
-                  target="_blank"
-                  title="Find us on Medium"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
-                >
-                  <FontAwesomeIcon icon={faMedium} />
+                  <FontAwesomeIcon icon={faFacebookF} className="text-white text-lg" />
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCNZzVEyJege5-d_ekKw6dFA"
                   title="Subscribe to our Youtube channel"
                   target="_blank"
                   rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
                 >
-                  <FontAwesomeIcon icon={faYoutube} />
+                  <FontAwesomeIcon icon={faYoutube} className="text-white text-lg" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/she-code-africa/"
-                  title="Follow us on Linkedin"
+                  href="https://www.instagram.com/shecodeafrica/"
+                  title="Follow us on Instagram"
                   target="_blank"
                   rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
                 >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
+                  <FontAwesomeIcon icon={faInstagram} className="text-white text-lg" />
                 </a>
+                <a
+                  href="https://www.twitter.com/shecodeafrica/"
+                  title="Follow us on Twitter"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
+                >
+                  <FontAwesomeIcon icon={faXTwitter} className="text-white text-lg" />
+                </a>
+                {/* <a
+                  href="https://medium.com/shecodeafrica"
+                  target="_blank"
+                  title="Find us on Medium"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-10 h-10 flex items-center justify-center"
+                >
+                  <FontAwesomeIcon icon={faMedium} className="text-white text-2xl" />
+                </a>
+
                 <a
                   href="https://github.com/she-code-africa"
                   target="_blank"
                   title="Follow us on Github"
                   rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-10 h-10 flex items-center justify-center"
                 >
-                  <FontAwesomeIcon icon={faGithub} />
-                </a>
+                  <FontAwesomeIcon icon={faGithub} className="text-white text-2xl" />
+                </a> */}
               </div>
             </div>
             <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden ">
