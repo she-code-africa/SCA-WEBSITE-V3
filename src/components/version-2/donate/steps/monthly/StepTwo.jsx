@@ -46,7 +46,7 @@ const StepTwo = ({ setStep }) => {
               setStep(3);
             }}
           >
-            <Bank /> Bank Account
+            <Bank /> Bank Transfer
           </button>
 
           <button

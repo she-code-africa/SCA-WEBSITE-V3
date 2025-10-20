@@ -10,6 +10,8 @@ const StepOne = ({ setStep, setMonthly, setActiveTab }) => {
   const handleGoBack = () => {
     setStep(0);
     setActiveTab("");
+
+    setMonthly(0);
   };
   return (
     <div className="w-full">

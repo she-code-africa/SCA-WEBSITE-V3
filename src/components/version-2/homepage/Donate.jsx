@@ -19,7 +19,7 @@ const Donate = () => {
 
           <div className="mt-8 max-w-[152px] w-full rounded-lg overflow-hidden">
             <Link
-              to="/donate-partner"
+              to="/donate"
               className="flex items-center justify-center  max-w-[152px] h-[55px] bg-primary-main-pink text-white  hover:bg-[#5C0335] transition-all duration-300 text-base"
             >
               Donate here
