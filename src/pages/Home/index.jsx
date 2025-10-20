@@ -81,7 +81,7 @@ const Home = () => {
                   isWithIcon={true}
                   iconPos="right"
                   icon={<FontAwesomeIcon icon={faArrowRight} />}
-                  url="/donate-partner"
+                  url="/donate"
                 />
               </div>
             </article>

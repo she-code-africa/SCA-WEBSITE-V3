@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -131,6 +131,7 @@ const Header = ({ page }) => {
   const body = window.document.body;
   const classList = [`max-h-screen`, `overflow-hidden`];
   const path = location.pathname;
+  const menuRef = useRef(null);
 
   const handleOpenMenu = () => {
     setIsOpen(true);
@@ -152,9 +153,34 @@ const Header = ({ page }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
+  // 👇 CLOSE DROPDOWN ON OUTSIDE CLICK (Desktop)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Only close on large screens
+      if (window.innerWidth >= 1024 && menuRef.current) {
+        if (!menuRef.current.contains(event.target)) {
+          setSelectedMenu(null);
+        }
+      }
+    };
+
+    if (selectedMenu !== null) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [selectedMenu]);
+
   return (
     <header className="fixed left-0 right-0 top-0 w-full bg-white z-[2] py-6 shadow-lg">
-      <nav className="w-[90%] mx-auto max-w-[1256px] flex justify-between gap-5 items-center">
+      <nav
+        className="w-[90%] mx-auto max-w-[1256px] flex justify-between gap-5 items-center"
+        ref={menuRef}
+      >
         {/* logo and hamburger for mobile */}
         <div className="w-full lg:w-fit flex justify-between items-center gap-6">
           <div className="w-full max-w-[150px] sm:max-w-[216px]">
@@ -303,11 +329,11 @@ const Header = ({ page }) => {
                               path === item.to && "text-primary-main-pink"
                             }`}
                           >
-                            <span className="inline-block font-semibold text-base">
+                            <span className="inline-block font-semibold text-sm">
                               {item.text}{" "}
                             </span>
                             <span
-                              className={`inline-block  text-sm font-normal ${
+                              className={`inline-block  text-xs font-normal ${
                                 path === item.to
                                   ? "text-primary-main-pink"
                                   : "text-[#434343]"
@@ -324,7 +350,7 @@ const Header = ({ page }) => {
                   {/* desktop */}
                   {menuItem.list.length > 0 && selectedMenu === idx && (
                     <ul
-                      className={` hidden lg:block absolute  bg-white top-12 pt-5 px-[18px] w-max ${
+                      className={` hidden lg:block absolute  bg-white top-12 py-5 px-5 w-max ${
                         idx === menuItems.length - 1 ? "right-0" : "left-0"
                       }  rounded-lg shadow-2xl`}
                     >
@@ -366,7 +392,7 @@ const Header = ({ page }) => {
               );
             })}
             <Link
-              to={paths.donate_partner}
+              to={paths.donate}
               className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20 hover:bg-[#5C0335] transition duration-300"
             >
               Donate

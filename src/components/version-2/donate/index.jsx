@@ -5,11 +5,14 @@ import PaymentMethod from "./steps/one-time/PaymentMethod";
 import StepOne from "./steps/monthly/StepOne";
 import StepTwo from "./steps/monthly/StepTwo";
 import AccountDetails from "./steps/monthly/AccountDetails";
+import { FaTimesCircle } from "react-icons/fa";
 
 const DonateComponent = () => {
   const [activeTab, setActiveTab] = useState("");
   const [monthlyStep, setMonthlyStep] = useState(0);
   const [oneTimeStep, setOneTimeStep] = useState(0);
+  const [selectedAmount, setSelectedAmount] = useState(0);
+  const [enterOtherAmount, setEnterOtherAmount] = useState(false);
 
   const handleShowMonthly = () => {
     setActiveTab("monthly");
@@ -19,6 +22,14 @@ const DonateComponent = () => {
   const handleShowOneTime = () => {
     setActiveTab("one-time");
     setOneTimeStep(1);
+  };
+
+  const handleSelectAmount = (amount) => {
+    setSelectedAmount(amount);
+  };
+
+  const handleChange = (e) => {
+    setSelectedAmount(Number(e.target.value));
   };
 
   return (
@@ -44,17 +55,49 @@ const DonateComponent = () => {
           <div className="w-full grid grid-cols-3 gap-4 my-8">
             {[5, 10, 15, 20, 30, 40].map((amount, idx) => (
               <button
-                className="text-[32px] font-bold w-full h-[80px] flex items-center justify-center border border-[#E9E1E6] rounded-xl"
+                className={`text-[32px] font-bold w-full h-[80px] flex items-center justify-center border rounded-xl ${
+                  selectedAmount === amount
+                    ? "border-primary-main-pink"
+                    : "border-[#E9E1E6]"
+                }`}
                 key={idx}
+                onClick={() => handleSelectAmount(amount)}
               >
                 {amount}$
               </button>
             ))}
           </div>
 
-          <button className="w-full h-[82px] flex items-center px-4 gap-2 text-base border-[#E9E1E6] rounded-xl border">
-            <Coin /> Other amount
-          </button>
+          {enterOtherAmount ? (
+            <>
+              <div className="w-full  flex items-center px-4 gap-2 text-base border-[#E9E1E6] rounded-xl border">
+                <div className="flex items-center gap-2 w-full">
+                  <Coin />
+                  <input
+                    type="text"
+                    className="w-full h-[48px] focus-within:outline-none focus:outline-none"
+                    placeholder="Enter an amount..."
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <button
+                  className=""
+                  title="Close input"
+                  onClick={() => setEnterOtherAmount(false)}
+                >
+                  <FaTimesCircle />
+                </button>
+              </div>
+            </>
+          ) : (
+            <button
+              className="w-full h-[82px] flex items-center px-4 gap-2 text-base border-[#E9E1E6] rounded-xl border"
+              onClick={() => setEnterOtherAmount(true)}
+            >
+              <Coin /> Other amount
+            </button>
+          )}
 
           <div className="w-full mb-8 mt-32">
             <button
@@ -87,7 +130,13 @@ const DonateComponent = () => {
           {monthlyStep === 1 && (
             <EnterDetails setStep={setMonthlyStep} setTab={setActiveTab} />
           )}
-          {monthlyStep === 2 && <PaymentMethod setStep={setMonthlyStep} />}
+          {monthlyStep === 2 && (
+            <PaymentMethod
+              setStep={setMonthlyStep}
+              setOneTimeStep={setOneTimeStep}
+              setActiveTab={setActiveTab}
+            />
+          )}
         </>
       )}
     </div>

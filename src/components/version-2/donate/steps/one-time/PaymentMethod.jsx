@@ -3,12 +3,21 @@ import { FaAngleLeft } from "react-icons/fa";
 import Card from "../../../icons/Card";
 import { FcGoogle } from "react-icons/fc";
 import { GoQuestion } from "react-icons/go";
+import flutterwave from "../../../../../assets/v2/images/donate/flutterwave.svg";
+import paystack from "../../../../../assets/v2/images/donate/paystack.svg";
+import Bank from "../../../icons/Bank";
 
-const PaymentMethod = ({ setStep }) => {
+const PaymentMethod = ({ setStep, setOneTimeStep, setActiveTab }) => {
   const [activePayment, setActivePayment] = useState("");
 
   const setActiveGoogle = () => {
     setActivePayment("google");
+  };
+
+  const handleSetBankActive = () => {
+    setActivePayment("bank");
+    setActiveTab("one-time");
+    setOneTimeStep(3);
   };
 
   return (
@@ -81,6 +90,41 @@ const PaymentMethod = ({ setStep }) => {
         >
           <FcGoogle className="tex-2xl" />
           <span className="text-sm">Google Pay</span>
+        </button>
+
+        <button
+          className={`w-full h-[48px] flex items-center gap-2 text-sm px-4 py-3 border border-[#E9E1E6] rounded-lg mt-4 ${
+            activePayment === "bank" && "bg-[#FFB8E0]"
+          }`}
+          onClick={handleSetBankActive}
+        >
+          <Bank /> Bank Transfer
+        </button>
+
+        <button
+          className={`w-full h-[48px] flex items-center gap-2 text-sm px-4 py-3 border border-[#E9E1E6] rounded-lg mt-4 ${
+            activePayment === "flutterwave" && "bg-[#FFB8E0]"
+          }`}
+          onClick={() => setActivePayment("flutterwave")}
+        >
+          <img
+            src={flutterwave}
+            alt="flutterwave"
+            className="w-full max-w-[100px] h-6 object-contain"
+          />
+        </button>
+
+        <button
+          className={`w-full h-[48px] flex items-center gap-2 text-sm px-4 py-3 border border-[#E9E1E6] rounded-lg mt-4 ${
+            activePayment === "paystack" && "bg-[#FFB8E0]"
+          }`}
+          onClick={() => setActivePayment("paystack")}
+        >
+          <img
+            src={paystack}
+            alt="paystack"
+            className="w-full max-w-[135px] h-6 object-contain"
+          />
         </button>
 
         <div className="w-full mb-8 mt-32">

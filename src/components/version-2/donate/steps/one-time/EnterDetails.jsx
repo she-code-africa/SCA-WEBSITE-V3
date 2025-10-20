@@ -48,68 +48,55 @@ const EnterDetails = ({ setStep, setTab }) => {
           </div>
 
           <div className="w-full flex flex-col gap-4">
-            <span className="flex items-center gap-1">
-              <span className="relative flex items-center cursor-pointer">
+            {/* Anonymous donation */}
+            <span className="flex items-center gap-2">
+              <label className="relative flex items-center cursor-pointer">
                 <input
-                  id="anonymous"
-                  type="checkbox"
-                  className="peer w-6 h-6 appearance-none border border-[#E9E1E6] rounded-lg checked:bg-primary-main-pink checked:border-primary-main-pink transition-all"
+                  id="donate-anonymous"
+                  name="donationType" // 👈 same name makes it a proper radio group
+                  type="radio"
+                  className="peer w-6 h-6 appearance-none border border-[#E9E1E6] rounded-lg 
+                   checked:bg-primary-main-pink checked:border-primary-main-pink transition-all"
+                  onChange={() => setOrganization(false)}
                 />
-                {/* checkmark */}
-                <svg
-                  className="absolute left-[6px] top-[5px] w-3 h-3 text-white hidden peer-checked:block pointer-events-none"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </span>
+              </label>
 
-              <label htmlFor="anonymous" className="text-sm text-[#211F1F]">
+              <label
+                htmlFor="donate-anonymous"
+                className="text-sm text-[#211F1F] cursor-pointer"
+              >
                 Donate Anonymously
               </label>
             </span>
-            <span className="flex items-center gap-1">
-              <span className="relative flex items-center cursor-pointer">
-                <input
-                  id="organization"
-                  type="checkbox"
-                  className="peer w-6 h-6 appearance-none border border-[#E9E1E6] rounded-lg checked:bg-primary-main-pink checked:border-primary-main-pink transition-all"
-                  onChange={(e) => setOrganization(e.target.checked)}
-                />
-                {/* checkmark */}
-                <svg
-                  className="absolute left-[6px] top-[5px] w-3 h-3 text-white hidden peer-checked:block pointer-events-none"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </span>
 
-              <label htmlFor="organization" className="text-sm text-[#211F1F]">
+            {/* Donate as Organization */}
+            <span className="flex items-center gap-2">
+              <label className="relative flex items-center cursor-pointer">
+                <input
+                  id="donate-organization"
+                  name="donationType"
+                  type="radio"
+                  className="peer w-6 h-6 appearance-none border border-[#E9E1E6] rounded-lg 
+                   checked:bg-primary-main-pink checked:border-primary-main-pink transition-all"
+                  onChange={() => setOrganization(true)}
+                />
+              </label>
+
+              <label
+                htmlFor="donate-organization"
+                className="text-sm text-[#211F1F] cursor-pointer"
+              >
                 Donate as an Organization
               </label>
             </span>
 
+            {/* Conditional input field */}
             {organization && (
               <div className="w-full border border-[#E9E1E6] bg-white rounded-lg my-4">
                 <input
                   type="text"
                   placeholder="Enter name of organization"
-                  className="bg-transparent h-[36px] px-4 py-2 w-full focus-within:outline-none focus:outline-none placeholder:text-[#98A2B3]"
+                  className="bg-transparent h-[36px] px-4 py-2 w-full focus:outline-none placeholder:text-[#98A2B3]"
                 />
               </div>
             )}
