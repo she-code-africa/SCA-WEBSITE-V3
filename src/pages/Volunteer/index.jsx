@@ -185,27 +185,27 @@ const Volunteer = () => {
                 </div>
               </div>
 
-              {/* Content */}
+              {/* Right content */}
               <div className="lg:col-span-7">
-                <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-4 py-2 text-base sm:text-2xl font-medium mb-4">
+                <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-5 py-[10px] text-base sm:text-2xl font-medium mb-6">
                   Volunteer Stories
                 </span>
 
-                <h3 className="text-lg sm:text-2xl lg:text-3xl font-semibold text-black mb-6">
+                <h3 className="text-xl sm:text-4xl lg:text-2xl font-medium text-black mb-6">
                   Making a Real Difference
                 </h3>
 
-                <div className="space-y-8">
+                <div className="space-y-16">
                   {/* Testimonial 1 */}
                   <div className="">
                     <div className="pl-0 sm:pl-6 sm:border-l-4 border-SCA-Lavender">
-                      <p className="text-base sm:text-lg italic font-light text-black leading-relaxed mb-4">
+                      <p className="text-2xl sm:text-xl italic font-light text-black leading-relaxed mb-4">
                         "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
                       </p>
 
                       <div>
-                        <div className="font-semibold text-base sm:text-lg text-black">Jane Doe</div>
-                        <div className="text-sm sm:text-base text-SCA-Lavender">Mentor Volunteer, Lagos</div>
+                        <div className="font-bold text-xl sm:text-lg text-black">Jane Doe</div>
+                        <div className="text-base text-SCA-Lavender">Mentor Volunteer, Lagos</div>
                       </div>
                     </div>
                   </div>
@@ -213,13 +213,13 @@ const Volunteer = () => {
                   {/* Testimonial 2 */}
                   <div className="">
                     <div className="pl-0 sm:pl-6 sm:border-l-4 border-SCA-Apricote">
-                      <p className="text-base sm:text-lg italic font-light text-black leading-relaxed mb-4">
+                      <p className="text-2xl sm:text-xl italic font-light text-black leading-relaxed mb-4">
                         "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
                       </p>
 
                       <div>
-                        <div className="font-semibold text-base sm:text-lg text-black">Jane Doe</div>
-                        <div className="text-sm sm:text-base text-SCA-Apricote">Mentor Volunteer, Lagos</div>
+                        <div className="font-bold text-xl sm:text-lg text-black">Jane Doe</div>
+                        <div className="text-base text-SCA-Apricote">Mentor Volunteer, Lagos</div>
                       </div>
                     </div>
                   </div>
