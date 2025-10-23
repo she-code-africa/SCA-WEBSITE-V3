@@ -117,7 +117,7 @@ const Volunteer = () => {
               Volunteer Opportunities
             </h2>
 
-            <p className="text-center max-w-3xl mx-auto text-2xl sm:text-lg font-medium text-black mb-6">
+            <p className="text-center max-w-3xl mx-auto text-lg md:text-2xl sm:text-lg font-medium text-black mb-6">
               Choose a role that matches your skills and passion. Every contribution makes a difference in equipping the next generation of African women in tech.
             </p>
 
@@ -171,8 +171,8 @@ const Volunteer = () => {
         </section>
 
         {/* Volunteer Stories*/}
-        <section className="py-16 lg:py-28 bg-SCA-Cloud">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-12 lg:py-28  bg-SCA-Cloud">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Left image */}
               <div className="lg:col-span-5">
@@ -185,41 +185,41 @@ const Volunteer = () => {
                 </div>
               </div>
 
-              {/* Right content */}
+              {/* Content */}
               <div className="lg:col-span-7">
-                <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-5 py-[10px] text-2xl font-medium mb-6">
+                <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-4 py-2 text-base sm:text-2xl font-medium mb-4">
                   Volunteer Stories
                 </span>
 
-                <h3 className="text-xl sm:text-4xl lg:text-2xl font-medium text-black mb-6">
+                <h3 className="text-lg sm:text-2xl lg:text-3xl font-semibold text-black mb-6">
                   Making a Real Difference
                 </h3>
 
-                <div className="space-y-16">
+                <div className="space-y-8">
                   {/* Testimonial 1 */}
                   <div className="">
-                    <div className="w-full pl-4 py-6 border-l-4 border-SCA-Lavender">
-                      <p className="text-2xl sm:text-xl italic font-light text-black leading-relaxed mb-7 max-w-[638px]">
+                    <div className="pl-0 sm:pl-6 sm:border-l-4 border-SCA-Lavender">
+                      <p className="text-base sm:text-lg italic font-light text-black leading-relaxed mb-4">
                         "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
                       </p>
 
                       <div>
-                        <div className="font-bold text-xl text-black">Jane Doe</div>
-                        <div className="text-base text-SCA-Lavender">Mentor Volunteer, Lagos</div>
+                        <div className="font-semibold text-base sm:text-lg text-black">Jane Doe</div>
+                        <div className="text-sm sm:text-base text-SCA-Lavender">Mentor Volunteer, Lagos</div>
                       </div>
                     </div>
                   </div>
 
                   {/* Testimonial 2 */}
-                  <div className="flex gap-5">
-                    <div className="w-full pl-4 py-6 border-l-4 border-SCA-Apricote">
-                      <p className="text-2xl sm:text-xl italic font-light text-black leading-relaxed mb-7 max-w-[638px]">
+                  <div className="">
+                    <div className="pl-0 sm:pl-6 sm:border-l-4 border-SCA-Apricote">
+                      <p className="text-base sm:text-lg italic font-light text-black leading-relaxed mb-4">
                         "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
                       </p>
 
                       <div>
-                        <div className="font-bold text-xl text-black">Jane Doe</div>
-                        <div className="text-base text-SCA-Apricote">Mentor Volunteer, Lagos</div>
+                        <div className="font-semibold text-base sm:text-lg text-black">Jane Doe</div>
+                        <div className="text-sm sm:text-base text-SCA-Apricote">Mentor Volunteer, Lagos</div>
                       </div>
                     </div>
                   </div>
