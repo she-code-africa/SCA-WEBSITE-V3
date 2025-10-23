@@ -40,6 +40,7 @@ module.exports = {
         "SCA-Citrine": "#FFF88F",
         "SCA-Forest": "#094A32",
         "SCA-Apricote": "#FF8A3F",
+        "SCA-Lavender": "#C78FFF",
         
       },
       fontSize: {
