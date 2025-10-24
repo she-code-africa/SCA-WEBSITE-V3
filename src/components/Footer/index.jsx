@@ -11,11 +11,13 @@ import {
   faYoutube,
   faLinkedinIn,
   faGithub,
+  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { paths, apiConstants } from "../../utils";
 import { getReports } from "../../services";
 // import logo from "../../images/logo-inverted.svg";
 import logo from "../../images/new-logo/new-logo-header.png";
+import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   const [openCaret, setOpenCaret] = useState(false);
@@ -57,26 +59,27 @@ const Footer = () => {
                 Get Involved
               </p>
               <Link
+                to={paths.donate}
+                className="block text-black mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+              >
+                Donate To A Cause
+              </Link>
+              <Link
                 to={paths.donate_partner}
-                className="block mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
               >
                 Partner With Us
               </Link>
-              <Link
-                to={paths.donate_partner}
-                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
-              >
-                Make A Donation
-              </Link>
+
               <Link
                 to={paths.chapters}
-                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
               >
                 Start An S.C.A Chapter
               </Link>
               <a
                 href="https://summit.shecodeafrica.org/"
-                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -85,7 +88,7 @@ const Footer = () => {
               {isError ? null : (
                 <div className="relative">
                   <button
-                    className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu relative"
+                    className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu relative text-black"
                     onClick={() => {
                       setOpenCaret(!openCaret);
                     }}
@@ -159,27 +162,66 @@ const Footer = () => {
               </p>
               <Link
                 to={paths.events}
-                className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"
+                className="block mb-5 text-black hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"
               >
                 Upcoming Events
               </Link>
-              <Link
-                to={paths.contactUs}
-                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
-              >
-                Contact Us
-              </Link>
+
               <a
                 href="https://bit.ly/joinshecodeafrica"
                 target="_blank"
                 rel="noreferrer"
-                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
               >
-                Join Our Slack Community
+                Join Our Community
               </a>
+
+              <Link
+                to={paths.contactUs}
+                className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+              >
+                Sign Up For Our Newsletter
+              </Link>
               {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
-              <div className="block mb-5">Follow Us On Social Media</div>
-              <div className="flex gap-x-5 mb-5 text-2xl text-primary-main-pink">
+              <div className="block mb-5 text-black">
+                Follow Us On Social Media
+              </div>
+              <div className="flex gap-x-[10px] mb-5 items-center text-2xl text-primary-main-pink">
+                <a
+                  href="https://www.linkedin.com/company/she-code-africa/"
+                  title="Follow us on Linkedin"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu"
+                >
+                  <span className="flex w-8 h-8 rounded-full items-center justify-center bg-primary-main-pink text-white text-lg">
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </span>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/shecodeafrica/"
+                  title="Follow us on Facebook"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu text-2xl"
+                >
+                  <span className="flex w-8 h-8 rounded-full items-center justify-center bg-primary-main-pink text-white text-lg">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                  </span>
+                </a>
+
+                <a
+                  href="https://www.youtube.com/channel/UCNZzVEyJege5-d_ekKw6dFA"
+                  title="Subscribe to our Youtube channel"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu"
+                >
+                  <span className="flex w-8 h-8 rounded-full items-center justify-center bg-primary-main-pink text-white text-lg">
+                    <FontAwesomeIcon icon={faYoutube} />
+                  </span>
+                </a>
                 <a
                   href="https://www.instagram.com/shecodeafrica/"
                   title="Follow us on Instagram"
@@ -187,7 +229,9 @@ const Footer = () => {
                   rel="noreferrer"
                   className="focus:outline-none focus:ring focus:ring-tutu"
                 >
-                  <FontAwesomeIcon icon={faInstagram} />
+                  <span className="flex w-8 h-8 rounded-full items-center justify-center bg-primary-main-pink text-white text-lg">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </span>
                 </a>
                 <a
                   href="https://www.twitter.com/shecodeafrica/"
@@ -196,18 +240,12 @@ const Footer = () => {
                   rel="noreferrer"
                   className="focus:outline-none focus:ring focus:ring-tutu"
                 >
-                  <FontAwesomeIcon icon={faXTwitter} />
+                  <span className="flex w-8 h-8 rounded-full items-center justify-center bg-primary-main-pink text-white text-lg">
+                    <FontAwesomeIcon icon={faXTwitter} />
+                  </span>
                 </a>
-                <a
-                  href="https://www.facebook.com/shecodeafrica/"
-                  title="Follow us on Facebook"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
-                >
-                  <FontAwesomeIcon icon={faFacebookF} />
-                </a>
-                <a
+
+                {/* <a
                   href="https://medium.com/shecodeafrica"
                   target="_blank"
                   title="Find us on Medium"
@@ -216,24 +254,7 @@ const Footer = () => {
                 >
                   <FontAwesomeIcon icon={faMedium} />
                 </a>
-                <a
-                  href="https://www.youtube.com/channel/UCNZzVEyJege5-d_ekKw6dFA"
-                  title="Subscribe to our Youtube channel"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
-                >
-                  <FontAwesomeIcon icon={faYoutube} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/she-code-africa/"
-                  title="Follow us on Linkedin"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
-                >
-                  <FontAwesomeIcon icon={faLinkedinIn} />
-                </a>
+
                 <a
                   href="https://github.com/she-code-africa"
                   target="_blank"
@@ -242,7 +263,7 @@ const Footer = () => {
                   className="focus:outline-none focus:ring focus:ring-tutu"
                 >
                   <FontAwesomeIcon icon={faGithub} />
-                </a>
+                </a> */}
               </div>
             </div>
             <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden ">

@@ -14,6 +14,16 @@ import HamburgerIcon from "./HamburgerMenu";
 import navIcon1 from "../../assets/v2/images/icons/navIcon1.png";
 import navIcon2 from "../../assets/v2/images/icons/navIcon2.png";
 import navIcon3 from "../../assets/v2/images/icons/navIcon3.png";
+import initIcon from "../../assets/v2/images/icons/initiativesIcon.png";
+import eventsIcon from "../../assets/v2/images/icons/eventsIcon.png";
+import donateIcon from "../../assets/v2/images/icons/donateIcon.png";
+import partnerIcon from "../../assets/v2/images/icons/partnerIcon.png";
+import volunteerIcon from "../../assets/v2/images/icons/volunteerIcon.png";
+import chaptersIcon from "../../assets/v2/images/icons/chaptersIcon.png";
+import soa from "../../assets/v2/images/icons/soa.png";
+import sop from "../../assets/v2/images/icons/sop.png";
+import soe from "../../assets/v2/images/icons/soe.png";
+
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { IoClose } from "react-icons/io5";
 
@@ -65,10 +75,15 @@ const Header = ({ page }) => {
         {
           to: paths.initiatives,
           text: "Initiatives",
-          icon: navIcon2,
+          icon: initIcon,
           subText: "Small sample text here",
         },
-        { to: paths.events, text: "Events", subText: "Small sample text here" },
+        {
+          to: paths.events,
+          text: "Events",
+          subText: "Small sample text here",
+          icon: eventsIcon,
+        },
       ],
     },
     {
@@ -83,19 +98,19 @@ const Header = ({ page }) => {
         {
           to: paths.donate,
           text: "Donate To A Cause",
-          icon: navIcon2,
+          icon: donateIcon,
           subText: "Small sample text here",
         },
         {
           to: paths.partner,
           text: "Partner With Us",
-          icon: navIcon2,
+          icon: partnerIcon,
           subText: "Small sample text here",
         },
         {
           to: paths.volunteer,
           text: "Volunteer With Us",
-          icon: navIcon2,
+          icon: volunteerIcon,
           subText: "Small sample text here",
         },
 
@@ -119,7 +134,7 @@ const Header = ({ page }) => {
         {
           to: paths.chapters,
           text: "SCA Chapters",
-          icon: navIcon2,
+          icon: chaptersIcon,
           subText: "Small sample text here",
         },
       ],
@@ -320,7 +335,15 @@ const Header = ({ page }) => {
                           className={`w-full flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
                         >
                           <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
-                            <img src={item.icon || navIcon2} alt={item.text} />
+                            {item.text.toLowerCase().includes("engineering") ? (
+                              <img src={soe} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("product") ? (
+                              <img src={sop} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("applied") ? (
+                              <img src={soa} alt={item.text} />
+                            ) : (
+                              <img src={item.icon} alt={item.text} />
+                            )}
                           </figure>
 
                           <Link
@@ -360,7 +383,15 @@ const Header = ({ page }) => {
                           className={`w-full flex items-center gap-[18px] py-[18px]`}
                         >
                           <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
-                            <img src={item.icon || navIcon2} alt={item.text} />
+                            {item.text.toLowerCase().includes("engineering") ? (
+                              <img src={soe} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("product") ? (
+                              <img src={sop} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("applied") ? (
+                              <img src={soa} alt={item.text} />
+                            ) : (
+                              <img src={item.icon} alt={item.text} />
+                            )}
                           </figure>
 
                           <Link
