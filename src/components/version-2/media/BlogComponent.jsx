@@ -13,7 +13,9 @@ const BlogComponent = () => {
 
       <div className="my-10 max-w-[122px] w-full mx-auto">
         <Link
-          to="#"
+          to="https://medium.com/shecodeafrica"
+          target="_blank"
+          rel="noreferrer"
           className="w-full px-8 py-[18px] rounded-lg hover:bg-[#5C0335] transition-colors duration-300 hover:text-white bg-white text-primary-main-pink capitalize"
         >
           {" "}

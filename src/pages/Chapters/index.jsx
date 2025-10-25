@@ -201,12 +201,14 @@ const Chapters = () => {
             access to resources and events, and help shape the future of the
             industry.
           </p>
-          <Link
-            to="#"
+          <a
+            href="https://forms.gle/aFe2LrkZxZJtKKve7"
+            target="_blank"
+            rel="noreferrer"
             className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] text-base"
           >
             Register to join now
-          </Link>
+          </a>
         </section>
       </main>
       <Footer />

@@ -166,7 +166,6 @@ const Footer = () => {
               >
                 Upcoming Events
               </Link>
-
               <a
                 href="https://bit.ly/joinshecodeafrica"
                 target="_blank"
@@ -223,11 +222,11 @@ const Footer = () => {
                   </span>
                 </a>
                 <a
-                  href="https://www.instagram.com/shecodeafrica/"
-                  title="Follow us on Instagram"
+                  href="https://www.linkedin.com/company/she-code-africa/"
+                  title="Follow us on Linkedin"
                   target="_blank"
                   rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
                 >
                   <span className="flex w-8 h-8 rounded-full items-center justify-center bg-primary-main-pink text-white text-lg">
                     <FontAwesomeIcon icon={faInstagram} />
@@ -256,11 +255,30 @@ const Footer = () => {
                 </a>
 
                 <a
+                  href="https://www.twitter.com/shecodeafrica/"
+                  title="Follow us on Twitter"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
+                >
+                  <FontAwesomeIcon icon={faXTwitter} className="text-white text-lg" />
+                </a>
+                {/* <a
+                  href="https://medium.com/shecodeafrica"
+                  target="_blank"
+                  title="Find us on Medium"
+                  rel="noreferrer"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-10 h-10 flex items-center justify-center"
+                >
+                  <FontAwesomeIcon icon={faMedium} className="text-white text-2xl" />
+                </a>
+
+                <a
                   href="https://github.com/she-code-africa"
                   target="_blank"
                   title="Follow us on Github"
                   rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
+                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-10 h-10 flex items-center justify-center"
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a> */}

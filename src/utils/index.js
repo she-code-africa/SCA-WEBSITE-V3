@@ -604,7 +604,7 @@ export const ReachOutCard = [
   },
     {
     id: 3,
-    title: "For Community",
+    title: "For community",
     email: "community@shecodeafrica.org"
   },
     {
@@ -613,4 +613,28 @@ export const ReachOutCard = [
     email: "programs@shecodeafrica.org"
   }
 ]
+
+export const volunteerCards = [
+  {
+    id: 1,
+    title: "Mentor",
+    description:
+      "Guide and support women in their tech journey through one-on-one mentorship sessions.",
+    skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
+  },
+  {
+    id: 2,
+    title: "Event Organizer",
+    description:
+      "Plan and coordinate community events, meetups, hackathons, and conferences across Africa.",
+    skills: ["Organization", "Logistics", "Communication", "Creativity"],
+  },
+  {
+    id: 3,
+    title: "Media & Content Creator",
+    description:
+      "Create educational content, blog posts, designs, and social media content to inspire, educate and promote She Code Africa’s mission.",
+    skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
+  },
+];
 
