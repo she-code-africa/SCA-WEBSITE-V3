@@ -53,9 +53,7 @@ const index = ({ display, toggleModal, type }) => {
                           aria-hidden="true"
                           size="md"
                           className="mr-2 text-gray-400 "
-                        />
-
-                        {" "}
+                        />{" "}
                         Card Donation
                       </h5>
                     </a>
@@ -73,7 +71,6 @@ const index = ({ display, toggleModal, type }) => {
                         aria-hidden="true"
                         size="md"
                         className="mr-2 text-gray-400 "
-
                       />{" "}
                       Wire Transfer
                     </h5>

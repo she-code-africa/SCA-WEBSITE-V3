@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaAngleLeft } from "react-icons/fa";
 
-const EnterDetails = ({ setStep, setTab }) => {
+const EnterDetails = ({ setStep, setTab,selectedAmount }) => {
   const [organization, setOrganization] = useState(false);
   const handleGoBack = () => {
     setStep(0);
@@ -104,6 +104,8 @@ const EnterDetails = ({ setStep, setTab }) => {
         </div>
 
         <div className="w-full mb-8 mt-32">
+
+        
           <button
             className="h-[55px] max-w-[131px] hover:bg-[#5C0335] transition-colors duration-300  w-full bg-primary-main-pink text-white rounded-lg flex items-center justify-center "
             onClick={() => setStep(2)}
