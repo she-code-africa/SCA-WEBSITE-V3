@@ -128,7 +128,7 @@ const DonateComponent = () => {
       ) : (
         <>
           {monthlyStep === 1 && (
-            <EnterDetails setStep={setMonthlyStep} setTab={setActiveTab} />
+            <EnterDetails setStep={setMonthlyStep} setTab={setActiveTab} selectedAmount={selectedAmount} />
           )}
           {monthlyStep === 2 && (
             <PaymentMethod
