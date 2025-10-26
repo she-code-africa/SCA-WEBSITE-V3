@@ -42,7 +42,9 @@ const Team = () => {
   // collect unique categories
   const tags = useMemo(
     () =>
-      data?.filter((team) => team.teamCategory?.name).map((team) => team.teamCategory.name) || [],
+      data
+        ?.filter((team) => team.teamCategory?.name)
+        .map((team) => team.teamCategory.name) || [],
     [data]
   );
   const uniqueTags = useMemo(() => Array.from(new Set(tags)), [tags]);
@@ -53,9 +55,13 @@ const Team = () => {
 
   // filter members
   const filtered =
-    data?.filter((member) =>
-      activeSelection === "" ? true : member.teamCategory?.name === activeSelection
-    ) || [];
+    data
+      ?.filter((member) =>
+        activeSelection === ""
+          ? true
+          : member.teamCategory?.name === activeSelection
+      )
+      ?.sort((a, b) => a.position - b.position) || [];
 
   // split into full rows + last row
   const itemsPerRow = cols;
@@ -93,12 +99,17 @@ const Team = () => {
                 Meet The SCA Team
               </h1>
               <p className="mt-6 text-2xl leading-9 text-Secondary-Velvet md:max-w-3xl">
-                Peep the faces behind the initiatives and impacts here at She Code Africa.
-                These wonderful people work behind the scene, everyday to keep our vision working.
+                Peep the faces behind the initiatives and impacts here at She
+                Code Africa. These wonderful people work behind the scene,
+                everyday to keep our vision working.
               </p>
             </div>
             <div>
-              <img src={box} alt="She Code Africa Logo" className="w-72 h-72 object-cover" />
+              <img
+                src={box}
+                alt="She Code Africa Logo"
+                className="w-72 h-72 object-cover"
+              />
             </div>
           </div>
         </section>
@@ -107,21 +118,21 @@ const Team = () => {
           <div className="w-11/12 mx-auto">
             {/* Category Buttons */}
             <div className="flex justify-start gap-8 mb-16 flex-wrap">
-                    {uniqueTags
-                    .filter((category) => category !== "All")
-                    .map((category) => (
-                      <button
-                      key={category}
-                      className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
-                        activeSelection === category
+              {uniqueTags
+                .filter((category) => category !== "All")
+                .map((category) => (
+                  <button
+                    key={category}
+                    className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
+                      activeSelection === category
                         ? "bg-Primary-Magenta text-SCA-Cloud"
                         : "bg-SCA-Cloud text-Secondary-Velvet"
-                      }`}
-                      onClick={() => setActiveSelection(category)}
-                      >
-                      {category}
-                      </button>
-                    ))}
+                    }`}
+                    onClick={() => setActiveSelection(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
             </div>
 
             {/* Team Grid */}
@@ -130,13 +141,15 @@ const Team = () => {
             ) : isLoading ? (
               <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10">
                 {[...Array(8)].map((_, index) => (
-                  <Loading  key={index} />
+                  <Loading key={index} />
                 ))}
               </div>
             ) : (
               <>
                 {/* Render full rows */}
-                {Array.from({ length: Math.floor(fullMembers.length / cols) }).map((_, rowIdx) => {
+                {Array.from({
+                  length: Math.floor(fullMembers.length / cols),
+                }).map((_, rowIdx) => {
                   const start = rowIdx * cols;
                   const rowMembers = fullMembers.slice(start, start + cols);
                   const colors = [
@@ -156,7 +169,10 @@ const Team = () => {
                           key={idx}
                           image={member.image || avatar}
                           name={member.name}
-                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          teamRole={
+                            member.role ||
+                            `${member.teamCategory?.name || "Team"} member`
+                          }
                           bgColor={bgColor}
                         />
                       ))}
@@ -186,7 +202,10 @@ const Team = () => {
                           key={`last-${idx}`}
                           image={member.image || avatar}
                           name={member.name}
-                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          teamRole={
+                            member.role ||
+                            `${member.teamCategory?.name || "Team"} member`
+                          }
                           bgColor={bgColor}
                         />
                       );
