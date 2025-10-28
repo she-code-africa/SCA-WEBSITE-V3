@@ -46,12 +46,12 @@ const Footer = () => {
               className="w-full h-full  object-contain"
             />
           </div>
-          <div className="w-full flex flex-col lg:flex-row gap-24 lg:justify-center lg:items-center">
+          <div className="w-full flex flex-col lg:flex-row gap-24 lg:justify-between lg:items-start">
             <div className="w-full max-w-[150px] h-[100px] block lg:hidden">
               <img
                 src={logo}
                 alt="SCA-Logo"
-                className="w-full h-full   object-contain"
+                className="w-full h-full object-contain"
               />
             </div>
             <div aria-label="Get Involved">
@@ -278,7 +278,7 @@ const Footer = () => {
                 </a> */}
               </div>
             </div>
-            <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden ">
+            <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden mx-auto lg:mx-0 lg:self-center">
               <img
                 src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/85802796"
                 alt="CAF-validated-badge"
