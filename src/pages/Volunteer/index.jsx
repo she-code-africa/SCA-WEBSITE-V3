@@ -1,106 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import { useMutation } from "@tanstack/react-query";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Hero from "../../images/volunteerImgs/volunteer-hero.png";
+import OurReach from "../../components/version-2/homepage/OurReach";
+import UserIcon from "../../images/volunteerImgs/voln-hero-icon.svg";
+import testmonialImg from "../../images/testimonial.png";
+import OpportunityImg from "../../images/vol-oppotunity.png";
 
-import facilitators from "../../images/volunteerImgs/facilitators.png";
-import mentors from "../../images/volunteerImgs/mentors.png";
-import speakers from "../../images/volunteerImgs/speakers.png";
-
-import JoinUs from "../../components/JoinUs";
-import HeroSlider from "../../components/Volunteers/HeroSlider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import support from "../../images/volunteerImgs/support-team.jpg";
-
-import { mutateVolunteer } from "../../services";
-import Captcha from "../../components/Captcha";
-
-const defaultFormValue = {
-  fullname: "",
-  email: "",
-  currentRole: "",
-  volunteerRole: "",
-  purpose: "",
-};
+import { Link } from "react-router-dom";
+import { volunteerCards } from "../../utils";
 
 const Volunteer = () => {
-  const hideModal = useRef(null);
-  const modal = useRef(null);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
-  const [formValue, setFormValue] = useState(defaultFormValue);
-  const [isMessageShown, setIsMessageShown] = useState(false);
-
-  const volunteerRequest = useMutation({
-    mutationFn: (formData) => mutateVolunteer(formData),
-  });
-
-  const setHideModal = () => {
-    const _modal = modal?.current;
-    setAnimatedClass(`animate__zoomOut`);
-    setTimeout(() => {
-      setModalOpen(false);
-      _modal?.close();
-      setIsMessageShown(false);
-    }, 500);
-  };
-
-  const setShowModal = () => {
-    const _hideModal = hideModal?.current;
-    const _modal = modal?.current;
-
-    setAnimatedClass(`animate__zoomIn`);
-    _modal?.showModal();
-    _hideModal?.focus();
-    setModalOpen(true);
-  };
-
-  useEffect(() => {
-    const _hideModal = hideModal?.current;
-    const _modal = modal?.current;
-
-    _hideModal?.addEventListener(`click`, () => {
-      setHideModal();
-    });
-    _modal?.scroll({
-      top: 0,
-      behavior: `smooth`,
-    });
-
-    return () => {
-      _hideModal?.removeEventListener(`click`, () => {
-        _hideModal.current = null;
-      });
-    };
-  }, []);
-
-  useEffect(() => {
-    if (volunteerRequest.isSuccess) {
-      window.setTimeout(() => {
-        setFormValue(defaultFormValue);
-        setHideModal();
-      }, 1000);
+  // smooth scroll helper
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      // fallback: set hash so router/anchor can try
+      window.location.hash = `#${id}`;
     }
-  }, [volunteerRequest.isSuccess]);
-
-  /**
-   *
-   * @param {'name'|'email'|'team'|'role'|'desc'} inputName
-   * @param {string} inputData
-   */
-  const updateFormData = (inputName, inputData) => {
-    setFormValue({
-      ...formValue,
-      [inputName]: inputData,
-    });
-  };
-
-  const submitVolunteerRequest = (e) => {
-    e.preventDefault();
-    volunteerRequest.mutate(formValue);
-    setIsMessageShown(true);
   };
 
   return (
@@ -127,322 +46,211 @@ const Volunteer = () => {
       <Header page={"about"} />
       <main className="m-0">
         <section
-          className="min-h-screen pt-16 lg:pt-24"
-          style={{
-            background:
-              "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%)",
-          }}
-        >
-          <div className="lg:pt-28 pt-40 mb-12 w-10/12 px-5 mx-auto">
-            <h1 className="lg:text-6xl md:text-5xl text-4xl font-black lg:leading-[76px]">
-              Interested in joining our <br /> volunteer team?
-            </h1>
-          </div>
+          className="min-h-screen pt-16 lg:pt-24 bg-SCA-White">
+          <div className="w-[89.666667%] mx-auto py-12 lg:py-24">
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-16">
+              {/* Left column - text */}
+              <div className="w-full lg:w-1/2">
+                <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-5 py-[10px] text-2xl font-medium mb-6">
+                  Join our mission
+                </span>
 
-          <div className="flex items-center mt-40">
-            <HeroSlider />
+                <h1 className="font-medium text-[48px] sm:text-[56px] md:text-6xl lg:text-9xl leading-tight lg:leading-[100%] text-Primary-Magenta hero-text">
+                  Volunteer with She Code Africa
+                </h1>
+
+                <p className="mt-6 text-2xl text-black font-medium max-w-2xl">
+                  We are out to celebrate and inspire female programmers and tech lovers across Africa by telling their stories.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-8">
+                  <button
+                    onClick={() => scrollToSection("volunteer-opportunities")}
+                    className="bg-Primary-Magenta text-SCA-White px-8 py-[18px] rounded-lg hover:bg-Secondary-Velvet hover:border-Secondary-Velvet bg transition-all duration-300 inline-block"
+                    type="button"
+                  >
+                    Explore opportunities
+                  </button>
+
+                  <button
+                    onClick={() => scrollToSection("our-reach")}
+                    className="border border-Primary-Magenta text-Primary-Magenta px-8 py-[18px] rounded-lg hover:bg-Secondary-Velvet hover:border-Secondary-Velvet hover:text-SCA-White transition-all duration-300 inline-block"
+                    type="button"
+                  >
+                    See our impact
+                  </button>
+                </div>
+              </div>
+
+              {/* Right column - image with badge */}
+              <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+                <div className="rounded-[24px] overflow-hidden w-full max-w-[560px] shadow-xl">
+                  <img
+                    src={Hero}
+                    alt="Volunteer with She Code Africa"
+                    className="w-full h-auto object-cover block"
+                  />
+                </div>
+
+                <div className="absolute -left-14 bottom-14 bg-Primary-Magenta text-SCA-White p-5 rounded-lg flex items-center gap-3 shadow-lg">
+                  <div className="bg-SCA-Blush rounded-full p-3 flex items-center justify-center">
+                    <img src={UserIcon} alt="user icon" className="h-6 w-6" />
+                  </div>
+                  <div className="text-left">
+                    <div className="text-base ">Active Community</div>
+                    <div className="text-base font-bold">2,600+ Members</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <div id="our-reach">
+          <OurReach />
+        </div>
+
+        {/* Volunteer Opportunities */}
+        <section id="volunteer-opportunities" className="py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <h2 className="text-center text-[34px] sm:text-4xl lg:text-[64px] font-semibold text-Primary-Magenta mb-10 hero-text">
+              Volunteer Opportunities
+            </h2>
+
+            <p className="text-center max-w-3xl mx-auto text-lg md:text-2xl sm:text-lg font-medium text-black mb-6">
+              Choose a role that matches your skills and passion. Every contribution makes a difference in equipping the next generation of African women in tech.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {volunteerCards.map((card) => (
+                <article
+                  key={card.id}
+                  className="group bg-white border-2 border-Primary-Magenta rounded-[15.29px] overflow-hidden transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(183,5,105,0.14)]"
+                >
+                  {/* image with padding and rounded inner container */}
+                  <div className="p-4 bg-SCA-White">
+                    <div
+                      className="w-full h-80 rounded-[15px] overflow-hidden bg-SCA-White"
+                    >
+                      <img
+                        src={OpportunityImg}
+                        alt={card.title}
+                        className="w-full h-full object-contain block"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold text-Primary-Magenta mb-2">
+                      {card.title}
+                    </h3>
+                    <p className="text-xl font-medium text-black mb-8">
+                      {card.description}
+                    </p>
+
+                    <div className="text-sm text-black mb-3">Skills needed:</div>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {card.skills.map((s) => (
+                        <span
+                          key={s}
+                          className="inline-block bg-[#FFB8E04D] text-Primary-Magenta text-sm px-3 py-1 rounded-full"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+
+                    <button className="w-full bg-Primary-Magenta text-SCA-White py-3 rounded-lg text-sm font-medium hover:opacity-95 transition">
+                      Apply for this role
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section id="mentor" className="my-32 w-10/12 mx-auto">
-          <article className="md:flex items-center justify-between my-40">
-            <div className="md:w-6/12">
-              <h2
-                aria-labelledby="mentor"
-                className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4"
-              >
-                Become a mentor.
-              </h2>
-              <p className="text-lg text-[#210D15] mb-3">
-                Our organization values the impact of mentorship and
-                continuously seeks enthusiastic and committed individuals to
-                join our community of mentors. If you're passionate about
-                mentoring and willing to volunteer your time, we encourage you
-                to contact us to explore the opportunities available and learn
-                more about how you can contribute.
-              </p>
-              <button
-                onClick={() => {
-                  setFormValue({
-                    ...formValue,
-                    volunteerRole: "Mentor",
-                  });
-                  setShowModal();
-                }}
-                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
-              >
-                Become a mentor
-              </button>
-            </div>
-            <img
-              src={mentors}
-              alt="Mentors"
-              className="object-contain lg:w-4/12 md:w-5/12 mt-7 md:mt-0"
-            />
-          </article>
+        {/* Volunteer Stories*/}
+        <section className="py-12 lg:py-28  bg-SCA-Cloud">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left image */}
+              <div className="lg:col-span-5">
+                <div className="rounded-[18px] overflow-hidden shadow-xl">
+                  <img
+                    src={testmonialImg}
+                    alt="Volunteer story"
+                    className="w-full h-full object-cover block rounded-[18px]"
+                  />
+                </div>
+              </div>
 
-          <article className="flex flex-wrap md:flex-nowrap flex-col-reverse md:flex-row md:items-center md:justify-between">
-            <img
-              src={speakers}
-              alt="Speakers"
-              className="object-contain lg:w-4/12 md:w-5/12 mt-7 md:mt-0"
-            />
-            <div className="lg:w-7/12 md:w-6/12">
-              <h2 className=" font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
-                Become a speaker.
-              </h2>
-              <p className="text-lg text-[#210D15] mb-3">
-                At She Code Africa, we value diversity, and we're always looking
-                for speakers from a variety of backgrounds, experiences, and
-                perspectives. Whether you're a seasoned speaker or just starting
-                out, we welcome anyone with a passion for technology and a
-                desire to share their ideas and expertise with our community.
-              </p>
-              {/* <button
-                onClick={() => {
-                  setFormValue({
-                    ...formValue,
-                    team: 'speaker',
-                  })
-                  setShowModal()
-                }}
-                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343]"
-              >
-                Become a speaker
-              </button> */}
-            </div>
-          </article>
+              {/* Content */}
+              <div className="lg:col-span-7">
+                <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-4 py-2 text-base sm:text-2xl font-medium mb-4">
+                  Volunteer Stories
+                </span>
 
-          <article className="md:flex items-center justify-between my-40">
-            <div className="md:w-6/12">
-              <h2 className="font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
-                Become a facilitator
-              </h2>
-              <p className="text-lg text-[#210D15] mb-3">
-                At She Code Africa, we believe in the power of learning and
-                collaboration, and we're always looking for passionate and
-                experienced facilitators to join our team. Whether you have
-                experience facilitating workshops, roundtable discussions, or
-                other types of events, we welcome anyone with a desire to help
-                others learn and develop their skills.
-              </p>
-              <button
-                onClick={() => {
-                  setFormValue({
-                    ...formValue,
-                    volunteerRole: "Facilitator",
-                  });
-                  setShowModal();
-                }}
-                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
-              >
-                Become a facilitator
-              </button>
-            </div>
-            <img
-              src={facilitators}
-              alt="Facilitators"
-              className="object-contain lg:w-4/12 md:w-5/12 mt-7 md:mt-0"
-            />
-          </article>
+                <h3 className="text-lg sm:text-2xl lg:text-3xl font-semibold text-black mb-6">
+                  Making a Real Difference
+                </h3>
 
-          <article className="flex flex-wrap md:flex-nowrap flex-col-reverse md:flex-row md:items-center md:justify-between">
-            <figure className="max-w-[279px] w-full h-[433px] border-[7px] rounded-[42px] overflow-hidden border-primary-main-pink md:rotate-[5deg] mt-4 md:mt-0">
-              <img
-                src={support}
-                alt="support"
-                className="object-cover h-full w-full"
-              />
-            </figure>
-            <div className="lg:w-7/12 md:w-6/12">
-              <h2 className=" font-bold text-[32px] leading-[44px] text-[#210D15] mb-4">
-                Join our support team.
-              </h2>
-              <p className="text-lg text-[#210D15] mb-3">
-                Come and be a part of our support team and share your expert
-                skills and insights with our organization. As a volunteer on our
-                support team, you'll have the chance to apply your field
-                knowledge and proficiency to our mission and create a
-                significant difference in the lives of women in tech.
-              </p>
-              <button
-                onClick={() => {
-                  setFormValue({
-                    ...formValue,
-                    volunteerRole: "Support",
-                  });
-                  setShowModal();
-                }}
-                className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
-              >
-                Join our support team
-              </button>
+                <div className="space-y-8">
+                  {/* Testimonial 1 */}
+                  <div className="">
+                    <div className="pl-0 sm:pl-6 sm:border-l-4 border-SCA-Lavender">
+                      <p className="text-base sm:text-lg italic font-light text-black leading-relaxed mb-4">
+                        "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
+                      </p>
+
+                      <div>
+                        <div className="font-semibold text-base sm:text-lg text-black">Jane Doe</div>
+                        <div className="text-sm sm:text-base text-SCA-Lavender">Mentor Volunteer, Lagos</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Testimonial 2 */}
+                  <div className="">
+                    <div className="pl-0 sm:pl-6 sm:border-l-4 border-SCA-Apricote">
+                      <p className="text-base sm:text-lg italic font-light text-black leading-relaxed mb-4">
+                        "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
+                      </p>
+
+                      <div>
+                        <div className="font-semibold text-base sm:text-lg text-black">Jane Doe</div>
+                        <div className="text-sm sm:text-base text-SCA-Apricote">Mentor Volunteer, Lagos</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </article>
+          </div>
         </section>
 
-        <JoinUs />
+        {/* Become a member section */}
+        <section className="bg-SCA-Citrine text-Primary-Magenta py-16 sm:py-[100px] text-center px-4">
+          <h2 className="font-bold text-3xl sm:text-5xl md:text-[64px] mb-4 sm:mb-6 hero-text">
+            Become a member of our community
+          </h2>
+          <p className="max-w-4xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-8 sm:mb-8">
+            Be a part of a community that celebrates diversity and empowers
+            women to thrive in tech. Connect with like-minded individuals, gain
+            access to resources and events, and help shape the future of the
+            industry.
+          </p>
+          <a
+            href="https://forms.gle/aFe2LrkZxZJtKKve7"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] text-base"
+          >
+            Register to join now
+          </a>
+        </section>
       </main>
       <Footer />
-
-      <dialog
-        ref={modal}
-        className={`backdrop:bg-black backdrop:bg-opacity-80 bg-transparent box-border animate__animated animate__faster ${animatedClass} h-screen justify-center items-center md:w-9/12 w-full mx-auto ${
-          modalOpen ? "md:flex block" : "hidden"
-        }`}
-      >
-        <section className="bg-white text-[#2D2D2D] h-auto rounded-3xl md:p-7 p-4">
-          <div className="flex justify-between items-center mb-5">
-            <h4 className="text-3xl">Volunteer Form</h4>
-            <button
-              ref={hideModal}
-              autoFocus
-              tabIndex={0}
-              onClick={setHideModal}
-              className="focus:ring-1 focus:ring-red-300 focus:outline-none"
-              aria-label="close modal"
-            >
-              <FontAwesomeIcon icon={faXmark} size="2x" />
-            </button>
-          </div>
-          <div>
-            <form
-              className="md:grid md:grid-cols-2 flex flex-col gap-10"
-              onSubmit={submitVolunteerRequest}
-            >
-              <div>
-                <label className="block" htmlFor="name">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
-                  onChange={(e) => updateFormData("fullname", e.target.value)}
-                  value={formValue.fullname}
-                  required
-                />
-              </div>
-              <div>
-                <label className="block" htmlFor="email">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
-                  onChange={(e) => updateFormData("email", e.target.value)}
-                  value={formValue.email}
-                  required
-                />
-              </div>
-              <div>
-                <label className="block" htmlFor="team">
-                  What would you like to volunteer as?
-                </label>
-                <select
-                  id="team"
-                  name="team"
-                  className="block border border-[#2D2D2D] rounded-md h-16 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full mt-2"
-                  value={formValue.volunteerRole}
-                  onChange={(e) =>
-                    updateFormData("volunteerRole", e.target.value)
-                  }
-                >
-                  <option value={""} disabled>
-                    Select a volunteer role
-                  </option>
-                  <option value={"Mentor"}>Mentor</option>
-                  {/* <option value={'speaker'}>Speaker</option> */}
-                  <option value={"Facilitator"}>Facilitator</option>
-                  <option value={"Support"}>Support</option>
-                </select>
-              </div>
-              <div>
-                <label className="block" htmlFor="experience">
-                  What is your current role?
-                </label>
-                <input
-                  type="text"
-                  id="experience"
-                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
-                  value={formValue.currentRole}
-                  required
-                  onChange={(e) =>
-                    updateFormData("currentRole", e.target.value)
-                  }
-                />
-              </div>
-              <div className="col-span-2">
-                <label className="block" htmlFor="job_desc">
-                  Why do you want to volunteer for SCA?
-                </label>
-                <textarea
-                  id="job_desc"
-                  className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2 min-h-[150px]"
-                  value={formValue.purpose}
-                  required
-                  onChange={(e) => updateFormData("purpose", e.target.value)}
-                ></textarea>
-              </div>
-              {isMessageShown ? (
-                <div className="flex justify-center col-span-2">
-                  {volunteerRequest.isError ? (
-                    <div className=" bg-red-800 text-white py-3 px-6 ">
-                      An error occurred:{" "}
-                      {volunteerRequest.error.responseText ||
-                        volunteerRequest.error.message}
-                    </div>
-                  ) : null}
-
-                  {volunteerRequest.isSuccess ? (
-                    <div className=" bg-green-700 text-white py-3 px-6">
-                      Request has been sent, we'll get back to you shortly
-                    </div>
-                  ) : null}
-                </div>
-              ) : null}
-
-              <Captcha />
-              <div className="text-center w-full col-span-2">
-                <button
-                  type="submit"
-                  className="capitalize bg-primary-main-pink text-white hover:bg-opacity-80  border border-primary-main-pink py-4 px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu font-bold text-lg"
-                  disabled={volunteerRequest.isLoading}
-                >
-                  {volunteerRequest.isLoading ? (
-                    <span className="flex gap-x-1 items-center">
-                      <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                      <span>Sending Request</span>
-                    </span>
-                  ) : (
-                    <span>Submit form</span>
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </dialog>
     </>
   );
 };

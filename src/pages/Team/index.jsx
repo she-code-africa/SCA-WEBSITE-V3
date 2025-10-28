@@ -96,9 +96,13 @@ const Team = () => {
 
   // filter members
   const filtered =
-    data?.filter((member) =>
-      activeSelection === "" ? true : member.teamCategory?.name === activeSelection
-    ) || [];
+    data
+      ?.filter((member) =>
+        activeSelection === ""
+          ? true
+          : member.teamCategory?.name === activeSelection
+      )
+      ?.sort((a, b) => a.position - b.position) || [];
 
   // split into full rows + last row
   const itemsPerRow = cols;
@@ -136,12 +140,17 @@ const Team = () => {
                 Meet The SCA Team
               </h1>
               <p className="mt-6 text-2xl leading-9 text-Secondary-Velvet md:max-w-3xl">
-                Peep the faces behind the initiatives and impacts here at She Code Africa.
-                These wonderful people work behind the scene, everyday to keep our vision working.
+                Peep the faces behind the initiatives and impacts here at She
+                Code Africa. These wonderful people work behind the scene,
+                everyday to keep our vision working.
               </p>
             </div>
             <div>
-              <img src={box} alt="She Code Africa Logo" className="w-72 h-72 object-cover" />
+              <img
+                src={box}
+                alt="She Code Africa Logo"
+                className="w-72 h-72 object-cover"
+              />
             </div>
           </div>
         </section>
@@ -173,13 +182,15 @@ const Team = () => {
             ) : isLoading ? (
               <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10">
                 {[...Array(8)].map((_, index) => (
-                  <Loading  key={index} />
+                  <Loading key={index} />
                 ))}
               </div>
             ) : (
               <>
                 {/* Render full rows */}
-                {Array.from({ length: Math.floor(fullMembers.length / cols) }).map((_, rowIdx) => {
+                {Array.from({
+                  length: Math.floor(fullMembers.length / cols),
+                }).map((_, rowIdx) => {
                   const start = rowIdx * cols;
                   const rowMembers = fullMembers.slice(start, start + cols);
                   const colors = [
@@ -199,7 +210,10 @@ const Team = () => {
                           key={idx}
                           image={member.image || avatar}
                           name={member.name}
-                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          teamRole={
+                            member.role ||
+                            `${member.teamCategory?.name || "Team"} member`
+                          }
                           bgColor={bgColor}
                         />
                       ))}
@@ -229,7 +243,10 @@ const Team = () => {
                           key={`last-${idx}`}
                           image={member.image || avatar}
                           name={member.name}
-                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          teamRole={
+                            member.role ||
+                            `${member.teamCategory?.name || "Team"} member`
+                          }
                           bgColor={bgColor}
                         />
                       );

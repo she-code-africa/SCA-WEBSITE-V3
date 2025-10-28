@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,6 +14,16 @@ import HamburgerIcon from "./HamburgerMenu";
 import navIcon1 from "../../assets/v2/images/icons/navIcon1.png";
 import navIcon2 from "../../assets/v2/images/icons/navIcon2.png";
 import navIcon3 from "../../assets/v2/images/icons/navIcon3.png";
+import initIcon from "../../assets/v2/images/icons/initiativesIcon.png";
+import eventsIcon from "../../assets/v2/images/icons/eventsIcon.png";
+import donateIcon from "../../assets/v2/images/icons/donateIcon.png";
+import partnerIcon from "../../assets/v2/images/icons/partnerIcon.png";
+import volunteerIcon from "../../assets/v2/images/icons/volunteerIcon.png";
+import chaptersIcon from "../../assets/v2/images/icons/chaptersIcon.png";
+import soa from "../../assets/v2/images/icons/soa.png";
+import sop from "../../assets/v2/images/icons/sop.png";
+import soe from "../../assets/v2/images/icons/soe.png";
+
 import { icon } from "@fortawesome/fontawesome-svg-core";
 import { IoClose } from "react-icons/io5";
 
@@ -65,10 +75,15 @@ const Header = ({ page }) => {
         {
           to: paths.initiatives,
           text: "Initiatives",
-          icon: navIcon2,
+          icon: initIcon,
           subText: "Small sample text here",
         },
-        { to: paths.events, text: "Events", subText: "Small sample text here" },
+        {
+          to: paths.events,
+          text: "Events",
+          subText: "Small sample text here",
+          icon: eventsIcon,
+        },
       ],
     },
     {
@@ -83,19 +98,19 @@ const Header = ({ page }) => {
         {
           to: paths.donate,
           text: "Donate To A Cause",
-          icon: navIcon2,
+          icon: donateIcon,
           subText: "Small sample text here",
         },
         {
           to: paths.partner,
           text: "Partner With Us",
-          icon: navIcon2,
+          icon: partnerIcon,
           subText: "Small sample text here",
         },
         {
           to: paths.volunteer,
           text: "Volunteer With Us",
-          icon: navIcon2,
+          icon: volunteerIcon,
           subText: "Small sample text here",
         },
 
@@ -119,7 +134,7 @@ const Header = ({ page }) => {
         {
           to: paths.chapters,
           text: "SCA Chapters",
-          icon: navIcon2,
+          icon: chaptersIcon,
           subText: "Small sample text here",
         },
       ],
@@ -131,6 +146,7 @@ const Header = ({ page }) => {
   const body = window.document.body;
   const classList = [`max-h-screen`, `overflow-hidden`];
   const path = location.pathname;
+  const menuRef = useRef(null);
 
   const handleOpenMenu = () => {
     setIsOpen(true);
@@ -152,9 +168,34 @@ const Header = ({ page }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
+  // 👇 CLOSE DROPDOWN ON OUTSIDE CLICK (Desktop)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Only close on large screens
+      if (window.innerWidth >= 1024 && menuRef.current) {
+        if (!menuRef.current.contains(event.target)) {
+          setSelectedMenu(null);
+        }
+      }
+    };
+
+    if (selectedMenu !== null) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [selectedMenu]);
+
   return (
     <header className="fixed left-0 right-0 top-0 w-full bg-white z-[2] py-6 shadow-lg">
-      <nav className="w-[90%] mx-auto max-w-[1256px] flex justify-between gap-5 items-center">
+      <nav
+        className="w-[90%] mx-auto max-w-[1256px] flex justify-between gap-5 items-center"
+        ref={menuRef}
+      >
         {/* logo and hamburger for mobile */}
         <div className="w-full lg:w-fit flex justify-between items-center gap-6">
           <div className="w-full max-w-[150px] sm:max-w-[216px]">
@@ -266,7 +307,7 @@ const Header = ({ page }) => {
                     )}{" "}
                     {menuItem.list.length > 0 && (
                       <button
-                        className={`hidden lg:inline-block ${
+                        className={`inline-block ${
                           path.includes(menuItem.text.toLowerCase())
                             ? "text-primary-main-pink font-semibold"
                             : ""
@@ -285,46 +326,54 @@ const Header = ({ page }) => {
                     )}
                   </span>
                   {/* mobile nav */}
-                  <ul
-                    className={`lg:hidden top-12 lg:pt-5 px-4 lg:px-[18px] w-max ${
-                      idx === menuItems.length - 1 ? "right-0" : "left-0"
-                    }  lg:rounded-lg lg:shadow-2xl`}
-                  >
-                    {menuItem.list.map((item, index) => (
-                      <li
-                        key={index}
-                        className={`w-full flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
-                      >
-                        <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
-                          <img src={item.icon || navIcon2} alt={item.text} />
-                        </figure>
 
-                        <Link
-                          to={item.to}
-                          className={`flex flex-col gap-1 ${
-                            path === item.to && "text-primary-main-pink"
-                          }`}
+                  {menuItem.list.length > 0 && selectedMenu === idx && (
+                    <ul className={`  lg:hidden  px-4 lg:px-[18px] w-max `}>
+                      {menuItem.list.map((item, index) => (
+                        <li
+                          key={index}
+                          className={`w-full flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
                         >
-                          <span className="inline-block font-semibold text-base">
-                            {item.text}{" "}
-                          </span>
-                          <span
-                            className={`inline-block  text-sm font-normal ${
-                              path === item.to
-                                ? "text-primary-main-pink"
-                                : "text-[#434343]"
+                          <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
+                            {item.text.toLowerCase().includes("engineering") ? (
+                              <img src={soe} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("product") ? (
+                              <img src={sop} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("applied") ? (
+                              <img src={soa} alt={item.text} />
+                            ) : (
+                              <img src={item.icon} alt={item.text} />
+                            )}
+                          </figure>
+
+                          <Link
+                            to={item.to}
+                            className={`flex flex-col gap-1 ${
+                              path === item.to && "text-primary-main-pink"
                             }`}
                           >
-                            {item.subText || "Small sample text here"}{" "}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                            <span className="inline-block font-semibold text-sm">
+                              {item.text}{" "}
+                            </span>
+                            <span
+                              className={`inline-block  text-xs font-normal ${
+                                path === item.to
+                                  ? "text-primary-main-pink"
+                                  : "text-[#434343]"
+                              }`}
+                            >
+                              {item.subText || "Small sample text here"}{" "}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
                   {/* desktop */}
                   {menuItem.list.length > 0 && selectedMenu === idx && (
                     <ul
-                      className={`absolute  bg-white top-12 pt-5 px-[18px] w-max ${
+                      className={` hidden lg:block absolute  bg-white top-12 py-5 px-5 w-max ${
                         idx === menuItems.length - 1 ? "right-0" : "left-0"
                       }  rounded-lg shadow-2xl`}
                     >
@@ -334,7 +383,15 @@ const Header = ({ page }) => {
                           className={`w-full flex items-center gap-[18px] py-[18px]`}
                         >
                           <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
-                            <img src={item.icon || navIcon2} alt={item.text} />
+                            {item.text.toLowerCase().includes("engineering") ? (
+                              <img src={soe} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("product") ? (
+                              <img src={sop} alt={item.text} />
+                            ) : item.text.toLowerCase().includes("applied") ? (
+                              <img src={soa} alt={item.text} />
+                            ) : (
+                              <img src={item.icon} alt={item.text} />
+                            )}
                           </figure>
 
                           <Link
@@ -366,7 +423,7 @@ const Header = ({ page }) => {
               );
             })}
             <Link
-              to={paths.donate_partner}
+              to={paths.donate}
               className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20 hover:bg-[#5C0335] transition duration-300"
             >
               Donate

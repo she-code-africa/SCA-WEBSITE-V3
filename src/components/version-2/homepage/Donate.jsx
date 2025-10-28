@@ -7,7 +7,7 @@ const Donate = () => {
     <section className="w-full  bg-magentaPattern bg-cover bg-no-repeat py-24">
       <div className="w-[90%] mx-auto xl:w-full xl:max-w-[1256px] bg-white py-12 px-6 rounded-[30px] lg:flex lg:items-center lg:justify-between">
         <article className="lg:w-full lg:max-w-[528px] w-[90%] mx-auto">
-          <h3 className="text-[32px] md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#7D355D] hero-text max-w-[474px] w-full">
+          <h3 className="text-4xl md:text-5xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#7D355D] hero-text max-w-[474px] w-full">
             Donate to a cause
           </h3>
 
@@ -19,7 +19,7 @@ const Donate = () => {
 
           <div className="mt-8 max-w-[152px] w-full rounded-lg overflow-hidden">
             <Link
-              to="/donate-partner"
+              to="/donate"
               className="flex items-center justify-center  max-w-[152px] h-[55px] bg-primary-main-pink text-white  hover:bg-[#5C0335] transition-all duration-300 text-base"
             >
               Donate here
