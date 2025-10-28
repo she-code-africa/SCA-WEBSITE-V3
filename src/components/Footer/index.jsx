@@ -36,7 +36,7 @@ const Footer = () => {
   return (
     <footer className="pt-10 md:mt-20">
       <div className="container xl:mx-auto px-6 py-6 lg:py-10 mb-14">
-        <section className="w-full flex flex-col lg:flex-row lg:items-center  lg:gap-10 lg:justify-center">
+        <section className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-10 lg:justify-center">
           <div className="max-w-[150px] h-[162px] w-full hidden lg:block">
             <img
               src={logo}
@@ -171,12 +171,7 @@ const Footer = () => {
               >
                 Join Our Community
               </a>
-              <Link
-                to={paths.contactUs}
-                className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
-              >
-                Sign Up For Our Newsletter
-              </Link>
+              
               {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
               <div className="block mb-5">Follow Us On Social Media</div>
               <div className="flex gap-x-3 mb-5">

@@ -40,16 +40,59 @@ const Team = () => {
   }, []);
 
   // collect unique categories
-  const tags = useMemo(
-    () =>
-      data?.filter((team) => team.teamCategory?.name).map((team) => team.teamCategory.name) || [],
-    [data]
-  );
+  const tags = useMemo(() => data?.map((team) => team.teamCategory?.name).filter(Boolean) || [], [data]);
   const uniqueTags = useMemo(() => Array.from(new Set(tags)), [tags]);
 
-  useEffect(() => {
-    setActiveSelection(uniqueTags[0] || "");
+  // robust ordering: prefer Full-time Employee, then Support team, then Advisors
+  const orderedTags = useMemo(() => {
+    // helpers that try exact match first, then fallback to contains (case-insensitive)
+    const findMatch = (candidates) => {
+      for (const cand of candidates) {
+        const exact = uniqueTags.find((t) => t?.toLowerCase().trim() === cand.toLowerCase().trim());
+        if (exact) return exact;
+      }
+      for (const cand of candidates) {
+        const partial = uniqueTags.find((t) => t?.toLowerCase().includes(cand.toLowerCase().trim()));
+        if (partial) return partial;
+      }
+      return null;
+    };
+
+    const desiredGroups = [
+      ["Full-time Employee", "Full time Employee", "Full-time employee", "Full time employee", "Full-time", "Full time"],
+      ["Support Team", "Support team", "Support", "support team"],
+      ["Advisors", "Advisor", "advisors", "advisor"],
+    ];
+
+    const inOrder = [];
+    const seen = new Set();
+
+    // push desired groups in order when present
+    desiredGroups.forEach((group) => {
+      const match = findMatch(group);
+      if (match && !seen.has(match)) {
+        inOrder.push(match);
+        seen.add(match);
+      }
+    });
+
+    // append any remaining tags preserving discovery order
+    uniqueTags.forEach((t) => {
+      if (!seen.has(t)) {
+        inOrder.push(t);
+        seen.add(t);
+      }
+    });
+
+    return inOrder;
   }, [uniqueTags]);
+
+  // set default selection: pick the full-time-like tag if present, otherwise first ordered tag
+  useEffect(() => {
+    const preferredFull = orderedTags.find((t) => t.toLowerCase().includes("full"));
+    const defaultTag = preferredFull || orderedTags[0] || "";
+    setActiveSelection(defaultTag);
+  }, [orderedTags]);
 
   // filter members
   const filtered =
@@ -87,7 +130,7 @@ const Team = () => {
       <Header />
       <main>
         <section className="bg-white mt-44">
-          <div className="w-11/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-24">
+          <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-24">
             <div className="text-center md:text-left">
               <h1 className="hero-text text-5xl md:text-9xl font-bold text-primary-main-pink">
                 Meet The SCA Team
@@ -104,24 +147,24 @@ const Team = () => {
         </section>
 
         <section className="py-24">
-          <div className="w-11/12 mx-auto">
+          <div className="w-[90%] mx-auto">
             {/* Category Buttons */}
             <div className="flex justify-start gap-8 mb-16 flex-wrap">
-                    {uniqueTags
-                    .filter((category) => category !== "All")
-                    .map((category) => (
-                      <button
-                      key={category}
-                      className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
-                        activeSelection === category
+              {orderedTags
+                .filter((category) => category !== "All")
+                .map((category) => (
+                  <button
+                    key={category}
+                    className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
+                      activeSelection === category
                         ? "bg-Primary-Magenta text-SCA-Cloud"
                         : "bg-SCA-Cloud text-Secondary-Velvet"
-                      }`}
-                      onClick={() => setActiveSelection(category)}
-                      >
-                      {category}
-                      </button>
-                    ))}
+                    }`}
+                    onClick={() => setActiveSelection(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
             </div>
 
             {/* Team Grid */}
@@ -149,7 +192,7 @@ const Team = () => {
                   return (
                     <div
                       key={`row-${rowIdx}`}
-                      className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 gap-x-32 mb-4"
+                      className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 gap-x-32 mb-10"
                     >
                       {rowMembers.map((member, idx) => (
                         <TeamCard
