@@ -73,19 +73,19 @@ const Donate = () => {
                     </h2>
                   </div>
                   <div className="mt-10 gap-7 lg:w-[50%] md:w-[70%] mx-auto items-center flex flex-col sm:flex-row sm:justify-center">
-  <button
-    className="text-[15px] white-btn py-4 px-7 rounded-full w-full sm:w-auto"
-    onClick={() => toggleModal("individual")}
-  >
-    As an Individual
-  </button>
-  <button
-    className="pink-btn py-4 px-7 rounded-full w-full text-[15px] sm:w-auto"
-    onClick={() => toggleModal("organisation")}
-  >
-    As an Organisation
-  </button>
-</div>
+                    <button
+                      className="text-[15px] white-btn py-4 px-7 rounded-full w-full sm:w-auto"
+                      onClick={() => toggleModal("individual")}
+                    >
+                      As an Individual
+                    </button>
+                    <button
+                      className="pink-btn py-4 px-7 rounded-full w-full text-[15px] sm:w-auto"
+                      onClick={() => toggleModal("organisation")}
+                    >
+                      As an Organisation
+                    </button>
+                  </div>
 
                   {/* <div className="  mt-10 gap-7 lg:w-[50%] md:w-[70%] mx-auto items-center flex flex-col sm:flex-row sm:justify-center">
                     <button
@@ -174,7 +174,7 @@ const Donate = () => {
             </div>
           </div>
         </section>
-        
+
         <section className=" w-9/12 mx-auto ">
           <article className="md:flex items-center justify-between mt-28">
             <div className="md:w-6/12">

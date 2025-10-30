@@ -1,33 +1,65 @@
 import React from "react";
+import Calendar from "../version-2/icons/Calendar";
+import { IoMdAlarm } from "react-icons/io";
+import { IoLocationOutline } from "react-icons/io5";
 
 const Event = ({ event, isUpcoming }) => {
   return (
-    <div className="w-full mb-10">
-      <figure className="m-0 p-0 w-full h-[370px] max-w-[370px] mx-auto 2md:mx-0 border-[7px] border-primary-main-pink">
+    <div className="w-full  mb-10 max-w-[270px] border border-primary-main-pink rounded-[10px] overflow-hidden hover:shadow-[1.04px_4.15px_4.15px_3.12px_#FF149326] hover:scale-110 transition duration-300">
+      <figure className="m-0 p-0 w-full h-[333px] overflow-hidden  border-[0.5px] border-[#5C0335]">
         <img
           src={event.image ? event.image : event.images[0]}
           alt="event-pic"
-          className="w-full h-full object-contain"
+          className="w-full h-full object-cover"
         />
       </figure>
 
-      <article className="w-full md:max-w-[475px] mx-auto 2md:mx-0 mt-7 ">
-        <h3 className="text-2xl md:text-3xl capitalize font-semibold text-center 2md:text-left">
+      <article className="w-full  2md:mx-0 mt-8 px-[10px] pb-8">
+        <h3 className="text-xl  capitalize font-semibold text-primary-main-pink">
           {event.title}
         </h3>
-        <p className="mt-7 text-base text-center 2md:text-justify w-90 mx-auto 2md:mx-0 w-full truncate-text">
-          {event.description}
+        <p className="mt-[10px] text-sm text-[#7D355D] w-full max-w-full truncate">
+          {/* {event.description.length} */}
+          Event description goes in here. Just sth short that leads them to sign
+          up or register. Just like it is here.
         </p>
+
+        <div className="w-full mt-8">
+          <ul className="w-full space-y-[10px]">
+            <li className="w-full flex items-center gap-[10px]">
+              <Calendar />
+
+              <span className="text-[#7D355D] text-sm capitalize">
+                October 25, 2025
+              </span>
+            </li>
+
+            <li className="w-full flex items-center gap-[10px]">
+              <IoMdAlarm className="text-[#B70569] text-xl" />
+
+              <span className="text-[#7D355D] text-sm capitalize">
+                3:00pm WAT
+              </span>
+            </li>
+
+            <li className="w-full flex items-center gap-[10px]">
+              <IoLocationOutline className="text-[#B70569] text-xl" />
+
+              <span className="text-[#7D355D] text-sm capitalize">Zoom</span>
+            </li>
+          </ul>
+        </div>
+
         {/* text-ellipsis whitespace-nowrap overflow-hidden h-[100px] */}
         {isUpcoming ? (
-          <div className="flex mt-5 justify-center 2md:justify-start">
+          <div className="flex mt-8 w-full">
             <a
               href={event.link ? event.link : "#"}
               target="_blank"
-              className="bg-primary-main-pink text-white py-[14px] px-8 rounded-[30px] capitalize text-sm transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
+              className="bg-primary-main-pink text-white py-[10px] px-8  capitalize text-sm transition duration-300 hover:bg-[#5C0335] w-full text-center rounded-lg h-[39px] flex items-center justify-center"
               rel="noreferrer"
             >
-              register now
+              register
             </a>
           </div>
         ) : null}
