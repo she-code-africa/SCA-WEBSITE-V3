@@ -7,17 +7,12 @@ import {
   faXTwitter,
   faInstagram,
   faFacebookF,
-  faMedium,
   faYoutube,
   faLinkedinIn,
-  faGithub,
-  faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
 import { paths, apiConstants } from "../../utils";
 import { getReports } from "../../services";
-// import logo from "../../images/logo-inverted.svg";
 import logo from "../../images/new-logo/new-logo-header.png";
-import { FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
   const [openCaret, setOpenCaret] = useState(false);
@@ -39,14 +34,15 @@ const Footer = () => {
     <footer className="pt-10 md:mt-20">
       <div className="container xl:mx-auto px-6 py-6 lg:py-10 mb-14">
         <section className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-10 lg:justify-center">
-          <div className="max-w-[150px] h-[162px] w-full hidden lg:block">
-            <img
-              src={logo}
-              alt="SCA-Logo"
-              className="w-full h-full  object-contain"
-            />
-          </div>
-          <div className="w-full flex flex-col lg:flex-row gap-24 lg:justify-between lg:items-start">
+
+          <div className="w-full flex flex-col lg:flex-row gap-24 lg:justify-between lg:items-start items-center">
+            <div className="max-w-[150px] h-[162px] w-full hidden lg:block">
+              <img
+                src={logo}
+                alt="SCA-Logo"
+                className="w-full h-full  object-contain"
+              />
+            </div>
             <div className="w-full max-w-[150px] h-[100px] block lg:hidden">
               <img
                 src={logo}
@@ -57,7 +53,7 @@ const Footer = () => {
             <div aria-label="Get Involved">
               <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">
                 Get Involved
-              </p>
+              </p> 
               <Link
                 to={paths.donate}
                 className="block text-black mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
@@ -175,7 +171,6 @@ const Footer = () => {
                 Join Our Community
               </a>
               
-              {/* <Link to={paths.about} className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu">Sign Up For Our Newsletter</Link> */}
               <div className="block mb-5 text-black">
                 Follow Us On Social Media
               </div>
@@ -238,47 +233,9 @@ const Footer = () => {
                   </span>
                 </a>
 
-                {/* <a
-                  href="https://medium.com/shecodeafrica"
-                  target="_blank"
-                  title="Find us on Medium"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu"
-                >
-                  <FontAwesomeIcon icon={faMedium} />
-                </a>
-
-                <a
-                  href="https://www.twitter.com/shecodeafrica/"
-                  title="Follow us on Twitter"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-7 h-7 flex items-center justify-center"
-                >
-                  <FontAwesomeIcon icon={faXTwitter} className="text-white text-lg" />
-                </a>
-                {/* <a
-                  href="https://medium.com/shecodeafrica"
-                  target="_blank"
-                  title="Find us on Medium"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-10 h-10 flex items-center justify-center"
-                >
-                  <FontAwesomeIcon icon={faMedium} className="text-white text-2xl" />
-                </a>
-
-                <a
-                  href="https://github.com/she-code-africa"
-                  target="_blank"
-                  title="Follow us on Github"
-                  rel="noreferrer"
-                  className="focus:outline-none focus:ring focus:ring-tutu rounded-full bg-primary-main-pink w-10 h-10 flex items-center justify-center"
-                >
-                  <FontAwesomeIcon icon={faGithub} />
-                </a> */}
               </div>
             </div>
-            <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden mx-auto lg:mx-0 lg:self-center">
+            <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden lg:mx-0 lg:self-center self-start">
               <img
                 src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/85802796"
                 alt="CAF-validated-badge"
