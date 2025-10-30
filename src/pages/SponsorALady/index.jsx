@@ -4,13 +4,21 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 
 import Footer from "../../components/Footer";
-import DonateComponent from "../../components/version-2/donate";
+// import DonateComponent from "../../components/version-2/donate";
 import TheChallenge from "../../components/version-2/donate/TheChallenge";
 import OurImpact from "../../components/version-2/donate/OurImpact";
 import { testimonialCards } from "../../utils/v2";
 import TestimonialSlide from "../../components/version-2/homepage/TestimonialSlide";
+import DonateModal from "../../components/DonateModal";
 
 const SponsorALady = () => {
+  const [modal, setModal] = useState(false);
+  const [type, setType] = useState("");
+
+  const toggleModal = (type) => {
+    setType(type);
+    setModal(!modal);
+  };
   return (
     <>
       <Helmet>
@@ -34,6 +42,7 @@ const SponsorALady = () => {
       </Helmet>
 
       <Header page={"donate"} />
+      <DonateModal display={modal} type={type} toggleModal={toggleModal} />
       <main className="text-secondary-main-black w-full">
         <section className="w-full h-full bg-[#B70569] relative ">
           <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
@@ -45,20 +54,57 @@ const SponsorALady = () => {
           </figure>
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-36 pb-20 lg:pt-[159px] lg:pb-[100px] flex items-center  ">
             <div className="w-[90%] mx-auto lg:max-w-[1256px] flex flex-col lg:justify-between lg:items-center lg:flex-row ">
-              <article className="relative z-[1] w-full lg:max-w-[550px]">
-                <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
+              <article className="relative z-[1] w-full sm:max-w-[700px] lg:max-w-[550px] mx-auto lg:mx-0">
+                <h1 className="text-[64px] sm:text-7xl text-center lg:text-left lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
                   Sponsor a Tech Lady Today
                 </h1>
 
-                <p className="text-white text-base md:text-2xl font-medium mt-3">
+                <p className="text-white text-base md:text-2xl font-medium mt-3 text-center lg:text-left">
                   Did you know by donating as little as $5.3 (~8,532 NGN), you'd
                   be helping us mentor and provide resources to 1 female in tech
                   in 1 day?
                 </p>
               </article>
-              <div className="w-full max-w-[568px] mt-8 lg:mt-0 relative z-[1] ">
-                <DonateComponent />
-              </div>
+              <section className="w-full max-w-[568px] mt-8 lg:mt-0 relative z-[1] mx-auto lg:mx-0">
+                <div className="bg-white rounded-xl w-full  overflow-hidden">
+                  <figure className="w-full h-[183px]">
+                    <img
+                      src={hero}
+                      alt="Who We Are"
+                      className="object-cover w-full h-full"
+                    />
+                  </figure>
+
+                  <article className="w-full mt-10 pb-20 lg:pb-[100px]">
+                    <div className="w-[90%] sm:max-w-[378px] mx-auto">
+                      <h3 className="text-primary-main-pink text-4xl sm:text-5xl text-center font-extrabold">
+                        How would you love to donate?
+                      </h3>
+
+                      <div className="mt-12 w-full items-center flex flex-col gap-4">
+                        <button
+                          title="Donate as an individual"
+                          className="h-[55px] max-w-[175px] py-[18px] px-8 w-full hover:bg-[#5C0335] transition-colors duration-300 bg-primary-main-pink text-white rounded-lg flex items-center justify-center "
+                          onClick={() => toggleModal("individual")}
+                        >
+                          As an individual
+                        </button>
+
+                        <button
+                          onClick={() => toggleModal("organisation")}
+                          title="Donate as an organisation"
+                          className="h-[55px] max-w-[196px] py-[18px] px-8 w-full hover:bg-[#5C0335] transition-colors duration-300 hover:border-[#5C0335] border border-primary-main-pink text-primary-main-pink hover:text-white rounded-lg flex items-center justify-center "
+                        >
+                          As an organisation
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                {/* 
+                Work on this behind the scenes until it is perfect
+                <DonateComponent /> */}
+              </section>
             </div>
           </div>
         </section>
