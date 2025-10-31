@@ -70,18 +70,24 @@ export const ourReachData = [
 export const testimonialCards = [
   {
     img: testimonial1,
-    text: "“Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt. Magna duis rhoncus ullamcorper massa. Tincidunt eu risus est dapibus. Mi pretium turpis ipsum feugiat et vel eu lacus nec. Adipiscing eget et molesti faucibus arcu metus urna in. Nisi egestas et vitae quam euismodrhoncus enim. Aliquam faucibus mi commodo venenatis diam ante.”",
-    author: "Queen Jane",
+    testimony:
+      "“Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt. Magna duis rhoncus ullamcorper massa. Tincidunt eu risus est dapibus. Mi pretium turpis ipsum feugiat et vel eu lacus nec. Adipiscing eget et molesti faucibus arcu metus urna in. Nisi egestas et vitae quam euismodrhoncus enim. Aliquam faucibus mi commodo venenatis diam ante.”",
+    firstName: "Queen",
+    lastName: "Jane",
   },
   {
     img: testimonial2,
-    text: "“Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt. Magna duis rhoncus ullamcorper massa. Tincidunt eu risus est dapibus. Mi pretium turpis ipsum feugiat et vel eu lacus nec. Adipiscing eget et molesti faucibus arcu metus urna in. Nisi egestas et vitae quam euismodrhoncus enim. Aliquam faucibus mi commodo venenatis diam ante.”",
-    author: "Queen Jane",
+    testimony:
+      "“Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt. Magna duis rhoncus ullamcorper massa. Tincidunt eu risus est dapibus. Mi pretium turpis ipsum feugiat et vel eu lacus nec. Adipiscing eget et molesti faucibus arcu metus urna in. Nisi egestas et vitae quam euismodrhoncus enim. Aliquam faucibus mi commodo venenatis diam ante.”",
+    firstName: "Queen",
+    lastName: "Jane",
   },
   {
     img: testimonial3,
-    text: "“Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt. Magna duis rhoncus ullamcorper massa. Tincidunt eu risus est dapibus. Mi pretium turpis ipsum feugiat et vel eu lacus nec. Adipiscing eget et molesti faucibus arcu metus urna in. Nisi egestas et vitae quam euismodrhoncus enim. Aliquam faucibus mi commodo venenatis diam ante.”",
-    author: "Queen Jane",
+    testimony:
+      "“Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet pharetra varius proin eleifend leo. Sagittis aliquet urna suspendisse in ut tincidunt. Magna duis rhoncus ullamcorper massa. Tincidunt eu risus est dapibus. Mi pretium turpis ipsum feugiat et vel eu lacus nec. Adipiscing eget et molesti faucibus arcu metus urna in. Nisi egestas et vitae quam euismodrhoncus enim. Aliquam faucibus mi commodo venenatis diam ante.”",
+    firstName: "Queen",
+    lastName: "Jane",
   },
 ];
 

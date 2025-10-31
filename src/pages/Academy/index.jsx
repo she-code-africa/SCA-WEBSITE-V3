@@ -13,7 +13,10 @@ import Donate from "../../components/version-2/homepage/Donate";
 import ProgramsComponent from "../../components/version-2/academy/ProgramsComponent";
 
 const LandingPage = () => {
-  const { data, isLoading } = useQuery({queryKey:[apiConstants.academy], queryFn:()=>getAllSchools()});
+  const { data, isLoading } = useQuery({
+    queryKey: [apiConstants.academy],
+    queryFn: () => getAllSchools(),
+  });
 
   const [schools, setSchools] = useState([]);
 
@@ -56,7 +59,7 @@ const LandingPage = () => {
           </figure>
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 flex justify-center items-center ">
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[800px] text-center">
-              <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
+              <h1 className="text-[64px] sm:text-8xl md:leading-[130px] md:text-9xl text-white hero-text ">
                 Learn, Build, Lead
               </h1>
 

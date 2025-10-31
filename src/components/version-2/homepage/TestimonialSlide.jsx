@@ -17,13 +17,13 @@ const TestimonialSlide = ({ testimonialCards, isLoading }) => {
         <>
           {testimonialCards?.slice(0, 3).map((item, i) => (
             <div
-              className={`w-full max-w-[400px] rounded-2xl overflow-hidden p-0 m-0 ${
+              className={`w-full max-w-[400px]  rounded-2xl overflow-hidden p-0 m-0 ${
                 cardStyles[i % testimonialCards.length]
               } `}
               key={i}
             >
               <div
-                className={`w-full h-full ${i === 0 && "bg-[#FFB8E0]"} ${
+                className={`w-full min-h-[400px] ${i === 0 && "bg-[#FFB8E0]"} ${
                   i === 1 && "bg-[#DDFF8F]"
                 } ${i === 2 && "bg-[#FFF88F]"} clip-testimonial bg-no-repeat`}
                 style={{
@@ -31,13 +31,13 @@ const TestimonialSlide = ({ testimonialCards, isLoading }) => {
                   backgroundSize: "181px 158px",
                 }}
               >
-                <article className="py-28 px-9 w-full h-full max-w-[350px] ">
+                <article className="py-28 px-9 w-full  h-full max-w-[350px] ">
                   <p className={`leading-normal text-sm font-medium`}>
                     {item.testimony}
                   </p>
 
                   <h4 className="mt-3 font-semibold text-sm leading-normal text-black">
-                    - Queen Jane
+                    - {item.firstName} {item.lastName}
                   </h4>
                 </article>
               </div>
