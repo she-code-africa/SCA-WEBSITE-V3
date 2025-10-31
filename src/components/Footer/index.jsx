@@ -31,24 +31,24 @@ const Footer = () => {
   }, [isLoading]);
 
   return (
-    <footer className="pt-10 md:mt-20">
+    <footer className="pt-10 lg:mt-20">
       <div className="container xl:mx-auto px-6 py-6 lg:py-10 mb-14">
         <section className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-10 lg:justify-center">
-          <figure className="max-w-[150px] h-[162px] w-full hidden lg:block mb-24 lg:mb-0 lg:mr-24">
+          <figure className="max-w-[150px] h-[162px] w-full hidden lg:block mb-12 lg:mb-0 lg:mr-24">
             <img
               src={logo}
               alt="SCA-Logo"
               className="w-full h-full  object-contain"
             />
           </figure>
-          <figure className="w-full max-w-[150px] h-[100px] block lg:hidden mb-24 lg:mb-0 ">
+          <figure className="w-full max-w-[150px] h-[100px] block lg:hidden mb-12 lg:mb-0 ">
             <img
               src={logo}
               alt="SCA-Logo"
               className="w-full h-full object-contain"
             />
           </figure>
-          <div className="w-full flex flex-wrap lg:flex-row gap-24 lg:justify-between lg:items-start">
+          <div className="w-full flex flex-wrap lg:flex-row gap-12 lg:gap-24 justify-between lg:items-start">
             <div aria-label="Get Involved">
               <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">
                 Get Involved
