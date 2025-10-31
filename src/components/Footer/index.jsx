@@ -31,29 +31,28 @@ const Footer = () => {
   }, [isLoading]);
 
   return (
-    <footer className="pt-10 md:mt-20">
+    <footer className="pt-10 lg:mt-20">
       <div className="container xl:mx-auto px-6 py-6 lg:py-10 mb-14">
         <section className="w-full flex flex-col lg:flex-row lg:items-center lg:gap-10 lg:justify-center">
-
-          <div className="w-full flex flex-col lg:flex-row gap-24 lg:justify-between lg:items-start items-center">
-            <div className="max-w-[150px] h-[162px] w-full hidden lg:block">
-              <img
-                src={logo}
-                alt="SCA-Logo"
-                className="w-full h-full  object-contain"
-              />
-            </div>
-            <div className="w-full max-w-[150px] h-[100px] block lg:hidden">
-              <img
-                src={logo}
-                alt="SCA-Logo"
-                className="w-full h-full object-contain"
-              />
-            </div>
+          <figure className="max-w-[150px] h-[162px] w-full hidden lg:block mb-12 lg:mb-0 lg:mr-24">
+            <img
+              src={logo}
+              alt="SCA-Logo"
+              className="w-full h-full  object-contain"
+            />
+          </figure>
+          <figure className="w-full max-w-[150px] h-[100px] block lg:hidden mb-12 lg:mb-0 ">
+            <img
+              src={logo}
+              alt="SCA-Logo"
+              className="w-full h-full object-contain"
+            />
+          </figure>
+          <div className="w-full flex flex-wrap lg:flex-row gap-12 lg:gap-24 justify-between lg:items-start">
             <div aria-label="Get Involved">
               <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">
                 Get Involved
-              </p> 
+              </p>
               <Link
                 to={paths.donate}
                 className="block text-black mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
@@ -170,7 +169,7 @@ const Footer = () => {
               >
                 Join Our Community
               </a>
-              
+
               <div className="block mb-5 text-black">
                 Follow Us On Social Media
               </div>
@@ -232,7 +231,6 @@ const Footer = () => {
                     <FontAwesomeIcon icon={faXTwitter} />
                   </span>
                 </a>
-
               </div>
             </div>
             <figure className="m-0 p-0 w-[150px] h-[150px] rounded-full overflow-hidden lg:mx-0 lg:self-center self-start">

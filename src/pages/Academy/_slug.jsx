@@ -44,7 +44,7 @@ const AcademyPage = () => {
 
   const BgColors = ["bg-[#DDFF8F]", "bg-[#FFF88F]", "bg-[#FFB8E0]"];
 
-  console.log("school", school);
+ 
   return (
     <>
       <Helmet>
