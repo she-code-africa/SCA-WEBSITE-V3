@@ -12,7 +12,7 @@ const OurBrands = () => {
     getPartners
   );
   return (
-    <div className="w-[90%] lg:w-10/12  mx-auto">
+    <div className="w-[90%] lg:w-full mx-auto">
       {isError ? (
         <Error />
       ) : isLoading ? (

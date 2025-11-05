@@ -22,7 +22,7 @@ const PartnersLogoCarousel = ({ partnersData }) => {
         </h3>
       </div>
 
-      <div className="w-full max-w-[1256px] mx-auto overflow-hidden">
+      <div className="w-full mx-auto overflow-hidden">
         <motion.div
           ref={trackRef}
           className="flex flex-nowrap gap-8"
