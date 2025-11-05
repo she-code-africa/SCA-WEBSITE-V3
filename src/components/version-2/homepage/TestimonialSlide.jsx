@@ -15,7 +15,7 @@ const TestimonialSlide = ({ testimonialCards, isLoading }) => {
         </>
       ) : (
         <>
-          {testimonialCards?.slice(0, 3).map((item, i) => (
+          {testimonialCards.map((item, i) => (
             <div
               className={`w-full max-w-[400px]  rounded-2xl overflow-hidden p-0 m-0 ${
                 cardStyles[i % testimonialCards.length]
@@ -33,11 +33,11 @@ const TestimonialSlide = ({ testimonialCards, isLoading }) => {
               >
                 <article className="py-28 px-9 w-full  h-full max-w-[350px] ">
                   <p className={`leading-normal text-sm font-medium`}>
-                    {item.testimony}
+                    {item.testimonial}
                   </p>
 
                   <h4 className="mt-3 font-semibold text-sm leading-normal text-black">
-                    - {item.firstName} {item.lastName}
+                    - {item.name}
                   </h4>
                 </article>
               </div>

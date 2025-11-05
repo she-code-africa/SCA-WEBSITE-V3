@@ -69,7 +69,7 @@ const Home = () => {
                   // btnColor="[#B70569]"
                   label="Join our community"
                   customColor="text-white "
-                  bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] border-[#B70569] rounded-lg transition-all duration-300"
+                  bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] border-primary-main-pink rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
                   isGallery={true}
                 />
