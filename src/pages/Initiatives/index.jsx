@@ -59,11 +59,15 @@ const Initiatives = () => {
               initiative.image ||
               require("../../images/initiative/initiativeImg.jpg")
             }
-            status={initiative.isAvailable ? "Ongoing" : "Closed"}
-            primaryBtn={{
-              label: "Learn more",
-              href: initiative.initiative_url || "http://initiative.com",
-            }}
+            status={initiative.isAvailable ? "Ongoing" : "Application Closed"}
+            primaryBtn={
+              initiative.isAvailable
+                ? {
+                    label: "Apply Now",
+                    href: initiative.initiative_url || "http://initiative.com",
+                  }
+                : undefined
+            }
             secondaryBtn={{
               label: "Make donation",
               href: initiative.donation_url || "/donate-partner",

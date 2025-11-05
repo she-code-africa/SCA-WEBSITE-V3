@@ -70,7 +70,7 @@ export default function InitiativeCard({
           )}
 
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl leading-tight mb-4 text-Secondary-Grape font-bold hero-text">
+            <h2 className="w-[87%] text-3xl sm:text-4xl md:text-6xl leading-tight mb-4 text-Secondary-Grape font-bold hero-text">
               {title}
             </h2>
 

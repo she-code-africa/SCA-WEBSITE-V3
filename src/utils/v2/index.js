@@ -38,7 +38,7 @@ export const aboutUsInfoCards = [
   {
     heading: "Our Values",
     paragraph:
-      "Team work, Community, Technical growth, Leadership, Visibility.",
+      "Team work, Community, Technical growth, Leadership, Visibility, Communication.",
   },
 ];
 

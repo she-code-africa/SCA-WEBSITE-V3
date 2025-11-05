@@ -11,5 +11,5 @@ if you don't have access as @Lezette or @temilolakutelu
 ### Pushing changes
 
 - Raise a PR to merge to the `dev` branch (The main branch is the production branch and your should only merge to the production branch when you can confrim that your changes are not breaking changes) and add an active contributor to review your changes
-- Confirm your changes are updated in the staging environment: https://sca-frontend-v3-staging-9082e82b0e1a.herokuapp.com/
+- Confirm your changes are updated in the staging environment: https://website-v4-staging-06bf9af5e258.herokuapp.com/
 - After a successful deploy or update to the staging env raise a PR from the `dev` branch to merge to the `main` branch

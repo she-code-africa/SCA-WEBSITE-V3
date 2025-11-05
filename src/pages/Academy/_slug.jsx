@@ -91,12 +91,12 @@ const AcademyPage = () => {
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() === "school of product" &&
-                          "Products"}
+                          "Product"}
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() ===
-                            "school of applied sciences" &&
-                          "Applied Sciences"}
+                            "school of applied skills" &&
+                          "Applied Skills"}
                       </span>
                     </h1>
                     <h1 className="text-8xl hero-text hidden sm:block">
@@ -111,12 +111,12 @@ const AcademyPage = () => {
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() === "school of product" &&
-                          "Products"}
+                          "Product"}
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() ===
-                            "school of applied sciences" &&
-                          "Applied Sciences"}
+                            "school of applied skills" &&
+                          "Applied Skills"}
                       </span>
                     </h1>
 
@@ -137,7 +137,7 @@ const AcademyPage = () => {
                       {school &&
                         school?.name &&
                         school?.name.toLowerCase() ===
-                          "school of applied sciences" &&
+                          "school of applied skills" &&
                         "Building Africa’s next generation of product leaders."}
                     </p>
 
@@ -184,7 +184,7 @@ const AcademyPage = () => {
 
           <div className="w-full flex-col sm:flex-row flex items-center justify-center lg:justify-center gap-10 lg:gap-20 mt-10 lg:mt-0">
             {[
-              "School of Applied Sciences",
+              "School of Applied Skills",
               "School of Engineering",
               "School of Product",
             ]

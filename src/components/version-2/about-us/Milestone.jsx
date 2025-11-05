@@ -3,7 +3,7 @@ import { milestoneData } from "../../../utils/v2";
 
 const Milestone = () => {
   return (
-    <section className="w-full bg-[rgba(255,184,224,1)] py-16">
+    <section className="w-full bg-SCA-White py-16">
       <div className="w-[90%] max-w-[1239px] mx-auto">
         <article className="text-center w-full text-secondary-main-black max-w-[768px] mx-auto">
           <h3 className="text-4xl text-center  lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">

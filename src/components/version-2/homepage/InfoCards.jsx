@@ -1,7 +1,7 @@
 import React from "react";
 
 const InfoCards = ({ heading, paragraph, idx }) => {
-  const widths = ["327px", "559px", "490px"];
+  const widths = ["278px", "690px", "490px"];
 
   return (
     <article className={`w-full max-w-${widths[idx] || ""}`}>

@@ -176,11 +176,8 @@ const Chapters = () => {
           <h2 className="font-bold text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 hero-text">
             Lead a chapter today
           </h2>
-          <p className="max-w-xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-6 sm:mb-8">
-            Lorem ipsum dolor sit amet consectetur. Iaculis ornare quam pretium
-            pellentesque odio viverra. Non aliquam eget molestie ipsum mollis.
-            Fringilla fusce interdum urna leo pharetra dictum odio lectus. Porta
-            lectus vestibulum.
+          <p className="max-w-xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-6 sm:mb-12">
+            Can’t find a chapter near you? Take the first step to lead a chapter in your city or campus, and become a changemaker in your community.
           </p>
           <Link
             to="#"
@@ -195,7 +192,7 @@ const Chapters = () => {
           <h2 className="font-bold text-3xl sm:text-5xl md:text-[64px] mb-4 sm:mb-6 hero-text">
             Become a member of our community
           </h2>
-          <p className="max-w-xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-6 sm:mb-8">
+          <p className="max-w-xl sm:max-w-[687px] mx-auto text-lg sm:text-2xl mb-6 sm:mb-12">
             Be a part of a community that celebrates diversity and empowers
             women to thrive in tech. Connect with like-minded individuals, gain
             access to resources and events, and help shape the future of the
