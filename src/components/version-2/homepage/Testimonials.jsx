@@ -11,8 +11,6 @@ const OurQueensTestimonials = () => {
     queryFn: () => getTestimonials(),
   });
 
-  console.log("testimonials", testimonials);
-
   return (
     <section className="w-full relative pt-20 pb-28 lg:pb-40 mt-20 lg:mt-32 testmonialBg">
       <article className="w-full">
@@ -20,7 +18,7 @@ const OurQueensTestimonials = () => {
           Our Queens’ Experiences
         </h3>
         <p className="text-lg md:text-2xl mt-3 text-center">
-          Behind every number is a girl whose life has been transformed 
+          Behind every number is a girl whose life has been transformed
         </p>
       </article>
 

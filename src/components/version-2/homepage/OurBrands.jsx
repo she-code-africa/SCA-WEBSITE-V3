@@ -5,6 +5,7 @@ import Loading from "../../Loading";
 import { useQuery } from "@tanstack/react-query";
 import { getPartners } from "../../../services";
 import { apiConstants } from "../../../utils";
+import { motion } from "framer-motion";
 
 const OurBrands = () => {
   const { isLoading, isError, data } = useQuery(
@@ -12,7 +13,13 @@ const OurBrands = () => {
     getPartners
   );
   return (
-    <div className="w-[90%] lg:w-full mx-auto">
+    <motion.div
+      className="w-[90%] lg:w-full mx-auto"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
       {isError ? (
         <Error />
       ) : isLoading ? (
@@ -20,7 +27,7 @@ const OurBrands = () => {
       ) : (
         <PartnersLogoSlider partnersData={data} />
       )}
-    </div>
+    </motion.div>
   );
 };
 
