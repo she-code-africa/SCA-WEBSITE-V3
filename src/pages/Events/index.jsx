@@ -311,10 +311,10 @@ const Events = () => {
               <a
                 href="https://bit.ly/joinshecodeafrica"
                 target="_blank"
-                className="bg-primary-main-pink text-white py-[10px] px-8  capitalize text-base transition duration-300 hover:bg-[#5C0335] w-full max-w-[208px] text-center rounded-lg h-[55px] flex items-center justify-center"
+                className="bg-primary-main-pink text-white py-[10px] px-8  text-base transition duration-300 hover:bg-[#5C0335] w-full max-w-[129px] text-center rounded-lg h-[55px] flex items-center justify-center"
                 rel="noreferrer"
               >
-                Register to join now
+                Join now
               </a>
             </motion.div>
           </motion.article>

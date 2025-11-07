@@ -13,6 +13,7 @@ const Event = ({ event, isUpcoming, i }) => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.6, delay: i * 0.1 }}
       whileHover={{
         scale: 1.05,
