@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
 
-const SchoolProgram = ({ bgColors, slug }) => {
+const SchoolProgram = ({ bgColors, slug, textContent }) => {
   return (
     <section className="w-full  product-program-bg ">
       <div
@@ -30,15 +30,11 @@ const SchoolProgram = ({ bgColors, slug }) => {
               slug.includes("product") ? "" : "text-[#5C0335]"
             } `}
           >
-            According to Data from Accenture, the ratio of women to men in tech
-            roles has declined in the past 35 years. Out of 50% individuals in
-            the industry, only 20% are women who are significantly represented,
-            with only 14% in software engineering and 25% in computer science
-            related roles compared to their male counterparts.
+            {textContent}
           </p>
 
           <p
-            className={`text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium ${
+            className={`text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium hidden ${
               slug.includes("product") ? "" : "text-[#5C0335]"
             }`}
           >

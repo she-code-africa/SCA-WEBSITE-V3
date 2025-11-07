@@ -14,6 +14,12 @@ import heroImg from "../../assets/v2/images/whatWeDoCardImage.jpg";
 import SchoolProgram from "../../components/version-2/academy/SchoolProgram";
 import SuccessStories from "../../components/version-2/academy/SuccessStories";
 import ResourcesCard from "../../components/version-2/shared-components/ResourcesCard";
+import {
+  engTestimonialCards,
+  productTestimonialCards,
+  skillTestimonialCards,
+} from "../../utils/v2";
+import { motion } from "framer-motion";
 
 const AcademyPage = () => {
   const { slug } = useParams();
@@ -44,7 +50,15 @@ const AcademyPage = () => {
 
   const BgColors = ["bg-[#DDFF8F]", "bg-[#FFF88F]", "bg-[#FFB8E0]"];
 
- 
+  const productTextContent =
+    "Dive into live programs at the School of Product. From product management to design, Classes are practical and project-based, guided by mentors who have built products for real users across Africa and beyond.";
+
+  const engTextContent =
+    "See what’s happening right now at the School of Engineering. Our programs are active, hands-on, and open to women ready to start or advance their careers in tech.";
+
+  const skillTextContent =
+    "Explore our live programs at our School of Applied Skills. From Technical community management, Open source contribution to Technical writing, tailored for women ready to succeed in non-tech career paths.";
+
   return (
     <>
       <Helmet>
@@ -69,7 +83,12 @@ const AcademyPage = () => {
         />
       </Helmet>
       <Header />
-      <section className="min-h-screen relative bg-white flex items-center">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="min-h-screen relative bg-white flex items-center"
+      >
         <div className="block absolute right-0 w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] h-full bg-[#F4EFEC]"></div>
         <div className="w-full py-24 lg:pt-36 relative">
           {isLoading ? (
@@ -77,9 +96,21 @@ const AcademyPage = () => {
           ) : (
             <>
               {school ? (
-                <div className="flex gap-8 items-center justify-between w-[90%] lg:w-11/12 mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="flex gap-8 items-center justify-between w-[90%] lg:w-11/12 mx-auto"
+                >
                   <article className="max-w-[518px] w-full">
-                    <h1 className="text-[70px] hero-text sm:hidden">
+                    <motion.h1
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                      className="text-[70px] hero-text sm:hidden"
+                    >
                       {/* {school.name} */}
                       School of <br />
                       <span className="text-primary-main-pink text-[80px]">
@@ -98,8 +129,14 @@ const AcademyPage = () => {
                             "school of applied skills" &&
                           "Applied Skills"}
                       </span>
-                    </h1>
-                    <h1 className="text-8xl hero-text hidden sm:block">
+                    </motion.h1>
+                    <motion.h1
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6 }}
+                      className="text-8xl hero-text hidden sm:block"
+                    >
                       {/* {school.name} */}
                       School of{" "}
                       <span className="text-primary-main-pink text-[128px]">
@@ -118,9 +155,15 @@ const AcademyPage = () => {
                             "school of applied skills" &&
                           "Applied Skills"}
                       </span>
-                    </h1>
+                    </motion.h1>
 
-                    <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl">
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl"
+                    >
                       {/* {school?.description} */}
                       {/* Empowering women to innovate the digital world, one
                       engineer at a time. */}
@@ -133,13 +176,13 @@ const AcademyPage = () => {
                       {school &&
                         school?.name &&
                         school?.name.toLowerCase() === "school of product" &&
-                        "Empowering women to innovate the digital world, one engineer at a time."}
+                        "Building Africa’s next generation of product leaders"}
                       {school &&
                         school?.name &&
                         school?.name.toLowerCase() ===
                           "school of applied skills" &&
-                        "Building Africa’s next generation of product leaders."}
-                    </p>
+                        "Building tech careers, one skill at a time."}
+                    </motion.p>
 
                     <div className="my-5 w-full max-w-[171px]">
                       <Link
@@ -152,14 +195,20 @@ const AcademyPage = () => {
                     </div>
                   </article>
 
-                  <figure className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden">
+                  <motion.figure
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden"
+                  >
                     <img
                       src={heroImg}
                       alt="hero-img"
                       className="w-full h-full object-cover"
                     />
-                  </figure>
-                </div>
+                  </motion.figure>
+                </motion.div>
               ) : (
                 <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
                   Empowering women to innovate the digital world, one engineer
@@ -169,13 +218,55 @@ const AcademyPage = () => {
             </>
           )}
         </div>
-      </section>
+      </motion.section>
 
-      <SchoolProgram bgColors={BgColors} slug={slug} />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <SchoolProgram
+          bgColors={BgColors}
+          slug={slug}
+          textContent={(() => {
+            const name = school?.name?.toLowerCase();
+            const map = {
+              "school of engineering": engTextContent,
+              "school of product": productTextContent,
+              "school of applied skills": skillTextContent,
+            };
+            return map[name] || "";
+          })()}
+        />
+      </motion.div>
 
-      <SuccessStories />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <SuccessStories
+          testimonialCards={(() => {
+            const name = school?.name?.toLowerCase();
+            const map = {
+              "school of engineering": engTestimonialCards,
+              "school of product": productTestimonialCards,
+              "school of applied skills": skillTestimonialCards,
+            };
+            return map[name] || [];
+          })()}
+        />
+      </motion.div>
 
-      <section className="w-full py-24">
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full py-24"
+      >
         <div className="flex flex-col lg:flex-row items-center justify-center w-[90%] lg:max-w-[1000px] xl:max-w-[1080px] mx-auto gap-5 sm:gap-10 lg:gap-20">
           <h3 className="text-[rgba(92,3,53,1)] hero-text text-6xl md:text-7xl lg:text-[84px] lg:max-w-[247px]">
             {" "}
@@ -203,9 +294,15 @@ const AcademyPage = () => {
               ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-magentaPattern w-full">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="bg-magentaPattern w-full"
+      >
         <div className="w-[90%] mx-auto xl:max-w-[1198px] py-[100px] xl:py-[130px]">
           <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
             Hire our Graduates
@@ -226,8 +323,14 @@ const AcademyPage = () => {
             </Link>
           </div>
         </div>
-      </section>
-      <section className="bg-primary-main-pink w-full py-20">
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="bg-primary-main-pink w-full py-20"
+      >
         <div className="w-[90%] mx-auto xl:max-w-[1256px]">
           <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
             Resources
@@ -254,7 +357,7 @@ const AcademyPage = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/*  */}
 

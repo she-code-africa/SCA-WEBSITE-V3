@@ -113,6 +113,69 @@ export const testimonialCards = [
   },
 ];
 
+export const productTestimonialCards = [
+  {
+    img: testimonial1,
+    testimonial:
+      "  They say your network is your net worth. SCA is a vibrant community packed with bright and talented women from all walks of life. I have met a few persons who have played key roles in my career journey while attending some events by the community. It's a great place to meet, connect and share ideas with like-minded individuals. There's always something to learn and the willingness to share knowledge is really amazing. The positivity is also palpable.",
+    name: "Chioma E",
+  },
+  {
+    img: testimonial2,
+    testimonial:
+      "Through this program, my confidence has grown significantly by about 80 per cent. I feel bolder and more capable of exploring technology independently. I plan to use these skills to improve my business. I am grateful for this free program, as opportunities like this are rare. It has allowed me to learn valuable skills without the financial burden that often comes with tech training. I hope there will be more opportunities like this in the future, so more people can benefit.",
+    name: "Rita O",
+  },
+  {
+    img: testimonial3,
+    testimonial:
+      "One important lesson I learned is the value of knowledge and confidence, especially for women. We shouldn’t feel limited by societal expectations or the notion that certain skills are for men. Gaining knowledge empowers you, boosts confidence, and allows you to teach others, including your children, so they are not left behind. I have always loved technology, but time constraints and my shy nature limited my exploration. Now, I am motivated to continue learning, grow my tech skills, and leverage them both professionally and personally.",
+    name: "Rachel O",
+  },
+];
+
+export const skillTestimonialCards = [
+  {
+    img: testimonial1,
+    testimonial:
+      "As an IT Engineer looking to transition to Project Management, this scholarship program came at the time I needed it the most which has contributed in my journey in the project management industry. Through this program, I have learnt a lot about the types of project management methodologies and I am grateful for this opporturnity",
+    name: "Seynabou G",
+  },
+  {
+    img: testimonial2,
+    testimonial:
+      "Preparing for the GitHub Foundations Certification exam was both an exciting and rewarding journey. I dedicated time to learning core concepts around Git, GitHub workflows, collaboration, version control, and repository management. The materials provided and the resources I found online helped build my confidence gradually. The exam itself was well-structured and tested both theoretical understanding and practical application.",
+    name: "Oyinkansola S",
+  },
+  {
+    img: testimonial3,
+    testimonial:
+      "It has been an exciting journey becoming more grounded in various aspects of IT support through the SCA x GWG scholarship opportunity. Despite my experience in the tech space, this course has significantly broadened my knowledge in several areas crucial to my career development as a technical professional.",
+    name: "Anuoluwapo O",
+  },
+];
+
+export const engTestimonialCards = [
+  {
+    img: testimonial1,
+    testimonial:
+      "As an IT Engineer looking to transition to Project Management, this scholarship program came at the time I needed it the most which has contributed in my journey in the project management industry. Through this program, I have learnt a lot about the types of project management methodologies and I am grateful for this opporturnity",
+    name: "Seynabou G",
+  },
+  {
+    img: testimonial2,
+    testimonial:
+      "The program provided not only detailed lectures but also hands-on practice through simulated labs.Additionally, the She Code Africa community has been incredibly supportive and beneficial to my growth. Thanks to this experience, I am now more confident in exploring higher-level roles in the technical support field.",
+    name: "Anuoluwapo O",
+  },
+  {
+    img: testimonial3,
+    testimonial:
+      "Went from 0 to 10 really fast in my tech journey, and I just started. I graduated from SCA cloud school, yes, it's okay to address me as a cloud engineer now.",
+    name: "Seriki A",
+  },
+];
+
 export const ourGallery1 = [galleryImg1, galleryImg2];
 
 export const ourGallery2 = [galleryImg3, galleryImg4, galleryImg5];
