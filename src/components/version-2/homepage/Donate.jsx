@@ -1,37 +1,83 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import donatePng from "../../../assets/v2/images/donatePng.jpg";
+import { motion } from "framer-motion";
 
 const Donate = () => {
+  // Define variants for staggered animation
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 80 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="w-full  bg-magentaPattern bg-cover bg-no-repeat py-24">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+      className="w-full  bg-magentaPattern bg-cover bg-no-repeat py-24"
+    >
       <div className="w-[90%] mx-auto xl:w-full xl:max-w-[1256px] bg-white py-12 px-6 rounded-[30px] lg:flex lg:items-center lg:justify-between">
-        <article className="lg:w-full lg:max-w-[528px] w-[90%] mx-auto">
+        <motion.article
+          variants={fadeInLeft}
+          className="lg:w-full lg:max-w-[528px] w-[90%] mx-auto"
+        >
           <h3 className="text-4xl md:text-5xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#7D355D] hero-text max-w-[474px] w-full">
             Donate to a cause
           </h3>
 
           <p className="text-lg md:text-2xl mt-3 leading-normal md:leading-normal">
-            Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet
-            pharetra varius proin eleifend leo. Sagittis aliquet urna
-            suspendisse in ut tincidunt.
+            Every donation opens a door for a girl in Africa to step into tech.
+            Your gift today could place a laptop, skills, or a mentor in her
+            hands. One act of giving today can change her future forever.
           </p>
 
-          <div className="mt-8 max-w-[152px] w-full rounded-lg overflow-hidden">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            className="mt-8 max-w-[152px] w-full rounded-lg overflow-hidden"
+          >
             <Link
               to="/donate"
               className="flex items-center justify-center  max-w-[152px] h-[55px] bg-primary-main-pink text-white  hover:bg-[#5C0335] transition-all duration-300 text-base"
             >
               Donate here
             </Link>
-          </div>
-        </article>
+          </motion.div>
+        </motion.article>
 
-        <figure className="hidden lg:block max-w-[538px] w-full h-[434px] rounded-[30px] overflow-hidden">
+        <motion.figure
+          variants={fadeInRight}
+          className="hidden lg:block max-w-[538px] w-full h-[434px] rounded-[30px] overflow-hidden"
+        >
           <img src={donatePng} className="w-full h-full" alt="alt-img" />
-        </figure>
+        </motion.figure>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

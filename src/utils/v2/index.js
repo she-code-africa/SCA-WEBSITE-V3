@@ -44,24 +44,49 @@ export const aboutUsInfoCards = [
 
 export const ourReachData = [
   {
-    numbers: "5k",
+    numbers: "65k",
+    description: "program beneficiaries and scholarship recipients.",
+    maxW: 599,
+  },
+  {
+    numbers: "7k",
+    description:
+      "women and girls trained through our Academy and training programs",
+    maxW: 483,
+  },
+  {
+    numbers: "40k",
+    description: "community members",
+    maxW: 498,
+  },
+  {
+    numbers: "5M",
+    description:
+      "people inspired by the stories of African girls and women in tech",
+    maxW: 531,
+  },
+];
+
+export const aboutUsReachData = [
+  {
+    numbers: "7,000",
     description:
       "women and girls trained through our Academy and training programs",
     maxW: 599,
   },
   {
-    numbers: "2674",
+    numbers: "40,000",
     description:
-      "community members across 20+ African countries and 40+ chapter locations.",
+      "community members across 20+ African countries and 40+ chapter locations",
     maxW: 483,
   },
   {
-    numbers: "64",
-    description: "program beneficiaries and scholarship recipients. ",
+    numbers: "65,000",
+    description: "program beneficiaries and scholarship recipients.",
     maxW: 498,
   },
   {
-    numbers: "4.5",
+    numbers: "5M",
     description: "people Inspired by the Stories of African Girls in Tech.",
     maxW: 531,
   },

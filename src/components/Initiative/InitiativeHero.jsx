@@ -1,5 +1,5 @@
 // src/components/HeroSection.jsx
-
+import { motion } from "framer-motion";
 import heroImage from "../../images/initiative/hero-image.jpg";
 
 export default function HeroSection() {
@@ -21,16 +21,38 @@ export default function HeroSection() {
           mixBlendMode: "multiply",
         }}
       ></div>
-      <article className="relative z-10 px-4 max-w-[900px] mx-auto">
-        <h1 className="text-5xl md:text-8xl lg:text-9xl font-medium leading-tight hero-text">
+
+      <motion.article
+        className="relative z-10 px-4 max-w-[900px] mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <motion.h1
+          className="text-5xl md:text-8xl lg:text-9xl font-medium leading-tight hero-text"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
           Equipping women with digital skills, one initiative after another
-        </h1>
-        <p className="mt-4 text-lg md:text-xl lg:text-2xl font-figtree max-w-[700px] mx-auto">
-          She Code Africa is a registered non-profit organization dedicated to
-          empowering and celebrating girls and women in technology across
-          Africa.
-        </p>
-      </article>
+        </motion.h1>
+
+        <motion.p
+          className="mt-4 text-lg md:text-xl lg:text-2xl font-figtree max-w-[700px] mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          At She Code Africa, our initiatives are how we bring our mission to
+          life, creating access, building skills, and opening doors for African
+          women and girls in technology. Each program is designed to meet our
+          community where they are, providing the right tools, support, and
+          opportunities
+        </motion.p>
+      </motion.article>
     </section>
   );
 }

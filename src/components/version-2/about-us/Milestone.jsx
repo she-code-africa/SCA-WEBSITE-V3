@@ -1,11 +1,37 @@
 import React from "react";
 import { milestoneData } from "../../../utils/v2";
+import { motion } from "framer-motion";
 
 const Milestone = () => {
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="w-full bg-SCA-White py-16">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariant}
+      className="w-full bg-SCA-White py-16"
+    >
       <div className="w-[90%] max-w-[1239px] mx-auto">
-        <article className="text-center w-full text-secondary-main-black max-w-[768px] mx-auto">
+        <motion.article
+          variants={fadeUpVariant}
+          className="text-center w-full text-secondary-main-black max-w-[768px] mx-auto"
+        >
           <h3 className="text-4xl text-center  lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
             Milestones of{" "}
             <span className="text-primary-main-pink">Innovation</span>
@@ -14,10 +40,16 @@ const Milestone = () => {
             Eight pivotal moments that transformed our vision into a movement,
             empowering women across Africa to lead in technology.
           </p>
-        </article>
+        </motion.article>
 
-        <section className="mt-10 w-full flex gap-10 xl:justify-center py-4">
-          <div className="hidden xl:block w-full">
+        <motion.section
+          variants={containerVariant}
+          className="mt-10 w-full flex gap-10 xl:justify-center py-4"
+        >
+          <motion.div
+            variants={fadeUpVariant}
+            className="hidden xl:block w-full"
+          >
             {[...Array(4)].map((_, i) => (
               <div
                 className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
@@ -34,8 +66,8 @@ const Milestone = () => {
                 </div>
               </div>
             ))}
-          </div>
-          <div className="w-full">
+          </motion.div>
+          <motion.div variants={containerVariant} className="w-full">
             {milestoneData.map(
               ({ year, title, subText, yearRange, range }, i) => (
                 <div className="flex gap-3 items-start mb-6" key={i}>
@@ -74,10 +106,14 @@ const Milestone = () => {
                 </div>
               )
             )}
-          </div>
-          <div className="hidden md:block w-full">
+          </motion.div>
+          <motion.div
+            variants={fadeUpVariant}
+            className="hidden md:block w-full"
+          >
             {[...Array(4)].map((_, i) => (
-              <div
+              <motion.div
+                variants={fadeUpVariant}
                 className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
                 key={i}
               >
@@ -90,12 +126,12 @@ const Milestone = () => {
                     the beginning
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

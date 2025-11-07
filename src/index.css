@@ -15,6 +15,11 @@ body {
   src: url("./assets/v2/fonts/Thunder-SemiBoldLC.ttf");
 }
 
+.motion-safe *[data-framer-motion] {
+  will-change: transform, opacity;
+  overflow-anchor: none;
+}
+
 .hero-text {
   font-family: Thunder, sans-serif;
 }

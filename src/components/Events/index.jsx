@@ -2,10 +2,24 @@ import React from "react";
 import Calendar from "../version-2/icons/Calendar";
 import { IoMdAlarm } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
+import { motion } from "framer-motion";
 
-const Event = ({ event, isUpcoming }) => {
+const Event = ({ event, isUpcoming, i }) => {
+  const previewText =
+    event?.description && event?.description.length > 110
+      ? event?.description.slice(0, 110) + "..."
+      : event?.description;
   return (
-    <div className="w-full  mb-10 max-w-[270px] border border-primary-main-pink rounded-[10px] overflow-hidden hover:shadow-[1.04px_4.15px_4.15px_3.12px_#FF149326] hover:scale-110 transition duration-300">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: i * 0.1 }}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.3, ease: "easeOut" },
+      }}
+      className="w-full  mb-10 max-w-[270px] border border-primary-main-pink rounded-[10px] overflow-hidden hover:shadow-[1.04px_4.15px_4.15px_3.12px_#FF149326]"
+    >
       <figure className="m-0 p-0 w-full h-[333px] overflow-hidden  border-[0.5px] border-[#5C0335]">
         <img
           src={event.image ? event.image : event.images[0]}
@@ -18,10 +32,11 @@ const Event = ({ event, isUpcoming }) => {
         <h3 className="text-xl  capitalize font-semibold text-primary-main-pink">
           {event.title}
         </h3>
-        <p className="mt-[10px] text-sm text-[#7D355D] w-full max-w-full truncate">
+        <p className="mt-[10px] text-sm text-[#7D355D] w-full max-w-full">
           {/* {event.description.length} */}
-          Event description goes in here. Just sth short that leads them to sign
-          up or register. Just like it is here.
+          {/* Event description goes in here. Just sth short that leads them to sign
+          up or register. Just like it is here. */}
+          {previewText}
         </p>
 
         <div className="w-full mt-8">
@@ -64,7 +79,7 @@ const Event = ({ event, isUpcoming }) => {
           </div>
         ) : null}
       </article>
-    </div>
+    </motion.div>
   );
 };
 
