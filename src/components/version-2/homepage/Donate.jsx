@@ -12,9 +12,7 @@ const Donate = () => {
           </h3>
 
           <p className="text-lg md:text-2xl mt-3 leading-normal md:leading-normal">
-            Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet
-            pharetra varius proin eleifend leo. Sagittis aliquet urna
-            suspendisse in ut tincidunt.
+            Every donation opens a door for a girl in Africa to step into tech. Your gift today could place a laptop, skills, or a mentor in her hands. One act of giving today can change her future forever.
           </p>
 
           <div className="mt-8 max-w-[152px] w-full rounded-lg overflow-hidden">

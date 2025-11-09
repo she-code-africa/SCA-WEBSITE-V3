@@ -9,9 +9,9 @@ const AboutUsReachSection = () => {
         <div className="w-full flex flex-col gap-10 sm:flex-row sm:justify-center">
           {ourReachData.map(({ numbers, description }, i) => (
             <div className="w-full sm:max-w-[296px]" key={i}>
-              <figure className="max-w-[76px] h-[76px] w-full overflow-hidden">
+              {/* <figure className="max-w-[76px] h-[76px] w-full overflow-hidden">
                 <img src={avatar} alt="avatar" className="w-full h-full" />
-              </figure>
+              </figure> */}
 
               <article className={`flex flex-col gap-4 w-full my-6`} key={i}>
                 <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">

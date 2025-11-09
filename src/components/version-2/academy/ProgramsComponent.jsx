@@ -39,7 +39,7 @@ const  ProgramsComponent = ({ schools }) => {
               {school.name}
             </h3>
 
-            <p className="text-xl leading-9 mt-[10px]">{school?.description}</p>
+            <p className="text-2xl font-medium leading-9 mt-[10px]">{school?.description}</p>
 
             <div className="flex mt-[30px] w-full max-w-[145px]">
               <Link

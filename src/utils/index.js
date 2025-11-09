@@ -482,7 +482,7 @@ export const ourInitiatives = [
 export const whatsinStoreForYou = [
   {
     bg: "bg-community-pink-bg",
-    text: "Access to high-quality training",
+    text: "Find your people",
   },
   {
     bg: "bg-lavendar-blush",
@@ -490,15 +490,15 @@ export const whatsinStoreForYou = [
   },
   {
     bg: "bg-white-smoke",
-    text: "Opportunities for employment and entrepreneurship",
+    text: "Access mentorship and career support",
   },
   {
     bg: "bg-lavendar-blush",
-    text: "A sense of purpose",
+    text: "Discover programs, scholarships, events and other opportunities",
   },
   {
     bg: "bg-white-smoke",
-    text: "Personal development",
+    text: "Connect with like-minded women across Africa",
   },
   {
     bg: "bg-community-pink-bg",
@@ -509,25 +509,25 @@ export const whatsinStoreForYou = [
 export const impactStats = [
   {
     id: 1,
-    number: "5k+",
+    number: "5k",
     description:
       "women and girls trained through our Academy and training programs",
   },
   {
     id: 2,
-    number: "2674+",
+    number: "2674",
     description:
       "African countries represented & 40+ chapter locations",
   },
   {
     id: 3,
-    number: "760k+",
+    number: "760k",
     description:
       "program beneficiaries and scholarship recipients. ",
   },
   {
     id: 4,
-    number: "4.5M+",
+    number: "5M",
     description:
       "people Inspired by the Stories of African Girls and women in Tech",
   },
@@ -537,25 +537,25 @@ export const WaysPartnerCards = [
   {
     id: 1,
     title: "Program Support",
-    description: "Fund or co-create training, bootcamps, and scholarships.",
+    description: "Help fund or co-create training programs, bootcamps, and scholarships that give women real skills to start tech careers.",
     bgColor: "bg-SCA-Bloom",
   },
   {
     id: 2,
     title: "Resource Contribution",
-    description: "Provide laptops, internet access, or tech tools to bridge digital gaps.",
+    description: "Donate laptops, internet access, or tech tools to help bridge the digital gap and give girls a fair chance to learn.",
     bgColor: "bg-SCA-Blush",
   },
   {
     id: 3,
     title: "Mentorship & Expertise",
-    description: "Share knowledge, industry guidance, and career opportunities.",
+    description: "Share your time, knowledge, and experience to guide women as they take their first steps in tech.",
     bgColor: "bg-SCA-Blush",
   },
   {
     id: 4,
     title: "Campaigns & Events",
-    description: "Collaborate on summits, advocacy drives, or community outreach.",
+    description: "Sponsor or co-host events & campaigns that inspire, connect, and celebrate African women in tech.",
     bgColor: "bg-SCA-Bloom",
   },
 ];

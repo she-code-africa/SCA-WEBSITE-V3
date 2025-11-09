@@ -54,14 +54,11 @@ const Home = () => {
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center ">
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
               <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
-                Empowering Women In Tech Across Africa
+                Equipping Girls and Women In Tech Across Africa
               </h1>
 
               <p className="text-white text-base md:text-2xl font-medium">
-                She Code Africa is a non-profit organization on a mission to
-                equip African girls and women with digital skills, training,
-                resources, and a thriving community, to help them build careers,
-                gain financial independence, and lead boldly in tech.
+                She Code Africa is a non-profit organization on a mission to equip African girls and women with digital skills, training, resources, and a thriving community, to help them build careers, gain financial independence, and lead boldly in tech.
               </p>
 
               <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">

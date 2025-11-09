@@ -86,8 +86,7 @@ const Events = () => {
                   She Code Africa Events
                 </h3>
                 <p className="text-xl md:text-2xl font-medium text-center lg:max-w-[702px]">
-                  Get access to events focused on empowering and getting more
-                  young girls and women into technology across Africa.
+                  Experience Community in Action through our events. From intimate workshops and community meetups to large-scale summits, we bring women and girls across Africa together, wherever they are.
                 </p>
               </article>
             </div>
@@ -222,10 +221,7 @@ const Events = () => {
             </h3>
 
             <p className="mt-8 text-primary-main-pink text-2xl text-center font-medium w-full mx-auto max-w-[750px]">
-              Be a part of a community that celebrates diversity and empowers
-              women to thrive in tech. Connect with like-minded individuals,
-              gain access to resources and events, and help shape the future of
-              the industry.
+              Be part of a community bridging the gender gap in tech, a space ran by and for African women. Connect with like-minded individuals, gain access to resources and events, and help shape the future of the industry.
             </p>
 
             <div className="mt-8 flex justify-center">
@@ -235,7 +231,7 @@ const Events = () => {
                 className="bg-primary-main-pink text-white py-[10px] px-8  capitalize text-base transition duration-300 hover:bg-[#5C0335] w-full max-w-[208px] text-center rounded-lg h-[55px] flex items-center justify-center"
                 rel="noreferrer"
               >
-                Register to join now
+                Join now
               </a>
             </div>
           </article>
