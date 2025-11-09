@@ -1,6 +1,6 @@
 import React from "react";
 
-import { aboutUsReachData, ourReachData } from "../../../utils/v2";
+import { aboutUsReachData } from "../../../utils/v2";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 
@@ -12,12 +12,6 @@ const AboutUsReachSection = () => {
         staggerChildren: 0.15,
       },
     },
-  };
-
-  // each card fade + slide up
-  const cardVariant = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
   };
 
   // Helper to extract number and suffix (e.g. "5k" → { num: 5, suffix: "k" })

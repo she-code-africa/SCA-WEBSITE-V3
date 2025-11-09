@@ -56,11 +56,10 @@ const Donate = () => {
               </h1>
 
               <p className="text-white text-base md:text-2xl max-w-[800px] mx-auto font-medium">
-                Real change doesn’t happen alone. It takes people,
-                organizations, and communities pulling in the same direction.
-                That’s why we open our doors to partners who believe in the
-                power of African women and girls in tech. Together, we can make
-                opportunities bigger, reach further, and move faster.
+                You have the power to shape the future of tech in Africa. By
+                partnering with She Code Africa, you’re creating real
+                opportunities for thousands of African girls and women to rise,
+                lead, and redefine what’s possible.
               </p>
             </article>
           </div>

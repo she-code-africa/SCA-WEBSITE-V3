@@ -516,20 +516,42 @@ export const impactStats = [
   {
     id: 2,
     number: "2674+",
-    description:
-      "African countries represented & 40+ chapter locations",
+    description: "African countries represented & 40+ chapter locations",
   },
   {
     id: 3,
     number: "760k+",
-    description:
-      "program beneficiaries and scholarship recipients. ",
+    description: "program beneficiaries and scholarship recipients. ",
   },
   {
     id: 4,
     number: "4.5M+",
     description:
       "people Inspired by the Stories of African Girls and women in Tech",
+  },
+];
+
+export const sponsorImpactStats = [
+  {
+    id: 1,
+    number: "65000",
+    description: "program beneficiaries and scholarship recipients. ",
+  },
+  {
+    id: 2,
+    number: "40000",
+    description: "community members.",
+  },
+  {
+    id: 3,
+    number: "7000",
+    description:
+      "women and girls trained through our Academy and training programs.",
+  },
+  {
+    id: 4,
+    number: "5M",
+    description: "people Inspired by the Stories of African Girls in Tech.",
   },
 ];
 
@@ -543,19 +565,22 @@ export const WaysPartnerCards = [
   {
     id: 2,
     title: "Resource Contribution",
-    description: "Provide laptops, internet access, or tech tools to bridge digital gaps.",
+    description:
+      "Provide laptops, internet access, or tech tools to bridge digital gaps.",
     bgColor: "bg-SCA-Blush",
   },
   {
     id: 3,
     title: "Mentorship & Expertise",
-    description: "Share knowledge, industry guidance, and career opportunities.",
+    description:
+      "Share knowledge, industry guidance, and career opportunities.",
     bgColor: "bg-SCA-Blush",
   },
   {
     id: 4,
     title: "Campaigns & Events",
-    description: "Collaborate on summits, advocacy drives, or community outreach.",
+    description:
+      "Collaborate on summits, advocacy drives, or community outreach.",
     bgColor: "bg-SCA-Bloom",
   },
 ];
@@ -564,21 +589,24 @@ export const WhyPartnerCards = [
   {
     id: 1,
     title: "Shared Impact",
-    description: "Every program is designed with community at its heart. Your support helps multiply that impact.",
+    description:
+      "Every program is designed with community at its heart. Your support helps multiply that impact.",
     bgColor: "bg-SCA-Citrine",
     Color: "text-Primary-Magenta",
   },
   {
     id: 2,
     title: "Reach & Network",
-    description: "A pan-African community of 40,000+ women and girls learning, mentoring, and leading in tech.",
+    description:
+      "A pan-African community of 40,000+ women and girls learning, mentoring, and leading in tech.",
     bgColor: "bg-SCA-Zesty",
     Color: "text-SCA-Forest",
   },
   {
     id: 3,
     title: "Sustainable Change",
-    description: "Long-term pathways, skills, mentorship, and access that last a lifetime.",
+    description:
+      "Long-term pathways, skills, mentorship, and access that last a lifetime.",
     bgColor: "bg-SCA-Zesty",
     Color: "text-SCA-Forest",
   },
@@ -595,24 +623,24 @@ export const ReachOutCard = [
   {
     id: 1,
     title: "For media",
-    email: "media@shecodeafrica.org"
+    email: "media@shecodeafrica.org",
   },
-    {
+  {
     id: 2,
     title: "For partnerships",
-    email: "partnerships@shecodeafrica.org"
+    email: "partnerships@shecodeafrica.org",
   },
-    {
+  {
     id: 3,
     title: "For community",
-    email: "community@shecodeafrica.org"
+    email: "community@shecodeafrica.org",
   },
-    {
+  {
     id: 4,
     title: "For programs",
-    email: "programs@shecodeafrica.org"
-  }
-]
+    email: "programs@shecodeafrica.org",
+  },
+];
 
 export const volunteerCards = [
   {
@@ -637,4 +665,3 @@ export const volunteerCards = [
     skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
   },
 ];
-

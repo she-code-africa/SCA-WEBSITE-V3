@@ -176,6 +176,27 @@ export const engTestimonialCards = [
   },
 ];
 
+export const sponsorTestimonialCards = [
+  {
+    img: testimonial1,
+    testimonial:
+      "Went home with a brand new laptop! This experience has reassured me that truly there is light at the end of the tunnel. However, you won’t see the light unless you keep moving forward. So, keep pushing, and soon enough, that light will shine brightly on your path as the smile on my ladies faces below.",
+    name: "Oluwatitomi A",
+  },
+  {
+    img: testimonial2,
+    testimonial:
+      "There are very very very few communities that can do what She Code Africa does. Access to mentorship, Laptop benefits, data stipends, Job opportunities, to mention a few. She Code Africa is also a safe space for women in tech. The community is filled with amazing ladies who are always willing to help and provide guidance",
+    name: "Damilola E",
+  },
+  {
+    img: testimonial3,
+    testimonial:
+      "I am a teacher, and I am also working on completing my BSc. Before this Digital Literacy program, my digital knowledge was very limited. The only thing I could do was type a little, although not as fast as a typist. If I were to rate myself back then, I would say I was just one or two over ten. If I were to rate myself now, I would say I am seven or eight out of ten, and I know that if I keep practising on my own, I will grow even more. My dream is to get my own laptop so I can continue learning and practising everything I was taught. This training has given me confidence. ",
+    name: "Damilola A",
+  },
+];
+
 export const ourGallery1 = [galleryImg1, galleryImg2];
 
 export const ourGallery2 = [galleryImg3, galleryImg4, galleryImg5];
