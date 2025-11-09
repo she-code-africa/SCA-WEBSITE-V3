@@ -30,20 +30,16 @@ const SchoolProgram = ({ bgColors, slug }) => {
               slug.includes("product") ? "" : "text-[#5C0335]"
             } `}
           >
-            According to Data from Accenture, the ratio of women to men in tech
-            roles has declined in the past 35 years. Out of 50% individuals in
-            the industry, only 20% are women who are significantly represented,
-            with only 14% in software engineering and 25% in computer science
-            related roles compared to their male counterparts.
+            Dive into live programs at the School of Product. From product management to design, Classes are practical and project-based, guided by mentors who have built products for real users across Africa and beyond.
           </p>
 
-          <p
+          {/* <p
             className={`text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium ${
               slug.includes("product") ? "" : "text-[#5C0335]"
             }`}
           >
             Here's how we're tackling that:
-          </p>
+          </p> */}
         </article>
       </div>
 

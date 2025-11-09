@@ -91,16 +91,13 @@ const Community = () => {
               </h1>
 
               <p className="text-white mt-7 text-base md:text-2xl font-medium">
-                Be a part of a community that celebrates diversity and empowers
-                women to thrive in tech. Connect with like-minded individuals,
-                gain access to resources and events, and help shape the future
-                of the industry.
+                Be part of a community bridging the gender gap in tech, a space ran by and for African women. Connect with like-minded individuals, gain access to resources and events, and help shape the future of the industry.
               </p>
 
               <div className="w-full flex flex-col max-w-[206px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
                 <CustomButtonComponent
                   // btnColor="[#ffffff]"
-                  label="I’d love to be a part!"
+                  label="Become a member"
                   customColor="text-white "
                   bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] duration-300 border-[#B70569] rounded-lg transition-all duration-300"
                   url="https://forms.gle/aFe2LrkZxZJtKKve7"
@@ -157,7 +154,7 @@ const Community = () => {
 
           <section className="w-[90%] my-10 max-w-[548px] mx-auto">
             <h3 className="text-center text-xl sm:text-2xl font-medium">
-              You cannot join a chapter without joining the community first
+              Join the community to access your local chapter.
             </h3>
 
             <div className="mt-5 w-full flex flex-col sm:flex-row gap-8 justify-center items-center">
@@ -167,7 +164,7 @@ const Community = () => {
                   href="https://forms.gle/aFe2LrkZxZJtKKve7"
                   rel="noreferrer"
                 >
-                  Join the community
+                  Join our community
                 </a>
               </div>
 
@@ -177,7 +174,7 @@ const Community = () => {
                   to="/chapters"
                   rel="noreferrer"
                 >
-                  Join An SCA Chapter Around You
+                  Join a chapter near you
                 </Link>
               </div>
             </div>
@@ -189,11 +186,10 @@ const Community = () => {
             <div className="w-full max-w-[587px] mx-auto">
               {" "}
               <h2 className=" text-center text-5xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-white">
-                The She Code Africa Blog
+                Inside She Code Africa
               </h2>
               <p className="my-7 font-normal text-xl sm:text-2xl text-center text-white ">
-                We are out to celebrate and inspire female programmers and tech
-                lovers across Africa by telling their stories.
+                Your inside look at our journey, program highlights, major wins, and thought pieces from women driving change across Africa.
               </p>
               <div className="w-full flex justify-center items-center flex-col sm:flex-row gap-8">
                 <div className="flex items-center justify-center gap-8 w-full sm:max-w-[201px]">
@@ -203,7 +199,7 @@ const Community = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Check Out Our Blog
+                    Check out our blog
                   </a>
                 </div>
 
@@ -214,7 +210,7 @@ const Community = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Become a guest writer
+                    Become a contributor
                   </a>
                 </div>
               </div>
@@ -225,8 +221,8 @@ const Community = () => {
         <section className="w-full bg-[#FFF88F] py-[100px]">
           <div className="w-90 mx-auto max-w-[686px]">
             <h2 className=" text-center text-5xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-primary-main-pink">
-              Ready to join the <span className="uppercase">largest</span>{" "}
-              female tech community in Africa?
+              Ready to join Africa's <span className="uppercase">largest</span>{" "}
+              female tech community?
             </h2>
 
             <div className="flex items-center justify-center mt-5 sm:mt-8 max-w-[208px] mx-auto">
@@ -236,7 +232,7 @@ const Community = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Register to join now
+                Join now
               </a>
             </div>
           </div>

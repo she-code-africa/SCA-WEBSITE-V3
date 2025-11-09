@@ -212,9 +212,7 @@ const AcademyPage = () => {
           </h3>
 
           <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-lg text-center font-normal">
-            Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet
-            pharetra varius proin eleifend leo. Sagittis aliquet urna
-            suspendisse in ut tincidunt.
+            Bring brilliance and diversity into your team. Our graduates are skilled, job-ready  women trained in real-world tech roles, from software development to product and cloud engineering. By hiring through She Code Africa, you’re not just filling a role , you’re investing in a future where African women lead and innovate in tech.
           </p>
 
           <div className="mt-10 text-center">
@@ -232,11 +230,6 @@ const AcademyPage = () => {
           <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
             Resources
           </h3>
-
-          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-lg text-center font-normal">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique.
-          </p>
 
           <div className="mt-[50px] w-full grid md:grid-cols-2 lg:grid-cols-3 gap-3 place-items-center">
             {[...Array(3)].map((_, idx) => (

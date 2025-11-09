@@ -6,8 +6,8 @@ import Footer from "../../components/Footer";
 import FormInput from "../../components/version-2/hire/FormInput";
 import { mutateTalent } from "../../services";
 import Captcha from "../../components/Captcha";
-import SuccessStories from "../../components/version-2/academy/SuccessStories";
 import Donate from "../../components/version-2/homepage/Donate";
+import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 /**
  *
  * @param {'fullname'|'email'|'company'|'companyLink'|'jobRole| 'experienceLevel'| 'jobDescription'} inputName
@@ -86,8 +86,7 @@ const Hire = () => {
               </h2>
 
               <p className="text-xl md:text-2xl w-full text-center text-white max-w-[684px] mx-auto mt-5">
-                Explore diverse tech talents of your choice with genuine skill
-                sets and good work place ethics.
+                Partner with us to close the gender gap in tech while gaining access to a diverse pool of skilled, job-ready women across Africa.
               </p>
             </article>
 
@@ -225,7 +224,7 @@ const Hire = () => {
             </div>
           </div>
 
-          <SuccessStories />
+          <OurQueensTestimonials />
           <Donate />
         </div>
       </main>

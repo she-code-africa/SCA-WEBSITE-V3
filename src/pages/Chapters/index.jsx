@@ -70,11 +70,7 @@ const Chapters = () => {
             Chapters in SCA
           </h1>
           <p className="max-w-3xl md:max-w-5xl mx-auto text-base sm:text-lg md:text-2xl font-normal">
-            Lorem ipsum dolor sit amet consectetur. Eget sollicitudin
-            suspendisse diam sit dictum. Non metus vitae ullamcorper molestie
-            egestas. Est metus quis lacus id nec faucibus. Amet eget nisl id
-            lobortis quisque. Placerat ligula imperdiet urna mus vel quam
-            feugiat dignissim.
+            Our chapters are local communities led by passionate women who bring She Code Africa’s mission closer to home, creating spaces for learning, mentorship, and growth across cities and campuses in Africa.
           </p>
         </section>
 
@@ -91,9 +87,7 @@ const Chapters = () => {
             }}
           />
           <p className="text-black text-lg sm:text-2xl font-medium text-center sm:text-left">
-            She Code Africa(SCA) Chapters are independent chapters of the SCA
-            community and engagements do not speak directly on behalf of the
-            organisation except where explicitly stated.
+            She Code Africa(SCA) Chapters are independent chapters of the SCA community and engagements do not speak directly on behalf of the organisation except where explicitly stated.
           </p>
         </section>
 

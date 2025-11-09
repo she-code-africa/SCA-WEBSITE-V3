@@ -10,6 +10,7 @@ import OurImpact from "../../components/version-2/donate/OurImpact";
 import { testimonialCards } from "../../utils/v2";
 import TestimonialSlide from "../../components/version-2/homepage/TestimonialSlide";
 import DonateModal from "../../components/DonateModal";
+import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 
 const SponsorALady = () => {
   const [modal, setModal] = useState(false);
@@ -60,9 +61,7 @@ const SponsorALady = () => {
                 </h1>
 
                 <p className="text-white text-base md:text-2xl font-medium mt-3 text-center lg:text-left">
-                  Did you know by donating as little as $5.3 (~8,532 NGN), you'd
-                  be helping us mentor and provide resources to 1 female in tech
-                  in 1 day?
+                  Did you know that by donating $20 (~₦30,000), you’re helping one woman take a step closer to owning a laptop?
                 </p>
               </article>
               <section className="w-full max-w-[568px] mt-8 lg:mt-0 relative z-[1] mx-auto lg:mx-0">
@@ -113,20 +112,7 @@ const SponsorALady = () => {
 
         <OurImpact />
 
-        <section className="w-full relative pt-14 pb-28 lg:pb-40  testmonialBg">
-          <article className="w-[90%] mx-auto lg:max-w-[1256px] text-center">
-            <h3 className="text-5xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text  w-full mx-auto">
-              Stories of Hope and Change
-            </h3>
-
-            <p className="text-center text-lg mt-2 font-medium">
-              Thanks to supporters like you, we've been able to make a real
-              difference in communities around the world.
-            </p>
-          </article>
-
-          <TestimonialSlide testimonialCards={testimonialCards} />
-        </section>
+        <OurQueensTestimonials/>
         <Footer />
       </main>
     </>

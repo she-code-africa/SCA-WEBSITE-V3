@@ -26,9 +26,7 @@ export default function HeroSection() {
           Equipping women with digital skills, one initiative after another
         </h1>
         <p className="mt-4 text-lg md:text-xl lg:text-2xl font-figtree max-w-[700px] mx-auto">
-          She Code Africa is a registered non-profit organization dedicated to
-          empowering and celebrating girls and women in technology across
-          Africa.
+          At She Code Africa, our initiatives are how we bring our mission to life, creating access, building skills, and opening doors for African women and girls in technology. Each program is designed to meet our community where they are, providing the right tools, support, and opportunities 
         </p>
       </article>
     </section>
