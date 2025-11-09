@@ -28,12 +28,12 @@ export const aboutUsInfoCards = [
   {
     heading: "Our Vision",
     paragraph:
-      "An Africa where women are equally represented across all career roles in Technology.",
+      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.",
   },
   {
     heading: "Our Mission",
     paragraph:
-      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.",
+      "An Africa where women are equally represented across all career roles and levels in Technology",
   },
   {
     heading: "Our Values",
@@ -78,14 +78,6 @@ export const aboutUsReachData = [
     numbers: "40,000",
     description:
       "community members across 20+ African countries and 40+ chapter locations",
-    maxW: 483,
-  },
-  {
-    numbers: "65,000",
-    description: "program beneficiaries and scholarship recipients.",
-    maxW: 498,
-  },
-  {
     numbers: "5M",
     description: "people Inspired by the Stories of African Girls in Tech.",
     maxW: 531,
@@ -281,7 +273,7 @@ export const milestoneData = [
     range: false,
     title: "New Resolution",
     subText:
-      "This year, we set our sights higher. With stronger partnerships and bolder goals, we are moving closer to a future where no African girl or woman is left out of tech. Every step we take now is a step toward that shared future.",
+      "With stronger partnerships and bolder goals, we are moving closer to a future where no African girl or woman is left out of tech. Every step we take now is a step toward that shared future.",
   },
 ];
 

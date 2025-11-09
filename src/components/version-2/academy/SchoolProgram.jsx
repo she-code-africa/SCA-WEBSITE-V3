@@ -39,7 +39,7 @@ const SchoolProgram = ({ bgColors, slug, textContent }) => {
             }`}
           >
             Here's how we're tackling that:
-          </p>
+          </p> 
         </article>
       </div>
 

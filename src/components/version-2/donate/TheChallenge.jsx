@@ -13,7 +13,7 @@ const TheChallenge = () => {
           className="w-full lg:max-w-[500px]"
         >
           <article className="w-full">
-            <h3 className="text-5xl lg:text-[64px] font-bold  text-primary-main-pink hero-text w-full">
+            <h3 className="text-5xl lg:text-[64px] font-bold text-primary-main-pink hero-text w-full">
               The Challenge
             </h3>
 

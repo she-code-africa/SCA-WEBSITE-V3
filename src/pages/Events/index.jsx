@@ -98,8 +98,7 @@ const Events = () => {
                   She Code Africa Events
                 </h3>
                 <p className="text-xl md:text-2xl font-medium text-center lg:max-w-[702px]">
-                  Get access to events focused on empowering and getting more
-                  young girls and women into technology across Africa.
+                  Experience Community in Action through our events. From intimate workshops and community meetups to large-scale summits, we bring women and girls across Africa together, wherever they are.
                 </p>
               </article>
             </div>

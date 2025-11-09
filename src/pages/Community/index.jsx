@@ -99,7 +99,7 @@ const Community = () => {
               <div className="w-full flex flex-col max-w-[206px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
                 <CustomButtonComponent
                   // btnColor="[#ffffff]"
-                  label="I’d love to be a part!"
+                  label="Become a member"
                   customColor="text-white "
                   bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] duration-300 border-[#B70569] rounded-lg transition-all duration-300"
                   url="https://forms.gle/aFe2LrkZxZJtKKve7"
@@ -188,11 +188,10 @@ const Community = () => {
             <div className="w-full max-w-[587px] mx-auto">
               {" "}
               <h2 className=" text-center text-5xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-white">
-                The She Code Africa Blog
+                Inside She Code Africa
               </h2>
               <p className="my-7 font-normal text-xl sm:text-2xl text-center text-white ">
-                We are out to celebrate and inspire female programmers and tech
-                lovers across Africa by telling their stories.
+                Your inside look at our journey, program highlights, major wins, and thought pieces from women driving change across Africa.
               </p>
               <div className="w-full flex justify-center items-center flex-col sm:flex-row gap-8">
                 <div className="flex items-center justify-center gap-8 w-full sm:max-w-[201px]">
@@ -202,7 +201,7 @@ const Community = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Check Out Our Blog
+                    Check out our blog
                   </a>
                 </div>
 
@@ -213,7 +212,7 @@ const Community = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Become a guest writer
+                    Become a contributor
                   </a>
                 </div>
               </div>
@@ -224,8 +223,8 @@ const Community = () => {
         <section className="w-full bg-[#FFF88F] py-[100px]">
           <div className="w-90 mx-auto max-w-[686px]">
             <h2 className=" text-center text-5xl lg:text-[64px] font-bold 2md:leading-[82px] hero-text text-primary-main-pink">
-              Ready to join the <span className="uppercase">largest</span>{" "}
-              female tech community in Africa?
+              Ready to join Africa's <span className="uppercase">largest</span>{" "}
+              female tech community?
             </h2>
 
             <div className="flex items-center justify-center mt-5 sm:mt-8 max-w-[208px] mx-auto">
@@ -235,7 +234,7 @@ const Community = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Register to join now
+                Join now
               </a>
             </div>
           </div>

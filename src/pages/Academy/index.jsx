@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
-import { apiConstants, paths } from "../../utils";
-import bglineImage from "../../images/academy/bg-line.svg";
+import { apiConstants } from "../../utils";
 import { getAllSchools } from "../../services";
 import { useQuery } from "@tanstack/react-query";
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
@@ -64,13 +62,7 @@ const LandingPage = () => {
               </h1>
 
               <p className="text-white text-base md:text-2xl font-medium lg:max-w-[758px] w-full">
-                At She Code Africa Academy, we make learning practical,
-                accessible, and designed for your growth. From engineering to
-                product to applied skills, each of our Academy Schools meets you
-                where you are, whether you’re just starting out or growing into
-                leadership. Pick the path that fits your journey, gain the
-                skills and guidance you need, and step confidently into your
-                future in tech.
+                At She Code Africa Academy, we make learning practical, accessible, and designed for your growth. From engineering to product to applied skills, each of our Academy Schools meets you where you are, whether you’re just starting out or growing into leadership. Pick the path that fits your journey, gain the skills and guidance you need, and step confidently into your future in tech.
               </p>
             </article>
           </div>

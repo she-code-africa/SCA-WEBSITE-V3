@@ -61,24 +61,20 @@ const Header = ({ page }) => {
           to: paths.about,
           text: "About SCA",
           icon: navIcon1,
-          subText: "Small sample text here",
         },
         {
           to: paths.team,
           text: "Meet Our Team",
           icon: navIcon3,
-          subText: "Small sample text here",
         },
         {
           to: paths.initiatives,
           text: "Initiatives",
           icon: initIcon,
-          subText: "Small sample text here",
         },
         {
           to: paths.events,
           text: "Events",
-          subText: "Small sample text here",
           icon: eventsIcon,
         },
       ],
@@ -96,19 +92,16 @@ const Header = ({ page }) => {
           to: paths.donate,
           text: "Donate To A Cause",
           icon: donateIcon,
-          subText: "Small sample text here",
         },
         {
           to: paths.partner,
           text: "Partner With Us",
           icon: partnerIcon,
-          subText: "Small sample text here",
         },
         {
           to: paths.volunteer,
           text: "Volunteer With Us",
           icon: volunteerIcon,
-          subText: "Small sample text here",
         },
 
         // {
@@ -126,13 +119,11 @@ const Header = ({ page }) => {
           to: paths.community,
           text: "SCA Community",
           icon: navIcon2,
-          subText: "Small sample text here",
         },
         {
           to: paths.chapters,
           text: "SCA Chapters",
           icon: chaptersIcon,
-          subText: "Small sample text here",
         },
       ],
     },
@@ -364,7 +355,7 @@ const Header = ({ page }) => {
                                   : "text-[#434343]"
                               }`}
                             >
-                              {item.subText || "Small sample text here"}{" "}
+                              {/* {item.subText || "Small sample text here"}{" "} */}
                             </span>
                           </Link>
                         </li>

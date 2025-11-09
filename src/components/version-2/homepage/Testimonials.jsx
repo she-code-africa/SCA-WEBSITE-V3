@@ -1,5 +1,3 @@
-import React from "react";
-import { testimonialCards } from "../../../utils/v2";
 import { useQuery } from "@tanstack/react-query";
 import { apiConstants } from "../../../utils";
 import { getTestimonials } from "../../../services";

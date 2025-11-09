@@ -153,5 +153,3 @@ const SponsorALady = () => {
     </>
   );
 };
-
-export default SponsorALady;
