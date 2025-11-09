@@ -66,7 +66,7 @@ const OurReach = () => {
                     />
                     {suffix}+
                   </h3>
-                  <p className="text-lg md:text-2xl leading-normal md:leading-normal">
+                  <p className="text-lg md:text-2xl font-medium leading-normal md:leading-normal">
                     {description}
                   </p>
                 </motion.article>

@@ -2,13 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet-async";
-import newsletterLogo from "../../images/community/rectangle-one.jpeg";
+
 import communityImg from "../../assets/v2/images/slack.png";
 import { whatsinStoreForYou } from "../../utils";
 import { Link } from "react-router-dom";
 import hero from "../../assets/v2/images/hero-img-communtiy.jpg";
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
-import { text } from "@fortawesome/fontawesome-svg-core";
 
 const Community = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -85,16 +84,16 @@ const Community = () => {
             />
           </figure>
           <div className="bg-[rgba(0,0,0,0.35)] min-h-[130vh] pt-16 lg:pt-32 pb-24 flex justify-center items-center ">
-            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
-              <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
+            <article className="relative z-[1] w-[90%] mx-auto  text-center">
+              <h1 className="text-[64px] lg:w-full lg:max-w-[720px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text text-center mx-auto">
                 Where SCA Queens Hangout
               </h1>
 
-              <p className="text-white mt-7 text-base md:text-2xl font-medium">
-                Be a part of a community that celebrates diversity and empowers
-                women to thrive in tech. Connect with like-minded individuals,
-                gain access to resources and events, and help shape the future
-                of the industry.
+              <p className="text-white mt-7 text-base md:text-2xl font-medium lg:w-full lg:max-w-[900px] mx-auto text-center">
+                Be part of a community bridging the gender gap in tech, a space
+                ran by and for African women. Connect with like-minded
+                individuals, gain access to resources and events, and help shape
+                the future of the industry.
               </p>
 
               <div className="w-full flex flex-col max-w-[206px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
@@ -157,27 +156,27 @@ const Community = () => {
 
           <section className="w-[90%] my-10 max-w-[548px] mx-auto">
             <h3 className="text-center text-xl sm:text-2xl font-medium">
-              You cannot join a chapter without joining the community first
+              Join the community to access your local chapter.
             </h3>
 
-            <div className="mt-5 w-full flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <div className="mt-5 w-full flex flex-col sm:flex-row gap-7 sm:max-w-[469px] mx-auto justify-center items-center">
               <div className="flex items-center justify-center w-full sm:max-w-[207px] mx-auto">
                 <a
                   className="bg-transparent px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-primary-main-pink text-base hover:border-[#FF8FCE] transition-all font-normal border border-primary-main-pink"
                   href="https://forms.gle/aFe2LrkZxZJtKKve7"
                   rel="noreferrer"
                 >
-                  Join the community
+                  Join our community
                 </a>
               </div>
 
-              <div className="flex items-center justify-center w-full sm:max-w-[298px] mx-auto">
+              <div className="flex items-center justify-center w-full sm:max-w-[232px] mx-auto">
                 <Link
                   className="bg-primary-main-pink px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-white text-base hover:bg-[#5C0335] hover:text-white transition-all font-normal"
                   to="/chapters"
                   rel="noreferrer"
                 >
-                  Join An SCA Chapter Around You
+                  Join a chapter near you
                 </Link>
               </div>
             </div>
