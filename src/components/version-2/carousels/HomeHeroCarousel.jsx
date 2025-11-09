@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { homeHeroSliderImages } from "../../../utils/v2";
 
 const HomeHeroCarousel = () => {
-  const [sliderImages, setSliderImages] = useState([]);
+  const [sliderImages, setSliderImages] = useState(homeHeroSliderImages);
 
   useEffect(() => {
     const generate6RandomImages = () => {
@@ -27,9 +27,9 @@ const HomeHeroCarousel = () => {
   }, []);
 
   return (
-    <div className="w-full sliderContainer">
-      <div className="flex items-center justify-center flex-nowrap overflow-auto scrollbar-hidden">
-        {sliderImages.length > 0 ? (
+    <div className="w-full">
+      <div className="flex w-full items-center justify-center flex-nowrap overflow-auto scrollbar-hidden">
+        {sliderImages.length > 0 &&
           sliderImages.map((image, index) => (
             <figure
               key={`${image}-${index}-${Date.now()}`}
@@ -41,20 +41,7 @@ const HomeHeroCarousel = () => {
                 className="animate-img-opacity"
               />
             </figure>
-          ))
-        ) : (
-          <>
-            {homeHeroSliderImages.map((image, index) => (
-              <figure key={index} className="px-1">
-                <img
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="animate-opacity"
-                />
-              </figure>
-            ))}
-          </>
-        )}
+          ))}
       </div>
     </div>
   );

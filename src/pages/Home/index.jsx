@@ -1,12 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
-
 import Footer from "../../components/Footer";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
 import HomeHeroCarousel from "../../components/version-2/carousels/HomeHeroCarousel";
@@ -17,6 +14,12 @@ import WhatWeDo from "../../components/version-2/homepage/WhatWeDo";
 import OurGallery from "../../components/version-2/homepage/OurGallery";
 import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 import Donate from "../../components/version-2/homepage/Donate";
+import { motion } from "framer-motion";
+import {
+  bgVariant,
+  heroFadeUp,
+  sectionVariant,
+} from "../../lib/motionVariants";
 
 const Home = () => {
   return (
@@ -44,24 +47,52 @@ const Home = () => {
       <Header page={"home"} />
       <main className="text-secondary-main-black w-full">
         <section className="w-full h-full bg-[#B70569] relative ">
-          <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
+          <motion.figure
+            className="absolute top-0 left-0 w-full h-full mix-blend-multiply"
+            variants={bgVariant}
+            initial="hidden"
+            animate="visible"
+          >
             <img
               src={hero}
               alt="Who We Are"
               className="object-cover w-full h-full"
             />
-          </figure>
-          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center ">
+          </motion.figure>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center "
+          >
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
-              <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
-                Equipping Girls and Women In Tech Across Africa
-              </h1>
+              <motion.h1
+                variants={heroFadeUp}
+                initial="hidden"
+                animate={() => heroFadeUp.visible(0.3)}
+                className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text "
+              >
+                Empowering Women In Tech Across Africa
+              </motion.h1>
 
-              <p className="text-white text-base md:text-2xl font-medium">
-                She Code Africa is a non-profit organization on a mission to equip African girls and women with digital skills, training, resources, and a thriving community, to help them build careers, gain financial independence, and lead boldly in tech.
-              </p>
+              <motion.p
+                variants={heroFadeUp}
+                initial="hidden"
+                animate={() => heroFadeUp.visible(0.5)}
+                className="text-white text-base md:text-2xl font-medium"
+              >
+                She Code Africa is a non-profit organization on a mission to
+                equip African girls and women with digital skills, training,
+                resources, and a thriving community, to help them build careers,
+                gain financial independence, and lead boldly in tech.
+              </motion.p>
 
-              <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
+              <motion.div
+                variants={heroFadeUp}
+                initial="hidden"
+                animate={() => heroFadeUp.visible(0.7)}
+                className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8"
+              >
                 <CustomButtonComponent
                   // btnColor="[#B70569]"
                   label="Join our community"
@@ -80,13 +111,22 @@ const Home = () => {
                   icon={<FontAwesomeIcon icon={faArrowRight} />}
                   url="/donate"
                 />
-              </div>
+              </motion.div>
             </article>
-          </div>
+          </motion.div>
         </section>
 
-        <section className="w-full bg-[#FFF88F] py-14 md:py-24">
-          <HomeHeroCarousel />
+        <section className="w-full bg-[#FFF88F] ">
+          <motion.div
+            className="w-full md:min-h-[405.43px] flex items-center py-14 md:py-24"
+            variants={sectionVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <HomeHeroCarousel />
+          </motion.div>
         </section>
         <AboutUs />
         <OurBrands />

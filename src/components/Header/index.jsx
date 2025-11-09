@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faArrowUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 // import logo from "../../images/she-code-africa-logo.svg";
 import logo from "../../images/new-logo/Logo.png";
 import { apiConstants, paths } from "../../utils";
@@ -24,6 +21,8 @@ import soa from "../../assets/v2/images/icons/soa.png";
 import sop from "../../assets/v2/images/icons/sop.png";
 import soe from "../../assets/v2/images/icons/soe.png";
 import { IoClose } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
+import { dropdownVariant, headerVariant } from "../../lib/motionVariants";
 
 const Header = ({ page }) => {
   const { data, isLoading, isFetching } = useQuery(
@@ -180,7 +179,12 @@ const Header = ({ page }) => {
   }, [selectedMenu]);
 
   return (
-    <header className="fixed left-0 right-0 top-0 w-full bg-white z-[2] py-6 shadow-lg">
+    <motion.header
+      variants={headerVariant}
+      initial="hidden"
+      animate="visible"
+      className="fixed left-0 right-0 top-0 w-full bg-white z-[2] py-6 shadow-lg"
+    >
       <nav
         className="w-[90%] mx-auto max-w-[1256px] flex justify-between gap-5 items-center"
         ref={menuRef}
@@ -360,54 +364,66 @@ const Header = ({ page }) => {
                   )}
 
                   {/* desktop */}
-                  {menuItem.list.length > 0 && selectedMenu === idx && (
-                    <ul
-                      className={` hidden lg:block absolute  bg-white top-12 py-5 px-5 w-max ${
-                        idx === menuItems.length - 1 ? "right-0" : "left-0"
-                      }  rounded-lg shadow-2xl`}
-                    >
-                      {menuItem.list.map((item, index) => (
-                        <li
-                          key={index}
-                          className={`w-full flex items-center gap-[18px] py-[18px]`}
-                        >
-                          <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
-                            {item.text.toLowerCase().includes("engineering") ? (
-                              <img src={soe} alt={item.text} />
-                            ) : item.text.toLowerCase().includes("product") ? (
-                              <img src={sop} alt={item.text} />
-                            ) : item.text.toLowerCase().includes("applied") ? (
-                              <img src={soa} alt={item.text} />
-                            ) : (
-                              <img src={item.icon} alt={item.text} />
-                            )}
-                          </figure>
-
-                          <Link
-                            to={item.to}
-                            className={`flex flex-col gap-1 ${
-                              path === item.to && "text-primary-main-pink"
-                            }`}
+                  <AnimatePresence>
+                    {menuItem.list.length > 0 && selectedMenu === idx && (
+                      <motion.ul
+                        variants={dropdownVariant}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className={` hidden lg:block absolute  bg-white top-12 py-5 px-5 w-max ${
+                          idx === menuItems.length - 1 ? "right-0" : "left-0"
+                        }  rounded-lg shadow-2xl`}
+                      >
+                        {menuItem.list.map((item, index) => (
+                          <li
+                            key={index}
+                            className={`w-full flex items-center gap-[18px] py-[18px]`}
                           >
-                            <span
-                              className={`inline-block font-semibold text-base `}
+                            <figure className="w-[45px] h-[45px] rounded-full bg-[#FFB8E0] overflow-hidden flex items-center justify-center p-[10px]">
+                              {item.text
+                                .toLowerCase()
+                                .includes("engineering") ? (
+                                <img src={soe} alt={item.text} />
+                              ) : item.text
+                                  .toLowerCase()
+                                  .includes("product") ? (
+                                <img src={sop} alt={item.text} />
+                              ) : item.text
+                                  .toLowerCase()
+                                  .includes("applied") ? (
+                                <img src={soa} alt={item.text} />
+                              ) : (
+                                <img src={item.icon} alt={item.text} />
+                              )}
+                            </figure>
+
+                            <Link
+                              to={item.to}
+                              className={`flex flex-col gap-1 ${
+                                path === item.to && "text-primary-main-pink"
+                              }`}
                             >
-                              {item.text}{" "}
-                            </span>
-                            <span
-                              className={`inline-block ${
-                                path === item.to
-                                  ? "text-primary-main-pink"
-                                  : "text-[#434343]"
-                              } text-sm font-normal`}
-                            >
-                              {/* {item.subText || "Small sample text here"}{" "} */}
-                            </span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                              <span
+                                className={`inline-block font-semibold text-base `}
+                              >
+                                {item.text}{" "}
+                              </span>
+                              <span
+                                className={`inline-block ${
+                                  path === item.to
+                                    ? "text-primary-main-pink"
+                                    : "text-[#434343]"
+                                } text-sm font-normal`}
+                              >
+                                {item.subText || "Small sample text here"}{" "}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
                 </li>
               );
             })}
@@ -420,7 +436,7 @@ const Header = ({ page }) => {
           </ul>
         </aside>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 

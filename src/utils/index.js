@@ -481,27 +481,27 @@ export const ourInitiatives = [
 
 export const whatsinStoreForYou = [
   {
-    bg: "bg-community-pink-bg",
+    bg: "",
     text: "Find your people",
   },
   {
-    bg: "bg-lavendar-blush",
+    bg: "",
     text: "A supportive community",
   },
   {
-    bg: "bg-white-smoke",
+    bg: "",
     text: "Access mentorship and career support",
   },
   {
-    bg: "bg-lavendar-blush",
+    bg: "",
     text: "Discover programs, scholarships, events and other opportunities",
   },
   {
-    bg: "bg-white-smoke",
+    bg: "",
     text: "Connect with like-minded women across Africa",
   },
   {
-    bg: "bg-community-pink-bg",
+    bg: "",
     text: "A chance to make a difference",
   },
 ];
@@ -516,14 +516,12 @@ export const impactStats = [
   {
     id: 2,
     number: "2674",
-    description:
-      "African countries represented & 40+ chapter locations",
+    description: "African countries represented & 40+ chapter locations",
   },
   {
     id: 3,
     number: "760k",
-    description:
-      "program beneficiaries and scholarship recipients. ",
+    description: "program beneficiaries and scholarship recipients. ",
   },
   {
     id: 4,
@@ -533,29 +531,57 @@ export const impactStats = [
   },
 ];
 
+export const sponsorImpactStats = [
+  {
+    id: 1,
+    number: "65000",
+    description: "program beneficiaries and scholarship recipients. ",
+  },
+  {
+    id: 2,
+    number: "40000",
+    description: "community members.",
+  },
+  {
+    id: 3,
+    number: "7000",
+    description:
+      "women and girls trained through our Academy and training programs.",
+  },
+  {
+    id: 4,
+    number: "5M",
+    description: "people Inspired by the Stories of African Girls in Tech.",
+  },
+];
+
 export const WaysPartnerCards = [
   {
     id: 1,
     title: "Program Support",
-    description: "Help fund or co-create training programs, bootcamps, and scholarships that give women real skills to start tech careers.",
+    description:
+      "Help fund or co-create training programs, bootcamps, and scholarships that give women real skills to start tech careers.",
     bgColor: "bg-SCA-Bloom",
   },
   {
     id: 2,
     title: "Resource Contribution",
-    description: "Donate laptops, internet access, or tech tools to help bridge the digital gap and give girls a fair chance to learn.",
+    description:
+      "Donate laptops, internet access, or tech tools to help bridge the digital gap and give girls a fair chance to learn.",
     bgColor: "bg-SCA-Blush",
   },
   {
     id: 3,
     title: "Mentorship & Expertise",
-    description: "Share your time, knowledge, and experience to guide women as they take their first steps in tech.",
+    description:
+      "Share your time, knowledge, and experience to guide women as they take their first steps in tech.",
     bgColor: "bg-SCA-Blush",
   },
   {
     id: 4,
     title: "Campaigns & Events",
-    description: "Sponsor or co-host events & campaigns that inspire, connect, and celebrate African women in tech.",
+    description:
+      "Sponsor or co-host events & campaigns that inspire, connect, and celebrate African women in tech.",
     bgColor: "bg-SCA-Bloom",
   },
 ];
@@ -564,21 +590,24 @@ export const WhyPartnerCards = [
   {
     id: 1,
     title: "Shared Impact",
-    description: "Every program is designed with community at its heart. Your support helps multiply that impact.",
+    description:
+      "Every program is designed with community at its heart. Your support helps multiply that impact.",
     bgColor: "bg-SCA-Citrine",
     Color: "text-Primary-Magenta",
   },
   {
     id: 2,
     title: "Reach & Network",
-    description: "A pan-African community of 40,000+ women and girls learning, mentoring, and leading in tech.",
+    description:
+      "A pan-African community of 40,000+ women and girls learning, mentoring, and leading in tech.",
     bgColor: "bg-SCA-Zesty",
     Color: "text-SCA-Forest",
   },
   {
     id: 3,
     title: "Sustainable Change",
-    description: "Long-term pathways, skills, mentorship, and access that last a lifetime.",
+    description:
+      "Long-term pathways, skills, mentorship, and access that last a lifetime.",
     bgColor: "bg-SCA-Zesty",
     Color: "text-SCA-Forest",
   },
@@ -595,24 +624,24 @@ export const ReachOutCard = [
   {
     id: 1,
     title: "For media",
-    email: "media@shecodeafrica.org"
+    email: "media@shecodeafrica.org",
   },
-    {
+  {
     id: 2,
     title: "For partnerships",
-    email: "partnerships@shecodeafrica.org"
+    email: "partnerships@shecodeafrica.org",
   },
-    {
+  {
     id: 3,
     title: "For community",
-    email: "community@shecodeafrica.org"
+    email: "community@shecodeafrica.org",
   },
-    {
+  {
     id: 4,
     title: "For programs",
-    email: "programs@shecodeafrica.org"
-  }
-]
+    email: "programs@shecodeafrica.org",
+  },
+];
 
 export const volunteerCards = [
   {
@@ -637,4 +666,3 @@ export const volunteerCards = [
     skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
   },
 ];
-

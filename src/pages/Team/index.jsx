@@ -11,6 +11,7 @@ import { getTeams } from "../../services";
 import box from "../../images/team/SCA Badge-hero.png";
 import avatar from "../../images/avatar-300x300.jpeg";
 import Donate from "../../components/version-2/homepage/Donate";
+import { motion } from "framer-motion";
 
 const Team = () => {
   const [activeSelection, setActiveSelection] = useState("ALL");
@@ -40,7 +41,10 @@ const Team = () => {
   }, []);
 
   // collect unique categories
-  const tags = useMemo(() => data?.map((team) => team.teamCategory?.name).filter(Boolean) || [], [data]);
+  const tags = useMemo(
+    () => data?.map((team) => team.teamCategory?.name).filter(Boolean) || [],
+    [data]
+  );
   const uniqueTags = useMemo(() => Array.from(new Set(tags)), [tags]);
 
   // robust ordering: prefer Full-time Employee, then Support team, then Advisors
@@ -48,18 +52,29 @@ const Team = () => {
     // helpers that try exact match first, then fallback to contains (case-insensitive)
     const findMatch = (candidates) => {
       for (const cand of candidates) {
-        const exact = uniqueTags.find((t) => t?.toLowerCase().trim() === cand.toLowerCase().trim());
+        const exact = uniqueTags.find(
+          (t) => t?.toLowerCase().trim() === cand.toLowerCase().trim()
+        );
         if (exact) return exact;
       }
       for (const cand of candidates) {
-        const partial = uniqueTags.find((t) => t?.toLowerCase().includes(cand.toLowerCase().trim()));
+        const partial = uniqueTags.find((t) =>
+          t?.toLowerCase().includes(cand.toLowerCase().trim())
+        );
         if (partial) return partial;
       }
       return null;
     };
 
     const desiredGroups = [
-      ["Full-time Employee", "Full time Employee", "Full-time employee", "Full time employee", "Full-time", "Full time"],
+      [
+        "Full-time Employee",
+        "Full time Employee",
+        "Full-time employee",
+        "Full time employee",
+        "Full-time",
+        "Full time",
+      ],
       ["Support Team", "Support team", "Support", "support team"],
       ["Advisors", "Advisor", "advisors", "advisor"],
     ];
@@ -89,7 +104,9 @@ const Team = () => {
 
   // set default selection: pick the full-time-like tag if present, otherwise first ordered tag
   useEffect(() => {
-    const preferredFull = orderedTags.find((t) => t.toLowerCase().includes("full"));
+    const preferredFull = orderedTags.find((t) =>
+      t.toLowerCase().includes("full")
+    );
     const defaultTag = preferredFull || orderedTags[0] || "";
     setActiveSelection(defaultTag);
   }, [orderedTags]);
@@ -109,6 +126,32 @@ const Team = () => {
   const fullCount = Math.floor(filtered.length / itemsPerRow) * itemsPerRow;
   const fullMembers = filtered.slice(0, fullCount);
   const lastMembers = filtered.slice(fullCount);
+
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const imageVariant = {
+    hidden: { opacity: 0, scale: 0.9, rotate: -5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
 
   return (
     <>
@@ -133,32 +176,56 @@ const Team = () => {
       </Helmet>
       <Header />
       <main>
-        <section className="bg-white mt-44">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariant}
+          className="bg-white mt-44"
+        >
           <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-24">
-            <div className="text-center md:text-left">
-              <h1 className="hero-text text-5xl md:text-9xl font-bold text-primary-main-pink">
+            <motion.div
+              variants={fadeUpVariant}
+              className="text-center md:text-left"
+            >
+              <motion.h1
+                variants={fadeUpVariant}
+                className="hero-text text-5xl md:text-9xl font-bold text-primary-main-pink"
+              >
                 Meet The SCA Team
-              </h1>
-              <p className="mt-6 text-2xl leading-9 text-Secondary-Velvet md:max-w-3xl">
+              </motion.h1>
+              <motion.p
+                variants={fadeUpVariant}
+                className="mt-6 text-2xl leading-9 text-Secondary-Velvet md:max-w-3xl"
+              >
                 Peep the faces behind the initiatives and impacts here at She
                 Code Africa. These wonderful people work behind the scene,
                 everyday to keep our vision working.
-              </p>
-            </div>
-            <div>
+              </motion.p>
+            </motion.div>
+            <motion.div variants={imageVariant}>
               <img
                 src={box}
                 alt="She Code Africa Logo"
                 className="w-72 h-72 object-cover"
               />
-            </div>
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
-        <section className="py-24">
+        <motion.section
+          className="py-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={containerVariant}
+        >
           <div className="w-[90%] mx-auto">
             {/* Category Buttons */}
-            <div className="flex justify-start gap-8 mb-16 flex-wrap">
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex justify-start gap-8 mb-16 flex-wrap"
+            >
               {orderedTags
                 .filter((category) => category !== "All")
                 .map((category) => (
@@ -174,7 +241,7 @@ const Team = () => {
                     {category}
                   </button>
                 ))}
-            </div>
+            </motion.div>
 
             {/* Team Grid */}
             {isError ? (
@@ -256,7 +323,7 @@ const Team = () => {
               </>
             )}
           </div>
-        </section>
+        </motion.section>
         <Donate />
       </main>
       <Footer />

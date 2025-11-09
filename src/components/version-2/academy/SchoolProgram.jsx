@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
 
-const SchoolProgram = ({ bgColors, slug }) => {
+const SchoolProgram = ({ bgColors, slug, textContent }) => {
   return (
     <section className="w-full  product-program-bg ">
       <div
@@ -30,16 +30,16 @@ const SchoolProgram = ({ bgColors, slug }) => {
               slug.includes("product") ? "" : "text-[#5C0335]"
             } `}
           >
-            Dive into live programs at the School of Product. From product management to design, Classes are practical and project-based, guided by mentors who have built products for real users across Africa and beyond.
+            {textContent}
           </p>
 
-          {/* <p
-            className={`text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium ${
+          <p
+            className={`text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium hidden ${
               slug.includes("product") ? "" : "text-[#5C0335]"
             }`}
           >
             Here's how we're tackling that:
-          </p> */}
+          </p> 
         </article>
       </div>
 
