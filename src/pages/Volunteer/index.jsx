@@ -1,15 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Hero from "../../images/volunteerImgs/volunteer-hero.png";
+// import Hero from "../../images/volunteerImgs/volunteer-hero.png";
+import Hero from "../../assets/v2/images/volunteer-hero.jpg";
 import OurReach from "../../components/version-2/homepage/OurReach";
 import UserIcon from "../../images/volunteerImgs/voln-hero-icon.svg";
-import testmonialImg from "../../images/testimonial.png";
+// import testmonialImg from "../../images/testimonial.png";
 import OpportunityImg from "../../images/vol-oppotunity.png";
-
-import { Link } from "react-router-dom";
 import { volunteerCards } from "../../utils";
 import { motion } from "framer-motion";
+import testmonialImg from "../../assets/v2/images/volunteer-stories.png";
 
 const Volunteer = () => {
   // smooth scroll helper
@@ -116,11 +116,11 @@ const Volunteer = () => {
                 }}
                 className="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
               >
-                <figure className="rounded-[24px] overflow-hidden w-full max-w-[560px] shadow-xl">
+                <figure className="rounded-[24px] overflow-hidden w-full max-w-[547px] h-[741px] shadow-xl">
                   <img
                     src={Hero}
                     alt="Volunteer with She Code Africa"
-                    className="w-full h-auto object-cover block"
+                    className="w-full h-full object-cover block"
                   />
                 </figure>
 
@@ -257,7 +257,7 @@ const Volunteer = () => {
                   transition: { staggerChildren: 0.3 },
                 },
               }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
             >
               {/* Left image */}
               <motion.div
@@ -271,7 +271,7 @@ const Volunteer = () => {
                 }}
                 className="lg:col-span-5"
               >
-                <figure className="rounded-[18px] overflow-hidden shadow-xl">
+                <figure className="rounded-[18px] h-[700px] w-full max-w-[547px] overflow-hidden shadow-xl">
                   <img
                     src={testmonialImg}
                     alt="Volunteer story"
@@ -326,21 +326,21 @@ const Volunteer = () => {
                     }}
                     className=""
                   >
-                    <div className="pl-0 sm:pl-6 pt-6 sm:border-l-4 border-SCA-Lavender">
-                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mb-5">
+                    <div className="pl-0 sm:pl-6 pt-4 mt-8 pb-4 sm:border-l-4 border-SCA-Lavender">
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed">
                         Since August 8th, 2022, I've been actively contributing
                         to the mission and vision of She Code Africa empowering
                         women and girls in technology by creating and sharing
                         opportunities for their career growth.
                       </p>
 
-                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mb-5">
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mt-8 ">
                         By grace, I look forward to continuing this exceptional
                         work. The work we do matters and the impact keeps
                         growing.
                       </p>
 
-                      <div>
+                      <div className="mt-5">
                         <div className="font-bold text-base sm:text-xl text-black">
                           Salvation C
                         </div>
@@ -363,21 +363,21 @@ const Volunteer = () => {
                     }}
                     className=""
                   >
-                    <div className="pl-0 sm:pl-6 pt-3 sm:border-l-4 border-SCA-Apricote">
-                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mb-5">
+                    <div className="pl-0 sm:pl-6 pt-4 pb-4 mt-8 sm:border-l-4 h-full border-SCA-Apricote">
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed ">
                         When I signed up as a mentor for She Code Africa
                         Mentorship Program (Cycle 1), I thought l'd simply be
                         teaching. But very quickly, I realized I was also
                         learning.
                       </p>
 
-                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mb-5">
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mt-8">
                         So today, I want to Thank you She Code Africa for this
                         platform, and my mentees for trusting me with their
                         growth. Your wins are my wins.
                       </p>
 
-                      <div>
+                      <div className="mt-5">
                         <div className="font-bold text-base sm:text-xl text-black">
                           Chisom O
                         </div>
