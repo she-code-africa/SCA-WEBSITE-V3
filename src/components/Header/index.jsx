@@ -349,7 +349,7 @@ const Header = ({ page }) => {
                               {item.text}{" "}
                             </span>
                             <span
-                              className={`inline-block  text-xs font-normal ${
+                              className={`hidden  text-xs font-normal ${
                                 path === item.to
                                   ? "text-primary-main-pink"
                                   : "text-[#434343]"
@@ -410,7 +410,7 @@ const Header = ({ page }) => {
                                 {item.text}{" "}
                               </span>
                               <span
-                                className={`inline-block ${
+                                className={`hidden ${
                                   path === item.to
                                     ? "text-primary-main-pink"
                                     : "text-[#434343]"
