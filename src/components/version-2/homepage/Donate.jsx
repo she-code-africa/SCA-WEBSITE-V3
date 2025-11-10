@@ -1,6 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import donatePng from "../../../assets/v2/images/donatePng.jpg";
+import { Link, useLocation } from "react-router-dom";
+import donateJpg from "../../../assets/v2/images/donatePng.jpg";
+import donatePng from "../../../assets/v2/images/gallery-imgs/gallery6.png";
+import donateEvent from "../../../assets/v2/images/donate/donate-event.jpg";
+import donateMedia from "../../../assets/v2/images/donate/donate-media.jpg";
 import { motion } from "framer-motion";
 
 const Donate = () => {
@@ -31,6 +34,15 @@ const Donate = () => {
       x: 0,
       transition: { duration: 0.8, ease: "easeOut" },
     },
+  };
+
+  const { pathname } = useLocation();
+
+  const locationJpegs = {
+    "/": donateJpg,
+    "/contact-us": donatePng,
+    "/events": donateEvent,
+    "/media": donateMedia,
   };
 
   return (
@@ -74,7 +86,11 @@ const Donate = () => {
           variants={fadeInRight}
           className="hidden lg:block max-w-[538px] w-full h-[434px] rounded-[30px] overflow-hidden"
         >
-          <img src={donatePng} className="w-full h-full" alt="alt-img" />
+          <img
+            src={locationJpegs[pathname] || donatePng}
+            className="w-full h-full object-cover"
+            alt="alt-img"
+          />
         </motion.figure>
       </div>
     </motion.section>

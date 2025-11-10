@@ -81,6 +81,10 @@ main,
   background-image: url("./assets/v2/images/programsBg.jpg");
 }
 
+.community-bg {
+  background-image: url("./assets/v2/images/community.jpg");
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   height: 0;
   width: 0;

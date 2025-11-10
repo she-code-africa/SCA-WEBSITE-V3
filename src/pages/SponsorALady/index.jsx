@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
+import hero2 from "../../assets/v2/images/sponsor-hero.jpg";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 // import DonateComponent from "../../components/version-2/donate";
 import TheChallenge from "../../components/version-2/donate/TheChallenge";
 import OurImpact from "../../components/version-2/donate/OurImpact";
-import { sponsorTestimonialCards, testimonialCards } from "../../utils/v2";
+import { sponsorTestimonialCards } from "../../utils/v2";
 import TestimonialSlide from "../../components/version-2/homepage/TestimonialSlide";
 import DonateModal from "../../components/DonateModal";
 import { motion } from "framer-motion";
@@ -91,8 +92,8 @@ const SponsorALady = () => {
                     className="w-full h-[183px]"
                   >
                     <img
-                      src={hero}
-                      alt="Who We Are"
+                      src={hero2}
+                      alt="donate"
                       className="object-cover w-full h-full"
                     />
                   </motion.figure>

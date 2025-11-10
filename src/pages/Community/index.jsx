@@ -124,7 +124,7 @@ const Community = () => {
           </motion.div>
         </section>
 
-        <div className="w-full product-program-bg pb-[100px]">
+        <div className="w-full community-bg pb-[100px]">
           <motion.section
             initial="hidden"
             whileInView="visible"
