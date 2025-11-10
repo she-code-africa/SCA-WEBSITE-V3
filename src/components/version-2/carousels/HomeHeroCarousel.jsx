@@ -33,12 +33,12 @@ const HomeHeroCarousel = () => {
           sliderImages.map((image, index) => (
             <figure
               key={`${image}-${index}-${Date.now()}`}
-              className="px-1 shrink-0 lg:shrink"
+              className="mx-1 shrink-0 lg:shrink w-[235.9px] h-[205.43px] rounded-2xl overflow-hidden "
             >
               <img
                 src={image}
                 alt={`Slide ${index + 1}`}
-                className="animate-img-opacity"
+                className="animate-img-opacity w-full h-full object-cover"
               />
             </figure>
           ))}

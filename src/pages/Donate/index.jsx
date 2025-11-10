@@ -16,6 +16,7 @@ import {
 import { motion } from "framer-motion";
 import { bgVariant, heroFadeUp } from "../../lib/motionVariants";
 import CountUp from "react-countup";
+import { Link } from "react-router-dom";
 
 const Donate = () => {
   const parseNumberAndSuffix = (value) => {
@@ -176,6 +177,15 @@ const Donate = () => {
                   </p>
                 </motion.div>
               ))}
+            </div>
+
+            <div className="flex max-w-[150px] mx-auto justify-center mt-8">
+              <Link
+                to="/donate"
+                className="flex w-full h-[55px] bg-white rounded-lg py-[18px] px-8 justify-center items-center text-primary-main-pink text-base hover:bg-[#FF8FCE] transition-colors duration-300"
+              >
+                Learn more
+              </Link>
             </div>
           </div>
         </section>

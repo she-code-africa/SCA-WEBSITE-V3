@@ -47,7 +47,7 @@ const OurGallery = () => {
                 <motion.figure
                   variants={imageVariant}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="w-full max-w-[412px] mx-auto lg:mx-0"
+                  className="w-full max-w-[412px] h-[442.75px] mx-auto lg:mx-0"
                 >
                   <img
                     src={item}
@@ -66,7 +66,7 @@ const OurGallery = () => {
                   variants={imageVariant}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   className={`${
-                    (idx + 1) % 2 !== 0 && ""
+                    (idx + 1) % 2 === 0 ? "h-[412px]" : "h-[231.75px]"
                   } max-w-[412px] w-full mx-auto lg:mx-0`}
                 >
                   <img
@@ -85,7 +85,7 @@ const OurGallery = () => {
                 <motion.figure
                   variants={imageVariant}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="w-full max-w-[412px]"
+                  className="w-full max-w-[412px] h-[442.75px]"
                 >
                   <img
                     src={item}

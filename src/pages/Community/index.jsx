@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import communityImg from "../../assets/v2/images/slack.png";
 import { whatsinStoreForYou } from "../../utils";
 import { Link } from "react-router-dom";
-import hero from "../../assets/v2/images/hero-img-communtiy.jpg";
+import hero from "../../assets/v2/images/hero-img-community-2.jpg";
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
 import { motion } from "framer-motion";
 import { bgVariant, heroFadeUp } from "../../lib/motionVariants";
@@ -124,7 +124,7 @@ const Community = () => {
           </motion.div>
         </section>
 
-        <div className="w-full product-program-bg pb-[100px]">
+        <div className="w-full community-bg pb-[100px]">
           <motion.section
             initial="hidden"
             whileInView="visible"
