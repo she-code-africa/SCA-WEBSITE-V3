@@ -6,11 +6,11 @@ const TheChallenge = () => {
       <div className="w-[90%] mx-auto lg:max-w-[1256px] flex items-center justify-between lg:gap-14">
         <div className="w-full lg:max-w-[600px]">
           <article className="w-full">
-            <h3 className="text-5xl lg:text-[64px] font-bold text-primary-main-pink hero-text w-full">
+            <h3 className="section-header text-primary-main-pink hero-text w-full">
               The Challenge
             </h3>
 
-            <div className="w-[95%] text-lg mt-2 font-medium">
+            <div className="w-[95%] mt-2 challenge-text">
               <p>
                 Millions of women and girls across Africa still lack access to
                 the technology, training, and tools needed to thrive in a

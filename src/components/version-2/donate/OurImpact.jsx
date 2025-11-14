@@ -1,7 +1,7 @@
 import impact1 from "../../../images/impact1.jpg";
 import impact2 from "../../../images/impact2.jpg";
 import impact3 from "../../../images/impact3.jpg";
-import { impactStats } from "../../../utils";
+import { impactStats } from "../../../utils/v2";
 
 const OurImpact = () => {
   return (
@@ -42,11 +42,11 @@ const OurImpact = () => {
 
         <div className="w-full lg:max-w-[600px]">
           <article className="w-full">
-            <h3 className="text-5xl lg:text-[64px] font-bold  text-Primary-Magenta hero-text w-full">
+            <h3 className="section-header text-Primary-Magenta hero-text w-full">
               Our Impact in Numbers
             </h3>
 
-            <p className="w-[95%] text-lg mt-2 font-medium">
+            <p className="w-[95%] mt-2 challenge-text">
               Thanks to supporters like you, we've been able to make a real
               difference in communities around the world.
             </p>
@@ -55,10 +55,10 @@ const OurImpact = () => {
           <div className="mt-10 w-full grid sm:grid-cols-2 gap-2 lg:gap-6">
             {impactStats.map(({ number, description }, idx) => (
               <article className={`flex flex-col  w-full my-5`} key={idx}>
-                <h3 className="text-5xl lg:text-[64px] font-bold text-Primary-Magenta hero-text w-full ">
+                <h3 className="section-header text-Primary-Magenta hero-text w-full ">
                   {number}+
                 </h3>
-                <p className="w-[95%] text-lg  font-medium">{description}</p>
+                <p className="w-[95%] description-secondary">{description}</p>
               </article>
             ))}
           </div>

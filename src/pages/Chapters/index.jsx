@@ -66,16 +66,16 @@ const Chapters = () => {
       <main>
         {/* Hero Section */}
         <section className="bg-Secondary-Velvet text-SCA-White mt-24 py-16 md:py-24 text-center px-4">
-          <h1 className="font-semibold text-4xl sm:text-6xl md:text-7xl lg:text-9xl mb-6 hero-text max-w-5xl mx-auto">
+          <h1 className="hero-title leading-[130px] mb-6 hero-text max-w-5xl mx-auto">
             Chapters in SCA
           </h1>
-          <p className="max-w-3xl md:max-w-5xl mx-auto text-base sm:text-lg md:text-2xl font-normal">
+          <p className="max-w-3xl md:max-w-5xl mx-auto description-text">
             Our chapters are local communities led by passionate women who bring She Code Africa’s mission closer to home, creating spaces for learning, mentorship, and growth across cities and campuses in Africa.
           </p>
         </section>
 
         {/* /* Info Alert */}
-        <section className="border border-SCA-Apricote bg-[#FFF88F33] rounded-[30px] max-w-[62.903rem] mx-4 sm:mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 p-6 sm:p-[45px] mt-10 sm:mt-16">
+        <section className="border border-SCA-Apricote bg-[#FFF88F33] rounded-[30px] max-w-[62.903rem] mx-4 sm:mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 p-6 sm:p-[45px] my-24">
           <FontAwesomeIcon
             icon={faTriangleExclamation}
             className="text-SCA-Apricote mb-4 sm:mb-0"
@@ -86,7 +86,7 @@ const Chapters = () => {
               minHeight: "102px",
             }}
           />
-          <p className="text-black text-lg sm:text-2xl font-medium text-center sm:text-left">
+          <p className="text-black description-text text-center sm:text-left">
             She Code Africa(SCA) Chapters are independent chapters of the SCA community and engagements do not speak directly on behalf of the organisation except where explicitly stated.
           </p>
         </section>
@@ -118,7 +118,7 @@ const Chapters = () => {
                       <img
                         src={chapter.image || chapterImage}
                         alt={chapter.name}
-                        className="w-28 h-28 sm:w-36 sm:h-36 object-contain"
+                        className="w-28 h-28 sm:w-44 sm:h-44 object-contain"
                       />
                     </Link>
                     <Link
@@ -129,7 +129,7 @@ const Chapters = () => {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="text-Primary-Magenta text-xs sm:text-sm text-center hover:underline cursor-pointer mt-2"
+                      className="text-Primary-Magenta text-xs sm:text-sm text-center hover:underline cursor-pointer"
                     >
                       Join chapter
                     </Link>
@@ -167,15 +167,15 @@ const Chapters = () => {
         )}
 
         <section className="text-center pb-16 sm:pb-24 bg-SCA-White text-Primary-Magenta px-4">
-          <h2 className="font-bold text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 hero-text">
+          <h2 className="section-header mb-4 sm:mb-6 hero-text">
             Lead a chapter today
           </h2>
-          <p className="max-w-xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-6 sm:mb-12">
+          <p className="max-w-xl sm:max-w-2xl mx-auto description-text mb-6 sm:mb-12">
             Can’t find a chapter near you? Take the first step to lead a chapter in your city or campus, and become a changemaker in your community.
           </p>
           <Link
             to="#"
-            className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] text-base"
+            className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] button-text"
           >
             Lead a chapter
           </Link>
@@ -183,10 +183,10 @@ const Chapters = () => {
 
         {/* Become a member section */}
         <section className="bg-SCA-Citrine text-Primary-Magenta py-16 sm:py-[100px] text-center px-4">
-          <h2 className="font-bold text-3xl sm:text-5xl md:text-[64px] mb-4 sm:mb-6 hero-text">
+          <h2 className="section-header mb-4 sm:mb-6 hero-text">
             Become a member of our community
           </h2>
-          <p className="max-w-xl sm:max-w-[687px] mx-auto text-lg sm:text-2xl mb-6 sm:mb-12">
+          <p className="max-w-xl sm:max-w-[687px] mx-auto description-text mb-6 sm:mb-12">
             Be a part of a community that celebrates diversity and empowers
             women to thrive in tech. Connect with like-minded individuals, gain
             access to resources and events, and help shape the future of the

@@ -136,10 +136,10 @@ const Team = () => {
         <section className="bg-white mt-44">
           <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-24">
             <div className="text-center md:text-left">
-              <h1 className="hero-text text-5xl md:text-9xl font-bold text-primary-main-pink">
+              <h1 className="hero-text hero-title text-primary-main-pink">
                 Meet The SCA Team
               </h1>
-              <p className="mt-6 text-2xl leading-9 text-Secondary-Velvet md:max-w-3xl">
+              <p className="mt-6 description-text text-Secondary-Velvet md:max-w-3xl">
                 Peep the faces behind the initiatives and impacts here at She
                 Code Africa. These wonderful people work behind the scene,
                 everyday to keep our vision working.
@@ -164,7 +164,7 @@ const Team = () => {
                 .map((category) => (
                   <button
                     key={category}
-                    className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
+                    className={`button-text py-3 px-8 rounded-lg transition-colors duration-500 ${
                       activeSelection === category
                         ? "bg-Primary-Magenta text-SCA-Cloud"
                         : "bg-SCA-Cloud text-Secondary-Velvet"

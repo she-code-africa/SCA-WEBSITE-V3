@@ -8,7 +8,6 @@ import CustomButtonComponent from "../../components/version-2/shared-components/
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
 import OurBrands from "../../components/version-2/homepage/OurBrands";
 import DonateSection from "../../components/version-2/homepage/Donate";
-import donatePng from "../../assets/v2/images/donatePng.jpg";
 import {
   impactStats,
   ReachOutCard,
@@ -44,7 +43,7 @@ const Donate = () => {
           <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
             <img
               src={hero}
-              alt="Who We Are"
+              alt="Partner With Us Hero Background"
               className="object-cover w-full h-full"
             />
           </figure>

@@ -16,11 +16,11 @@ const OurReach = () => {
 
         <div className="w-[90%] mx-auto py-10">
           <article className="w-full">
-            <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
+            <h3 className="section-header text-center 2md:leading-[82px] text-primary-main-pink hero-text">
               Our Reach So Far
             </h3>
 
-            <p className="text-lg md:text-2xl mt-3 text-center">
+            <p className="description-text mt-3 text-center">
               Emphasize time-saving and use numbers to maximize credibility.
             </p>
           </article>
@@ -31,10 +31,10 @@ const OurReach = () => {
                 className={`flex flex-col sm:hidden  gap-4 w-full my-5`}
                 key={i}
               >
-                <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">
+                <h3 className="hero-text text-[#7D355D] impact-number-large lg:leading-[130px]">
                   {numbers}+
                 </h3>
-                <p className="text-lg md:text-2xl leading-normal md:leading-normal">
+                <p className="description-text">
                   {description}
                 </p>
               </article>
@@ -46,10 +46,10 @@ const OurReach = () => {
                 style={{ maxWidth: `${maxW}px` }}
                 key={i}
               >
-                <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">
+                <h3 className="hero-text text-[#7D355D] impact-number-large lg:leading-[130px]">
                   {numbers}+
                 </h3>
-                <p className="text-lg md:text-2xl leading-normal md:leading-normal">
+                <p className="description-text">
                   {description}
                 </p>
               </article>

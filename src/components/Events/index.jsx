@@ -1,4 +1,3 @@
-import React from "react";
 import Calendar from "../version-2/icons/Calendar";
 import { IoMdAlarm } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
@@ -15,10 +14,10 @@ const Event = ({ event, isUpcoming }) => {
       </figure>
 
       <article className="w-full  2md:mx-0 mt-8 px-[10px] pb-8">
-        <h3 className="text-xl  capitalize font-semibold text-primary-main-pink">
+        <h3 className="capitalize event-card-title text-primary-main-pink">
           {event.title}
         </h3>
-        <p className="mt-[10px] text-sm text-[#7D355D] w-full max-w-full truncate">
+        <p className="mt-[10px] small-text text-[#7D355D] w-full max-w-full truncate">
           {/* {event.description.length} */}
           Event description goes in here. Just sth short that leads them to sign
           up or register. Just like it is here.
@@ -29,7 +28,7 @@ const Event = ({ event, isUpcoming }) => {
             <li className="w-full flex items-center gap-[10px]">
               <Calendar />
 
-              <span className="text-[#7D355D] text-sm capitalize">
+              <span className="text-[#7D355D] small-text capitalize">
                 October 25, 2025
               </span>
             </li>
@@ -37,7 +36,7 @@ const Event = ({ event, isUpcoming }) => {
             <li className="w-full flex items-center gap-[10px]">
               <IoMdAlarm className="text-[#B70569] text-xl" />
 
-              <span className="text-[#7D355D] text-sm capitalize">
+              <span className="text-[#7D355D] small-text capitalize">
                 3:00pm WAT
               </span>
             </li>
@@ -45,7 +44,7 @@ const Event = ({ event, isUpcoming }) => {
             <li className="w-full flex items-center gap-[10px]">
               <IoLocationOutline className="text-[#B70569] text-xl" />
 
-              <span className="text-[#7D355D] text-sm capitalize">Zoom</span>
+              <span className="text-[#7D355D] small-text capitalize">Zoom</span>
             </li>
           </ul>
         </div>
@@ -56,7 +55,7 @@ const Event = ({ event, isUpcoming }) => {
             <a
               href={event.link ? event.link : "#"}
               target="_blank"
-              className="bg-primary-main-pink text-white py-[10px] px-8  capitalize text-sm transition duration-300 hover:bg-[#5C0335] w-full text-center rounded-lg h-[39px] flex items-center justify-center"
+              className="bg-primary-main-pink text-white py-[10px] px-8 capitalize button-text transition duration-300 hover:bg-[#5C0335] w-full text-center rounded-lg h-[39px] flex items-center justify-center"
               rel="noreferrer"
             >
               register

@@ -1,12 +1,8 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
-
 import Footer from "../../components/Footer";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
 import HomeHeroCarousel from "../../components/version-2/carousels/HomeHeroCarousel";
@@ -53,25 +49,27 @@ const Home = () => {
           </figure>
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center ">
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
-              <h1 className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
+              <h1 className="hero-title text-white hero-text">
                 Equipping Girls and Women In Tech Across Africa
               </h1>
 
-              <p className="text-white text-base md:text-2xl font-medium">
-                She Code Africa is a non-profit organization on a mission to equip African girls and women with digital skills, training, resources, and a thriving community, to help them build careers, gain financial independence, and lead boldly in tech.
+              <p className="description-text text-white font-medium">
+                She Code Africa is a non-profit organization on a mission to
+                equip African girls and women with digital skills, training,
+                resources, and a thriving community, to help them build careers,
+                gain financial independence, and lead boldly in tech.
               </p>
 
               <div className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8">
                 <CustomButtonComponent
-                  // btnColor="[#B70569]"
                   label="Join our community"
-                  customColor="text-white "
+                  customColor="text-white"
                   bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] border-primary-main-pink rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
                   isGallery={true}
                 />
+                
                 <CustomButtonComponent
-                  // btnColor="[#ffffff]"
                   label="Donate to a cause"
                   customColor=" text-primary-main-pink"
                   bgHover="hover:bg-[#FF8FCE] bg-white rounded-lg transition-all duration-300 border-none"

@@ -28,44 +28,94 @@ export const aboutUsInfoCards = [
   {
     heading: "Our Vision",
     paragraph:
-      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.",
+      "An Africa where women are equally represented across all career roles and levels in Technology"
   },
   {
     heading: "Our Mission",
     paragraph:
-      "An Africa where women are equally represented across all career roles and levels in Technology",
+      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence."
   },
   {
     heading: "Our Values",
     paragraph:
-      "Team work, Community, Technical growth, Leadership, Visibility, Communication.",
-  },
+      "Team work, Community, Technical growth, Leadership, Visibility, Communication."
+  }
 ];
 
 export const ourReachData = [
   {
     numbers: "65k",
     description: "program beneficiaries and scholarship recipients. ",
-    maxW: 498,
+    maxW: 498
   },
-    {
+  {
     numbers: "7k",
     description:
       "women and girls trained through our Academy and training programs",
-    maxW: 599,
+    maxW: 599
   },
   {
     numbers: "40k",
-    description:
-      "community members",
-    maxW: 483,
+    description: "community members",
+    maxW: 483
   },
 
   {
     numbers: "5M",
     description: "people Inspired by the Stories of African Girls in Tech.",
-    maxW: 531,
+    maxW: 531
+  }
+];
+
+export const aboutOurReachData = [
+  {
+    numbers: "7,000",
+    description:
+      "women and girls trained through our Academy and training programs",
+    maxW: 599
   },
+
+  {
+    numbers: "40,000",
+    description: "community members across 20+ African countries and 40+ chapter locations",
+    maxW: 483
+  },
+
+  {
+    numbers: "65,000",
+    description: "program beneficiaries and scholarship recipients. ",
+    maxW: 498
+  },
+
+  {
+    numbers: "5M",
+    description: "people Inspired by the Stories of African Girls in Tech.",
+    maxW: 531
+  }
+];
+
+export const impactStats = [
+  {
+    id: 1,
+    number: "65,000",
+    description: "program beneficiaries and scholarship recipients. "
+  },
+  {
+    id: 2,
+    number: "40,000",
+    description: "community members"
+  },
+  {
+    id: 3,
+    number: "7,000",
+    description:
+      "women and girls trained through our Academy and training programs"
+  },
+  {
+    id: 4,
+    number: "5M",
+    description: "people Inspired by the Stories of African Girls in Tech"
+  }
 ];
 
 export const testimonialCards = [

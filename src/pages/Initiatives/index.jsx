@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Hero from "../../components/Initiative/InitiativeHero";
 import InitiativeCard from "../../components/Initiative/InitiativeCard";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -8,6 +7,7 @@ import OurQueensTestimonials from "../../components/version-2/homepage/Testimoni
 import Donate from "../../components/version-2/homepage/Donate";
 import { Helmet } from "react-helmet-async";
 import { getInitiatives } from "../../services/index"; // adjust path
+import InitiativeHero from "../../components/Initiative/InitiativeHero";
 
 const Initiatives = () => {
   const [initiatives, setInitiatives] = useState([]);
@@ -47,7 +47,8 @@ const Initiatives = () => {
       </Helmet>
       <Header page={"initiatives"} />
       <main className="text-secondary-main-black ">
-        <Hero />
+        <InitiativeHero />
+        
         {/* Render initiatives dynamically */}
         {initiatives.map((initiative, idx) => (
           <InitiativeCard
@@ -64,13 +65,13 @@ const Initiatives = () => {
               initiative.isAvailable
                 ? {
                     label: "Apply Now",
-                    href: initiative.initiative_url || "http://initiative.com",
+                    href: initiative.initiative_url || "http://initiative.com"
                   }
                 : undefined
             }
             secondaryBtn={{
               label: "Make donation",
-              href: initiative.donation_url || "/donate-partner",
+              href: initiative.donation_url || "/donate-partner"
             }}
             bgPattern={idx % 2 === 0 ? "pink" : "wine"}
             reverse={idx % 2 !== 0}

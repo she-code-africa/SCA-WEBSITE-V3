@@ -35,18 +35,18 @@ const WhatWeDo = () => {
     <section className="w-full product-program-bg bg-no-repeat bg-cover pb-20">
       <div className="w-full bg-[#DDFF8F] what-we-do-clip relative z-[1]">
         <article className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56">
-          <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#094A32] hero-text">
+          <h3 className="section-header text-center 2md:leading-[82px] text-[#094A32] hero-text">
             What We Do
           </h3>
 
-          <p className="text-lg md:text-2xl mt-3 text-center leading-normal md:leading-normal font-medium">
+          <p className=" mt-3 text-center description-text">
             According to McKinsey, women make up just 47% of STEM graduates in
             Africa. Of those, only 23–30% enter the tech workforce, and fewer
             than 1 in 10 reach leadership roles. At every stage of the pipeline,
             the numbers fall talent is lost, and potential goes untapped.
           </p>
 
-          <p className="text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium">
+          <p className="description-text text-center mt-10">
             Here's how we're tackling that:
           </p>
         </article>
@@ -69,14 +69,14 @@ const WhatWeDo = () => {
 
               <div className="w-full flex flex-col justify-between min-h-[246px]">
                 <article className="mt-5 w-full">
-                  <h4 className="capitalize text-xl  font-semibold">{title}</h4>
-                  <p className="font-medium text-base mt-4 ">{description}</p>
+                  <h4 className="capitalize card-title">{title}</h4>
+                  <p className="card-text mt-4 ">{description}</p>
                 </article>
 
                 <div className="mt-5 w-full ">
                   <Link
                     to={url}
-                    className="text-base w-full flex items-center gap-2"
+                    className="small-text w-full flex items-center gap-2"
                   >
                     Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
                   </Link>
