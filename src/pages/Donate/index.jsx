@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import impact1 from "../../images/impact1.jpg";
-import impact2 from "../../images/impact2.jpg";
-import impact3 from "../../images/impact3.jpg";
+import impact2 from "../../assets/v2/images/partnerReach2.jpg";
+import impact3 from "../../assets/v2/images/hero-img-communtiy.jpg";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
@@ -16,7 +16,6 @@ import {
 import { motion } from "framer-motion";
 import { bgVariant, heroFadeUp } from "../../lib/motionVariants";
 import CountUp from "react-countup";
-import { Link } from "react-router-dom";
 
 const Donate = () => {
   const parseNumberAndSuffix = (value) => {
@@ -180,12 +179,14 @@ const Donate = () => {
             </div>
 
             <div className="flex max-w-[150px] mx-auto justify-center mt-8">
-              <Link
-                to="/donate"
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://drive.google.com/open?id=1Bndoyddtsf1T6iJE8VXUhKobFS3WHvua&usp=drive_fs"
                 className="flex w-full h-[55px] bg-white rounded-lg py-[18px] px-8 justify-center items-center text-primary-main-pink text-base hover:bg-[#FF8FCE] transition-colors duration-300"
               >
                 Learn more
-              </Link>
+              </a>
             </div>
           </div>
         </section>

@@ -4,6 +4,10 @@ import donateJpg from "../../../assets/v2/images/donatePng.jpg";
 import donatePng from "../../../assets/v2/images/gallery-imgs/gallery6.png";
 import donateEvent from "../../../assets/v2/images/donate/donate-event.jpg";
 import donateMedia from "../../../assets/v2/images/donate/donate-media.jpg";
+import donateContact from "../../../assets/v2/images/donate/donateContact.jpg";
+import donatePartner from "../../../assets/v2/images/donate/donatePartner.jpg";
+import donateAcademy from "../../../assets/v2/images/donate/donateAcademy.jpg";
+import donateHire from "../../../assets/v2/images/donate/donateHire.jpg";
 import { motion } from "framer-motion";
 
 const Donate = () => {
@@ -40,9 +44,14 @@ const Donate = () => {
 
   const locationJpegs = {
     "/": donateJpg,
-    "/contact-us": donatePng,
+    "/about": donateJpg,
     "/events": donateEvent,
     "/media": donateMedia,
+    "/contact-us": donateContact,
+    "/team": donateContact,
+    "/partner": donatePartner,
+    "/academy": donateAcademy,
+    "/hire": donateHire,
   };
 
   return (
@@ -84,7 +93,7 @@ const Donate = () => {
 
         <motion.figure
           variants={fadeInRight}
-          className="hidden lg:block max-w-[538px] w-full h-[434px] rounded-[30px] overflow-hidden"
+          className="hidden lg:block max-w-[528px] w-full h-[434px] rounded-[30px] overflow-hidden"
         >
           <img
             src={locationJpegs[pathname] || donatePng}

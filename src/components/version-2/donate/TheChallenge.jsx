@@ -1,4 +1,4 @@
-import challengeImage from "../../../assets/v2/images/donate/the-challenge.jpg";
+import challengeImage from "../../../assets/v2/images/donate/challenge-section.png";
 import { motion } from "framer-motion";
 
 const TheChallenge = () => {
