@@ -194,7 +194,7 @@ const Header = ({ page }) => {
       variants={headerVariant}
       initial="hidden"
       animate="visible"
-      className="fixed left-0 right-0 top-0 w-full bg-white z-[2] py-6 shadow-lg font-figtree"
+      className="fixed left-0 right-0 top-0 w-full bg-white z-[2] py-6 shadow-lg font-figtree "
     >
       <nav
         className="w-[90%] mx-auto max-w-[1256px] flex justify-between gap-5 lg:gap-36 items-center"
@@ -531,10 +531,9 @@ const Header = ({ page }) => {
               })}
             </ul>
 
-            <li></li>
             <Link
               to={paths.donate}
-              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20 hover:bg-[#5C0335] transition duration-300"
+              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20 hover:bg-[#5C0335] transition duration-300 text-center"
             >
               Donate
             </Link>

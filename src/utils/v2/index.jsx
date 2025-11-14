@@ -9,9 +9,9 @@ import testimonial2 from "../../assets/v2/images/testimonial2.png";
 import testimonial3 from "../../assets/v2/images/testimonial3.png";
 import galleryImg1 from "../../assets/v2/images/gallery-imgs/gallery1.png";
 import galleryImg2 from "../../assets/v2/images/gallery-imgs/gallery2.jpg";
-import galleryImg3 from "../../assets/v2/images/gallery-imgs/gallery3.png";
+import galleryImg5 from "../../assets/v2/images/gallery-imgs/gallery3.jpg";
 import galleryImg4 from "../../assets/v2/images/gallery-imgs/gallery4.jpg";
-import galleryImg5 from "../../assets/v2/images/gallery-imgs/gallery5.png";
+import galleryImg3 from "../../assets/v2/images/gallery-imgs/gallery5.jpg";
 import galleryImg6 from "../../assets/v2/images/gallery-imgs/gallery6.png";
 import galleryImg7 from "../../assets/v2/images/gallery-imgs/gallery7.jpeg";
 
@@ -72,15 +72,20 @@ export const aboutUsReachData = [
     numbers: "7,000",
     description:
       "women and girls trained through our Academy and training programs",
-    maxW: 599,
   },
   {
     numbers: "40,000",
     description:
       "community members across 20+ African countries and 40+ chapter locations",
+  },
+  {
+    numbers: "65,000",
+    description: "program beneficiaries and scholarship recipients.",
+  },
+
+  {
     numbers: "5M",
     description: "people Inspired by the Stories of African Girls in Tech.",
-    maxW: 531,
   },
 ];
 

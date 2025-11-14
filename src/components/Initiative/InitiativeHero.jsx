@@ -1,6 +1,6 @@
 // src/components/HeroSection.jsx
 import { motion } from "framer-motion";
-import heroImage from "../../images/initiative/hero-image.jpg";
+import heroImage from "../../assets/v2/images/initiatives-hero-2.png";
 
 export default function HeroSection() {
   return (
@@ -10,7 +10,7 @@ export default function HeroSection() {
         backgroundImage: `url(${heroImage})`,
         backgroundBlendMode: "multiply",
         backgroundColor: "#FF8A3F",
-        backgroundSize: "150%",
+        backgroundSize: "cover",
         backgroundPosition: "40% center",
       }}
     >

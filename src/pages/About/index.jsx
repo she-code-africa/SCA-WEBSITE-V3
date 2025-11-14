@@ -3,18 +3,14 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
+import hero from "../../assets/v2/images/herobg-v2.jpg";
 
 import AboutUsReachSection from "../../components/version-2/about-us";
 import Donate from "../../components/version-2/homepage/Donate";
 import AboutUs from "../../components/version-2/homepage/AboutUs";
 import Milestone from "../../components/version-2/about-us/Milestone";
 import { motion } from "framer-motion";
-import {
-  bgVariant,
-  heroFadeUp,
-  sectionVariant,
-} from "../../lib/motionVariants";
+import { bgVariant, heroFadeUp } from "../../lib/motionVariants";
 
 const About = () => {
   return (
@@ -60,16 +56,22 @@ const About = () => {
             className="bg-[rgba(0,0,0,0.35)] min-h-[120vh] pt-16 lg:pt-[86px]  flex justify-center items-center "
           >
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[900px] text-center">
-              <motion.h1 variants={heroFadeUp}
-                              initial="hidden"
-                              animate={() => heroFadeUp.visible(0.3)} className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
+              <motion.h1
+                variants={heroFadeUp}
+                initial="hidden"
+                animate={() => heroFadeUp.visible(0.3)}
+                className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text "
+              >
                 Equipping women with digital skills, one initiative after
                 another
               </motion.h1>
 
-              <motion.p  variants={heroFadeUp}
-                              initial="hidden"
-                              animate={() => heroFadeUp.visible(0.5)} className="text-white text-base md:text-2xl font-medium">
+              <motion.p
+                variants={heroFadeUp}
+                initial="hidden"
+                animate={() => heroFadeUp.visible(0.5)}
+                className="text-white text-base md:text-2xl font-medium"
+              >
                 She Code Africa started with one simple belief: talent is
                 everywhere, but opportunity is not. In many African communities,
                 girls and women are shut out of tech because of where they live,
