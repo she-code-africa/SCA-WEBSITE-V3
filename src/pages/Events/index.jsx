@@ -15,6 +15,7 @@ import Event from "../../components/Events";
 import * as components from "../../components";
 import eventBanner from "../../assets/v2/images/events-hero.jpg";
 import Donate from "../../components/version-2/homepage/Donate";
+import { motion } from "framer-motion";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -54,6 +55,11 @@ const Events = () => {
     return sortUpcomingEventByDate(events);
   }, [events]);
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
   return (
     <>
       <Helmet>
@@ -78,7 +84,13 @@ const Events = () => {
       <Header page={"events"} />
 
       <main className=" text-secondary-main-black">
-        <section className="pt-16 md:pt-28 bg-[#FFB8E0]">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="pt-16 md:pt-28 bg-[#FFB8E0]"
+        >
           <div className="w-full min-h-screen">
             <div className="py-20 md:py-[100px] bg-[#FFB8E0] w-full flex items-center justify-center">
               <article className="w-[90%] mx-auto flex flex-col items-center justify-center max-w-[1040px]">
@@ -90,19 +102,34 @@ const Events = () => {
                 </p>
               </article>
             </div>
-            <figure className="w-full h-[593px]">
+            <motion.figure
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="w-full h-[593px]"
+            >
               <img
                 src={eventBanner}
                 alt="hero pic"
                 className="w-full h-full object-cover"
               />
-            </figure>
+            </motion.figure>
           </div>
-        </section>
+        </motion.section>
 
         <section className="w-full">
-          <div className="w-[90%] mx-auto py-[100px]">
-            <div className="w-full flex items-center justify-center gap-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="w-[90%] mx-auto py-[100px]"
+          >
+            <motion.div
+              variants={fadeUp}
+              className="w-full flex items-center justify-center gap-8"
+            >
               {["Upcoming Events", "Past Events"].map((tab, idx) => (
                 <button
                   className={`transition-colors duration-300 w-auto flex items-center justify-center button-text py-[18px] px-8 rounded-lg h-[55px] ${
@@ -116,10 +143,13 @@ const Events = () => {
                   {tab}
                 </button>
               ))}
-            </div>
+            </motion.div>
 
             {activeTab.toLowerCase() === "past events" && (
-              <div className="w-full flex items-center justify-center gap-8 flex-wrap mt-8">
+              <motion.div
+                variants={fadeUp}
+                className="w-full flex items-center justify-center gap-8 flex-wrap mt-8"
+              >
                 {years.map((tab, idx) => (
                   <button
                     className={`transition-colors duration-300 w-full max-w-[102px] flex items-center justify-center text-sm sm:text-base py-[18px] px-8 rounded-lg  h-[35px]  ${
@@ -133,7 +163,7 @@ const Events = () => {
                     {tab}
                   </button>
                 ))}
-              </div>
+              </motion.div>
             )}
 
             {isError ? <components.Error /> : null}
@@ -143,17 +173,24 @@ const Events = () => {
             {!isLoading && (
               <>
                 {isSuccess && isFetched && events && (
-                  <section className="mt-[100px] w-full text-primary-dark-brown">
+                  <motion.section
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeUp}
+                    className="mt-[100px] w-full text-primary-dark-brown"
+                  >
                     {activeTab.toLowerCase() === "upcoming events" && (
                       <>
                         {upcomingEvents.length ? (
                           <section className=" w-full mx-auto md:max-w-[1000px] mt-16 grid grid-cols-1 2md:grid-cols-2  gap-10">
-                            {upcomingEvents.map((event) => {
+                            {upcomingEvents.map((event, idx) => {
                               return (
                                 <Event
                                   key={event._id}
                                   event={event}
                                   isUpcoming={true}
+                                  i={idx}
                                 />
                               );
                             })}
@@ -168,27 +205,44 @@ const Events = () => {
 
                     {activeTab.toLowerCase() === "past events" && (
                       <>
-                        <section className="w-full text-primary-dark-brown">
+                        <motion.section
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          variants={fadeUp}
+                          className="w-full text-primary-dark-brown"
+                        >
                           {pastEvents.length ? (
-                            <section className="mx-auto  md:max-w-[1256px] mt-16 flex flex-wrap gap-10 justify-center">
+                            <motion.section
+                              variants={fadeUp}
+                              className="mx-auto  md:max-w-[1256px] mt-16 flex flex-wrap gap-10 justify-center"
+                            >
                               {showAll ? (
                                 <>
-                                  {pastEvents.map((event) => {
+                                  {pastEvents.map((event, idx) => {
                                     return (
-                                      <Event key={event._id} event={event} />
+                                      <Event
+                                        key={event._id}
+                                        event={event}
+                                        i={idx}
+                                      />
                                     );
                                   })}
                                 </>
                               ) : (
                                 <>
-                                  {pastEvents.slice(0, 8).map((event) => {
+                                  {pastEvents.slice(0, 8).map((event, idx) => {
                                     return (
-                                      <Event key={event._id} event={event} />
+                                      <Event
+                                        key={event._id}
+                                        event={event}
+                                        i={idx}
+                                      />
                                     );
                                   })}
                                 </>
                               )}
-                            </section>
+                            </motion.section>
                           ) : (
                             <h1 className="font-bold text-5xl sm:text-[64px] text-primary-main-pink text-center mt-16 w-90 mx-auto hero-text max-w-[500px]  sm:leading-normal">
                               There is currently no past event.
@@ -196,35 +250,63 @@ const Events = () => {
                           )}
 
                           {pastEvents.length > 8 && (
-                            <button
+                            <motion.button
+                              variants={fadeUp}
                               title="view all"
                               className="mt-8 w-full max-w-[120px] mx-auto flex items-center justify-center px-8 py-[18px] h-[55px] rounded-lg bg-primary-main-pink text-white text-base transition-colors duration-300 hover:bg-[#5C0335]"
                               onClick={() => setShowAll(!showAll)}
                             >
                               {showAll ? "Show Less" : "View All"}
-                            </button>
+                            </motion.button>
                           )}
-                        </section>
+                        </motion.section>
                       </>
                     )}
-                  </section>
+                  </motion.section>
                 )}
               </>
             )}
-          </div>
+          </motion.div>
         </section>
 
         <section className="w-full bg-[#FFF88F] py-[100px]">
-          <article className="w-[90%] mx-auto max-w-[852px]">
-            <h3 className="hero-text section-header text-primary-main-pink text-center">
+          <motion.article
+            className="w-[90%] mx-auto max-w-[852px]"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h3
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hero-text section-header text-primary-main-pink text-center"
+            >
               Become a member of our community
-            </h3>
+            </motion.h3>
 
-            <p className="mt-8 text-primary-main-pink description-text text-center w-full mx-auto max-w-[750px]">
-              Be part of a community bridging the gender gap in tech, a space ran by and for African women. Connect with like-minded individuals, gain access to resources and events, and help shape the future of the industry.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-8 text-primary-main-pink description-text text-center w-full mx-auto max-w-[750px]"
+            >
+              Be a part of a community that celebrates diversity and empowers
+              women to thrive in tech. Connect with like-minded individuals,
+              gain access to resources and events, and help shape the future of
+              the industry.
+            </motion.p>
 
-            <div className="mt-8 flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-8 flex justify-center"
+            >
               <a
                 href="https://bit.ly/joinshecodeafrica"
                 target="_blank"
@@ -233,8 +315,8 @@ const Events = () => {
               >
                 Join now
               </a>
-            </div>
-          </article>
+            </motion.div>
+          </motion.article>
         </section>
 
         <Donate />

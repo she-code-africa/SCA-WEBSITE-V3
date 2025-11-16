@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 import { apiConstants } from "../../utils";
 import { getAllSchools } from "../../services";
 import { useQuery } from "@tanstack/react-query";
-import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
+import hero from "../../assets/v2/images/herobg-v2.jpg";
 import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 import Donate from "../../components/version-2/homepage/Donate";
 import ProgramsComponent from "../../components/version-2/academy/ProgramsComponent";
@@ -62,7 +62,13 @@ const LandingPage = () => {
               </h1>
 
               <p className="text-white description-text lg:max-w-[758px] w-full">
-                At She Code Africa Academy, we make learning practical, accessible, and designed for your growth. From engineering to product to applied skills, each of our Academy Schools meets you where you are, whether you’re just starting out or growing into leadership. Pick the path that fits your journey, gain the skills and guidance you need, and step confidently into your future in tech.
+                At She Code Africa Academy, we make learning practical,
+                accessible, and designed for your growth. From engineering to
+                product to applied skills, each of our Academy Schools meets you
+                where you are, whether you’re just starting out or growing into
+                leadership. Pick the path that fits your journey, gain the
+                skills and guidance you need, and step confidently into your
+                future in tech.
               </p>
             </article>
           </div>

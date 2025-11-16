@@ -1,13 +1,45 @@
-import impact1 from "../../../images/impact1.jpg";
-import impact2 from "../../../images/impact2.jpg";
-import impact3 from "../../../images/impact3.jpg";
-import { impactStats } from "../../../utils/v2";
+import impact1 from "../../../assets/v2/images/donate/donate-reach.jpg";
+import impact2 from "../../../assets/v2/images/donate/donate-reach2.jpg";
+import impact3 from "../../../assets/v2/images/sponsor-reach.jpg";
+import { sponsorImpactStats } from "../../../utils";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const OurImpact = () => {
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const parseNumberAndSuffix = (value) => {
+    // Remove commas and trim spaces
+    const cleanValue = value.replace(/,/g, "").trim();
+    const match = cleanValue.match(/^([\d.]+)([a-zA-Z]*)$/);
+    return {
+      num: match ? parseFloat(match[1]) : 0,
+      suffix: match ? match[2] : "",
+    };
+  };
   return (
-    <section className="w-full bg-SCA-Cloud py-[100px]">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="w-full bg-[#F4EFEC] py-[100px]"
+    >
       <div className="w-[90%] mx-auto lg:max-w-[1256px] flex items-center justify-between lg:gap-14">
-        <div className="w-full max-w-[602px] hidden lg:block">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="w-full max-w-[602px] hidden lg:block"
+        >
           {/* Large main image */}
           <div className="relative mb-6">
             <figure className="rounded-2xl overflow-hidden">
@@ -36,13 +68,19 @@ const OurImpact = () => {
               />
             </figure>
           </div>
-        </div>
+        </motion.div>
 
         {/*  */}
 
-        <div className="w-full lg:max-w-[600px]">
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="w-full lg:max-w-[600px]"
+        >
           <article className="w-full">
-            <h3 className="section-header text-Primary-Magenta hero-text w-full">
+            <h3 className="section-header text-primary-main-pink hero-text w-full">
               Our Impact in Numbers
             </h3>
 
@@ -52,19 +90,33 @@ const OurImpact = () => {
             </p>
           </article>
 
-          <div className="mt-10 w-full grid sm:grid-cols-2 gap-2 lg:gap-6">
-            {impactStats.map(({ number, description }, idx) => (
-              <article className={`flex flex-col  w-full my-5`} key={idx}>
-                <h3 className="section-header text-Primary-Magenta hero-text w-full ">
-                  {number}+
-                </h3>
-                <p className="w-[95%] description-secondary">{description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
+          <motion.div
+            variants={containerVariant}
+            className="mt-10 w-full grid sm:grid-cols-2 gap-2 lg:gap-6"
+          >
+            {sponsorImpactStats.map(({ number, description }, idx) => {
+              const { num, suffix } = parseNumberAndSuffix(number);
+              const decimals = number.includes(".") ? 1 : 0;
+              return (
+                <article className={`flex flex-col  w-full my-5`} key={idx}>
+                  <h3 className="section-header text-primary-main-pink hero-text w-full ">
+                    <CountUp
+                      end={num}
+                      duration={2}
+                      decimals={decimals}
+                      enableScrollSpy
+                      scrollSpyOnce
+                    />
+                    {suffix}+
+                  </h3>
+                  <p className="w-[95%] description-secondary">{description}</p>
+                </article>
+              );
+            })}
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

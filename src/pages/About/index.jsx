@@ -2,11 +2,15 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
+
+import hero from "../../assets/v2/images/herobg-v2.jpg";
+
 import AboutUsReachSection from "../../components/version-2/about-us";
 import Donate from "../../components/version-2/homepage/Donate";
 import AboutUs from "../../components/version-2/homepage/AboutUs";
 import Milestone from "../../components/version-2/about-us/Milestone";
+import { motion } from "framer-motion";
+import { bgVariant, heroFadeUp } from "../../lib/motionVariants";
 
 const About = () => {
   return (
@@ -33,21 +37,41 @@ const About = () => {
       <Header page={"about"} />
       <main className="text-secondary-main-black w-full">
         <section className="w-full h-full bg-[rgba(143,171,80,1)] relative ">
-          <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
+          <motion.figure
+            variants={bgVariant}
+            initial="hidden"
+            animate="visible"
+            className="absolute top-0 left-0 w-full h-full mix-blend-multiply"
+          >
             <img
               src={hero}
               alt="Who We Are"
               className="object-cover w-full h-full"
             />
-          </figure>
-          <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center ">
+          </motion.figure>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center "
+          >
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[1040px] text-center">
-              <h1 className="hero-title text-white hero-text">
+              <motion.h1
+                variants={heroFadeUp}
+                initial="hidden"
+                animate={() => heroFadeUp.visible(0.3)}
+                className="hero-title text-white hero-text"
+              >
                 Equipping women with digital skills, one initiative after
                 another
-              </h1>
+              </motion.h1>
 
-              <p className="description-text text-white lg:max-w-[858px] mx-auto">
+              <motion.p
+                variants={heroFadeUp}
+                initial="hidden"
+                animate={() => heroFadeUp.visible(0.5)}
+                className="description-text text-white lg:max-w-[858px] mx-auto"
+              >
                 She Code Africa started with one simple belief: talent is
                 everywhere, but opportunity is not. In many African communities,
                 girls and women are shut out of tech because of where they live,
@@ -57,9 +81,9 @@ const About = () => {
                 home where women and girls can learn, grow, and thrive in tech,
                 with skills, mentorship, and a supportive community by their
                 side.
-              </p>
+              </motion.p>
             </article>
-          </div>
+          </motion.div>
         </section>
         <AboutUsReachSection />
         <AboutUs />

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
+import hero from "../../assets/v2/images/contact-us/contact-hero.jpg";
 import ContactUsForm from "../../components/version-2/contact-us/ContactUsForm";
 import OurMailingList from "../../components/version-2/contact-us/OurMailingList";
 import Donate from "../../components/version-2/homepage/Donate";

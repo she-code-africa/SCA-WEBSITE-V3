@@ -1,14 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Hero from "../../images/volunteerImgs/volunteer-hero.png";
+// import Hero from "../../images/volunteerImgs/volunteer-hero.png";
+import Hero from "../../assets/v2/images/volunteer-hero.jpg";
 import OurReach from "../../components/version-2/homepage/OurReach";
 import UserIcon from "../../images/volunteerImgs/voln-hero-icon.svg";
-import testmonialImg from "../../images/testimonial.png";
+// import testmonialImg from "../../images/testimonial.png";
 import OpportunityImg from "../../images/vol-oppotunity.png";
-
-import { Link } from "react-router-dom";
 import { volunteerCards } from "../../utils";
+import { motion } from "framer-motion";
+import testmonialImg from "../../assets/v2/images/volunteer-stories.png";
 
 const Volunteer = () => {
   // smooth scroll helper
@@ -45,12 +46,32 @@ const Volunteer = () => {
       </Helmet>
       <Header page={"about"} />
       <main className="m-0">
-        <section
-          className="min-h-screen pt-16 lg:pt-24 bg-SCA-White">
+        <section className="min-h-screen pt-16 lg:pt-24 bg-SCA-White">
           <div className="w-[89.666667%] mx-auto py-12 lg:py-24">
-            <div className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-16">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.3 },
+                },
+              }}
+              className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-16"
+            >
               {/* Left column - text */}
-              <div className="w-full lg:w-1/2">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -60 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
+                }}
+                className="w-full lg:w-1/2"
+              >
                 <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-5 py-[10px] text-2xl font-medium mb-6">
                   Join our mission
                 </span>
@@ -60,7 +81,8 @@ const Volunteer = () => {
                 </h1>
 
                 <p className="mt-6 text-2xl text-black font-medium max-w-2xl">
-                  We are out to celebrate and inspire female programmers and tech lovers across Africa by telling their stories.
+                  Give back in a way that matters. Support our programs, mentor
+                  young women, or lend your expertise to help grow our impact.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-8">
@@ -80,58 +102,108 @@ const Volunteer = () => {
                     See our impact
                   </button>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Right column - image with badge */}
-              <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
-                <div className="rounded-[24px] overflow-hidden w-full max-w-[560px] shadow-xl">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: 60 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
+                }}
+                className="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
+              >
+                <figure className="rounded-[24px] overflow-hidden w-full max-w-[547px] h-[741px] shadow-xl">
                   <img
                     src={Hero}
                     alt="Volunteer with She Code Africa"
-                    className="w-full h-auto object-cover block"
+                    className="w-full h-full object-cover block"
                   />
-                </div>
+                </figure>
 
-                <div className="absolute -left-14 bottom-14 bg-Primary-Magenta text-SCA-White p-5 rounded-lg flex items-center gap-3 shadow-lg">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.5 }}
+                  viewport={{ once: true }}
+                  className="absolute -left-14 bottom-14 bg-Primary-Magenta text-SCA-White p-5 rounded-lg flex items-center gap-3 shadow-lg"
+                >
                   <div className="bg-SCA-Blush rounded-full p-3 flex items-center justify-center">
                     <img src={UserIcon} alt="user icon" className="h-6 w-6" />
                   </div>
                   <div className="text-left">
                     <div className="text-base ">Active Community</div>
-                    <div className="text-base font-bold">2,600+ Members</div>
+                    <div className="text-base font-bold">40k+ Members</div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
-        
+
         <div id="our-reach">
           <OurReach />
         </div>
 
         {/* Volunteer Opportunities */}
-        <section id="volunteer-opportunities" className="py-16 lg:py-24 bg-white">
+        <section
+          id="volunteer-opportunities"
+          className="py-16 lg:py-24 bg-white"
+        >
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <h2 className="text-center text-[34px] sm:text-4xl lg:text-[64px] font-semibold text-Primary-Magenta mb-10 hero-text">
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-center text-[34px] sm:text-4xl lg:text-[64px] font-semibold text-Primary-Magenta mb-10 hero-text"
+            >
               Volunteer Opportunities
-            </h2>
+            </motion.h2>
 
-            <p className="text-center max-w-3xl mx-auto text-lg md:text-2xl sm:text-lg font-medium text-black mb-6">
-              Choose a role that matches your skills and passion. Every contribution makes a difference in equipping the next generation of African women in tech.
-            </p>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+              className="text-center max-w-[860px] mx-auto text-lg md:text-2xl sm:text-lg font-medium text-black mb-6"
+            >
+              Choose a role that matches your skills and passion. Every
+              contribution makes a difference in equipping the next generation
+              of African women in tech.
+            </motion.p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.2 },
+                },
+              }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
               {volunteerCards.map((card) => (
-                <article
+                <motion.article
                   key={card.id}
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.7, ease: "easeOut" },
+                    },
+                  }}
                   className="group bg-white border-2 border-Primary-Magenta rounded-[15.29px] overflow-hidden transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(183,5,105,0.14)]"
                 >
                   {/* image with padding and rounded inner container */}
                   <div className="p-4 bg-SCA-White">
-                    <div
-                      className="w-full h-80 rounded-[15px] overflow-hidden bg-SCA-White"
-                    >
+                    <div className="w-full h-80 rounded-[15px] overflow-hidden bg-SCA-White">
                       <img
                         src={OpportunityImg}
                         alt={card.title}
@@ -148,7 +220,9 @@ const Volunteer = () => {
                       {card.description}
                     </p>
 
-                    <div className="text-sm text-black mb-3">Skills needed:</div>
+                    <div className="text-sm text-black mb-3">
+                      Skills needed:
+                    </div>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {card.skills.map((s) => (
                         <span
@@ -164,82 +238,190 @@ const Volunteer = () => {
                       Apply for this role
                     </button>
                   </div>
-                </article>
+                </motion.article>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Volunteer Stories*/}
-        <section className="py-12 lg:py-28  bg-SCA-Cloud">
+        <section className="py-12 lg:py-28 bg-SCA-Cloud">
           <div className="w-[96.666667%] mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.3 },
+                },
+              }}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
+            >
               {/* Left image */}
-              <div className="lg:col-span-5">
-                <div className="rounded-[18px] overflow-hidden shadow-xl">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: -60 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
+                }}
+                className="lg:col-span-5"
+              >
+                <figure className="rounded-[18px] h-[700px] w-full max-w-[547px] overflow-hidden shadow-xl">
                   <img
                     src={testmonialImg}
                     alt="Volunteer story"
                     className="w-full h-full object-cover block rounded-[18px]"
                   />
-                </div>
-              </div>
+                </figure>
+              </motion.div>
 
               {/* Content */}
-              <div className="lg:col-span-7">
-                <span className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-4 py-2 text-base sm:text-xl font-medium mb-6">
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, x: 60 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
+                }}
+                className="lg:col-span-7"
+              >
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="inline-block bg-[#FFB8E04D] text-Primary-Magenta rounded-full px-4 py-2 text-base sm:text-xl font-medium mb-6"
+                >
                   Volunteer Stories
-                </span>
+                </motion.span>
 
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-medium text-black mb-8">
-                  Making a Real Difference
-                </h3>
-
-                <div className="flex flex-col gap-28">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: {},
+                    visible: {
+                      transition: { staggerChildren: 0.3 },
+                    },
+                  }}
+                  className="flex flex-col gap-7"
+                >
                   {/* Testimonial 1 */}
-                  <div className="">
-                    <div className="pl-0 sm:pl-6 py-6 sm:border-l-4 border-SCA-Lavender">
-                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mb-6">
-                        "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 40 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.8, ease: "easeOut" },
+                      },
+                    }}
+                    className=""
+                  >
+                    <div className="pl-0 sm:pl-6 pt-4 mt-8 pb-4 sm:border-l-4 border-SCA-Lavender">
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed">
+                        Since August 8th, 2022, I've been actively contributing
+                        to the mission and vision of She Code Africa empowering
+                        women and girls in technology by creating and sharing
+                        opportunities for their career growth.
                       </p>
 
-                      <div>
-                        <div className="font-bold text-base sm:text-xl text-black">Jane Doe</div>
-                        <div className="text-sm sm:text-base font-medium text-SCA-Lavender">Mentor Volunteer, Lagos</div>
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mt-8 ">
+                        By grace, I look forward to continuing this exceptional
+                        work. The work we do matters and the impact keeps
+                        growing.
+                      </p>
+
+                      <div className="mt-5">
+                        <div className="font-bold text-base sm:text-xl text-black">
+                          Salvation C
+                        </div>
+                        <div className="text-sm sm:text-base font-medium text-SCA-Lavender">
+                          SCA Lagos Chapter Lead
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
 
                   {/* Testimonial 2 */}
-                  <div className="">
-                    <div className="pl-0 sm:pl-6 py-6 sm:border-l-4 border-SCA-Apricote">
-                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mb-6">
-                        "Volunteering with She Code Africa has been one of the most rewarding experiences of my career. Seeing the women I mentor land their first tech jobs fills my heart with pride."
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, y: 40 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.8, ease: "easeOut" },
+                      },
+                    }}
+                    className=""
+                  >
+                    <div className="pl-0 sm:pl-6 pt-4 pb-4 mt-8 sm:border-l-4 h-full border-SCA-Apricote">
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed ">
+                        When I signed up as a mentor for She Code Africa
+                        Mentorship Program (Cycle 1), I thought l'd simply be
+                        teaching. But very quickly, I realized I was also
+                        learning.
                       </p>
 
-                      <div>
-                        <div className="font-bold text-base sm:text-xl text-black">Jane Doe</div>
-                        <div className="text-sm sm:text-base font-medium text-SCA-Apricote">Mentor Volunteer, Lagos</div>
+                      <p className="text-base sm:text-2xl italic font-light text-black leading-relaxed mt-8">
+                        So today, I want to Thank you She Code Africa for this
+                        platform, and my mentees for trusting me with their
+                        growth. Your wins are my wins.
+                      </p>
+
+                      <div className="mt-5">
+                        <div className="font-bold text-base sm:text-xl text-black">
+                          Chisom O
+                        </div>
+                        <div className="text-sm sm:text-base font-medium text-SCA-Apricote">
+                          Mentor Volunteer
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
         {/* Become a member section */}
-        <section className="bg-SCA-Citrine text-Primary-Magenta py-16 sm:py-[100px] text-center px-4">
-          <h2 className="font-bold text-3xl sm:text-5xl md:text-[64px] mb-4 sm:mb-6 hero-text">
+        <motion.section
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="bg-SCA-Citrine text-Primary-Magenta py-16 sm:py-[100px] text-center px-4"
+        >
+          <motion.h3
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-bold text-3xl sm:text-5xl md:text-[64px] mb-4 sm:mb-6 hero-text"
+          >
             Become a member of our community
-          </h2>
-          <p className="max-w-4xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-8 sm:mb-8">
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="max-w-4xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-8 sm:mb-8"
+          >
             Be a part of a community that celebrates diversity and empowers
             women to thrive in tech. Connect with like-minded individuals, gain
             access to resources and events, and help shape the future of the
             industry.
-          </p>
+          </motion.p>
           <a
             href="https://forms.gle/aFe2LrkZxZJtKKve7"
             target="_blank"
@@ -248,7 +430,7 @@ const Volunteer = () => {
           >
             Register to join now
           </a>
-        </section>
+        </motion.section>
       </main>
       <Footer />
     </>

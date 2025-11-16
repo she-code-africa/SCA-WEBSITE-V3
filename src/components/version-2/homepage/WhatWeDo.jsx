@@ -3,6 +3,7 @@ import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const WhatWeDo = () => {
   const whatWeDoData = [
@@ -31,10 +32,32 @@ const WhatWeDo = () => {
       url: "/initiatives",
     },
   ];
+  // Animation variants (for DRY, reusable setup)
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
   return (
-    <section className="w-full product-program-bg bg-no-repeat bg-cover pb-20">
+    <motion.section
+      className="w-full product-program-bg bg-no-repeat bg-cover pb-20"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="w-full bg-[#DDFF8F] what-we-do-clip relative z-[1]">
-        <article className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56">
+        <motion.article
+          className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <h3 className="section-header text-center 2md:leading-[82px] text-[#094A32] hero-text">
             What We Do
           </h3>
@@ -49,10 +72,13 @@ const WhatWeDo = () => {
           <p className="description-text text-center mt-10">
             Here's how we're tackling that:
           </p>
-        </article>
+        </motion.article>
       </div>
 
-      <div className="w-[90%] mx-auto sm:w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[778px] -mt-40 relative z-[1]">
+      <motion.div
+        variants={containerVariant}
+        className="w-[90%] mx-auto sm:w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[778px] -mt-40 relative z-[1]"
+      >
         <div className="w-full grid md:grid-cols-2 gap-8 ">
           {whatWeDoData.map(({ title, description, url }, i) => (
             <div
@@ -85,8 +111,8 @@ const WhatWeDo = () => {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

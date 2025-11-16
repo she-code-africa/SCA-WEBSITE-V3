@@ -55,10 +55,10 @@ const ContactUsForm = () => {
         <div className="w-[90%] max-w-[650px] mx-auto lg:mx-0">
           <article className="w-full">
             <h3 className="text-[32px] md:text-3xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
-              Send us a message?
+              Leave us a message
             </h3>
 
-            <p className="text-lg md:text-2xl mt-3">
+            <p className="text-lg md:text-2xl mt-3 hidden">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse varius enim in eros elementum tristique.
             </p>
