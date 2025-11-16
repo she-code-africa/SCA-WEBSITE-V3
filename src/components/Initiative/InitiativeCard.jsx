@@ -74,7 +74,7 @@ export default function InitiativeCard({
 
         {/* Content */}
         <motion.div
-          className={`bg-white shadow-lg p-8 md:px-24 md:py-24 flex flex-col justify-between flex-1 gap-12 ${
+          className={`bg-white shadow-lg p-8 md:px-24 md:py-24 flex flex-col justify-between flex-1 gap-48 ${
             reverse ? "md:rounded-r-3xl" : "md:rounded-l-3xl"
           } rounded-b-3xl`}
           initial={{ opacity: 0, y: 40 }}
@@ -83,24 +83,24 @@ export default function InitiativeCard({
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           {status && (
-            <span className="inline-block border border-Primary-Magenta text-Primary-Magenta text-sm md:text-base px-7 py-2 rounded-lg w-fit">
+            <span className="inline-block border border-Primary-Magenta text-Primary-Magenta  px-7 py-2 rounded-lg w-fit status-text">
               {status}
             </span>
           )}
 
           <div>
-            <h2 className="w-[87%] text-3xl sm:text-4xl md:text-6xl leading-tight mb-4 text-Secondary-Grape font-bold hero-text">
+            <h2 className="section-header hero-text w-[87%] mb-4 text-Secondary-Grape ">
               {title}
             </h2>
 
-            <p className="text-base sm:text-lg md:text-lg leading-relaxed mb-8 text-gray-800 font-figtree">
+            <p className="description-text leading-8 mb-8 text-gray-800">
               {previewText}
             </p>
 
             <div className="flex flex-wrap gap-5">
               <button
                 onClick={() => setIsOpen(true)}
-                className="bg-Primary-Magenta text-white text-sm md:text-base font-medium px-6 py-3 rounded-lg hover:bg-[#5C0335] transition-colors"
+                className="bg-Primary-Magenta text-white button-text px-6 py-3 rounded-lg hover:bg-[#5C0335] transition-colors"
               >
                 Learn more
               </button>
@@ -108,7 +108,7 @@ export default function InitiativeCard({
               {secondaryBtn && (
                 <a
                   href={secondaryBtn.href}
-                  className="border border-Primary-Magenta duration-300 hover:border-[#FF8FCE] text-Primary-Magenta text-sm md:text-base font-medium px-6 py-3 rounded-lg transition-colors"
+                  className="border border-Primary-Magenta duration-300 hover:border-[#FF8FCE] text-Primary-Magenta button-text px-6 py-3 rounded-lg transition-colors"
                 >
                   {secondaryBtn.label}
                 </a>

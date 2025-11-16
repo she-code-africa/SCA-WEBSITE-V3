@@ -8,6 +8,7 @@ import donateContact from "../../../assets/v2/images/donate/donateContact.jpg";
 import donatePartner from "../../../assets/v2/images/donate/donatePartner.jpg";
 import donateAcademy from "../../../assets/v2/images/donate/donateAcademy.jpg";
 import donateHire from "../../../assets/v2/images/donate/donateHire.jpg";
+import CustomButtonComponent from "../shared-components/buttons/index.";
 import { motion } from "framer-motion";
 
 const Donate = () => {
@@ -67,27 +68,29 @@ const Donate = () => {
           variants={fadeInLeft}
           className="lg:w-full lg:max-w-[528px] w-[90%] mx-auto"
         >
-          <h3 className="text-4xl md:text-5xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#7D355D] hero-text max-w-[474px] w-full">
+          <h3 className="section-header 2md:leading-[82px] text-[#7D355D] hero-text max-w-[474px] w-full">
             Donate to a cause
           </h3>
 
-          <p className="text-lg md:text-2xl mt-3 leading-normal md:leading-normal">
+          <p className="description-secondary mt-3">
             Every donation opens a door for a girl in Africa to step into tech.
+           
             Your gift today could place a laptop, skills, or a mentor in her
+           
             hands. One act of giving today can change her future forever.
           </p>
 
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
-            className="mt-8 max-w-[152px] w-full rounded-lg overflow-hidden"
+            className="mt-8 max-w-[152px] w-full overflow-hidden"
           >
-            <Link
-              to="/donate"
-              className="flex items-center justify-center  max-w-[152px] h-[55px] bg-primary-main-pink text-white  hover:bg-[#5C0335] transition-all duration-300 text-base"
-            >
-              Donate here
-            </Link>
+            <CustomButtonComponent
+              label="Donate here"
+              customColor="text-white button-text"
+              bgHover="bg-[#B70569] border-[#B70569] hover:border-[#5C0335] hover:bg-[#5C0335] rounded-lg transition-all duration-300"
+              url="/donate"
+            />
           </motion.div>
         </motion.article>
 

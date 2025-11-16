@@ -1,4 +1,3 @@
-import React from "react";
 import InfoCards from "./InfoCards";
 import { aboutUsInfoCards } from "../../../utils/v2";
 import { motion } from "framer-motion";
@@ -14,9 +13,9 @@ const AboutUs = () => {
         className="hidden xl:block aboutBg bg-no-repeat h-[976px] bg-[#FFF88F] overflow-hidden w-full bg-right-top bg-contain"
       >
         <div className="w-full h-full bg-bgI bg-no-repeat bg-cover custom-container-clip relative ">
-          <div className="bg-primary-main-pink px-20 py-10 w-full absolute top-0 bottom-0 h-full  custom-child-clip flex items-end">
-            <div className="flex items-end w-full lg:max-w-[700px] xl:max-w-[1060px]">
-              <div className="grid grid-cols-2 gap-x-24 gap-y-4">
+          <div className="bg-primary-main-pink px-20 py-10 w-full absolute top-0 bottom-0 h-full custom-child-clip flex items-end">
+            <div className="flex items-end w-full lg:max-w-[986px] xl:max-w-[1060px]">
+              <div className="grid grid-cols-2 gap-x-[6.25rem] gap-y-4">
                 {aboutUsInfoCards.map(({ heading, paragraph }, i) => (
                   <motion.div
                     key={i}

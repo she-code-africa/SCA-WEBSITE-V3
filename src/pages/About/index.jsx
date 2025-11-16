@@ -53,14 +53,14 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="bg-[rgba(0,0,0,0.35)] min-h-[120vh] pt-16 lg:pt-[86px]  flex justify-center items-center "
+            className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center "
           >
-            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[900px] text-center">
+            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[1040px] text-center">
               <motion.h1
                 variants={heroFadeUp}
                 initial="hidden"
                 animate={() => heroFadeUp.visible(0.3)}
-                className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text "
+                className="hero-title text-white hero-text"
               >
                 Equipping women with digital skills, one initiative after
                 another
@@ -70,7 +70,7 @@ const About = () => {
                 variants={heroFadeUp}
                 initial="hidden"
                 animate={() => heroFadeUp.visible(0.5)}
-                className="text-white text-base md:text-2xl font-medium"
+                className="description-text text-white lg:max-w-[858px] mx-auto"
               >
                 She Code Africa started with one simple belief: talent is
                 everywhere, but opportunity is not. In many African communities,
@@ -85,7 +85,6 @@ const About = () => {
             </article>
           </motion.div>
         </section>
-
         <AboutUsReachSection />
         <AboutUs />
         <Milestone />

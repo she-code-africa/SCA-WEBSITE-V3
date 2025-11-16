@@ -32,7 +32,7 @@ const OurGallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text"
+          className="section-header text-center 2md:leading-[82px] text-primary-main-pink hero-text"
         >
           Our Gallery
         </motion.h3>
@@ -108,7 +108,7 @@ const OurGallery = () => {
           <CustomButtonComponent
             // btnColor="[#B70569]"
             label="View more impact images"
-            customColor="text-white "
+            customColor="text-white"
             bgHover="bg-[#B70569] border-[#B70569] hover:border-[#5C0335] hover:bg-[#5C0335] rounded-lg transition-all duration-300"
             url="/media"
           />

@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -70,9 +69,8 @@ const Home = () => {
                 variants={heroFadeUp}
                 initial="hidden"
                 animate={() => heroFadeUp.visible(0.3)}
-                className="text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text "
-              >
-                Empowering Women In Tech Across Africa
+                className="hero-title text-white hero-text">
+                Equipping Girls and Women In Tech Across Africa
               </motion.h1>
 
               <motion.p
@@ -94,15 +92,14 @@ const Home = () => {
                 className="w-full flex flex-col max-w-[443px] mx-auto sm:flex-row justify-between items-center gap-3 mt-8"
               >
                 <CustomButtonComponent
-                  // btnColor="[#B70569]"
                   label="Join our community"
-                  customColor="text-white "
+                  customColor="text-white"
                   bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] border-primary-main-pink rounded-lg transition-all duration-300"
                   url="https://bit.ly/joinshecodeafrica"
                   isGallery={true}
                 />
+                
                 <CustomButtonComponent
-                  // btnColor="[#ffffff]"
                   label="Donate to a cause"
                   customColor=" text-primary-main-pink"
                   bgHover="hover:bg-[#FF8FCE] bg-white rounded-lg transition-all duration-300 border-none"

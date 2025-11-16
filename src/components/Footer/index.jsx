@@ -61,34 +61,34 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.3 }}
-              className="w-full flex flex-wrap lg:flex-row gap-12 lg:gap-24 justify-between lg:items-start"
+              className="w-full flex flex-wrap lg:flex-row gap-12 lg:gap-20 justify-between lg:items-start"
             >
               <div aria-label="Get Involved">
-                <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">
+                <p className="text-black subsection-header leading-[38.78px]">
                   Get Involved
                 </p>
                 <Link
                   to={paths.donate}
-                  className="block text-black mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block text-black mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Donate To A Cause
                 </Link>
                 <Link
                   to={paths.donate_partner}
-                  className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Partner With Us
                 </Link>
 
                 <Link
                   to={paths.chapters}
-                  className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Start An S.C.A Chapter
                 </Link>
                 <a
                   href="https://summit.shecodeafrica.org/"
-                  className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -97,7 +97,7 @@ const Footer = () => {
                 {isError ? null : (
                   <div className="relative">
                     <button
-                      className="mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu relative text-black"
+                      className="button-text mb-5 flex gap-x-2 items-center hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu relative text-black"
                       onClick={() => {
                         setOpenCaret(!openCaret);
                       }}
@@ -121,7 +121,7 @@ const Footer = () => {
                               href={report?.link}
                               target="_blank"
                               rel="noreferrer"
-                              className="focus:outline-none focus:ring focus:ring-tutu block"
+                              className="button-text focus:outline-none focus:ring focus:ring-tutu block"
                             >
                               {report.year}
                             </a>
@@ -133,48 +133,48 @@ const Footer = () => {
                 )}
               </div>
               <div aria-label="About Us">
-                <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">
+                <p className="text-black subsection-header leading-[38.78px]">
                   About Us
                 </p>
                 <Link
                   to={paths.team}
-                  className="block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"
                 >
                   {" "}
                   Meet The Team
                 </Link>
                 <Link
                   to="/faq"
-                  className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   FAQ
                 </Link>
                 <Link
                   to="/code-of-conduct"
-                  className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Code of Conduct
                 </Link>
                 <Link
                   to="/privacy"
-                  className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Privacy Policy
                 </Link>
                 <Link
                   to="/terms"
-                  className="block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Terms and Condition
                 </Link>
               </div>
               <div aria-label="Community">
-                <p className="text-black font-bold lg:text-[32px] md:text-2xl text-[32px] leading-[38.78px]">
+                <p className="text-black subsection-header leading-[38.78px]">
                   Community
                 </p>
                 <Link
                   to={paths.events}
-                  className="block mb-5 text-black hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 text-black hover:text-primary-main-pink mt-8 focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Upcoming Events
                 </Link>
@@ -182,12 +182,12 @@ const Footer = () => {
                   href="https://bit.ly/joinshecodeafrica"
                   target="_blank"
                   rel="noreferrer"
-                  className="block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Join Our Community
                 </a>
 
-                <div className="block mb-5 text-black">
+                <div className="button-text block mb-5 text-black">
                   Follow Us On Social Media
                 </div>
                 <div className="flex gap-x-[10px] mb-5 items-center text-2xl text-primary-main-pink">

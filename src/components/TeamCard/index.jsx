@@ -16,8 +16,8 @@ const TeamCard = ({ image, name, teamRole, bgColor }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <h2 className="mt-4 text-xl font-bold text-Primary-Magenta">{name}</h2>
-      <p className="text-lg text-Secondary-Grape text-center">{teamRole}</p>
+      <h2 className="mt-4 team-name text-Primary-Magenta">{name}</h2>
+      <p className="team-role text-Secondary-Grape text-center">{teamRole}</p>
     </div>
   )
 }

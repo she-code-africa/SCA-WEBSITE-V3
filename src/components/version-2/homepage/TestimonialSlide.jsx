@@ -28,15 +28,15 @@ const TestimonialSlide = ({ testimonialCards, isLoading }) => {
                 } ${i === 2 && "bg-[#FFF88F]"} clip-testimonial bg-no-repeat`}
                 style={{
                   backgroundImage: `url(${item.img})`,
-                  backgroundSize: "181px 158px",
+                  backgroundSize: "181px 158px"
                 }}
               >
                 <article className="py-28 px-9 w-full  h-full max-w-[350px] ">
-                  <p className={`leading-normal text-sm font-medium`}>
+                  <p className={`leading-normal small-text-medium`}>
                     {item.testimonial}
                   </p>
 
-                  <h4 className="mt-3 font-semibold text-sm leading-normal text-black">
+                  <h4 className="mt-3 small-text-bold leading-normal text-black">
                     - {item.name}
                   </h4>
                 </article>

@@ -1,5 +1,3 @@
-import React from "react";
-
 import { aboutUsReachData } from "../../../utils/v2";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
@@ -33,39 +31,18 @@ const AboutUsReachSection = () => {
       className="w-full bg-[rgba(253,192,227,0.24)] py-10"
     >
       <div className="w-[90%] max-w-[1304px] mx-auto">
-        <motion.div
-          variants={containerVariant}
-          className="w-full flex flex-col gap-10 sm:flex-row sm:justify-between"
-        >
-          {aboutUsReachData.map(({ numbers, description }, i) => {
-            const { num, suffix } = parseNumberAndSuffix(numbers);
-            const decimals = numbers.includes(".") ? 1 : 0;
-            return (
-              <div className="w-full sm:max-w-[296px]" key={i}>
-                <motion.article
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className={`flex flex-col gap-4 w-full my-6`}
-                  key={i}
-                >
-                  <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl ">
-                    <CountUp
-                      end={num}
-                      duration={2}
-                      decimals={decimals}
-                      enableScrollSpy
-                      scrollSpyOnce
-                    />
-                    {suffix}+
-                  </h3>
-                  <p className="text-lg  leading-normal">{description}</p>
-                </motion.article>
-              </div>
-            );
-          })}
-        </motion.div>
+        <div className="w-full flex flex-col gap-10 sm:flex-row sm:justify-center">
+          {aboutUsReachData.map(({ numbers, description }, i) => (
+            <div className="w-full sm:max-w-[296px]" key={i}>
+              <article className={`flex flex-col gap-4 w-full my-6`} key={i}>
+                <h3 className="section-header hero-text text-[#7D355D] lg:leading-[76px] ">
+                  {numbers}+
+                </h3>
+                <p className="description-secondary">{description}</p>
+              </article>
+            </div>
+          ))}
+        </div>
       </div>
     </motion.section>
   );

@@ -59,7 +59,7 @@ const Donate = () => {
           >
             <img
               src={hero}
-              alt="Who We Are"
+              alt="Partner With Us Hero Background"
               className="object-cover w-full h-full"
             />
           </motion.figure>

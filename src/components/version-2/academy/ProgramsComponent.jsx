@@ -32,6 +32,7 @@ const ProgramsComponent = ({ schools }) => {
               className="w-full h-full object-cover"
             />
           </figure>
+          
           <article
             className={`w-full lg:min-h-[456px] bg-white py-[50px] px-[46px] lg:px-[92px] lg:py-[100px] ${
               idx % 2 === 0

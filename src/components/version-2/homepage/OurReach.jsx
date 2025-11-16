@@ -38,7 +38,7 @@ const OurReach = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
+            <h3 className="section-header text-center 2md:leading-[82px] text-primary-main-pink hero-text">
               Our Reach So Far
             </h3>
           </motion.article>
@@ -56,7 +56,7 @@ const OurReach = () => {
                   className={`flex flex-col sm:hidden  gap-4 w-full my-5`}
                   key={i}
                 >
-                  <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">
+                  <h3 className="hero-text text-[#7D355D] impact-number-large lg:leading-[130px]">
                     <CountUp
                       end={num}
                       duration={2}
@@ -66,9 +66,7 @@ const OurReach = () => {
                     />
                     {suffix}+
                   </h3>
-                  <p className="text-lg md:text-2xl font-medium leading-normal md:leading-normal">
-                    {description}
-                  </p>
+                  <p className="description-text">{description}</p>
                 </motion.article>
               );
             })}
@@ -86,7 +84,7 @@ const OurReach = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: i * 0.15 }}
                 >
-                  <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">
+                  <h3 className="hero-text text-[#7D355D] impact-number-large lg:leading-[130px]">
                     <CountUp
                       end={num}
                       duration={2}
@@ -96,7 +94,7 @@ const OurReach = () => {
                     />
                     {suffix}+
                   </h3>
-                  <p className="text-lg md:text-2xl leading-normal md:leading-normal">
+                  <p className="description-text">
                     {description}
                   </p>
                 </motion.article>

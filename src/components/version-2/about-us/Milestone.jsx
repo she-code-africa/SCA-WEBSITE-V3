@@ -32,11 +32,11 @@ const Milestone = () => {
           variants={fadeUpVariant}
           className="text-center w-full text-secondary-main-black max-w-[768px] mx-auto"
         >
-          <h3 className="text-4xl text-center  lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
+          <h3 className="section-header 2md:leading-[82px] hero-text max-w-[474px] w-full mx-auto">
             Milestones of{" "}
             <span className="text-primary-main-pink">Innovation</span>
           </h3>
-          <p className="mt-4 text-center text-xl md:text-2xl">
+          <p className="mt-4 text-center description-text">
             Eight pivotal moments that transformed our vision into a movement,
             empowering women across Africa to lead in technology.
           </p>

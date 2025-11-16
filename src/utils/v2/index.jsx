@@ -28,18 +28,18 @@ export const aboutUsInfoCards = [
   {
     heading: "Our Vision",
     paragraph:
-      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.",
+      "An Africa where women are equally represented across all career roles and levels in Technology"
   },
   {
     heading: "Our Mission",
     paragraph:
-      "An Africa where women are equally represented across all career roles and levels in Technology",
+      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence."
   },
   {
     heading: "Our Values",
     paragraph:
-      "Team work, Community, Technical growth, Leadership, Visibility, Communication.",
-  },
+      "Team work, Community, Technical growth, Leadership, Visibility, Communication."
+  }
 ];
 
 export const ourReachData = [
@@ -86,7 +86,31 @@ export const aboutUsReachData = [
   {
     numbers: "5M",
     description: "people Inspired by the Stories of African Girls in Tech.",
+  }
+];
+
+export const impactStats = [
+  {
+    id: 1,
+    number: "65,000",
+    description: "program beneficiaries and scholarship recipients. "
   },
+  {
+    id: 2,
+    number: "40,000",
+    description: "community members"
+  },
+  {
+    id: 3,
+    number: "7,000",
+    description:
+      "women and girls trained through our Academy and training programs"
+  },
+  {
+    id: 4,
+    number: "5M",
+    description: "people Inspired by the Stories of African Girls in Tech"
+  }
 ];
 
 export const testimonialCards = [

@@ -21,11 +21,11 @@ const OurQueensTestimonials = () => {
       <motion.article
         variants={{
           hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
         }}
         className="w-full"
       >
-        <h3 className="text-5xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text max-w-[474px] w-[90%] text-center mx-auto">
+        <h3 className="section-header 2md:leading-[82px] text-primary-main-pink hero-text max-w-[474px] w-[90%] text-center mx-auto">
           Our Queens’ Experiences
         </h3>
         <motion.p
@@ -33,7 +33,7 @@ const OurQueensTestimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-lg md:text-2xl mt-3 text-center"
+          className="description-text mt-3 text-center"
         >
           Behind every number is a girl whose life has been transformed
         </motion.p>
@@ -46,8 +46,8 @@ const OurQueensTestimonials = () => {
           visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, ease: "easeOut", delay: 0.4 },
-          },
+            transition: { duration: 0.8, ease: "easeOut", delay: 0.4 }
+          }
         }}
       >
         <TestimonialSlide

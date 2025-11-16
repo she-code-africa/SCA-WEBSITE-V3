@@ -80,11 +80,11 @@ const OurImpact = () => {
           className="w-full lg:max-w-[600px]"
         >
           <article className="w-full">
-            <h3 className="text-5xl lg:text-[64px] font-bold  text-primary-main-pink hero-text w-full">
+            <h3 className="section-header text-primary-main-pink hero-text w-full">
               Our Impact in Numbers
             </h3>
 
-            <p className="w-[95%] text-lg mt-2 font-medium">
+            <p className="w-[95%] mt-2 challenge-text">
               Thanks to supporters like you, we've been able to make a real
               difference in communities around the world.
             </p>
@@ -99,7 +99,7 @@ const OurImpact = () => {
               const decimals = number.includes(".") ? 1 : 0;
               return (
                 <article className={`flex flex-col  w-full my-5`} key={idx}>
-                  <h3 className="text-5xl lg:text-[64px] font-bold text-primary-main-pink hero-text w-full ">
+                  <h3 className="section-header text-primary-main-pink hero-text w-full ">
                     <CountUp
                       end={num}
                       duration={2}
@@ -109,7 +109,7 @@ const OurImpact = () => {
                     />
                     {suffix}+
                   </h3>
-                  <p className="w-[95%] text-lg  font-medium">{description}</p>
+                  <p className="w-[95%] description-secondary">{description}</p>
                 </article>
               );
             })}

@@ -135,11 +135,11 @@ const AcademyPage = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6 }}
-                      className="text-8xl hero-text hidden sm:block"
+                      className="large-header hero-text hidden sm:block"
                     >
                       {/* {school.name} */}
                       School of{" "}
-                      <span className="text-primary-main-pink text-[128px]">
+                      <span className="text-primary-main-pink hero-title">
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() ===
@@ -162,7 +162,7 @@ const AcademyPage = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, delay: 0.2 }}
-                      className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl"
+                      className="  mx-auto text-[#1A1A1A] description-light"
                     >
                       {/* {school?.description} */}
                       {/* Empowering women to innovate the digital world, one
@@ -188,7 +188,7 @@ const AcademyPage = () => {
                       <Link
                         to="#"
                         className="w-full flex h-[55px] rounded-lg bg-primary-main-pink
-                        text-white transition-colors duration-300 justify-center items-center py-[18px] px-8 hover:bg-[#5C0335]"
+                        text-white button-text transition-colors duration-300 justify-center items-center py-[18px] px-8 hover:bg-[#5C0335]"
                       >
                         Apply Now
                       </Link>
@@ -210,7 +210,7 @@ const AcademyPage = () => {
                   </motion.figure>
                 </motion.div>
               ) : (
-                <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
+                <h1 className="description-light text-[#1A1A1A] lg:leading-[72px]">
                   Empowering women to innovate the digital world, one engineer
                   at a time.
                 </h1>
@@ -277,7 +277,7 @@ const AcademyPage = () => {
             {[
               "School of Applied Skills",
               "School of Engineering",
-              "School of Product",
+              "School of Product"
             ]
               .filter(
                 (item) => item.toLowerCase() !== school?.name?.toLowerCase()
@@ -286,7 +286,7 @@ const AcademyPage = () => {
                 <div className="mb-10 sm:mb-0" key={idx}>
                   <Link
                     to={`/academy/${school.toLowerCase().replaceAll(" ", "-")}`}
-                    className="py-[18px] w-full px-8 bg-primary-main-pink border duration-300 transition-colors rounded-lg text-white hover:bg-[#5C0335]"
+                    className="py-[18px] w-full px-8 bg-primary-main-pink border duration-300 transition-colors rounded-lg text-white hover:bg-[#5C0335] description-text"
                   >
                     {school}
                   </Link>
@@ -304,18 +304,22 @@ const AcademyPage = () => {
         className="bg-magentaPattern w-full"
       >
         <div className="w-[90%] mx-auto xl:max-w-[1198px] py-[100px] xl:py-[130px]">
-          <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
+          <h3 className="section-header text-center text-white 2md:leading-[82px] hero-text max-w-[474px] w-full mx-auto">
             Hire our Graduates
           </h3>
 
-          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-lg text-center font-normal">
-            Bring brilliance and diversity into your team. Our graduates are skilled, job-ready  women trained in real-world tech roles, from software development to product and cloud engineering. By hiring through She Code Africa, you’re not just filling a role , you’re investing in a future where African women lead and innovate in tech.
+          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-center description-secondary">
+            Bring brilliance and diversity into your team. Our graduates are
+            skilled, job-ready women trained in real-world tech roles, from
+            software development to product and cloud engineering. By hiring
+            through She Code Africa, you’re not just filling a role , you’re
+            investing in a future where African women lead and innovate in tech.
           </p>
 
           <div className="mt-10 text-center">
             <Link
               to={paths.hire}
-              className="rounded-lg text-base text-white px-8 py-[18px] bg-primary-main-pink transition-colors duration-300 hover:bg-[#5C0335]"
+              className="rounded-lg button-text text-white px-8 py-[18px] bg-primary-main-pink transition-colors duration-300 hover:bg-[#5C0335]"
             >
               Hire Our Talent
             </Link>
@@ -330,7 +334,7 @@ const AcademyPage = () => {
         className="bg-primary-main-pink w-full py-20"
       >
         <div className="w-[90%] mx-auto xl:max-w-[1256px]">
-          <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
+          <h3 className="section-header text-center text-white 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
             Resources
           </h3>
 
@@ -343,7 +347,7 @@ const AcademyPage = () => {
           <div className="my-10 max-w-[122px] w-full mx-auto">
             <Link
               to="#"
-              className="w-full px-8 py-[18px] rounded-lg bg-white transition-colors duration-300 hover:bg-[#5C0335] text-primary-main-pink capitalize hover:text-white"
+              className="w-full px-8 py-[18px] rounded-lg bg-white transition-colors duration-300 hover:bg-[#5C0335] text-primary-main-pink button-text capitalize hover:text-white"
             >
               {" "}
               view all
@@ -386,14 +390,14 @@ const AcademyPage = () => {
                             </h3>
                             <p
                               dangerouslySetInnerHTML={{
-                                __html: content.briefContent,
+                                __html: content.briefContent
                               }}
                               className="py-4 font-medium leading-relaxed"
                             />
 
                             <p
                               dangerouslySetInnerHTML={{
-                                __html: content.extendedContent,
+                                __html: content.extendedContent
                               }}
                               className=" pb-4 font-medium leading-relaxed mb-10"
                             />

@@ -60,15 +60,15 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
       )}
 
       <div className="w-full my-5">
-        <span className="bg-[#FFB8E0] inline-flex max-w-[110px] h-[28px] w-full items-center justify-center rounded py-[3px] px-[7px] text-sm text-[#B70569]">
+        <span className="bg-[#FFB8E0] inline-flex max-w-[110px] h-[28px] w-full items-center justify-center rounded py-[3px] px-[7px] small-text-medium text-[#B70569]">
           Tech Insights
         </span>
 
-        <h4 className="text-[#5C0335] text-base font-semibold">
+        <h4 className="text-[#5C0335] card-title-secondary leading-6">
           Bridging the Gender Gap in African Tech
         </h4>
 
-        <p className="mt-3 w-full text-sm text-[#7d355d] font-medium">
+        <p className="mt-3 w-full small-text-medium  text-[#7d355d] ">
           Exploring initiatives that are making tech more inclusive for women
           across Africa.
         </p>
@@ -79,7 +79,7 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
           <span className="flex items-center gap-2 text-sm">
             <FontAwesomeIcon icon={faUser} className="text-[#B70569]" />
 
-            <span className="text-[#5C0335] truncate max-w-[61px] sm:max-w-full">
+            <span className="text-[#5C0335] small-text truncate max-w-[61px] sm:max-w-full">
               Ada Oyom
             </span>
           </span>
@@ -87,7 +87,7 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
           <span className="flex items-center gap-2 text-sm">
             <FaRegCalendar className="text-[#B70569]" />
 
-            <span className="text-[#5C0335] m-0 p-0 truncate max-w-[61px] sm:max-w-full ">
+            <span className="text-[#5C0335] small-text m-0 p-0 truncate max-w-[61px] sm:max-w-full ">
               15/01/2024
             </span>
           </span>

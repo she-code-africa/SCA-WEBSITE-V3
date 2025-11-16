@@ -57,11 +57,11 @@ const LandingPage = () => {
           </figure>
           <div className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-32 flex justify-center items-center ">
             <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[800px] text-center">
-              <h1 className="text-[64px] sm:text-8xl md:leading-[130px] md:text-9xl text-white hero-text ">
+              <h1 className="hero-title md:leading-[130px] text-white hero-text ">
                 Learn, Build, Lead
               </h1>
 
-              <p className="text-white text-base md:text-2xl font-medium lg:max-w-[758px] w-full">
+              <p className="text-white description-text lg:max-w-[758px] w-full">
                 At She Code Africa Academy, we make learning practical,
                 accessible, and designed for your growth. From engineering to
                 product to applied skills, each of our Academy Schools meets you

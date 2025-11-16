@@ -65,14 +65,15 @@ const SponsorALady = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="relative z-[1] w-full sm:max-w-[700px] lg:max-w-[550px] mx-auto lg:mx-0"
+                className="relative z-[1] w-full sm:max-w-[700px] lg:max-w-[592px] mx-auto lg:mx-0"
               >
-                <h1 className="text-[64px] sm:text-7xl text-center lg:text-left lg:leading-[130px] md:text-8xl lg:text-9xl text-white hero-text ">
+                <h1 className="hero-title text-center lg:text-left lg:leading-[130px] text-white hero-text">
                   Sponsor a Tech Lady Today
                 </h1>
 
-                <p className="text-white text-base md:text-2xl font-medium mt-3 text-center lg:text-left lg:max-w-[500px]">
+                <p className="text-white description-text mt-3 text-center lg:text-left lg:max-w-[500px]">
                   Did you know that by donating $20 (~₦30,000), you’re helping
+                 
                   one woman take a step closer to owning a laptop?
                 </p>
               </motion.article>
@@ -100,14 +101,14 @@ const SponsorALady = () => {
 
                   <article className="w-full mt-10 pb-20 lg:pb-[100px]">
                     <div className="w-[90%] sm:max-w-[378px] mx-auto">
-                      <h3 className="text-primary-main-pink text-4xl sm:text-5xl text-center font-extrabold">
+                      <h3 className="text-primary-main-pink medium-header text-center">
                         How would you love to donate?
                       </h3>
 
                       <div className="mt-12 w-full items-center flex flex-col gap-4">
                         <button
                           title="Donate as an individual"
-                          className="h-[55px] max-w-[175px] py-[18px] px-8 w-full hover:bg-[#5C0335] transition-colors duration-300 bg-primary-main-pink text-white rounded-lg flex items-center justify-center "
+                          className="h-[55px] max-w-[175px] py-[18px] px-8 w-full hover:bg-[#5C0335] transition-colors duration-300 bg-primary-main-pink text-white button-text rounded-lg flex items-center justify-center"
                           onClick={() => toggleModal("individual")}
                         >
                           As an individual
@@ -116,7 +117,7 @@ const SponsorALady = () => {
                         <button
                           onClick={() => toggleModal("organisation")}
                           title="Donate as an organisation"
-                          className="h-[55px] max-w-[196px] py-[18px] px-8 w-full hover:bg-[#5C0335] transition-colors duration-300 hover:border-[#5C0335] border border-primary-main-pink text-primary-main-pink hover:text-white rounded-lg flex items-center justify-center "
+                          className="h-[55px] max-w-[196px] py-[18px] px-8 w-full hover:bg-[#5C0335] transition-colors duration-300 hover:border-[#5C0335] border border-primary-main-pink text-primary-main-pink button-text hover:text-white rounded-lg flex items-center justify-center"
                         >
                           As an organisation
                         </button>

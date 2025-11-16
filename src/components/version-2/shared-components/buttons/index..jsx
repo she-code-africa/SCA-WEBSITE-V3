@@ -16,7 +16,7 @@ const CustomButtonComponent = ({
       {isGallery ? (
         <a
           href={`${url}`}
-          className={`w-full flex items-center gap-2 justify-center h-[55px] py-[18px] px-8 border-2 ${bgHover} ${customColor}`}
+          className={`w-full flex items-center gap-2 justify-center h-[55px] py-[18px] px-8 border-2 button-text ${bgHover} ${customColor}`}
         >
           {isWithIcon && (
             <>
@@ -37,7 +37,7 @@ const CustomButtonComponent = ({
       ) : (
         <Link
           to={`${url}`}
-          className={`w-full flex items-center gap-2 justify-center border-white h-[55px] py-[18px] px-8 border-2 ${bgHover} ${customColor}`}
+          className={`w-full flex items-center gap-2 justify-center border-white h-[55px] py-[18px] px-8 border-2 button-text ${bgHover} ${customColor}`}
         >
           {isWithIcon && (
             <>

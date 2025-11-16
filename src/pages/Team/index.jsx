@@ -190,13 +190,13 @@ const Team = () => {
             >
               <motion.h1
                 variants={fadeUpVariant}
-                className="hero-text text-5xl md:text-9xl font-bold text-primary-main-pink"
+                className="hero-text hero-title text-primary-main-pink"
               >
                 Meet The SCA Team
               </motion.h1>
               <motion.p
                 variants={fadeUpVariant}
-                className="mt-6 text-2xl leading-9 text-Secondary-Velvet md:max-w-3xl"
+                className="mt-6 description-text text-Secondary-Velvet md:max-w-3xl"
               >
                 Peep the faces behind the initiatives and impacts here at She
                 Code Africa. These wonderful people work behind the scene,
@@ -231,7 +231,7 @@ const Team = () => {
                 .map((category) => (
                   <button
                     key={category}
-                    className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
+                    className={`button-text py-3 px-8 rounded-lg transition-colors duration-500 ${
                       activeSelection === category
                         ? "bg-Primary-Magenta text-SCA-Cloud"
                         : "bg-SCA-Cloud text-Secondary-Velvet"

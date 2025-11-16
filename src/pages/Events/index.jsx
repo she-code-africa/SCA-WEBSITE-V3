@@ -94,10 +94,10 @@ const Events = () => {
           <div className="w-full min-h-screen">
             <div className="py-20 md:py-[100px] bg-[#FFB8E0] w-full flex items-center justify-center">
               <article className="w-[90%] mx-auto flex flex-col items-center justify-center max-w-[1040px]">
-                <h3 className="hero-text text-center text-5xl md:text-8xl lg:text-9xl text-primary-main-pink font-semibold">
+                <h3 className="hero-text hero-title text-center text-primary-main-pink">
                   She Code Africa Events
                 </h3>
-                <p className="text-xl md:text-2xl font-medium text-center lg:max-w-[702px]">
+                <p className="description-text text-center lg:max-w-[702px]">
                   Experience Community in Action through our events. From intimate workshops and community meetups to large-scale summits, we bring women and girls across Africa together, wherever they are.
                 </p>
               </article>
@@ -132,7 +132,7 @@ const Events = () => {
             >
               {["Upcoming Events", "Past Events"].map((tab, idx) => (
                 <button
-                  className={`transition-colors duration-300 w-auto flex items-center justify-center text-sm sm:text-base py-[18px] px-8 rounded-lg  h-[55px]  ${
+                  className={`transition-colors duration-300 w-auto flex items-center justify-center button-text py-[18px] px-8 rounded-lg h-[55px] ${
                     activeTab.toLowerCase() === tab.toLowerCase()
                       ? "bg-primary-main-pink text-white"
                       : "bg-[#F4EFEC] text-[#5C0335]"
@@ -196,7 +196,7 @@ const Events = () => {
                             })}
                           </section>
                         ) : (
-                          <h1 className="font-bold text-5xl sm:text-[64px] text-primary-main-pink text-center mt-16 w-90 mx-auto hero-text max-w-[500px] leading-normal sm:leading-normal">
+                          <h1 className="section-header text-primary-main-pink text-center mt-16 w-90 mx-auto hero-text max-w-[500px]">
                             There is currently no upcoming event.
                           </h1>
                         )}
@@ -282,7 +282,7 @@ const Events = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hero-text text-5xl lg:text-[64px] text-primary-main-pink font-semibold text-center"
+              className="hero-text section-header text-primary-main-pink text-center"
             >
               Become a member of our community
             </motion.h3>
@@ -292,7 +292,7 @@ const Events = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-8 text-primary-main-pink text-2xl text-center font-medium w-full mx-auto max-w-[750px]"
+              className="mt-8 text-primary-main-pink description-text text-center w-full mx-auto max-w-[750px]"
             >
               Be a part of a community that celebrates diversity and empowers
               women to thrive in tech. Connect with like-minded individuals,
@@ -310,7 +310,7 @@ const Events = () => {
               <a
                 href="https://bit.ly/joinshecodeafrica"
                 target="_blank"
-                className="bg-primary-main-pink text-white py-[10px] px-8  text-base transition duration-300 hover:bg-[#5C0335] w-full max-w-[129px] text-center rounded-lg h-[55px] flex items-center justify-center"
+                className="bg-primary-main-pink text-white button-text py-[10px] px-8 capitalize transition duration-300 hover:bg-[#5C0335] w-full max-w-[208px] text-center rounded-lg h-[55px] flex items-center justify-center"
                 rel="noreferrer"
               >
                 Join now
