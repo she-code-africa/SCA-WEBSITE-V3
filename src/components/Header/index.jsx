@@ -2,16 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-// import logo from "../../images/she-code-africa-logo.svg";
 import logo from "../../images/new-logo/Logo.png";
 import { apiConstants, paths } from "../../utils";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
 import HamburgerIcon from "./HamburgerMenu";
-
-import soa from "../../assets/v2/images/icons/soa.png";
-import sop from "../../assets/v2/images/icons/sop.png";
-import soe from "../../assets/v2/images/icons/soe.png";
 import { IoClose } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 import { dropdownVariant, headerVariant } from "../../lib/motionVariants";
