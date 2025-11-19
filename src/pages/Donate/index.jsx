@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import impact1 from "../../images/impact1.jpg";
-import impact2 from "../../assets/v2/images/partnerReach2.jpg";
-import impact3 from "../../assets/v2/images/hero-img-communtiy.jpg";
+import impact2 from "../../images/v2/partnerReach2.jpg";
+import impact3 from "../../images/v2/hero-img-communtiy.jpg";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
+import hero from "../../images/v2/herobg-v2-copy.jpg";
 import OurBrands from "../../components/version-2/homepage/OurBrands";
 import DonateSection from "../../components/version-2/homepage/Donate";
 import {

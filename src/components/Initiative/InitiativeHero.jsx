@@ -1,6 +1,6 @@
 // src/components/HeroSection.jsx
 import { motion } from "framer-motion";
-import heroImage from "../../assets/v2/images/initiatives-hero-2.png";
+import heroImage from "../../images/v2/initiatives-hero-2.png";
 
 export default function InitiativeHero() {
   return (

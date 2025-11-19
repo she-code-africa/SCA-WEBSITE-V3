@@ -10,7 +10,7 @@ import bglineImage from "../../images/academy/bg-line.svg";
 import * as components from "../../components";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
-import heroImg from "../../assets/v2/images/whatWeDoCardImage.jpg";
+import heroImg from "../../images/v2/whatWeDoCardImage.jpg";
 import SchoolProgram from "../../components/version-2/academy/SchoolProgram";
 import SuccessStories from "../../components/version-2/academy/SuccessStories";
 import ResourcesCard from "../../components/version-2/shared-components/ResourcesCard";
@@ -277,7 +277,7 @@ const AcademyPage = () => {
             {[
               "School of Applied Skills",
               "School of Engineering",
-              "School of Product"
+              "School of Product",
             ]
               .filter(
                 (item) => item.toLowerCase() !== school?.name?.toLowerCase()
@@ -390,14 +390,14 @@ const AcademyPage = () => {
                             </h3>
                             <p
                               dangerouslySetInnerHTML={{
-                                __html: content.briefContent
+                                __html: content.briefContent,
                               }}
                               className="py-4 font-medium leading-relaxed"
                             />
 
                             <p
                               dangerouslySetInnerHTML={{
-                                __html: content.extendedContent
+                                __html: content.extendedContent,
                               }}
                               className=" pb-4 font-medium leading-relaxed mb-10"
                             />

@@ -1,8 +1,8 @@
-import imageOne from "../../assets/v2/images/media/media-conf1.jpg";
-import imageTwo from "../../assets/v2/images/media/media-conf2.jpg";
-import imageThree from "../../assets/v2/images/media/media-conf3.jpg";
-import imageFour from "../../assets/v2/images/media/media-conf4.jpg";
-import imageFive from "../../assets/v2/images/media/media-conf5.jpg";
+import imageOne from "../../images/v2/media/media-conf1.jpg";
+import imageTwo from "../../images/v2/media/media-conf2.jpg";
+import imageThree from "../../images/v2/media/media-conf3.jpg";
+import imageFour from "../../images/v2/media/media-conf4.jpg";
+import imageFive from "../../images/v2/media/media-conf5.jpg";
 
 export const mediaContent = [
   {

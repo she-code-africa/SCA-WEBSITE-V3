@@ -2,14 +2,14 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 // import Hero from "../../images/volunteerImgs/volunteer-hero.png";
-import Hero from "../../assets/v2/images/volunteer-hero.jpg";
+import Hero from "../../images/v2/volunteer-hero.jpg";
 import OurReach from "../../components/version-2/homepage/OurReach";
 import UserIcon from "../../images/volunteerImgs/voln-hero-icon.svg";
 // import testmonialImg from "../../images/testimonial.png";
 import OpportunityImg from "../../images/vol-oppotunity.png";
 import { volunteerCards } from "../../utils";
 import { motion } from "framer-motion";
-import testmonialImg from "../../assets/v2/images/volunteer-stories.png";
+import testmonialImg from "../../images/v2/volunteer-stories.png";
 
 const Volunteer = () => {
   // smooth scroll helper

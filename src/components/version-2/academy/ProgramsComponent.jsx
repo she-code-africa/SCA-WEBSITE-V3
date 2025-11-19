@@ -1,7 +1,7 @@
 import React from "react";
-import placeholderImage from "../../../assets/v2/images/donatePng.jpg";
+import placeholderImage from "../../../images/v2/donatePng.jpg";
 import { Link } from "react-router-dom";
-import schoolOfProduct from "../../../assets/v2/images/academy/SOP.jpg";
+import schoolOfProduct from "../../../images/v2/academy/SOP.jpg";
 
 const ProgramsComponent = ({ schools }) => {
   return (
@@ -32,7 +32,7 @@ const ProgramsComponent = ({ schools }) => {
               className="w-full h-full object-cover"
             />
           </figure>
-          
+
           <article
             className={`w-full lg:min-h-[456px] bg-white py-[50px] px-[46px] lg:px-[92px] lg:py-[100px] ${
               idx % 2 === 0

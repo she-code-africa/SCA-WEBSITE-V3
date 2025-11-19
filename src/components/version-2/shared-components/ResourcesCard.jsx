@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import placeholderImage from "../../../assets/v2/images/donatePng.jpg";
+import placeholderImage from "../../../images/v2/donatePng.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FaPlayCircle, FaRegCalendar } from "react-icons/fa";
