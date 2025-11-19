@@ -39,11 +39,11 @@ main,
 }
 
 .aboutBg {
-  background-image: url("./assets/v2/images/apricot-pattern.png");
+  background-image: url("./images/v2/apricot-pattern.png");
 }
 
 .bgImg {
-  background-image: url("./assets/v2/images/bgImg.png");
+  background-image: url("./images/v2/bgImg.png");
 }
 
 .custom-container-clip {
@@ -55,7 +55,7 @@ main,
 }
 
 .ourReachBg {
-  background-image: url("./assets/v2/images/white-blush.jpg");
+  background-image: url("./images/v2/white-blush.jpg");
 }
 
 .what-we-do-clip {
@@ -71,18 +71,18 @@ main,
 }
 
 .testmonialBg {
-  background-image: url("./assets/v2/images/Vector.png");
+  background-image: url("./images/v2/Vector.png");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% auto;
 }
 
 .product-program-bg {
-  background-image: url("./assets/v2/images/programsBg.jpg");
+  background-image: url("./images/v2/programsBg.jpg");
 }
 
 .community-bg {
-  background-image: url("./assets/v2/images/community.jpg");
+  background-image: url("./images/v2/community.jpg");
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
@@ -128,7 +128,7 @@ main,
 }
 
 .donate-impact {
-  background: url("./assets/v2/images/donate/white-garden.png");
+  background: url("./images/v2/donate/white-garden.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -267,13 +267,13 @@ main,
 
 /* BUTTON/LINK TEXT - 16px desktop */
 .button-text,
-.status-text{
+.status-text {
   font-size: clamp(14px, 1.5vw, 16px);
   font-weight: 400; /* regular */
   line-height: 1.4;
 }
 
-.card-title-secondary{
+.card-title-secondary {
   font-size: clamp(14px, 1.5vw, 16px);
   font-weight: 700; /* bold */
   line-height: 1.4;
@@ -323,24 +323,24 @@ main,
   .hero-title {
     font-size: 80px;
   }
-  
+
   .section-header,
   .section-header-bold {
     font-size: 48px;
   }
-} 
+}
 
 /* Mobile adjustments (below 768px) */
 @media (max-width: 767px) {
   .hero-title {
     font-size: 48px;
   }
-  
+
   .section-header,
   .section-header-bold {
     font-size: 32px;
   }
-  
+
   .impact-number-large {
     font-size: 64px;
   }

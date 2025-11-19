@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Helmet } from "react-helmet-async";
-import communityImg from "../../assets/v2/images/slack.png";
+import communityImg from "../../images/v2/slack.png";
 import { whatsinStoreForYou } from "../../utils";
 import { Link } from "react-router-dom";
-import hero from "../../assets/v2/images/hero-img-community-2.jpg";
+import hero from "../../images/v2/hero-img-community-2.jpg";
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
 import { motion } from "framer-motion";
 import { bgVariant, heroFadeUp } from "../../lib/motionVariants";
@@ -172,7 +172,8 @@ const Community = () => {
                 >
                   <p
                     className={`description-text text-center ${
-                      cardColors[index].text || "text-[#5C0335]"}`}
+                      cardColors[index].text || "text-[#5C0335]"
+                    }`}
                   >
                     {item.text}
                   </p>

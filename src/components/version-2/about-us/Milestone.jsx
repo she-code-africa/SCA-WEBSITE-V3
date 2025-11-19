@@ -52,7 +52,7 @@ const Milestone = () => {
           >
             {[...Array(4)].map((_, i) => (
               <div
-                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
+                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./images/v2/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
                 key={i}
               >
                 <div className="w-full">
@@ -114,7 +114,7 @@ const Milestone = () => {
             {[...Array(4)].map((_, i) => (
               <motion.div
                 variants={fadeUpVariant}
-                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./assets/v2/images/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
+                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./images/v2/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
                 key={i}
               >
                 <div className="w-full">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import x from "../assets/v2/images/x.png";
-import money from "../assets/v2/images/money.png";
+import x from "../images/v2/x.png";
+import money from "../images/v2/money.png";
 import { Link } from "react-router-dom";
 
 const Layout = ({ children }) => {

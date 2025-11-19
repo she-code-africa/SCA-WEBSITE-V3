@@ -1,5 +1,5 @@
 import React from "react";
-import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
+import whatWeDo from "../../../images/v2/whatWeDoCardImage.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";

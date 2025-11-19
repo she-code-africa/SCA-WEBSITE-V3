@@ -3,8 +3,8 @@ import { FaAngleLeft } from "react-icons/fa";
 import Card from "../../../icons/Card";
 import { FcGoogle } from "react-icons/fc";
 import { GoQuestion } from "react-icons/go";
-import flutterwave from "../../../../../assets/v2/images/donate/flutterwave.svg";
-import paystack from "../../../../../assets/v2/images/donate/paystack.svg";
+import flutterwave from "../../../../../images/v2/donate/flutterwave.svg";
+import paystack from "../../../../../images/v2/donate/paystack.svg";
 import Bank from "../../../icons/Bank";
 
 const PaymentMethod = ({ setStep, setOneTimeStep, setActiveTab }) => {

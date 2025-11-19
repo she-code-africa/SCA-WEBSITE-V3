@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
+import whatWeDo from "../../../images/v2/whatWeDoCardImage.jpg";
 
 const SchoolProgram = ({ bgColors, slug, textContent }) => {
   return (
@@ -39,7 +39,7 @@ const SchoolProgram = ({ bgColors, slug, textContent }) => {
             }`}
           >
             Here's how we're tackling that:
-          </p> 
+          </p>
         </article>
       </div>
 

@@ -1,6 +1,6 @@
-import impact1 from "../../../assets/v2/images/donate/donate-reach.jpg";
-import impact2 from "../../../assets/v2/images/donate/donate-reach2.jpg";
-import impact3 from "../../../assets/v2/images/sponsor-reach.jpg";
+import impact1 from "../../../images/v2/donate/donate-reach.jpg";
+import impact2 from "../../../images/v2/donate/donate-reach2.jpg";
+import impact3 from "../../../images/v2/sponsor-reach.jpg";
 import { sponsorImpactStats } from "../../../utils";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";

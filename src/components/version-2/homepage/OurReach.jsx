@@ -1,5 +1,5 @@
 import React from "react";
-import ourReach from "../../../assets/v2/images/our-reach.png";
+import ourReach from "../../../images/v2/our-reach.png";
 import { ourReachData } from "../../../utils/v2";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
@@ -94,9 +94,7 @@ const OurReach = () => {
                     />
                     {suffix}+
                   </h3>
-                  <p className="description-text">
-                    {description}
-                  </p>
+                  <p className="description-text">{description}</p>
                 </motion.article>
               );
             })}

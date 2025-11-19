@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
-import hero from "../../assets/v2/images/home-hero.png";
+import hero from "../../images/v2/home-hero.png";
 import HomeHeroCarousel from "../../components/version-2/carousels/HomeHeroCarousel";
 import AboutUs from "../../components/version-2/homepage/AboutUs";
 import OurBrands from "../../components/version-2/homepage/OurBrands";
@@ -69,7 +69,8 @@ const Home = () => {
                 variants={heroFadeUp}
                 initial="hidden"
                 animate={() => heroFadeUp.visible(0.3)}
-                className="hero-title text-white hero-text">
+                className="hero-title text-white hero-text"
+              >
                 Equipping Girls and Women In Tech Across Africa
               </motion.h1>
 
@@ -98,7 +99,7 @@ const Home = () => {
                   url="https://bit.ly/joinshecodeafrica"
                   isGallery={true}
                 />
-                
+
                 <CustomButtonComponent
                   label="Donate to a cause"
                   customColor=" text-primary-main-pink"

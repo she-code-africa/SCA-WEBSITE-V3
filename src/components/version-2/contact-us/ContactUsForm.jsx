@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { toast } from "react-toastify";
 import { useMutation } from "@tanstack/react-query";
 import { mutateEnquires } from "../../../services";
-import contactImage from "../../../assets/v2/images/contact-us/contact-form-image.jpg";
+import contactImage from "../../../images/v2/contact-us/contact-form-image.jpg";
 
 const ContactUsForm = () => {
   const schema = yup

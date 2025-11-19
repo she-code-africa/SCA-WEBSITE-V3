@@ -1,19 +1,19 @@
-import slideImageOne from "../../assets/v2/images/home-hero-slider/slide-one.jpg";
-import slideImageTwo from "../../assets/v2/images/home-hero-slider/slide-two.jpg";
-import slideImageThree from "../../assets/v2/images/home-hero-slider/slide-three.jpeg";
-import slideImageFour from "../../assets/v2/images/home-hero-slider/slide-four.jpeg";
-import slideImageFive from "../../assets/v2/images/home-hero-slider/slide-five.jpeg";
-import slideImageSix from "../../assets/v2/images/home-hero-slider/slide-six.png";
-import testimonial1 from "../../assets/v2/images/testimonial1.png";
-import testimonial2 from "../../assets/v2/images/testimonial2.png";
-import testimonial3 from "../../assets/v2/images/testimonial3.png";
-import galleryImg1 from "../../assets/v2/images/gallery-imgs/gallery1.png";
-import galleryImg2 from "../../assets/v2/images/gallery-imgs/gallery2.jpg";
-import galleryImg5 from "../../assets/v2/images/gallery-imgs/gallery3.jpg";
-import galleryImg4 from "../../assets/v2/images/gallery-imgs/gallery4.jpg";
-import galleryImg3 from "../../assets/v2/images/gallery-imgs/gallery5.jpg";
-import galleryImg6 from "../../assets/v2/images/gallery-imgs/gallery6.png";
-import galleryImg7 from "../../assets/v2/images/gallery-imgs/gallery7.jpeg";
+import slideImageOne from "../../images/v2/home-hero-slider/slide-one.jpg";
+import slideImageTwo from "../../images/v2/home-hero-slider/slide-two.jpg";
+import slideImageThree from "../../images/v2/home-hero-slider/slide-three.jpeg";
+import slideImageFour from "../../images/v2/home-hero-slider/slide-four.jpeg";
+import slideImageFive from "../../images/v2/home-hero-slider/slide-five.jpeg";
+import slideImageSix from "../../images/v2/home-hero-slider/slide-six.png";
+import testimonial1 from "../../images/v2/testimonial1.png";
+import testimonial2 from "../../images/v2/testimonial2.png";
+import testimonial3 from "../../images/v2/testimonial3.png";
+import galleryImg1 from "../../images/v2/gallery-imgs/gallery1.png";
+import galleryImg2 from "../../images/v2/gallery-imgs/gallery2.jpg";
+import galleryImg5 from "../../images/v2/gallery-imgs/gallery3.jpg";
+import galleryImg4 from "../../images/v2/gallery-imgs/gallery4.jpg";
+import galleryImg3 from "../../images/v2/gallery-imgs/gallery5.jpg";
+import galleryImg6 from "../../images/v2/gallery-imgs/gallery6.png";
+import galleryImg7 from "../../images/v2/gallery-imgs/gallery7.jpeg";
 
 export const homeHeroSliderImages = [
   slideImageOne,
@@ -28,18 +28,18 @@ export const aboutUsInfoCards = [
   {
     heading: "Our Vision",
     paragraph:
-      "An Africa where women are equally represented across all career roles and levels in Technology"
+      "An Africa where women are equally represented across all career roles and levels in Technology",
   },
   {
     heading: "Our Mission",
     paragraph:
-      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence."
+      "To equip African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.",
   },
   {
     heading: "Our Values",
     paragraph:
-      "Team work, Community, Technical growth, Leadership, Visibility, Communication."
-  }
+      "Team work, Community, Technical growth, Leadership, Visibility, Communication.",
+  },
 ];
 
 export const ourReachData = [
@@ -86,31 +86,31 @@ export const aboutUsReachData = [
   {
     numbers: "5M",
     description: "people Inspired by the Stories of African Girls in Tech.",
-  }
+  },
 ];
 
 export const impactStats = [
   {
     id: 1,
     number: "65,000",
-    description: "program beneficiaries and scholarship recipients. "
+    description: "program beneficiaries and scholarship recipients. ",
   },
   {
     id: 2,
     number: "40,000",
-    description: "community members"
+    description: "community members",
   },
   {
     id: 3,
     number: "7,000",
     description:
-      "women and girls trained through our Academy and training programs"
+      "women and girls trained through our Academy and training programs",
   },
   {
     id: 4,
     number: "5M",
-    description: "people Inspired by the Stories of African Girls in Tech"
-  }
+    description: "people Inspired by the Stories of African Girls in Tech",
+  },
 ];
 
 export const testimonialCards = [

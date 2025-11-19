@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import hero from "../../assets/v2/images/herobg-v2-copy.jpg";
-import hero2 from "../../assets/v2/images/sponsor-hero.jpg";
+import hero from "../../images/v2/herobg-v2-copy.jpg";
+import hero2 from "../../images/v2/sponsor-hero.jpg";
 import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -73,7 +73,6 @@ const SponsorALady = () => {
 
                 <p className="text-white description-text mt-3 text-center lg:text-left lg:max-w-[500px]">
                   Did you know that by donating $20 (~₦30,000), you’re helping
-                 
                   one woman take a step closer to owning a laptop?
                 </p>
               </motion.article>

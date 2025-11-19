@@ -1,13 +1,13 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import donateJpg from "../../../assets/v2/images/donatePng.jpg";
-import donatePng from "../../../assets/v2/images/gallery-imgs/gallery6.png";
-import donateEvent from "../../../assets/v2/images/donate/donate-event.jpg";
-import donateMedia from "../../../assets/v2/images/donate/donate-media.jpg";
-import donateContact from "../../../assets/v2/images/donate/donateContact.jpg";
-import donatePartner from "../../../assets/v2/images/donate/donatePartner.jpg";
-import donateAcademy from "../../../assets/v2/images/donate/donateAcademy.jpg";
-import donateHire from "../../../assets/v2/images/donate/donateHire.jpg";
+import { useLocation } from "react-router-dom";
+import donateJpg from "../../../images/v2/donatePng.jpg";
+import donatePng from "../../../images/v2/gallery-imgs/gallery6.png";
+import donateEvent from "../../../images/v2/donate/donate-event.jpg";
+import donateMedia from "../../../images/v2/donate/donate-media.jpg";
+import donateContact from "../../../images/v2/donate/donateContact.jpg";
+import donatePartner from "../../../images/v2/donate/donatePartner.jpg";
+import donateAcademy from "../../../images/v2/donate/donateAcademy.jpg";
+import donateHire from "../../../images/v2/donate/donateHire.jpg";
 import CustomButtonComponent from "../shared-components/buttons/index.";
 import { motion } from "framer-motion";
 
@@ -74,9 +74,7 @@ const Donate = () => {
 
           <p className="description-secondary mt-3">
             Every donation opens a door for a girl in Africa to step into tech.
-           
             Your gift today could place a laptop, skills, or a mentor in her
-           
             hands. One act of giving today can change her future forever.
           </p>
 

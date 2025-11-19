@@ -5,7 +5,7 @@ import Footer from "../../components/Footer";
 import { apiConstants } from "../../utils";
 import { getAllSchools } from "../../services";
 import { useQuery } from "@tanstack/react-query";
-import hero from "../../assets/v2/images/herobg-v2.jpg";
+import hero from "../../images/v2/herobg-v2.jpg";
 import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 import Donate from "../../components/version-2/homepage/Donate";
 import ProgramsComponent from "../../components/version-2/academy/ProgramsComponent";

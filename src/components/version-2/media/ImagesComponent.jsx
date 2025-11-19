@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import placeholderImage from "../../../assets/v2/images/donatePng.jpg";
+import placeholderImage from "../../../images/v2/donatePng.jpg";
 import { Link } from "react-router-dom";
 import { FaRegCalendar } from "react-icons/fa";
 import MediaModal from "./MediaModal";

@@ -13,7 +13,7 @@ import {
 } from "../../utils/helpers";
 import Event from "../../components/Events";
 import * as components from "../../components";
-import eventBanner from "../../assets/v2/images/events-hero.jpg";
+import eventBanner from "../../images/v2/events-hero.jpg";
 import Donate from "../../components/version-2/homepage/Donate";
 import { motion } from "framer-motion";
 
@@ -98,7 +98,10 @@ const Events = () => {
                   She Code Africa Events
                 </h3>
                 <p className="description-text text-center lg:max-w-[702px]">
-                  Experience Community in Action through our events. From intimate workshops and community meetups to large-scale summits, we bring women and girls across Africa together, wherever they are.
+                  Experience Community in Action through our events. From
+                  intimate workshops and community meetups to large-scale
+                  summits, we bring women and girls across Africa together,
+                  wherever they are.
                 </p>
               </article>
             </div>
