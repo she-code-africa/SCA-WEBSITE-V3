@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useQuery } from "@tanstack/react-query";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import chapterImage from "../../images/chapters/sca-chapters-img.png";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -154,7 +154,7 @@ const Chapters = () => {
                       }
                     >
                       <img
-                        src={chapter.image || chapterImage}
+                        src={chapter.image}
                         alt={chapter.name}
                         className="w-28 h-28 sm:w-44 sm:h-44 object-contain"
                       />

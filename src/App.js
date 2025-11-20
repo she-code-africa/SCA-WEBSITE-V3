@@ -34,7 +34,7 @@ import PrivateRoutes from "./components/PrivateRoutes";
 import AcademyPage from "./pages/Academy/_slug";
 import LandingPage from "./pages/Academy";
 import ContactUs from "./pages/ContactUs";
-import ChapterDetails from "./pages/Chapters/ChapterDetails";
+
 import Media from "./pages/Media";
 import Layout from "./pages/Layout";
 import SponsorALady from "./pages/SponsorALady";
@@ -76,7 +76,7 @@ function Routes(params) {
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />
-      <Route path={paths.chapterDetails} element={<ChapterDetails />} />
+
       <Route path={paths.leadChapter} element={<ChaptersForm />} />
       <Route path={paths.donate_partner} element={<Donate />} />
       <Route path={paths.partner} element={<Donate />} />

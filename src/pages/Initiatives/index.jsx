@@ -48,7 +48,7 @@ const Initiatives = () => {
       <Header page={"initiatives"} />
       <main className="text-secondary-main-black ">
         <InitiativeHero />
-        
+
         {/* Render initiatives dynamically */}
         {initiatives.map((initiative, idx) => (
           <InitiativeCard
@@ -56,22 +56,19 @@ const Initiatives = () => {
             title={initiative.title}
             description={initiative.description}
             longDescription={initiative.longDescription}
-            image={
-              initiative.image ||
-              require("../../images/initiative/initiativeImg.jpg")
-            }
+            image={initiative.image}
             status={initiative.isAvailable ? "Ongoing" : "Application Closed"}
             primaryBtn={
               initiative.isAvailable
                 ? {
                     label: "Apply Now",
-                    href: initiative.initiative_url || "http://initiative.com"
+                    href: initiative.initiative_url || "http://initiative.com",
                   }
                 : undefined
             }
             secondaryBtn={{
               label: "Make donation",
-              href: initiative.donation_url || "/donate-partner"
+              href: initiative.donation_url || "/donate-partner",
             }}
             bgPattern={idx % 2 === 0 ? "pink" : "wine"}
             reverse={idx % 2 !== 0}
