@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import impact1 from "../../images/impact1.jpg";
+import impact1 from "../../images/v2/partnerImpact.jpg";
 import impact2 from "../../images/v2/partnerReach2.jpg";
 import impact3 from "../../images/v2/hero-img-communtiy.jpg";
 import Header from "../../components/Header";
