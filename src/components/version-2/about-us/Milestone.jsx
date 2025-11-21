@@ -1,5 +1,9 @@
 import React from "react";
-import { milestoneData } from "../../../utils/v2";
+import {
+  milestoneData,
+  milestoneImgDataOne,
+  milestoneImgDataTwo,
+} from "../../../utils/v2";
 import { motion } from "framer-motion";
 
 const Milestone = () => {
@@ -50,18 +54,19 @@ const Milestone = () => {
             variants={fadeUpVariant}
             className="hidden xl:block w-full"
           >
-            {[...Array(4)].map((_, i) => (
+            {milestoneImgDataOne.map((milestone, i) => (
               <div
-                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./images/v2/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
+                className={`w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-no-repeat bg-cover last:mb-0 mb-20 ${milestone.image}`}
                 key={i}
+                // style={{ backgroundImage: `url(${image})` }}
               >
                 <div className="w-full">
-                  <h4 className="w-full max-w-[42px] bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
-                    2018
+                  <h4 className="w-auto min-w-[42px] inline-block bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
+                    {milestone.yearRange}
                   </h4>
 
                   <p className="font-medium capitalize text-white text-xl mt-2">
-                    the beginning
+                    {milestone.title}
                   </p>
                 </div>
               </div>
@@ -111,19 +116,19 @@ const Milestone = () => {
             variants={fadeUpVariant}
             className="hidden md:block w-full"
           >
-            {[...Array(4)].map((_, i) => (
+            {milestoneImgDataTwo.map((milestone, i) => (
               <motion.div
                 variants={fadeUpVariant}
-                className="w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./images/v2/about/milestoneBg.jpg')] bg-no-repeat bg-cover mb-6"
+                className={`w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./images/v2/about/milestoneBg.jpg')] bg-no-repeat bg-cover last:mb-0 mb-20 ${milestone.image}`}
                 key={i}
               >
                 <div className="w-full">
-                  <h4 className="w-full max-w-[42px] bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
-                    2018
+                  <h4 className="min-w-[42px] inline-block w-auto bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
+                    {milestone.yearRange}
                   </h4>
 
                   <p className="font-medium capitalize text-white text-xl mt-2">
-                    the beginning
+                    {milestone.title}
                   </p>
                 </div>
               </motion.div>

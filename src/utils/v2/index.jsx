@@ -306,6 +306,52 @@ export const milestoneData = [
   },
 ];
 
+export const milestoneImgDataOne = [
+  {
+    title: "The Beginning",
+    image: "bg-[url('./images/v2/milestone/milestone.jpg')]",
+    yearRange: "2016",
+  },
+  {
+    title: "Training Program",
+    image: "bg-[url('./images/v2/milestone/milestone2.jpg')]",
+    yearRange: "2017",
+  },
+  {
+    title: "Chapter Expansions Across Africa",
+    image: "bg-[url('./images/v2/milestone/milestone3.jpg')]",
+    yearRange: "2018 - 2020",
+  },
+  {
+    title: "Chapters Meetup (OAU)",
+    image: "bg-[url('./images/v2/milestone/milestone4.png')]",
+    yearRange: "2021",
+  },
+];
+
+export const milestoneImgDataTwo = [
+  {
+    title: "She Code Africa Laptop Scholarship",
+    image: "bg-[url('./images/v2/milestone/milestone5.jpg')]",
+    yearRange: "2022",
+  },
+  {
+    title: "She Code Africa Summit",
+    image: "bg-[url('./images/v2/milestone/milestone6.jpg')]",
+    yearRange: "2023",
+  },
+  {
+    title: "Stem-A-Girl Initiative",
+    image: "bg-[url('./images/v2/milestone/milestone7.jpg')]",
+    yearRange: "2024",
+  },
+  {
+    title: "HP 2025 Digital Equity Accelerator",
+    image: "bg-[url('./images/v2/milestone/milestone8.jpg')]",
+    yearRange: "2025",
+  },
+];
+
 export const challengeData = [
   {
     number: "5k",
