@@ -8,6 +8,7 @@ import donateContact from "../../../images/v2/donate/donateContact.jpg";
 import donatePartner from "../../../images/v2/donate/donatePartner.jpg";
 import donateAcademy from "../../../images/v2/donate/donateAcademy.jpg";
 import donateHire from "../../../images/v2/donate/donateHire.jpg";
+import donateTeam from "../../../images/v2/donate/donateTeam.jpg";
 import CustomButtonComponent from "../shared-components/buttons/index.";
 import { motion } from "framer-motion";
 
@@ -49,7 +50,7 @@ const Donate = () => {
     "/events": donateEvent,
     "/media": donateMedia,
     "/contact-us": donateContact,
-    "/team": donateContact,
+    "/team": donateTeam,
     "/partner": donatePartner,
     "/academy": donateAcademy,
     "/hire": donateHire,
