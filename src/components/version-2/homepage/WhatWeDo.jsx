@@ -81,34 +81,33 @@ const WhatWeDo = () => {
       >
         <div className="w-full grid md:grid-cols-2 gap-8 ">
           {whatWeDoData.map(({ title, description, url }, i) => (
-            <div
-              className="border-2 border-[#094A32] p-5 bg-white rounded-2xl hover:text-white hover:bg-[#094A32] transition-colors duration-300 cursor-pointer text-[#094A32] card-wwd"
-              key={i}
-            >
-              <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
-                <img
-                  src={whatWeDo}
-                  alt="card-pic"
-                  className="object-cover w-full h-full"
-                />
-              </figure>
+            <Link to={url} key={i}>
+              <div className="border-2 border-[#094A32] p-5 bg-white rounded-2xl hover:text-white hover:bg-[#094A32] transition-colors duration-300 cursor-pointer text-[#094A32] card-wwd">
+                <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
+                  <img
+                    src={whatWeDo}
+                    alt="card-pic"
+                    className="object-cover w-full h-full"
+                  />
+                </figure>
 
-              <div className="w-full flex flex-col justify-between min-h-[246px]">
-                <article className="mt-5 w-full">
-                  <h4 className="capitalize card-title">{title}</h4>
-                  <p className="card-text mt-4 ">{description}</p>
-                </article>
+                <div className="w-full flex flex-col justify-between min-h-[246px]">
+                  <article className="mt-5 w-full">
+                    <h4 className="capitalize card-title">{title}</h4>
+                    <p className="card-text mt-4 ">{description}</p>
+                  </article>
 
-                <div className="mt-5 w-full ">
-                  <Link
-                    to={url}
-                    className="small-text w-full flex items-center gap-2"
-                  >
-                    Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
-                  </Link>
+                  <div className="mt-5 w-full ">
+                    <Link
+                      to={url}
+                      className="small-text w-full flex items-center gap-2"
+                    >
+                      Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </motion.div>

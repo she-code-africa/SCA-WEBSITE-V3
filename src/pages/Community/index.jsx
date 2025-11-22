@@ -158,7 +158,7 @@ const Community = () => {
               What’s in store for you
             </h2>
 
-            <div className="w-90 mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 max-w-[800px] gap-7 sm:gap-10 place-items-center-center">
+            <div className="w-90 mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 max-w-[850px] gap-7 sm:gap-10 place-items-center-center">
               {whatsinStoreForYou.map((item, index) => (
                 <motion.div
                   key={index}
@@ -269,7 +269,7 @@ const Community = () => {
           <div className="w-90 mx-auto max-w-[686px]">
             <h2 className="text-center section-header 2md:leading-[82px] hero-text text-primary-main-pink">
               Ready to join Africa's <span className="uppercase">largest</span>{" "}
-              female tech community?
+              women in tech community?
             </h2>
 
             <div className="flex items-center justify-center mt-5 sm:mt-8 max-w-[208px] mx-auto">
