@@ -1,9 +1,28 @@
-import slideImageOne from "../../images/v2/home-hero-slider/slide-one.jpg";
-import slideImageTwo from "../../images/v2/home-hero-slider/slide-two.jpg";
-import slideImageThree from "../../images/v2/home-hero-slider/slide-three.jpeg";
+import slideImageOne from "../../images/v2/home-hero-slider/slider-1.jpg";
+import slideImageTwo from "../../images/v2/contact-us/contact-form-image.jpg";
+import slideImageThree from "../../images/v2/home-hero-slider/slider-3.jpg";
 import slideImageFour from "../../images/v2/home-hero-slider/slide-four.jpeg";
-import slideImageFive from "../../images/v2/home-hero-slider/slide-five.jpeg";
-import slideImageSix from "../../images/v2/home-hero-slider/slide-six.png";
+import slideImageFive from "../../images/v2/home-hero-slider/slider-5.jpg";
+import slideImageSix from "../../images/v2/home-hero-slider/slider-6.jpg";
+import slideImageSeven from "../../images/v2/home-hero-slider/slider-7.jpg";
+import slideImage8 from "../../images/v2/home-hero-slider/slider-8.jpg";
+import slideImage9 from "../../images/v2/home-hero-slider/slider-9.jpg";
+import slideImage10 from "../../images/v2/home-hero-slider/slider-10.jpg";
+import slideImage11 from "../../images/v2/home-hero-slider/slider-11.jpg";
+import slideImage12 from "../../images/v2/home-hero-slider/slider-12.jpg";
+import slideImage13 from "../../images/v2/home-hero-slider/slider-13.jpg";
+import slideImage14 from "../../images/v2/home-hero-slider/slider-14.jpg";
+import slideImage15 from "../../images/v2/home-hero-slider/slider-15.jpg";
+import slideImage16 from "../../images/v2/home-hero-slider/slider-16.jpg";
+import slideImage17 from "../../images/v2/home-hero-slider/slider-17.jpg";
+import slideImage18 from "../../images/v2/home-hero-slider/slider-18.jpg";
+import slideImage19 from "../../images/v2/home-hero-slider/slider-19.jpg";
+import slideImage20 from "../../images/v2/home-hero-slider/slider-20.jpg";
+import slideImage21 from "../../images/v2/home-hero-slider/slider-21.jpg";
+import slideImage22 from "../../images/v2/home-hero-slider/slider-22.jpg";
+import slideImage23 from "../../images/v2/home-hero-slider/slider-23.jpg";
+import slideImage24 from "../../images/v2/home-hero-slider/slider-24.jpg";
+
 import testimonial1 from "../../images/v2/testimonial1.png";
 import testimonial2 from "../../images/v2/testimonial2.png";
 import testimonial3 from "../../images/v2/testimonial3.png";
@@ -22,6 +41,24 @@ export const homeHeroSliderImages = [
   slideImageFour,
   slideImageFive,
   slideImageSix,
+  slideImageSeven,
+  slideImage8,
+  slideImage9,
+  slideImage10,
+  slideImage11,
+  slideImage12,
+  slideImage13,
+  slideImage14,
+  slideImage15,
+  slideImage16,
+  slideImage17,
+  slideImage18,
+  slideImage19,
+  slideImage20,
+  slideImage21,
+  slideImage22,
+  slideImage23,
+  slideImage24,
 ];
 
 export const aboutUsInfoCards = [
