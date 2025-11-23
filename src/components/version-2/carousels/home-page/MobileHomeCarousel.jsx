@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { homeHeroSliderImages } from "../../../../utils/v2";
 
-import { homeHeroSliderImages } from "../../../utils/v2";
-import MobileHomeCarousel from "./home-page/MobileHomeCarousel";
-import TabletHomeCarouse from "./home-page/TabletHomeCarouse";
-const BATCH_SIZE = 6;
+const BATCH_SIZE = 1;
 const INTERVAL = 10000;
-
-const HomeHeroCarousel = () => {
+const MobileHomeCarousel = () => {
   const [startIndex, setStartIndex] = useState(0);
 
   const getCurrentBatch = () => {
@@ -32,16 +29,13 @@ const HomeHeroCarousel = () => {
   }, []);
 
   return (
-    <div className="w-full">
-      <MobileHomeCarousel />
-
-      <TabletHomeCarouse />
-      <div className="hidden md:flex w-full items-center justify-center flex-nowrap overflow-auto scrollbar-hidden gap-1">
+    <div className="w-full sm:hidden">
+      <div className="flex w-full items-center justify-center">
         {currentBatch.length > 0 &&
           currentBatch.map((image, index) => (
             <figure
               key={`${image}-${index}-${Date.now()}`}
-              className=" shrink-0 lg:shrink w-[240px] h-[209px] rounded-2xl overflow-hidden "
+              className=" w-full h-[350px] rounded-2xl overflow-hidden "
             >
               <img
                 src={image}
@@ -55,4 +49,4 @@ const HomeHeroCarousel = () => {
   );
 };
 
-export default HomeHeroCarousel;
+export default MobileHomeCarousel;
