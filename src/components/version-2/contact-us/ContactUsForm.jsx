@@ -24,6 +24,7 @@ const ContactUsForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -33,6 +34,8 @@ const ContactUsForm = () => {
       toast.success("Message sent Successfully!", {
         position: toast.POSITION.TOP_RIGHT,
       });
+
+      reset();
     },
     onError: (error, variables) => {
       toast.error("An error occurred.", {

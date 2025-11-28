@@ -16,7 +16,7 @@ const WhatWeDo = () => {
     {
       title: "Communities and Chapters",
       description:
-        " With a global community of over 40,000 members and over 40 local chapters across cities and campuses, we’ve built safe, active spaces where women can access peer support, mentorship, and learning opportunities in tech.",
+        "With a global community of over 40,000 members and over 40 local chapters across cities and campuses, we’ve built safe, active spaces where women can access peer support, mentorship, and learning opportunities in tech.",
       url: "/community",
     },
     {
@@ -28,7 +28,7 @@ const WhatWeDo = () => {
     {
       title: "Initiatives",
       description:
-        "We design focused programs that remove the everyday barriers African women face when starting or growing their careers in tech. Whether it’s access to tools and resources, mentorship, or entry into a training program, our initiatives create pathways to learning, visibility, and long-term opportunities in tech.",
+        "We design focused programs that remove the everyday barriers African women face when starting or growing their careers in tech. Our initiatives create pathways to learning, visibility, and long-term opportunities in tech.",
       url: "/initiatives",
     },
   ];
@@ -91,10 +91,14 @@ const WhatWeDo = () => {
                   />
                 </figure>
 
-                <div className="w-full flex flex-col justify-between min-h-[246px]">
+                <div className="w-full flex flex-col justify-between min-h-[350px]">
                   <article className="mt-5 w-full">
-                    <h4 className="capitalize card-title">{title}</h4>
-                    <p className="card-text mt-4 ">{description}</p>
+                    <h4 className="capitalize card-title text-2xl font-bold">
+                      {title}
+                    </h4>
+                    <p className="card-text mt-4 text-xl font-medium">
+                      {description}
+                    </p>
                   </article>
 
                   <div className="mt-5 w-full ">
