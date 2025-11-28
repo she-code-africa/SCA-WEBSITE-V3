@@ -64,7 +64,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="bg-[rgba(0,0,0,0.35)] min-h-screen pt-16 lg:pt-[159px] lg:pb-[100px] flex justify-center items-center "
           >
-            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[720px] text-center">
+            <article className="relative z-[1] w-[90%] mx-auto lg:w-full lg:max-w-[800px] text-center">
               <motion.h1
                 variants={heroFadeUp}
                 initial="hidden"
