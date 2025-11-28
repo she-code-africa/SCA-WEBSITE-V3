@@ -56,12 +56,12 @@ const Milestone = () => {
           >
             {milestoneImgDataOne.map((milestone, i) => (
               <div
-                className={`w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-no-repeat bg-cover last:mb-0 mb-20 ${milestone.image}`}
+                className={`w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-no-repeat bg-cover last:mb-0 mb-[120px] ${milestone.image}`}
                 key={i}
                 // style={{ backgroundImage: `url(${image})` }}
               >
                 <div className="w-full">
-                  <h4 className="w-auto min-w-[42px] inline-block bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
+                  <h4 className="w-auto min-w-[42px] inline-flex bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl justify-center items-center text-primary-main-pink text-xs font-normal m-0 leading-none">
                     {milestone.yearRange}
                   </h4>
 
@@ -75,9 +75,9 @@ const Milestone = () => {
           <motion.div variants={containerVariant} className="w-full">
             {milestoneData.map(
               ({ year, title, subText, yearRange, range }, i) => (
-                <div className="flex gap-3 items-start mb-6" key={i}>
+                <div className="flex gap-3 items-stretch mb-6" key={i}>
                   <h4
-                    className={`text-primary-main-pink text-2xl font-medium !my-0`}
+                    className={`text-primary-main-pink text-2xl font-semibold !my-0`}
                   >
                     {range ? (
                       <>
@@ -90,17 +90,17 @@ const Milestone = () => {
                     )}
                   </h4>
 
-                  <div className="flex flex-col gap-2 items-center">
+                  <div className="flex flex-col gap-2 items-center  ">
                     <span className="inline-block w-[24px] h-[24px] rounded-full border border-primary-main-pink bg-[rgba(254,254,254,1)]"></span>
                     <span
-                      className={`inline-block h-[62px] w-0 border border-primary-main-pink ${
+                      className={`block w-0 border border-primary-main-pink flex-1 ${
                         i === milestoneData.length - 1 ? "opacity-0" : ""
                       }`}
                     ></span>
                   </div>
 
                   <article className="flex flex-col gap-2">
-                    <h3 className="!my-0 !text-2xl text-primary-main-pink capitalize font-medium">
+                    <h3 className="!my-0 !text-2xl text-primary-main-pink capitalize font-semibold">
                       {title}
                     </h3>
 
@@ -119,11 +119,11 @@ const Milestone = () => {
             {milestoneImgDataTwo.map((milestone, i) => (
               <motion.div
                 variants={fadeUpVariant}
-                className={`w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7 bg-[url('./images/v2/about/milestoneBg.jpg')] bg-no-repeat bg-cover last:mb-0 mb-20 ${milestone.image}`}
+                className={`w-full max-w-[335px] h-[224px] rounded-2xl flex items-end px-3  py-7  bg-no-repeat bg-cover last:mb-0 mb-[120px] ${milestone.image}`}
                 key={i}
               >
                 <div className="w-full">
-                  <h4 className="min-w-[42px] inline-block w-auto bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl text-center text-primary-main-pink text-xs font-normal">
+                  <h4 className="min-w-[42px] inline-flex w-auto bg-[rgba(233,225,230,1)] py-1 px-2 rounded-3xl justify-center items-center text-primary-main-pink  text-xs font-normal m-0 leading-none">
                     {milestone.yearRange}
                   </h4>
 
