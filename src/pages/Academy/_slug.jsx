@@ -200,27 +200,30 @@ const AcademyPage = () => {
                     viewport={{ once: true }}
                     className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden"
                   >
-                    <img
-                      // src={heroImg}
-                      src={
-                        school &&
-                        school?.name &&
-                        school?.name.toLowerCase() === "school of engineering"
-                          ? soe
-                          : school &&
-                            school?.name &&
-                            school?.name.toLowerCase() === "school of product"
-                          ? sop
-                          : school &&
-                            school?.name &&
-                            school?.name.toLowerCase() ===
-                              "school of applied skills"
-                          ? soa
-                          : heroImg
-                      }
-                      alt="hero-img"
-                      className="w-full h-full object-cover"
-                    />
+                    {isLoading ? (
+                      <components.Loading />
+                    ) : (
+                      <img
+                        // src={heroImg}
+                        src={
+                          school &&
+                          school?.name &&
+                          school?.name.toLowerCase() === "school of engineering"
+                            ? soe
+                            : school &&
+                              school?.name &&
+                              school?.name.toLowerCase() === "school of product"
+                            ? sop
+                            : school &&
+                              school?.name &&
+                              school?.name.toLowerCase() ===
+                                "school of applied skills" &&
+                              soa
+                        }
+                        alt="hero-img"
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </motion.figure>
                 </motion.div>
               ) : (
