@@ -213,7 +213,13 @@ main,
 .description-text {
   font-size: clamp(16px, 2.5vw, 24px);
   font-weight: 500; /* medium */
-  line-height: 1.5;
+  line-height: 1.5; 
+}
+
+.intiative-description-text {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 400; /* regular */
+  line-height: 1.75; 
 }
 
 /* SECONDARY DESCRIPTION - 18px desktop */
@@ -248,6 +254,19 @@ main,
 .event-card-title {
   font-size: clamp(16px, 2.5vw, 20px);
   font-weight: 700; /* bold */
+  line-height: 1.4;
+}
+
+.chapter-card-title {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 700; /* bold */
+  line-height: 1.5;
+}
+
+/* CARD TEXT - 20px desktop */
+.chapter-location-text {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500; /* medium */
   line-height: 1.4;
 }
 

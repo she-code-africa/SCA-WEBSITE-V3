@@ -74,9 +74,7 @@ const Donate = () => {
 
           <p className="description-secondary mt-3">
             Every donation opens a door for a girl in Africa to step into tech.
-           
             Your gift today could place a laptop, skills, or a mentor in her
-           
             hands. One act of giving today can change her future forever.
           </p>
 

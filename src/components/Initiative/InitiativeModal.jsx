@@ -60,15 +60,20 @@ export default function InitiativeModal({
             </span>
           )}
 
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-2">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-Secondary-Grape hero-text">
               {title}
             </h2>
 
-            <p className="text-gray-700 description-text leading-8 ">
-              {longDescription || description}
-            </p>
-            <div className="flex flex-wrap gap-5 mt-10">
+            {/* Updated Description Section */}
+            <div
+              className="text-gray-700 intiative-description-text text-justify leading-8 max-w-none  prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-4 prose-li:mb-2 prose-strong:font-bold"
+              dangerouslySetInnerHTML={{
+                __html: longDescription || description
+              }}
+            />
+
+            <div className="flex flex-wrap gap-5 mt-4">
               {primaryBtn && (
                 <a
                   href={primaryBtn.href}
