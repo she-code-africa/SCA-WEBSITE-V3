@@ -55,8 +55,8 @@ const Volunteer = () => {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.3 },
-                },
+                  transition: { staggerChildren: 0.3 }
+                }
               }}
               className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-16"
             >
@@ -67,8 +67,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" },
-                  },
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
                 }}
                 className="w-full lg:w-1/2"
               >
@@ -111,8 +111,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" },
-                  },
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
                 }}
                 className="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
               >
@@ -183,8 +183,8 @@ const Volunteer = () => {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.2 },
-                },
+                  transition: { staggerChildren: 0.2 }
+                }
               }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             >
@@ -196,8 +196,8 @@ const Volunteer = () => {
                     visible: {
                       opacity: 1,
                       y: 0,
-                      transition: { duration: 0.7, ease: "easeOut" },
-                    },
+                      transition: { duration: 0.7, ease: "easeOut" }
+                    }
                   }}
                   className="group bg-white border-2 border-Primary-Magenta rounded-[15.29px] overflow-hidden transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(183,5,105,0.14)]"
                 >
@@ -254,8 +254,8 @@ const Volunteer = () => {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.3 },
-                },
+                  transition: { staggerChildren: 0.3 }
+                }
               }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
             >
@@ -266,8 +266,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" },
-                  },
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
                 }}
                 className="lg:col-span-5"
               >
@@ -287,8 +287,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" },
-                  },
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
                 }}
                 className="lg:col-span-7"
               >
@@ -309,8 +309,8 @@ const Volunteer = () => {
                   variants={{
                     hidden: {},
                     visible: {
-                      transition: { staggerChildren: 0.3 },
-                    },
+                      transition: { staggerChildren: 0.3 }
+                    }
                   }}
                   className="flex flex-col gap-7"
                 >
@@ -321,8 +321,8 @@ const Volunteer = () => {
                       visible: {
                         opacity: 1,
                         y: 0,
-                        transition: { duration: 0.8, ease: "easeOut" },
-                      },
+                        transition: { duration: 0.8, ease: "easeOut" }
+                      }
                     }}
                     className=""
                   >
@@ -358,8 +358,8 @@ const Volunteer = () => {
                       visible: {
                         opacity: 1,
                         y: 0,
-                        transition: { duration: 0.8, ease: "easeOut" },
-                      },
+                        transition: { duration: 0.8, ease: "easeOut" }
+                      }
                     }}
                     className=""
                   >
@@ -415,7 +415,7 @@ const Volunteer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-4xl sm:max-w-2xl mx-auto text-lg sm:text-2xl mb-8 sm:mb-8"
+            className="max-w-4xl sm:max-w-4xl mx-auto text-lg sm:text-2xl mb-8 sm:my-12"
           >
             Be a part of a community that celebrates diversity and empowers
             women to thrive in tech. Connect with like-minded individuals, gain
@@ -428,7 +428,7 @@ const Volunteer = () => {
             rel="noreferrer"
             className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] text-base"
           >
-            Register to join now
+            Join now
           </a>
         </motion.section>
       </main>

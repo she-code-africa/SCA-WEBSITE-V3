@@ -89,13 +89,17 @@ export default function InitiativeCard({
           )}
 
           <div>
-            <h2 className="section-header hero-text w-[87%] mb-4 text-Secondary-Grape ">
+            <h2 className="section-header hero-text w-[87%] text-Secondary-Grape ">
               {title}
             </h2>
 
-            <p className="description-text leading-8 mb-8 text-gray-800">
-              {previewText}
-            </p>
+            <div
+              className="description-text leading-8 mb-8 text-gray-800 prose max-w-none
+                  prose-p:mb-4 prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-4 prose-li:mb-2 prose-strong:font-bold line-clamp-4"
+              dangerouslySetInnerHTML={{
+                __html: previewText
+              }}
+            />
 
             <div className="flex flex-wrap gap-5">
               <button
