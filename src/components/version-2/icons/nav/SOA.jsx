@@ -15,7 +15,7 @@ const SOA = () => {
           stroke="currentColor"
           strokeWidth="1.5"
           strokeMiterlimit="10"
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
         <path
           d="M4.85001 19.5002H15.16C16.17 19.5002 17.01 18.6703 17.01 17.6503V15.3403C17.01 14.3203 16.18 13.4902 15.16 13.4902H4.85001C3.84001 13.4902 3 14.3203 3 15.3403V17.6503C3 18.6703 3.83001 19.5002 4.85001 19.5002Z"

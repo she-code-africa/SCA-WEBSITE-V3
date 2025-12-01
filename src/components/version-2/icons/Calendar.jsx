@@ -20,14 +20,14 @@ const Calendar = () => {
           d="M7 2.5V4.75"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M13 2.5V4.75"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
@@ -40,42 +40,42 @@ const Calendar = () => {
           d="M6.9082 11.5H7.09156"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M9.43359 11.5H10.5669"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M12.9082 11.5H13.0916"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M6.9082 14.5005H8.2582"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M10.7498 14.5005H10.5664"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M12.9082 14.5005H13.0916"
           stroke="#B70569"
           strokeWidth="1.25"
-          stroke-linecap="round"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
       </g>
