@@ -28,7 +28,7 @@ const TestimonialSlide = ({ testimonialCards, isLoading }) => {
                 } ${i === 2 && "bg-[#FFF88F]"} clip-testimonial bg-no-repeat`}
                 style={{
                   backgroundImage: `url(${item.img})`,
-                  backgroundSize: "181px 158px"
+                  backgroundSize: "181px 158px",
                 }}
               >
                 <article className="py-28 px-9 w-full  h-full max-w-[350px] ">
