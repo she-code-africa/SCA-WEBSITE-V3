@@ -46,18 +46,13 @@ const Home = () => {
       <Header page={"home"} />
       <main className="text-secondary-main-black w-full">
         <section className="w-full h-full bg-[#B70569] relative ">
-          <motion.figure
-            className="absolute top-0 left-0 w-full h-full mix-blend-multiply"
-            variants={bgVariant}
-            initial="hidden"
-            animate="visible"
-          >
+          <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
             <img
               src={hero}
               alt="Who We Are"
               className="object-cover w-full h-full"
             />
-          </motion.figure>
+          </figure>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
