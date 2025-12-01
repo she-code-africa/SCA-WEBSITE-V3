@@ -12,6 +12,9 @@ import { getAllSchools } from "../../services";
 import heroImg from "../../images/v2/whatWeDoCardImage.jpg";
 import SchoolProgram from "../../components/version-2/academy/SchoolProgram";
 import SuccessStories from "../../components/version-2/academy/SuccessStories";
+import sop from "../../images/v2/academy/sop-hero.jpg";
+import soe from "../../images/v2/academy/soehero.jpg";
+import soa from "../../images/v2/academy/soa-hero.jpg";
 import ResourcesCard from "../../components/version-2/shared-components/ResourcesCard";
 import {
   engTestimonialCards,
@@ -57,6 +60,8 @@ const AcademyPage = () => {
 
   const skillTextContent =
     "Explore our live programs at our School of Applied Skills. From Technical community management, Open source contribution to Technical writing, tailored for women ready to succeed in non-tech career paths.";
+
+  console.log("school data:", school);
 
   return (
     <>
@@ -202,7 +207,23 @@ const AcademyPage = () => {
                     className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden"
                   >
                     <img
-                      src={heroImg}
+                      // src={heroImg}
+                      src={
+                        school &&
+                        school?.name &&
+                        school?.name.toLowerCase() === "school of engineering"
+                          ? soe
+                          : school &&
+                            school?.name &&
+                            school?.name.toLowerCase() === "school of product"
+                          ? sop
+                          : school &&
+                            school?.name &&
+                            school?.name.toLowerCase() ===
+                              "school of applied skills"
+                          ? soa
+                          : heroImg
+                      }
                       alt="hero-img"
                       className="w-full h-full object-cover"
                     />
