@@ -171,6 +171,27 @@ export const testimonialCards = [
   },
 ];
 
+export const initiativeTestimonialCards = [
+  {
+    img: testimonial1,
+    testimonial:
+      "As an IT Engineer looking to transition to Project Management, this scholarship program came at the time I needed it the most which has contributed in my journey in the project management industry. Through this program, I have learnt a lot about the types of project management methodologies and I am grateful for this opporturnity",
+    name: "Seynabou G",
+  },
+  {
+    img: testimonial2,
+    testimonial:
+      "Went from 0 to 10 really fast in my tech journey, and I just started. I graduated from SCA cloud school, yes, it's okay to address me as a cloud engineer now.",
+    name: "Seriki A",
+  },
+  {
+    img: testimonial3,
+    testimonial:
+      "If I were to rate myself now, I would say I am seven or eight out of ten, and I know that if I keep practising on my own, I will grow even more. My dream is to get my own laptop so I can continue learning and practising everything I was taught. This training has given me confidence. ",
+    name: "Damilola A",
+  },
+];
+
 export const productTestimonialCards = [
   {
     img: testimonial1,

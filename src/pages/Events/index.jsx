@@ -149,13 +149,10 @@ const Events = () => {
             </motion.div>
 
             {activeTab.toLowerCase() === "past events" && (
-              <motion.div
-                variants={fadeUp}
-                className="w-full flex items-center justify-center gap-8 flex-wrap mt-8"
-              >
+              <div className="w-full flex items-center justify-center gap-8 flex-wrap mt-8">
                 {years.map((tab, idx) => (
                   <button
-                    className={`transition-colors duration-300 w-full max-w-[102px] flex items-center justify-center text-sm sm:text-base py-[18px] px-8 rounded-lg  h-[35px]  ${
+                    className={`transition-colors duration-300 w-full max-w-[102px] flex items-center justify-center text-sm sm:text-base py-[18px] px-8 rounded-lg  h-[35px] ${
                       yearTabs === tab
                         ? "bg-primary-main-pink text-white"
                         : "bg-[#F4EFEC] text-[#5C0335]"
@@ -166,7 +163,7 @@ const Events = () => {
                     {tab}
                   </button>
                 ))}
-              </motion.div>
+              </div>
             )}
 
             {isError ? <components.Error /> : null}

@@ -3,12 +3,20 @@ import { apiConstants } from "../../../utils";
 import { getTestimonials } from "../../../services";
 import TestimonialSlide from "./TestimonialSlide";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router";
+import { initiativeTestimonialCards } from "../../../utils/v2";
 
 const OurQueensTestimonials = () => {
   const { data: testimonials, isLoading } = useQuery({
     queryKey: [apiConstants.testimonials],
     queryFn: () => getTestimonials(),
   });
+  const { pathname } = useLocation();
+
+  const testimonialData = {
+    "/": testimonials,
+    "/initiatives": initiativeTestimonialCards,
+  };
 
   return (
     <motion.section
@@ -21,7 +29,7 @@ const OurQueensTestimonials = () => {
       <motion.article
         variants={{
           hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
         className="w-full"
       >
@@ -46,12 +54,12 @@ const OurQueensTestimonials = () => {
           visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, ease: "easeOut", delay: 0.4 }
-          }
+            transition: { duration: 0.8, ease: "easeOut", delay: 0.4 },
+          },
         }}
       >
         <TestimonialSlide
-          testimonialCards={testimonials}
+          testimonialCards={testimonialData[pathname] || testimonials}
           isLoading={isLoading}
         />
       </motion.div>
