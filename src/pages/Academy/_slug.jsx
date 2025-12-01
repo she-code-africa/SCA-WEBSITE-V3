@@ -61,8 +61,6 @@ const AcademyPage = () => {
   const skillTextContent =
     "Explore our live programs at our School of Applied Skills. From Technical community management, Open source contribution to Technical writing, tailored for women ready to succeed in non-tech career paths.";
 
-  console.log("school data:", school);
-
   return (
     <>
       <Helmet>
@@ -168,10 +166,6 @@ const AcademyPage = () => {
                       transition={{ duration: 0.6, delay: 0.2 }}
                       className="  mx-auto text-[#1A1A1A] description-light"
                     >
-                      {/* {school?.description} */}
-                      {/* Empowering women to innovate the digital world, one
-                      engineer at a time. */}
-
                       {school &&
                         school?.name &&
                         school?.name.toLowerCase() ===
@@ -189,13 +183,13 @@ const AcademyPage = () => {
                     </motion.p>
 
                     <div className="my-5 w-full max-w-[171px]">
-                      <Link
-                        to="#"
+                      <a
+                        href="#programs"
                         className="w-full flex h-[55px] rounded-lg bg-primary-main-pink
                         text-white button-text transition-colors duration-300 justify-center items-center py-[18px] px-8 hover:bg-[#5C0335]"
                       >
-                        Apply Now
-                      </Link>
+                        View Courses
+                      </a>
                     </div>
                   </article>
 
@@ -241,6 +235,7 @@ const AcademyPage = () => {
       </motion.section>
 
       <motion.div
+        id="programs"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -249,6 +244,7 @@ const AcademyPage = () => {
         <SchoolProgram
           bgColors={BgColors}
           slug={slug}
+          schoolPrograms={school?.schoolPrograms || []}
           textContent={(() => {
             const name = school?.name?.toLowerCase();
             const map = {

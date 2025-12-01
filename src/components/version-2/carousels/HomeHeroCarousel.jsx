@@ -4,7 +4,7 @@ import { homeHeroSliderImages } from "../../../utils/v2";
 import MobileHomeCarousel from "./home-page/MobileHomeCarousel";
 import TabletHomeCarouse from "./home-page/TabletHomeCarouse";
 const BATCH_SIZE = 6;
-const INTERVAL = 10000;
+const INTERVAL = 3000;
 
 const HomeHeroCarousel = () => {
   const [startIndex, setStartIndex] = useState(0);

@@ -260,9 +260,9 @@ const Footer = () => {
             </motion.div>
           </section>
         </div>
-        <div className="__footerdownbg bg-primary-main-pink">
-          <div className="container">
-            <p>
+        <div className="__footerdownbg bg-primary-main-pink flex w-full justify-center items-center">
+          <div className="container  flex w-full justify-center items-center">
+            <p className="flex w-full justify-center items-center">
               All right reserved She code Africa{" "}
               <span id="year"> &copy;{new Date().getFullYear()}</span>
             </p>
