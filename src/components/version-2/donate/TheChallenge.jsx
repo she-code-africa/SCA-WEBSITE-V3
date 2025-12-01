@@ -17,7 +17,7 @@ const TheChallenge = () => {
               The Challenge
             </h3>
 
-            <p className="w-full mt-2 challenge-text">
+            <p className="w-full mt-2 challenge-text text-lg">
               Millions of women and girls across Africa still lack access to the
               technology, training, and tools needed to thrive in a digital
               world. While the tech industry continues to grow, gender gaps in
@@ -26,14 +26,20 @@ const TheChallenge = () => {
             </p>
 
             <div className="w-full px-10">
-              <ul className="w-full p-0 m-0 text-lg mt-2 font-medium list-disc ">
+              <ul
+                className="w-full p-0 m-0 text-lg mt-2 font-medium list-disc"
+                style={{ fontSize: "18px" }}
+              >
                 <li>No reliable internet or device to learn with.</li>
                 <li>Limited exposure to digital skills in schools.</li>
                 <li>Few role models or mentors in tech and so much more.</li>
               </ul>
             </div>
 
-            <p className="w-full text-lg mt-3 font-medium ">
+            <p
+              className="w-full mt-3 font-medium "
+              style={{ fontSize: "18px" }}
+            >
               We envision an Africa where women are equally represented across
               all career roles and levels in Technology.
             </p>

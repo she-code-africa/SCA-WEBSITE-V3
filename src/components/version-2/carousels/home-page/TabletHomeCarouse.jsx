@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { homeHeroSliderImages } from "../../../../utils/v2";
 
 const BATCH_SIZE = 3;
-const INTERVAL = 10000;
+const INTERVAL = 3000;
 
 const TabletHomeCarouse = () => {
   const [startIndex, setStartIndex] = useState(0);

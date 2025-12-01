@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { homeHeroSliderImages } from "../../../../utils/v2";
 
 const BATCH_SIZE = 1;
-const INTERVAL = 10000;
+const INTERVAL = 3000;
 const MobileHomeCarousel = () => {
   const [startIndex, setStartIndex] = useState(0);
 
