@@ -11,16 +11,18 @@ import { Link } from "react-router-dom";
 import { apiConstants } from "../../utils";
 import { getChapters } from "../../services";
 import * as components from "../../components";
-import { motion } from "framer-motion"; // 👈 added
+import { motion } from "framer-motion";
 
 const Chapters = () => {
   const [page, setPage] = useState(1);
   const [chapters, setChapters] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredChapters, setFilteredChapters] = useState([]);
 
-  // Fetch chapters data
+  // Fetch chapters data (15 per page)
   const { data, isError, isLoading } = useQuery({
     queryKey: [apiConstants.chapters, page],
-    queryFn: () => getChapters(page),
+    queryFn: () => getChapters(page, 15), // Request 15 chapters per page
     keepPreviousData: true,
   });
 
@@ -28,8 +30,32 @@ const Chapters = () => {
   useEffect(() => {
     if (data?.data) {
       setChapters(data.data);
+      setFilteredChapters(data.data);
     }
   }, [data]);
+
+  // Filter chapters based on search query
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setFilteredChapters(chapters);
+    } else {
+      const filtered = chapters.filter((chapter) => {
+        const name = chapter.name?.toLowerCase() || "";
+        const location = chapter.location?.toLowerCase() || "";
+        const city = chapter.city?.toLowerCase() || "";
+        const country = chapter.country?.toLowerCase() || "";
+        const query = searchQuery.toLowerCase();
+
+        return (
+          name.includes(query) ||
+          location.includes(query) ||
+          city.includes(query) ||
+          country.includes(query)
+        );
+      });
+      setFilteredChapters(filtered);
+    }
+  }, [searchQuery, chapters]);
 
   // Pagination logic
   const chaptersPerPage = 15;
@@ -42,7 +68,7 @@ const Chapters = () => {
     window.scrollTo(0, 0);
   }, [page]);
 
-  // simple fade-up animation variant
+  // Animation variants
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -69,7 +95,7 @@ const Chapters = () => {
         />
         <meta name="twitter:title" content="She Code Africa Chapters" />
         <meta
-          name="twitter:description"
+          property="og:description"
           content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem"
         />
       </Helmet>
@@ -88,7 +114,7 @@ const Chapters = () => {
           </h1>
           <p className="max-w-3xl md:max-w-5xl mx-auto description-text">
             Our chapters are local communities led by passionate women who bring
-            She Code Africa’s mission closer to home, creating spaces for
+            She Code Africa's mission closer to home, creating spaces for
             learning, mentorship, and growth across cities and campuses in
             Africa.
           </p>
@@ -109,13 +135,15 @@ const Chapters = () => {
               width: "114.45px",
               height: "102px",
               minWidth: "114.45px",
-              minHeight: "102px",
+              minHeight: "102px"
             }}
           />
           <p className="text-black description-text text-center sm:text-left">
-            She Code Africa(SCA) Chapters are independent chapters of the SCA
-            community and engagements do not speak directly on behalf of the
-            organisation except where explicitly stated.
+            SCA Chapters are informal, community-led chapters of She Code Africa
+            equipping girls and women in cities and campuses across Africa with
+            digital skills. All activities, partnerships, and communications by
+            each chapter are locally managed and do not legally represent or
+            bind She Code Africa in any way.
           </p>
         </motion.section>
 
@@ -132,20 +160,41 @@ const Chapters = () => {
             variants={fadeUp}
             className="mt-10 sm:mt-20 pb-16 sm:pb-[6.25rem] bg-SCA-White px-4"
           >
-            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-10 justify-items-center max-w-5xl mx-auto">
-              {chapters && chapters.length > 0 ? (
-                chapters.map((chapter, idx) => (
+            {/* Search Section - Inside Grid */}
+            <div className="max-w-6xl mx-auto mb-12">
+              <div className="max-w-md">
+                <label
+                  htmlFor="chapter-search"
+                  className="block text-left mb-3 text-base font-normal text-[#211F1F]"
+                >
+                  In search of a chapter near you?
+                </label>
+                <input
+                  id="chapter-search"
+                  type="text"
+                  placeholder="Type your city"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 border border-[#DDE6F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-Primary-Magenta focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 justify-items-center max-w-6xl mx-auto">
+              {filteredChapters && filteredChapters.length > 0 ? (
+                filteredChapters.map((chapter, idx) => (
                   <motion.div
                     key={chapter.id || idx}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.05 }}
-                    className="flex flex-col items-center mb-8"
+                    className="flex flex-col items-center text-center"
                   >
+                    {/* Chapter Logo */}
                     <Link
                       to={chapter.link || chapter.url || "#"}
-                      className="w-32 h-32 sm:w-[170px] sm:h-[170px] bg-white flex items-center justify-center transition-shadow cursor-pointer"
+                      className="w-32 h-32 sm:w-[170px] sm:h-[170px] bg-white rounded-full flex items-center justify-center transition-shadow cursor-pointer mb-1 overflow-hidden"
                       target={chapter.link || chapter.url ? "_blank" : "_self"}
                       rel={
                         chapter.link || chapter.url
@@ -156,9 +205,24 @@ const Chapters = () => {
                       <img
                         src={chapter.image}
                         alt={chapter.name}
-                        className="w-28 h-28 sm:w-44 sm:h-44 object-contain"
+                        className="w-full h-full object-cover"
                       />
                     </Link>
+
+                    {/* Chapter Name */}
+                    <h3 className="chapter-card-title text-gray-900 mb-1">
+                      {chapter.name || "Chapter Name"}
+                    </h3>
+
+                    {/* Chapter Location */}
+                    <p className="chapter-location-text text-gray-600 mb-1">
+                      {chapter.location ||
+                        (chapter.city && chapter.country
+                          ? `${chapter.city}, ${chapter.country}`
+                          : chapter.city || chapter.country || "Location")}
+                    </p>
+
+                    {/* Join Chapter Link */}
                     <Link
                       to={chapter.link || chapter.url || "#"}
                       target={chapter.link || chapter.url ? "_blank" : "_self"}
@@ -167,15 +231,17 @@ const Chapters = () => {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="text-Primary-Magenta text-xs sm:text-sm text-center hover:underline cursor-pointer"
+                      className="text-Primary-Magenta small-text hover:underline cursor-pointer"
                     >
                       Join chapter
                     </Link>
                   </motion.div>
                 ))
               ) : (
-                <div className="col-span-full text-center text-[#6B0032] text-lg">
-                  No chapters found.
+                <div className="col-span-full text-center text-[#6B0032] text-lg py-12">
+                  {searchQuery
+                    ? `No chapters found matching "${searchQuery}"`
+                    : "No chapters found."}
                 </div>
               )}
 
@@ -183,7 +249,7 @@ const Chapters = () => {
             </div>
 
             {/* Pagination Dots */}
-            {!isLoading && data?.totalPages >= 1 && (
+            {!isLoading && !searchQuery && data?.totalPages >= 1 && (
               <div className="flex flex-wrap justify-center gap-2 mt-8 sm:mt-12">
                 {[...Array(data.totalPages)].map((_, i) => (
                   <button
@@ -215,7 +281,7 @@ const Chapters = () => {
             Lead a chapter today
           </h2>
           <p className="max-w-xl sm:max-w-2xl mx-auto description-text mb-6 sm:mb-12">
-            Can’t find a chapter near you? Take the first step to lead a chapter
+            Can't find a chapter near you? Take the first step to lead a chapter
             in your city or campus, and become a changemaker in your community.
           </p>
           <Link
