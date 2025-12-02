@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-export default function ChaptersForm () {
+export default function ChaptersForm() {
   return (
     <>
       <Helmet>
@@ -26,17 +26,22 @@ export default function ChaptersForm () {
         />
       </Helmet>
       <Header page={"chapters"} />
-      <main className="my-20">
+      <main className="mt-32 sm:mt-40">
         {/* https://docs.google.com/forms/d/e/1FAIpQLSfAIiQz4eaHq3ZnPcN5Byxdw8J5E2dTlUQE2uHIpfark45D7A/viewform?embedded=true */}
         <iframe
           title="Lead a Chapter"
           src="https://docs.google.com/forms/d/e/1FAIpQLSfAIiQz4eaHq3ZnPcN5Byxdw8J5E2dTlUQE2uHIpfark45D7A/viewform?embedded=true"
-          style={{ width: '100%', height: '400px', border: 'none', margin: '0' }}
+          style={{
+            width: "100%",
+            height: "400px",
+            border: "none",
+            margin: "0",
+          }}
         >
           Loading…
         </iframe>
       </main>
       <Footer />
     </>
-  )
+  );
 }

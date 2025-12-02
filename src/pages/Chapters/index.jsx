@@ -219,7 +219,7 @@ const Chapters = () => {
             in your city or campus, and become a changemaker in your community.
           </p>
           <Link
-            to="#"
+            to="/chapters/form"
             className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] button-text"
           >
             Lead a chapter
