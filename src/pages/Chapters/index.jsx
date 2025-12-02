@@ -135,7 +135,7 @@ const Chapters = () => {
               width: "114.45px",
               height: "102px",
               minWidth: "114.45px",
-              minHeight: "102px"
+              minHeight: "102px",
             }}
           />
           <p className="text-black description-text text-center sm:text-left">
@@ -248,7 +248,7 @@ const Chapters = () => {
               {isError ? <components.Error /> : null}
             </div>
 
-            {/* Pagination Dots */}
+            {/* Pagination Dots here*/}
             {!isLoading && !searchQuery && data?.totalPages >= 1 && (
               <div className="flex flex-wrap justify-center gap-2 mt-8 sm:mt-12">
                 {[...Array(data.totalPages)].map((_, i) => (
