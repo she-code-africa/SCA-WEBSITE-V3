@@ -10,6 +10,10 @@ import OpportunityImg from "../../images/vol-oppotunity.png";
 import { volunteerCards } from "../../utils";
 import { motion } from "framer-motion";
 import testmonialImg from "../../images/v2/volunteer-stories.png";
+import VolunteerForm from "../../components/Volunteers/VolunteerForm";
+import { mutateVolunteer } from "../../services";
+import { useEffect, useRef, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 
 const Volunteer = () => {
   // smooth scroll helper
@@ -21,6 +25,91 @@ const Volunteer = () => {
       // fallback: set hash so router/anchor can try
       window.location.hash = `#${id}`;
     }
+  };
+
+  const defaultFormValue = {
+    fullname: "",
+    email: "",
+    currentRole: "",
+    volunteerRole: "",
+    purpose: "",
+  };
+
+  const hideModal = useRef(null);
+  const modal = useRef(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
+  const [formValue, setFormValue] = useState(defaultFormValue);
+  const [isMessageShown, setIsMessageShown] = useState(false);
+
+  const volunteerRequest = useMutation({
+    mutationFn: (formData) => mutateVolunteer(formData),
+  });
+
+  const setHideModal = () => {
+    const _modal = modal?.current;
+    setAnimatedClass(`animate__zoomOut`);
+    setTimeout(() => {
+      setModalOpen(false);
+      _modal?.close();
+      setIsMessageShown(false);
+    }, 500);
+  };
+
+  const setShowModal = () => {
+    const _hideModal = hideModal?.current;
+    const _modal = modal?.current;
+
+    setAnimatedClass(`animate__zoomIn`);
+    _modal?.showModal();
+    _hideModal?.focus();
+    setModalOpen(true);
+  };
+
+  useEffect(() => {
+    const _hideModal = hideModal?.current;
+    const _modal = modal?.current;
+
+    _hideModal?.addEventListener(`click`, () => {
+      setHideModal();
+    });
+    _modal?.scroll({
+      top: 0,
+      behavior: `smooth`,
+    });
+
+    return () => {
+      _hideModal?.removeEventListener(`click`, () => {
+        _hideModal.current = null;
+      });
+    };
+  }, []);
+
+  useEffect(() => {
+    if (volunteerRequest.isSuccess) {
+      window.setTimeout(() => {
+        setFormValue(defaultFormValue);
+        setHideModal();
+      }, 1000);
+    }
+  }, [volunteerRequest.isSuccess]);
+
+  /**
+   *
+   * @param {'name'|'email'|'team'|'role'|'desc'} inputName
+   * @param {string} inputData
+   */
+  const updateFormData = (inputName, inputData) => {
+    setFormValue({
+      ...formValue,
+      [inputName]: inputData,
+    });
+  };
+
+  const submitVolunteerRequest = (e) => {
+    e.preventDefault();
+    volunteerRequest.mutate(formValue);
+    setIsMessageShown(true);
   };
 
   return (
@@ -55,8 +144,8 @@ const Volunteer = () => {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.3 }
-                }
+                  transition: { staggerChildren: 0.3 },
+                },
               }}
               className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-16"
             >
@@ -67,8 +156,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" }
-                  }
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
                 }}
                 className="w-full lg:w-1/2"
               >
@@ -111,8 +200,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" }
-                  }
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
                 }}
                 className="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
               >
@@ -183,8 +272,8 @@ const Volunteer = () => {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.2 }
-                }
+                  transition: { staggerChildren: 0.2 },
+                },
               }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             >
@@ -196,8 +285,8 @@ const Volunteer = () => {
                     visible: {
                       opacity: 1,
                       y: 0,
-                      transition: { duration: 0.7, ease: "easeOut" }
-                    }
+                      transition: { duration: 0.7, ease: "easeOut" },
+                    },
                   }}
                   className="group bg-white border-2 border-Primary-Magenta rounded-[15.29px] overflow-hidden transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(183,5,105,0.14)]"
                 >
@@ -234,7 +323,17 @@ const Volunteer = () => {
                       ))}
                     </div>
 
-                    <button className="w-full bg-Primary-Magenta text-SCA-White py-3 rounded-lg text-sm font-medium hover:opacity-95 transition">
+                    <button
+                      className="w-full bg-Primary-Magenta text-SCA-White py-3 rounded-lg text-sm font-medium hover:opacity-95 transition"
+                      onClick={() => {
+                        setFormValue({
+                          ...formValue,
+                          volunteerRole: "Mentor",
+                        });
+                        setShowModal();
+                      }}
+                      type="button"
+                    >
                       Apply for this role
                     </button>
                   </div>
@@ -254,8 +353,8 @@ const Volunteer = () => {
               variants={{
                 hidden: {},
                 visible: {
-                  transition: { staggerChildren: 0.3 }
-                }
+                  transition: { staggerChildren: 0.3 },
+                },
               }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
             >
@@ -266,8 +365,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" }
-                  }
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
                 }}
                 className="lg:col-span-5"
               >
@@ -287,8 +386,8 @@ const Volunteer = () => {
                   visible: {
                     opacity: 1,
                     x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" }
-                  }
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
                 }}
                 className="lg:col-span-7"
               >
@@ -309,8 +408,8 @@ const Volunteer = () => {
                   variants={{
                     hidden: {},
                     visible: {
-                      transition: { staggerChildren: 0.3 }
-                    }
+                      transition: { staggerChildren: 0.3 },
+                    },
                   }}
                   className="flex flex-col gap-7"
                 >
@@ -321,8 +420,8 @@ const Volunteer = () => {
                       visible: {
                         opacity: 1,
                         y: 0,
-                        transition: { duration: 0.8, ease: "easeOut" }
-                      }
+                        transition: { duration: 0.8, ease: "easeOut" },
+                      },
                     }}
                     className=""
                   >
@@ -358,8 +457,8 @@ const Volunteer = () => {
                       visible: {
                         opacity: 1,
                         y: 0,
-                        transition: { duration: 0.8, ease: "easeOut" }
-                      }
+                        transition: { duration: 0.8, ease: "easeOut" },
+                      },
                     }}
                     className=""
                   >
@@ -432,7 +531,26 @@ const Volunteer = () => {
           </a>
         </motion.section>
       </main>
+
       <Footer />
+
+      <VolunteerForm
+        animatedClass={animatedClass}
+        formValue={formValue}
+        hideModal={hideModal}
+        modal={modal}
+        modalOpen={modalOpen}
+        setShowModal={setShowModal}
+        setAnimatedClass={setAnimatedClass}
+        setModalOpen={setModalOpen}
+        setFormValue={setFormValue}
+        setIsMessageShown={setIsMessageShown}
+        setHideModal={setHideModal}
+        submitVolunteerRequest={submitVolunteerRequest}
+        updateFormData={updateFormData}
+        isMessageShown={isMessageShown}
+        volunteerRequest={volunteerRequest}
+      />
     </>
   );
 };
