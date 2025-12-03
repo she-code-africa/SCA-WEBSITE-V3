@@ -85,8 +85,8 @@ const OurImpact = () => {
             </h3>
 
             <p className="w-[95%] mt-2 challenge-text">
-              Thanks to supporters like you, we've been able to make a real
-              difference in communities around the world.
+              Thanks to supporters like you, we've been able to make an impact
+              in the lives of thousands of women across Africa.
             </p>
           </article>
 

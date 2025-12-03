@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
           closeModal
             ? "w-[70px] h-[70px] rounded-full overflow-hidden right-7 bottom-20"
             : "max-w-[300px] sm:max-w-[440px] w-full rounded-lg right-6 sm:right-12 bottom-10 animate-opacity transition-opacity"
-        }   z-20 shadow-2xl font-fig`}
+        }   z-20 shadow-2xl font-figtree`}
       >
         {closeModal ? (
           <button
@@ -36,13 +36,13 @@ const Layout = ({ children }) => {
             </button>
 
             <article className="sm:max-w-[229px] w-full">
-              <h3 className="text-xl text-primary-main-pink font-semibold">
+              <h3 className="text-xl text-primary-main-pink font-bold">
                 Sponsor a lady in tech
               </h3>
 
-              <p className="text-sm mt-[6px] font-medium leading-[18.33px]">
-                Make a donation as little as $5.3 (~8,532 NGN), to help us
-                mentor and provide resources to 1 female in tech in 1 day
+              <p className="text-[12.55px] mt-[6px] font-medium leading-[18.33px]">
+                Did you know that by donating $20 (~₦30,000), you’re helping one
+                woman take a step closer to owning a laptop?
               </p>
             </article>
 
