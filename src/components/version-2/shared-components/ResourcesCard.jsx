@@ -5,7 +5,17 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FaPlayCircle, FaRegCalendar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const ResourcesCard = ({ isImage = true, videoSrc }) => {
+const ResourcesCard = ({
+  isImage = true,
+  videoSrc,
+  image,
+  tag,
+  title,
+  description,
+  dateCreated,
+  author,
+  url,
+}) => {
   const [playVideo, setPlayVideo] = useState(false);
 
   const handlePlayVideo = () => {
@@ -20,7 +30,7 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
       {isImage ? (
         <figure className="max-w-[376px] w-full h-[312px] overflow-hidden rounded-[14px]">
           <img
-            src={placeholderImage}
+            src={image || placeholderImage}
             alt="resource-pic"
             className="w-full h-full object-cover"
           />
@@ -60,17 +70,17 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
       )}
 
       <div className="w-full my-5">
-        <span className="bg-[#FFB8E0] inline-flex max-w-[110px] h-[28px] w-full items-center justify-center rounded py-[3px] px-[7px] small-text-medium text-[#B70569]">
-          Tech Insights
+        <span className="bg-[#FFB8E0] inline-flex  h-[28px] w-auto items-center justify-center rounded py-[3px] px-[7px] small-text-medium text-[#B70569]">
+          {tag || "Tech Insights"}
         </span>
 
-        <h4 className="text-[#5C0335] card-title-secondary leading-6">
-          Bridging the Gender Gap in African Tech
+        <h4 className="text-[#5C0335] card-title-secondary leading-6 truncate">
+          {title || "Bridging the Gender Gap in African Tech"}
         </h4>
 
-        <p className="mt-3 w-full small-text-medium  text-[#7d355d] ">
-          Exploring initiatives that are making tech more inclusive for women
-          across Africa.
+        <p className="mt-3 w-full small-text-medium  text-[#7d355d] truncate">
+          {description ||
+            "Exploring initiatives that are making tech more inclusive for women across Africa."}
         </p>
       </div>
 
@@ -80,7 +90,7 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
             <FontAwesomeIcon icon={faUser} className="text-[#B70569]" />
 
             <span className="text-[#5C0335] small-text truncate max-w-[61px] sm:max-w-full">
-              Ada Oyom
+              {author || "Jane Doe"}
             </span>
           </span>
 
@@ -88,18 +98,20 @@ const ResourcesCard = ({ isImage = true, videoSrc }) => {
             <FaRegCalendar className="text-[#B70569]" />
 
             <span className="text-[#5C0335] small-text m-0 p-0 truncate max-w-[61px] sm:max-w-full ">
-              15/01/2024
+              {dateCreated || "01/01/2024"}
             </span>
           </span>
         </div>
 
         <div className="w-full max-w-[112px]">
-          <Link
-            to="#"
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href={url}
             className="w-full flex justify-center py-4 xl:px-6 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
           >
             read more
-          </Link>
+          </a>
         </div>
       </div>
     </div>
