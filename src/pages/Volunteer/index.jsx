@@ -517,7 +517,7 @@ const Volunteer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-4xl sm:max-w-4xl mx-auto text-lg sm:text-2xl mb-8 sm:my-12"
+            className="max-w-4xl sm:max-w-4xl mx-auto text-lg sm:text-2xl mb-8 sm:my-8 font-medium font-figtree"
           >
             Be a part of a community that celebrates diversity and empowers
             women to thrive in tech. Connect with like-minded individuals, gain
