@@ -10,12 +10,12 @@ const AboutUs = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="hidden xl:block aboutBg bg-no-repeat h-[976px] bg-[#FFF88F] overflow-hidden w-full bg-right-top bg-contain"
+        className="hidden xl:block aboutBg bg-no-repeat h-[1000px] bg-[#FFF88F] overflow-hidden w-full bg-right-top bg-contain"
       >
-        <div className="w-full h-full bg-bgI bg-no-repeat bg-cover custom-container-clip relative ">
-          <div className="bg-primary-main-pink px-20 py-10 w-full absolute top-0 bottom-0 h-full custom-child-clip flex items-end">
+        <div className="w-full h-full bg-bgI bg-no-repeat bg-contain custom-container-clip cover-custom relative">
+          <div className="bg-primary-main-pink px-20 pb-[125px] w-full absolute top-0 bottom-0 h-full custom-child-clip flex items-end">
             <div className="flex items-end w-full lg:max-w-[986px] xl:max-w-[1060px]">
-              <div className="grid grid-cols-2 gap-x-[6.25rem] gap-y-4">
+              <div className="grid grid-cols-2 gap-x-[6.25rem] gap-y-4 mt-10  w-full ">
                 {aboutUsInfoCards.map(({ heading, paragraph }, i) => (
                   <motion.div
                     key={i}

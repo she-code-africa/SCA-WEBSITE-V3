@@ -33,6 +33,9 @@ const Volunteer = () => {
     currentRole: "",
     volunteerRole: "",
     purpose: "",
+    location: "",
+    resume: "",
+    portfolio: "",
   };
 
   const hideModal = useRef(null);
@@ -328,7 +331,7 @@ const Volunteer = () => {
                       onClick={() => {
                         setFormValue({
                           ...formValue,
-                          volunteerRole: "Mentor",
+                          volunteerRole: card.title,
                         });
                         setShowModal();
                       }}

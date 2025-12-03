@@ -51,7 +51,7 @@ main,
 }
 
 .custom-child-clip {
-  clip-path: polygon(0 57%, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 49%, 100% 40%, 100% 100%, 0 100%);
 }
 
 .ourReachBg {
@@ -213,13 +213,13 @@ main,
 .description-text {
   font-size: clamp(16px, 2.5vw, 24px);
   font-weight: 500; /* medium */
-  line-height: 1.5; 
+  line-height: 1.5;
 }
 
 .intiative-description-text {
   font-size: clamp(14px, 2vw, 18px);
   font-weight: 400; /* regular */
-  line-height: 1.75; 
+  line-height: 1.75;
 }
 
 /* SECONDARY DESCRIPTION - 18px desktop */
@@ -362,5 +362,11 @@ main,
 
   .impact-number-large {
     font-size: 64px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cover-custom {
+    background-size: cover;
   }
 }
