@@ -3,7 +3,6 @@ import placeholderImage from "../../../images/v2/donatePng.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FaPlayCircle, FaRegCalendar } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const ResourcesCard = ({
   isImage = true,
@@ -15,6 +14,7 @@ const ResourcesCard = ({
   dateCreated,
   author,
   url,
+  videoCoverImage,
 }) => {
   const [playVideo, setPlayVideo] = useState(false);
 
@@ -53,7 +53,7 @@ const ResourcesCard = ({
           ) : (
             <figure className="relative w-full h-[342px] overflow-hidden rounded-[14px]">
               <img
-                src={placeholderImage}
+                src={videoCoverImage || placeholderImage}
                 alt="resource-pic"
                 className="w-full h-full object-cover"
               />
@@ -103,14 +103,14 @@ const ResourcesCard = ({
           </span>
         </div>
 
-        <div className="w-full max-w-[112px]">
+        <div className="w-fit">
           <a
             target="_blank"
             rel="noreferrer"
             href={url}
-            className="w-full flex justify-center py-4 xl:px-6 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
+            className="w-auto cursor-pointer inline-flex justify-center py-4 xl:px-8 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
           >
-            read more
+            {isImage ? "read more" : "watch video"}
           </a>
         </div>
       </div>
