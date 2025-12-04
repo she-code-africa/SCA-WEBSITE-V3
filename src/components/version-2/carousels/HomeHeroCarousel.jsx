@@ -45,6 +45,7 @@ const HomeHeroCarousel = () => {
             >
               <img
                 src={image}
+                loading="lazy"
                 alt={`Slide ${index + 1}`}
                 className="animate-img-opacity w-full h-full object-cover"
               />
