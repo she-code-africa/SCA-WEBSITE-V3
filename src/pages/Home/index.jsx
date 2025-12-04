@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
-import hero from "../../images/v2/home-hero.jpg";
+import hero from "../../images/v2/home-hero.webp";
 import HomeHeroCarousel from "../../components/version-2/carousels/HomeHeroCarousel";
 import AboutUs from "../../components/version-2/homepage/AboutUs";
 import OurBrands from "../../components/version-2/homepage/OurBrands";
