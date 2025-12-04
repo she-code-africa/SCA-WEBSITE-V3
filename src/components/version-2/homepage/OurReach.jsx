@@ -25,6 +25,7 @@ const OurReach = () => {
         <figure className="w-full h-[353px]">
           <img
             src={ourReach}
+            loading="lazy"
             alt="Our Reach"
             className="object-cover w-full h-full"
           />
