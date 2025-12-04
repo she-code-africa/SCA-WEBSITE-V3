@@ -52,6 +52,7 @@ const Footer = () => {
             <figure className="w-full max-w-[150px] h-[100px] block lg:hidden mb-12 lg:mb-0 ">
               <img
                 src={logo}
+                loading="lazy"
                 alt="SCA-Logo"
                 className="w-full h-full object-contain"
               />

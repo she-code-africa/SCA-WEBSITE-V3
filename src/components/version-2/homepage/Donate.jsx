@@ -101,6 +101,7 @@ const Donate = () => {
             src={locationJpegs[pathname] || donatePng}
             className="w-full h-full object-cover"
             alt="alt-img"
+            loading="lazy"
           />
         </motion.figure>
       </div>

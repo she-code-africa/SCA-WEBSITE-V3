@@ -86,6 +86,7 @@ const WhatWeDo = () => {
                 <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
                   <img
                     src={whatWeDo}
+                    loading="lazy"
                     alt="card-pic"
                     className="object-cover w-full h-full"
                   />
