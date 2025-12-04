@@ -10,6 +10,8 @@ body {
   font-family: "Figtree", sans-serif;
 }
 
+
+
 @font-face {
   font-family: Thunder;
   src: url("./assets/v2/fonts/Thunder-SemiBoldLC.ttf");
@@ -20,7 +22,9 @@ body {
   overflow-anchor: none;
 }
 
-.hero-text {
+
+
+.hero-text,h1 {
   font-family: Thunder, sans-serif;
 }
 
