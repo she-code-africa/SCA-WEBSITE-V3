@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import CustomButtonComponent from "../../components/version-2/shared-components/buttons/index.";
-import hero from "../../images/v2/home-hero.png";
+import hero from "../../images/v2/home-hero.webp";
 import HomeHeroCarousel from "../../components/version-2/carousels/HomeHeroCarousel";
 import AboutUs from "../../components/version-2/homepage/AboutUs";
 import OurBrands from "../../components/version-2/homepage/OurBrands";
@@ -14,11 +14,7 @@ import OurGallery from "../../components/version-2/homepage/OurGallery";
 import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 import Donate from "../../components/version-2/homepage/Donate";
 import { motion } from "framer-motion";
-import {
-  bgVariant,
-  heroFadeUp,
-  sectionVariant,
-} from "../../lib/motionVariants";
+import { heroFadeUp, sectionVariant } from "../../lib/motionVariants";
 
 const Home = () => {
   return (
@@ -49,6 +45,8 @@ const Home = () => {
           <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
             <img
               src={hero}
+              rel="preload"
+              as="image"
               alt="Who We Are"
               className="object-cover w-full h-full"
             />

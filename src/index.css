@@ -7,8 +7,10 @@
 @tailwind utilities;
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Figtree", sans-serif;
 }
+
+
 
 @font-face {
   font-family: Thunder;
@@ -20,7 +22,9 @@ body {
   overflow-anchor: none;
 }
 
-.hero-text {
+
+
+.hero-text,h1 {
   font-family: Thunder, sans-serif;
 }
 

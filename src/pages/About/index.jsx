@@ -45,6 +45,8 @@ const About = () => {
           >
             <img
               src={hero}
+              rel="preload"
+              as="image"
               alt="Who We Are"
               className="object-cover w-full h-full"
             />

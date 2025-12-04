@@ -51,6 +51,7 @@ const OurGallery = () => {
                 >
                   <img
                     src={item}
+                    loading="lazy"
                     alt={`gallery-pic-${idx}`}
                     className="w-full h-full object-cover"
                   />
@@ -71,6 +72,7 @@ const OurGallery = () => {
                 >
                   <img
                     src={item}
+                    loading="lazy"
                     alt={`gallery-pic-${idx}`}
                     className="w-full h-full object-cover"
                   />
@@ -89,6 +91,7 @@ const OurGallery = () => {
                 >
                   <img
                     src={item}
+                    loading="lazy"
                     alt={`gallery-pic-${idx}`}
                     className="w-full h-full object-cover"
                   />
