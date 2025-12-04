@@ -110,7 +110,7 @@ const Hire = () => {
                   formValue={formValue.email}
                 />
                 <FormInput
-                  label="Company Address"
+                  label="Company Name"
                   name="company"
                   type="text"
                   updateFormData={updateFormData}
