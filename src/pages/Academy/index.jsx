@@ -51,6 +51,8 @@ const LandingPage = () => {
           <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
             <img
               src={hero}
+              rel="preload"
+              as="image"
               alt="Who We Are"
               className="object-cover w-full h-full"
             />
