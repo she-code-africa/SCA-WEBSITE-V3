@@ -135,7 +135,7 @@ const Chapters = () => {
               width: "114.45px",
               height: "102px",
               minWidth: "114.45px",
-              minHeight: "102px",
+              minHeight: "102px"
             }}
           />
           <p className="text-black description-text text-center sm:text-left">
@@ -304,10 +304,10 @@ const Chapters = () => {
             Become a member of our community
           </h2>
           <p className="max-w-xl sm:max-w-[687px] mx-auto description-text mb-6 sm:mb-12">
-            Be a part of a community that celebrates diversity and empowers
-            women to thrive in tech. Connect with like-minded individuals, gain
+            Be part of a community bridging the gender gap in tech, a space ran
+            by and for African women. Connect with like-minded individuals, gain
             access to resources and events, and help shape the future of the
-            industry.
+            industry. 
           </p>
           <a
             href="https://forms.gle/aFe2LrkZxZJtKKve7"
