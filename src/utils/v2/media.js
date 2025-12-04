@@ -10,96 +10,130 @@ import blogImg3 from "../../images/v2/media/blog/blogImg3.jpeg";
 import blogImg4 from "../../images/v2/media/blog/blogImg4.jpg";
 import blogImg5 from "../../images/v2/media/blog/blogImg5.jpg";
 
+import videoImg2 from "../../images/v2/hero-img-community-2.jpg";
+import videoImg1 from "../../images/v2/donatePng.jpg";
+
+import sag1 from "../../images/v2/media/images/sag1.jpg";
+import sag2 from "../../images/v2/media/images/sag2.jpg";
+import sag3 from "../../images/v2/media/images/sag3.jpg";
+import sag4 from "../../images/v2/media/images/sag4.jpg";
+import sag5 from "../../images/v2/media/images/sag5.jpg";
+import sag6 from "../../images/v2/media/images/sag6.jpg";
+import sag7 from "../../images/v2/media/images/sag7.jpg";
+import sag8 from "../../images/v2/media/images/sag8.jpg";
+import sag9 from "../../images/v2/media/images/sag9.jpg";
+import sag10 from "../../images/v2/media/images/sag10.jpg";
+import sag11 from "../../images/v2/media/images/sag11.jpg";
+import sag12 from "../../images/v2/media/images/sag12.jpg";
+import sag13 from "../../images/v2/media/images/sag13.jpg";
+
 export const mediaContent = [
   {
     id: 1,
-    title: "SCA Annual Conference 2024 - Image Gallery",
+    title: "She Code Africa Stem A Girl Kaduna",
+    description: "Kaduna State, Nigeria Edition.",
+    coverImages: [sag1, sag2, sag3, sag4],
+    date: "11/07/2025",
     content: [
       {
         id: 101,
-        title: "SCA Annual Conference 2024 - Image Gallery",
+        title: "She Code Africa Stem A Girl Kaduna",
         images: [
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
+          sag1,
+          sag2,
+          sag3,
+          sag4,
+          sag5,
+          sag6,
+          sag7,
+          sag8,
+          sag9,
+          sag10,
+          sag11,
+          sag12,
+          sag13,
         ],
       },
     ],
   },
-  {
-    id: 2,
-    title: "SCA Girls Outreach - Image Gallery",
-    content: [
-      {
-        id: 201,
-        title: "SCA Girls Outreach (Kano)",
-        images: [
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-        ],
-      },
-      {
-        id: 202,
-        title: "SCA Girls Outreach (Ibadan)",
-        images: [
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-          imageOne,
-          imageTwo,
-          imageThree,
-          imageThree,
-          imageFour,
-          imageFive,
-        ],
-      },
-    ],
-  },
+  // {
+  //   id: 2,
+  //   title: "SCA Girls Outreach - Image Gallery",
+  //   coverImages: [],
+  //   description: "",
+  //   date: "",
+  //   content: [
+  //     {
+  //       id: 201,
+  //       title: "SCA Girls Outreach (Kano)",
+  //       images: [
+  //         imageOne,
+  //         imageTwo,
+  //         imageThree,
+  //         imageThree,
+  //         imageFour,
+  //         imageFive,
+  //         imageOne,
+  //         imageTwo,
+  //         imageThree,
+  //         imageThree,
+  //         imageFour,
+  //         imageFive,
+  //         imageOne,
+  //         imageTwo,
+  //         imageThree,
+  //         imageThree,
+  //         imageFour,
+  //         imageFive,
+  //       ],
+  //     },
+  //     {
+  //       id: 202,
+  //       title: "SCA Girls Outreach (Ibadan)",
+  //       images: [
+  //         imageOne,
+  //         imageTwo,
+  //         imageThree,
+  //         imageThree,
+  //         imageFour,
+  //         imageFive,
+  //         imageOne,
+  //         imageTwo,
+  //         imageThree,
+  //         imageThree,
+  //         imageFour,
+  //         imageFive,
+  //         imageOne,
+  //         imageTwo,
+  //         imageThree,
+  //         imageThree,
+  //         imageFour,
+  //         imageFive,
+  //       ],
+  //     },
+  //   ],
+  // },
 ];
 
-export const videoContent = [
-  "https://www.youtube.com/embed/KAkf1X7oXRY?si=JGdLSkBrZ4fd1EY6",
-  "https://www.youtube.com/embed/0KX8lgNX4dc?si=WlI8R6m4MUFoolCT",
+export const videoContents = [
+  {
+    title: "She Code Africa STEM A Girl Initiative",
+    type: "She Code Africa Initiatives",
+    description: "Kaduna State, Nigeria Edition",
+    author: "She Code Africa",
+    dateCreated: "11/07/2025",
+    coverImage: videoImg1,
+    url: "https://www.youtube.com/embed/YMLyOPcyEnA?si=lKsl2vcolsLbnYSK",
+  },
+  {
+    title: "She Code Africa Annual Summit",
+    type: "She Code Africa Events",
+    description: "2024 Edition, Lagos Nigeria ",
+    author: "She Code Africa",
+    dateCreated: "13/01/2025",
+    coverImage: videoImg2,
+    url: "https://www.youtube.com/embed/j_oGekQqj34?si=sJlL-7QqsNQ1JSB1",
+  },
 ];
 
 export const blogContent = [
@@ -115,8 +149,7 @@ export const blogContent = [
   {
     title: "I want to Dive into Tech but I’m confused",
     type: "Career Development ",
-    description:
-      "Understanding tech fields and how to decide where you belong.",
+    description: "",
     author: "Lois Choji",
     dateCreated: "01/01/2023",
     coverImage: blogImg2,
