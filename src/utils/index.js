@@ -91,8 +91,16 @@ export const communityFaq = [
   },
   {
     heading: "Are there local SCA chapters?",
-    content:
-      "Our primary focus is on girls and women of African descent living in Africa, but you can join from anywhere in the world. We welcome African women based in the diaspora who want to stay connected to African tech ecosystems."
+    content: (
+      <>
+        Yes! We have active chapters in several African countries and cities.
+        You can find or apply to start a chapter at our.
+        <a href="www.shecodeafrica.org/chapters" 
+          style={{ color: "#6D033F" }}>
+          Chapters Page{" "}
+        </a>{" "}
+        </>
+    )
   },
   {
     heading: "Is SheCodeAfrica present on all social media platforms?",
@@ -175,6 +183,7 @@ export const partnershipFaq = [
           <li>Program and event sponsorships</li>
           <li>Laptop and device scholarships</li>
           <li>Hiring Talent pipeline support</li>
+          <li>Event collaborations</li>
           <li>Mentorship and training delivery</li>
           <li>Media partnership</li>
         </ul>
@@ -217,11 +226,6 @@ export const membershipFaq = [
     heading: "Is SCA membership free?",
     content:
       "Yes! Our core community membership remains completely free and accessible to all women and girls across Africa.However, we are working on introducing an optional premium membership tier that will offer exclusive access to advanced opportunities, tools, resources, and perks for a nominal fee. This will be entirely optional and clearly communicated once launched."
-  },
-  {
-    heading: "How do I become a member of She Code Africa?",
-    content:
-      "To be a member of She Code Africa, simply sign up to join our platform here . You can also become a member by attending a local SCA chapter event close to you."
   },
   {
     heading: "Are there age limits to joining?",
@@ -375,11 +379,6 @@ export const jobsFaq = [
   },
   {
     heading: "Can I volunteer with SCA?",
-    content:
-      "Absolutely! Volunteers play a huge role in our programs, events, and operations. From mentorship to speaking opportunities to content creation, there are many ways to support. Visit www.shecodeafrica.org/volunteer to express interest."
-  },
-  {
-    heading: "",
     content: (
       <>
         Absolutely! Volunteers play a huge role in our programs, events, and

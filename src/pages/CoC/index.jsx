@@ -390,10 +390,12 @@ const CodeOfConduct = () => {
           </h3>
           <p>
             At <strong>She Code Africa (SCA)</strong>, we are committed to
-            creating safe, inclusive, respectful, and empowering spaces—both
-            online and offline—for women and girls in tech across Africa. This
-            Code of Conduct outlines the behavioral expectations for everyone
-            engaging with our community, programs, events, and partnerships.
+            creating safe, inclusive, respectful, and empowering spaces, both
+            online and offline, for women and girls in tech across Africa.
+            Whether you're engaging in our community, participating in our
+            programs, attending our events, or collaborating as a partner, this
+            Code of Conduct outlines the expected standards of behavior for all
+            involved.
           </p>
 
           <p>This applies to:</p>
@@ -411,22 +413,24 @@ const CodeOfConduct = () => {
           </h3>
           <ul className="list-disc pl-6">
             <li>
-              <strong>Inclusivity:</strong> We celebrate diversity in all forms.
+              <strong>Inclusivity:</strong> We celebrate diversity in all forms—
+              background, skill level, nationality, and more.
             </li>
             <li>
-              <strong>Empowerment:</strong> We support each other to grow and
-              lead.
+              <strong>Empowerment:</strong> We support each other to grow,
+              learn, and lead.
             </li>
             <li>
-              <strong>Respect:</strong> We treat everyone with dignity and
-              fairness.
+              <strong>Respect:</strong> We treat every individual with dignity,
+              compassion, and fairness.
             </li>
             <li>
-              <strong>Integrity:</strong> We uphold honesty and accountability.
+              <strong>Integrity:</strong> We uphold honesty, transparency, and
+              accountability.
             </li>
             <li>
-              <strong>Collaboration:</strong> We co-create impact through
-              teamwork.
+              <strong>Collaboration:</strong> We believe in co-creating impact
+              through teamwork and shared goals.
             </li>
           </ul>
 
@@ -438,10 +442,13 @@ const CodeOfConduct = () => {
           <ul className="list-disc pl-6">
             <li>Foster an environment of respect and kindness.</li>
             <li>Use inclusive and non-discriminatory language.</li>
-            <li>Provide constructive feedback.</li>
-            <li>Respect privacy and boundaries.</li>
-            <li>Speak up respectfully when witnessing harmful behavior.</li>
-            <li>Represent SCA positively and professionally.</li>
+            <li>Provide constructive feedback when giving critique.</li>
+            <li>Respect others’ privacy and boundaries.</li>
+            <li>
+              Speak up (respectfully) when witnessing behavior that contradicts
+              our values.
+            </li>
+            <li>Represent SCA in a way that upholds its mission and brand.</li>
           </ul>
 
           {/* Unacceptable Behavior */}
@@ -454,14 +461,20 @@ const CodeOfConduct = () => {
               Harassment of any kind—sexual, verbal, emotional, or physical.
             </li>
             <li>
-              Discrimination based on race, orientation, religion, ability, or
-              age.
+              Discrimination based on race, sexual orientation, religion,
+              ability, or age.
             </li>
-            <li>Demeaning, hostile, or disruptive behavior.</li>
-            <li>Sharing personal information without consent.</li>
-            <li>Unwanted or inappropriate advances.</li>
-            <li>Manipulative or exploitative behavior.</li>
-            <li>Misusing or misrepresenting the SCA brand.</li>
+            <li>Demeaning or disruptive behavior.</li>
+            <li>
+              Invasion of privacy (e.g., sharing personal information without
+              consent).
+            </li>
+            <li>Inappropriate or unwanted advances (sexual or otherwise).</li>
+            <li>
+              Exploitative or manipulative actions, especially toward younger or
+              vulnerable members.
+            </li>
+            <li>Misrepresentation or misuse of the SCA brand and identity.</li>
           </ul>
 
           {/* Digital Conduct */}
@@ -493,7 +506,7 @@ const CodeOfConduct = () => {
 
           {/* Youth */}
           <h3 className="text-primary-color font-weight-bolder text-2xl my-4">
-            Youth Participation (Under 18)
+            Youth Participation Clause (Under 18){" "}
           </h3>
           <p>
             For minors (under 18 years of age) participating in any of our
@@ -579,7 +592,10 @@ const CodeOfConduct = () => {
               or community admin.
             </li>
           </ul>
-          <p>All reports are handled with care, discretion, and urgency.</p>
+          <p>
+            All reports are treated with care, discretion, and urgency. We will
+            investigate and take appropriate action.
+          </p>
 
           {/* Consequences */}
           <h3 className="text-primary-color font-weight-bolder text-2xl my-4">
