@@ -156,7 +156,7 @@ export const mediaContent = [
     content: [
       {
         id: 101,
-        title: "She Code Africa Ghana Community Connect ",
+        title: "She Code Africa Ghana Community Connect",
         images: [
           ghcConnectMedia.ghc1,
           ghcConnectMedia.ghc2,
