@@ -73,13 +73,10 @@ const Privacy = () => {
               <b>Automatically Collected:</b>
             </p>
             <ul className="list-disc pl-10">
-              <li>Name, age, gender, and contact details</li>
-              <li>Educational and professional background</li>
-              <li>Location (city/country)</li>
-              <li>Interests, skills, or program preferences</li>
-              <li>Application responses for programs or opportunities</li>
-              <li>Social media handles (when voluntarily submitted)</li>
-              <li>Event or program feedback</li>
+              <li>IP address, device type, browser type</li>
+              <li>Pages visited on our website</li>
+              <li>Time and duration of visits</li>
+              <li>Referring URLs</li>
             </ul>
             <p className="mt-5">
               We do not collect sensitive information like passwords or
