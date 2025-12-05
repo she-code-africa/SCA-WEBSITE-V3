@@ -204,7 +204,7 @@ const AcademyPage = () => {
                       <components.Loading />
                     ) : (
                       <img
-                        // src={heroImg}
+                        
                         src={
                           school &&
                           school?.name &&
