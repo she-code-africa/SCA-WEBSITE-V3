@@ -56,7 +56,7 @@ const MediaModal = ({ onClose, modalDetail }) => {
                   ) : (
                     <>
                       <ImageGrid mediaImage={detail.images.slice(7, 14)} />
-                      {/* <ImageGrid mediaImage={detail.images.slice(5)} /> */}
+                      <ImageGrid mediaImage={detail.images.slice(14)} />
                     </>
                   )}
                 </section>
