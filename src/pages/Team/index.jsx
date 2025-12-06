@@ -42,7 +42,10 @@ const Team = () => {
 
   // collect unique categories
   const tags = useMemo(
-    () => data?.map((team) => team.teamCategory?.name).filter(Boolean) || [],
+    () =>
+      data
+        ?.map((team) => team.teamCategory?.name || team.team?.name)
+        .filter(Boolean) || [],
     [data]
   );
   const uniqueTags = useMemo(() => Array.from(new Set(tags)), [tags]);
@@ -117,7 +120,7 @@ const Team = () => {
       ?.filter((member) =>
         activeSelection === ""
           ? true
-          : member.teamCategory?.name === activeSelection
+          : member.teamCategory?.name || member.team?.name === activeSelection
       )
       ?.sort((a, b) => a.position - b.position) || [];
 
@@ -152,6 +155,8 @@ const Team = () => {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
+
+  console.log(data);
 
   return (
     <>
@@ -279,7 +284,11 @@ const Team = () => {
                           name={member.name}
                           teamRole={
                             member.role ||
-                            `${member.teamCategory?.name || "Team"} member`
+                            `${
+                              member.teamCategory?.name ||
+                              member.team?.name ||
+                              "Team"
+                            } member`
                           }
                           bgColor={bgColor}
                         />
