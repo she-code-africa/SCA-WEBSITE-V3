@@ -153,6 +153,8 @@ const Team = () => {
     },
   };
 
+  console.log(data);
+
   return (
     <>
       <Helmet>

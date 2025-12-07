@@ -9,7 +9,7 @@ import { apiConstants, paths } from "../../utils/index";
 import * as components from "../../components";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
-import heroImg from "../../images/v2/whatWeDoCardImage.jpg";
+
 import SchoolProgram from "../../components/version-2/academy/SchoolProgram";
 import SuccessStories from "../../components/version-2/academy/SuccessStories";
 import sop from "../../images/v2/academy/sop-hero.jpg";

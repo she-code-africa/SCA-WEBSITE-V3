@@ -97,7 +97,7 @@ const Events = () => {
                 <h3 className="hero-text hero-title text-center text-primary-main-pink">
                   She Code Africa Events
                 </h3>
-                <p className="description-text text-center lg:max-w-[702px]">
+                <p className="description-text text-center lg:max-w-[882px]">
                   Experience Community in Action through our events. From
                   intimate workshops and community meetups to large-scale
                   summits, we bring women and girls across Africa together,

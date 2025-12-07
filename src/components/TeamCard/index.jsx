@@ -1,5 +1,5 @@
-import React from 'react'
-import avatar from "../../images/avatar-300x300.jpeg"
+import React from "react";
+import avatar from "../../images/avatar-300x300.jpeg";
 
 const TeamCard = ({ image, name, teamRole, bgColor }) => {
   return (
@@ -16,10 +16,12 @@ const TeamCard = ({ image, name, teamRole, bgColor }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <h2 className="mt-4 team-name text-Primary-Magenta">{name}</h2>
+      <h2 className="mt-4 team-name text-Primary-Magenta text-center">
+        {name}
+      </h2>
       <p className="team-role text-Secondary-Grape text-center">{teamRole}</p>
     </div>
-  )
-}
+  );
+};
 
-export default TeamCard
+export default TeamCard;
