@@ -10,8 +10,6 @@ body {
   font-family: "Figtree", sans-serif;
 }
 
-
-
 @font-face {
   font-family: Thunder;
   src: url("./assets/v2/fonts/Thunder-SemiBoldLC.ttf");
@@ -22,9 +20,8 @@ body {
   overflow-anchor: none;
 }
 
-
-
-.hero-text,h1 {
+.hero-text,
+h1 {
   font-family: Thunder, sans-serif;
 }
 
@@ -137,7 +134,7 @@ main,
   background-repeat: no-repeat;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
   .mobile-nav-menu {
     position: fixed;
     background-color: white;

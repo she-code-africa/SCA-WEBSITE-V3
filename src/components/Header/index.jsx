@@ -196,7 +196,7 @@ const Header = ({ page }) => {
         ref={menuRef}
       >
         {/* logo and hamburger for mobile */}
-        <div className="w-full lg:w-fit flex justify-between items-center gap-6 ">
+        <div className="w-full xl:w-fit flex justify-between items-center gap-6 ">
           <div className="w-full max-w-[150px] sm:max-w-[216px]">
             <Link to={paths.home} className="w-full h-[30px]">
               <img
@@ -212,12 +212,12 @@ const Header = ({ page }) => {
 
         {/* menu items and logo for mobile view */}
         <aside
-          className={`w-full z-50 lg:z-0 mobile-nav-menu lg:flex lg:justify-end  ${
+          className={`w-full z-50 xl:z-0 mobile-nav-menu xl:flex xl:justify-end  ${
             isOpen && "show"
           }`}
         >
           {/* logo and close icon for opened navigation on mobile*/}
-          <div className="my-6 w-full flex justify-between items-center gap-6 lg:hidden">
+          <div className="my-6 w-full flex justify-between items-center gap-6 xl:hidden">
             <div className="w-full max-w-[150px] ">
               <Link to={paths.home} className="w-full h-[30px]">
                 <img
@@ -229,7 +229,7 @@ const Header = ({ page }) => {
             </div>
 
             <button
-              className=" cursor-pointer transition-transform duration-300 ease-in-out focus:outline-none focus:ring focus:ring-tutu lg:hidden"
+              className=" cursor-pointer transition-transform duration-300 ease-in-out focus:outline-none focus:ring focus:ring-tutu xl:hidden"
               onClick={handleCloseMenu}
               tabIndex={0}
               aria-label={"Close menu"}
@@ -240,9 +240,9 @@ const Header = ({ page }) => {
 
           {/* menu items */}
           <ul
-            className={`w-full flex flex-col lg:items-center lg:justify-between gap-4 lg:gap-5 lg:flex-row mt-12 lg:mt-0`}
+            className={`w-full flex flex-col xl:items-center lg:justify-between gap-4 lg:gap-5 xl:flex-row mt-12 xl:mt-0`}
           >
-            <ul className="w-full flex flex-col lg:items-center lg:justify-start gap-4 lg:gap-11 lg:flex-row">
+            <ul className="w-full flex flex-col xl:items-center xl:justify-start gap-4 lg:gap-8 xl:gap-11 xl:flex-row">
               {menuItems.map((menuItem, idx) => {
                 const isActiveMenu = (menu) => {
                   const active =
@@ -260,7 +260,7 @@ const Header = ({ page }) => {
                     key={idx}
                     className={` pb-4 lg:pb-0 ${
                       menuItem.list.length > 0
-                        ? "lg:relative flex flex-col lg:flex-row lg:items-center gap-1"
+                        ? "xl:relative flex flex-col xl:flex-row xl:items-center gap-1"
                         : ""
                     } `}
                   >
@@ -281,7 +281,7 @@ const Header = ({ page }) => {
                       ) : (
                         <>
                           <span
-                            className={`cursor-pointer lg:hidden hover:text-primary-main-pink text-base  ${
+                            className={`cursor-pointer xl:hidden hover:text-primary-main-pink text-base  ${
                               path.includes(menuItem.text.toLowerCase()) ||
                               isActiveMenu(menuItem)
                                 ? "text-primary-main-pink font-bold"
@@ -292,7 +292,7 @@ const Header = ({ page }) => {
                           </span>
 
                           <span
-                            className={`cursor-pointer hidden lg:inline-block hover:text-primary-main-pink text-base  ${
+                            className={`cursor-pointer hidden xl:inline-block hover:text-primary-main-pink text-base  ${
                               path.includes(menuItem.text.toLowerCase()) ||
                               isActiveMenu(menuItem)
                                 ? "text-primary-main-pink font-bold"
@@ -330,11 +330,11 @@ const Header = ({ page }) => {
                     {/* mobile nav */}
 
                     {menuItem.list.length > 0 && selectedMenu === idx && (
-                      <ul className={`lg:hidden  px-4 lg:px-[18px] w-max `}>
+                      <ul className={`xl:hidden  px-4 xl:px-[18px] w-max `}>
                         {menuItem.list.map((item, index) => (
                           <li
                             key={index}
-                            className={`w-full group flex items-center gap-2 lg:gap-[18px] py-4 lg:py-[18px]`}
+                            className={`w-full group flex items-center gap-2 xl:gap-[18px] py-4 xl:py-[18px]`}
                           >
                             <figure
                               className={`w-[45px] h-[45px] rounded-full ${
@@ -428,7 +428,7 @@ const Header = ({ page }) => {
                           initial="hidden"
                           animate="visible"
                           exit="exit"
-                          className={` hidden lg:block absolute  bg-white top-12 py-5  w-[328px] ${
+                          className={` hidden xl:block absolute  bg-white top-12 py-5  w-[328px] ${
                             idx === menuItems.length - 1 ? "right-0" : "left-0"
                           }  rounded-lg shadow-2xl drop-shadow-2xl`}
                         >
@@ -528,7 +528,7 @@ const Header = ({ page }) => {
 
             <Link
               to={paths.donate}
-              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu lg:ml-20 hover:bg-[#5C0335] transition duration-300 text-center"
+              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu xl:ml-20 hover:bg-[#5C0335] transition duration-300 text-center"
             >
               Donate
             </Link>
