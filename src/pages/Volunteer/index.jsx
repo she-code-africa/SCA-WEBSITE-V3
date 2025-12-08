@@ -6,7 +6,6 @@ import Hero from "../../images/v2/volunteer-hero.jpg";
 import OurReach from "../../components/version-2/homepage/OurReach";
 import UserIcon from "../../images/volunteerImgs/voln-hero-icon.svg";
 // import testmonialImg from "../../images/testimonial.png";
-import OpportunityImg from "../../images/vol-oppotunity.png";
 import { volunteerCards } from "../../utils";
 import { motion } from "framer-motion";
 import testmonialImg from "../../images/v2/volunteer-stories.png";
@@ -297,7 +296,7 @@ const Volunteer = () => {
                   <div className="p-4 bg-SCA-White">
                     <div className="w-full h-80 rounded-[15px] overflow-hidden bg-SCA-White">
                       <img
-                        src={OpportunityImg}
+                        src={card.image}
                         alt={card.title}
                         className="w-full h-full object-contain block"
                       />
