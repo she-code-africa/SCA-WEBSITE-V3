@@ -458,7 +458,7 @@ const CodeOfConduct = () => {
           <p>We do not tolerate:</p>
           <ul className="list-disc pl-6">
             <li>
-              Harassment of any kind—sexual, verbal, emotional, or physical.
+              Harassment of any kind (sexual, verbal, emotional, or physical).
             </li>
             <li>
               Discrimination based on race, sexual orientation, religion,
