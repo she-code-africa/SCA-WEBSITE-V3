@@ -2,9 +2,10 @@ import React from "react";
 import placeholderImage from "../../../images/v2/donatePng.jpg";
 import { Link } from "react-router-dom";
 import schoolOfProduct from "../../../images/v2/academy/sop-hero.jpg";
+import soe from "../../../images/v2/academy/soehero.jpg";
+import soa from "../../../images/v2/academy/soa-hero.jpg";
 
 const ProgramsComponent = ({ schools }) => {
-  console.log(schools);
   return (
     <section className="w-full">
       {schools.map((school, idx) => (
@@ -27,6 +28,10 @@ const ProgramsComponent = ({ schools }) => {
               src={
                 school.name.toLowerCase().includes("product")
                   ? schoolOfProduct
+                  : school.name.toLowerCase().includes("engineering")
+                  ? soe
+                  : school.name.toLowerCase().includes("applied")
+                  ? soa
                   : placeholderImage
               }
               alt="product-img"
