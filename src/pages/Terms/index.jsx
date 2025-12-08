@@ -50,8 +50,10 @@ const Terms = () => {
               ("Terms") govern your use of our website, services, programs, and
               community platforms. By engaging with us, whether as a visitor,
               member, participant, partner, volunteer, sponsor or collaborator,
-              you agree to follow these Terms. Please read them carefully.
+              you agree to follow these Terms.
             </p>
+
+            <p className="my-4">Please read them carefully.</p>
             <h2 className="text-primary-color text-2xl font-bold mt-6">
               Who We Are
             </h2>
@@ -351,14 +353,17 @@ const Terms = () => {
             </p>
 
             <h3 className="font-semibold mt-4">General Waiver</h3>
-            <p className="my-4">
-              You voluntarily assume all risks related to your participation.
-              She Code Africa is not liable for any indirect, incidental, or
-              consequential losses—such as data loss, missed opportunities, or
-              emotional distress—unless directly caused by our gross negligence
-              or intentional misconduct.
-            </p>
-
+            <ul className="list-disc ml-6">
+              <li>
+                You voluntarily assume all risks related to your participation.
+              </li>
+              <li>
+                She Code Africa is not liable for any indirect, incidental, or
+                consequential losses—such as data loss, missed opportunities, or
+                emotional distress—unless directly caused by our gross
+                negligence or intentional misconduct.
+              </li>
+            </ul>
             <h3 className="font-semibold mt-4">Event-Related Waiver</h3>
             <p className="my-4">
               For in-person events, workshops, or field experiences:
@@ -404,11 +409,15 @@ const Terms = () => {
             </p>
 
             <h2 className="text-primary-color text-2xl font-bold mt-6">
-              📬 Contact Us
+              Contact Us
             </h2>
             <p className="my-4">Questions or concerns? Reach out at:</p>
             <p className="mt-4">
-              <b>Email:</b> info@shecodeafrica.org
+              <b>Email:</b>{" "}
+              <a href="mailto:info@shecodeafrica.org">
+                {" "}
+                info@shecodeafrica.org
+              </a>
             </p>
             <p>
               <b>Subject: </b> Terms and Conditions Inquiry

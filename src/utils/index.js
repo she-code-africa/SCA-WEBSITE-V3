@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import MentorImg from "../images/volunteerImgs/mentor-image.png";
+import EventOrganizerImg from "../images/volunteerImgs/event-organizer-image.png";
+import ContentCreatorImg from "../images/volunteerImgs/content-creator-image.png";
 
 export const paths = {
   home: "/",
@@ -709,6 +712,7 @@ export const volunteerCards = [
     description:
       "Guide and support women in their tech journey through one-on-one mentorship sessions.",
     skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
+    image: MentorImg,
   },
   {
     id: 2,
@@ -716,12 +720,14 @@ export const volunteerCards = [
     description:
       "Plan and coordinate community events, meetups, hackathons, and conferences across Africa.",
     skills: ["Organization", "Logistics", "Communication", "Creativity"],
+    image: EventOrganizerImg,
   },
   {
     id: 3,
     title: "Media & Content Creator",
     description:
-      "Create educational content, blog posts, designs, and social media content to inspire, educate and promote She Code Africa’s mission.",
+      "Create educational content, blog posts, designs, and social media content to inspire, educate and promote She Code Africa's mission.",
     skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
+    image: ContentCreatorImg,
   },
 ];

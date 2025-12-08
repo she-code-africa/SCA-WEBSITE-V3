@@ -56,7 +56,7 @@ const Privacy = () => {
             </h3>
             <p>
               We may collect the following categories of personal information:
-            </p>{" "}
+            </p>
             <p className="my-4">
               <b>Directly from You:</b>
             </p>
@@ -78,18 +78,18 @@ const Privacy = () => {
               <li>Time and duration of visits</li>
               <li>Referring URLs</li>
             </ul>
-            <p className="mt-5">
-              We do not collect sensitive information like passwords or
+            <div className="mt-5">
+              We do <b> not </b> collect sensitive information like passwords or
               financial details unless explicitly necessary (e.g., for grant
               disbursement or stipends—with secure handling protocols).
-            </p>
+            </div>
           </div>
 
           <div className="donation-faq">
             <h3 className="text-primary-color font-weight-bolder text-2xl uppercase">
               <span className="sub_ol">2.</span>How We Use Your Information
             </h3>
-            <p>We use your data to: </p>{" "}
+            <p>We use your data to: </p>
             <ul className="list-disc pl-10">
               <li>
                 Provide access to community platforms, events, or programs
@@ -115,7 +115,7 @@ const Privacy = () => {
             <p className="mt-5">
               We collect data from minors (under 18) only with verified
               parental/guardian consent. All such data is handled with added
-              protection and confidentiality. No child’s personal information is
+              protection and confidentiality. No child's personal information is
               shared publicly without explicit consent.{" "}
             </p>
           </div>
@@ -124,7 +124,7 @@ const Privacy = () => {
             <h3 className="text-primary-color font-weight-bolder text-2xl uppercase">
               <span className="sub_ol">3.</span>How We Protect Your Data
             </h3>
-            <p className="mb-3">We take data security seriously:</p>{" "}
+            <p className="mb-3">We take data security seriously:</p>
             <ul className="list-disc pl-10">
               <li>
                 All data is stored securely using industry-standard encryption
@@ -144,10 +144,10 @@ const Privacy = () => {
             <h3 className="text-primary-color font-weight-bolder text-2xl uppercase">
               <span className="sub_ol">4.</span>Sharing Your Data
             </h3>
-            <p>
-              We do <b>not</b> sell or rent your personal data.
-            </p>
-            <p className="mt-3">We may share your data only:</p>{" "}
+            <div>
+              We do<b> not </b>sell or rent your personal data.
+            </div>
+            <p className="mt-3">We may share your data only:</p>
             <ul className="list-disc pl-10">
               <li>
                 With trusted partners/co-facilitators when necessary to deliver
@@ -169,10 +169,10 @@ const Privacy = () => {
             <p className="mb-3">
               You can opt in or out of our mailing list or community channels at
               any time.
-            </p>{" "}
+            </p>
             <ul className="list-disc pl-10">
               <li>
-                Use the <b>unsubscribe link</b> in our newsletters
+                Use the <b> unsubscribe link </b> in our newsletters
               </li>
               <li>
                 Email us at{" "}
@@ -225,7 +225,7 @@ const Privacy = () => {
             </h3>
             <p>
               This Privacy Policy may be updated from time to time. When we do,
-              we’ll notify you through our platforms or email if the changes are
+              we'll notify you through our platforms or email if the changes are
               significant.
             </p>
           </div>
@@ -237,7 +237,10 @@ const Privacy = () => {
             <p>For any questions or concerns about your data, reach out to:</p>
 
             <p className="mt-4">
-              <b>Email:</b> community@shecodeafrica.org
+              <b>Email:</b>{" "}
+              <a href="mailto:community@shecodeafrica.org">
+                community@shecodeafrica.org
+              </a>
             </p>
             <p>
               <b>Subject line: </b> Privacy Concern
