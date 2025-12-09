@@ -1,9 +1,11 @@
-import React from "react";
-import whatWeDo from "../../../images/v2/whatWeDoCardImage.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import whatWeDo1 from "../../../images/v2/wedo1.jpg";
+import whatWeDo2 from "../../../images/v2/wedo2.jpg";
+import whatWeDo3 from "../../../images/v2/wedo3.jpg";
+import whatWeDo4 from "../../../images/v2/wedo4.jpg";
 
 const WhatWeDo = () => {
   const whatWeDoData = [
@@ -12,26 +14,31 @@ const WhatWeDo = () => {
       description:
         "Through the She Code Africa Academy, we offer curated training programs across tech fields that equip women and girls with the technical skills needed to start and grow their careers in tech",
       url: "/academy",
+      image: whatWeDo3
     },
     {
       title: "Communities and Chapters",
       description:
         "With a global community of over 40,000 members and over 40 local chapters across cities and campuses, we’ve built safe, active spaces where women can access peer support, mentorship, and learning opportunities in tech.",
       url: "/community",
+      image: whatWeDo1
     },
     {
       title: "Access & Exposure",
       description:
         "Through events, partnerships, and placement support, we connect women with opportunities to build or grow meaningful careers in technology.",
       url: "/partner",
+      image: whatWeDo2
     },
     {
       title: "Initiatives",
       description:
         "We design focused programs that remove the everyday barriers African women face when starting or growing their careers in tech. Our initiatives create pathways to learning, visibility, and long-term opportunities in tech.",
       url: "/initiatives",
-    },
+      image: whatWeDo4
+    }
   ];
+
   // Animation variants (for DRY, reusable setup)
   const containerVariant = {
     hidden: {},
@@ -80,12 +87,12 @@ const WhatWeDo = () => {
         className="w-[90%] mx-auto sm:w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[778px] -mt-40 relative z-[1]"
       >
         <div className="w-full grid md:grid-cols-2 gap-8 ">
-          {whatWeDoData.map(({ title, description, url }, i) => (
+          {whatWeDoData.map(({ title, description, url, image}, i) => (
             <Link to={url} key={i}>
               <div className="border-2 border-[#094A32] p-5 bg-white rounded-2xl hover:text-white hover:bg-[#094A32] transition-colors duration-300 cursor-pointer text-[#094A32] card-wwd">
                 <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
                   <img
-                    src={whatWeDo}
+                    src={image}
                     loading="lazy"
                     alt="card-pic"
                     className="object-cover w-full h-full"
