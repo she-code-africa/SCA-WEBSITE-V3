@@ -226,9 +226,9 @@ const Team = () => {
               variants={fadeUpVariant}
               className="flex justify-start gap-8 mb-16 flex-wrap"
             >
-              {orderedTags
-                .filter((category) => category !== "All")
-                .map((category) => (
+              {/* orderedTags .filter((category) => category !== "All") */}
+              {["Full-Time Employees", "Support Team", "Advisors"].map(
+                (category) => (
                   <button
                     key={category}
                     className={`button-text py-3 px-8 rounded-lg transition-colors duration-500 ${
@@ -240,7 +240,8 @@ const Team = () => {
                   >
                     {category}
                   </button>
-                ))}
+                )
+              )}
             </motion.div>
 
             {/* Team Grid */}
