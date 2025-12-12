@@ -74,11 +74,11 @@ const ResourcesCard = ({
           {tag || "Tech Insights"}
         </span>
 
-        <h4 className="text-[#5C0335] card-title-secondary leading-6">
+        <h4 className="text-[#5C0335] card-title-secondary leading-6 lg:truncate">
           {title || "Bridging the Gender Gap in African Tech"}
         </h4>
 
-        <p className="mt-3 w-full small-text-medium  text-[#7d355d] truncate">
+        <p className="mt-3 w-full small-text-medium  text-[#7d355d] lg:truncate">
           {description ||
             "Exploring initiatives that are making tech more inclusive for women across Africa."}
         </p>
