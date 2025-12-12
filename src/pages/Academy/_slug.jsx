@@ -61,8 +61,6 @@ const AcademyPage = () => {
   const skillTextContent =
     "Explore our live programs at our School of Applied Skills. From Technical community management, Open source contribution to Technical writing, tailored for women ready to succeed in non-tech career paths.";
 
-  console.log(school);
-
   return (
     <>
       <Helmet>

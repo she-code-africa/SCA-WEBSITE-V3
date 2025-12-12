@@ -103,12 +103,12 @@ const ResourcesCard = ({
           </span>
         </div>
 
-        <div className="w-fit">
+        <div>
           <a
             target="_blank"
             rel="noreferrer"
             href={url}
-            className="w-auto cursor-pointer inline-flex justify-center py-4 xl:px-8 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
+            className="w-full  cursor-pointer inline-flex justify-center py-4 xl:px-8 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
           >
             {isImage ? "read more" : "watch video"}
           </a>
