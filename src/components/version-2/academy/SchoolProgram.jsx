@@ -53,7 +53,7 @@ const SchoolProgram = ({ bgColors, slug, textContent, schoolPrograms }) => {
                 .filter((program) => program.state === "published")
                 .map(({ title, image, link, briefContent }, i) => (
                   <div
-                    className={`border-2 p-5 bg-white rounded-2xl ${
+                    className={`border-2 p-5 bg-white rounded-2xl w-full ${
                       slug.includes("product")
                         ? "border-[#094A32] text-[#094A32] card-wwd hover:bg-[#094A32] hover:text-white transition-colors duration-300 cursor-pointer"
                         : "border-primary-main-pink text-primary-main-pink hover:bg-primary-main-pink hover:text-white transition-colors duration-300 cursor-pointer card-wwd-pink"

@@ -19,7 +19,7 @@ const Team = () => {
 
   const { data, isError, isLoading } = useQuery({
     queryKey: [apiConstants.teams],
-    queryFn: getTeams
+    queryFn: getTeams,
   });
 
   // figure out current grid columns
@@ -73,10 +73,10 @@ const Team = () => {
         "Full-time employee",
         "Full time employee",
         "Full-time",
-        "Full time"
+        "Full time",
       ],
       ["Support Team", "Support team", "Support", "support team"],
-      ["Advisors", "Advisor", "advisors", "advisor"]
+      ["Advisors", "Advisor", "advisors", "advisor"],
     ];
 
     const inOrder = [];
@@ -130,8 +130,8 @@ const Team = () => {
   const containerVariant = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.2 }
-    }
+      transition: { staggerChildren: 0.2 },
+    },
   };
 
   const fadeUpVariant = {
@@ -139,8 +139,8 @@ const Team = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   const imageVariant = {
@@ -149,11 +149,9 @@ const Team = () => {
       opacity: 1,
       scale: 1,
       rotate: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
-
-  console.log(data);
 
   return (
     <>
@@ -258,7 +256,7 @@ const Team = () => {
               <>
                 {/* Render full rows */}
                 {Array.from({
-                  length: Math.floor(fullMembers.length / cols)
+                  length: Math.floor(fullMembers.length / cols),
                 }).map((_, rowIdx) => {
                   const start = rowIdx * cols;
                   const rowMembers = fullMembers.slice(start, start + cols);
@@ -266,7 +264,7 @@ const Team = () => {
                     "#FFF88F4D",
                     "#FFB8E04D",
                     "#DDFF8F4D",
-                    "#E7B8FF4D"
+                    "#E7B8FF4D",
                   ];
                   const bgColor = colors[rowIdx % colors.length];
                   return (
@@ -304,7 +302,7 @@ const Team = () => {
                         "#FFB8E04D",
                         "#FFF88F4D",
                         "#E7B8FF4D",
-                        "#DDFF8F4D"
+                        "#DDFF8F4D",
                       ];
                       const bgColor = colors[rowIdx % colors.length];
                       return (
