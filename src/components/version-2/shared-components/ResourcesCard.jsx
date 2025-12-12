@@ -74,7 +74,7 @@ const ResourcesCard = ({
           {tag || "Tech Insights"}
         </span>
 
-        <h4 className="text-[#5C0335] card-title-secondary leading-6 truncate">
+        <h4 className="text-[#5C0335] card-title-secondary leading-6">
           {title || "Bridging the Gender Gap in African Tech"}
         </h4>
 
@@ -108,7 +108,7 @@ const ResourcesCard = ({
             target="_blank"
             rel="noreferrer"
             href={url}
-            className="w-full  cursor-pointer inline-flex justify-center py-4 xl:px-8 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
+            className="w-full min-w-[101px] h-8 cursor-pointer inline-flex justify-center items-center py-4 xl:px-8 rounded-lg border border-primary-main-pink text-primary-main-pink text-sm font-medium capitalize hover:border-[#FF8FCE] transition-all"
           >
             {isImage ? "read more" : "watch video"}
           </a>

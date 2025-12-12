@@ -26,20 +26,14 @@ const TheChallenge = () => {
             </p>
 
             <div className="w-full px-10">
-              <ul
-                className="w-full p-0 m-0 text-lg mt-2 font-medium list-disc"
-                style={{ fontSize: "18px" }}
-              >
+              <ul className="w-full p-0 m-0 text-lg mt-2 font-medium list-disc challenge-text">
                 <li>No reliable internet or device to learn with.</li>
                 <li>Limited exposure to digital skills in schools.</li>
                 <li>Few role models or mentors in tech and so much more.</li>
               </ul>
             </div>
 
-            <p
-              className="w-full mt-3 font-medium "
-              style={{ fontSize: "18px" }}
-            >
+            <p className="w-full mt-3 font-medium challenge-text">
               We envision an Africa where women are equally represented across
               all career roles and levels in Technology.
             </p>
