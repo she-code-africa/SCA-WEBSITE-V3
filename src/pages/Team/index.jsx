@@ -222,10 +222,7 @@ const Team = () => {
         >
           <div className="w-[90%] mx-auto">
             {/* Category Buttons */}
-            <motion.div
-              variants={fadeUpVariant}
-              className="flex justify-start gap-8 mb-16 flex-wrap"
-            >
+            <div className="flex justify-start gap-8 mb-16 flex-wrap">
               {/* orderedTags .filter((category) => category !== "All") */}
               {["Full-Time Employees", "Support Team", "Advisors"].map(
                 (category) => (
@@ -242,7 +239,7 @@ const Team = () => {
                   </button>
                 )
               )}
-            </motion.div>
+            </div>
 
             {/* Team Grid */}
             {isError ? (
