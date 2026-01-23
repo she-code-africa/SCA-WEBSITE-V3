@@ -18,8 +18,8 @@ main {
 
 .shape-bg {
   background-repeat: no-repeat, no-repeat;
-  background-image: url("../images/shape-two.png"),
-    url("../images/shape-one.png");
+  // background-image: url("../images/shape-two.png"),
+  // url("../images/shape-one.png");
   background-position: 80px top, top left;
   background-size: 280px, 200px;
 }
@@ -50,22 +50,6 @@ main {
   section {
     border-radius: 24px 24px 0px 0px;
   }
-}
-
-.card-body-img-1 {
-  background-image: url("../images/homepage/tinypng4.png");
-}
-
-.card-body-img-2 {
-  background-image: url("../images/homepage/tinypng3.png");
-}
-
-.card-body-img-3 {
-  background-image: url("../images/homepage/tinypng1.png");
-}
-
-.card-body-img-4 {
-  background-image: url("../images/homepage/tinypng5.png");
 }
 
 .slick-wrapper .slick-slider {

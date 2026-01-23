@@ -1,17 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faArrowUpRightFromSquare,
-} from "@fortawesome/free-solid-svg-icons";
-// import logo from "../../images/she-code-africa-logo.svg";
-import logo from "../../images/new-logo/new-logo-header.png";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import logo from "../../images/new-logo/Logo.png";
 import { apiConstants, paths } from "../../utils";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
+import HamburgerIcon from "./HamburgerMenu";
+import { IoClose } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
+import { dropdownVariant, headerVariant } from "../../lib/motionVariants";
+import AboutSca from "../version-2/icons/nav/AboutSca";
+import MeetTeam from "../version-2/icons/nav/MeetTeam";
+import Initiative from "../version-2/icons/nav/Initiative";
+import Events from "../version-2/icons/nav/Events";
+import SOE from "../version-2/icons/nav/SOE";
+import SOP from "../version-2/icons/nav/SOP";
+import SOA from "../version-2/icons/nav/SOA";
+import Donate from "../version-2/icons/nav/Donate";
+import Partner from "../version-2/icons/nav/Partner";
+import Volunteer from "../version-2/icons/nav/Volunteer";
+import Contact from "../version-2/icons/nav/Contact";
+import Community from "../version-2/icons/nav/Community";
+import Chapters from "../version-2/icons/nav/Chapters";
 
-const Header = () => {
+const Header = ({ page }) => {
   const { data, isLoading, isFetching } = useQuery(
     [apiConstants.academy],
     getAllSchools
@@ -38,44 +51,88 @@ const Header = () => {
     }
   }, [data, isFetching, isLoading]);
 
-  const menus = [
-    { to: paths.home, text: "Home" },
+  const menuItems = [
+    { to: paths.home, text: "Home", list: [] },
     {
-      to: paths.donate_partner,
+      to: "",
       text: "About",
       list: [
-        { to: paths.about, text: "About SCA" },
-        { to: paths.team, text: "Our Team" },
+        {
+          to: paths.about,
+          text: "About SCA",
+          icon: <AboutSca />,
+        },
+        {
+          to: paths.team,
+          text: "Meet Our Team",
+          icon: <MeetTeam />,
+        },
+        {
+          to: paths.initiatives,
+          text: "Initiatives",
+          icon: <Initiative />,
+        },
+        {
+          to: paths.events,
+          text: "Events",
+          icon: <Events />,
+        },
       ],
     },
     {
-      to: paths.about,
+      to: "/academy",
       text: "Academy",
       list: schoolList,
     },
     {
+      to: "",
       text: "Get Involved",
       list: [
-        { to: paths.volunteer, text: "Volunteer With Us" },
         {
-          to: "https://bit.ly/joinshecodeafrica",
-          text: "Become A Member",
-          external: true,
+          to: paths.donate,
+          text: "Donate To A Cause",
+          icon: <Donate />,
         },
-        { to: paths.partner, text: "Partner with us" },
-        { to: paths.events, text: "Events" },
-        { to: paths.initiatives, text: "Initiatives" },
+        {
+          to: paths.partner,
+          text: "Partner With Us",
+          icon: <Partner />,
+        },
+        {
+          to: paths.volunteer,
+          text: "Volunteer With Us",
+          icon: <Volunteer />,
+        },
+        {
+          to: "/contact-us",
+          text: "Contact Us",
+          icon: <Contact />,
+        },
+
+        // {
+        //   to: "https://bit.ly/joinshecodeafrica",
+        //   text: "Become A Member",
+        //   external: true,
+        // },
       ],
     },
     {
-      to: paths.donate_partner,
+      to: "",
       text: "Community",
       list: [
-        { to: paths.community, text: "SCA Community" },
-        { to: paths.chapters, text: "SCA Chapters" },
+        {
+          to: paths.community,
+          text: "SCA Community",
+          icon: <Community />,
+        },
+        {
+          to: paths.chapters,
+          text: "SCA Chapters",
+          icon: <Chapters />,
+        },
       ],
     },
-    { to: paths.jobs, text: "Jobs" },
+    { to: "/media", text: "Media", list: [] },
   ];
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -83,9 +140,14 @@ const Header = () => {
   const body = window.document.body;
   const classList = [`max-h-screen`, `overflow-hidden`];
   const path = location.pathname;
+  const menuRef = useRef(null);
 
-  const handleClick = () => {
-    setIsOpen(!isOpen);
+  const handleOpenMenu = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseMenu = () => {
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -100,207 +162,380 @@ const Header = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
+  // 👇 CLOSE DROPDOWN ON OUTSIDE CLICK (Desktop)
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Only close on large screens
+      if (window.innerWidth >= 1024 && menuRef.current) {
+        if (!menuRef.current.contains(event.target)) {
+          setSelectedMenu(null);
+        }
+      }
+    };
+
+    if (selectedMenu !== null) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [selectedMenu]);
+
   return (
-    <header className="fixed left-0 right-0 top-0 w-full md:bg-white/80 bg-white z-[2] md:py-8 py-4 shadow-lg">
-      <div className="justify-between gap-8 items-center lg:w-11/12 mx-auto hidden lg:flex px-5 lg:px-0">
-        <Link
-          to={paths.home}
-          className="lg:px-5 focus:outline-none focus:ring focus:ring-tutu"
-        >
-          <img
-            src={logo}
-            alt="Go to homepage"
-            className="object-contain __shecodelogo min-w-[80px] h-[80px]"
-          />
-        </Link>
+    <motion.header
+      variants={headerVariant}
+      initial="hidden"
+      animate="visible"
+      className="fixed left-0 right-0 top-0 w-full bg-white z-[2] py-6 shadow-lg font-figtree "
+    >
+      <nav
+        className="w-[90%] mx-auto max-w-[1256px] flex justify-between gap-5 lg:gap-36 items-center"
+        ref={menuRef}
+      >
+        {/* logo and hamburger for mobile */}
+        <div className="w-full xl:w-fit flex justify-between items-center gap-6 ">
+          <div className="w-full max-w-[150px] sm:max-w-[216px]">
+            <Link to={paths.home} className="w-full h-[30px]">
+              <img
+                src={logo}
+                alt="She Code Africa"
+                className="object-contain w-full h-full"
+              />
+            </Link>
+          </div>
 
-        <ul className="flex lg:gap-x-10 md:gap-x-5 items-center">
-          {menus.map((menu, index) => (
-            <li
-              key={index}
-              className="text-[#1A1A1A] text-opacity-[82%] font-medium relative"
+          <HamburgerIcon isOpen={isOpen} handleClick={handleOpenMenu} />
+        </div>
+
+        {/* menu items and logo for mobile view */}
+        <aside
+          className={`w-full z-50 xl:z-0 mobile-nav-menu xl:flex xl:justify-end  ${
+            isOpen && "show"
+          }`}
+        >
+          {/* logo and close icon for opened navigation on mobile*/}
+          <div className="my-6 w-full flex justify-between items-center gap-6 xl:hidden">
+            <div className="w-full max-w-[150px] ">
+              <Link to={paths.home} className="w-full h-[30px]">
+                <img
+                  src={logo}
+                  alt="She Code Africa"
+                  className="object-contain w-full h-full"
+                />
+              </Link>
+            </div>
+
+            <button
+              className=" cursor-pointer transition-transform duration-300 ease-in-out focus:outline-none focus:ring focus:ring-tutu xl:hidden"
+              onClick={handleCloseMenu}
+              tabIndex={0}
+              aria-label={"Close menu"}
             >
-              {menu?.list ? (
-                <button
-                  className="flex gap-2 items-center cursor-pointer focus:outline-none focus:ring focus:ring-tutu"
-                  onClick={() =>
-                    setSelectedMenu(selectedMenu === index ? null : index)
-                  }
-                >
-                  <span to={menu.to} className="m-0">
-                    {menu.text}
-                  </span>
-                  <FontAwesomeIcon
-                    icon={faAngleDown}
-                    className={`transition-transform duration-300 ${
-                      selectedMenu === index ? "rotate-180" : null
-                    }`}
-                  />
-                </button>
-              ) : (
-                <Link
-                  to={menu.to}
-                  className={`focus:outline-none focus:ring focus:ring-tutu ${
-                    path === menu.to
-                      ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                      : null
-                  }`}
-                >
-                  {menu.text}
-                </Link>
-              )}
+              <IoClose className="text-4xl" />
+            </button>
+          </div>
 
-              {menu?.list && selectedMenu === index && (
-                <ul className="absolute bg-white top-12 pt-5 px-5 w-max">
-                  {menu.list.map((list, index) => (
-                    <li
-                      key={index}
-                      className={`font-normal mb-5 ${
-                        path === list.to
-                          ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                          : null
-                      }`}
-                    >
-                      {list?.external ? (
-                        <a
-                          href={list.to}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="focus:outline-none focus:ring focus:ring-tutu flex gap-2 items-center"
-                        >
-                          <span>{list.text}</span>
-                          <FontAwesomeIcon
-                            icon={faArrowUpRightFromSquare}
-                            aria-hidden="true"
-                            size="xs"
-                          />
-                        </a>
-                      ) : (
+          {/* menu items */}
+          <ul
+            className={`w-full flex flex-col xl:items-center lg:justify-between gap-4 lg:gap-5 xl:flex-row mt-12 xl:mt-0`}
+          >
+            <ul className="w-full flex flex-col xl:items-center xl:justify-start gap-4 lg:gap-8 xl:gap-11 xl:flex-row">
+              {menuItems.map((menuItem, idx) => {
+                const isActiveMenu = (menu) => {
+                  const active =
+                    menu.list.length > 0 &&
+                    menu.list.some(
+                      (item) =>
+                        path === item.to ||
+                        path.startsWith(item.to) ||
+                        path.includes(item.text.toLowerCase())
+                    );
+                  return active;
+                };
+                return (
+                  <li
+                    key={idx}
+                    className={` pb-4 lg:pb-0 ${
+                      menuItem.list.length > 0
+                        ? "xl:relative flex flex-col xl:flex-row xl:items-center gap-1"
+                        : ""
+                    } `}
+                  >
+                    <span className="hover:text-primary-main-pink">
+                      {menuItem.to ? (
                         <Link
-                          to={list.to}
-                          className="focus:outline-none focus:ring focus:ring-tutu"
-                        >
-                          {list.text}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        <Link
-          to={paths.donate_partner}
-          className="bg-primary-main-pink rounded-[30px] py-5 px-12 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu"
-        >
-          Donate
-        </Link>
-      </div>
-
-      <div className="lg:hidden flex justify-between place-items-center px-8">
-        <Link
-          to={paths.home}
-          className="lg:px-5 focus:outline-none focus:ring focus:ring-tutu"
-        >
-          <img
-            src={logo}
-            alt="Go to homepage"
-            className="object-contain __shecodelogo min-w-[40px] h-[40px]"
-          />
-        </Link>
-
-        <button
-          className="flex flex-col justify-between items-center cursor-pointer w-[30px] h-[10px] transition-transform duration-300 ease-in-out focus:outline-none focus:ring focus:ring-tutu"
-          onClick={handleClick}
-          tabIndex={0}
-          aria-label={isOpen ? "close menu" : "open menu"}
-        >
-          <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-0 ${
-              isOpen ? "translate-y-[5px] rotate-45" : ""
-            }`}
-          ></div>
-          <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[6px] ${
-              isOpen ? "scale-x-0" : ""
-            }`}
-          ></div>
-          <div
-            className={`line bg-[#1A1A1A] h-[2px] w-full block transition-transform duration-300 ease-in-out translate-y-[12px] ${
-              isOpen ? "translate-y-[0px] -rotate-45" : ""
-            }`}
-          ></div>
-        </button>
-
-        {isOpen ? (
-          <div className="fixed inset-0 z-[4000] overflow-y-auto animate__animated top-20 bg-white w-full py-5">
-            <ul className="w-10/12 mx-auto">
-              {menus.map((menu, index) => (
-                <li
-                  key={index}
-                  className={`font-medium text-xl  ${
-                    path === menu.to
-                      ? "text-primary-main-pink"
-                      : "text-[#1A1A1A] text-opacity-[82%]"
-                  }`}
-                >
-                  {menu?.list ? (
-                    <div className="font-medium block">{menu.text}</div>
-                  ) : (
-                    <Link
-                      to={menu.to}
-                      className={`block font-medium mb-6 focus:outline-none focus:ring focus:ring-tutu`}
-                    >
-                      {menu.text}
-                    </Link>
-                  )}
-                  {menu?.list && (
-                    <ul className="pt-5 px-5">
-                      {menu.list.map((list, index) => (
-                        <li
-                          key={index}
-                          className={`font-normal mb-5 ${
-                            path === list.to
-                              ? "text-primary-main-pink border-b border-primary-main-pink font-bold"
-                              : null
+                          to={menuItem.to}
+                          className={`hover:text-primary-main-pink text-base ${
+                            path === menuItem.to ||
+                            path.includes(menuItem.text.toLowerCase()) ||
+                            isActiveMenu(menuItem)
+                              ? "text-primary-main-pink font-bold"
+                              : "font-medium"
                           }`}
                         >
-                          {list?.external ? (
-                            <a
-                              href={list.to}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="focus:outline-none focus:ring focus:ring-tutu flex gap-3 items-center"
+                          {menuItem.text}
+                        </Link>
+                      ) : (
+                        <>
+                          <span
+                            className={`cursor-pointer xl:hidden hover:text-primary-main-pink text-base  ${
+                              path.includes(menuItem.text.toLowerCase()) ||
+                              isActiveMenu(menuItem)
+                                ? "text-primary-main-pink font-bold"
+                                : "font-medium"
+                            }`}
+                          >
+                            {menuItem.text}
+                          </span>
+
+                          <span
+                            className={`cursor-pointer hidden xl:inline-block hover:text-primary-main-pink text-base  ${
+                              path.includes(menuItem.text.toLowerCase()) ||
+                              isActiveMenu(menuItem)
+                                ? "text-primary-main-pink font-bold"
+                                : "font-medium"
+                            }`}
+                            onClick={() =>
+                              setSelectedMenu(selectedMenu === idx ? null : idx)
+                            }
+                          >
+                            {menuItem.text}
+                          </span>
+                        </>
+                      )}{" "}
+                      {menuItem.list.length > 0 && (
+                        <button
+                          className={`inline-block ${
+                            path.includes(menuItem.text.toLowerCase()) ||
+                            isActiveMenu(menuItem)
+                              ? "text-primary-main-pink font-bold"
+                              : "font-medium"
+                          }`}
+                          onClick={() =>
+                            setSelectedMenu(selectedMenu === idx ? null : idx)
+                          }
+                        >
+                          <FontAwesomeIcon
+                            icon={faAngleDown}
+                            className={` hover:rotate-180 transition-all duration-300 ease-in-out ${
+                              selectedMenu === idx ? "rotate-180 " : null
+                            }`}
+                          />
+                        </button>
+                      )}
+                    </span>
+                    {/* mobile nav */}
+
+                    {menuItem.list.length > 0 && selectedMenu === idx && (
+                      <ul className={`xl:hidden  px-4 xl:px-[18px] w-max `}>
+                        {menuItem.list.map((item, index) => (
+                          <li
+                            key={index}
+                            className={`w-full group flex items-center gap-2 xl:gap-[18px] py-4 xl:py-[18px]`}
+                          >
+                            <figure
+                              className={`w-[45px] h-[45px] rounded-full ${
+                                path === item.to
+                                  ? "bg-primary-main-pink"
+                                  : "bg-[#FFB8E0]"
+                              } overflow-hidden flex items-center justify-center p-[10px] transition-colors duration-300 group-hover:bg-primary-main-pink`}
                             >
-                              <span>{list.text}</span>
-                              <FontAwesomeIcon
-                                icon={faArrowUpRightFromSquare}
-                                aria-hidden="true"
-                                size="xs"
-                              />
-                            </a>
-                          ) : (
+                              {item.text
+                                .toLowerCase()
+                                .includes("engineering") ? (
+                                <span
+                                  className={` group-hover:text-white transition-colors duration-300 ${
+                                    path === item.to
+                                      ? "text-white"
+                                      : "text-[#B70569]"
+                                  }`}
+                                >
+                                  <SOE />
+                                </span>
+                              ) : item.text
+                                  .toLowerCase()
+                                  .includes("product") ? (
+                                <span
+                                  className={` group-hover:text-white transition-colors duration-300 ${
+                                    path === item.to
+                                      ? "text-white"
+                                      : "text-[#B70569]"
+                                  }`}
+                                >
+                                  <SOP />
+                                </span>
+                              ) : item.text
+                                  .toLowerCase()
+                                  .includes("applied") ? (
+                                <span
+                                  className={` group-hover:text-white transition-colors duration-300 ${
+                                    path === item.to
+                                      ? "text-white"
+                                      : "text-[#B70569]"
+                                  }`}
+                                >
+                                  <SOA />
+                                </span>
+                              ) : (
+                                <span
+                                  className={` group-hover:text-white transition-colors duration-300 ${
+                                    path === item.to
+                                      ? "text-white"
+                                      : "text-[#B70569]"
+                                  }`}
+                                >
+                                  {item.icon}
+                                </span>
+                              )}
+                            </figure>
+
                             <Link
-                              to={list.to}
-                              className="focus:outline-none focus:ring focus:ring-tutu"
-                              onClick={() => setIsOpen(false)}
+                              to={item.to}
+                              className={`flex flex-col gap-1 transition-colors duration-300 ${
+                                path === item.to
+                                  ? "text-primary-main-pink font-bold"
+                                  : "font-medium"
+                              } group-hover:text-primary-main-pink`}
                             >
-                              {list.text}
+                              <span
+                                className={`inline-block font-semibold text-sm `}
+                              >
+                                {item.text}{" "}
+                              </span>
+                              <span
+                                className={`hidden ${
+                                  path === item.to
+                                    ? "text-primary-main-pink"
+                                    : "text-[#434343]"
+                                } text-sm font-normal`}
+                              >
+                                {item.subText || "Small sample text here"}{" "}
+                              </span>
                             </Link>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* desktop */}
+                    <AnimatePresence>
+                      {menuItem.list.length > 0 && selectedMenu === idx && (
+                        <motion.ul
+                          variants={dropdownVariant}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          className={` hidden xl:block absolute  bg-white top-12 py-5  w-[328px] ${
+                            idx === menuItems.length - 1 ? "right-0" : "left-0"
+                          }  rounded-lg shadow-2xl drop-shadow-2xl`}
+                        >
+                          {menuItem.list.map((item, index) => (
+                            <li
+                              key={index}
+                              className={`w-full group flex items-center gap-[18px] px-5 py-[18px]`}
+                            >
+                              <figure
+                                className={`w-[45px] h-[45px] rounded-full overflow-hidden flex items-center justify-center p-[10px] transition-colors duration-300 group-hover:bg-primary-main-pink ${
+                                  path === item.to
+                                    ? "bg-primary-main-pink"
+                                    : "bg-[#FFB8E0]"
+                                }`}
+                              >
+                                {item.text
+                                  .toLowerCase()
+                                  .includes("engineering") ? (
+                                  <span
+                                    className={` group-hover:text-white transition-colors duration-300 ${
+                                      path === item.to
+                                        ? "text-white"
+                                        : "text-[#B70569]"
+                                    }`}
+                                  >
+                                    <SOE />
+                                  </span>
+                                ) : item.text
+                                    .toLowerCase()
+                                    .includes("product") ? (
+                                  <span
+                                    className={` group-hover:text-white transition-colors duration-300 ${
+                                      path === item.to
+                                        ? "text-white"
+                                        : "text-[#B70569]"
+                                    }`}
+                                  >
+                                    <SOP />
+                                  </span>
+                                ) : item.text
+                                    .toLowerCase()
+                                    .includes("applied") ? (
+                                  <span
+                                    className={` group-hover:text-white transition-colors duration-300 ${
+                                      path === item.to
+                                        ? "text-white"
+                                        : "text-[#B70569]"
+                                    }`}
+                                  >
+                                    <SOA />
+                                  </span>
+                                ) : (
+                                  <span
+                                    className={` group-hover:text-white transition-colors duration-300 ${
+                                      path === item.to
+                                        ? "text-white"
+                                        : "text-[#B70569]"
+                                    }`}
+                                  >
+                                    {item.icon}
+                                  </span>
+                                )}
+                              </figure>
+
+                              <Link
+                                to={item.to}
+                                className={`flex flex-col gap-1 transition-colors duration-300 ${
+                                  path === item.to
+                                    ? "text-primary-main-pink font-bold"
+                                    : "font-medium"
+                                } group-hover:text-primary-main-pink`}
+                              >
+                                <span
+                                  className={`inline-block font-semibold text-base `}
+                                >
+                                  {item.text}{" "}
+                                </span>
+                                <span
+                                  className={`hidden ${
+                                    path === item.to
+                                      ? "text-primary-main-pink"
+                                      : "text-[#434343]"
+                                  } text-sm font-normal`}
+                                >
+                                  {item.subText || "Small sample text here"}{" "}
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </motion.ul>
+                      )}
+                    </AnimatePresence>
+                  </li>
+                );
+              })}
             </ul>
-          </div>
-        ) : null}
-      </div>
-    </header>
+
+            <Link
+              to={paths.donate}
+              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu xl:ml-20 hover:bg-[#5C0335] transition duration-300 text-center"
+            >
+              Donate
+            </Link>
+          </ul>
+        </aside>
+      </nav>
+    </motion.header>
   );
 };
 

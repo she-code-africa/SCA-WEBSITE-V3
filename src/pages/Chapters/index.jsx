@@ -1,86 +1,81 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { useQuery } from "@tanstack/react-query";
-
 import Header from "../../components/Header";
-import searchIcon from "../../images/chapters/search-icon.png";
 import Footer from "../../components/Footer";
-import chaptersHero from "../../images/chapters/chapters-hero.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleLeft,
-  faAngleRight,
-  faTriangleExclamation,
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { apiConstants } from "../../utils";
 import { getChapters } from "../../services";
-import { apiConstants, paths } from "../../utils";
-import chapterImage from "../../images/chapters/sca-chapters-img.png";
-import JoinUs from "../../components/JoinUs";
-import ChaptersCard from "../../components/Chapters";
 import * as components from "../../components";
+import { motion } from "framer-motion";
 
 const Chapters = () => {
   const [page, setPage] = useState(1);
-  const [fullChapters, setFullChapters] = useState([]);
   const [chapters, setChapters] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
-  const [searchNotFound, setSearchNotFound] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredChapters, setFilteredChapters] = useState([]);
 
-  useQuery(["chapters-full"], () => getChapters(1, 1000), {
-    onSuccess: (data) => {
-      setFullChapters(data.data);
-    },
-    enabled: true, // always run once on mount
-  });
-
+  // Fetch chapters data (15 per page)
   const { data, isError, isLoading } = useQuery({
     queryKey: [apiConstants.chapters, page],
-    queryFn: () => getChapters(page),
+    queryFn: () => getChapters(page, 15), // Request 15 chapters per page
     keepPreviousData: true,
-    onSuccess: (data) => {
-      setChapters(data.data);
-    },
   });
 
-  const handleChange = (e) => {
-    if (!e.target.value) {
+  // Update chapters when data changes
+  useEffect(() => {
+    if (data?.data) {
       setChapters(data.data);
+      setFilteredChapters(data.data);
     }
-    setSearchValue(e.target.value);
-  };
+  }, [data]);
 
-  const handleSearch = () => {
-    if (!searchValue) {
-      setSearchNotFound(false);
-      setChapters(data.data);
-    }
-
-    const filteredResult = fullChapters.filter((chapter, index) => {
-      return (
-        chapter?.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-        chapter?.city.toLowerCase().includes(searchValue.toLowerCase()) ||
-        chapter?.country.toLowerCase().includes(searchValue.toLowerCase())
-      );
-    });
-
-    if (filteredResult.length > 0) {
-      setSearchNotFound(false);
-      setChapters(filteredResult);
+  // Filter chapters based on search query
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setFilteredChapters(chapters);
     } else {
-      setSearchNotFound(true);
-      setChapters([]);
+      const filtered = chapters.filter((chapter) => {
+        const name = chapter.name?.toLowerCase() || "";
+        const location = chapter.location?.toLowerCase() || "";
+        const city = chapter.city?.toLowerCase() || "";
+        const country = chapter.country?.toLowerCase() || "";
+        const query = searchQuery.toLowerCase();
+
+        return (
+          name.includes(query) ||
+          location.includes(query) ||
+          city.includes(query) ||
+          country.includes(query)
+        );
+      });
+      setFilteredChapters(filtered);
     }
-  };
+  }, [searchQuery, chapters]);
 
-  const nextPage = () => {
-    setPage(page + 1);
-  };
+  // Pagination logic
+  const chaptersPerPage = 15;
+  const totalPages =
+    data?.totalPages ||
+    data?.total_pages ||
+    Math.ceil((data?.total || chapters.length || 0) / chaptersPerPage);
 
-  const prevPage = () => {
-    setPage(page - 1);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
+  // Animation variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   return (
@@ -100,155 +95,229 @@ const Chapters = () => {
         />
         <meta name="twitter:title" content="She Code Africa Chapters" />
         <meta
-          name="twitter:description"
+          property="og:description"
           content="You might want to consider starting a SheCodeAfrica Chapter in your campus or city. Not an expert in tech yet? Not a problem"
         />
       </Helmet>
-      <Header page={"chapters"} />
-      <main className=" text-secondary-main-black">
-        <section className=" bg-hero-bg-gradient pt-16 md:pt-24 lg:pt-28">
-          <div className="w-90 mx-auto min-h-[600px] flex flex-col justify-center 2md:justify-between 2md:flex-row md:items-center event-hero gap-8 py-12 2md:py-0 px-3 sm:px-0">
-            <div className="w-full max-w-[587px] ">
-              <h1 className="hero-heading capitalize font-bold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto 2md:text-left">
-                Chapters in SCA
-              </h1>
+      <Header page="chapters" />
+      <main>
+        {/* Hero Section */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="bg-Secondary-Velvet text-SCA-White mt-24 py-16 md:py-24 text-center px-4"
+        >
+          <h1 className="hero-title leading-[130px] mb-6 hero-text max-w-5xl mx-auto">
+            Chapters in SCA
+          </h1>
+          <p className="max-w-3xl md:max-w-5xl mx-auto description-text">
+            Our chapters are local communities led by passionate women who bring
+            She Code Africa's mission closer to home, creating spaces for
+            learning, mentorship, and growth across cities and campuses in
+            Africa.
+          </p>
+        </motion.section>
 
-              <p className="m-0 mt-2 text-center md:w-[90%] text-base md:text-2xl mx-auto 2md:mx-0 2md:w-full leading-[30px] text-seal-brown 2md:text-justify font-normal">
-                Join 25,000+ African tech women on our platform and build your
-                successful career in the African tech industry. Explore our 43+
-                local chapters in 43 cities and campuses across Africa,
-                including Nigeria, Ghana, Kenya, Rwanda, and more.
-              </p>
-            </div>
-
-            <div className="w-full 2md:w-1/2">
-              <figure className="m-0 p-0 w-full max-w-[550.01px] h-[476.75px] mx-auto ">
-                <img
-                  src={chaptersHero}
-                  alt="ghana event"
-                  className="w-full h-full object-contain"
-                />
-              </figure>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-2 border-gamboge pt-8 pr-8 pb-11 pl-9 mt-40 max-w-[820px] w-[90%] mx-auto rounded-[34.6111px] bg-floral-white flex items-center gap-8">
+        {/* Info Alert */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="border border-SCA-Apricote bg-[#FFF88F33] rounded-[30px] max-w-[62.903rem] mx-4 sm:mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 p-6 sm:p-[45px] my-24"
+        >
           <FontAwesomeIcon
             icon={faTriangleExclamation}
-            className="text-gamboge w-[52px] h-[45px]"
+            className="text-SCA-Apricote mb-4 sm:mb-0"
+            style={{
+              width: "114.45px",
+              height: "102px",
+              minWidth: "114.45px",
+              minHeight: "102px"
+            }}
           />
-
-          <p className="text-seal-brown font-medium">
-            She Code Africa(SCA) Chapters are independent chapters of the SCA
-            community and engagements do not speak directly on behalf of the
-            organisation except where explicitly stated.
+          <p className="text-black description-text text-center sm:text-left">
+            SCA Chapters are informal, community-led chapters of She Code Africa
+            equipping girls and women in cities and campuses across Africa with
+            digital skills. All activities, partnerships, and communications by
+            each chapter are locally managed and do not legally represent or
+            bind She Code Africa in any way.
           </p>
-        </section>
+        </motion.section>
 
-        <section className="mt-36 py-1">
-          <h2 className="text-3xl font-bold mb-0 lg:my-18 lg:text-[40px] text-center capitalize">
-            Start a chapter today
-          </h2>
-
-          <p className="w-full max-w-[832px] mx-auto mt-8 text-center text-lg">
-            Be a part of a community that celebrates diversity and empowers
-            women to thrive in tech. Connect with like-minded individuals, gain
-            access to resources and events, and help shape the future of the
-            industry.
-          </p>
-
-          <div className="flex items-center justify-center gap-8 mt-8">
-            <Link
-              to={paths.leadChapter}
-              className="bg-primary-main-pink px-8 py-[18px] mt-3 rounded-[30px] text-white text-base"
-            >
-              Lead a chapter
-            </Link>
+        {isLoading ? (
+          <div className="mt-[77px]">
+            <components.Loading />
           </div>
-        </section>
-
-        <section className="bg-primary-main-pink py-[110px] md:px-24 mt-[154px]">
-          <h1 className="hero-heading capitalize font-extrabold text-[32px] md:text-[36px] 2md:text-[40px] text-center leading-[150%] mx-auto text-white">
-            Join a chapter
-          </h1>
-
-          <div className=" mt-14 flex flex-col sm:flex-row items-center justify-center gap-8 w-[90%] md:w-full mx-auto">
-            <div className="max-w-[310px] h-[54px] w-full py-3 px-2 bg-[#F7F7F7] text-xs rounded-[30px] overflow-hidden flex items-center pl-5">
-              <img src={searchIcon} alt="search" className="w-7" />
-              <input
-                className=" bg-transparent block focus:outline-none placeholder:text-veryLightGrey placeholder:text-base w-full h-full px-3"
-                type="search"
-                placeholder="Search"
-                value={searchValue}
-                // onChange={(e) => setSearchValue(e.target.value)}
-                onChange={handleChange}
-              />
+        ) : (
+          /* Chapters Grid */
+          <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="mt-10 sm:mt-20 pb-16 sm:pb-[6.25rem] bg-SCA-White px-4"
+          >
+            {/* Search Section - Inside Grid */}
+            <div className="max-w-6xl mx-auto mb-12">
+              <div className="max-w-md">
+                <label
+                  htmlFor="chapter-search"
+                  className="block text-left mb-3 text-base font-normal text-[#211F1F]"
+                >
+                  In search of a chapter near you?
+                </label>
+                <input
+                  id="chapter-search"
+                  type="text"
+                  placeholder="Type your city"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-3 border border-[#DDE6F0] rounded-lg focus:outline-none focus:ring-2 focus:ring-Primary-Magenta focus:border-transparent"
+                />
+              </div>
             </div>
 
-            <button
-              onClick={handleSearch}
-              className="bg-[#FDC0E3] px-8 py-4 inline-block mt-3 rounded-full text-[#434343] focus-visible:ring-1 focus-visible:ring-primary-main-pink"
-            >
-              Search
-            </button>
-          </div>
-
-          {searchNotFound && (
-            <h1 className="text-white capitalize text-center text-xl mt-11">
-              chapter not found.
-            </h1>
-          )}
-
-          {isError ? <components.Error /> : null}
-
-          {isLoading ? (
-            <div className="mt-[77px]">
-              <components.Loading />
-            </div>
-          ) : (
-            <>
-              <section className="grid grid-cols-1 sm:grid-cols-2 2md:grid-cols-4  mt-[77px] gap-8 w-[70%] mx-auto sm:w-[90%] 2md:w-full">
-                {chapters.length > 0 &&
-                  chapters.map((chapter, index) => {
-                    return (
-                      <div className="" key={index}>
-                        <ChaptersCard
-                          chapterImage={chapterImage}
-                          chapter={chapter}
-                        />
-                      </div>
-                    );
-                  })}
-              </section>
-            </>
-          )}
-
-          {!isLoading && (
-            <>
-              {data.data.length > 0 ? (
-                <div className="flex justify-center gap-7 mt-[57px]">
-                  <button
-                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
-                    onClick={prevPage}
-                    disabled={page === 1}
+            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 justify-items-center max-w-6xl mx-auto">
+              {filteredChapters && filteredChapters.length > 0 ? (
+                filteredChapters.map((chapter, idx) => (
+                  <motion.div
+                    key={chapter.id || idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.05 }}
+                    className="flex flex-col items-center text-center"
                   >
-                    <FontAwesomeIcon icon={faAngleLeft} className="text-3xl" />
-                  </button>
-                  <button
-                    className="bg-community-pink-bg border-0 w-[68px] h-[68px] overflow-hidden rounded-full disabled:bg-gray-400 disabled:text-white"
-                    onClick={nextPage}
-                    disabled={data.totalPages === page}
-                  >
-                    <FontAwesomeIcon icon={faAngleRight} className="text-3xl" />
-                  </button>
+                    {/* Chapter Logo */}
+                    <Link
+                      to={chapter.link || chapter.url || "#"}
+                      className="w-32 h-32 sm:w-[170px] sm:h-[170px] bg-white rounded-full flex items-center justify-center transition-shadow cursor-pointer mb-1 overflow-hidden"
+                      target={chapter.link || chapter.url ? "_blank" : "_self"}
+                      rel={
+                        chapter.link || chapter.url
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                    >
+                      <img
+                        src={chapter.image}
+                        alt={chapter.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </Link>
+
+                    {/* Chapter Name */}
+                    <h3 className="chapter-card-title text-gray-900 mb-1">
+                      {chapter.name || "Chapter Name"}
+                    </h3>
+
+                    {/* Chapter Location */}
+                    <p className="chapter-location-text text-gray-600 mb-1">
+                      {chapter.location ||
+                        (chapter.city && chapter.country
+                          ? `${chapter.city}, ${chapter.country}`
+                          : chapter.city || chapter.country || "Location")}
+                    </p>
+
+                    {/* Join Chapter Link */}
+                    <Link
+                      to={chapter.link || chapter.url || "#"}
+                      target={chapter.link || chapter.url ? "_blank" : "_self"}
+                      rel={
+                        chapter.link || chapter.url
+                          ? "noopener noreferrer"
+                          : undefined
+                      }
+                      className="text-Primary-Magenta small-text hover:underline cursor-pointer"
+                    >
+                      Join chapter
+                    </Link>
+                  </motion.div>
+                ))
+              ) : (
+                <div className="col-span-full text-center text-[#6B0032] text-lg py-12">
+                  {searchQuery
+                    ? `No chapters found matching "${searchQuery}"`
+                    : "No chapters found."}
                 </div>
-              ) : null}
-            </>
-          )}
-        </section>
+              )}
 
-        <JoinUs />
+              {isError ? <components.Error /> : null}
+            </div>
+
+            {/* Pagination Dots here*/}
+            {!isLoading && !searchQuery && data?.totalPages >= 1 && (
+              <div className="flex flex-wrap justify-center gap-2 mt-8 sm:mt-12">
+                {[...Array(data.totalPages)].map((_, i) => (
+                  <button
+                    key={i}
+                    className={`w-6 h-6 rounded-full border-0 ${
+                      page === i + 1
+                        ? "bg-[#FFF88F] text-[#B70569] font-bold"
+                        : "bg-[#FFFDEB]"
+                    }`}
+                    onClick={() => setPage(i + 1)}
+                    aria-label={`Go to page ${i + 1}`}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
+              </div>
+            )}
+          </motion.section>
+        )}
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="text-center pb-16 sm:pb-24 bg-SCA-White text-Primary-Magenta px-4"
+        >
+          <h2 className="section-header mb-4 sm:mb-6 hero-text">
+            Lead a chapter today
+          </h2>
+          <p className="max-w-xl sm:max-w-2xl mx-auto description-text mb-6 sm:mb-12">
+            Can't find a chapter near you? Take the first step to lead a chapter
+            in your city or campus, and become a changemaker in your community.
+          </p>
+          <Link
+            to="/chapters/form"
+            className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] button-text"
+          >
+            Lead a chapter
+          </Link>
+        </motion.section>
+
+        {/* Become a member section */}
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="bg-SCA-Citrine text-Primary-Magenta py-16 sm:py-[100px] text-center px-4"
+        >
+          <h2 className="section-header mb-4 sm:mb-6 hero-text">
+            Become a member of our community
+          </h2>
+          <p className="max-w-xl sm:max-w-[687px] mx-auto description-text mb-6 sm:mb-12">
+            Be part of a community bridging the gender gap in tech, a space ran
+            by and for African women. Connect with like-minded individuals, gain
+            access to resources and events, and help shape the future of the
+            industry. 
+          </p>
+          <a
+            href="https://forms.gle/aFe2LrkZxZJtKKve7"
+            target="_blank"
+            rel="noreferrer"
+            className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] text-base"
+          >
+            Register to join now
+          </a>
+        </motion.section>
       </main>
       <Footer />
     </>

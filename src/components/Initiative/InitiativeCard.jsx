@@ -1,26 +1,139 @@
-import React from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import blushBloomPattern from "../../images/initiative/SCA-Blush-Bloom-Pattern.png";
+import velvetMagentaPattern from "../../images/initiative/SCA-Velvet-Magenta-Pattern.png";
+import InitiativeModal from "./InitiativeModal";
 
-const InitiativeCard = ({ name, description, isAvailable, link }) => {
+export default function InitiativeCard({
+  title,
+  description,
+  longDescription,
+  image,
+  status,
+  primaryBtn,
+  secondaryBtn,
+  reverse,
+  bgPattern,
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const bgPatterns = {
+    pink: blushBloomPattern,
+    wine: velvetMagentaPattern,
+  };
+
+  const sectionStyle = bgPattern
+    ? {
+        backgroundImage: `url(${bgPatterns[bgPattern]})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }
+    : {};
+
+  const previewText =
+    description && description.length > 220
+      ? description.slice(0, 220) + "..."
+      : description;
+
   return (
-    <div className=" w-[90%] mx-auto sm:w-[70%] md:w-full">
-      <h3 className="capitalize font-bold text-2xl 2md:text-4xl text-center md:text-left">
-        {name}
-      </h3>
-      <p className="mt-4 text-justify text-base">{description}</p>
-      {isAvailable ?
-        <div className="flex mt-[28px] justify-center md:justify-start">
-          <a
-            href={link}
-            target="_blank"
-            className="bg-primary-main-pink text-white py-4 px-10 rounded-[30px] capitalize transition duration-300 hover:bg-transparent hover:text-primary-main-pink border-2 border-primary-main-pink"
-            rel="noreferrer"
-          >
-            apply now
-          </a>
+    <motion.section
+      style={sectionStyle}
+      className="py-24 overflow-hidden"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.div
+        className={`w-full flex flex-col md:flex-row ${
+          reverse ? "md:flex-row-reverse" : ""
+        } items-stretch max-w-[1440px] mx-auto`}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        {/* Image */}
+        <div
+          className={`overflow-hidden shadow-lg ${
+            reverse
+              ? "md:rounded-l-3xl rounded-t-3xl md:rounded-tl-3xl md:rounded-bl-3xl"
+              : "md:rounded-r-3xl rounded-t-3xl md:rounded-tr-3xl md:rounded-br-3xl"
+          } rounded-t-3xl md:rounded-t-none flex-1`}
+        >
+          <motion.img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover min-h-[400px]"
+            initial={{ scale: 1.1 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+          />
         </div>
-        : null}
-    </div>
-  );
-};
 
-export default InitiativeCard;
+        {/* Content */}
+        <motion.div
+          className={`bg-white shadow-lg p-8 md:px-24 md:py-24 flex flex-col justify-between flex-1 gap-48 ${
+            reverse ? "md:rounded-r-3xl" : "md:rounded-l-3xl"
+          } rounded-b-3xl`}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {status && (
+            <span className="inline-block border border-Primary-Magenta text-Primary-Magenta  px-7 py-2 rounded-lg w-fit status-text">
+              {status}
+            </span>
+          )}
+
+          <div>
+            <h2 className="section-header hero-text w-[87%] text-Secondary-Grape ">
+              {title}
+            </h2>
+
+            <div
+              className="description-text leading-8 mb-8 text-gray-800 prose max-w-none
+                  prose-p:mb-4 prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-4 prose-li:mb-2 prose-strong:font-bold line-clamp-4"
+              dangerouslySetInnerHTML={{
+                __html: previewText
+              }}
+            />
+
+            <div className="flex flex-wrap gap-5">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="bg-Primary-Magenta text-white button-text px-6 py-3 rounded-lg hover:bg-[#5C0335] transition-colors"
+              >
+                Learn more
+              </button>
+
+              {secondaryBtn && (
+                <a
+                  href={secondaryBtn.href}
+                  className="border border-Primary-Magenta duration-300 hover:border-[#FF8FCE] text-Primary-Magenta button-text px-6 py-3 rounded-lg transition-colors"
+                >
+                  {secondaryBtn.label}
+                </a>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <InitiativeModal
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+        title={title}
+        description={description}
+        longDescription={longDescription}
+        image={image}
+        status={status}
+        primaryBtn={primaryBtn}
+        secondaryBtn={secondaryBtn}
+        bgPattern={bgPattern}
+      />
+    </motion.section>
+  );
+}

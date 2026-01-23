@@ -1,3 +1,4 @@
+// import j from "./src/assets/v2/images/bgImg.png"
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   theme: {
@@ -27,6 +28,19 @@ module.exports = {
         veryLightGrey: "#CFCFCF",
         "lavendar-blush": "#FFF7FC",
         gains: "#D8D8D8",
+        "Secondary-Grape": "#7D355D",
+        "Primary-Magenta": "#B70569",
+        "Secondary-Velvet": "#5C0335",
+        "SCA-Cloud": "#F4EFEC",
+        "SCA-Garden": "#BEE366",
+        "SCA-Zesty": "#DDFF8F",
+        "SCA-White": "#FEFEFE",
+        "SCA-Bloom": "#FF8FCE",
+        "SCA-Blush": "#FFB8E0",
+        "SCA-Citrine": "#FFF88F",
+        "SCA-Forest": "#094A32",
+        "SCA-Apricote": "#FF8A3F",
+        "SCA-Lavender": "#C78FFF",
       },
       fontSize: {
         15: "15px",
@@ -34,13 +48,27 @@ module.exports = {
       backgroundImage: {
         "hero-bg-gradient":
           "radial-gradient(126.96% 275.84% at 90.24% 16.36%, #B70569 0%, rgba(183, 5, 105, 0.12) 0.01%, rgba(183, 5, 105, 0.08) 19.27%, rgba(183, 5, 105, 0.165605) 30.73%, rgba(183, 5, 105, 0) 81.77%, rgba(183, 5, 105, 0) 100%) ",
+        bgI: "url('./images/v2/bgImg2.png')",
+        magentaPattern: "url('./images/v2/magenta-pattern.png')",
+        olivePattern: "url('./images/v2/olive-pattern.jpg')",
+        blushPattern: "url('./images/v2/pink-blush-pattern.png')",
+        bgPinkPattern: "url('./images/v2/bg-blush.png')",
       },
 
       screens: {
         "2md": "992px",
         "2xl": "1950px",
       },
+      fontFamily: {
+        BebasNeue: ["Bebas Neue", "sans-serif"],
+        figtree: ["Figtree", "sans-serif"],
+      },
+      gap: {
+        13: "3.125rem",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

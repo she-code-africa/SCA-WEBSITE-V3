@@ -1,28 +1,27 @@
-import React from 'react'
-import avatar from "../../images/avatar-300x300.jpeg"
+import React from "react";
+import avatar from "../../images/avatar-300x300.jpeg";
 
-
-const TeamCard = ({ image, name, teamRole, onClick, onKeyDown }) => {
+const TeamCard = ({ image, name, teamRole, bgColor }) => {
   return (
-    <article
-      className="border-2 border-[#B70569] rounded-2xl focus:ring focus:ring-[#FDC0E3] focus:outline-none"
-      tabIndex={0}
-      onClick={onClick}
-      onKeyDown={onKeyDown}>
-      {name ?
-        <>
-          <img
-            src={image || avatar}
-            alt={name}
-            className="rounded-t-2xl h-[300px] 2xl:h-[450px] w-full object-cover" />
-          <div className="px-5 py-10">
-            <h2 className="text-xl font-bold text-[#282828]">{name}</h2>
-            <p className="text-base text-[#3E3E59]">{teamRole}</p>
-          </div>
-        </>
-        : null}
-    </article>
-  )
-}
+    <div className="flex flex-col items-center w-full sm:w-[180px] md:w-[200px] lg:w-[223px]">
+      <div
+        className="rounded-3xl overflow-hidden w-full aspect-square"
+        style={{
+          background: bgColor || "#FFF7FB",
+        }}
+      >
+        <img
+          src={image || avatar}
+          alt={name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <h2 className="mt-4 team-name text-Primary-Magenta text-center">
+        {name}
+      </h2>
+      <p className="team-role text-Secondary-Grape text-center">{teamRole}</p>
+    </div>
+  );
+};
 
-export default TeamCard
+export default TeamCard;
