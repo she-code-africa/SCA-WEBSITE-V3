@@ -27,7 +27,7 @@ const MediaModal = ({ onClose, modalDetail }) => {
                 </article>
 
                 <section className={`pb-9 w-full overflow-scroll`}>
-                  <ImageGrid mediaImage={detail.images.slice(0, 5)} />
+                  <ImageGrid mediaImage={detail.images.slice(0, 7)} />
 
                   {modalDetail.length > 1 ? (
                     <section className="flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
@@ -55,8 +55,8 @@ const MediaModal = ({ onClose, modalDetail }) => {
                     </section>
                   ) : (
                     <>
-                      <ImageGrid mediaImage={detail.images.slice(0, 5)} />
-                      <ImageGrid mediaImage={detail.images.slice(0, 5)} />
+                      <ImageGrid mediaImage={detail.images.slice(7, 14)} />
+                      <ImageGrid mediaImage={detail.images.slice(14)} />
                     </>
                   )}
                 </section>

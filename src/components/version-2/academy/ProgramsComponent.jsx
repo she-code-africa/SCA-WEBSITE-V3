@@ -1,9 +1,11 @@
 import React from "react";
-import placeholderImage from "../../../assets/v2/images/donatePng.jpg";
+import placeholderImage from "../../../images/v2/donatePng.jpg";
 import { Link } from "react-router-dom";
+import schoolOfProduct from "../../../images/v2/academy/sop-hero.jpg";
+import soe from "../../../images/v2/academy/soehero.jpg";
+import soa from "../../../images/v2/academy/soa-hero.jpg";
 
 const ProgramsComponent = ({ schools }) => {
-  console.log({ schools });
   return (
     <section className="w-full">
       {schools.map((school, idx) => (
@@ -16,20 +18,29 @@ const ProgramsComponent = ({ schools }) => {
           key={idx}
         >
           <figure
-            className={`m-0 p-0 h-[456px] md:min-h-[456px] lg:h-[456px] w-full overflow-hidden ${
+            className={`m-0 p-0 h-[456px] md:min-h-[456px] lg:h-auto w-full overflow-hidden ${
               idx % 2 === 0
                 ? "rounded-tl-[30px] rounded-tr-[30px] lg:rounded-br-[30px] lg:rounded-tl-none"
                 : " rounded-tl-[30px] rounded-tr-[30px] lg:rounded-tr-none lg:rounded-bl-[30px]  lg:rounded-br-none"
             }`}
           >
             <img
-              src={placeholderImage}
+              src={
+                school.name.toLowerCase().includes("product")
+                  ? schoolOfProduct
+                  : school.name.toLowerCase().includes("engineering")
+                  ? soe
+                  : school.name.toLowerCase().includes("applied")
+                  ? soa
+                  : placeholderImage
+              }
               alt="product-img"
               className="w-full h-full object-cover"
             />
           </figure>
+
           <article
-            className={`w-full lg:h-[456px] bg-white py-[50px] px-[46px] lg:px-[92px] lg:py-[100px] ${
+            className={`w-full lg:min-h-[456px] bg-white py-[50px] px-[46px] lg:px-[92px] lg:py-[100px] ${
               idx % 2 === 0
                 ? "rounded-br-[30px] lg:rounded-tl-[30px] rounded-bl-[30px]  lg:rounded-br-none"
                 : "rounded-bl-[30px] rounded-br-[30px] lg:rounded-tr-[30px] lg:rounded-bl-none"
@@ -39,7 +50,9 @@ const ProgramsComponent = ({ schools }) => {
               {school.name}
             </h3>
 
-            <p className="text-xl leading-9 mt-[10px]">{school?.description}</p>
+            <p className="text-2xl font-medium leading-9 mt-[10px]">
+              {school?.description}
+            </p>
 
             <div className="flex mt-[30px] w-full max-w-[145px]">
               <Link

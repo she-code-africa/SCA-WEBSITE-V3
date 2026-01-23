@@ -1,31 +1,50 @@
-import React from "react";
-import avatar from "../../../assets/v2/images/about/bi-avatar.png";
-import { ourReachData } from "../../../utils/v2";
+import { aboutUsReachData } from "../../../utils/v2";
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
 
 const AboutUsReachSection = () => {
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  // Helper to extract number and suffix (e.g. "5k" → { num: 5, suffix: "k" })
+  const parseNumberAndSuffix = (value) => {
+    // Remove commas and trim spaces
+    const cleanValue = value.replace(/,/g, "").trim();
+    const match = cleanValue.match(/^([\d.]+)([a-zA-Z]*)$/);
+    return {
+      num: match ? parseFloat(match[1]) : 0,
+      suffix: match ? match[2] : "",
+    };
+  };
   return (
-    <section className="w-full bg-[rgba(253,192,227,0.24)] py-10">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariant}
+      className="w-full bg-[rgba(253,192,227,0.24)] py-10"
+    >
       <div className="w-[90%] max-w-[1304px] mx-auto">
         <div className="w-full flex flex-col gap-10 sm:flex-row sm:justify-center">
-          {ourReachData.map(({ numbers, description }, i) => (
+          {aboutUsReachData.map(({ numbers, description }, i) => (
             <div className="w-full sm:max-w-[296px]" key={i}>
-              <figure className="max-w-[76px] h-[76px] w-full overflow-hidden">
-                <img src={avatar} alt="avatar" className="w-full h-full" />
-              </figure>
-
               <article className={`flex flex-col gap-4 w-full my-6`} key={i}>
-                <h3 className="hero-text text-[#7D355D] text-[64px] sm:text-7xl lg:leading-[130px] md:text-8xl lg:text-9xl ">
+                <h3 className="section-header hero-text text-[#7D355D] lg:leading-[76px] ">
                   {numbers}+
                 </h3>
-                <p className="text-lg md:text-2xl leading-normal md:leading-normal">
-                  {description}
-                </p>
+                <p className="description-secondary">{description}</p>
               </article>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import blushBloomPattern from "../../images/initiative/SCA-Blush-Bloom-Pattern.png";
 import velvetMagentaPattern from "../../images/initiative/SCA-Velvet-Magenta-Pattern.png";
 import InitiativeModal from "./InitiativeModal";
@@ -29,18 +30,28 @@ export default function InitiativeCard({
       }
     : {};
 
-  //truncate description for preview
   const previewText =
     description && description.length > 220
       ? description.slice(0, 220) + "..."
       : description;
 
   return (
-    <section style={sectionStyle} className="py-24 overflow-hidden">
-      <div
+    <motion.section
+      style={sectionStyle}
+      className="py-24 overflow-hidden"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.div
         className={`w-full flex flex-col md:flex-row ${
           reverse ? "md:flex-row-reverse" : ""
         } items-stretch max-w-[1440px] mx-auto`}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
       >
         {/* Image */}
         <div
@@ -50,40 +61,50 @@ export default function InitiativeCard({
               : "md:rounded-r-3xl rounded-t-3xl md:rounded-tr-3xl md:rounded-br-3xl"
           } rounded-t-3xl md:rounded-t-none flex-1`}
         >
-          <img
+          <motion.img
             src={image}
             alt={title}
             className="w-full h-full object-cover min-h-[400px]"
+            initial={{ scale: 1.1 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           />
         </div>
 
         {/* Content */}
-        <div
-          className={`bg-white shadow-lg p-8 md:px-24 md:py-24 flex flex-col justify-between flex-1 gap-12 ${
+        <motion.div
+          className={`bg-white shadow-lg p-8 md:px-24 md:py-24 flex flex-col justify-between flex-1 gap-48 ${
             reverse ? "md:rounded-r-3xl" : "md:rounded-l-3xl"
           } rounded-b-3xl`}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
           {status && (
-            <span className="inline-block border border-Primary-Magenta text-Primary-Magenta text-sm md:text-base px-7 py-2 rounded-lg w-fit">
+            <span className="inline-block border border-Primary-Magenta text-Primary-Magenta  px-7 py-2 rounded-lg w-fit status-text">
               {status}
             </span>
           )}
 
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl leading-tight mb-4 text-Secondary-Grape font-bold hero-text">
+            <h2 className="section-header hero-text w-[87%] text-Secondary-Grape ">
               {title}
             </h2>
 
-            {/* show truncated description */}
-            <p className="text-base sm:text-lg md:text-lg leading-relaxed mb-8 text-gray-800 font-figtree">
-              {previewText}
-            </p>
+            <div
+              className="description-text leading-8 mb-8 text-gray-800 prose max-w-none
+                  prose-p:mb-4 prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-4 prose-li:mb-2 prose-strong:font-bold line-clamp-4"
+              dangerouslySetInnerHTML={{
+                __html: previewText
+              }}
+            />
 
             <div className="flex flex-wrap gap-5">
-              {/* Learn More opens modal */}
               <button
                 onClick={() => setIsOpen(true)}
-                className="bg-Primary-Magenta text-white text-sm md:text-base font-medium px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors"
+                className="bg-Primary-Magenta text-white button-text px-6 py-3 rounded-lg hover:bg-[#5C0335] transition-colors"
               >
                 Learn more
               </button>
@@ -91,17 +112,16 @@ export default function InitiativeCard({
               {secondaryBtn && (
                 <a
                   href={secondaryBtn.href}
-                  className="border border-Primary-Magenta text-Primary-Magenta text-sm md:text-base font-medium px-6 py-3 rounded-lg hover:bg-pink-50 transition-colors"
+                  className="border border-Primary-Magenta duration-300 hover:border-[#FF8FCE] text-Primary-Magenta button-text px-6 py-3 rounded-lg transition-colors"
                 >
                   {secondaryBtn.label}
                 </a>
               )}
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Full-screen Modal */}
       <InitiativeModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
@@ -114,6 +134,6 @@ export default function InitiativeCard({
         secondaryBtn={secondaryBtn}
         bgPattern={bgPattern}
       />
-    </section>
+    </motion.section>
   );
 }

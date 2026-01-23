@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { toast } from "react-toastify";
 import { useMutation } from "@tanstack/react-query";
 import { mutateEnquires } from "../../../services";
-import contactImage from "../../../assets/v2/images/contact-us/contact-form-image.jpg";
+import contactImage from "../../../images/v2/contact-us/contact-form-image.jpg";
 
 const ContactUsForm = () => {
   const schema = yup
@@ -24,6 +24,7 @@ const ContactUsForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -33,6 +34,8 @@ const ContactUsForm = () => {
       toast.success("Message sent Successfully!", {
         position: toast.POSITION.TOP_RIGHT,
       });
+
+      reset();
     },
     onError: (error, variables) => {
       toast.error("An error occurred.", {
@@ -55,10 +58,10 @@ const ContactUsForm = () => {
         <div className="w-[90%] max-w-[650px] mx-auto lg:mx-0">
           <article className="w-full">
             <h3 className="text-[32px] md:text-3xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
-              Send us a message?
+              Leave us a message
             </h3>
 
-            <p className="text-lg md:text-2xl mt-3">
+            <p className="text-lg md:text-2xl mt-3 hidden">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse varius enim in eros elementum tristique.
             </p>
@@ -121,9 +124,9 @@ const ContactUsForm = () => {
             <Captcha />
 
             <div className="flex w-full ">
-              <div className="mt-5 md:mt-8 w-full rounded-md h-[56px] overflow-hidden border-2 border-primary-main-pink md:max-w-[200px]">
-                <button className="w-full h-full text-white capitalize hover:bg-transparent bg-primary-main-pink hover:text-primary-main-pink transition-all duration-300">
-                  send message
+              <div className="mt-5 md:mt-8 w-full rounded-md h-[56px] overflow-hidden md:max-w-[120px]">
+                <button className="w-full h-full text-white capitalize hover:bg-[#5C0335] transition-colors duration-300 bg-primary-main-pink ">
+                  submit
                 </button>
               </div>
             </div>

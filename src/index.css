@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Figtree", sans-serif;
 }
 
 @font-face {
@@ -15,7 +15,13 @@ body {
   src: url("./assets/v2/fonts/Thunder-SemiBoldLC.ttf");
 }
 
-.hero-text {
+.motion-safe *[data-framer-motion] {
+  will-change: transform, opacity;
+  overflow-anchor: none;
+}
+
+.hero-text,
+h1 {
   font-family: Thunder, sans-serif;
 }
 
@@ -34,11 +40,11 @@ main,
 }
 
 .aboutBg {
-  background-image: url("./assets/v2/images/apricot-pattern.png");
+  background-image: url("./images/v2/apricot-pattern.png");
 }
 
 .bgImg {
-  background-image: url("./assets/v2/images/bgImg.png");
+  background-image: url("./images/v2/bgImg.png");
 }
 
 .custom-container-clip {
@@ -46,11 +52,11 @@ main,
 }
 
 .custom-child-clip {
-  clip-path: polygon(0 57%, 100% 50%, 100% 100%, 0 100%);
+  clip-path: polygon(0 49%, 100% 40%, 100% 100%, 0 100%);
 }
 
 .ourReachBg {
-  background-image: url("./assets/v2/images/white-blush.jpg");
+  background-image: url("./images/v2/white-blush.jpg");
 }
 
 .what-we-do-clip {
@@ -66,14 +72,18 @@ main,
 }
 
 .testmonialBg {
-  background-image: url("./assets/v2/images/Vector.png");
+  background-image: url("./images/v2/Vector.png");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% auto;
 }
 
 .product-program-bg {
-  background-image: url("./assets/v2/images/programsBg.jpg");
+  background-image: url("./images/v2/programsBg.jpg");
+}
+
+.community-bg {
+  background-image: url("./images/v2/community.jpg");
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
@@ -109,7 +119,22 @@ main,
   }
 }
 
-@media screen and (max-width: 1023px) {
+.reach-out:hover div div div .customh3,
+.reach-out:hover div div div p {
+  color: #094a32;
+}
+
+.reach-out:hover div div h2 {
+  color: black;
+}
+
+.donate-impact {
+  background: url("./images/v2/donate/white-garden.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1279px) {
   .mobile-nav-menu {
     position: fixed;
     background-color: white;
@@ -128,5 +153,221 @@ main,
   .show {
     transform: translateX(0);
     box-shadow: 2px 2px 60px 999px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/*============================================
+  RESPONSIVE TYPOGRAPHY SYSTEM
+  Based on Figma Desktop Specifications
+  ============================================ */
+
+/* HERO TITLES - 128px desktop */
+.hero-title {
+  font-size: clamp(48px, 10vw, 128px);
+  font-weight: 600; /* semi-bold */
+  line-height: 1.2;
+}
+
+/* MEDIUM HEADER - 48px desktop, extra bold */
+.medium-header {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800; /* extra bold */
+  line-height: 1.3;
+}
+
+/* LARGE HEADER - 96px desktop, extra bold */
+.large-header {
+  font-size: clamp(40px, 8vw, 96px);
+  font-weight: 800; /* extra bold */
+  /* line-height: 1.2; */
+}
+
+/* DESCRIPTION LIGHT - 24px desktop, regular */
+.description-light {
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-weight: 400; /* regular */
+  line-height: 1.5;
+}
+
+/* SECTION HEADERS - 64px desktop */
+.section-header {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 600; /* semi-bold */
+  line-height: 1.3;
+}
+
+/* SECTION HEADERS BOLD VARIANT - 64px desktop, bold */
+.section-header-bold {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 700; /* bold */
+  line-height: 1.3;
+}
+
+/* SUBSECTION HEADERS - 32px desktop */
+.subsection-header {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700; /* bold */
+  line-height: 1.3;
+}
+
+/* MAIN DESCRIPTION TEXT - 24px desktop */
+.description-text {
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-weight: 500; /* medium */
+  line-height: 1.5;
+}
+
+.intiative-description-text {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 400; /* regular */
+  line-height: 1.75;
+}
+
+/* SECONDARY DESCRIPTION - 18px desktop */
+.description-secondary {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 400; /* regular */
+  line-height: 1.5;
+}
+
+/* SECONDARY DESCRIPTION - 18px desktop */
+.challenge-text {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 500; /* medium */
+  line-height: 1.5;
+}
+
+/* CARD TITLES - 24px desktop */
+.card-title {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700; /* bold */
+  line-height: 1.4;
+}
+
+/* CARD TEXT - 20px desktop */
+.card-text {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 500; /* medium */
+  line-height: 1.5;
+}
+
+/* EVENT CARD TITLES - 24px desktop */
+.event-card-title {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 700; /* bold */
+  line-height: 1.4;
+}
+
+.chapter-card-title {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 700; /* bold */
+  line-height: 1.5;
+}
+
+/* CARD TEXT - 20px desktop */
+.chapter-location-text {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500; /* medium */
+  line-height: 1.4;
+}
+
+/* TEAM MEMBER NAME - 20px desktop */
+.team-name {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 700; /* bold */
+  line-height: 1.4;
+}
+
+/* TEAM MEMBER ROLE - 18px desktop */
+.team-role {
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 400; /* regular */
+  line-height: 1.4;
+}
+
+/* BUTTON/LINK TEXT - 16px desktop */
+.button-text,
+.status-text {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 400; /* regular */
+  line-height: 1.4;
+}
+
+.card-title-secondary {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 700; /* bold */
+  line-height: 1.4;
+}
+
+/* SMALL TEXT (tags, small links) - 14px desktop */
+.small-text {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 400; /* regular */
+  line-height: 1.4;
+}
+
+/* SMALL TEXT BOLD VARIANT - 14px desktop */
+.small-text-bold {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 700; /* bold */
+  line-height: 1.4;
+}
+
+/* SMALL TEXT MEDIUM VARIANT - 14px desktop */
+.small-text-medium {
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500; /* medium */
+  line-height: 1.4;
+}
+
+/* IMPACT NUMBERS - 128px desktop (large numbers) */
+.impact-number-large {
+  font-size: clamp(64px, 10vw, 128px);
+  font-weight: 600; /* semi-bold */
+  line-height: 1.1;
+}
+
+/* IMPACT NUMBERS - 64px desktop (medium numbers) */
+.impact-number-medium {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 600; /* semi-bold */
+  line-height: 1.2;
+}
+
+/* ============================================
+  OPTIONAL: Fine-tune breakpoints if needed
+  ============================================ */
+
+/* Tablet adjustments (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: 80px;
+  }
+
+  .section-header,
+  .section-header-bold {
+    font-size: 48px;
+  }
+}
+
+/* Mobile adjustments (below 768px) */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .section-header,
+  .section-header-bold {
+    font-size: 32px;
+  }
+
+  .impact-number-large {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .cover-custom {
+    background-size: cover;
   }
 }

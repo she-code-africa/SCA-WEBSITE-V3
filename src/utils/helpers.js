@@ -1,4 +1,4 @@
-import { compareAsc, isAfter, isThisYear } from "date-fns";
+import { compareAsc, isAfter, isThisYear, getYear } from "date-fns";
 
 export const sortUpcomingEventByDate = (events) => {
   const date = new Date();
@@ -16,28 +16,30 @@ export const sortUpcomingEventByDate = (events) => {
 };
 
 export const sortPastEventsByDate = (events) => {
-  const date = new Date();
-  const lastYear = date.getFullYear() - 1;
-  // filter to get only past events
-  const _events = events.filter((event) =>
-    isAfter(date, new Date(event.eventDate))
-  );
+  const now = new Date();
 
-  const prevAndCurrentYear = _events.filter((event) => {
-    // console.log(Number(getDateBreakdown(event.eventDate).year) >= lastYear);
-    return (
-      isThisYear(new Date(event.eventDate)) ||
-      Number(getDateBreakdown(event.eventDate).year) >= lastYear
-    );
+  // 1️⃣ Filter only past events
+  const pastEvents = events.filter((event) => {
+    const eventDate = new Date(event.eventDate);
+    return isAfter(now, eventDate); // today is after eventDate
   });
 
-  // sort past events by date
-
-  prevAndCurrentYear.sort((a, b) =>
+  // 2️⃣ Sort past events by date (oldest → newest)
+  pastEvents.sort((a, b) =>
     compareAsc(new Date(a.eventDate), new Date(b.eventDate))
   );
 
-  return prevAndCurrentYear;
+  return pastEvents;
+};
+
+export const getEventYears = (events) => {
+  const years = events.map((event) => {
+    const date = new Date(event.eventDate);
+    return date.getFullYear();
+  });
+
+  // Remove duplicates & sort descending
+  return [...new Set(years)].sort((a, b) => b - a);
 };
 
 export const getDateBreakdown = (_date) => {

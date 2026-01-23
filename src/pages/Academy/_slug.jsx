@@ -5,15 +5,23 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { apiConstants, paths } from "../../utils/index";
-import { youtubeVideos } from "../../utils/index";
-import bglineImage from "../../images/academy/bg-line.svg";
+
 import * as components from "../../components";
 import { useQuery } from "@tanstack/react-query";
 import { getAllSchools } from "../../services";
-import heroImg from "../../assets/v2/images/whatWeDoCardImage.jpg";
+
 import SchoolProgram from "../../components/version-2/academy/SchoolProgram";
 import SuccessStories from "../../components/version-2/academy/SuccessStories";
+import sop from "../../images/v2/academy/sop-hero.jpg";
+import soe from "../../images/v2/academy/soehero.jpg";
+import soa from "../../images/v2/academy/soa-hero.jpg";
 import ResourcesCard from "../../components/version-2/shared-components/ResourcesCard";
+import {
+  engTestimonialCards,
+  productTestimonialCards,
+  skillTestimonialCards,
+} from "../../utils/v2";
+import { motion } from "framer-motion";
 
 const AcademyPage = () => {
   const { slug } = useParams();
@@ -44,7 +52,15 @@ const AcademyPage = () => {
 
   const BgColors = ["bg-[#DDFF8F]", "bg-[#FFF88F]", "bg-[#FFB8E0]"];
 
-  console.log("school", school);
+  const productTextContent =
+    "Dive into live programs at the School of Product. From product management to design, Classes are practical and project-based, guided by mentors who have built products for real users across Africa and beyond.";
+
+  const engTextContent =
+    "See what’s happening right now at the School of Engineering. Our programs are active, hands-on, and open to women ready to start or advance their careers in tech.";
+
+  const skillTextContent =
+    "Explore our live programs at our School of Applied Skills. From Technical community management, Open source contribution to Technical writing, tailored for women ready to succeed in non-tech career paths.";
+
   return (
     <>
       <Helmet>
@@ -69,7 +85,12 @@ const AcademyPage = () => {
         />
       </Helmet>
       <Header />
-      <section className="min-h-screen relative bg-white flex items-center">
+      <motion.section
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="min-h-screen relative bg-white flex items-center"
+      >
         <div className="block absolute right-0 w-full max-w-[300px] sm:max-w-[350px] lg:max-w-[418px] h-full bg-[#F4EFEC]"></div>
         <div className="w-full py-24 lg:pt-36 relative">
           {isLoading ? (
@@ -77,9 +98,21 @@ const AcademyPage = () => {
           ) : (
             <>
               {school ? (
-                <div className="flex gap-8 items-center justify-between w-[90%] lg:w-11/12 mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="flex gap-8 items-center justify-between w-[90%] lg:w-11/12 mx-auto"
+                >
                   <article className="max-w-[518px] w-full">
-                    <h1 className="text-[70px] hero-text sm:hidden">
+                    <motion.h1
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6 }}
+                      viewport={{ once: true }}
+                      className="text-[70px] hero-text sm:hidden"
+                    >
                       {/* {school.name} */}
                       School of <br />
                       <span className="text-primary-main-pink text-[80px]">
@@ -91,18 +124,24 @@ const AcademyPage = () => {
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() === "school of product" &&
-                          "Products"}
+                          "Product"}
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() ===
-                            "school of applied sciences" &&
-                          "Applied Sciences"}
+                            "school of applied skills" &&
+                          "Applied Skills"}
                       </span>
-                    </h1>
-                    <h1 className="text-8xl hero-text hidden sm:block">
+                    </motion.h1>
+                    <motion.h1
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6 }}
+                      className="large-header hero-text hidden sm:block"
+                    >
                       {/* {school.name} */}
                       School of{" "}
-                      <span className="text-primary-main-pink text-[128px]">
+                      <span className="text-primary-main-pink hero-title">
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() ===
@@ -111,32 +150,83 @@ const AcademyPage = () => {
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() === "school of product" &&
-                          "Products"}
+                          "Product"}
                         {school &&
                           school?.name &&
                           school?.name.toLowerCase() ===
-                            "school of applied sciences" &&
-                          "Applied Sciences"}
+                            "school of applied skills" &&
+                          "Applied Skills"}
                       </span>
-                    </h1>
+                    </motion.h1>
 
-                    <p className="  mx-auto font-normal text-[#1A1A1A] leading-normal text-xl sm:text-2xl">
-                      {/* {school?.description} */}
-                      Empowering women to innovate the digital world, one
-                      engineer at a time.
-                    </p>
+                    <motion.p
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      className="  mx-auto text-[#1A1A1A] description-light"
+                    >
+                      {school &&
+                        school?.name &&
+                        school?.name.toLowerCase() ===
+                          "school of engineering" &&
+                        "Building Africa’s tech future, one engineer at a time."}
+                      {school &&
+                        school?.name &&
+                        school?.name.toLowerCase() === "school of product" &&
+                        "Building Africa’s next generation of product leaders"}
+                      {school &&
+                        school?.name &&
+                        school?.name.toLowerCase() ===
+                          "school of applied skills" &&
+                        "Building tech careers, one skill at a time."}
+                    </motion.p>
+
+                    <div className="my-5 w-full max-w-[171px]">
+                      <a
+                        href="#programs"
+                        className="w-full flex h-[55px] rounded-lg bg-primary-main-pink
+                        text-white button-text transition-colors duration-300 justify-center items-center py-[18px] px-8 hover:bg-[#5C0335]"
+                      >
+                        View Courses
+                      </a>
+                    </div>
                   </article>
 
-                  <figure className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden">
-                    <img
-                      src={heroImg}
-                      alt="hero-img"
-                      className="w-full h-full object-cover"
-                    />
-                  </figure>
-                </div>
+                  <motion.figure
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="hidden md:block m-0 p-0 max-w-[518px] w-full h-[518px] border-[6px] border-primary-main-pink rounded-2xl overflow-hidden"
+                  >
+                    {isLoading ? (
+                      <components.Loading />
+                    ) : (
+                      <img
+                        src={
+                          school &&
+                          school?.name &&
+                          school?.name.toLowerCase() === "school of engineering"
+                            ? soe
+                            : school &&
+                              school?.name &&
+                              school?.name.toLowerCase() === "school of product"
+                            ? sop
+                            : school &&
+                              school?.name &&
+                              school?.name.toLowerCase() ===
+                                "school of applied skills" &&
+                              soa
+                        }
+                        alt="hero-img"
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </motion.figure>
+                </motion.div>
               ) : (
-                <h1 className="text-4xl  mx-auto font-bold text-[#1A1A1A] lg:text-[3.2rem] lg:leading-[72px]">
+                <h1 className="description-light text-[#1A1A1A] lg:leading-[72px]">
                   Empowering women to innovate the digital world, one engineer
                   at a time.
                 </h1>
@@ -144,13 +234,57 @@ const AcademyPage = () => {
             </>
           )}
         </div>
-      </section>
+      </motion.section>
 
-      <SchoolProgram bgColors={BgColors} slug={slug} />
+      <motion.div
+        id="programs"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <SchoolProgram
+          bgColors={BgColors}
+          slug={slug}
+          schoolPrograms={school?.schoolPrograms || []}
+          textContent={(() => {
+            const name = school?.name?.toLowerCase();
+            const map = {
+              "school of engineering": engTextContent,
+              "school of product": productTextContent,
+              "school of applied skills": skillTextContent,
+            };
+            return map[name] || "";
+          })()}
+        />
+      </motion.div>
 
-      <SuccessStories />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <SuccessStories
+          testimonialCards={(() => {
+            const name = school?.name?.toLowerCase();
+            const map = {
+              "school of engineering": engTestimonialCards,
+              "school of product": productTestimonialCards,
+              "school of applied skills": skillTestimonialCards,
+            };
+            return map[name] || [];
+          })()}
+        />
+      </motion.div>
 
-      <section className="w-full py-24">
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full py-24"
+      >
         <div className="flex flex-col lg:flex-row items-center justify-center w-[90%] lg:max-w-[1000px] xl:max-w-[1080px] mx-auto gap-5 sm:gap-10 lg:gap-20">
           <h3 className="text-[rgba(92,3,53,1)] hero-text text-6xl md:text-7xl lg:text-[84px] lg:max-w-[247px]">
             {" "}
@@ -159,7 +293,7 @@ const AcademyPage = () => {
 
           <div className="w-full flex-col sm:flex-row flex items-center justify-center lg:justify-center gap-10 lg:gap-20 mt-10 lg:mt-0">
             {[
-              "School of Applied Sciences",
+              "School of Applied Skills",
               "School of Engineering",
               "School of Product",
             ]
@@ -170,7 +304,7 @@ const AcademyPage = () => {
                 <div className="mb-10 sm:mb-0" key={idx}>
                   <Link
                     to={`/academy/${school.toLowerCase().replaceAll(" ", "-")}`}
-                    className="py-[18px] w-full px-8 bg-primary-main-pink border border-primary-main-pink transition-all rounded-lg hover:bg-transparent text-white hover:text-primary-main-pink"
+                    className="py-[18px] w-full px-8 bg-primary-main-pink border duration-300 transition-colors rounded-lg text-white hover:bg-[#5C0335] description-text"
                   >
                     {school}
                   </Link>
@@ -178,40 +312,49 @@ const AcademyPage = () => {
               ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-magentaPattern w-full">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="bg-magentaPattern w-full"
+      >
         <div className="w-[90%] mx-auto xl:max-w-[1198px] py-[100px] xl:py-[130px]">
-          <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
+          <h3 className="section-header text-center text-white 2md:leading-[82px] hero-text max-w-[474px] w-full mx-auto">
             Hire our Graduates
           </h3>
 
-          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-lg text-center font-normal">
-            Lorem ipsum dolor sit amet consectetur. Et nec sit elementum amet
-            pharetra varius proin eleifend leo. Sagittis aliquet urna
-            suspendisse in ut tincidunt.
+          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-center description-secondary">
+            Bring brilliance and diversity into your team. Our graduates are
+            skilled, job-ready women trained in real-world tech roles, from
+            software development to product and cloud engineering. By hiring
+            through She Code Africa, you’re not just filling a role , you’re
+            investing in a future where African women lead and innovate in tech.
           </p>
 
           <div className="mt-10 text-center">
             <Link
               to={paths.hire}
-              className="rounded-lg text-base text-white px-8 py-[18px] bg-primary-main-pink"
+              className="rounded-lg button-text text-white px-8 py-[18px] bg-primary-main-pink transition-colors duration-300 hover:bg-[#5C0335]"
             >
               Hire Our Talent
             </Link>
           </div>
         </div>
-      </section>
-      <section className="bg-primary-main-pink w-full py-20">
+      </motion.section>
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="bg-primary-main-pink w-full py-20"
+      >
         <div className="w-[90%] mx-auto xl:max-w-[1256px]">
-          <h3 className="text-5xl text-center text-white lg:text-[64px] font-bold 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
+          <h3 className="section-header text-center text-white 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
             Resources
           </h3>
-
-          <p className="w-full max-w-[780px] my-[10px] mx-auto text-white text-lg text-center font-normal">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique.
-          </p>
 
           <div className="mt-[50px] w-full grid md:grid-cols-2 lg:grid-cols-3 gap-3 place-items-center">
             {[...Array(3)].map((_, idx) => (
@@ -222,14 +365,14 @@ const AcademyPage = () => {
           <div className="my-10 max-w-[122px] w-full mx-auto">
             <Link
               to="#"
-              className="w-full px-8 py-[18px] rounded-lg bg-white text-primary-main-pink capitalize"
+              className="w-full px-8 py-[18px] rounded-lg bg-white transition-colors duration-300 hover:bg-[#5C0335] text-primary-main-pink button-text capitalize hover:text-white"
             >
               {" "}
               view all
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/*  */}
 
@@ -308,56 +451,6 @@ const AcademyPage = () => {
             )}
           </>
         )}
-
-        <section className="my-14 lg:my-28 mx-auto">
-          <h2 className="text-3xl font-semibold pb-14 lg:text-4xl text-center">
-            Success Stories
-          </h2>
-          <div className="flex-wrap flex items-center justify-center gap-5">
-            {youtubeVideos.map((content) => {
-              return (
-                <div key={content.id}>
-                  <iframe
-                    className="w-[98%] lg:w-full rounded-xl m-auto"
-                    width="380"
-                    height="315"
-                    src={content.video}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  ></iframe>
-
-                  <p className="w-96 lg:w-full text-center lg:text-left py-8 text-lg font-medium">
-                    {content.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="bg-[#F9F9F9] my-14 lg:my-28 py-20">
-          <div className="relative text-center max-w-[80rem] 2xl:max-w-[90rem] mx-auto flex flex-col justify-center items-center py-12 lg:py-20 bg-white rounded-lg text-primary-dark-brown">
-            <div className="hidden lg:inline-block absolute top-0 left-0">
-              {" "}
-              <img className="w-52" src={bglineImage} alt="bg-line" />
-            </div>
-            <h2 className="font-normal text-4xl text-primary-dark-brown">
-              Hire Our Graduates
-            </h2>
-            <p className="text-sm lg:text-base py-6 lg:w-[55ch]">
-              Access a pool of talented engineers from our renowned engineering
-              school and take your business to the next level by building a
-              skilled and diverse team
-            </p>
-            <Link
-              to={paths.hire}
-              className="rounded-lg text-white text-sm px-8 py-4 bg-primary-main-pink"
-            >
-              Hire Our Talent
-            </Link>
-          </div>
-        </section>
       </div>
 
       <Footer />

@@ -14,6 +14,15 @@ import {
 
 import Footer from "../../components/Footer";
 
+console.log({
+  communityFaq,
+  partnershipFaq,
+  membershipFaq,
+  programsFaq,
+  jobsFaq
+});
+
+
 const FAQ = () => {
   const [communityFaqS, setCommunityFaq] = useState(0);
   const [partnershipFaqS, setPartnershipFaq] = useState(0);
@@ -79,7 +88,7 @@ const FAQ = () => {
         </div>
         <div className="w-11/12 mx-auto my-10">
           <h4 className="text-primary-color font-weight-bolder text-2xl">
-            Partnership / Sponsorship FAQs
+            Partnership & Sponsorship FAQs
           </h4>
           <div>
             {partnershipFaq.map(({ heading, content }, index) => (

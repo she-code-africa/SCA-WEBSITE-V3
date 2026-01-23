@@ -1,70 +1,129 @@
-import React from "react";
-import whatWeDo from "../../../assets/v2/images/whatWeDoCardImage.jpg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import whatWeDo1 from "../../../images/v2/wedo1.jpg";
+import whatWeDo2 from "../../../images/v2/wedo2.jpg";
+import whatWeDo3 from "../../../images/v2/wedo3.jpg";
+import whatWeDo4 from "../../../images/v2/wedo4.jpg";
 
 const WhatWeDo = () => {
+  const whatWeDoData = [
+    {
+      title: "Academy",
+      description:
+        "Through the She Code Africa Academy, we offer curated training programs across tech fields that equip women and girls with the technical skills needed to start and grow their careers in tech",
+      url: "/academy",
+      image: whatWeDo3
+    },
+    {
+      title: "Communities and Chapters",
+      description:
+        "With a global community of over 40,000 members and over 40 local chapters across cities and campuses, we’ve built safe, active spaces where women can access peer support, mentorship, and learning opportunities in tech.",
+      url: "/community",
+      image: whatWeDo1
+    },
+    {
+      title: "Access & Exposure",
+      description:
+        "Through events, partnerships, and placement support, we connect women with opportunities to build or grow meaningful careers in technology.",
+      url: "/partner",
+      image: whatWeDo2
+    },
+    {
+      title: "Initiatives",
+      description:
+        "We design focused programs that remove the everyday barriers African women face when starting or growing their careers in tech. Our initiatives create pathways to learning, visibility, and long-term opportunities in tech.",
+      url: "/initiatives",
+      image: whatWeDo4
+    }
+  ];
+
+  // Animation variants (for DRY, reusable setup)
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
   return (
-    <section className="w-full product-program-bg bg-no-repeat bg-cover pb-20">
+    <motion.section
+      className="w-full product-program-bg bg-no-repeat bg-cover pb-20"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
       <div className="w-full bg-[#DDFF8F] what-we-do-clip relative z-[1]">
-        <article className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56">
-          <h3 className="text-[32px] text-center md:text-4xl lg:text-[64px] font-bold 2md:leading-[82px] text-[#094A32] hero-text">
+        <motion.article
+          className=" w-[90%] mx-auto xl:w-full xl:max-w-[909px] pt-20 pb-56"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <h3 className="section-header text-center 2md:leading-[82px] text-[#094A32] hero-text">
             What We Do
           </h3>
 
-          <p className="text-lg md:text-2xl mt-3 text-center leading-normal md:leading-normal font-medium">
-            According to Data from Accenture, the ratio of women to men in tech
-            roles has declined in the past 35 years. Out of 50% individuals in
-            the industry, only 20% are women who are significantly represented,
-            with only 14% in software engineering and 25% in computer science
-            related roles compared to their male counterparts.
+          <p className=" mt-3 text-center description-text">
+            According to McKinsey, women make up just 47% of STEM graduates in
+            Africa. Of those, only 23–30% enter the tech workforce, and fewer
+            than 1 in 10 reach leadership roles. At every stage of the pipeline,
+            the numbers fall talent is lost, and potential goes untapped.
           </p>
 
-          <p className="text-lg md:text-2xl text-center leading-normal md:leading-normal mt-10 font-medium">
+          <p className="description-text text-center mt-10">
             Here's how we're tackling that:
           </p>
-        </article>
+        </motion.article>
       </div>
 
-      <div className="w-[90%] mx-auto sm:w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[778px] -mt-40 relative z-[1]">
+      <motion.div
+        variants={containerVariant}
+        className="w-[90%] mx-auto sm:w-full sm:max-w-[600px] md:max-w-[700px] lg:max-w-[778px] -mt-40 relative z-[1]"
+      >
         <div className="w-full grid md:grid-cols-2 gap-8 ">
-          {[...Array(4)].map((_, i) => (
-            <div
-              className="border-2 border-[#094A32] p-5 bg-white rounded-2xl hover:text-white hover:bg-[#094A32] transition-colors duration-300 cursor-pointer text-[#094A32] card-wwd"
-              key={i}
-            >
-              <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
-                <img
-                  src={whatWeDo}
-                  alt="card-pic"
-                  className="object-cover w-full h-full"
-                />
-              </figure>
+          {whatWeDoData.map(({ title, description, url, image}, i) => (
+            <Link to={url} key={i}>
+              <div className="border-2 border-[#094A32] p-5 bg-white rounded-2xl hover:text-white hover:bg-[#094A32] transition-colors duration-300 cursor-pointer text-[#094A32] card-wwd">
+                <figure className="h-[334px] w-full rounded-2xl overflow-hidden">
+                  <img
+                    src={image}
+                    loading="lazy"
+                    alt="card-pic"
+                    className="object-cover w-full h-full"
+                  />
+                </figure>
 
-              <article className="mt-5 w-full">
-                <h4 className="capitalize text-xl  font-semibold">
-                  card title
-                </h4>
-                <p className="font-medium text-base mt-4 ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Sapiente, porro?
-                </p>
-              </article>
+                <div className="w-full flex flex-col justify-between min-h-[350px]">
+                  <article className="mt-5 w-full">
+                    <h4 className="capitalize card-title text-2xl font-bold">
+                      {title}
+                    </h4>
+                    <p className="card-text mt-4 text-xl font-medium">
+                      {description}
+                    </p>
+                  </article>
 
-              <div className="mt-5 w-full ">
-                <Link
-                  to="#"
-                  className="text-base w-full flex items-center gap-2"
-                >
-                  Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
-                </Link>
+                  <div className="mt-5 w-full ">
+                    <Link
+                      to={url}
+                      className="small-text w-full flex items-center gap-2"
+                    >
+                      Learn more <FontAwesomeIcon icon={faArrowRight} />{" "}
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

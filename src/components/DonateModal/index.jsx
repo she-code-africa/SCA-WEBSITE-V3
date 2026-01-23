@@ -8,8 +8,14 @@ import {
 import { accountInfo } from "../../utils";
 
 const cardUrl = {
-  organisation: "https://flutterwave.com/pay/shecodeafrica",
-  individual: "https://bit.ly/sca-individualsponsor",
+  organisation: {
+    organisationFlutterwave: "https://flutterwave.com/pay/shecodeafrica",
+    organisationPaystack: "https://paystack.shop/pay/donate-to-sca",
+  },
+  individual: {
+    individualFlutterwave: "https://flutterwave.com/donate/r7l1j3yh3ph4",
+    individualPaystack: "https://paystack.shop/pay/donate-to-sca1",
+  },
   scholarship: "https://dashboard.flutterwave.com/donate/fjcoz2ic3ddp",
 };
 
@@ -43,7 +49,7 @@ const index = ({ display, toggleModal, type }) => {
                   <div className="box w-full mx-auto border">
                     <a
                       className="w-[48%]"
-                      href={cardUrl[type]}
+                      href={cardUrl[type][`${type}Flutterwave`]}
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -53,10 +59,26 @@ const index = ({ display, toggleModal, type }) => {
                           aria-hidden="true"
                           size="md"
                           className="mr-2 text-gray-400 "
-                        />
-
-                        {" "}
-                        Card Donation
+                        />{" "}
+                        Card Donation Flutterwave
+                      </h5>
+                    </a>
+                  </div>
+                  <div className="box w-full mx-auto border mt-5">
+                    <a
+                      className="w-[48%]"
+                      href={cardUrl[type][`${type}Paystack`]}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <h5 className="text-xs sm:text-sm md:text-base text-center">
+                        <FontAwesomeIcon
+                          icon={faCreditCard}
+                          aria-hidden="true"
+                          size="md"
+                          className="mr-2 text-gray-400 "
+                        />{" "}
+                        Card Donation Paystack
                       </h5>
                     </a>
                   </div>
@@ -73,7 +95,6 @@ const index = ({ display, toggleModal, type }) => {
                         aria-hidden="true"
                         size="md"
                         className="mr-2 text-gray-400 "
-
                       />{" "}
                       Wire Transfer
                     </h5>

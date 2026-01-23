@@ -1,60 +1,56 @@
 import React, { useState, useEffect } from "react";
 
 import { homeHeroSliderImages } from "../../../utils/v2";
+import MobileHomeCarousel from "./home-page/MobileHomeCarousel";
+import TabletHomeCarouse from "./home-page/TabletHomeCarouse";
+const BATCH_SIZE = 6;
+const INTERVAL = 3000;
 
 const HomeHeroCarousel = () => {
-  const [sliderImages, setSliderImages] = useState([]);
+  const [startIndex, setStartIndex] = useState(0);
+
+  const getCurrentBatch = () => {
+    return homeHeroSliderImages.slice(startIndex, startIndex + BATCH_SIZE);
+  };
+
+  const currentBatch = getCurrentBatch();
 
   useEffect(() => {
-    const generate6RandomImages = () => {
-      const images = [];
-      for (let i = 0; i < homeHeroSliderImages.length; i++) {
-        const randomImage =
-          homeHeroSliderImages[
-            Math.floor(Math.random() * homeHeroSliderImages.length)
-          ];
-        images.push(randomImage);
-      }
-
-      setSliderImages(images.slice(0, 6));
-    };
-
     const interval = setInterval(() => {
-      generate6RandomImages();
-    }, 10000);
+      setStartIndex((prev) => {
+        const nextIndex = prev + BATCH_SIZE;
+
+        // If we reached/exceeded the end → start again
+        if (nextIndex >= homeHeroSliderImages.length) {
+          return 0;
+        }
+        return nextIndex;
+      });
+    }, INTERVAL);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full sliderContainer">
-      <div className="flex items-center justify-center flex-nowrap overflow-auto scrollbar-hidden">
-        {sliderImages.length > 0 ? (
-          sliderImages.map((image, index) => (
+    <div className="w-full">
+      <MobileHomeCarousel />
+
+      <TabletHomeCarouse />
+      <div className="hidden md:flex w-full items-center justify-center flex-nowrap overflow-auto scrollbar-hidden gap-1">
+        {currentBatch.length > 0 &&
+          currentBatch.map((image, index) => (
             <figure
               key={`${image}-${index}-${Date.now()}`}
-              className="px-1 shrink-0 lg:shrink"
+              className=" shrink-0 lg:shrink w-[240px] h-[209px] rounded-2xl overflow-hidden "
             >
               <img
                 src={image}
+                loading="lazy"
                 alt={`Slide ${index + 1}`}
-                className="animate-img-opacity"
+                className="animate-img-opacity w-full h-full object-cover"
               />
             </figure>
-          ))
-        ) : (
-          <>
-            {homeHeroSliderImages.map((image, index) => (
-              <figure key={index} className="px-1">
-                <img
-                  src={image}
-                  alt={`Slide ${index + 1}`}
-                  className="animate-opacity"
-                />
-              </figure>
-            ))}
-          </>
-        )}
+          ))}
       </div>
     </div>
   );

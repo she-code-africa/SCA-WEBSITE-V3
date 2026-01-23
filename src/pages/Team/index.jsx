@@ -11,6 +11,7 @@ import { getTeams } from "../../services";
 import box from "../../images/team/SCA Badge-hero.png";
 import avatar from "../../images/avatar-300x300.jpeg";
 import Donate from "../../components/version-2/homepage/Donate";
+import { motion } from "framer-motion";
 
 const Team = () => {
   const [activeSelection, setActiveSelection] = useState("ALL");
@@ -41,27 +42,116 @@ const Team = () => {
 
   // collect unique categories
   const tags = useMemo(
-    () =>
-      data?.filter((team) => team.teamCategory?.name).map((team) => team.teamCategory.name) || [],
+    () => data?.map((team) => team.teamCategory?.name).filter(Boolean) || [],
     [data]
   );
   const uniqueTags = useMemo(() => Array.from(new Set(tags)), [tags]);
 
-  useEffect(() => {
-    setActiveSelection(uniqueTags[0] || "");
+  // robust ordering: prefer Full-time Employee, then Support team, then Advisors
+  const orderedTags = useMemo(() => {
+    // helpers that try exact match first, then fallback to contains (case-insensitive)
+    const findMatch = (candidates) => {
+      for (const cand of candidates) {
+        const exact = uniqueTags.find(
+          (t) => t?.toLowerCase().trim() === cand.toLowerCase().trim()
+        );
+        if (exact) return exact;
+      }
+      for (const cand of candidates) {
+        const partial = uniqueTags.find((t) =>
+          t?.toLowerCase().includes(cand.toLowerCase().trim())
+        );
+        if (partial) return partial;
+      }
+      return null;
+    };
+
+    const desiredGroups = [
+      [
+        "Full-time Employee",
+        "Full time Employee",
+        "Full-time employee",
+        "Full time employee",
+        "Full-time",
+        "Full time",
+      ],
+      ["Support Team", "Support team", "Support", "support team"],
+      ["Advisors", "Advisor", "advisors", "advisor"],
+    ];
+
+    const inOrder = [];
+    const seen = new Set();
+
+    // push desired groups in order when present
+    desiredGroups.forEach((group) => {
+      const match = findMatch(group);
+      if (match && !seen.has(match)) {
+        inOrder.push(match);
+        seen.add(match);
+      }
+    });
+
+    // append any remaining tags preserving discovery order
+    uniqueTags.forEach((t) => {
+      if (!seen.has(t)) {
+        inOrder.push(t);
+        seen.add(t);
+      }
+    });
+
+    return inOrder;
   }, [uniqueTags]);
+
+  // set default selection: pick the full-time-like tag if present, otherwise first ordered tag
+  useEffect(() => {
+    const preferredFull = orderedTags.find((t) =>
+      t.toLowerCase().includes("full")
+    );
+    const defaultTag = preferredFull || orderedTags[0] || "";
+    setActiveSelection(defaultTag);
+  }, [orderedTags]);
 
   // filter members
   const filtered =
-    data?.filter((member) =>
-      activeSelection === "" ? true : member.teamCategory?.name === activeSelection
-    ) || [];
+    data
+      ?.filter((member) =>
+        activeSelection === ""
+          ? true
+          : member.teamCategory?.name === activeSelection
+      )
+      ?.sort((a, b) => a.position - b.position) || [];
 
   // split into full rows + last row
   const itemsPerRow = cols;
   const fullCount = Math.floor(filtered.length / itemsPerRow) * itemsPerRow;
   const fullMembers = filtered.slice(0, fullCount);
   const lastMembers = filtered.slice(fullCount);
+
+  const containerVariant = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const imageVariant = {
+    hidden: { opacity: 0, scale: 0.9, rotate: -5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotate: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
 
   return (
     <>
@@ -86,42 +176,69 @@ const Team = () => {
       </Helmet>
       <Header />
       <main>
-        <section className="bg-white mt-44">
-          <div className="w-11/12 mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-24">
-            <div className="text-center md:text-left">
-              <h1 className="hero-text text-5xl md:text-9xl font-bold text-primary-main-pink">
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={containerVariant}
+          className="bg-white mt-44"
+        >
+          <div className="w-[90%] mx-auto flex flex-col md:flex-row items-center justify-between gap-10 py-24">
+            <motion.div
+              variants={fadeUpVariant}
+              className="text-center md:text-left"
+            >
+              <motion.h1
+                variants={fadeUpVariant}
+                className="hero-text hero-title text-primary-main-pink"
+              >
                 Meet The SCA Team
-              </h1>
-              <p className="mt-6 text-2xl leading-9 text-Secondary-Velvet md:max-w-3xl">
-                Peep the faces behind the initiatives and impacts here at She Code Africa.
-                These wonderful people work behind the scene, everyday to keep our vision working.
-              </p>
-            </div>
-            <div>
-              <img src={box} alt="She Code Africa Logo" className="w-72 h-72 object-cover" />
-            </div>
+              </motion.h1>
+              <motion.p
+                variants={fadeUpVariant}
+                className="mt-6 description-text text-Secondary-Velvet md:max-w-3xl"
+              >
+                Peep the faces behind the initiatives and impacts here at She
+                Code Africa. These wonderful people work behind the scene,
+                everyday to keep our vision working.
+              </motion.p>
+            </motion.div>
+            <motion.div variants={imageVariant}>
+              <img
+                src={box}
+                alt="She Code Africa Logo"
+                className="w-72 h-72 object-cover"
+              />
+            </motion.div>
           </div>
-        </section>
+        </motion.section>
 
-        <section className="py-24">
-          <div className="w-11/12 mx-auto">
+        <motion.section
+          className="py-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={containerVariant}
+        >
+          <div className="w-[90%] mx-auto">
             {/* Category Buttons */}
             <div className="flex justify-start gap-8 mb-16 flex-wrap">
-                    {uniqueTags
-                    .filter((category) => category !== "All")
-                    .map((category) => (
-                      <button
-                      key={category}
-                      className={`text-base py-3 px-8 rounded-lg transition-colors duration-500 ${
-                        activeSelection === category
+              {/* orderedTags .filter((category) => category !== "All") */}
+              {["Full-Time Employees", "Support Team", "Advisors"].map(
+                (category) => (
+                  <button
+                    key={category}
+                    className={`button-text py-3 px-8 rounded-lg transition-colors duration-500 ${
+                      activeSelection === category
                         ? "bg-Primary-Magenta text-SCA-Cloud"
                         : "bg-SCA-Cloud text-Secondary-Velvet"
-                      }`}
-                      onClick={() => setActiveSelection(category)}
-                      >
-                      {category}
-                      </button>
-                    ))}
+                    }`}
+                    onClick={() => setActiveSelection(category)}
+                  >
+                    {category}
+                  </button>
+                )
+              )}
             </div>
 
             {/* Team Grid */}
@@ -130,13 +247,15 @@ const Team = () => {
             ) : isLoading ? (
               <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10">
                 {[...Array(8)].map((_, index) => (
-                  <Loading  key={index} />
+                  <Loading key={index} />
                 ))}
               </div>
             ) : (
               <>
                 {/* Render full rows */}
-                {Array.from({ length: Math.floor(fullMembers.length / cols) }).map((_, rowIdx) => {
+                {Array.from({
+                  length: Math.floor(fullMembers.length / cols),
+                }).map((_, rowIdx) => {
                   const start = rowIdx * cols;
                   const rowMembers = fullMembers.slice(start, start + cols);
                   const colors = [
@@ -149,14 +268,17 @@ const Team = () => {
                   return (
                     <div
                       key={`row-${rowIdx}`}
-                      className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 gap-x-32 mb-4"
+                      className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-10 gap-x-32 mb-10"
                     >
-                      {rowMembers.map((member, idx) => (
+                      {rowMembers.map((member) => (
                         <TeamCard
-                          key={idx}
+                          key={member.id || member.name}
                           image={member.image || avatar}
                           name={member.name}
-                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          teamRole={
+                            member.role ||
+                            `${member.teamCategory?.name || "Team"} member`
+                          }
                           bgColor={bgColor}
                         />
                       ))}
@@ -183,10 +305,13 @@ const Team = () => {
                       const bgColor = colors[rowIdx % colors.length];
                       return (
                         <TeamCard
-                          key={`last-${idx}`}
+                          key={member.id || member.name || `last-${idx}`}
                           image={member.image || avatar}
                           name={member.name}
-                          teamRole={member.role || `${member.teamCategory?.name || "Team"} member`}
+                          teamRole={
+                            member.role ||
+                            `${member.teamCategory?.name || "Team"} member`
+                          }
                           bgColor={bgColor}
                         />
                       );
@@ -196,7 +321,7 @@ const Team = () => {
               </>
             )}
           </div>
-        </section>
+        </motion.section>
         <Donate />
       </main>
       <Footer />

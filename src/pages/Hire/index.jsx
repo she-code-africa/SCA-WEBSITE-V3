@@ -6,8 +6,8 @@ import Footer from "../../components/Footer";
 import FormInput from "../../components/version-2/hire/FormInput";
 import { mutateTalent } from "../../services";
 import Captcha from "../../components/Captcha";
-import SuccessStories from "../../components/version-2/academy/SuccessStories";
 import Donate from "../../components/version-2/homepage/Donate";
+import OurQueensTestimonials from "../../components/version-2/homepage/Testimonials";
 /**
  *
  * @param {'fullname'|'email'|'company'|'companyLink'|'jobRole| 'experienceLevel'| 'jobDescription'} inputName
@@ -86,8 +86,7 @@ const Hire = () => {
               </h2>
 
               <p className="text-xl md:text-2xl w-full text-center text-white max-w-[684px] mx-auto mt-5">
-                Explore diverse tech talents of your choice with genuine skill
-                sets and good work place ethics.
+                Partner with us to close the gender gap in tech while gaining access to a diverse pool of skilled, job-ready women across Africa.
               </p>
             </article>
 
@@ -111,7 +110,7 @@ const Hire = () => {
                   formValue={formValue.email}
                 />
                 <FormInput
-                  label="Company Address"
+                  label="Company Name"
                   name="company"
                   type="text"
                   updateFormData={updateFormData}
@@ -189,7 +188,7 @@ const Hire = () => {
                 <div className="mt-8">
                   <button
                     type="submit"
-                    className="capitalize bg-primary-main-pink text-white hover:bg-opacity-80  border border-primary-main-pink py-4 px-[32px] transition-colors duration-1000 rounded-lg focus:outline-none focus:ring focus:ring-tutu w-full max-w-[200px] mx-auto font-bold text-lg disabled:bg-primary-light-pink "
+                    className="capitalize bg-primary-main-pink text-white hover:bg-[#5C0335] transition-colors duration-300  border py-4 px-[32px] rounded-lg focus:outline-none focus:ring focus:ring-tutu w-full max-w-[200px] mx-auto font-bold text-lg disabled:bg-primary-light-pink "
                     disabled={hireRequest.isLoading}
                   >
                     {hireRequest.isLoading ? (
@@ -225,7 +224,7 @@ const Hire = () => {
             </div>
           </div>
 
-          <SuccessStories />
+          <OurQueensTestimonials />
           <Donate />
         </div>
       </main>
