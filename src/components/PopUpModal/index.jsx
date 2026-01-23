@@ -45,10 +45,8 @@ const modal = ({ display, closeModal }) => {
                 />
               </div>
 
-              <p className="text-center leading-relaxed text-gray-500 dark:text-gray-400">
-                Did you know by donating as little as $5.3 (~8,532 NGN), you'd
-                be helping us mentor and provide resources to 1 female in tech
-                in 1 day?
+              <p className="text-center leading-relaxed text-gray-500 dark:text-gray-400">              
+                Did you know that by donating $20 (~₦30,000), you’re helping one woman take a step closer to owning a laptop?
               </p>
             </div>
             <div className="flex items-center space-x-2 rounded-b justify-center">
