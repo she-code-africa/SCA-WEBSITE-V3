@@ -7,9 +7,14 @@ export async function getEvents() {
   return events;
 }
 
+export async function getAllMedia() {
+  const events = await api.get(`${baseUrl}/media`);
+  return events;
+}
+
 export async function getChapters(page, limit = 12) {
   const chapters = await axios.get(
-    `${baseUrl}/chapters/member-chapters?page=${page}&limit=${limit}`
+    `${baseUrl}/chapters/member-chapters?page=${page}&limit=${limit}`,
   );
 
   return chapters.data;
@@ -19,7 +24,7 @@ export async function getChapter(chapterId) {
   // `${baseUrl}/chapters/categories/${categoryId}/member-chapters/${chapterId}`;
   // const token = JSON.parse(localStorage.getItem("userDetails"))?.token;
   const chapters = await api.get(
-    `${baseUrl}/chapters/member-chapters/${chapterId}`
+    `${baseUrl}/chapters/member-chapters/${chapterId}`,
   );
   return chapters;
 }
@@ -119,7 +124,7 @@ export async function mutateEnquires(enquiryData) {
 export async function mutateRegisterOrganization(formdata) {
   const registrationDetails = await api.post(
     `${baseUrl}/company/register`,
-    formdata
+    formdata,
   );
   return registrationDetails;
 }
@@ -132,7 +137,7 @@ export async function mutateOrganizationLogin(formData) {
 export async function mutateVolunteer(payload) {
   const enquiresResonse = await api.post(
     `${baseUrl}/volunteer-request`,
-    payload
+    payload,
   );
   return enquiresResonse;
 }

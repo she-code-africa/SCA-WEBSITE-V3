@@ -6,9 +6,23 @@ import Footer from "../../components/Footer";
 import Donate from "../../components/version-2/homepage/Donate";
 import ImagesComponent from "../../components/version-2/media/ImagesComponent";
 import VideosComponent from "../../components/version-2/media/VideosComponent";
+import { getAllMedia } from "../../services";
+import { useQuery } from "@tanstack/react-query";
+import * as components from "../../components";
 
 const MediaPage = () => {
   const [tabs, setTabs] = useState("blog");
+  const { data, isLoading } = useQuery({
+    queryKey: ["media", tabs],
+    queryFn: () => getAllMedia(),
+    keepPreviousData: true,
+  });
+
+  const mediaContent = (tab) => {
+    const filteredData = data?.filter((item) => item.type === tab);
+
+    return filteredData || [];
+  };
   return (
     <>
       <Helmet>
@@ -64,9 +78,19 @@ const MediaPage = () => {
             </article>
           </section>
 
-          {tabs === "blog" && <BlogComponent />}
-          {tabs === "images" && <ImagesComponent />}
-          {tabs === "videos" && <VideosComponent />}
+          {isLoading ? (
+            <components.Loading />
+          ) : (
+            <>
+              {tabs === "blog" && <BlogComponent mediaData={mediaContent} />}
+              {tabs === "images" && (
+                <ImagesComponent mediaData={mediaContent} />
+              )}
+              {tabs === "videos" && (
+                <VideosComponent mediaData={mediaContent} />
+              )}
+            </>
+          )}
         </section>
         <Donate />
         <Footer />
