@@ -26,13 +26,13 @@ const Events = () => {
 
   const { data, isError, isFetched, isSuccess, isLoading } = useQuery(
     [apiConstants.events],
-    getEvents
+    getEvents,
   );
 
   useEffect(() => {
     if (data) {
       const publishedEvents = data.filter(
-        (event) => event.state === "published"
+        (event) => event.state === "published",
       );
 
       setEvents(publishedEvents);
@@ -47,7 +47,7 @@ const Events = () => {
 
   const pastEvents = useMemo(() => {
     return sortPastEventsByDate(events).filter(
-      (event) => new Date(event.eventDate).getFullYear() === yearTabs
+      (event) => new Date(event.eventDate).getFullYear() === yearTabs,
     );
   }, [events, yearTabs]);
 
