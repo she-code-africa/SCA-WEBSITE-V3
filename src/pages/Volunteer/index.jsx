@@ -32,8 +32,8 @@ const Volunteer = () => {
     volunteerRole: "",
     purpose: "",
     location: "",
-    resume: "",
-    portfolio: ""
+    resumeLink: "",
+    portfolioLink: ""
   };
 
   const hideModal = useRef(null);
@@ -121,11 +121,31 @@ const Volunteer = () => {
     });
   };
 
-  const submitVolunteerRequest = (e) => {
-    e.preventDefault();
-    volunteerRequest.mutate(formValue);
-    setIsMessageShown(true);
-  };
+const submitVolunteerRequest = (e) => {
+  e.preventDefault();
+
+  // 1) remove empty fields
+  const payload = Object.fromEntries(
+    Object.entries(formValue).filter(
+      ([_, v]) => v !== "" && v !== null && v !== undefined
+    )
+  );
+
+  // 2) remove invalid keys if they exist
+  delete payload.resume;
+  delete payload.portfolio;
+
+  // 3) optional: if backend expects resume/portfolio instead of resumeLink/portfolioLink
+  //    (ONLY do this if backend docs say so)
+  // payload.resume = payload.resumeLink;
+  // payload.portfolio = payload.portfolioLink;
+  // delete payload.resumeLink;
+  // delete payload.portfolioLink;
+
+  volunteerRequest.mutate(payload);
+  setIsMessageShown(true);
+};
+
 
   return (
     <>

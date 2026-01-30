@@ -112,28 +112,30 @@ const VolunteerForm = ({
                 />
               </div>
               <div>
-                <label className="block" htmlFor="resume">
+                <label className="block" htmlFor="resumeLink">
                   Resume Url
                 </label>
                 <input
                   type="url"
-                  id="resume"
+                  id="resumeLink"
                   className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
-                  onChange={(e) => updateFormData("resume", e.target.value)}
-                  value={formValue.resume}
+                  onChange={(e) => updateFormData("resumeLink", e.target.value)}
+                  value={formValue.resumeLink}
                   required
                 />
               </div>
               <div>
-                <label className="block" htmlFor="portfolio">
+                <label className="block" htmlFor="portfolioLink">
                   Portfolio (optional)
                 </label>
                 <input
                   type="url"
-                  id="portfolio"
+                  id="portfolioLink"
                   className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
-                  onChange={(e) => updateFormData("portfolio", e.target.value)}
-                  value={formValue.portfolio}
+                  onChange={(e) =>
+                    updateFormData("portfolioLink", e.target.value)
+                  }
+                  value={formValue.portfolioLink}
                 />
               </div>
 
