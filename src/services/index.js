@@ -2,6 +2,12 @@ import api from "../utils/api";
 import axios from "axios";
 const baseUrl = process.env.REACT_APP_BASE_URL;
 
+const unwrap = (res) => {
+  const payload = res?.data ?? res;
+  return payload?.data ?? payload;
+};
+
+
 export async function getEvents() {
   const events = await api.get(`${baseUrl}/events`);
   return events;
@@ -135,6 +141,11 @@ export async function mutateVolunteer(payload) {
     payload
   );
   return enquiresResonse;
+}
+
+export async function getVolunteerRoles() {
+  const res = await api.get(`${baseUrl}/volunteer-role`);
+  return unwrap(res);
 }
 
 export async function mutateTalent(payload) {
