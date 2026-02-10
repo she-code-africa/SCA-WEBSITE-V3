@@ -12,7 +12,8 @@ const VideosComponent = ({ mediaData }) => {
             key={idx}
             isImage={false}
             videoSrc={
-              idx % 2 === 0 ? videoContents[0].url : videoContents[1].url
+              video.embedUrl ||
+              (idx % 2 === 0 ? videoContents[0].url : videoContents[1].url)
             }
             title={video.title}
             description={video.description}
