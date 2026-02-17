@@ -1,6 +1,9 @@
 import HomePopupInput from "../../Input/HomePopup";
 import closeBtn from "../../../images/v2/xImg.png";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-toastify";
+import { downloadAnnualReport } from "../../../services";
 
 const HomePageModal = ({ closeModal }) => {
   const [formValues, setFormValues] = useState({
@@ -9,7 +12,29 @@ const HomePageModal = ({ closeModal }) => {
     email: "",
   });
 
+  const { mutate: downloadAnnualReportReq, isPending } = useMutation(
+    downloadAnnualReport,
+    {
+      onSuccess: (data) => {
+        toast.success("Report sent. Please check your email!", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        setFormValues({
+          firstName: "",
+          lastName: "",
+          email: "",
+        });
+      },
+      onError: (error, variables) => {
+        toast.error("An error occurred.", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      },
+    },
+  );
+
   const handleChange = (e) => {
+
     const name = e.target.name;
     setFormValues((prev) => ({ ...prev, [name]: e.target.value }));
   };
@@ -22,6 +47,12 @@ const HomePageModal = ({ closeModal }) => {
     if (!firstName || !lastName || !email) {
       return false;
     }
+
+    downloadAnnualReportReq({
+      firstname: firstName,
+      lastname: lastName,
+      email,
+    });
   };
   return (
     <div className="modal overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-0 z-20 justify-center items-center h-modal h-full md:inset-0 bg-[#333] bg-opacity-70">
@@ -52,16 +83,16 @@ const HomePageModal = ({ closeModal }) => {
                 <HomePopupInput
                   label="first name"
                   name="firstName"
-                  value={formValues.firstName}
-                  onchange={handleChange}
+                  values={formValues.firstName}
+                  handleChange={handleChange}
                   placeholder="Type your first name"
                 />
 
                 <HomePopupInput
                   label="last name"
                   name="lastName"
-                  value={formValues.lastName}
-                  onchange={handleChange}
+                  values={formValues.lastName}
+                  handleChange={handleChange}
                   placeholder="Type your last name (surname)"
                 />
 
@@ -69,14 +100,14 @@ const HomePageModal = ({ closeModal }) => {
                   label="email"
                   name="email"
                   placeholder="Email address"
-                  value={formValues.email}
-                  onchange={handleChange}
+                  values={formValues.email}
+                  handleChange={handleChange}
                   type="email"
                 />
 
                 <div className="w-full max-w-[185px] h-[52px] overflow-hidden rounded-lg">
                   <button className="bg-primary-main-pink text-white text-base w-full h-full hover:bg-[#5C0335] rounded-lg transition-all duration-300">
-                    Download report
+                    {isPending ? "Sending request..." : "Download report"}
                   </button>
                 </div>
               </form>

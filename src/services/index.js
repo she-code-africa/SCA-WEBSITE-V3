@@ -142,6 +142,11 @@ export async function mutateVolunteer(payload) {
   return enquiresResonse;
 }
 
+export const downloadAnnualReport = async (payload) => {
+  const request = await api.post(`${baseUrl}/annual-report/`, payload);
+  return request;
+};
+
 export async function mutateTalent(payload) {
   return await api.post(`${baseUrl}/talent-request`, payload);
 }

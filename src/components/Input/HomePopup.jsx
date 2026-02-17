@@ -5,8 +5,8 @@ const HomePopupInput = ({
   name,
   placeholder,
   type = "text",
-  onchange,
-  value,
+  handleChange,
+  values,
 }) => {
   return (
     <div className="w-full mb-4">
@@ -22,8 +22,9 @@ const HomePopupInput = ({
           type={type}
           className="w-full h-full bg-transparent outline-none p-4 placeholder:text-[#ff8fce] text-base"
           placeholder={placeholder}
-          value={value}
-          onChange={onchange}
+          name={name}
+          onChange={handleChange}
+          value={values}
         />
       </div>
     </div>
