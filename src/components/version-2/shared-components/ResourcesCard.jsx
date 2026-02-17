@@ -98,7 +98,8 @@ const ResourcesCard = ({
             <FaRegCalendar className="text-[#B70569]" />
 
             <span className="text-[#5C0335] small-text m-0 p-0 truncate max-w-[61px] sm:max-w-full ">
-              {dateCreated || "01/01/2024"}
+              {new Date(dateCreated).toLocaleDateString("en-GB") ||
+                "01/01/2024"}
             </span>
           </span>
         </div>

@@ -15,8 +15,15 @@ import OurQueensTestimonials from "../../components/version-2/homepage/Testimoni
 import Donate from "../../components/version-2/homepage/Donate";
 import { motion } from "framer-motion";
 import { heroFadeUp, sectionVariant } from "../../lib/motionVariants";
+import HomePageModal from "../../components/PopUpModal/home";
+import { useState } from "react";
 
 const Home = () => {
+  const [openModal, setOpenModal] = useState(true);
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
   return (
     <>
       <Helmet>
@@ -128,6 +135,8 @@ const Home = () => {
         <Donate />
       </main>
       <Footer />
+
+      {openModal && <HomePageModal closeModal={handleCloseModal} />}
     </>
   );
 };

@@ -1,21 +1,26 @@
 import ResourcesCard from "../shared-components/ResourcesCard";
 import { videoContents } from "../../../utils/v2/media";
 
-const VideosComponent = () => {
+const VideosComponent = ({ mediaData }) => {
+  const videoContent = mediaData("video");
+  console.log({ videoContent });
   return (
     <div className="w-full bg-[#FFB8E0] py-[100px] transition-all">
       <div className="w-[90%] mx-auto max-w-[1256px]">
-        {videoContents.map((video, idx) => (
+        {videoContent.map((video, idx) => (
           <ResourcesCard
             key={idx}
             isImage={false}
-            videoSrc={video.url}
+            videoSrc={
+              video.embedUrl ||
+              (idx % 2 === 0 ? videoContents[0].url : videoContents[1].url)
+            }
             title={video.title}
             description={video.description}
             author={video.author}
             dateCreated={video.dateCreated}
-            tag={video.type}
-            url={video.url}
+            tag={video.tag}
+            url={video.link}
             videoCoverImage={video.coverImage}
           />
         ))}

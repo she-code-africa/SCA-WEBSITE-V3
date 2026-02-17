@@ -1,30 +1,41 @@
 import React from "react";
 import ResourcesCard from "../shared-components/ResourcesCard";
 import { Link } from "react-router-dom";
-import { blogContent } from "../../../utils/v2/media";
 
-const BlogComponent = () => {
+
+const BlogComponent = ({ mediaData }) => {
+  const blogContent = mediaData("blog");
+  
   return (
     <div className="w-full bg-[#FFB8E0] py-[100px] transition-all">
       <div className="w-[90%] mx-auto max-w-[1256px] grid md:grid-cols-2 gap-x-10 lg:max-w-[950px]  place-items-center gap-y-5">
-        {blogContent.map(
-          (
-            { title, type, url, description, author, dateCreated, coverImage },
-            idx
-          ) => (
-            <ResourcesCard
-              key={idx}
-              isImage={true}
-              tag={type}
-              image={coverImage}
-              url={url}
-              description={description}
-              author={author}
-              dateCreated={dateCreated}
-              title={title}
-            />
-          )
-        )}
+        {blogContent &&
+          blogContent.map(
+            (
+              {
+                title,
+                tag,
+                link,
+                description,
+                author,
+                dateCreated,
+                coverImage,
+              },
+              idx,
+            ) => (
+              <ResourcesCard
+                key={idx}
+                isImage={true}
+                tag={tag}
+                image={coverImage}
+                url={link}
+                description={description}
+                author={author}
+                dateCreated={dateCreated}
+                title={title}
+              />
+            ),
+          )}
       </div>
 
       <div className="my-10 max-w-[122px] w-full mx-auto">
