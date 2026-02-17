@@ -34,7 +34,6 @@ const HomePageModal = ({ closeModal }) => {
   );
 
   const handleChange = (e) => {
-
     const name = e.target.name;
     setFormValues((prev) => ({ ...prev, [name]: e.target.value }));
   };
@@ -53,6 +52,8 @@ const HomePageModal = ({ closeModal }) => {
       lastname: lastName,
       email,
     });
+
+    closeModal();
   };
   return (
     <div className="modal overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-0 z-20 justify-center items-center h-modal h-full md:inset-0 bg-[#333] bg-opacity-70">
