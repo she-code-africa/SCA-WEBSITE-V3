@@ -24,6 +24,10 @@ const Home = () => {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+
+  const handleShow2025Report = () => {
+    setOpenModal(true);
+  };
   return (
     <>
       <Helmet>
@@ -134,7 +138,7 @@ const Home = () => {
         <OurQueensTestimonials />
         <Donate />
       </main>
-      <Footer />
+      <Footer handleShow2025Report={handleShow2025Report} />
 
       {openModal && <HomePageModal closeModal={handleCloseModal} />}
     </>
