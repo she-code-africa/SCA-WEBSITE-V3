@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
@@ -15,12 +15,14 @@ import { getReports } from "../../services";
 import logo from "../../images/new-logo/new-logo-header.png";
 import { motion } from "framer-motion";
 
-const Footer = () => {
+const Footer = ({ handleShow2025Report }) => {
   const [openCaret, setOpenCaret] = useState(false);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const { data, isError, isLoading, isSuccess } = useQuery(
     [apiConstants.reports],
-    getReports
+    getReports,
   );
   const [reports, setReports] = useState([]);
 
@@ -30,6 +32,14 @@ const Footer = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
+
+  const showReport = () => {
+    if (pathname !== "/") {
+      navigate("/");
+    } else {
+      handleShow2025Report();
+    }
+  };
 
   return (
     <div className="overflow-hidden">
@@ -118,14 +128,23 @@ const Footer = () => {
                             key={report._id}
                             className="hover:bg-gray-200 p-2"
                           >
-                            <a
-                              href={report?.link}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="button-text focus:outline-none focus:ring focus:ring-tutu block"
-                            >
-                              {report.year}
-                            </a>
+                            {report?.year === "2025" ? (
+                              <button
+                                onClick={showReport}
+                                className="button-text focus:outline-none focus:ring focus:ring-tutu block"
+                              >
+                                {report.year}
+                              </button>
+                            ) : (
+                              <a
+                                href={report?.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="button-text focus:outline-none focus:ring focus:ring-tutu block"
+                              >
+                                {report.year}
+                              </a>
+                            )}
                           </li>
                         ))}
                       </ul>
