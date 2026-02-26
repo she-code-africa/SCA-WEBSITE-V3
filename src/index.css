@@ -334,6 +334,12 @@ main,
   line-height: 1.2;
 }
 
+.popup-bg {
+  background: url("./images/v2/popup-home.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* ============================================
   OPTIONAL: Fine-tune breakpoints if needed
   ============================================ */
