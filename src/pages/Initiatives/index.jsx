@@ -24,6 +24,8 @@ const Initiatives = () => {
     fetchData();
   }, []);
 
+  console.log(initiatives);
+
   return (
     <div>
       <Helmet>

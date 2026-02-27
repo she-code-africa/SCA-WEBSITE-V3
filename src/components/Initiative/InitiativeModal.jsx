@@ -69,25 +69,45 @@ export default function InitiativeModal({
             <div
               className="text-gray-700 intiative-description-text text-justify leading-8 max-w-none  prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-4 prose-li:mb-2 prose-strong:font-bold"
               dangerouslySetInnerHTML={{
-                __html: longDescription || description
+                __html: longDescription || description,
               }}
             />
 
             <div className="flex flex-wrap gap-5 mt-4">
               {primaryBtn && (
                 <a
-                  href={primaryBtn.href}
+                  href={
+                    title.toLowerCase() ===
+                    "She Code Africa Mentorship Program".toLowerCase()
+                      ? "https://bit.ly/SCAMPMentorsC4"
+                      : primaryBtn.href
+                  }
+                  target="_blank"
+                  rel="noreferrer"
                   className="bg-Primary-Magenta text-white button-text px-6 py-3 rounded-lg hover:bg-pink-700 transition-colors"
                 >
-                  {primaryBtn.label}
+                  {title.toLowerCase() ===
+                  "She Code Africa Mentorship Program".toLowerCase()
+                    ? "Apply to be a Mentor"
+                    : primaryBtn.label}
                 </a>
               )}
               {secondaryBtn && (
                 <a
-                  href={secondaryBtn.href}
+                  href={
+                    title.toLowerCase() ===
+                    "She Code Africa Mentorship Program".toLowerCase()
+                      ? "https://bit.ly/SCAMPMenteesC4"
+                      : secondaryBtn.href
+                  }
+                  target="_blank"
+                  rel="noreferrer"
                   className="border border-Primary-Magenta text-Primary-Magenta button-text px-6 py-3 rounded-lg hover:bg-pink-50 transition-colors"
                 >
-                  {secondaryBtn.label}
+                  {title.toLowerCase() ===
+                  "She Code Africa Mentorship Program".toLowerCase()
+                    ? "Apply to be a Mentee"
+                    : secondaryBtn.label}
                 </a>
               )}
               <button
