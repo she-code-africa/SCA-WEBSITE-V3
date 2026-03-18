@@ -308,7 +308,7 @@ const Events = () => {
               className="mt-8 flex justify-center"
             >
               <a
-                href="https://bit.ly/joinshecodeafrica"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdf-x58pHMIS5-YCLQQniKQxlncwJrtb0F60uljpjnoZMIo2g/viewform"
                 target="_blank"
                 className="bg-primary-main-pink text-white button-text py-[10px] px-8 capitalize transition duration-300 hover:bg-[#5C0335] w-full max-w-[208px] text-center rounded-lg h-[55px] flex items-center justify-center"
                 rel="noreferrer"
