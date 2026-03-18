@@ -20,7 +20,7 @@ const Footer = () => {
 
   const { data, isError, isLoading, isSuccess } = useQuery(
     [apiConstants.reports],
-    getReports
+    getReports,
   );
   const [reports, setReports] = useState([]);
 
