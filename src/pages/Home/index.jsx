@@ -100,7 +100,7 @@ const Home = () => {
                   label="Join our community"
                   customColor="text-white"
                   bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] border-primary-main-pink rounded-lg transition-all duration-300"
-                  url="https://bit.ly/joinshecodeafrica"
+                  url="https://docs.google.com/forms/d/e/1FAIpQLSdf-x58pHMIS5-YCLQQniKQxlncwJrtb0F60uljpjnoZMIo2g/viewform"
                   isGallery={true}
                 />
 

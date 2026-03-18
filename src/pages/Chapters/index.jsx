@@ -135,7 +135,7 @@ const Chapters = () => {
               width: "114.45px",
               height: "102px",
               minWidth: "114.45px",
-              minHeight: "102px"
+              minHeight: "102px",
             }}
           />
           <p className="text-black description-text text-center sm:text-left">
@@ -307,10 +307,10 @@ const Chapters = () => {
             Be part of a community bridging the gender gap in tech, a space ran
             by and for African women. Connect with like-minded individuals, gain
             access to resources and events, and help shape the future of the
-            industry. 
+            industry.
           </p>
           <a
-            href="https://forms.gle/aFe2LrkZxZJtKKve7"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdf-x58pHMIS5-YCLQQniKQxlncwJrtb0F60uljpjnoZMIo2g/viewform"
             target="_blank"
             rel="noreferrer"
             className="bg-Primary-Magenta hover:bg-[#5C0335] transition-colors duration-300 text-white px-6 py-3 sm:px-8 sm:py-[18px] rounded-[10px] text-base"

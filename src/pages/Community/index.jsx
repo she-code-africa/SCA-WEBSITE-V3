@@ -116,7 +116,7 @@ const Community = () => {
                   label="Become a member"
                   customColor="text-white"
                   bgHover="hover:bg-[#5C0335] hover:border-[#5C0335] bg-[#B70569] duration-300 border-[#B70569] rounded-lg transition-all duration-300"
-                  url="https://forms.gle/aFe2LrkZxZJtKKve7"
+                  url="https://docs.google.com/forms/d/e/1FAIpQLSdf-x58pHMIS5-YCLQQniKQxlncwJrtb0F60uljpjnoZMIo2g/viewform"
                   isGallery={true}
                 />
               </motion.div>
@@ -196,7 +196,7 @@ const Community = () => {
               <div className="flex items-center justify-center w-full sm:max-w-[207px] mx-auto">
                 <a
                   className="bg-transparent px-8 flex items-center justify-center w-full py-[14px] mt-3 rounded-lg text-primary-main-pink button-text hover:border-[#FF8FCE] transition-all font-normal border border-primary-main-pink"
-                  href="https://forms.gle/aFe2LrkZxZJtKKve7"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdf-x58pHMIS5-YCLQQniKQxlncwJrtb0F60uljpjnoZMIo2g/viewform"
                   rel="noreferrer"
                 >
                   Join our community
@@ -275,7 +275,7 @@ const Community = () => {
             <div className="flex items-center justify-center mt-5 sm:mt-8 max-w-[208px] mx-auto">
               <a
                 className="bg-primary-main-pink hover:bg-[#5C0335] transition-colors duration-300 px-8 py-[14px] h-[55px] flex items-center justify-center w-full mt-3 rounded-lg text-white button-text"
-                href="https://forms.gle/aFe2LrkZxZJtKKve7"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdf-x58pHMIS5-YCLQQniKQxlncwJrtb0F60uljpjnoZMIo2g/viewform"
                 target="_blank"
                 rel="noreferrer"
               >
