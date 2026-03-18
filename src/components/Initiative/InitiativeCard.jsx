@@ -97,7 +97,7 @@ export default function InitiativeCard({
               className="description-text leading-8 mb-8 text-gray-800 prose max-w-none
                   prose-p:mb-4 prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-4 prose-li:mb-2 prose-strong:font-bold line-clamp-4"
               dangerouslySetInnerHTML={{
-                __html: previewText
+                __html: previewText,
               }}
             />
 
@@ -109,14 +109,16 @@ export default function InitiativeCard({
                 Learn more
               </button>
 
-              {secondaryBtn && (
-                <a
-                  href={secondaryBtn.href}
-                  className="border border-Primary-Magenta duration-300 hover:border-[#FF8FCE] text-Primary-Magenta button-text px-6 py-3 rounded-lg transition-colors"
-                >
-                  {secondaryBtn.label}
-                </a>
-              )}
+              {secondaryBtn &&
+                title.toLowerCase() !==
+                  "She Code Africa Mentorship Program".toLowerCase() && (
+                  <a
+                    href={secondaryBtn.href}
+                    className="border border-Primary-Magenta duration-300 hover:border-[#FF8FCE] text-Primary-Magenta button-text px-6 py-3 rounded-lg transition-colors"
+                  >
+                    {secondaryBtn.label}
+                  </a>
+                )}
             </div>
           </div>
         </motion.div>
@@ -130,7 +132,7 @@ export default function InitiativeCard({
         longDescription={longDescription}
         image={image}
         status={status}
-        primaryBtn={primaryBtn}
+        primaryBtn={ primaryBtn}
         secondaryBtn={secondaryBtn}
         bgPattern={bgPattern}
       />
