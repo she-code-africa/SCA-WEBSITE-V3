@@ -199,7 +199,7 @@ const Footer = ({ handleShow2025Report }) => {
                   Upcoming Events
                 </Link>
                 <a
-                  href="https://bit.ly/joinshecodeafrica"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdf-x58pHMIS5-YCLQQniKQxlncwJrtb0F60uljpjnoZMIo2g/viewform"
                   target="_blank"
                   rel="noreferrer"
                   className="button-text block mb-5 text-black hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
