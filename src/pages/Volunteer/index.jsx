@@ -33,7 +33,7 @@ const Volunteer = () => {
     volunteerRole: "",
     purpose: "",
     location: "",
-    resume: "",
+    resumeLink: "",
     portfolio: "",
   };
 
