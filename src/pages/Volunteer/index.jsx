@@ -34,7 +34,7 @@ const Volunteer = () => {
     purpose: "",
     location: "",
     resumeLink: "",
-    // portfolio: "", //Taken out because portfolio is not on api's payload.
+    portfolioLink: "", 
   };
 
   const hideModal = useRef(null);
