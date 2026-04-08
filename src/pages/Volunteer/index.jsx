@@ -33,8 +33,8 @@ const Volunteer = () => {
     volunteerRole: "",
     purpose: "",
     location: "",
-    resume: "",
-    portfolio: "",
+    resumeLink: "",
+    portfolioLink: "", 
   };
 
   const hideModal = useRef(null);
@@ -94,6 +94,7 @@ const Volunteer = () => {
         setHideModal();
       }, 1000);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [volunteerRequest.isSuccess]);
 
   /**
