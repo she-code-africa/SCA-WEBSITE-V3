@@ -34,7 +34,7 @@ const Volunteer = () => {
     purpose: "",
     location: "",
     resumeLink: "",
-    portfolio: "",
+    // portfolio: "", //Taken out because portfolio is not on api's payload.
   };
 
   const hideModal = useRef(null);
@@ -94,6 +94,7 @@ const Volunteer = () => {
         setHideModal();
       }, 1000);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [volunteerRequest.isSuccess]);
 
   /**
