@@ -140,7 +140,7 @@ const Home = () => {
       </main>
       <Footer handleShow2025Report={handleShow2025Report} />
 
-      {openModal && <HomePageModal closeModal={handleCloseModal} />}
+      {/* {openModal && <HomePageModal closeModal={handleCloseModal} />} */}
     </>
   );
 };
