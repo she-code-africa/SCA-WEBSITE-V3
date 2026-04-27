@@ -350,7 +350,7 @@ const AcademyPage = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-primary-main-pink w-full py-20"
+        className="bg-primary-main-pink w-full py-20 hidden"
       >
         <div className="w-[90%] mx-auto xl:max-w-[1256px] hidden">
           <h3 className="section-header text-center text-white 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
