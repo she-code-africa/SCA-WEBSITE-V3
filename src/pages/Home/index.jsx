@@ -16,10 +16,20 @@ import Donate from "../../components/version-2/homepage/Donate";
 import { motion } from "framer-motion";
 import { heroFadeUp, sectionVariant } from "../../lib/motionVariants";
 import HomePageModal from "../../components/PopUpModal/home";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 
 const Home = () => {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.openReport) {
+      setOpenModal(true);
+
+      window.history.replaceState({}, "");
+    }
+  }, [location.state]);
 
   const handleCloseModal = () => {
     setOpenModal(false);
@@ -140,7 +150,7 @@ const Home = () => {
       </main>
       <Footer handleShow2025Report={handleShow2025Report} />
 
-      {/* {openModal && <HomePageModal closeModal={handleCloseModal} />} */}
+      {openModal && <HomePageModal closeModal={handleCloseModal} />}
     </>
   );
 };

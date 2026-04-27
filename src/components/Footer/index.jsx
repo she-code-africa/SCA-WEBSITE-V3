@@ -33,13 +33,13 @@ const Footer = ({ handleShow2025Report }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
-  const showReport = () => {
-    if (pathname !== "/") {
-      navigate("/");
-    } else {
-      handleShow2025Report();
-    }
-  };
+const showReport = () => {
+  if (pathname !== "/") {
+    navigate("/", { state: { openReport: true } });
+  } else {
+    handleShow2025Report();
+  }
+};
 
   return (
     <div className="overflow-hidden">

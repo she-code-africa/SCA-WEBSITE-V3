@@ -29,7 +29,7 @@ const AcademyPage = () => {
   const [school, setSchool] = useState({});
   const { data, isLoading, isError } = useQuery(
     [apiConstants.academy],
-    getAllSchools
+    getAllSchools,
   );
 
   useEffect(() => {
@@ -210,14 +210,15 @@ const AcademyPage = () => {
                           school?.name.toLowerCase() === "school of engineering"
                             ? soe
                             : school &&
-                              school?.name &&
-                              school?.name.toLowerCase() === "school of product"
-                            ? sop
-                            : school &&
-                              school?.name &&
-                              school?.name.toLowerCase() ===
-                                "school of applied skills" &&
-                              soa
+                                school?.name &&
+                                school?.name.toLowerCase() ===
+                                  "school of product"
+                              ? sop
+                              : school &&
+                                school?.name &&
+                                school?.name.toLowerCase() ===
+                                  "school of applied skills" &&
+                                soa
                         }
                         alt="hero-img"
                         className="w-full h-full object-cover"
@@ -298,7 +299,7 @@ const AcademyPage = () => {
               "School of Product",
             ]
               .filter(
-                (item) => item.toLowerCase() !== school?.name?.toLowerCase()
+                (item) => item.toLowerCase() !== school?.name?.toLowerCase(),
               )
               .map((school, idx) => (
                 <div className="mb-10 sm:mb-0" key={idx}>
@@ -349,9 +350,9 @@ const AcademyPage = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-primary-main-pink w-full py-20"
+        className="bg-primary-main-pink w-full py-20 hidden"
       >
-        <div className="w-[90%] mx-auto xl:max-w-[1256px]">
+        <div className="w-[90%] mx-auto xl:max-w-[1256px] hidden">
           <h3 className="section-header text-center text-white 2md:leading-[82px]  hero-text max-w-[474px] w-full mx-auto">
             Resources
           </h3>
