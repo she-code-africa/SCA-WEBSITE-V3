@@ -14,13 +14,7 @@ import {
 
 import Footer from "../../components/Footer";
 
-console.log({
-  communityFaq,
-  partnershipFaq,
-  membershipFaq,
-  programsFaq,
-  jobsFaq
-});
+
 
 
 const FAQ = () => {
