@@ -38,6 +38,7 @@ const Home = () => {
   const handleShow2025Report = () => {
     setOpenModal(true);
   };
+
   return (
     <>
       <Helmet>
