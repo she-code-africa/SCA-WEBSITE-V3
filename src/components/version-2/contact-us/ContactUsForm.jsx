@@ -17,7 +17,7 @@ const ContactUsForm = () => {
         .string()
         .email("Please enter a valid email address.")
         .required("Please enter your email address."),
-      description: yup.string().required("Please enter your message."),
+      comment: yup.string().required("Please enter your message."), // renamed from description
     })
     .required();
 
@@ -29,12 +29,12 @@ const ContactUsForm = () => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+
   const { mutate: handleContactUs } = useMutation(mutateEnquires, {
     onSuccess: (data) => {
       toast.success("Message sent Successfully!", {
         position: toast.POSITION.TOP_RIGHT,
       });
-
       reset();
     },
     onError: (error, variables) => {
@@ -43,7 +43,9 @@ const ContactUsForm = () => {
       });
     },
   });
+
   const onsubmit = (data) => handleContactUs(data);
+
   return (
     <section className="w-full">
       <div className="py-20 lg:py-28 w-[90%] max-w-[1256px] mx-auto flex gap-8">
@@ -60,7 +62,6 @@ const ContactUsForm = () => {
             <h3 className="text-[32px] md:text-3xl lg:text-[64px] font-bold 2md:leading-[82px] text-primary-main-pink hero-text">
               Leave us a message
             </h3>
-
             <p className="text-lg md:text-2xl mt-3 hidden">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Suspendisse varius enim in eros elementum tristique.
@@ -106,18 +107,18 @@ const ContactUsForm = () => {
               </label>
               <div
                 className={`w-full h-[290px] mt-2 rounded-md border border-black overflow-hidden ${
-                  errors.description?.message && "border-primary-main-pink"
+                  errors.comment?.message && "border-primary-main-pink" 
                 }`}
               >
                 <textarea
-                  {...register("description")}
-                  name="description"
+                  {...register("comment")} 
+                  name="comment"
                   placeholder="Write your message"
                   className="text-base w-full h-full border-0 outline-none p-3 bg-white placeholder:text-[rgba(130,130,130,1)] resize-none"
                 ></textarea>
               </div>
               <p className="text-primary-main-pink text-sm">
-                {errors.description?.message}
+                {errors.comment?.message} {/* updated from errors.description */}
               </p>
             </div>
 

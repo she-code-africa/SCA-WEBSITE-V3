@@ -77,6 +77,8 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1"
+    "@types/react-dom": "^19.2.1",
+    "baseline-browser-mapping": "^2.10.42",
+    "caniuse-lite": "^1.0.30001803"
   }
 }
