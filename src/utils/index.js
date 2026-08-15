@@ -98,12 +98,11 @@ export const communityFaq = [
       <>
         Yes! We have active chapters in several African countries and cities.
         You can find or apply to start a chapter at our.
-        <a href="www.shecodeafrica.org/chapters" 
-          style={{ color: "#6D033F" }}>
+        <a href="www.shecodeafrica.org/chapters" style={{ color: "#6D033F" }}>
           Chapters Page{" "}
         </a>{" "}
-        </>
-    )
+      </>
+    ),
   },
   {
     heading: "Is SheCodeAfrica present on all social media platforms?",
@@ -702,32 +701,5 @@ export const ReachOutCard = [
     id: 4,
     title: "For programs",
     email: "programs@shecodeafrica.org",
-  },
-];
-
-export const volunteerCards = [
-  {
-    id: 1,
-    title: "Mentor",
-    description:
-      "Guide and support women in their tech journey through one-on-one mentorship sessions.",
-    skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
-    image: MentorImg,
-  },
-  {
-    id: 2,
-    title: "Event Organizer",
-    description:
-      "Plan and coordinate community events, meetups, hackathons, and conferences across Africa.",
-    skills: ["Organization", "Logistics", "Communication", "Creativity"],
-    image: EventOrganizerImg,
-  },
-  {
-    id: 3,
-    title: "Media & Content Creator",
-    description:
-      "Create educational content, blog posts, designs, and social media content to inspire, educate and promote She Code Africa's mission.",
-    skills: ["Tech expertise", "Communication", "Empathy", "Patience"],
-    image: ContentCreatorImg,
   },
 ];

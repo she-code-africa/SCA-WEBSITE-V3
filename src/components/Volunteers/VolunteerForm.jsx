@@ -1,7 +1,9 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Captcha from "../../components/Captcha";
+import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getVolunteerRoles } from "../../services";
 
 const VolunteerForm = ({
   modal,
@@ -15,11 +17,19 @@ const VolunteerForm = ({
   isMessageShown,
   volunteerRequest,
 }) => {
-  const volunteerRolesAvailable = [
-    "Mentor",
-    "Event Organizer",
-    "Media & Content Creator",
-  ];
+  const [volunteerRoles, setVolunteerRoles] = useState([]);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["volunteerRoles"],
+    queryFn: () => getVolunteerRoles(),
+  });
+
+  useEffect(() => {
+    if (data?.data) {
+      setVolunteerRoles(data?.data);
+    }
+  }, [data]);
+
   return (
     <dialog
       ref={modal}
@@ -89,11 +99,17 @@ const VolunteerForm = ({
                   <option value={""} disabled>
                     Select a volunteer role
                   </option>
-                  {volunteerRolesAvailable.map((role, idx) => (
-                    <option value={role} key={idx}>
-                      {role}
-                    </option>
-                  ))}
+                  {isLoading ? (
+                    <option value="">Loading...</option>
+                  ) : volunteerRoles.length > 0 ? (
+                    volunteerRoles.map((role, idx) => (
+                      <option value={role.name} key={role._id}>
+                        {role.name}
+                      </option>
+                    ))
+                  ) : (
+                    <option value="">No role</option>
+                  )}
                 </select>
               </div>
               <div>
@@ -132,7 +148,9 @@ const VolunteerForm = ({
                   type="url"
                   id="portfolioLink"
                   className="block border border-[#2D2D2D] rounded-md h-12 px-5 items-center gap-1 focus:ring-2 focus:ring-[#B70569] focus:outline-none w-full py-8 mt-2"
-                  onChange={(e) => updateFormData("portfolioLink", e.target.value)}
+                  onChange={(e) =>
+                    updateFormData("portfolioLink", e.target.value)
+                  }
                   value={formValue.portfolioLink}
                 />
               </div>
