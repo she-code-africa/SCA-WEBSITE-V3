@@ -6,13 +6,14 @@ import Hero from "../../images/v2/volunteer-hero.jpg";
 import OurReach from "../../components/version-2/homepage/OurReach";
 import UserIcon from "../../images/volunteerImgs/voln-hero-icon.svg";
 // import testmonialImg from "../../images/testimonial.png";
-import { volunteerCards } from "../../utils";
+
 import { motion } from "framer-motion";
 import testmonialImg from "../../images/v2/volunteer-stories.png";
 import VolunteerForm from "../../components/Volunteers/VolunteerForm";
-import { mutateVolunteer } from "../../services";
+import { getVolunteerRoles, mutateVolunteer } from "../../services";
 import { useEffect, useRef, useState } from "react";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import scaLogo from "../../images/new-logo/SCA-Avatar-Cirlce-White-BG.png";
 
 const Volunteer = () => {
   // smooth scroll helper
@@ -34,7 +35,7 @@ const Volunteer = () => {
     purpose: "",
     location: "",
     resumeLink: "",
-    portfolioLink: "", 
+    portfolioLink: "",
   };
 
   const hideModal = useRef(null);
@@ -43,6 +44,18 @@ const Volunteer = () => {
   const [animatedClass, setAnimatedClass] = useState(`animate__zoomIn`);
   const [formValue, setFormValue] = useState(defaultFormValue);
   const [isMessageShown, setIsMessageShown] = useState(false);
+  const [volunteerRoles, setVolunteerRoles] = useState([]);
+
+  const { data, isError, isLoading } = useQuery({
+    queryKey: ["volunteerRoles"],
+    queryFn: () => getVolunteerRoles(),
+  });
+
+  useEffect(() => {
+    if (data?.data) {
+      setVolunteerRoles(data?.data);
+    }
+  }, [data]);
 
   const volunteerRequest = useMutation({
     mutationFn: (formData) => mutateVolunteer(formData),
@@ -94,7 +107,7 @@ const Volunteer = () => {
         setHideModal();
       }, 1000);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [volunteerRequest.isSuccess]);
 
   /**
@@ -268,81 +281,94 @@ const Volunteer = () => {
               of African women in tech.
             </motion.p>
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.2 },
-                },
-              }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {volunteerCards.map((card) => (
-                <motion.article
-                  key={card.id}
-                  variants={{
-                    hidden: { opacity: 0, y: 40 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.7, ease: "easeOut" },
-                    },
-                  }}
-                  className="group bg-white border-2 border-Primary-Magenta rounded-[15.29px] overflow-hidden transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(183,5,105,0.14)]"
-                >
-                  {/* image with padding and rounded inner container */}
-                  <div className="p-4 bg-SCA-White">
-                    <div className="w-full h-80 rounded-[15px] overflow-hidden bg-SCA-White">
-                      <img
-                        src={card.image}
-                        alt={card.title}
-                        className="w-full h-full object-contain block"
-                      />
-                    </div>
-                  </div>
+            {/*  */}
 
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-Primary-Magenta mb-2">
-                      {card.title}
-                    </h3>
-                    <p className="text-xl font-medium text-black mb-8">
-                      {card.description}
-                    </p>
-
-                    <div className="text-sm text-black mb-3">
-                      Skills needed:
-                    </div>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {card.skills.map((s) => (
-                        <span
-                          key={s}
-                          className="inline-block bg-[#FFB8E04D] text-Primary-Magenta text-sm px-3 py-1 rounded-full"
-                        >
-                          {s}
-                        </span>
-                      ))}
+            {volunteerRoles.length > 0 ? (
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.2 },
+                  },
+                }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {volunteerRoles.map((card) => (
+                  <motion.article
+                    key={card._id}
+                    variants={{
+                      hidden: { opacity: 0, y: 40 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.7, ease: "easeOut" },
+                      },
+                    }}
+                    className="group bg-white border-2 border-Primary-Magenta rounded-[15.29px] overflow-hidden transition-shadow duration-300 hover:shadow-[0_18px_50px_rgba(183,5,105,0.14)]"
+                  >
+                    {/* image with padding and rounded inner container */}
+                    <div className="p-4 bg-SCA-White">
+                      <div className="w-full h-80 rounded-[15px] overflow-hidden bg-SCA-White">
+                        <img
+                          src={card.image ? card.image : scaLogo}
+                          alt={card.name}
+                          className="w-full h-full object-contain block"
+                        />
+                      </div>
                     </div>
 
-                    <button
-                      className="w-full bg-Primary-Magenta text-SCA-White py-3 rounded-lg text-sm font-medium hover:opacity-95 transition"
-                      onClick={() => {
-                        setFormValue({
-                          ...formValue,
-                          volunteerRole: card.title,
-                        });
-                        setShowModal();
-                      }}
-                      type="button"
-                    >
-                      Apply for this role
-                    </button>
-                  </div>
-                </motion.article>
-              ))}
-            </motion.div>
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold text-Primary-Magenta mb-2">
+                        {card.name}
+                      </h3>
+                      <p className="text-xl font-medium text-black mb-8">
+                        {card.description}
+                      </p>
+
+                      {card.skills.length > 0 && (
+                        <>
+                          <div className="text-sm text-black mb-3">
+                            Skills needed:
+                          </div>
+
+                          <div className="flex flex-wrap gap-2 mb-6">
+                            {card.skills.map((s) => (
+                              <span
+                                key={s}
+                                className="inline-block bg-[#FFB8E04D] text-Primary-Magenta text-sm px-3 py-1 rounded-full"
+                              >
+                                {s}
+                              </span>
+                            ))}
+                          </div>
+                        </>
+                      )}
+
+                      <button
+                        className="w-full bg-Primary-Magenta text-SCA-White py-3 rounded-lg text-sm font-medium hover:opacity-95 transition"
+                        onClick={() => {
+                          setFormValue({
+                            ...formValue,
+                            volunteerRole: card.name,
+                          });
+                          setShowModal();
+                        }}
+                        type="button"
+                      >
+                        Apply for this role
+                      </button>
+                    </div>
+                  </motion.article>
+                ))}
+              </motion.div>
+            ) : (
+              <p className="text-center text-[34px] sm:text-4xl lg:text-[64px] font-semibold text-Primary-Magenta mb-10 hero-text">
+                No available role.
+              </p>
+            )}
           </div>
         </section>
 

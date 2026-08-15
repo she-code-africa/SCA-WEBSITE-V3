@@ -12,13 +12,17 @@ export async function getAllMedia() {
   return events;
 }
 
-
 export async function getChapters(page, limit = 15) {
   const chapters = await axios.get(
     `${baseUrl}/chapters/member-chapters?page=${page}&limit=${limit}&state=published`,
   );
 
   return chapters.data;
+}
+
+export async function getVolunteerRoles() {
+  const roles = await axios.get(`${baseUrl}/volunteer-role`);
+  return roles.data;
 }
 
 export async function getChapter(chapterId) {

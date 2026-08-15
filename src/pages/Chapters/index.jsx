@@ -23,7 +23,7 @@ const Chapters = () => {
   const { data, isError, isLoading } = useQuery({
     queryKey: [apiConstants.chapters, page],
     queryFn: () => getChapters(page, 15), // Request 15 chapters per page
-    keepPreviousData: true
+    keepPreviousData: true,
   });
 
   // Update chapters and strictly filter out drafts/archived
@@ -31,7 +31,7 @@ const Chapters = () => {
     if (data?.data) {
       // Only keep chapters that are strictly "published"
       const publishedChapters = data.data.filter(
-        (chapter) => chapter.state === "published"
+        (chapter) => chapter.state === "published",
       );
 
       setChapters(publishedChapters);
@@ -81,8 +81,8 @@ const Chapters = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   return (
@@ -142,7 +142,7 @@ const Chapters = () => {
               width: "114.45px",
               height: "102px",
               minWidth: "114.45px",
-              minHeight: "102px"
+              minHeight: "102px",
             }}
           />
           <p className="text-black description-text text-center sm:text-left">
