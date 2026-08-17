@@ -57,7 +57,7 @@ const Event = ({ event, isUpcoming, i }) => {
               </span>
             </li>
 
-            <li className="w-full flex items-center gap-[10px]">
+            <li className="w-full hidden items-center gap-[10px]">
               <IoLocationOutline className="text-[#B70569] text-xl" />
 
               <span className="text-[#7D355D] small-text capitalize">Zoom</span>
