@@ -3,11 +3,21 @@ import { IoMdAlarm } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 import { motion } from "framer-motion";
 
+function formatDate(isoString) {
+  const date = new Date(isoString);
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
 const Event = ({ event, isUpcoming, i }) => {
   const previewText =
     event?.description && event?.description.length > 110
       ? event?.description.slice(0, 110) + "..."
       : event?.description;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -45,11 +55,11 @@ const Event = ({ event, isUpcoming, i }) => {
               <Calendar />
 
               <span className="text-[#7D355D] small-text capitalize">
-                October 25, 2025
+                {event.eventDate ? formatDate(event.eventDate) : "N/A"}
               </span>
             </li>
 
-            <li className="w-full flex items-center gap-[10px]">
+            <li className="w-full hidden items-center gap-[10px]">
               <IoMdAlarm className="text-[#B70569] text-xl" />
 
               <span className="text-[#7D355D] small-text capitalize">
