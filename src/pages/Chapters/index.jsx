@@ -26,11 +26,16 @@ const Chapters = () => {
     keepPreviousData: true,
   });
 
-  // Update chapters when data changes
+  // Update chapters and strictly filter out drafts/archived
   useEffect(() => {
     if (data?.data) {
-      setChapters(data.data);
-      setFilteredChapters(data.data);
+      // Only keep chapters that are strictly "published"
+      const publishedChapters = data.data.filter(
+        (chapter) => chapter.state === "published",
+      );
+
+      setChapters(publishedChapters);
+      setFilteredChapters(publishedChapters);
     }
   }, [data]);
 
@@ -59,6 +64,8 @@ const Chapters = () => {
 
   // Pagination logic
   const chaptersPerPage = 15;
+  // NOTE: Because we filtered on the frontend, 'chapters.length' will accurately reflect only published chapters.
+  // This ensures the fallback pagination (Math.ceil) calculates the exact correct number of page dots.
   const totalPages =
     data?.totalPages ||
     data?.total_pages ||
@@ -249,9 +256,9 @@ const Chapters = () => {
             </div>
 
             {/* Pagination Dots here*/}
-            {!isLoading && !searchQuery && data?.totalPages >= 1 && (
+            {!isLoading && !searchQuery && totalPages >= 1 && (
               <div className="flex flex-wrap justify-center gap-2 mt-8 sm:mt-12">
-                {[...Array(data.totalPages)].map((_, i) => (
+                {[...Array(totalPages)].map((_, i) => (
                   <button
                     key={i}
                     className={`w-6 h-6 rounded-full border-0 ${

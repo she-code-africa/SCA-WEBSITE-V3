@@ -60,6 +60,8 @@ const Events = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
+  console.log(events);
+
   return (
     <>
       <Helmet>

@@ -12,18 +12,21 @@ export async function getAllMedia() {
   return events;
 }
 
-export async function getChapters(page, limit = 12) {
+export async function getChapters(page, limit = 15) {
   const chapters = await axios.get(
-    `${baseUrl}/chapters/member-chapters?page=${page}&limit=${limit}`,
+    `${baseUrl}/chapters/member-chapters?page=${page}&limit=${limit}&state=published`,
   );
 
   return chapters.data;
 }
 
+export async function getVolunteerRoles() {
+  const roles = await axios.get(`${baseUrl}/volunteer-role`);
+  return roles.data;
+}
+
 export async function getChapter(chapterId) {
-  // `${baseUrl}/chapters/categories/${categoryId}/member-chapters/${chapterId}`;
-  // const token = JSON.parse(localStorage.getItem("userDetails"))?.token;
-  const chapters = await api.get(
+  const chapters = await axios.get(
     `${baseUrl}/chapters/member-chapters/${chapterId}`,
   );
   return chapters;
