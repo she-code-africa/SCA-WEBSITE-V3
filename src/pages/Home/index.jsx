@@ -18,10 +18,16 @@ import { heroFadeUp, sectionVariant } from "../../lib/motionVariants";
 import HomePageModal from "../../components/PopUpModal/home";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
+import IndustryReportModal from "../../components/Home/IndustryReportModal";
 
 const Home = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [industryReport, setIndustryReport] = useState(false)
   const location = useLocation();
+
+  const handleOpenReportModal = () =>{
+    setIndustryReport(true);
+  }
 
   useEffect(() => {
     if (location.state?.openReport) {
@@ -61,7 +67,7 @@ const Home = () => {
         />
       </Helmet>
 
-      <Header page={"home"} />
+      <Header page={"home"} openReport={handleOpenReportModal} />
       <main className="text-secondary-main-black w-full">
         <section className="w-full h-full bg-[#B70569] relative ">
           <figure className="absolute top-0 left-0 w-full h-full mix-blend-multiply">
@@ -152,6 +158,8 @@ const Home = () => {
       <Footer handleShow2025Report={handleShow2025Report} />
 
       {openModal && <HomePageModal closeModal={handleCloseModal} />}
+
+      {industryReport && <IndustryReportModal closeModal={()=>setIndustryReport(false)} /> }
     </>
   );
 };
