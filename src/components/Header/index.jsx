@@ -24,7 +24,7 @@ import Contact from "../version-2/icons/nav/Contact";
 import Community from "../version-2/icons/nav/Community";
 import Chapters from "../version-2/icons/nav/Chapters";
 
-const Header = ({ page }) => {
+const Header = ({ page, openReport }) => {
   const { data, isLoading, isFetching } = useQuery(
     [apiConstants.academy],
     getAllSchools
@@ -526,12 +526,25 @@ const Header = ({ page }) => {
               })}
             </ul>
 
+            <div className="flex flex-col xl:flex-row  xl:justify-end items-center w-full xl: max-w-[300px] gap-6">
+{path === paths.home && (
+              <button
+              onClick={openReport}
+              className="border-primary-main-pink border rounded-lg w-full xl:max-w-[200px] py-[18px] px-8 text-primary-main-pink hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu  hover:bg-[#5C0335] transition duration-300 text-center"
+            >
+              Industry Report
+            </button>
+)}
+
             <Link
               to={paths.donate}
-              className="bg-primary-main-pink rounded-lg w-full max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu xl:ml-20 hover:bg-[#5C0335] transition duration-300 text-center"
+              className="bg-primary-main-pink rounded-lg w-full xl:max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu hover:bg-[#5C0335] transition duration-300 text-center"
             >
               Donate
             </Link>
+            </div>
+
+            
           </ul>
         </aside>
       </nav>
@@ -540,3 +553,4 @@ const Header = ({ page }) => {
 };
 
 export default Header;
+ 

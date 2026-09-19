@@ -7,6 +7,7 @@ const HomePopupInput = ({
   type = "text",
   handleChange,
   values,
+  isWhiteBg=false
 }) => {
   return (
     <div className="w-full mb-4">
@@ -20,7 +21,7 @@ const HomePopupInput = ({
       <div className="w-full h-[52px] mt-2 overflow-hidden border border-primary-main-pink rounded-lg">
         <input
           type={type}
-          className="w-full h-full bg-transparent outline-none p-4 placeholder:text-[#ff8fce] text-base"
+          className={`w-full h-full ${isWhiteBg ? 'bg-white': 'bg-transparent'}  outline-none p-4 placeholder:text-[#ff8fce] text-base`}
           placeholder={placeholder}
           name={name}
           onChange={handleChange}
