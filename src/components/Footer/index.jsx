@@ -33,13 +33,13 @@ const Footer = ({ handleShow2025Report }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
-const showReport = () => {
-  if (pathname !== "/") {
-    navigate("/", { state: { openReport: true } });
-  } else {
-    handleShow2025Report();
-  }
-};
+  const showReport = () => {
+    if (pathname !== "/") {
+      navigate("/", { state: { openReport: true } });
+    } else {
+      handleShow2025Report();
+    }
+  };
 
   return (
     <div className="overflow-hidden">
@@ -78,9 +78,17 @@ const showReport = () => {
                 <p className="text-black subsection-header leading-[38.78px]">
                   Get Involved
                 </p>
+                <a
+                  href={"https://shecodeafrica.bumpa.shop/"}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button-text block text-black mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                >
+                  Shop Our Merch Collection
+                </a>
                 <Link
                   to={paths.donate}
-                  className="button-text block text-black mb-5 mt-8 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                  className="button-text block text-black mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
                 >
                   Donate To A Cause
                 </Link>
