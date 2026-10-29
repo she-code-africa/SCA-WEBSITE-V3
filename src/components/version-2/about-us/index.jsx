@@ -1,6 +1,6 @@
 import { aboutUsReachData } from "../../../utils/v2";
 import { motion } from "framer-motion";
-import CountUp from "react-countup";
+
 
 const AboutUsReachSection = () => {
   const containerVariant = {
@@ -13,15 +13,15 @@ const AboutUsReachSection = () => {
   };
 
   // Helper to extract number and suffix (e.g. "5k" → { num: 5, suffix: "k" })
-  const parseNumberAndSuffix = (value) => {
-    // Remove commas and trim spaces
-    const cleanValue = value.replace(/,/g, "").trim();
-    const match = cleanValue.match(/^([\d.]+)([a-zA-Z]*)$/);
-    return {
-      num: match ? parseFloat(match[1]) : 0,
-      suffix: match ? match[2] : "",
-    };
-  };
+  // const parseNumberAndSuffix = (value) => {
+  //   // Remove commas and trim spaces
+  //   const cleanValue = value.replace(/,/g, "").trim();
+  //   const match = cleanValue.match(/^([\d.]+)([a-zA-Z]*)$/);
+  //   return {
+  //     num: match ? parseFloat(match[1]) : 0,
+  //     suffix: match ? match[2] : "",
+  //   };
+  // };
   return (
     <motion.section
       initial="hidden"
