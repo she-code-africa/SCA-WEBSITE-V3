@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import MentorImg from "../images/volunteerImgs/mentor-image.png";
-import EventOrganizerImg from "../images/volunteerImgs/event-organizer-image.png";
-import ContentCreatorImg from "../images/volunteerImgs/content-creator-image.png";
+// import MentorImg from "../images/volunteerImgs/mentor-image.png";
+// import EventOrganizerImg from "../images/volunteerImgs/event-organizer-image.png";
+// import ContentCreatorImg from "../images/volunteerImgs/content-creator-image.png";
 
 export const paths = {
   home: "/",

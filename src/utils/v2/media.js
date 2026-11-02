@@ -1,8 +1,8 @@
-import imageOne from "../../images/v2/media/media-conf1.jpg";
-import imageTwo from "../../images/v2/media/media-conf2.jpg";
-import imageThree from "../../images/v2/media/media-conf3.jpg";
-import imageFour from "../../images/v2/media/media-conf4.jpg";
-import imageFive from "../../images/v2/media/media-conf5.jpg";
+// import imageOne from "../../images/v2/media/media-conf1.jpg";
+// import imageTwo from "../../images/v2/media/media-conf2.jpg";
+// import imageThree from "../../images/v2/media/media-conf3.jpg";
+// import imageFour from "../../images/v2/media/media-conf4.jpg";
+// import imageFive from "../../images/v2/media/media-conf5.jpg";
 
 import blogImg1 from "../../images/v2/media/blog/blogImg1.jpg";
 import blogImg2 from "../../images/v2/media/blog/blogImg2.jpeg";

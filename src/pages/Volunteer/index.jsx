@@ -46,7 +46,7 @@ const Volunteer = () => {
   const [isMessageShown, setIsMessageShown] = useState(false);
   const [volunteerRoles, setVolunteerRoles] = useState([]);
 
-  const { data, isError, isLoading } = useQuery({
+  const { data, } = useQuery({
     queryKey: ["volunteerRoles"],
     queryFn: () => getVolunteerRoles(),
   });

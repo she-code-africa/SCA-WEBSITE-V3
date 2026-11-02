@@ -13,7 +13,6 @@ import { dropdownVariant, headerVariant } from "../../lib/motionVariants";
 import AboutSca from "../version-2/icons/nav/AboutSca";
 import MeetTeam from "../version-2/icons/nav/MeetTeam";
 import Initiative from "../version-2/icons/nav/Initiative";
-import Events from "../version-2/icons/nav/Events";
 import SOE from "../version-2/icons/nav/SOE";
 import SOP from "../version-2/icons/nav/SOP";
 import SOA from "../version-2/icons/nav/SOA";
@@ -23,11 +22,12 @@ import Volunteer from "../version-2/icons/nav/Volunteer";
 import Contact from "../version-2/icons/nav/Contact";
 import Community from "../version-2/icons/nav/Community";
 import Chapters from "../version-2/icons/nav/Chapters";
+import MediaIcon from "../version-2/icons/nav/MediaIcon";
 
 const Header = ({ page, openReport }) => {
   const { data, isLoading, isFetching } = useQuery(
     [apiConstants.academy],
-    getAllSchools
+    getAllSchools,
   );
   const [schoolList, setSchoolList] = useState([]);
 
@@ -73,9 +73,9 @@ const Header = ({ page, openReport }) => {
           icon: <Initiative />,
         },
         {
-          to: paths.events,
-          text: "Events",
-          icon: <Events />,
+          to: "/media",
+          text: "Media",
+          icon: <MediaIcon />,
         },
       ],
     },
@@ -132,7 +132,7 @@ const Header = ({ page, openReport }) => {
         },
       ],
     },
-    { to: "/media", text: "Media", list: [] },
+    { to: "/events", text: "Events", list: [] },
   ];
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -251,7 +251,7 @@ const Header = ({ page, openReport }) => {
                       (item) =>
                         path === item.to ||
                         path.startsWith(item.to) ||
-                        path.includes(item.text.toLowerCase())
+                        path.includes(item.text.toLowerCase()),
                     );
                   return active;
                 };
@@ -513,7 +513,8 @@ const Header = ({ page, openReport }) => {
                                       : "text-[#434343]"
                                   } text-sm font-normal`}
                                 >
-                                  {item.subText || "Small sample text here"}{" "}
+                                  {item.subText ||
+                                    "Small sample text here"}{" "}
                                 </span>
                               </Link>
                             </li>
@@ -527,24 +528,22 @@ const Header = ({ page, openReport }) => {
             </ul>
 
             <div className="flex flex-col xl:flex-row  xl:justify-end items-center w-full xl: max-w-[300px] gap-6">
-{path === paths.home && (
-              <button
-              onClick={openReport}
-              className="border-primary-main-pink border rounded-lg w-full xl:max-w-[200px] py-[18px] px-8 text-primary-main-pink hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu  hover:bg-[#5C0335] transition duration-300 text-center"
-            >
-              Industry Report
-            </button>
-)}
+              {path === paths.home && (
+                <button
+                  onClick={openReport}
+                  className="border-primary-main-pink border rounded-lg w-full xl:max-w-[200px] py-[18px] px-8 text-primary-main-pink hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu  hover:bg-[#5C0335] transition duration-300 text-center"
+                >
+                  Industry Report
+                </button>
+              )}
 
-            <Link
-              to={paths.donate}
-              className="bg-primary-main-pink rounded-lg w-full xl:max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu hover:bg-[#5C0335] transition duration-300 text-center"
-            >
-              Donate
-            </Link>
+              <Link
+                to={paths.donate}
+                className="bg-primary-main-pink rounded-lg w-full xl:max-w-[117px] py-[18px] px-8 text-white hover:text-white focus:outline-none focus:ring-8 focus:ring-tutu hover:bg-[#5C0335] transition duration-300 text-center"
+              >
+                Donate
+              </Link>
             </div>
-
-            
           </ul>
         </aside>
       </nav>
@@ -553,4 +552,3 @@ const Header = ({ page, openReport }) => {
 };
 
 export default Header;
- 

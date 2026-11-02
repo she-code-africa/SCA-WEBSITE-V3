@@ -1,4 +1,4 @@
-import { compareAsc, isAfter, isThisYear, getYear } from "date-fns";
+import { compareAsc, isAfter } from "date-fns";
 
 export const sortUpcomingEventByDate = (events) => {
   const date = new Date();
