@@ -18,7 +18,7 @@ import ColorContrast from "./brand-content/ColorContrast";
 import PrimaryType from "./brand-content/PrimaryType";
 import SecondaryType from "./brand-content/SecondaryType";
 import TypeScale from "./brand-content/TypeScale";
-import TypeScale2 from "./brand-content/TypeScale2";
+import TypeScaleTwo from "./brand-content/TypeScaleTwo";
 
 const BrandAssetContent = () => {
   return (
@@ -42,7 +42,7 @@ const BrandAssetContent = () => {
       <PrimaryType />
       <SecondaryType />
       <TypeScale />
-      <TypeScale2 />
+      <TypeScaleTwo />
     </section>
   );
 };

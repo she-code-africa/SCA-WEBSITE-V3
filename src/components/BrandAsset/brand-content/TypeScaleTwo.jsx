@@ -1,6 +1,6 @@
-import typeScale2 from "../../../images/v2/brand-asset/typeScale2.png";
+import typeScale2Img from "../../../images/v2/brand-asset/typeScale2.png";
 
-const TypeScale2 = () => {
+const TypeScaleTwo = () => {
   const typeScaleItem = [
     "Our type scale reflects the overall typography system. Sizing is specified to ensure consistency across both print and digital applications, as each may require certain specific sizes for clarity and readability.",
   ];
@@ -11,7 +11,7 @@ const TypeScale2 = () => {
     >
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
         <img
-          src={typeScale2}
+          src={typeScale2Img}
           className="w-full h-full object-contain"
           alt="Avatar Mark"
         />
@@ -27,4 +27,4 @@ const TypeScale2 = () => {
   );
 };
 
-export default TypeScale2;
+export default TypeScaleTwo;
