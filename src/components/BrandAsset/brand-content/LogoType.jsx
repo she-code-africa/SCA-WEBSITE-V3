@@ -64,7 +64,7 @@ const LogoType = () => {
         <section className="mt-5 flex-col gap-5 flex sm:flex-row sm:justify-between w-[90%] max-w-[760px]">
           <ul className="mx-auto mb-5 sm:max-w-[456px] sm:items-center sm:flex-row flex-col flex gap-5 ">
             {logoMarkItems.map((item, index) => (
-              <li className="text-[#AB8599] text-[10px]" key={index}>
+              <li className="text-[#AB8599] text-sm" key={index}>
                 <span>{item}</span>
               </li>
             ))}

@@ -49,7 +49,7 @@ const LockUp = () => {
   return (
     <section
       id="lockup"
-      className="w-full flex flex-col  xl:relative  justify-between gap-6  bg-white"
+      className="w-full flex flex-col  xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
     >
       {" "}
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
@@ -62,7 +62,7 @@ const LockUp = () => {
       <section className="w-[90%] max-w-[740px] mx-auto xl:absolute xl:bottom-6 xl:left-1/2 xl:-translate-x-1/2 flex-col gap-5 flex sm:flex-row sm:justify-between">
         <ul className="mx-auto mb-5 sm:max-w-[456px] sm:items-center sm:flex-row flex-col flex gap-5 ">
           {lockupItems.map((item, index) => (
-            <li className="text-[#AB8599] text-[10px]" key={index}>
+            <li className="text-[#AB8599] text-sm" key={index}>
               <span>{item}</span>
             </li>
           ))}

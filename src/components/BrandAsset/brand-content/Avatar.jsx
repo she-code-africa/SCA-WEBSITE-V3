@@ -50,7 +50,7 @@ const Avatar = () => {
   return (
     <section
       id="avatar"
-      className="w-full flex flex-col xl:relative xl:min-h-[500px] justify-between gap-6  bg-white"
+      className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
     >
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
         <img
@@ -61,7 +61,7 @@ const Avatar = () => {
       </figure>
       <ul className="w-[90%] max-w-[750px] xl:absolute xl:bottom-6 xl:left-1/2 xl:-translate-x-1/2 mx-auto mb-5 xl:mb-0 sm:flex-row flex-col flex gap-5 justify-between">
         {avatarItems.map((item, index) => (
-          <li className="text-[#AB8599] text-[10px]" key={index}>
+          <li className="text-[#AB8599] text-sm" key={index}>
             <span>{item}</span>
           </li>
         ))}
@@ -73,7 +73,7 @@ const Avatar = () => {
           download="Avatar"
           className="w-fit text-sm font-medium font-figtree items-center text-primary-main-pink flex gap-2"
         >
-          Download Avatar <DownloadIcon />
+          Download Badge <DownloadIcon />
         </a>
       </div>
     </section>
