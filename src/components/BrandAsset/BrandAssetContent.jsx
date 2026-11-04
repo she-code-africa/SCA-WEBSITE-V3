@@ -10,6 +10,15 @@ import Placement from "./brand-content/Placement";
 import TrademarkMisuse from "./brand-content/TrademarkMisuse";
 import Trademark2 from "./brand-content/Trademark2";
 import Trademark3 from "./brand-content/Trademark3";
+import ExtendedPalette from "./brand-content/ExtendedPalette";
+import PrimaryPalette from "./brand-content/PrimaryPalette";
+import SecondaryPalette from "./brand-content/SecondaryPalette";
+import ColorUsage from "./brand-content/ColorUsage";
+import ColorContrast from "./brand-content/ColorContrast";
+import PrimaryType from "./brand-content/PrimaryType";
+import SecondaryType from "./brand-content/SecondaryType";
+import TypeScale from "./brand-content/TypeScale";
+import TypeScale2 from "./brand-content/TypeScale2";
 
 const BrandAssetContent = () => {
   return (
@@ -25,6 +34,15 @@ const BrandAssetContent = () => {
       <TrademarkMisuse />
       <Trademark2 />
       <Trademark3 />
+      <ExtendedPalette />
+      <PrimaryPalette />
+      <SecondaryPalette />
+      <ColorUsage />
+      <ColorContrast />
+      <PrimaryType />
+      <SecondaryType />
+      <TypeScale />
+      <TypeScale2 />
     </section>
   );
 };

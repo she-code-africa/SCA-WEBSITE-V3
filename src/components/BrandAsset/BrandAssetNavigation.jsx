@@ -269,17 +269,6 @@ const NavList = ({ active, onSelect }) => {
   );
 };
 
-const DownloadButton = ({ className = "" }) => (
-  <a
-    href={GUIDELINES_URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={`flex justify-center items-center bg-primary-main-pink hover:bg-primary-dark-pink transition-colors duration-300 text-white font-sans text-base rounded-lg h-[55px] ${className}`}
-  >
-    Download Brand Guidelines
-  </a>
-);
-
 const BrandAssetNavigation = () => {
   const { active, goTo } = useScrollSpy();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -318,7 +307,6 @@ const BrandAssetNavigation = () => {
               className="absolute left-0 right-0 top-full mt-2 max-h-[70vh] overflow-y-auto rounded-xl bg-white p-5 shadow-xl"
             >
               <NavList active={active} onSelect={handleMobileSelect} />
-              <DownloadButton className="mt-6" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -327,7 +315,6 @@ const BrandAssetNavigation = () => {
       {/* DESKTOP (xl): sidebar */}
       <nav aria-label="Brand guidelines" className="hidden xl:block px-8">
         <NavList active={active} onSelect={goTo} />
-        <DownloadButton className="mt-10" />
       </nav>
     </aside>
   );
