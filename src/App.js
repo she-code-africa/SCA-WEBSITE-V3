@@ -38,6 +38,7 @@ import ContactUs from "./pages/ContactUs";
 import Media from "./pages/Media";
 import Layout from "./pages/Layout";
 import SponsorALady from "./pages/SponsorALady";
+import BrandAsset from "./pages/BrandAssets";
 
 const queryClient = new QueryClient();
 
@@ -76,6 +77,7 @@ function Routes(params) {
       <Route path={paths.about} element={<About />} />
       <Route path={paths.team} element={<Team />} />
       <Route path={paths.chapters} element={<Chapters />} />
+      <Route path={"/brand-assets"} element={<BrandAsset />} />
 
       <Route path={paths.leadChapter} element={<ChaptersForm />} />
       <Route path={paths.donate_partner} element={<Donate />} />
