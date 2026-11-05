@@ -278,8 +278,10 @@ const BrandAssetNavigation = () => {
   };
 
   return (
-    // Sticky on mobile (just under the header) and on xl (the sidebar)
-    <aside className="sticky top-21 z-30 w-full xl:top-40 xl:max-w-[300px] xl:shrink-0 xl:self-start">
+    // Mobile: sticky dropdown under the header.
+    // xl: this is just an empty 300px column that holds the space,
+    // while the nav inside it is fixed to the screen.
+    <aside className="sticky top-21 z-30 w-full xl:static xl:w-[300px] xl:shrink-0">
       {/* MOBILE: dropdown */}
       <div className="relative xl:hidden">
         <button
@@ -311,8 +313,11 @@ const BrandAssetNavigation = () => {
         </AnimatePresence>
       </div>
 
-      {/* DESKTOP (xl): sidebar */}
-      <nav aria-label="Brand guidelines" className="hidden xl:block px-8">
+      {/* DESKTOP (xl): fixed sidebar */}
+      <nav
+        aria-label="Brand guidelines"
+        className="hidden xl:block xl:fixed xl:top-40 xl:w-[300px] xl:max-h-[calc(100vh-11rem)] xl:overflow-y-auto px-8 scrollbar-hidden"
+      >
         <NavList active={active} onSelect={goTo} />
       </nav>
     </aside>
