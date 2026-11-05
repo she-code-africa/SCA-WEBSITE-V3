@@ -1,10 +1,13 @@
-import React from "react";
 import clearSpace from "../../../images/v2/brand-asset/clearSpace.png";
 
 const ClearSpace = () => {
   const clearSpaceItems = [
     "Our minimum clear space is the area around our trademarks that no element should intrude. Within this space no text, graphical element etc. should intrude no matter how important that information appears to be.",
-    "x = height of logomark y = height of badge S = height of “S” in logotype",
+    [
+      "x = height of logomark",
+      "y = height of badge",
+      "S = height of “S” in logotype",
+    ],
   ];
   return (
     <section
@@ -21,7 +24,15 @@ const ClearSpace = () => {
       <ul className="w-[90%] max-w-[730px] xl:absolute xl:bottom-6 xl:left-1/2 xl:-translate-x-1/2 mx-auto mb-5 xl:mb-0 sm:flex-row flex-col flex gap-5 justify-between">
         {clearSpaceItems.map((item, index) => (
           <li className="text-[#AB8599] xl:w-1/2 text-sm" key={index}>
-            <span>{item}</span>
+            {Array.isArray(item) ? (
+              item.map((line) => (
+                <span className="block" key={line}>
+                  {line}
+                </span>
+              ))
+            ) : (
+              <span>{item}</span>
+            )}
           </li>
         ))}
       </ul>

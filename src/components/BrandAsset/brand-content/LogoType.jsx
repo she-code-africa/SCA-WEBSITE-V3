@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../../images/v2/brand-asset/Logo.png";
+import logotype from "../../../images/v2/brand-asset/SCA-Logotype-Magenta.svg";
 
 const DownloadIcon = () => {
   return (
@@ -49,7 +50,7 @@ const LogoType = () => {
     "The Maragsâ typeface has been customised for the logotype and should not be used to typeset any other text..",
   ];
   return (
-    <section id="logotype" className="w-full py-6 px-8 gap-6  bg-white ">
+    <section id="logomark" className="w-full py-6 px-8 gap-6  bg-white ">
       <div className="w-[90%] mx-auto max-w-[780px]">
         <div className="w-full flex items-center justify-center min-h-[350px] xl:min-h-[550px] bg-[#f5f0ed]">
           <figure className="h-[83.86px] w-full max-w-[602.5px] mx-auto">
@@ -71,8 +72,8 @@ const LogoType = () => {
           </ul>
           <div className="w-full flex sm:justify-end items-center">
             <a
-              href="/"
-              download="Logo type"
+              href={logotype}
+              download="SCA-Logotype-Magenta"
               className="w-fit text-sm font-medium font-figtree items-center text-primary-main-pink flex gap-2"
             >
               Download Logotype <DownloadIcon />

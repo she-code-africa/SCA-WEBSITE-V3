@@ -1,5 +1,6 @@
 import React from "react";
 import lockup from "../../../images/v2/brand-asset/lockup.png";
+import lockuptype from "../../../images/v2/brand-asset/SCA-Lockup-Coloured.svg";
 
 const DownloadIcon = () => {
   return (
@@ -69,8 +70,8 @@ const LockUp = () => {
         </ul>
         <div className="w-full flex sm:justify-end items-center">
           <a
-            href="/"
-            download="Lockup"
+            href={lockuptype}
+            download="SCA-Lockup-Coloured"
             className="w-fit text-sm font-medium font-figtree items-center text-primary-main-pink flex gap-2"
           >
             Download Lockup <DownloadIcon />

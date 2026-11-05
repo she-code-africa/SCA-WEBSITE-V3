@@ -1,5 +1,6 @@
 import React from "react";
 import avatarImg from "../../../images/v2/brand-asset/avatar.png";
+import avatarType from "../../../images/v2/brand-asset/SCA-Badge-White.png";
 
 const DownloadIcon = () => {
   return (
@@ -69,8 +70,8 @@ const Avatar = () => {
 
       <div className="w-full flex xl:absolute xl:top-20 xl:right-[125px] sm:justify-end items-center">
         <a
-          href="/"
-          download="Avatar"
+          href={avatarType}
+          download="SCA-Badge-White"
           className="w-fit text-sm font-medium font-figtree items-center text-primary-main-pink flex gap-2"
         >
           Download Badge <DownloadIcon />

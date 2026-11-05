@@ -3,8 +3,14 @@ import logomark from "../../../images/v2/brand-asset/logomark.png";
 const LogoMark = () => {
   const logoMarkItems = [
     "This document will help you understand the basic elements of our brand identity system. It explains how to make use of this system and maintain consistency in communication and visual components of the organisation",
-    "This document should serve as a source of inspiration and the compass that we follow in our journey to to empower African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.”",
-    "**Remember:** It is of utmost importance that the guidelines in this document are strictly adhered to and components should not be altered to satisfy personal preferences, The brand comes before us and as such it supercedes our personal tastes.",
+    "This document should serve as a source of inspiration and the compass that we follow in our journey to empower African girls and women with access to technology and digital skills training, bridging the gender gap and fostering economic independence.”",
+    <>
+      <span className="font-semibold text-[#5C0335]">Remember:</span> It is of
+      utmost importance that the guidelines in this document are strictly
+      adhered to and components should not be altered to satisfy personal
+      preferences, The brand comes before us and as such it supercedes our
+      personal tastes.
+    </>,
   ];
   return (
     <section

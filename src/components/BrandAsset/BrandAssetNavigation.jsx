@@ -44,10 +44,9 @@ export const brandNavSections = [
     ],
   },
   // No items yet, so it shows as a simple link without the +/- icon
-  { id: "device-patterns", label: "Device & Patterns" },
+  // { id: "device-patterns", label: "Device & Patterns" },
 ];
 
-const GUIDELINES_URL = "#"; // 👉 put the real download link / PDF path here
 const SCROLL_OFFSET = 160; // how far from the top a section counts as "current"
 
 // every id in page order, plus a lookup of which group each item belongs to
