@@ -1,16 +1,13 @@
 import React from "react";
-import trademark2Img from "../../../images/v2/brand-asset/Trademark1.png"
+import trademark2Img from "../../../images/v2/brand-asset/Trademark1.png";
 
 const Trademark3 = () => {
-    const trademark2Item = [
-      "To maintain consistency and a unified look, it’s important to strictly follow the guidelines for using our logo and its variants. The logo should never be altered or modified in any way, whether by error or intent.",
-      "Above are examples of how our logo should not be used. This list is illustrative but not exhaustive of all possible misuse.",
-    ];
+  const trademark2Item = [
+    "To maintain consistency and a unified look, it’s important to strictly follow the guidelines for using our logo and its variants. The logo should never be altered or modified in any way, whether by error or intent.",
+    "Above are examples of how our logo should not be used. This list is illustrative but not exhaustive of all possible misuse.",
+  ];
   return (
-    <section
-      id="#"
-      className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
-    >
+    <section className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white">
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
         <img
           src={trademark2Img}

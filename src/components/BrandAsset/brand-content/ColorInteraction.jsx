@@ -8,7 +8,7 @@ const ColorInteraction = () => {
   ];
   return (
     <section
-      id="color-interaction"
+      id="partnership-lockup"
       className="w-full flex flex-col xl:relative xl:min-h-[500px] justify-between gap-6  bg-white"
     >
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">

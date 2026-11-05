@@ -24,6 +24,7 @@ const BrandAssetContent = () => {
   return (
     <section className="w-full space-y-10">
       <LogoMark />
+      {/*  */}
       <LogoType />
       <LockUp />
       <Avatar />
@@ -32,8 +33,11 @@ const BrandAssetContent = () => {
       <ColorInteraction />
       <Placement />
       <TrademarkMisuse />
-      <Trademark2 />
-      <Trademark3 />
+      <section id="trademark-misuse">
+        <Trademark2 />
+        <Trademark3 />
+      </section>
+      {/*  */}
       <ExtendedPalette />
       <PrimaryPalette />
       <SecondaryPalette />

@@ -8,7 +8,7 @@ const ClearSpace = () => {
   ];
   return (
     <section
-      id="clear-space"
+      id="avatar"
       className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
     >
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">

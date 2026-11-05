@@ -6,10 +6,7 @@ const Trademark2 = () => {
     "She Code Africa trademarks should always be positioned for maximum legibility. Refer to the placement list for detailed guidance.",
   ];
   return (
-    <section
-      id="#"
-      className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
-    >
+    <section className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white">
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
         <img
           src={trademark2Img}

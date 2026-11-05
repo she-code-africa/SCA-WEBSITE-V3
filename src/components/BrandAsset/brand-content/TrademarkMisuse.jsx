@@ -7,7 +7,10 @@ const TrademarkMisuse = () => {
     "When placing them on images, use the all-white or all-black version — depending on the contrast of the image area where the logo sits.",
   ];
   return (
-    <section className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white">
+    <section
+      id="placement"
+      className="w-full flex flex-col xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
+    >
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
         <img
           src={trademarkImg}

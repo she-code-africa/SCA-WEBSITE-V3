@@ -48,7 +48,7 @@ const LockUp = () => {
   ];
   return (
     <section
-      id="lockup"
+      id="logotype"
       className="w-full flex flex-col  xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
     >
       {" "}

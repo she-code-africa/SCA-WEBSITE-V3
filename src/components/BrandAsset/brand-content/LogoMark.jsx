@@ -8,7 +8,7 @@ const LogoMark = () => {
   ];
   return (
     <section
-      id="logomark"
+      id="introduction"
       className="w-full flex flex-col xl:relative xl:min-h-[588px] justify-between gap-6  bg-white"
     >
       <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
