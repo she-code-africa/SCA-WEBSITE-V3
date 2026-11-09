@@ -195,6 +195,12 @@ const Footer = ({ handleShow2025Report }) => {
                 >
                   Terms and Condition
                 </Link>
+                <Link
+                  to="/brand-assets"
+                  className="button-text block mb-5 hover:text-primary-main-pink focus:outline-none focus:ring focus:ring-tutu"
+                >
+                  Brand Asset
+                </Link>
               </div>
               <div aria-label="Community">
                 <p className="text-black subsection-header leading-[38.78px]">

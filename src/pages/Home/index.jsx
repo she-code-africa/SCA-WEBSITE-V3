@@ -22,12 +22,12 @@ import IndustryReportModal from "../../components/Home/IndustryReportModal";
 
 const Home = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [industryReport, setIndustryReport] = useState(false)
+  const [industryReport, setIndustryReport] = useState(false);
   const location = useLocation();
 
-  const handleOpenReportModal = () =>{
+  const handleOpenReportModal = () => {
     setIndustryReport(true);
-  }
+  };
 
   useEffect(() => {
     if (location.state?.openReport) {
@@ -159,7 +159,9 @@ const Home = () => {
 
       {openModal && <HomePageModal closeModal={handleCloseModal} />}
 
-      {industryReport && <IndustryReportModal closeModal={()=>setIndustryReport(false)} /> }
+      {industryReport && (
+        <IndustryReportModal closeModal={() => setIndustryReport(false)} />
+      )}
     </>
   );
 };
