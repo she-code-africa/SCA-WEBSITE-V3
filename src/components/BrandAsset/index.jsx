@@ -32,8 +32,8 @@ const BrandAssetPage = () => {
       <main className="text-secondary-main-black w-full">
         <section className="w-full h-full bg-[#FFEAF6] relative z-[1]">
           <div className="min-h-screen pt-[159px] lg:pb-[100px]">
-            <div className=" w-[90%] mx-auto max-w-[1280px]">
-              <section className="w-full gap-6 xl:gap-11 flex flex-col xl:flex-row xl:justify-between">
+            <div className=" w-[90%] mx-auto max-w-[1289.4px] xl:w-full">
+              <section className="w-full pb-6 gap-6 xl:gap-[42px] flex flex-col xl:flex-row xl:justify-between">
                 <BrandAssetNavigation />
                 <BrandAssetContent />
               </section>
