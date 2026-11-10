@@ -49,26 +49,26 @@ const LockUp = () => {
   ];
   return (
     <section
-      id="logotype"
-      className="w-full flex flex-col  xl:relative xl:min-h-[580px] justify-between gap-6  bg-white"
+      id="lockup"
+      className="w-full flex flex-col  xl:relative xl:min-h-[602px] justify-between gap-6  bg-white"
     >
       {" "}
-      <figure className="w-full h-[250px] xl:h-[550px] overflow-hidden">
+      <figure className="w-full h-[250px] xl:h-[602px] overflow-hidden">
         <img
           src={lockup}
           className="w-full h-full object-contain"
           alt="Logo Mark"
         />
       </figure>
-      <section className="w-[90%] max-w-[740px] mx-auto xl:absolute xl:bottom-6 xl:left-1/2 xl:-translate-x-1/2 flex-col gap-5 flex sm:flex-row sm:justify-between">
-        <ul className="mx-auto mb-5 sm:max-w-[456px] sm:items-center sm:flex-row flex-col flex gap-5 ">
+      <section className="w-[90%] max-w-[740px] mx-auto xl:absolute xl:top-[537.8px] xl:left-[78.8px] flex-col gap-5 xl:gap-[164px] flex sm:flex-row sm:justify-between">
+        <ul className="mx-auto mb-5 xl:mb-0 w-full sm:max-w-[462px] sm:items-center sm:flex-row flex-col flex gap-5 ">
           {lockupItems.map((item, index) => (
-            <li className="text-[#AB8599] text-sm" key={index}>
+            <li className="text-[#AB8599] w-full text-sm" key={index}>
               <span>{item}</span>
             </li>
           ))}
         </ul>
-        <div className="w-full flex sm:justify-end items-center">
+        <div className="w-full pb-5 xl:pb-0 xl:max-w-[136px] flex sm:justify-end items-center">
           <a
             href={lockuptype}
             download="SCA-Lockup-Coloured"

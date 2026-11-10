@@ -1,4 +1,3 @@
-import React from "react";
 import LogoMark from "./brand-content/LogoMark";
 import LogoType from "./brand-content/LogoType";
 import LockUp from "./brand-content/LockUp";
@@ -24,29 +23,37 @@ const BrandAssetContent = () => {
   return (
     <section className="w-full space-y-10">
       <LogoMark />
-      {/*  */}
-      <LogoType />
-      <LockUp />
-      <Avatar />
-      <ClearSpace />
-      <PartnershipLockup />
-      <ColorInteraction />
-      <Placement />
-      <TrademarkMisuse />
-      <section id="trademark-misuse">
+      <div id="trademarks" className="w-full space-y-10">
+        {/*  */}
+        <LogoType />
+        <LockUp />
+        <Avatar />
+        <ClearSpace />
+        <PartnershipLockup />
+        <div id="color-interaction" className="w-full space-y-10">
+          <ColorInteraction />
+          <Placement />
+          <TrademarkMisuse />
+        </div>
         <Trademark2 />
-        <Trademark3 />
-      </section>
+        <section id="trademark-misuse" className="w-full space-y-10">
+          <Trademark3 />
+        </section>
+      </div>
       {/*  */}
-      <ExtendedPalette />
-      <PrimaryPalette />
-      <SecondaryPalette />
-      <ColorUsage />
-      <ColorContrast />
-      <PrimaryType />
-      <SecondaryType />
-      <TypeScale />
-      <TypeScaleTwo />
+      <div id="colour" className="w-full space-y-10">
+        <ExtendedPalette />
+        <PrimaryPalette />
+        <SecondaryPalette />
+        <ColorUsage />
+        <ColorContrast />
+      </div>
+      <div id="typography" className="w-full space-y-10">
+        <PrimaryType />
+        <SecondaryType />
+        <TypeScale />
+        <TypeScaleTwo />
+      </div>
     </section>
   );
 };
