@@ -9,10 +9,9 @@ export const brandNavSections = [
     id: "trademarks",
     label: "Trademarks",
     items: [
-      { id: "logomark", label: "Logomark" },
       { id: "logotype", label: "Logotype" },
       { id: "lockup", label: "Lockup" },
-      { id: "avatar", label: "Avatar" },
+
       { id: "badge", label: "Badge" },
       { id: "clear-space", label: "Clear Space" },
       { id: "partnership-lockup", label: "Partnership Lockup" },
@@ -141,6 +140,46 @@ const useScrollSpy = () => {
   return { active, goTo };
 };
 
+// The nav is fixed, so it ignores the layout. This hook measures where the
+// content row ends and returns how far (in px) the nav must move up so its
+// bottom never goes past that point. 0 = no push needed.
+const useStopAtContentEnd = (asideRef, navRef) => {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    const check = () => {
+      const nav = navRef.current;
+      const row = asideRef.current?.parentElement; // the flex row holding nav + content
+      if (!nav || !row) return;
+
+      const navTop = parseFloat(getComputedStyle(nav).top) || 0;
+      const navBottom = navTop + nav.offsetHeight;
+      const rowBottom = row.getBoundingClientRect().bottom;
+
+      setOffset(Math.min(0, rowBottom - navBottom));
+    };
+
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+
+    // nav height changes when groups expand/collapse, so re-check then too
+    let observer;
+    if (navRef.current && "ResizeObserver" in window) {
+      observer = new ResizeObserver(check);
+      observer.observe(navRef.current);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+      if (observer) observer.disconnect();
+    };
+  }, [asideRef, navRef]);
+
+  return offset;
+};
+
 const ToggleIcon = ({ open }) => (
   <svg
     width="28"
@@ -225,7 +264,9 @@ const NavList = ({ active, onSelect }) => {
                   onClick={() => toggle(section.id)}
                   aria-expanded={isOpen}
                   aria-label={`${isOpen ? "Collapse" : "Expand"} ${section.label}`}
-                  className="cursor-pointer text-[#8E8E93] hover:text-primary-magenta transition-colors"
+                  className={`cursor-pointer transition-colors duration-300 hover:text-primary-magenta ${
+                    isGroupActive ? "text-primary-main-pink" : "text-[#8E8E93]"
+                  }`}
                 >
                   <ToggleIcon open={isOpen} />
                 </button>
@@ -271,6 +312,9 @@ const NavList = ({ active, onSelect }) => {
 const BrandAssetNavigation = () => {
   const { active, goTo } = useScrollSpy();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const asideRef = useRef(null);
+  const navRef = useRef(null);
+  const pushUp = useStopAtContentEnd(asideRef, navRef);
 
   const handleMobileSelect = (id) => {
     setMobileOpen(false);
@@ -281,7 +325,10 @@ const BrandAssetNavigation = () => {
     // Mobile: sticky dropdown under the header.
     // xl: this is just an empty 300px column that holds the space,
     // while the nav inside it is fixed to the screen.
-    <aside className="sticky top-21 z-30 w-full xl:static xl:w-[300px] xl:shrink-0">
+    <aside
+      ref={asideRef}
+      className="sticky top-21 z-30 w-full xl:static xl:w-[300px] xl:shrink-0"
+    >
       {/* MOBILE: dropdown */}
       <div className="relative xl:hidden">
         <button
@@ -313,9 +360,11 @@ const BrandAssetNavigation = () => {
         </AnimatePresence>
       </div>
 
-      {/* DESKTOP (xl): fixed sidebar */}
+      {/* DESKTOP (xl): fixed sidebar, pushed up when the content row ends */}
       <nav
+        ref={navRef}
         aria-label="Brand guidelines"
+        style={{ transform: `translateY(${pushUp}px)` }}
         className="hidden xl:block xl:fixed xl:top-40 xl:w-[300px] xl:max-h-[calc(100vh-11rem)] xl:overflow-y-auto px-8 scrollbar-hidden"
       >
         <NavList active={active} onSelect={goTo} />
